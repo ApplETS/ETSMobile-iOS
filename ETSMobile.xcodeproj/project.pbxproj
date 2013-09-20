@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE77F17ECEFF300F44252 /* MFSideMenuContainerViewController.m */; };
+		266BE78517ECEFF300F44252 /* MFSideMenuShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE78117ECEFF300F44252 /* MFSideMenuShadow.m */; };
+		266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */; };
+		26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A717EA610D00469FA8 /* Foundation.framework */; };
+		26DD92AA17EA610D00469FA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A917EA610D00469FA8 /* CoreGraphics.framework */; };
+		26DD92AC17EA610D00469FA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AB17EA610D00469FA8 /* UIKit.framework */; };
+		26DD92AE17EA610D00469FA8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AD17EA610D00469FA8 /* CoreData.framework */; };
+		26DD92B417EA610D00469FA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92B217EA610D00469FA8 /* InfoPlist.strings */; };
+		26DD92B617EA610D00469FA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92B517EA610D00469FA8 /* main.m */; };
+		26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */; };
+		26DD92BD17EA610D00469FA8 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */; };
+		26DD92C017EA610D00469FA8 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92BE17EA610D00469FA8 /* Main_iPad.storyboard */; };
+		26DD92C317EA610D00469FA8 /* ETSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */; };
+		26DD92C617EA610D00469FA8 /* ETSMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92C517EA610D00469FA8 /* ETSMasterViewController.m */; };
+		26DD92C917EA610D00469FA8 /* ETSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92C817EA610D00469FA8 /* ETSDetailViewController.m */; };
+		26DD92CB17EA610D00469FA8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92CA17EA610D00469FA8 /* Images.xcassets */; };
+		26DD92D217EA610D00469FA8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92D117EA610D00469FA8 /* XCTest.framework */; };
+		26DD92D317EA610D00469FA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A717EA610D00469FA8 /* Foundation.framework */; };
+		26DD92D417EA610D00469FA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AB17EA610D00469FA8 /* UIKit.framework */; };
+		26DD92D517EA610D00469FA8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AD17EA610D00469FA8 /* CoreData.framework */; };
+		26DD92DD17EA610D00469FA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92DB17EA610D00469FA8 /* InfoPlist.strings */; };
+		26DD92DF17EA610D00469FA8 /* ETSMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92DE17EA610D00469FA8 /* ETSMobileTests.m */; };
+		26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */; };
+		26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92F217EA625200469FA8 /* ETSNewsViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26DD92D617EA610D00469FA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26DD929C17EA610D00469FA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26DD92A317EA610D00469FA8;
+			remoteInfo = ETSMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		266BE77D17ECEFF300F44252 /* MFSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSideMenu.h; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenu.h; sourceTree = "<group>"; };
+		266BE77E17ECEFF300F44252 /* MFSideMenuContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSideMenuContainerViewController.h; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuContainerViewController.h; sourceTree = "<group>"; };
+		266BE77F17ECEFF300F44252 /* MFSideMenuContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFSideMenuContainerViewController.m; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuContainerViewController.m; sourceTree = "<group>"; };
+		266BE78017ECEFF300F44252 /* MFSideMenuShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSideMenuShadow.h; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuShadow.h; sourceTree = "<group>"; };
+		266BE78117ECEFF300F44252 /* MFSideMenuShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFSideMenuShadow.m; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuShadow.m; sourceTree = "<group>"; };
+		266BE78217ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MFSideMenuAdditions.h"; path = "Vendors/MFSideMenu/MFSideMenu/UIViewController+MFSideMenuAdditions.h"; sourceTree = "<group>"; };
+		266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MFSideMenuAdditions.m"; path = "Vendors/MFSideMenu/MFSideMenu/UIViewController+MFSideMenuAdditions.m"; sourceTree = "<group>"; };
+		26DD92A417EA610D00469FA8 /* ETSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26DD92A717EA610D00469FA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		26DD92A917EA610D00469FA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		26DD92AB17EA610D00469FA8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		26DD92AD17EA610D00469FA8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		26DD92B117EA610D00469FA8 /* ETSMobile-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ETSMobile-Info.plist"; sourceTree = "<group>"; };
+		26DD92B317EA610D00469FA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		26DD92B517EA610D00469FA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		26DD92B717EA610D00469FA8 /* ETSMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ETSMobile-Prefix.pch"; sourceTree = "<group>"; };
+		26DD92B817EA610D00469FA8 /* ETSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSAppDelegate.h; sourceTree = "<group>"; };
+		26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSAppDelegate.m; sourceTree = "<group>"; };
+		26DD92BC17EA610D00469FA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		26DD92BF17EA610D00469FA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		26DD92C217EA610D00469FA8 /* ETSMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ETSMobile.xcdatamodel; sourceTree = "<group>"; };
+		26DD92C417EA610D00469FA8 /* ETSMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSMasterViewController.h; sourceTree = "<group>"; };
+		26DD92C517EA610D00469FA8 /* ETSMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSMasterViewController.m; sourceTree = "<group>"; };
+		26DD92C717EA610D00469FA8 /* ETSDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSDetailViewController.h; sourceTree = "<group>"; };
+		26DD92C817EA610D00469FA8 /* ETSDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSDetailViewController.m; sourceTree = "<group>"; };
+		26DD92CA17EA610D00469FA8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		26DD92D017EA610D00469FA8 /* ETSMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ETSMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26DD92D117EA610D00469FA8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		26DD92DA17EA610D00469FA8 /* ETSMobileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ETSMobileTests-Info.plist"; sourceTree = "<group>"; };
+		26DD92DC17EA610D00469FA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		26DD92DE17EA610D00469FA8 /* ETSMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSMobileTests.m; sourceTree = "<group>"; };
+		26DD92EE17EA624A00469FA8 /* ETSMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMenuViewController.h; sourceTree = "<group>"; };
+		26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMenuViewController.m; sourceTree = "<group>"; };
+		26DD92F117EA625200469FA8 /* ETSNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsViewController.h; sourceTree = "<group>"; };
+		26DD92F217EA625200469FA8 /* ETSNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26DD92A117EA610D00469FA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DD92AA17EA610D00469FA8 /* CoreGraphics.framework in Frameworks */,
+				26DD92AE17EA610D00469FA8 /* CoreData.framework in Frameworks */,
+				26DD92AC17EA610D00469FA8 /* UIKit.framework in Frameworks */,
+				26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DD92CD17EA610D00469FA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DD92D217EA610D00469FA8 /* XCTest.framework in Frameworks */,
+				26DD92D517EA610D00469FA8 /* CoreData.framework in Frameworks */,
+				26DD92D417EA610D00469FA8 /* UIKit.framework in Frameworks */,
+				26DD92D317EA610D00469FA8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		266BE77C17ECEFDA00F44252 /* MFSideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				266BE77D17ECEFF300F44252 /* MFSideMenu.h */,
+				266BE77E17ECEFF300F44252 /* MFSideMenuContainerViewController.h */,
+				266BE77F17ECEFF300F44252 /* MFSideMenuContainerViewController.m */,
+				266BE78017ECEFF300F44252 /* MFSideMenuShadow.h */,
+				266BE78117ECEFF300F44252 /* MFSideMenuShadow.m */,
+				266BE78217ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.h */,
+				266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */,
+			);
+			name = MFSideMenu;
+			sourceTree = "<group>";
+		};
+		26DD929B17EA610D00469FA8 = {
+			isa = PBXGroup;
+			children = (
+				26DD92EB17EA615E00469FA8 /* Vendors */,
+				26DD92AF17EA610D00469FA8 /* ETSMobile */,
+				26DD92D817EA610D00469FA8 /* ETSMobileTests */,
+				26DD92A617EA610D00469FA8 /* Frameworks */,
+				26DD92A517EA610D00469FA8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26DD92A517EA610D00469FA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26DD92A417EA610D00469FA8 /* ETSMobile.app */,
+				26DD92D017EA610D00469FA8 /* ETSMobileTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26DD92A617EA610D00469FA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26DD92A717EA610D00469FA8 /* Foundation.framework */,
+				26DD92A917EA610D00469FA8 /* CoreGraphics.framework */,
+				26DD92AB17EA610D00469FA8 /* UIKit.framework */,
+				26DD92AD17EA610D00469FA8 /* CoreData.framework */,
+				26DD92D117EA610D00469FA8 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26DD92AF17EA610D00469FA8 /* ETSMobile */ = {
+			isa = PBXGroup;
+			children = (
+				26DD92E817EA612800469FA8 /* Models */,
+				26DD92E917EA613400469FA8 /* Controllers */,
+				26DD92EA17EA613C00469FA8 /* Views */,
+				26DD92B817EA610D00469FA8 /* ETSAppDelegate.h */,
+				26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */,
+				26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */,
+				26DD92BE17EA610D00469FA8 /* Main_iPad.storyboard */,
+				26DD92C417EA610D00469FA8 /* ETSMasterViewController.h */,
+				26DD92C517EA610D00469FA8 /* ETSMasterViewController.m */,
+				26DD92C717EA610D00469FA8 /* ETSDetailViewController.h */,
+				26DD92C817EA610D00469FA8 /* ETSDetailViewController.m */,
+				26DD92CA17EA610D00469FA8 /* Images.xcassets */,
+				26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */,
+				26DD92B017EA610D00469FA8 /* Supporting Files */,
+			);
+			path = ETSMobile;
+			sourceTree = "<group>";
+		};
+		26DD92B017EA610D00469FA8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26DD92B117EA610D00469FA8 /* ETSMobile-Info.plist */,
+				26DD92B217EA610D00469FA8 /* InfoPlist.strings */,
+				26DD92B517EA610D00469FA8 /* main.m */,
+				26DD92B717EA610D00469FA8 /* ETSMobile-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26DD92D817EA610D00469FA8 /* ETSMobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				26DD92DE17EA610D00469FA8 /* ETSMobileTests.m */,
+				26DD92D917EA610D00469FA8 /* Supporting Files */,
+			);
+			path = ETSMobileTests;
+			sourceTree = "<group>";
+		};
+		26DD92D917EA610D00469FA8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26DD92DA17EA610D00469FA8 /* ETSMobileTests-Info.plist */,
+				26DD92DB17EA610D00469FA8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26DD92E817EA612800469FA8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		26DD92E917EA613400469FA8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				26DD92ED17EA623300469FA8 /* Menu */,
+				26DD92EC17EA622D00469FA8 /* News */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		26DD92EA17EA613C00469FA8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		26DD92EB17EA615E00469FA8 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				266BE77C17ECEFDA00F44252 /* MFSideMenu */,
+			);
+			name = Vendors;
+			sourceTree = "<group>";
+		};
+		26DD92EC17EA622D00469FA8 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				26DD92F117EA625200469FA8 /* ETSNewsViewController.h */,
+				26DD92F217EA625200469FA8 /* ETSNewsViewController.m */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		26DD92ED17EA623300469FA8 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				26DD92EE17EA624A00469FA8 /* ETSMenuViewController.h */,
+				26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26DD92A317EA610D00469FA8 /* ETSMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26DD92E217EA610D00469FA8 /* Build configuration list for PBXNativeTarget "ETSMobile" */;
+			buildPhases = (
+				26DD92A017EA610D00469FA8 /* Sources */,
+				26DD92A117EA610D00469FA8 /* Frameworks */,
+				26DD92A217EA610D00469FA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ETSMobile;
+			productName = ETSMobile;
+			productReference = 26DD92A417EA610D00469FA8 /* ETSMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		26DD92CF17EA610D00469FA8 /* ETSMobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26DD92E517EA610D00469FA8 /* Build configuration list for PBXNativeTarget "ETSMobileTests" */;
+			buildPhases = (
+				26DD92CC17EA610D00469FA8 /* Sources */,
+				26DD92CD17EA610D00469FA8 /* Frameworks */,
+				26DD92CE17EA610D00469FA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26DD92D717EA610D00469FA8 /* PBXTargetDependency */,
+			);
+			name = ETSMobileTests;
+			productName = ETSMobileTests;
+			productReference = 26DD92D017EA610D00469FA8 /* ETSMobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26DD929C17EA610D00469FA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ETS;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = ApplETS;
+				TargetAttributes = {
+					26DD92A317EA610D00469FA8 = {
+						DevelopmentTeam = N742HF354K;
+					};
+					26DD92CF17EA610D00469FA8 = {
+						TestTargetID = 26DD92A317EA610D00469FA8;
+					};
+				};
+			};
+			buildConfigurationList = 26DD929F17EA610D00469FA8 /* Build configuration list for PBXProject "ETSMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 26DD929B17EA610D00469FA8;
+			productRefGroup = 26DD92A517EA610D00469FA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26DD92A317EA610D00469FA8 /* ETSMobile */,
+				26DD92CF17EA610D00469FA8 /* ETSMobileTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26DD92A217EA610D00469FA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DD92C017EA610D00469FA8 /* Main_iPad.storyboard in Resources */,
+				26DD92CB17EA610D00469FA8 /* Images.xcassets in Resources */,
+				26DD92BD17EA610D00469FA8 /* Main_iPhone.storyboard in Resources */,
+				26DD92B417EA610D00469FA8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DD92CE17EA610D00469FA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DD92DD17EA610D00469FA8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26DD92A017EA610D00469FA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */,
+				26DD92B617EA610D00469FA8 /* main.m in Sources */,
+				26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */,
+				26DD92C317EA610D00469FA8 /* ETSMobile.xcdatamodeld in Sources */,
+				266BE78517ECEFF300F44252 /* MFSideMenuShadow.m in Sources */,
+				26DD92C617EA610D00469FA8 /* ETSMasterViewController.m in Sources */,
+				266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */,
+				266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */,
+				26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */,
+				26DD92C917EA610D00469FA8 /* ETSDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DD92CC17EA610D00469FA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DD92DF17EA610D00469FA8 /* ETSMobileTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26DD92D717EA610D00469FA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26DD92A317EA610D00469FA8 /* ETSMobile */;
+			targetProxy = 26DD92D617EA610D00469FA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		26DD92B217EA610D00469FA8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26DD92B317EA610D00469FA8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26DD92BC17EA610D00469FA8 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		26DD92BE17EA610D00469FA8 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26DD92BF17EA610D00469FA8 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		26DD92DB17EA610D00469FA8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26DD92DC17EA610D00469FA8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26DD92E017EA610D00469FA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26DD92E117EA610D00469FA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26DD92E317EA610D00469FA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
+				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		26DD92E417EA610D00469FA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
+				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		26DD92E617EA610D00469FA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ETSMobile.app/ETSMobile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ETSMobileTests/ETSMobileTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		26DD92E717EA610D00469FA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ETSMobile.app/ETSMobile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
+				INFOPLIST_FILE = "ETSMobileTests/ETSMobileTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26DD929F17EA610D00469FA8 /* Build configuration list for PBXProject "ETSMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26DD92E017EA610D00469FA8 /* Debug */,
+				26DD92E117EA610D00469FA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26DD92E217EA610D00469FA8 /* Build configuration list for PBXNativeTarget "ETSMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26DD92E317EA610D00469FA8 /* Debug */,
+				26DD92E417EA610D00469FA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26DD92E517EA610D00469FA8 /* Build configuration list for PBXNativeTarget "ETSMobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26DD92E617EA610D00469FA8 /* Debug */,
+				26DD92E717EA610D00469FA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				26DD92C217EA610D00469FA8 /* ETSMobile.xcdatamodel */,
+			);
+			currentVersion = 26DD92C217EA610D00469FA8 /* ETSMobile.xcdatamodel */;
+			path = ETSMobile.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 26DD929C17EA610D00469FA8 /* Project object */;
+}

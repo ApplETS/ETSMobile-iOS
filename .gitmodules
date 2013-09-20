@@ -1,0 +1,3 @@
+[submodule "Vendors/MFSideMenu"]
+	path = Vendors/MFSideMenu
+	url = git@github.com:mikefrederick/MFSideMenu.git
