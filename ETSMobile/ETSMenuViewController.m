@@ -9,43 +9,42 @@
 #import "ETSMenuViewController.h"
 #import "ETSNewsViewController.h"
 #import "MFSideMenuContainerViewController.h"
+#import "UIColor+Styles.h"
+#import "UIStoryboard+ViewController.h"
 
-enum {
-    MenuNews
+typedef NS_ENUM(NSInteger, ETSMenuMe)
+{
+    ETSMenuMeToday,
+    ETSMenuMeSchedule,
+    ETSMenuMeCourse,
+    ETSMenuMeInternship,
+    ETSMenuMeProfile,
+    ETSMenuMeBandwidth
 };
 
-typedef NSInteger Menu;
+typedef NS_ENUM(NSInteger, ETSMenuUniversity)
+{
+    ETSMenuUniversityNews,
+    ETSMenuUniversityDirectory,
+    ETSMenuUniversityLibrary,
+    ETSMenuUniversityRadio,
+    ETSMenuUniversitySecurity
+};
 
-@interface ETSMenuViewController ()
-
-@end
+typedef NS_ENUM(NSInteger, ETSMenuApplETS)
+{
+    ETSMenuApplETSComments,
+    ETSMenuApplETSAbout,
+    ETSMenuApplETSSponsors
+};
 
 @implementation ETSMenuViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    self.tableView.separatorColor = [UIColor menuSeparatorColor];
 }
 
 - (MFSideMenuContainerViewController *)menuContainerViewController
@@ -57,16 +56,17 @@ typedef NSInteger Menu;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 1;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 1;
+    switch (section) {
+        case 0: return 6;
+        case 1: return 5;
+        case 2: return 3;
+        default: return 0;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -74,19 +74,163 @@ typedef NSInteger Menu;
     static NSString *CellIdentifier = @"MenuCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.bounds];
+    cell.selectedBackgroundView.backgroundColor = [UIColor menuSelectedCellBackgroundColor];
+
+    cell.textLabel.textColor = [UIColor menuLabelColor];
+    cell.textLabel.highlightedTextColor = [UIColor menuHighlightedLabelColor];
     
-    if (indexPath.row == MenuNews) cell.textLabel.text = @"Nouvelles";
+    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:15];
     
+    if (indexPath.section == 0) {
+        if (indexPath.row == ETSMenuMeToday) {
+            cell.textLabel.text = NSLocalizedString(@"Aujourd'hui", nil);
+            cell.imageView.image = nil;
+        }
+        else if (indexPath.row == ETSMenuMeSchedule) {
+            cell.textLabel.text = NSLocalizedString(@"Horaire", nil);
+            cell.imageView.image = nil;
+        }
+        else if (indexPath.row == ETSMenuMeCourse) {
+            cell.textLabel.text = NSLocalizedString(@"Notes", nil);
+            cell.imageView.image = nil;
+        }
+        else if (indexPath.row == ETSMenuMeInternship) {
+            cell.textLabel.text = NSLocalizedString(@"Stages", nil);
+            cell.imageView.image = nil;
+        }
+        else if (indexPath.row == ETSMenuMeProfile) {
+            cell.textLabel.text = NSLocalizedString(@"Profil", nil);
+            cell.imageView.image = nil;
+        }
+        else if (indexPath.row == ETSMenuMeBandwidth) {
+            cell.textLabel.text = NSLocalizedString(@"Bande passante", nil);
+            cell.imageView.image = nil;
+        }
+    }
+    
+    else if (indexPath.section == 1) {
+        if (indexPath.row == ETSMenuUniversityNews) {
+            cell.textLabel.text = NSLocalizedString(@"Nouvelles", nil);
+            cell.imageView.image = nil;
+        }
+        else if (indexPath.row == ETSMenuUniversityDirectory) {
+            cell.textLabel.text = NSLocalizedString(@"Bottin", nil);
+            cell.imageView.image = nil;
+        }
+        else if (indexPath.row == ETSMenuUniversityLibrary) {
+            cell.textLabel.text = NSLocalizedString(@"Bibliothèque", nil);
+            cell.imageView.image = nil;
+        }
+        else if (indexPath.row == ETSMenuUniversityRadio) {
+            cell.textLabel.text = NSLocalizedString(@"Radio", nil);
+            cell.imageView.image = nil;
+        }
+        else if (indexPath.row == ETSMenuUniversitySecurity) {
+            cell.textLabel.text = NSLocalizedString(@"Sécurité", nil);
+            cell.imageView.image = nil;
+        }
+    }
+    
+    else if (indexPath.section == 2) {
+        if (indexPath.row == ETSMenuApplETSComments) {
+            cell.textLabel.text = NSLocalizedString(@"Problème ou commentaire?", nil);
+            cell.imageView.image = nil;
+        }
+        else if (indexPath.row == ETSMenuApplETSAbout) {
+            cell.textLabel.text = NSLocalizedString(@"À propos d'ÉTSMobile", nil);
+            cell.imageView.image = nil;
+        }
+        else if (indexPath.row == ETSMenuApplETSSponsors) {
+            cell.textLabel.text = NSLocalizedString(@"Nos partenaires", nil);
+            cell.imageView.image = nil;
+        }
+    }
+
     return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 30)];
+    headerView.backgroundColor = [UIColor menuSectionBackgroundColor];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 1, tableView.bounds.size.width, 20)];
+    label.textColor = [UIColor menuLabelColor];
+    label.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:10];
+    
+    [headerView addSubview:label];
+    
+    switch (section)
+    {
+        case 0: label.text = [NSLocalizedString(@"Moi", nil) uppercaseString]; break;
+        case 1: label.text = [NSLocalizedString(@"École de technologie supérieure", nil) uppercaseString]; break;
+        case 2: label.text = [NSLocalizedString(@"ApplETS", nil) uppercaseString]; break;
+    }
+    
+    return headerView;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ETSNewsViewController *newsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NewsViewController"];
+    UIViewController *viewController = nil;
+    
+    if (indexPath.section == 0) {
+        if (indexPath.row == ETSMenuMeToday) {
+
+        }
+        else if (indexPath.row == ETSMenuMeSchedule) {
+        
+        }
+        else if (indexPath.row == ETSMenuMeCourse) {
+
+        }
+        else if (indexPath.row == ETSMenuMeInternship) {
+
+        }
+        else if (indexPath.row == ETSMenuMeProfile) {
+
+        }
+        else if (indexPath.row == ETSMenuMeBandwidth) {
+
+        }
+    }
+    
+    else if (indexPath.section == 1) {
+        if (indexPath.row == ETSMenuUniversityNews) viewController = [self.storyboard instantiateNewsViewController];
+        else if (indexPath.row == ETSMenuUniversityDirectory) {
+
+        }
+        else if (indexPath.row == ETSMenuUniversityLibrary) {
+
+        }
+        else if (indexPath.row == ETSMenuUniversityRadio) {
+
+        }
+        else if (indexPath.row == ETSMenuUniversitySecurity) {
+
+        }
+    }
+    
+    else if (indexPath.section == 2) {
+        if (indexPath.row == ETSMenuApplETSComments) {
+
+        }
+        else if (indexPath.row == ETSMenuApplETSAbout) {
+
+        }
+        else if (indexPath.row == ETSMenuApplETSSponsors) {
+
+        }
+    }
+    
+    if (!viewController) return;
+    
+    if ([viewController respondsToSelector:@selector(setManagedObjectContext:)])
+        [viewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
     
     UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
-    NSArray *controllers = [NSArray arrayWithObject:newsViewController];
+    NSArray *controllers = @[viewController];
     navigationController.viewControllers = controllers;
     [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
 }

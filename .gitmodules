@@ -1,3 +1,6 @@
 [submodule "Vendors/MFSideMenu"]
 	path = Vendors/MFSideMenu
-	url = git@github.com:mikefrederick/MFSideMenu.git
+	url = git@github.com:ApplETS/MFSideMenu.git
+[submodule "Vendors/CRNavigationController"]
+	path = Vendors/CRNavigationController
+	url = git@github.com:croberts22/CRNavigationController.git
