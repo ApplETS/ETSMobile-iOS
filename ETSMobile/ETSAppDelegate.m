@@ -10,6 +10,9 @@
 
 #import "ETSMasterViewController.h"
 #import "MFSideMenuContainerViewController.h"
+#import "ETSMenuViewController.h"
+#import "CRNavigationController.h"
+#import "UIColor+Styles.h"
 
 @implementation ETSAppDelegate
 
@@ -33,12 +36,25 @@
     
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
         MFSideMenuContainerViewController *container = (MFSideMenuContainerViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"navigationController"];
+        CRNavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"navigationController"];
+
+//        [navigationController.navigationBar setBarTintColor:[UIColor naviguationBarTintColor]];
+        [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
+        [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                               NSForegroundColorAttributeName : [UIColor whiteColor]
+                                                               }];
+
+        
         
         ETSMasterViewController *controller = (ETSMasterViewController *)navigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
         
-        UITableViewController *leftSideMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
+        ETSMenuViewController *leftSideMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
+        leftSideMenuViewController.managedObjectContext = self.managedObjectContext;
+        
+        [container.shadow setEnabled:YES];
+        [container.shadow setRadius:5.0f];
+        [container.shadow setColor:[UIColor blackColor]];
         
         [container setLeftMenuViewController:leftSideMenuViewController];
         [container setCenterViewController:navigationController];

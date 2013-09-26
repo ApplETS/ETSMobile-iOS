@@ -69,4 +69,7 @@
     self.masterPopoverController = nil;
 }
 
+- (IBAction)changeColor:(id)sender {
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:self.redSlider.value/255.0f green:self.greenSlider.value/255.0f blue:self.blueSlider.value/255.0f alpha:1]];
+}
 @end

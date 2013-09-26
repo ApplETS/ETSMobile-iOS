@@ -13,4 +13,8 @@
 @property (strong, nonatomic) id detailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UISlider *redSlider;
+@property (weak, nonatomic) IBOutlet UISlider *greenSlider;
+@property (weak, nonatomic) IBOutlet UISlider *blueSlider;
+- (IBAction)changeColor:(id)sender;
 @end

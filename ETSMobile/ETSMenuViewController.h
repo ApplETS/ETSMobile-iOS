@@ -10,4 +10,6 @@
 
 @interface ETSMenuViewController : UITableViewController
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end

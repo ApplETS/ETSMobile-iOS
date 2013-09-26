@@ -10,6 +10,9 @@
 		266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE77F17ECEFF300F44252 /* MFSideMenuContainerViewController.m */; };
 		266BE78517ECEFF300F44252 /* MFSideMenuShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE78117ECEFF300F44252 /* MFSideMenuShadow.m */; };
 		266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */; };
+		26AE185D17F296CD00DB1EB4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AE185B17F2966200DB1EB4 /* QuartzCore.framework */; };
+		26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */; };
+		26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */; };
 		26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A717EA610D00469FA8 /* Foundation.framework */; };
 		26DD92AA17EA610D00469FA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A917EA610D00469FA8 /* CoreGraphics.framework */; };
 		26DD92AC17EA610D00469FA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AB17EA610D00469FA8 /* UIKit.framework */; };
@@ -31,6 +34,8 @@
 		26DD92DF17EA610D00469FA8 /* ETSMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92DE17EA610D00469FA8 /* ETSMobileTests.m */; };
 		26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */; };
 		26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92F217EA625200469FA8 /* ETSNewsViewController.m */; };
+		26E0224717F3775A0045A930 /* CRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E0224417F3775A0045A930 /* CRNavigationBar.m */; };
+		26E0224817F3775A0045A930 /* CRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E0224617F3775A0045A930 /* CRNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		266BE78117ECEFF300F44252 /* MFSideMenuShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFSideMenuShadow.m; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuShadow.m; sourceTree = "<group>"; };
 		266BE78217ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MFSideMenuAdditions.h"; path = "Vendors/MFSideMenu/MFSideMenu/UIViewController+MFSideMenuAdditions.h"; sourceTree = "<group>"; };
 		266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MFSideMenuAdditions.m"; path = "Vendors/MFSideMenu/MFSideMenu/UIViewController+MFSideMenuAdditions.m"; sourceTree = "<group>"; };
+		26AE185B17F2966200DB1EB4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		26AE186017F327AC00DB1EB4 /* UIColor+Styles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Styles.h"; sourceTree = "<group>"; };
+		26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Styles.m"; sourceTree = "<group>"; };
+		26AE186417F32CC800DB1EB4 /* UIStoryboard+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+ViewController.h"; sourceTree = "<group>"; };
+		26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+ViewController.m"; sourceTree = "<group>"; };
 		26DD92A417EA610D00469FA8 /* ETSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26DD92A717EA610D00469FA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26DD92A917EA610D00469FA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +89,10 @@
 		26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMenuViewController.m; sourceTree = "<group>"; };
 		26DD92F117EA625200469FA8 /* ETSNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsViewController.h; sourceTree = "<group>"; };
 		26DD92F217EA625200469FA8 /* ETSNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsViewController.m; sourceTree = "<group>"; };
+		26E0224317F3775A0045A930 /* CRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRNavigationBar.h; path = Vendors/CRNavigationController/CRNavigationController/CRNavigationBar.h; sourceTree = "<group>"; };
+		26E0224417F3775A0045A930 /* CRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRNavigationBar.m; path = Vendors/CRNavigationController/CRNavigationController/CRNavigationBar.m; sourceTree = "<group>"; };
+		26E0224517F3775A0045A930 /* CRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRNavigationController.h; path = Vendors/CRNavigationController/CRNavigationController/CRNavigationController.h; sourceTree = "<group>"; };
+		26E0224617F3775A0045A930 /* CRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRNavigationController.m; path = Vendors/CRNavigationController/CRNavigationController/CRNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26AE185D17F296CD00DB1EB4 /* QuartzCore.framework in Frameworks */,
 				26DD92AA17EA610D00469FA8 /* CoreGraphics.framework in Frameworks */,
 				26DD92AE17EA610D00469FA8 /* CoreData.framework in Frameworks */,
 				26DD92AC17EA610D00469FA8 /* UIKit.framework in Frameworks */,
@@ -121,6 +136,24 @@
 			name = MFSideMenu;
 			sourceTree = "<group>";
 		};
+		26AE185E17F3275600DB1EB4 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				26AE186017F327AC00DB1EB4 /* UIColor+Styles.h */,
+				26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */,
+			);
+			name = Styles;
+			sourceTree = "<group>";
+		};
+		26AE186317F32CA400DB1EB4 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				26AE186417F32CC800DB1EB4 /* UIStoryboard+ViewController.h */,
+				26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		26DD929B17EA610D00469FA8 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +177,7 @@
 		26DD92A617EA610D00469FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26AE185B17F2966200DB1EB4 /* QuartzCore.framework */,
 				26DD92A717EA610D00469FA8 /* Foundation.framework */,
 				26DD92A917EA610D00469FA8 /* CoreGraphics.framework */,
 				26DD92AB17EA610D00469FA8 /* UIKit.framework */,
@@ -159,6 +193,8 @@
 				26DD92E817EA612800469FA8 /* Models */,
 				26DD92E917EA613400469FA8 /* Controllers */,
 				26DD92EA17EA613C00469FA8 /* Views */,
+				26AE185E17F3275600DB1EB4 /* Styles */,
+				26AE186317F32CA400DB1EB4 /* Categories */,
 				26DD92B817EA610D00469FA8 /* ETSAppDelegate.h */,
 				26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */,
 				26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */,
@@ -229,6 +265,7 @@
 		26DD92EB17EA615E00469FA8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				26E0224217F377450045A930 /* CRNavigationController */,
 				266BE77C17ECEFDA00F44252 /* MFSideMenu */,
 			);
 			name = Vendors;
@@ -250,6 +287,17 @@
 				26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */,
 			);
 			name = Menu;
+			sourceTree = "<group>";
+		};
+		26E0224217F377450045A930 /* CRNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				26E0224317F3775A0045A930 /* CRNavigationBar.h */,
+				26E0224417F3775A0045A930 /* CRNavigationBar.m */,
+				26E0224517F3775A0045A930 /* CRNavigationController.h */,
+				26E0224617F3775A0045A930 /* CRNavigationController.m */,
+			);
+			name = CRNavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,13 +402,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26E0224817F3775A0045A930 /* CRNavigationController.m in Sources */,
 				26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */,
+				26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */,
 				26DD92B617EA610D00469FA8 /* main.m in Sources */,
 				26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */,
+				26E0224717F3775A0045A930 /* CRNavigationBar.m in Sources */,
 				26DD92C317EA610D00469FA8 /* ETSMobile.xcdatamodeld in Sources */,
 				266BE78517ECEFF300F44252 /* MFSideMenuShadow.m in Sources */,
 				26DD92C617EA610D00469FA8 /* ETSMasterViewController.m in Sources */,
 				266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */,
+				26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */,
 				266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */,
 				26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */,
 				26DD92C917EA610D00469FA8 /* ETSDetailViewController.m in Sources */,
