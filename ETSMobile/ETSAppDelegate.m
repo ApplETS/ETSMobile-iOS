@@ -11,8 +11,9 @@
 #import "ETSMasterViewController.h"
 #import "MFSideMenuContainerViewController.h"
 #import "ETSMenuViewController.h"
-#import "CRNavigationController.h"
 #import "UIColor+Styles.h"
+#import "ETSConnection.h"
+#import "ETSCoursesViewController.h"
 
 @implementation ETSAppDelegate
 
@@ -32,19 +33,12 @@
         ETSMasterViewController *controller = (ETSMasterViewController *)masterNavigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
     } else {
-
-    
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
         MFSideMenuContainerViewController *container = (MFSideMenuContainerViewController *)self.window.rootViewController;
-        CRNavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"navigationController"];
+        UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"navigationController"];
 
-//        [navigationController.navigationBar setBarTintColor:[UIColor naviguationBarTintColor]];
         [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
-        [[UINavigationBar appearance] setTitleTextAttributes:@{
-                                                               NSForegroundColorAttributeName : [UIColor whiteColor]
-                                                               }];
-
-        
+        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
         
         ETSMasterViewController *controller = (ETSMasterViewController *)navigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;

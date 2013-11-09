@@ -10,4 +10,6 @@
 
 @interface UIStoryboard (ViewController)
 - (id)instantiateNewsViewController;
+- (id)instantiateAuthenticationViewController;
+- (id)instantiateCoursesViewController;
 @end
