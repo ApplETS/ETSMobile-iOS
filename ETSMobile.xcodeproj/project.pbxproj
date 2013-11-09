@@ -7,9 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2601088B181583740037E795 /* ETSCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2601088A181583740037E795 /* ETSCourse.m */; };
+		2601088F181596820037E795 /* ETSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2601088E181596820037E795 /* ETSCollectionViewController.m */; };
+		26085B3D1829D84300FE35AB /* ETSAPIURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26085B3C1829D84300FE35AB /* ETSAPIURL.plist */; };
+		26085B401829D8D700FE35AB /* NSURL+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 26085B3F1829D8D700FE35AB /* NSURL+API.m */; };
+		262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */; };
 		266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE77F17ECEFF300F44252 /* MFSideMenuContainerViewController.m */; };
 		266BE78517ECEFF300F44252 /* MFSideMenuShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE78117ECEFF300F44252 /* MFSideMenuShadow.m */; };
 		266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */; };
+		2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */; };
+		2698C6F518274F4B00F6281F /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F418274F4B00F6281F /* KeychainItemWrapper.m */; };
+		2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F9182834E000F6281F /* ETSCourseCell.m */; };
+		269BFF521810A9A3005D2950 /* ETSConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BFF511810A9A3005D2950 /* ETSConnection.m */; };
+		269BFF561811A41C005D2950 /* NSManagedObject+SetValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BFF551811A41C005D2950 /* NSManagedObject+SetValues.m */; };
+		269BFF581811A640005D2950 /* ETSAPICoreDataMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 269BFF571811A640005D2950 /* ETSAPICoreDataMapping.plist */; };
+		269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BFF5B1814C649005D2950 /* ETSCoursesViewController.m */; };
+		26A65542182ABE6E00DEE9B7 /* NSURLRequest+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A65541182ABE6E00DEE9B7 /* NSURLRequest+API.m */; };
 		26AE185D17F296CD00DB1EB4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AE185B17F2966200DB1EB4 /* QuartzCore.framework */; };
 		26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */; };
 		26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */; };
@@ -34,8 +47,7 @@
 		26DD92DF17EA610D00469FA8 /* ETSMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92DE17EA610D00469FA8 /* ETSMobileTests.m */; };
 		26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */; };
 		26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92F217EA625200469FA8 /* ETSNewsViewController.m */; };
-		26E0224717F3775A0045A930 /* CRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E0224417F3775A0045A930 /* CRNavigationBar.m */; };
-		26E0224817F3775A0045A930 /* CRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E0224617F3775A0045A930 /* CRNavigationController.m */; };
+		26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F393221829984F00995E16 /* ETSSessionHeader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +61,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26010889181583740037E795 /* ETSCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourse.h; sourceTree = "<group>"; };
+		2601088A181583740037E795 /* ETSCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourse.m; sourceTree = "<group>"; };
+		2601088D181596820037E795 /* ETSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCollectionViewController.h; sourceTree = "<group>"; };
+		2601088E181596820037E795 /* ETSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCollectionViewController.m; sourceTree = "<group>"; };
+		26085B3C1829D84300FE35AB /* ETSAPIURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPIURL.plist; sourceTree = "<group>"; };
+		26085B3E1829D8D700FE35AB /* NSURL+API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+API.h"; sourceTree = "<group>"; };
+		26085B3F1829D8D700FE35AB /* NSURL+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+API.m"; sourceTree = "<group>"; };
+		262A6344182B3DDA00B786A0 /* ETSCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourseDetailViewController.h; sourceTree = "<group>"; };
+		262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourseDetailViewController.m; sourceTree = "<group>"; };
 		266BE77D17ECEFF300F44252 /* MFSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSideMenu.h; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenu.h; sourceTree = "<group>"; };
 		266BE77E17ECEFF300F44252 /* MFSideMenuContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSideMenuContainerViewController.h; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuContainerViewController.h; sourceTree = "<group>"; };
 		266BE77F17ECEFF300F44252 /* MFSideMenuContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFSideMenuContainerViewController.m; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuContainerViewController.m; sourceTree = "<group>"; };
@@ -56,6 +77,21 @@
 		266BE78117ECEFF300F44252 /* MFSideMenuShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFSideMenuShadow.m; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuShadow.m; sourceTree = "<group>"; };
 		266BE78217ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MFSideMenuAdditions.h"; path = "Vendors/MFSideMenu/MFSideMenu/UIViewController+MFSideMenuAdditions.h"; sourceTree = "<group>"; };
 		266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MFSideMenuAdditions.m"; path = "Vendors/MFSideMenu/MFSideMenu/UIViewController+MFSideMenuAdditions.m"; sourceTree = "<group>"; };
+		2698C6F01827498800F6281F /* ETSAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSAuthenticationViewController.h; sourceTree = "<group>"; };
+		2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSAuthenticationViewController.m; sourceTree = "<group>"; };
+		2698C6F318274F4B00F6281F /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainItemWrapper.h; path = Vendors/KeychainWrapper/KeychainItemWrapper.h; sourceTree = "<group>"; };
+		2698C6F418274F4B00F6281F /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = Vendors/KeychainWrapper/KeychainItemWrapper.m; sourceTree = "<group>"; };
+		2698C6F8182834E000F6281F /* ETSCourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourseCell.h; sourceTree = "<group>"; };
+		2698C6F9182834E000F6281F /* ETSCourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourseCell.m; sourceTree = "<group>"; };
+		269BFF501810A9A3005D2950 /* ETSConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSConnection.h; sourceTree = "<group>"; };
+		269BFF511810A9A3005D2950 /* ETSConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSConnection.m; sourceTree = "<group>"; };
+		269BFF541811A41C005D2950 /* NSManagedObject+SetValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+SetValues.h"; sourceTree = "<group>"; };
+		269BFF551811A41C005D2950 /* NSManagedObject+SetValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+SetValues.m"; sourceTree = "<group>"; };
+		269BFF571811A640005D2950 /* ETSAPICoreDataMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPICoreDataMapping.plist; sourceTree = "<group>"; };
+		269BFF5A1814C649005D2950 /* ETSCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCoursesViewController.h; sourceTree = "<group>"; };
+		269BFF5B1814C649005D2950 /* ETSCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCoursesViewController.m; sourceTree = "<group>"; };
+		26A65540182ABE6E00DEE9B7 /* NSURLRequest+API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+API.h"; sourceTree = "<group>"; };
+		26A65541182ABE6E00DEE9B7 /* NSURLRequest+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+API.m"; sourceTree = "<group>"; };
 		26AE185B17F2966200DB1EB4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		26AE186017F327AC00DB1EB4 /* UIColor+Styles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Styles.h"; sourceTree = "<group>"; };
 		26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Styles.m"; sourceTree = "<group>"; };
@@ -89,10 +125,8 @@
 		26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMenuViewController.m; sourceTree = "<group>"; };
 		26DD92F117EA625200469FA8 /* ETSNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsViewController.h; sourceTree = "<group>"; };
 		26DD92F217EA625200469FA8 /* ETSNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsViewController.m; sourceTree = "<group>"; };
-		26E0224317F3775A0045A930 /* CRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRNavigationBar.h; path = Vendors/CRNavigationController/CRNavigationController/CRNavigationBar.h; sourceTree = "<group>"; };
-		26E0224417F3775A0045A930 /* CRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRNavigationBar.m; path = Vendors/CRNavigationController/CRNavigationController/CRNavigationBar.m; sourceTree = "<group>"; };
-		26E0224517F3775A0045A930 /* CRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRNavigationController.h; path = Vendors/CRNavigationController/CRNavigationController/CRNavigationController.h; sourceTree = "<group>"; };
-		26E0224617F3775A0045A930 /* CRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRNavigationController.m; path = Vendors/CRNavigationController/CRNavigationController/CRNavigationController.m; sourceTree = "<group>"; };
+		26F393211829984F00995E16 /* ETSSessionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSessionHeader.h; sourceTree = "<group>"; };
+		26F393221829984F00995E16 /* ETSSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSessionHeader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +156,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		260108901815968D0037E795 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				269BFF501810A9A3005D2950 /* ETSConnection.h */,
+				269BFF511810A9A3005D2950 /* ETSConnection.m */,
+				2601088D181596820037E795 /* ETSCollectionViewController.h */,
+				2601088E181596820037E795 /* ETSCollectionViewController.m */,
+				2698C6F01827498800F6281F /* ETSAuthenticationViewController.h */,
+				2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
 		266BE77C17ECEFDA00F44252 /* MFSideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +181,37 @@
 				266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */,
 			);
 			name = MFSideMenu;
+			sourceTree = "<group>";
+		};
+		2698C6F618274F4F00F6281F /* KeychainWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				2698C6F318274F4B00F6281F /* KeychainItemWrapper.h */,
+				2698C6F418274F4B00F6281F /* KeychainItemWrapper.m */,
+			);
+			name = KeychainWrapper;
+			sourceTree = "<group>";
+		};
+		2698C6FB182834E500F6281F /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				2698C6F8182834E000F6281F /* ETSCourseCell.h */,
+				2698C6F9182834E000F6281F /* ETSCourseCell.m */,
+				26F393211829984F00995E16 /* ETSSessionHeader.h */,
+				26F393221829984F00995E16 /* ETSSessionHeader.m */,
+			);
+			name = Courses;
+			sourceTree = "<group>";
+		};
+		269BFF591814C627005D2950 /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				269BFF5A1814C649005D2950 /* ETSCoursesViewController.h */,
+				269BFF5B1814C649005D2950 /* ETSCoursesViewController.m */,
+				262A6344182B3DDA00B786A0 /* ETSCourseDetailViewController.h */,
+				262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */,
+			);
+			name = Courses;
 			sourceTree = "<group>";
 		};
 		26AE185E17F3275600DB1EB4 /* Styles */ = {
@@ -150,6 +228,12 @@
 			children = (
 				26AE186417F32CC800DB1EB4 /* UIStoryboard+ViewController.h */,
 				26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */,
+				269BFF541811A41C005D2950 /* NSManagedObject+SetValues.h */,
+				269BFF551811A41C005D2950 /* NSManagedObject+SetValues.m */,
+				26085B3E1829D8D700FE35AB /* NSURL+API.h */,
+				26085B3F1829D8D700FE35AB /* NSURL+API.m */,
+				26A65540182ABE6E00DEE9B7 /* NSURLRequest+API.h */,
+				26A65541182ABE6E00DEE9B7 /* NSURLRequest+API.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -213,7 +297,9 @@
 		26DD92B017EA610D00469FA8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				269BFF571811A640005D2950 /* ETSAPICoreDataMapping.plist */,
 				26DD92B117EA610D00469FA8 /* ETSMobile-Info.plist */,
+				26085B3C1829D84300FE35AB /* ETSAPIURL.plist */,
 				26DD92B217EA610D00469FA8 /* InfoPlist.strings */,
 				26DD92B517EA610D00469FA8 /* main.m */,
 				26DD92B717EA610D00469FA8 /* ETSMobile-Prefix.pch */,
@@ -242,6 +328,8 @@
 		26DD92E817EA612800469FA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				26010889181583740037E795 /* ETSCourse.h */,
+				2601088A181583740037E795 /* ETSCourse.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -249,6 +337,8 @@
 		26DD92E917EA613400469FA8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				260108901815968D0037E795 /* Base */,
+				269BFF591814C627005D2950 /* Courses */,
 				26DD92ED17EA623300469FA8 /* Menu */,
 				26DD92EC17EA622D00469FA8 /* News */,
 			);
@@ -258,6 +348,7 @@
 		26DD92EA17EA613C00469FA8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2698C6FB182834E500F6281F /* Courses */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -265,7 +356,7 @@
 		26DD92EB17EA615E00469FA8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				26E0224217F377450045A930 /* CRNavigationController */,
+				2698C6F618274F4F00F6281F /* KeychainWrapper */,
 				266BE77C17ECEFDA00F44252 /* MFSideMenu */,
 			);
 			name = Vendors;
@@ -287,17 +378,6 @@
 				26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */,
 			);
 			name = Menu;
-			sourceTree = "<group>";
-		};
-		26E0224217F377450045A930 /* CRNavigationController */ = {
-			isa = PBXGroup;
-			children = (
-				26E0224317F3775A0045A930 /* CRNavigationBar.h */,
-				26E0224417F3775A0045A930 /* CRNavigationBar.m */,
-				26E0224517F3775A0045A930 /* CRNavigationController.h */,
-				26E0224617F3775A0045A930 /* CRNavigationController.m */,
-			);
-			name = CRNavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,7 +460,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26085B3D1829D84300FE35AB /* ETSAPIURL.plist in Resources */,
 				26DD92C017EA610D00469FA8 /* Main_iPad.storyboard in Resources */,
+				269BFF581811A640005D2950 /* ETSAPICoreDataMapping.plist in Resources */,
 				26DD92CB17EA610D00469FA8 /* Images.xcassets in Resources */,
 				26DD92BD17EA610D00469FA8 /* Main_iPhone.storyboard in Resources */,
 				26DD92B417EA610D00469FA8 /* InfoPlist.strings in Resources */,
@@ -402,20 +484,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26E0224817F3775A0045A930 /* CRNavigationController.m in Sources */,
+				262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */,
+				2601088B181583740037E795 /* ETSCourse.m in Sources */,
+				269BFF521810A9A3005D2950 /* ETSConnection.m in Sources */,
+				269BFF561811A41C005D2950 /* NSManagedObject+SetValues.m in Sources */,
 				26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */,
+				26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */,
+				2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */,
 				26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */,
 				26DD92B617EA610D00469FA8 /* main.m in Sources */,
 				26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */,
-				26E0224717F3775A0045A930 /* CRNavigationBar.m in Sources */,
 				26DD92C317EA610D00469FA8 /* ETSMobile.xcdatamodeld in Sources */,
+				26A65542182ABE6E00DEE9B7 /* NSURLRequest+API.m in Sources */,
 				266BE78517ECEFF300F44252 /* MFSideMenuShadow.m in Sources */,
+				2601088F181596820037E795 /* ETSCollectionViewController.m in Sources */,
 				26DD92C617EA610D00469FA8 /* ETSMasterViewController.m in Sources */,
+				26085B401829D8D700FE35AB /* NSURL+API.m in Sources */,
 				266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */,
 				26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */,
 				266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */,
+				2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */,
+				269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */,
 				26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */,
 				26DD92C917EA610D00469FA8 /* ETSDetailViewController.m in Sources */,
+				2698C6F518274F4B00F6281F /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +644,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
@@ -566,6 +659,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";

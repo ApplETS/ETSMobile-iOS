@@ -8,6 +8,7 @@
 
 #import "ETSMenuViewController.h"
 #import "ETSNewsViewController.h"
+#import "ETSCoursesViewController.h"
 #import "MFSideMenuContainerViewController.h"
 #import "UIColor+Styles.h"
 #import "UIStoryboard+ViewController.h"
@@ -183,10 +184,10 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
         
         }
         else if (indexPath.row == ETSMenuMeCourse) {
-
+            viewController = [self.storyboard instantiateCoursesViewController];
         }
         else if (indexPath.row == ETSMenuMeInternship) {
-
+            viewController = [self.storyboard instantiateAuthenticationViewController];
         }
         else if (indexPath.row == ETSMenuMeProfile) {
 
@@ -197,7 +198,9 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
     }
     
     else if (indexPath.section == 1) {
-        if (indexPath.row == ETSMenuUniversityNews) viewController = [self.storyboard instantiateNewsViewController];
+        if (indexPath.row == ETSMenuUniversityNews) {
+            viewController = [self.storyboard instantiateNewsViewController];
+        }
         else if (indexPath.row == ETSMenuUniversityDirectory) {
 
         }

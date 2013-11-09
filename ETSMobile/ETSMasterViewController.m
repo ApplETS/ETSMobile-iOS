@@ -131,7 +131,7 @@
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
-    if (_fetchedResultsController != nil) {
+/*    if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
     
@@ -163,7 +163,8 @@
 	    abort();
 	}
     
-    return _fetchedResultsController;
+    return _fetchedResultsController; */
+    return nil;
 }    
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller

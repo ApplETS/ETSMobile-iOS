@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Course</key>
+	<dict>
+		<key>session</key>
+		<string>session</string>
+		<key>acronym</key>
+		<string>sigle</string>
+		<key>credits</key>
+		<string>nbCredits</string>
+		<key>grade</key>
+		<string>cote</string>
+		<key>group</key>
+		<string>groupe</string>
+		<key>program</key>
+		<string>programmeEtudes</string>
+		<key>title</key>
+		<string>titreCours</string>
+	</dict>
+</dict>
+</plist>

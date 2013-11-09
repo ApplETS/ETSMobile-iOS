@@ -15,4 +15,14 @@
     return [self instantiateViewControllerWithIdentifier:@"NewsViewController"];
 }
 
+- (id)instantiateAuthenticationViewController
+{
+    return [self instantiateViewControllerWithIdentifier:@"AuthenticationViewController"];
+}
+
+- (id)instantiateCoursesViewController
+{
+    return [self instantiateViewControllerWithIdentifier:@"CoursesViewController"];
+}
+
 @end
