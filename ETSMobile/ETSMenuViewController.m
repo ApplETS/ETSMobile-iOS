@@ -86,65 +86,65 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
     if (indexPath.section == 0) {
         if (indexPath.row == ETSMenuMeToday) {
             cell.textLabel.text = NSLocalizedString(@"Aujourd'hui", nil);
-            cell.imageView.image = nil;
+            cell.imageView.image = [UIImage imageNamed:@"ico_today_24x24.png"];
         }
         else if (indexPath.row == ETSMenuMeSchedule) {
             cell.textLabel.text = NSLocalizedString(@"Horaire", nil);
-            cell.imageView.image = nil;
+            cell.imageView.image = [UIImage imageNamed:@"ico_schedule_24x24.png"];
         }
         else if (indexPath.row == ETSMenuMeCourse) {
             cell.textLabel.text = NSLocalizedString(@"Notes", nil);
-            cell.imageView.image = nil;
+            cell.imageView.image = [UIImage imageNamed:@"ico_notes_24x24.png"];
         }
         else if (indexPath.row == ETSMenuMeInternship) {
             cell.textLabel.text = NSLocalizedString(@"Stages", nil);
-            cell.imageView.image = nil;
+            cell.imageView.image = [UIImage imageNamed:@"ico_stage.png"];
         }
         else if (indexPath.row == ETSMenuMeProfile) {
             cell.textLabel.text = NSLocalizedString(@"Profil", nil);
-            cell.imageView.image = nil;
+            cell.imageView.image = [UIImage imageNamed:@"ico_profil.png"];
         }
         else if (indexPath.row == ETSMenuMeBandwidth) {
             cell.textLabel.text = NSLocalizedString(@"Bande passante", nil);
-            cell.imageView.image = nil;
+            cell.imageView.image = [UIImage imageNamed:@"ico_internet.png"];
         }
     }
     
     else if (indexPath.section == 1) {
         if (indexPath.row == ETSMenuUniversityNews) {
             cell.textLabel.text = NSLocalizedString(@"Nouvelles", nil);
-            cell.imageView.image = nil;
+            cell.imageView.image = [UIImage imageNamed:@"ico_news.png"];
         }
         else if (indexPath.row == ETSMenuUniversityDirectory) {
             cell.textLabel.text = NSLocalizedString(@"Bottin", nil);
-            cell.imageView.image = nil;
+            cell.imageView.image = [UIImage imageNamed:@"ico_bottin.png"];
         }
         else if (indexPath.row == ETSMenuUniversityLibrary) {
             cell.textLabel.text = NSLocalizedString(@"Bibliothèque", nil);
-            cell.imageView.image = nil;
+            cell.imageView.image = [UIImage imageNamed:@"ico_library.png"];
         }
         else if (indexPath.row == ETSMenuUniversityRadio) {
             cell.textLabel.text = NSLocalizedString(@"Radio", nil);
-            cell.imageView.image = nil;
+             cell.imageView.image = [UIImage imageNamed:@"ico_radio.png"];
         }
         else if (indexPath.row == ETSMenuUniversitySecurity) {
             cell.textLabel.text = NSLocalizedString(@"Sécurité", nil);
-            cell.imageView.image = nil;
+             cell.imageView.image = [UIImage imageNamed:@"ico_security.png"];
         }
     }
     
     else if (indexPath.section == 2) {
         if (indexPath.row == ETSMenuApplETSComments) {
             cell.textLabel.text = NSLocalizedString(@"Problème ou commentaire?", nil);
-            cell.imageView.image = nil;
+            cell.imageView.image = [UIImage imageNamed:@"ico_comment.png"];
         }
         else if (indexPath.row == ETSMenuApplETSAbout) {
             cell.textLabel.text = NSLocalizedString(@"À propos d'ÉTSMobile", nil);
-            cell.imageView.image = nil;
+            cell.imageView.image = [UIImage imageNamed:@"ico_about.png"];
         }
         else if (indexPath.row == ETSMenuApplETSSponsors) {
             cell.textLabel.text = NSLocalizedString(@"Nos partenaires", nil);
-            cell.imageView.image = nil;
+            cell.imageView.image = [UIImage imageNamed:@"ico_partners.png"];
         }
     }
 

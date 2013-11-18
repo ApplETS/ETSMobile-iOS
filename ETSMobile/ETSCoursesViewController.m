@@ -80,10 +80,19 @@
     ETSCourse *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
     ETSCourseCell *courseCell = (ETSCourseCell *)cell;
     courseCell.gradeLabel.text = course.grade;
+    
+//    NSMutableString *Var_1 =[NSMutableString stringWithCapacity:0];
+//    [Var_1 setString:course.acronym];
+//    [Var_1 appendString:@"\n,"];
+    
     courseCell.acronymLabel.text = course.acronym;
-    courseCell.layer.cornerRadius = 7.0f;
-    courseCell.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    courseCell.layer.borderWidth = 0.5f;
+    
+   
+    
+    courseCell.layer.cornerRadius = 2.0f;
+    courseCell.layer.borderColor = [UIColor colorWithRed:190.0f/255.0f green:0.0f/255.0f blue:10.0f/255.0f alpha:1].CGColor;
+    courseCell.layer.borderWidth = 1.0f;
+    //courseCell.lay
 }
 
 - (void)collectionView:(UICollectionView *)colView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -105,6 +114,7 @@
         topBorder.frame = CGRectMake(0.0f, 0.0f, headerView.frame.size.width, 0.5f);
         topBorder.backgroundColor = [UIColor lightGrayColor].CGColor;
         [headerView.layer addSublayer:topBorder];
+
         
         ETSCourse *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
         
