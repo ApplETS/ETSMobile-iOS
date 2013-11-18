@@ -10,4 +10,6 @@
 
 @interface NSURL (API)
 + (id)URLForCourses;
++ (id)URLForEvaluations;
++ (id)URLForDirectory;
 @end

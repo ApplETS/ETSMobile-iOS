@@ -13,6 +13,8 @@
 #import "ETSSessionHeader.h"
 #import "NSURLRequest+API.h"
 #import "UIStoryboard+ViewController.h"
+#import "ETSCourseDetailViewController.h"
+#import "MFSideMenu.h"
 #import <QuartzCore/QuartzCore.h>
 
 
@@ -24,19 +26,25 @@
 
 @synthesize fetchedResultsController=_fetchedResultsController;
 
+- (void)panLeftMenu
+{
+    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title =  NSLocalizedString(@"Notes", nil);
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(panLeftMenu)];
+    
     
     self.cellIdentifier = @"CourseIdentifier";
-    self.connection = nil;
-    self.request = [NSURLRequest requestForCourses];
-    self.entityName = @"Course";
-    self.compareKey = @"acronym";
-    self.objectsKeyPath = @"d.liste";
     
     ETSConnection *connection = [[ETSConnection alloc] init];
+    connection.request = [NSURLRequest requestForCourses];
+    connection.entityName = @"Course";
+    connection.compareKey = @"acronym";
+    connection.objectsKeyPath = @"d.liste";
     self.connection = connection;
     self.connection.delegate = self;
     
@@ -59,10 +67,10 @@
 
     fetchRequest.fetchLimit = 24;
     
-    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"session" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"acronym" ascending:YES]];
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"order" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"acronym" ascending:YES]];
     [fetchRequest setSortDescriptors:sortDescriptors];
     
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"session" cacheName:nil];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"order" cacheName:nil];
     self.fetchedResultsController = aFetchedResultsController;
     _fetchedResultsController.delegate = self;
 
@@ -127,8 +135,14 @@
         
         return headerView;
     }
-    
     return nil;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    ETSCourseDetailViewController *vc = [segue destinationViewController];
+    vc.course = [self.fetchedResultsController objectAtIndexPath:[[self.collectionView indexPathsForSelectedItems] objectAtIndex:0]];
+    vc.managedObjectContext = self.managedObjectContext;
 }
 
 - (void)connection:(ETSConnection *)connection didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
@@ -141,14 +155,14 @@
     else if ([seasonString isEqualToString:@"É"]) course.season = @2;
     else if ([seasonString isEqualToString:@"A"]) course.season = @3;
     
-    if ([seasonString isEqualToString:@"H"])      course.session = [NSString stringWithFormat:@"%@-%@", course.year, @"1"];
-    else if ([seasonString isEqualToString:@"É"]) course.session = [NSString stringWithFormat:@"%@-%@", course.year, @"2"];
-    else if ([seasonString isEqualToString:@"A"]) course.session = [NSString stringWithFormat:@"%@-%@", course.year, @"3"];
+    if ([seasonString isEqualToString:@"H"])      course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"1"];
+    else if ([seasonString isEqualToString:@"É"]) course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"2"];
+    else if ([seasonString isEqualToString:@"A"]) course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"3"];
 }
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
 {
-    self.request = [NSURLRequest requestForCourses];
+    self.connection.request = [NSURLRequest requestForCourses];
     [super controllerDidAuthenticate:controller];
 }
 

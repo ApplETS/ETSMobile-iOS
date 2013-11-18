@@ -202,7 +202,7 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
             viewController = [self.storyboard instantiateNewsViewController];
         }
         else if (indexPath.row == ETSMenuUniversityDirectory) {
-
+            viewController = [self.storyboard instantiateDirectoryViewController];
         }
         else if (indexPath.row == ETSMenuUniversityLibrary) {
 

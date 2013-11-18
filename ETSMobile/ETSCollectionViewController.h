@@ -12,11 +12,6 @@
 
 @interface ETSCollectionViewController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, ETSConnectionDelegate, ETSAuthenticationViewControllerDelegate>
 
-@property (nonatomic, copy)   NSString *entityName;
-@property (nonatomic, copy)   NSString *objectsKeyPath;
-@property (nonatomic, copy)   NSString *compareKey;
-@property (nonatomic, strong) NSURLRequest *request;
-
 @property (strong, nonatomic) ETSConnection *connection;
 @property (copy,   nonatomic) NSString *cellIdentifier;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;

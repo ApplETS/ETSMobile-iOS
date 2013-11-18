@@ -6,8 +6,9 @@
 //  Copyright (c) 2013 ApplETS. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ETSTableViewController.h"
+#import "ETSCourse.h"
 
-@interface ETSCourseDetailViewController : UITableViewController
-
+@interface ETSCourseDetailViewController : ETSTableViewController <ETSConnectionDelegate>
+@property (nonatomic, strong) ETSCourse *course;
 @end

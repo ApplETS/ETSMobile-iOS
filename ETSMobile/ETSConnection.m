@@ -16,47 +16,53 @@
 
 @implementation ETSConnection
 
-- (void)loadDataWithRequest:(NSURLRequest *)request entityName:(NSString *)entityName forObjectsKeyPath:(NSString *)objectsKeyPath compareKey:(NSString *)key
+- (void)loadData
 {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     __weak typeof(self) bself = self;
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
+    [NSURLConnection sendAsynchronousRequest:self.request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
     {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        
+        //NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
         
         if (!data) return;
         
         NSError *jsonError = nil;
         NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+
+        if ([self.delegate respondsToSelector:@selector(connection:didReceiveDictionary:)]) [self.delegate connection:self didReceiveDictionary:jsonObjects];
+
+        id apiError = [jsonObjects valueForKeyPath:@"d.erreur"];
         
-        if ([[jsonObjects valueForKeyPath:@"d.erreur"] isEqualToString:@"Code d'accès ou mot de passe invalide"]) {
-            [self.delegate connection:self didReveiveResponse:ETSConnectionResponseAuthenticationError];
+        if ([apiError isKindOfClass:[NSString class]] && [apiError isEqualToString:@"Code d'accès ou mot de passe invalide"]) {
+            if ([self.delegate respondsToSelector:@selector(connection:didReceiveResponse:)]) [self.delegate connection:self didReveiveResponse:ETSConnectionResponseAuthenticationError];
             return;
-        } else if ([[jsonObjects valueForKeyPath:@"d.erreur"] length] == 0) {
-            [self.delegate connection:self didReveiveResponse:ETSConnectionResponseValid];
-        } else {
-            [self.delegate connection:self didReveiveResponse:ETSConnectionResponseUnknownError];
+        } else if ([apiError isKindOfClass:[NSString class]] && [apiError length] == 0) {
+            if ([self.delegate respondsToSelector:@selector(connection:didReceiveResponse:)]) [self.delegate connection:self didReveiveResponse:ETSConnectionResponseValid];
+        } else if ([apiError isKindOfClass:[NSString class]] && [apiError length] > 0) {
+            if ([self.delegate respondsToSelector:@selector(connection:didReceiveResponse:)]) [self.delegate connection:self didReveiveResponse:ETSConnectionResponseUnknownError];
             return;
         }
         
-        id json = [jsonObjects valueForKeyPath:objectsKeyPath];
+        id json = [jsonObjects valueForKeyPath:self.objectsKeyPath];
         
         NSManagedObjectContext *managedObjectContext = [(ETSAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-        
-        //NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
         
         NSDictionary *mappings = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ETSAPICoreDataMapping" ofType:@"plist"]];
         
         if ([json isKindOfClass:[NSArray class]])
         {
-            NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:[mappings[entityName] valueForKey:key] ascending:YES];
+            NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:[mappings[self.entityName] valueForKey:self.compareKey] ascending:YES];
             json = [((NSArray *)json) sortedArrayUsingDescriptors:@[descriptor]];
             
             NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-            NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:managedObjectContext];
+            NSEntityDescription *entity = [NSEntityDescription entityForName:self.entityName inManagedObjectContext:managedObjectContext];
             [fetchRequest setEntity:entity];
 
-            NSArray *sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:key ascending:YES]];
+            if (self.predicate) [fetchRequest setPredicate:self.predicate];
+            
+            NSArray *sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:self.compareKey ascending:YES]];
             [fetchRequest setSortDescriptors:sortDescriptors];
             
             NSError *fetchError;
@@ -70,13 +76,18 @@
                 NSManagedObject * rObject = nil;
                 if (i < [coredataArray count]) rObject = coredataArray[i];
                 
-                NSString *lString = [lObject valueForKey:[mappings[entityName] valueForKey:key]];
-                NSString *rString = [rObject valueForKey:key];
+                id l = [lObject valueForKey:[mappings[self.entityName] valueForKey:self.compareKey]];
+                NSString *lString = nil;
+                if ([l isKindOfClass:[NSNumber class]]) lString = [l stringValue];
+                else if ([l isKindOfClass:[NSString class]]) lString  = l;
                 
+                NSString *rString = [lObject valueForKey:self.compareKey];
+                
+
                 if (!rObject || [lString caseInsensitiveCompare:rString] == NSOrderedAscending) {
-                    NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:managedObjectContext];
-                    [managedObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:dateFormatter mapping:mappings[entityName]];
-                    [bself.delegate connection:bself didReceiveObject:lObject forManagedObject:managedObject];
+                    NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:self.entityName inManagedObjectContext:managedObjectContext];
+                    [managedObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:dateFormatter mapping:mappings[self.entityName]];
+                    if ([self.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)]) [bself.delegate connection:bself didReceiveObject:lObject forManagedObject:managedObject];
                 }
                 
                 else if ([lString caseInsensitiveCompare:rString] == NSOrderedDescending) {
@@ -91,15 +102,17 @@
                     for (NSString *attribute in attributes) {
                         [rObject setValue:nil forKey:attribute];
                     }
-                    [rObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:dateFormatter mapping:mappings[entityName]];
+                    [rObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:dateFormatter mapping:mappings[self.entityName]];
+                    if ([self.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)])
                     [bself.delegate connection:bself didReceiveObject:lObject forManagedObject:rObject];
                 }
             }
             
             while (i < [coredataArray count]) {
                 NSDictionary *lObject = json[i];
-                NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:managedObjectContext];
-                [managedObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:dateFormatter mapping:mappings[entityName]];
+                NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:self.entityName inManagedObjectContext:managedObjectContext];
+                [managedObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:dateFormatter mapping:mappings[self.entityName]];
+                if ([self.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)])
                 [bself.delegate connection:bself didReceiveObject:lObject forManagedObject:managedObject];
                 i++;
             }
@@ -110,8 +123,8 @@
                 NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             }
         }
-        
-
+        if ([self.delegate respondsToSelector:@selector(connectionDidFinishLoading:)])
+        [self.delegate connectionDidFinishLoading:self];
         
     }];
 }

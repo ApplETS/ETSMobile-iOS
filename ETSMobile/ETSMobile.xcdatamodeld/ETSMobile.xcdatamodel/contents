@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F45" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Contact" representedClassName="ETSContact" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ext" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstInitial" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="job" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastInitial" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="office" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="service" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Course" representedClassName="ETSCourse">
         <attribute name="acronym" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="credits" optional="YES" attributeType="String" syncable="YES"/>
@@ -7,14 +21,37 @@
             <userInfo/>
         </attribute>
         <attribute name="group" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mean" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="median" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="percentile" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="program" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="results" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="season" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="session" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="std" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="evaluations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evaluation" inverseName="course" inverseEntity="Evaluation" syncable="YES"/>
         <userInfo/>
     </entity>
+    <entity name="Evaluation" representedClassName="ETSEvaluation" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="ignored" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="mean" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="median" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="percentile" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="result" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="std" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="team" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="total" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="weighting" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="evaluations" inverseEntity="Course" syncable="YES"/>
+    </entity>
     <elements>
+        <element name="Contact" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Course" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Evaluation" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

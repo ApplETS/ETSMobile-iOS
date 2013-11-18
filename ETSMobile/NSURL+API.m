@@ -23,7 +23,17 @@
 
 + (id)URLForCourses
 {
-    return [NSURL URLWithString:[[NSURL dictionaryFromPlist] objectForKey:@"Courses"]];
+    return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Courses"]];
+}
+
++ (id)URLForEvaluations
+{
+    return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Evaluations"]];
+}
+
++ (id)URLForDirectory
+{
+    return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Directory"]];
 }
 
 @end

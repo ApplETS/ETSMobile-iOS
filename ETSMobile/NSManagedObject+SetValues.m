@@ -29,6 +29,8 @@
             value = @([value doubleValue]);
         } else if ((attributeType == NSDateAttributeType) && ([value isKindOfClass:[NSString class]]) && (dateFormatter != nil)) {
             value = [dateFormatter dateFromString:value];
+        } else if ((attributeType == NSStringAttributeType) &&  ([value isKindOfClass:[NSNull class]])) {
+            value = nil;
         }
         [self setValue:value forKey:attribute];
     }
