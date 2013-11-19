@@ -102,7 +102,7 @@
 {
 }
 
-- (void)connection:(ETSConnection *)connection didReveiveResponse:(ETSConnectionResponse)response
+- (void)connection:(ETSConnection *)connection didReceiveResponse:(ETSConnectionResponse)response
 {
 
     if (response == ETSConnectionResponseAuthenticationError) {

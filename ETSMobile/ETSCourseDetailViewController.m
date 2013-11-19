@@ -12,11 +12,17 @@
 
 @interface ETSCourseDetailViewController ()
 @property (nonatomic, strong) NSNumberFormatter *formatter;
+@property (nonatomic, assign) BOOL hadResults;
 @end
 
 @implementation ETSCourseDetailViewController
 
 @synthesize fetchedResultsController=_fetchedResultsController;
+
+- (void)startRefresh:(id)sender
+{
+    [self.connection loadData];
+}
 
 - (void)viewDidLoad
 {
@@ -37,8 +43,13 @@
     self.formatter.decimalSeparator = @",";
     self.formatter.maximumFractionDigits = 1;
     self.formatter.minimumFractionDigits = 1;
+    self.formatter.minimumIntegerDigits = 1;
+    
+    [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
     
     self.title = self.course.acronym;
+    
+    self.hadResults = [self.course.results floatValue] > 0;
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -51,7 +62,7 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Evaluation" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
     
-    fetchRequest.fetchLimit = 10;
+    fetchRequest.fetchBatchSize = 10;
     
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"course.acronym == %@", self.course.acronym];
     
@@ -78,9 +89,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) return [self.course.grade length] > 0 ? 6 : 5;
+    if (section == 0) {
+        if ([self.course.results floatValue] > 0) return [self.course.grade length] > 0 ? 6 : 5;
+        else return [self.course.grade length] > 0 ? 1 : 0;
+    }
     
-    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:0];
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
     return [sectionInfo numberOfObjects];
 }
 
@@ -100,9 +114,17 @@
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:evaluation.result], [self.formatter stringFromNumber:evaluation.total]];
     }
     else {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         if (indexPath.row == 0) {
-            cell.textLabel.text = NSLocalizedString(@"Note à ce jour", nil);
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:self.course.results], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]]];
+            if ([self.course.results floatValue] == 0) {
+                cell.textLabel.text = NSLocalizedString(@"Cote au dossier", nil);
+                cell.detailTextLabel.text = self.course.grade;
+            }
+            else {
+                cell.textLabel.text = NSLocalizedString(@"Note à ce jour", nil);
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:self.course.results], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]]];
+            }
         }
         else if (indexPath.row == 1) {
             cell.textLabel.text = NSLocalizedString(@"Moyenne du groupe", nil);
@@ -129,26 +151,52 @@
 
 - (void)connection:(ETSConnection *)connection didReceiveDictionary:(NSDictionary *)dictionary
 {
-    NSDictionary *results = [dictionary objectForKey:@"d"];
-    self.course.results     = [self.formatter numberFromString:[results objectForKey:@"noteACeJour"]];
-    self.course.mean        = [self.formatter numberFromString:[results objectForKey:@"moyenneClasse"]];
-    self.course.std         = [self.formatter numberFromString:[results objectForKey:@"ecartTypeClasse"]];
-    self.course.median      = [self.formatter numberFromString:[results objectForKey:@"medianeClasse"]];
-    self.course.percentile  = [self.formatter numberFromString:[results objectForKey:@"rangCentileClasse"]];
+    NSDictionary *results = dictionary[@"d"];
+    self.course.results     = [self.formatter numberFromString:results[@"noteACeJour"]];
+    self.course.mean        = [self.formatter numberFromString:results[@"moyenneClasse"]];
+    self.course.std         = [self.formatter numberFromString:results[@"ecartTypeClasse"]];
+    self.course.median      = [self.formatter numberFromString:results[@"medianeClasse"]];
+    self.course.percentile  = [self.formatter numberFromString:results[@"rangCentileClasse"]];
     
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    if (!self.hadResults && [self.course.results floatValue] > 0) {
+        NSInteger offset = 0;
+        if ([self.course.grade length] > 0) offset = 1;
+        
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0+offset inSection:0],
+                                                 [NSIndexPath indexPathForRow:1+offset inSection:0],
+                                                 [NSIndexPath indexPathForRow:2+offset inSection:0],
+                                                 [NSIndexPath indexPathForRow:3+offset inSection:0],
+                                                 [NSIndexPath indexPathForRow:4+offset inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        self.hadResults = YES;
+    }
 }
 
 - (void)connection:(ETSConnection *)connection didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     ETSEvaluation *evaluation = (ETSEvaluation *)managedObject;
     evaluation.course = self.course;
-    evaluation.ignored = [[object objectForKey:@"ignoreDuCalcul"] isEqualToString:@"Non"] ? [NSNumber numberWithBool:NO] : [NSNumber numberWithBool:YES];
+    evaluation.ignored = [object[@"ignoreDuCalcul"] isEqualToString:@"Non"] ? @NO : @YES;
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
+{
+    indexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section + 1];
+    if (newIndexPath) {
+        newIndexPath = [NSIndexPath indexPathForRow:newIndexPath.row inSection:newIndexPath.section + 1];
+    }
+    
+    [super controller:controller didChangeObject:anObject atIndexPath:indexPath forChangeType:type newIndexPath:newIndexPath];
 }
 
 - (void)connectionDidFinishLoading:(ETSConnection *)connection
 {
+    [super connectionDidFinishLoading:connection];
     
+    NSInteger rows = [self.tableView numberOfRowsInSection:0];
+    for (NSInteger i = 0; i < rows; i++) {
+        [self configureCell:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]] atIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+    }
 }
 
 @end

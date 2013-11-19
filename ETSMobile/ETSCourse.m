@@ -37,7 +37,7 @@
             sum += [evaluation.weighting floatValue];
         }
     }
-    return [NSNumber numberWithFloat:sum];
+    return @(sum);
 }
 
 

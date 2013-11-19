@@ -8,6 +8,7 @@
 
 #import "ETSCoursesViewController.h"
 #import "ETSCourse.h"
+#import "ETSEvaluation.h"
 #import "ETSAuthenticationViewController.h"
 #import "ETSCourseCell.h"
 #import "ETSSessionHeader.h"
@@ -45,6 +46,7 @@
     connection.entityName = @"Course";
     connection.compareKey = @"acronym";
     connection.objectsKeyPath = @"d.liste";
+    connection.ignoredAttributesFromUpdate = @[@"results", @"mean", @"median", @"std", @"percentile"];
     self.connection = connection;
     self.connection.delegate = self;
     
@@ -65,7 +67,7 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
 
-    fetchRequest.fetchLimit = 24;
+    fetchRequest.fetchBatchSize = 24;
     
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"order" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"acronym" ascending:YES]];
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -87,7 +89,17 @@
 {
     ETSCourse *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
     ETSCourseCell *courseCell = (ETSCourseCell *)cell;
-    courseCell.gradeLabel.text = course.grade;
+    
+    if ([course.grade length] > 0) {
+        courseCell.gradeLabel.text = course.grade;
+    }
+    else if ([course.results floatValue] > 0) {
+        NSNumber *percent = [NSNumber numberWithFloat:[course.results floatValue]/[[course totalEvaluationWeighting] floatValue]*100];
+        courseCell.gradeLabel.text = [NSString stringWithFormat:@"%lu %%", [percent integerValue]];
+    } else {
+        courseCell.gradeLabel.text = @"—";
+    }
+    
     
 //    NSMutableString *Var_1 =[NSMutableString stringWithCapacity:0];
 //    [Var_1 setString:course.acronym];
@@ -141,12 +153,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     ETSCourseDetailViewController *vc = [segue destinationViewController];
-    vc.course = [self.fetchedResultsController objectAtIndexPath:[[self.collectionView indexPathsForSelectedItems] objectAtIndex:0]];
+    vc.course = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
     vc.managedObjectContext = self.managedObjectContext;
 }
 
 - (void)connection:(ETSConnection *)connection didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
+    if ([managedObject isKindOfClass:[ETSEvaluation class]]) return;
+    
     ETSCourse *course = (ETSCourse *)managedObject;
     course.year = @([[object[@"session"] substringFromIndex:1] integerValue]);
     
@@ -158,6 +172,19 @@
     if ([seasonString isEqualToString:@"H"])      course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"1"];
     else if ([seasonString isEqualToString:@"É"]) course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"2"];
     else if ([seasonString isEqualToString:@"A"]) course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"3"];
+    /*
+    if ([course.grade length] == 0) {
+        ETSConnection *connection = [[ETSConnection alloc] init];
+        connection.request = [NSURLRequest requestForEvaluationsWithCourse:course];
+        connection.entityName = @"Evaluation";
+        connection.compareKey = @"name";
+        connection.objectsKeyPath = @"d.liste";
+        connection.predicate = [NSPredicate predicateWithFormat:@"course.acronym == %@", course.acronym];
+        connection.delegate = self;
+        [connection loadData];
+        // Aurait besoin d'un block pour mettre a jour les cours...
+    }
+     */
 }
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
