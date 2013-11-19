@@ -22,23 +22,13 @@
 	<key>Profile</key>
 	<dict>
 		<key>firstName</key>
-		<string>firstName</string>
+		<string>nom</string>
 		<key>lastName</key>
-		<string>lastName</string>
+		<string>prenom</string>
 		<key>permanentCode</key>
-		<string>permanentCode</string>
+		<string>codePerm</string>
 		<key>balance</key>
-		<string>balance</string>
-		<key>program</key>
-		<string>programmeEtudes</string>
-		<key>creditsPassed</key>
-		<string></string>
-		<key>creditsFailed</key>
-		<string></string>
-		<key>creditsSubscribed</key>
-		<string></string>
-		<key>gradeAverage</key>
-		<string></string>
+		<string>soldeTotal</string>
 	</dict>
 </dict>
 </plist>

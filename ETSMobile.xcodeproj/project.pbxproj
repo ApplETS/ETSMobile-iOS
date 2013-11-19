@@ -48,6 +48,7 @@
 		26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */; };
 		26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92F217EA625200469FA8 /* ETSNewsViewController.m */; };
 		26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F393221829984F00995E16 /* ETSSessionHeader.m */; };
+		D149FFDA183B08F4003B359F /* ETSProfileRow.m in Sources */ = {isa = PBXBuildFile; fileRef = D149FFD9183B08F4003B359F /* ETSProfileRow.m */; };
 		D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15F4AE3183992D00034605B /* ETSProfileViewController.m */; };
 		D15F4AE71839A80B0034605B /* ETSProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = D15F4AE61839A80B0034605B /* ETSProfile.m */; };
 /* End PBXBuildFile section */
@@ -129,6 +130,8 @@
 		26DD92F217EA625200469FA8 /* ETSNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsViewController.m; sourceTree = "<group>"; };
 		26F393211829984F00995E16 /* ETSSessionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSessionHeader.h; sourceTree = "<group>"; };
 		26F393221829984F00995E16 /* ETSSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSessionHeader.m; sourceTree = "<group>"; };
+		D149FFD8183B08F4003B359F /* ETSProfileRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProfileRow.h; sourceTree = "<group>"; };
+		D149FFD9183B08F4003B359F /* ETSProfileRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSProfileRow.m; sourceTree = "<group>"; };
 		D15F4AE2183992D00034605B /* ETSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProfileViewController.h; sourceTree = "<group>"; };
 		D15F4AE3183992D00034605B /* ETSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSProfileViewController.m; sourceTree = "<group>"; };
 		D15F4AE51839A80B0034605B /* ETSProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProfile.h; sourceTree = "<group>"; };
@@ -402,6 +405,8 @@
 		D15F4AE81839B4190034605B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				D149FFD8183B08F4003B359F /* ETSProfileRow.h */,
+				D149FFD9183B08F4003B359F /* ETSProfileRow.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -524,6 +529,7 @@
 				26DD92C317EA610D00469FA8 /* ETSMobile.xcdatamodeld in Sources */,
 				26A65542182ABE6E00DEE9B7 /* NSURLRequest+API.m in Sources */,
 				266BE78517ECEFF300F44252 /* MFSideMenuShadow.m in Sources */,
+				D149FFDA183B08F4003B359F /* ETSProfileRow.m in Sources */,
 				2601088F181596820037E795 /* ETSCollectionViewController.m in Sources */,
 				26DD92C617EA610D00469FA8 /* ETSMasterViewController.m in Sources */,
 				26085B401829D8D700FE35AB /* NSURL+API.m in Sources */,

@@ -9,10 +9,10 @@
 #import "ETSProfileViewController.h"
 #import "ETSProfile.h"
 #import "ETSAuthenticationViewController.h"
+#import "ETSProfileRow.h"
 #import "NSURLRequest+API.h"
 #import "UIStoryboard+ViewController.h"
 #import <QuartzCore/QuartzCore.h>
-
 
 @interface ETSProfileViewController ()
     @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
@@ -20,7 +20,7 @@
 
 @implementation ETSProfileViewController
 
-@synthesize fetchedResultsController = _fetchedResultsController;
+@synthesize fetchedResultsController=_fetchedResultsController;
 
 - (void)viewDidLoad
 {
@@ -31,9 +31,7 @@
     self.connection = nil;
     self.request = [NSURLRequest requestForProfile];
     self.entityName = @"Profile";
-//    self.compareKey = @"acronym";
-//    self.objectsKeyPath = @"d.liste";
-    NSLog(@"%@", self.request);
+
     ETSConnection *connection = [[ETSConnection alloc] init];
     self.connection = connection;
     self.connection.delegate = self;
@@ -57,7 +55,10 @@
     
     fetchRequest.fetchLimit = 1;
     
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"session" cacheName:nil];
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"lastName" ascending:NO]];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"lastName" cacheName:nil];
     self.fetchedResultsController = aFetchedResultsController;
     _fetchedResultsController.delegate = self;
     
@@ -68,6 +69,21 @@
     }
     
     return _fetchedResultsController;
+}
+
+- (void)configureCell:(UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    ETSProfile *profile = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    ETSProfileRow *profileRow = (ETSProfileRow *)cell;
+    NSLog(@"%@", profileRow);
+    NSLog(@"%@", profile);
+    profileRow.keyLabel.text = @"Nom :";
+    profileRow.valueLabel.text = profile.lastName;
+}
+
+- (void)connection:(ETSConnection *)connection didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
+{
+    ETSProfile *profile = (ETSProfile *)managedObject;
 }
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
