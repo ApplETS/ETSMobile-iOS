@@ -9,6 +9,7 @@
 #import "ETSMenuViewController.h"
 #import "ETSNewsViewController.h"
 #import "ETSCoursesViewController.h"
+#import "ETSProfileViewController.h"
 #import "ETSWebViewViewController.h"
 #import "MFSideMenuContainerViewController.h"
 #import "UIColor+Styles.h"
@@ -191,7 +192,7 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
             viewController = [self.storyboard instantiateAuthenticationViewController];
         }
         else if (indexPath.row == ETSMenuMeProfile) {
-
+            viewController = [self.storyboard instantiateProfileViewController];
         }
         else if (indexPath.row == ETSMenuMeBandwidth) {
 

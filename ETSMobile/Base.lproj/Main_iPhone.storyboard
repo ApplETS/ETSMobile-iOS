@@ -355,6 +355,24 @@
             </objects>
             <point key="canvasLocation" x="-556" y="-1384"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="E0x-bV-z2Q">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="0z8-ks-Thk" customClass="ETSProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s3r-ur-0If"/>
+                        <viewControllerLayoutGuide type="bottom" id="uKA-t8-vCF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ziP-uI-iQa" customClass="UICollectionView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YDU-DN-qkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="426" y="-680"/>
+        </scene>
         <!--Authentication View Controller-->
         <scene sceneID="MyO-uF-Owl">
             <objects>
@@ -396,10 +414,13 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qak-AD-gWt">
-                                <rect key="frame" x="188" y="112" width="98" height="30"/>
+                                <rect key="frame" x="187" y="118" width="99" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Se connecter">
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="contentStretch" x="1.3877787807814457e-17" y="0.0" width="1" height="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
+                                <state key="normal" title="Connexion">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>

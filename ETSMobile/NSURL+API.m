@@ -36,4 +36,9 @@
     return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Directory"]];
 }
 
++ (id)URLForProfile
+{
+    return [NSURL URLWithString:[[NSURL dictionaryFromPlist] objectForKey:@"Profile"]];
+}
+
 @end
