@@ -129,4 +129,9 @@
 #warning Si mauvais username/password
 }
 
+- (void)connectionDidFinishLoading:(ETSConnection *)connection
+{
+    [self.refreshControl endRefreshing];
+}
+
 @end

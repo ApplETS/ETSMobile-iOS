@@ -11,10 +11,26 @@
 #import "ETSAppDelegate.h"
 
 @interface ETSConnection ()
-
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
++ (NSManagedObjectContext *)mainManagedObjectContext;
 @end
 
 @implementation ETSConnection
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.saveAutomatically = YES;
+        self.managedObjectContext = nil;
+    }
+    return self;
+}
+
++ (NSManagedObjectContext *)mainManagedObjectContext
+{
+    return [(ETSAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+}
 
 - (void)loadData
 {
@@ -31,102 +47,138 @@
         NSError *jsonError = nil;
         NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
 
-        if ([self.delegate respondsToSelector:@selector(connection:didReceiveDictionary:)]) [self.delegate connection:self didReceiveDictionary:jsonObjects];
+        if ([bself.delegate respondsToSelector:@selector(connection:didReceiveDictionary:)]) [bself.delegate connection:bself didReceiveDictionary:jsonObjects];
 
         id apiError = [jsonObjects valueForKeyPath:@"d.erreur"];
         
         if ([apiError isKindOfClass:[NSString class]] && [apiError isEqualToString:@"Code d'accès ou mot de passe invalide"]) {
-            if ([self.delegate respondsToSelector:@selector(connection:didReceiveResponse:)]) [self.delegate connection:self didReveiveResponse:ETSConnectionResponseAuthenticationError];
+            if ([bself.delegate respondsToSelector:@selector(connection:didReceiveResponse:)]) [bself.delegate connection:bself didReceiveResponse:ETSConnectionResponseAuthenticationError];
             return;
         } else if ([apiError isKindOfClass:[NSString class]] && [apiError length] == 0) {
-            if ([self.delegate respondsToSelector:@selector(connection:didReceiveResponse:)]) [self.delegate connection:self didReveiveResponse:ETSConnectionResponseValid];
+            if ([bself.delegate respondsToSelector:@selector(connection:didReceiveResponse:)]) {
+                [bself.delegate connection:bself didReceiveResponse:ETSConnectionResponseValid];
+            }
         } else if ([apiError isKindOfClass:[NSString class]] && [apiError length] > 0) {
-            if ([self.delegate respondsToSelector:@selector(connection:didReceiveResponse:)]) [self.delegate connection:self didReveiveResponse:ETSConnectionResponseUnknownError];
+            if ([bself.delegate respondsToSelector:@selector(connection:didReceiveResponse:)]) [bself.delegate connection:bself didReceiveResponse:ETSConnectionResponseUnknownError];
             return;
         }
         
-        id json = [jsonObjects valueForKeyPath:self.objectsKeyPath];
+        id json = [jsonObjects valueForKeyPath:bself.objectsKeyPath];
         
-        NSManagedObjectContext *managedObjectContext = [(ETSAppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+        if (bself.saveAutomatically)
+            bself.managedObjectContext = [ETSConnection mainManagedObjectContext];
+        else {
+            bself.managedObjectContext = [[NSManagedObjectContext alloc] init];
+            [bself.managedObjectContext setUndoManager:nil];
+            [bself.managedObjectContext setPersistentStoreCoordinator:[[ETSConnection mainManagedObjectContext] persistentStoreCoordinator]];
+            [[NSNotificationCenter defaultCenter] addObserver:bself selector:@selector(addControllerContextDidSave:) name:NSManagedObjectContextDidSaveNotification object:bself.managedObjectContext];
+        }
         
         NSDictionary *mappings = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ETSAPICoreDataMapping" ofType:@"plist"]];
         
         if ([json isKindOfClass:[NSArray class]])
         {
-            NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:[mappings[self.entityName] valueForKey:self.compareKey] ascending:YES];
+
+            NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:[mappings[bself.entityName] valueForKey:bself.compareKey] ascending:YES];
             json = [((NSArray *)json) sortedArrayUsingDescriptors:@[descriptor]];
             
             NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-            NSEntityDescription *entity = [NSEntityDescription entityForName:self.entityName inManagedObjectContext:managedObjectContext];
+            NSEntityDescription *entity = [NSEntityDescription entityForName:bself.entityName inManagedObjectContext:bself.managedObjectContext];
             [fetchRequest setEntity:entity];
 
-            if (self.predicate) [fetchRequest setPredicate:self.predicate];
+            if (bself.predicate) [fetchRequest setPredicate:bself.predicate];
             
-            NSArray *sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:self.compareKey ascending:YES]];
+            NSArray *sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:bself.compareKey ascending:YES]];
             [fetchRequest setSortDescriptors:sortDescriptors];
             
             NSError *fetchError;
-            NSMutableArray *coredataArray = [NSMutableArray arrayWithArray:[managedObjectContext executeFetchRequest:fetchRequest error:&fetchError]];
+            NSMutableArray *coredataArray = [NSMutableArray arrayWithArray:[bself.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError]];
             
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 
             NSUInteger i;
             for (i = 0; i < [json count]; i++) {
+
                 NSDictionary *lObject = json[i];
                 NSManagedObject * rObject = nil;
                 if (i < [coredataArray count]) rObject = coredataArray[i];
                 
-                id l = [lObject valueForKey:[mappings[self.entityName] valueForKey:self.compareKey]];
-                NSString *lString = nil;
-                if ([l isKindOfClass:[NSNumber class]]) lString = [l stringValue];
-                else if ([l isKindOfClass:[NSString class]]) lString  = l;
+                id leftOperand = [lObject valueForKey:[mappings[bself.entityName] valueForKey:bself.compareKey]];
+                id rightOperand = [rObject valueForKey:bself.compareKey];
                 
-                NSString *rString = [lObject valueForKey:self.compareKey];
-                
-
-                if (!rObject || [lString caseInsensitiveCompare:rString] == NSOrderedAscending) {
-                    NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:self.entityName inManagedObjectContext:managedObjectContext];
-                    [managedObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:dateFormatter mapping:mappings[self.entityName]];
-                    if ([self.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)]) [bself.delegate connection:bself didReceiveObject:lObject forManagedObject:managedObject];
+                NSComparisonResult comparisonResult;
+                if ([rightOperand isKindOfClass:[NSNumber class]]) {
+                    comparisonResult = [leftOperand compare:rightOperand];
+                }
+                else if ([rightOperand isKindOfClass:[NSString class]]) {
+                    comparisonResult = [leftOperand caseInsensitiveCompare:rightOperand];
                 }
                 
-                else if ([lString caseInsensitiveCompare:rString] == NSOrderedDescending) {
-                    [managedObjectContext deleteObject:rObject];
+
+                if (!rObject || comparisonResult == NSOrderedAscending) {
+                    NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:bself.entityName inManagedObjectContext:bself.managedObjectContext];
+                    [managedObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:dateFormatter mapping:mappings[bself.entityName]];
+                    if ([bself.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)]) [bself.delegate connection:bself didReceiveObject:lObject forManagedObject:managedObject];
+                }
+                
+                else if (comparisonResult == NSOrderedDescending) {
+                    [bself.managedObjectContext deleteObject:rObject];
                     [coredataArray removeObject:rObject];
                     i--;
                     continue;
                 }
                 
-                else if ([lString caseInsensitiveCompare:rString] == NSOrderedSame) {
+                else if (comparisonResult == NSOrderedSame) {
                     NSDictionary *attributes = [[rObject entity] attributesByName];
                     for (NSString *attribute in attributes) {
                         [rObject setValue:nil forKey:attribute];
                     }
-                    [rObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:dateFormatter mapping:mappings[self.entityName]];
-                    if ([self.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)])
+                    [rObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:dateFormatter mapping:mappings[bself.entityName]];
+                    if ([bself.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)])
                     [bself.delegate connection:bself didReceiveObject:lObject forManagedObject:rObject];
                 }
             }
             
             while (i < [coredataArray count]) {
                 NSDictionary *lObject = json[i];
-                NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:self.entityName inManagedObjectContext:managedObjectContext];
-                [managedObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:dateFormatter mapping:mappings[self.entityName]];
-                if ([self.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)])
+                NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:bself.entityName inManagedObjectContext:bself.managedObjectContext];
+                [managedObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:dateFormatter mapping:mappings[bself.entityName]];
+                if ([bself.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)])
                 [bself.delegate connection:bself didReceiveObject:lObject forManagedObject:managedObject];
                 i++;
             }
 
-            NSError *error;
-            if (![managedObjectContext save:&error]) {
-                // FIXME: Update to handle the error appropriately.
-                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            if (bself.saveAutomatically) {
+                NSError *error;
+                if (![bself.managedObjectContext save:&error]) {
+                    // FIXME: Update to handle the error appropriately.
+                    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                }
             }
         }
-        if ([self.delegate respondsToSelector:@selector(connectionDidFinishLoading:)])
-        [self.delegate connectionDidFinishLoading:self];
+        if ([bself.delegate respondsToSelector:@selector(connectionDidFinishLoading:)])
+        [bself.delegate connectionDidFinishLoading:bself];
         
     }];
+}
+
+- (void)addControllerContextDidSave:(NSNotification*)saveNotification
+{
+	[[ETSConnection mainManagedObjectContext] mergeChangesFromContextDidSaveNotification:saveNotification];
+}
+
+- (void)saveManagedObjectContext
+{
+    if (self.managedObjectContext) {
+        NSError *error;
+        if (![self.managedObjectContext save:&error]) {
+            // FIXME: Update to handle the error appropriately.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        }
+        
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextDidSaveNotification object:self.managedObjectContext];
+        self.managedObjectContext = nil;
+    }
 }
 
 @end

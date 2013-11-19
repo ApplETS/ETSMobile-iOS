@@ -70,7 +70,7 @@
     NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL:[NSURL URLForDirectory]];
     
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-   parameters[@"FiltreNom"] = @" ";
+   parameters[@"FiltreNom"] = @"";
    parameters[@"FiltrePrenom"] = @"";
    parameters[@"FiltreServiceCode"] = @"";
     

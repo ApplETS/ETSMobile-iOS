@@ -15,7 +15,6 @@
 
 @interface ETSDirectoryViewController ()
 @property (nonatomic, copy) NSString *searchText;
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
 @end
 
 @implementation ETSDirectoryViewController
@@ -38,6 +37,7 @@
     connection.compareKey = @"id";
     connection.objectsKeyPath = @"d";
     connection.predicate = nil;
+    connection.saveAutomatically = NO;
     self.connection = connection;
     self.connection.delegate = self;
     
@@ -54,6 +54,13 @@
         // FIXME: Update to handle the error appropriately.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     }
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    self.fetchedResultsController.delegate = nil;
+    [self.connection saveManagedObjectContext];
+    [super viewDidDisappear:animated];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -221,6 +228,7 @@
     personController.displayedPerson = person;
     [personController.view setTintColor:[UIColor blackColor]];
     
+    self.menuContainerViewController.panMode = MFSideMenuPanModeNone;
     [[self navigationController] pushViewController:personController animated:YES];
     
     CFRelease(person);
@@ -238,6 +246,9 @@
 - (void)connectionDidFinishLoading:(ETSConnection *)connection
 {
     self.dataNeedRefresh = NO;
+    if ([[self.fetchedResultsController sections] count] == 0) {
+        [self.connection saveManagedObjectContext];
+    }
 }
 
 @end

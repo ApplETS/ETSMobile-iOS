@@ -13,15 +13,15 @@
 
 @dynamic email;
 @dynamic ext;
-@dynamic firstName;
-@dynamic id;
 @dynamic firstInitial;
+@dynamic firstName;
+@dynamic fullName;
+@dynamic id;
 @dynamic job;
+@dynamic lastInitial;
 @dynamic lastName;
 @dynamic office;
 @dynamic phone;
 @dynamic service;
-@dynamic fullName;
-@dynamic lastInitial;
 
 @end
