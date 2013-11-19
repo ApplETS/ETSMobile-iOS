@@ -4,5 +4,7 @@
 <dict>
 	<key>Courses</key>
 	<string>https://signets-ens.etsmtl.ca/Secure/WebServices/SignetsMobile.asmx/listeCours</string>
+	<key>Profile</key>
+	<string>https://signets-ens.etsmtl.ca/Secure/WebServices/SignetsMobile.asmx/infoEtudiant</string>
 </dict>
 </plist>

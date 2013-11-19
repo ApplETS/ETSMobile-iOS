@@ -19,5 +19,26 @@
 		<key>title</key>
 		<string>titreCours</string>
 	</dict>
+	<key>Profile</key>
+	<dict>
+		<key>firstName</key>
+		<string>firstName</string>
+		<key>lastName</key>
+		<string>lastName</string>
+		<key>permanentCode</key>
+		<string>permanentCode</string>
+		<key>balance</key>
+		<string>balance</string>
+		<key>program</key>
+		<string>programmeEtudes</string>
+		<key>creditsPassed</key>
+		<string></string>
+		<key>creditsFailed</key>
+		<string></string>
+		<key>creditsSubscribed</key>
+		<string></string>
+		<key>gradeAverage</key>
+		<string></string>
+	</dict>
 </dict>
 </plist>

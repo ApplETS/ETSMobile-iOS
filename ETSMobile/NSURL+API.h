@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface NSURL (API)
-+ (id)URLForCourses;
+    + (id)URLForCourses;
+    + (id)URLForProfile;
 @end

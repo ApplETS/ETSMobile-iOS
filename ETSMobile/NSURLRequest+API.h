@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSURLRequest (API)
-+ (id)requestForCourses;
+    + (id)requestSetup: (NSURL*)url;
+    + (id)requestForCourses;
+    + (id)requestForProfile;
 @end

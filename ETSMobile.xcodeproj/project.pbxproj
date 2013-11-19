@@ -48,6 +48,8 @@
 		26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */; };
 		26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92F217EA625200469FA8 /* ETSNewsViewController.m */; };
 		26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F393221829984F00995E16 /* ETSSessionHeader.m */; };
+		D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15F4AE3183992D00034605B /* ETSProfileViewController.m */; };
+		D15F4AE71839A80B0034605B /* ETSProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = D15F4AE61839A80B0034605B /* ETSProfile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,10 @@
 		26DD92F217EA625200469FA8 /* ETSNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsViewController.m; sourceTree = "<group>"; };
 		26F393211829984F00995E16 /* ETSSessionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSessionHeader.h; sourceTree = "<group>"; };
 		26F393221829984F00995E16 /* ETSSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSessionHeader.m; sourceTree = "<group>"; };
+		D15F4AE2183992D00034605B /* ETSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProfileViewController.h; sourceTree = "<group>"; };
+		D15F4AE3183992D00034605B /* ETSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSProfileViewController.m; sourceTree = "<group>"; };
+		D15F4AE51839A80B0034605B /* ETSProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProfile.h; sourceTree = "<group>"; };
+		D15F4AE61839A80B0034605B /* ETSProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSProfile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +336,8 @@
 			children = (
 				26010889181583740037E795 /* ETSCourse.h */,
 				2601088A181583740037E795 /* ETSCourse.m */,
+				D15F4AE51839A80B0034605B /* ETSProfile.h */,
+				D15F4AE61839A80B0034605B /* ETSProfile.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -337,6 +345,7 @@
 		26DD92E917EA613400469FA8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D15F4AE1183992A10034605B /* Profile */,
 				260108901815968D0037E795 /* Base */,
 				269BFF591814C627005D2950 /* Courses */,
 				26DD92ED17EA623300469FA8 /* Menu */,
@@ -348,6 +357,7 @@
 		26DD92EA17EA613C00469FA8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D15F4AE81839B4190034605B /* Profile */,
 				2698C6FB182834E500F6281F /* Courses */,
 			);
 			name = Views;
@@ -378,6 +388,22 @@
 				26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */,
 			);
 			name = Menu;
+			sourceTree = "<group>";
+		};
+		D15F4AE1183992A10034605B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D15F4AE2183992D00034605B /* ETSProfileViewController.h */,
+				D15F4AE3183992D00034605B /* ETSProfileViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		D15F4AE81839B4190034605B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,6 +516,7 @@
 				269BFF561811A41C005D2950 /* NSManagedObject+SetValues.m in Sources */,
 				26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */,
 				26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */,
+				D15F4AE71839A80B0034605B /* ETSProfile.m in Sources */,
 				2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */,
 				26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */,
 				26DD92B617EA610D00469FA8 /* main.m in Sources */,
@@ -501,6 +528,7 @@
 				26DD92C617EA610D00469FA8 /* ETSMasterViewController.m in Sources */,
 				26085B401829D8D700FE35AB /* NSURL+API.m in Sources */,
 				266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */,
+				D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */,
 				26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */,
 				266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */,
 				2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */,

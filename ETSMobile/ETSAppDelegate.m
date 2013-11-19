@@ -14,6 +14,7 @@
 #import "UIColor+Styles.h"
 #import "ETSConnection.h"
 #import "ETSCoursesViewController.h"
+#import "ETSProfileViewController.h"
 
 @implementation ETSAppDelegate
 

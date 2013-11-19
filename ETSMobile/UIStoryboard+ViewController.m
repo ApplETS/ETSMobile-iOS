@@ -25,4 +25,9 @@
     return [self instantiateViewControllerWithIdentifier:@"CoursesViewController"];
 }
 
+- (id)instantiateProfileViewController
+{
+    return [self instantiateViewControllerWithIdentifier:@"ProfileViewController"];
+}
+
 @end

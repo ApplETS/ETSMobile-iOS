@@ -21,9 +21,14 @@
 
 @implementation NSURL (API)
 
-+ (id)URLForCourses
-{
-    return [NSURL URLWithString:[[NSURL dictionaryFromPlist] objectForKey:@"Courses"]];
-}
+    + (id)URLForCourses
+    {
+        return [NSURL URLWithString:[[NSURL dictionaryFromPlist] objectForKey:@"Courses"]];
+    }
+
+    + (id)URLForProfile
+    {
+        return [NSURL URLWithString:[[NSURL dictionaryFromPlist] objectForKey:@"Profile"]];
+    }
 
 @end
