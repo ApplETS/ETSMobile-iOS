@@ -28,7 +28,7 @@
 
 + (UIColor *)menuLabelColor
 {
-    return [UIColor colorWithRed:128.0f/255.0f green:128.0f/255.0f blue:128.0f/255.0f alpha:1];
+    return [UIColor colorWithRed:145.0f/255.0f green:145.0f/255.0f blue:145.0f/255.0f alpha:1];
 }
 
 + (UIColor *)menuHighlightedLabelColor
@@ -38,7 +38,7 @@
 
 + (UIColor *)menuSectionBackgroundColor
 {
-    return [UIColor colorWithRed:33.0f/255.0f green:33.0f/255.0f blue:33.0f/255.0f alpha:1];
+    return [UIColor colorWithRed:25.0f/255.0f green:25.0f/255.0f blue:25.0f/255.0f alpha:1];
 }
 
 + (UIColor *)naviguationBarTintColor
