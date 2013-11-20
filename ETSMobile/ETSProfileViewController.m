@@ -8,6 +8,7 @@
 
 #import "ETSProfileViewController.h"
 #import "NSURLRequest+API.h"
+<<<<<<< HEAD
 
 @interface ETSProfileViewController ()
 @property (nonatomic, strong) NSNumberFormatter *formatter;
@@ -22,11 +23,20 @@
 {
     [self.connection loadData];
 }
+=======
+#import "UIStoryboard+ViewController.h"
+#import "ETSProfile.h"
+
+@implementation ETSProfileViewController
+
+@synthesize fetchedResultsController = _fetchedResultsController;
+>>>>>>> 4ad2dbd58f0e7655d903c101132d96cc02f424b3
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+<<<<<<< HEAD
     self.cellIdentifier = @"ProfileIdentifier";
     
     ETSConnection *connection = [[ETSConnection alloc] init];
@@ -72,15 +82,75 @@
     if (![_fetchedResultsController performFetch:&error]) {
         // FIXME: Update to handle the error appropriately.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+=======
+    ETSConnection *connection = [[ETSConnection alloc] init];
+    connection.request = [NSURLRequest requestForProfile];
+    connection.entityName = @"Profile";
+    connection.compareKey = @"permanentCode";
+    connection.objectsKeyPath = @"d";
+    self.connection = connection;
+    self.connection.delegate = self;
+    
+    self.cellIdentifier = @"ProfileIdentifier";
+
+    
+    if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
+        ETSAuthenticationViewController *ac = [self.storyboard instantiateAuthenticationViewController];
+        ac.delegate = self;
+        [self.navigationController pushViewController:ac animated:YES];
+>>>>>>> 4ad2dbd58f0e7655d903c101132d96cc02f424b3
     }
     
     return _fetchedResultsController;
 }
 
+<<<<<<< HEAD
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return [[self.fetchedResultsController sections] count] + 1;
 }
+=======
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Profile" inManagedObjectContext:self.managedObjectContext];
+
+    fetchRequest.entity = entity;
+    fetchRequest.fetchLimit = 1;
+    fetchRequest.sortDescriptors = @[];
+    
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    self.fetchedResultsController = aFetchedResultsController;
+    _fetchedResultsController.delegate = self;
+    
+    NSError *error;
+    if (![_fetchedResultsController performFetch:&error]) {
+        // FIXME: Update to handle the error appropriately.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+    
+    return _fetchedResultsController;
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    ETSProfile *profile = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    
+    cell.textLabel.text = NSLocalizedString(@"Code permanent", nil);
+    cell.detailTextLabel.text = profile.permanentCode;
+}
+
+/*
+- (void)connection:(ETSConnection *)connection didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
+{
+    ETSProfile *profile = (ETSProfile *)managedObject;
+    NSLog(@"%@", profile);
+}*/
+>>>>>>> 4ad2dbd58f0e7655d903c101132d96cc02f424b3
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -88,6 +158,7 @@
     return [sectionInfo numberOfObjects];
 }
 
+<<<<<<< HEAD
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == 0)       return NSLocalizedString(@"Informations personnelles", nil);
@@ -146,5 +217,15 @@
         [self configureCell:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]] atIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
     }
 }
+=======
+
+- (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
+{
+    self.connection.request = [NSURLRequest requestForProfile];
+    [super controllerDidAuthenticate:controller];
+}
+
+@end
+>>>>>>> 4ad2dbd58f0e7655d903c101132d96cc02f424b3
 
 @end

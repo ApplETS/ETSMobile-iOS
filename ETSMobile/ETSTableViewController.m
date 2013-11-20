@@ -8,6 +8,7 @@
 
 #import "ETSTableViewController.h"
 #import "MFSideMenu.h"
+#import "UIStoryboard+ViewController.h"
 
 @interface ETSTableViewController ()
 
@@ -126,14 +127,36 @@
 }
 
 
-- (void)connection:(ETSConnection *)connection didReveiveResponse:(ETSConnectionResponse)response
+- (void)connection:(ETSConnection *)connection didReceiveResponse:(ETSConnectionResponse)response
 {
-#warning Si mauvais username/password
+    
+    if (response == ETSConnectionResponseAuthenticationError) {
+        
+        if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Authentification", nil) message:NSLocalizedString(@"Code d'accès ou mot de passe invalide", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [av show];
+        }
+        else {
+            ETSAuthenticationViewController *ac = [self.storyboard instantiateAuthenticationViewController];
+            ac.delegate = self;
+            [self.navigationController pushViewController:ac animated:YES];
+        }
+    }
+    else if (response == ETSConnectionResponseValid) {
+        if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
 }
 
 - (void)connectionDidFinishLoading:(ETSConnection *)connection
 {
     [self.refreshControl endRefreshing];
+}
+
+- (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
+{
+    [self.connection loadData];
 }
 
 @end

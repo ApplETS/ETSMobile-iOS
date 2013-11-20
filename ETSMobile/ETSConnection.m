@@ -80,10 +80,10 @@
          }
          
          NSDictionary *mappings = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ETSAPICoreDataMapping" ofType:@"plist"]];
+         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
          
          if ([json isKindOfClass:[NSArray class]])
          {
-             
              NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:[mappings[bself.entityName] valueForKey:bself.compareKey] ascending:YES];
              json = [((NSArray *)json) sortedArrayUsingDescriptors:@[descriptor]];
              
@@ -99,7 +99,7 @@
              NSError *fetchError;
              NSMutableArray *coredataArray = [NSMutableArray arrayWithArray:[bself.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError]];
              
-             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+
              
              NSUInteger i;
              for (i = 0; i < [json count]; i++) {
@@ -136,8 +136,8 @@
                  else if (comparisonResult == NSOrderedSame) {
                      NSDictionary *attributes = [[rObject entity] attributesByName];
                      for (NSString *attribute in attributes) {
-                         if ([self.ignoredAttributesFromUpdate count] > 0 &&
-                             [[self.ignoredAttributesFromUpdate filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self == %@", attribute]] count] > 0) {
+                         if ([bself.ignoredAttributesFromUpdate count] > 0 &&
+                             [[bself.ignoredAttributesFromUpdate filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self == %@", attribute]] count] > 0) {
                              continue;
                          }
                          [rObject setValue:nil forKey:attribute];
@@ -164,6 +164,42 @@
                      NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
                  }
              }
+         }
+         else if ([json isKindOfClass:[NSDictionary class]]) {
+             NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+             NSEntityDescription *entity = [NSEntityDescription entityForName:bself.entityName inManagedObjectContext:bself.managedObjectContext];
+             [fetchRequest setEntity:entity];
+             
+             if (bself.predicate) [fetchRequest setPredicate:bself.predicate];
+             
+             NSArray *sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:bself.compareKey ascending:YES]];
+             [fetchRequest setSortDescriptors:sortDescriptors];
+             
+             NSError *fetchError;
+             NSArray *coredataArray = [bself.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
+             
+             if ([coredataArray count] > 0) {
+                 NSManagedObject *coreObject = coredataArray[0];
+                 NSDictionary *attributes = [[coreObject entity] attributesByName];
+                 for (NSString *attribute in attributes) {
+                     if ([bself.ignoredAttributesFromUpdate count] > 0 &&
+                         [[bself.ignoredAttributesFromUpdate filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self == %@", attribute]] count] > 0) {
+                         continue;
+                     }
+                     [coreObject setValue:nil forKey:attribute];
+                 }
+                 [coreObject safeSetValuesForKeysWithDictionary:json dateFormatter:dateFormatter mapping:mappings[bself.entityName]];
+                 if ([bself.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)])
+                     [bself.delegate connection:bself didReceiveObject:json forManagedObject:coreObject];
+                 
+             }
+             
+             else {
+                 NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:bself.entityName inManagedObjectContext:bself.managedObjectContext];
+                 [managedObject safeSetValuesForKeysWithDictionary:json dateFormatter:dateFormatter mapping:mappings[bself.entityName]];
+                 if ([bself.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)]) [bself.delegate connection:bself didReceiveObject:json forManagedObject:managedObject];
+             }
+
          }
          if ([bself.delegate respondsToSelector:@selector(connectionDidFinishLoading:)])
              [bself.delegate connectionDidFinishLoading:bself];
