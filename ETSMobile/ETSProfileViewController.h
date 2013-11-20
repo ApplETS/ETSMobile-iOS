@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ETSCollectionViewController.h"
 #import "ETSConnection.h"
 
-@interface ETSProfileViewController : ETSCollectionViewController <ETSConnectionDelegate>
+@interface ETSProfileViewController : UITableViewController <ETSConnectionDelegate>
+    @property (nonatomic, copy)   NSString *entityName;
+    @property (nonatomic, strong) NSURLRequest *request;
 
+    @property (strong, nonatomic) ETSConnection *connection;
 @end

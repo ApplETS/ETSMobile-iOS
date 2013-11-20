@@ -9,25 +9,17 @@
 #import "ETSProfileViewController.h"
 #import "ETSProfile.h"
 #import "ETSAuthenticationViewController.h"
-#import "ETSProfileRow.h"
 #import "NSURLRequest+API.h"
 #import "UIStoryboard+ViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface ETSProfileViewController ()
-    @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@end
-
 @implementation ETSProfileViewController
-
-@synthesize fetchedResultsController=_fetchedResultsController;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.title =  NSLocalizedString(@"Profil", nil);
     
-    self.cellIdentifier = @"ProfileIdentifier";
     self.connection = nil;
     self.request = [NSURLRequest requestForProfile];
     self.entityName = @"Profile";
@@ -43,54 +35,39 @@
     }
 }
 
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
-    }
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Profile" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    fetchRequest.fetchLimit = 1;
-    
-    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"lastName" ascending:NO]];
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"lastName" cacheName:nil];
-    self.fetchedResultsController = aFetchedResultsController;
-    _fetchedResultsController.delegate = self;
-    
-    NSError *error;
-    if (![_fetchedResultsController performFetch:&error]) {
-        // FIXME: Update to handle the error appropriately.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-    }
-    
-    return _fetchedResultsController;
-}
-
-- (void)configureCell:(UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    ETSProfile *profile = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    ETSProfileRow *profileRow = (ETSProfileRow *)cell;
-    NSLog(@"%@", profileRow);
-    NSLog(@"%@", profile);
-    profileRow.keyLabel.text = @"Nom :";
-    profileRow.valueLabel.text = profile.lastName;
-}
-
 - (void)connection:(ETSConnection *)connection didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     ETSProfile *profile = (ETSProfile *)managedObject;
+    NSLog(@"%@", profile);
 }
 
-- (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
-{
-    self.request = [NSURLRequest requestForProfile];
-    [super controllerDidAuthenticate:controller];
-}
+//- (void)connection:(ETSConnection *)connection didReveiveResponse:(ETSConnectionResponse)response
+//{
+//    
+//    if (response == ETSConnectionResponseAuthenticationError) {
+//        
+//        if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
+//            UIAlertView *av = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Authentification", nil) message:NSLocalizedString(@"Code d'accès ou mot de passe invalide", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//            [av show];
+//        }
+//        else {
+//            ETSAuthenticationViewController *ac = [self.storyboard instantiateAuthenticationViewController];
+//            ac.delegate = self;
+//            [self.navigationController pushViewController:ac animated:YES];
+//        }
+//    }
+//    else if (response == ETSConnectionResponseValid) {
+//        if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
+//            [self.navigationController popViewControllerAnimated:YES];
+//        }
+//    }
+//}
+//
+//- (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
+//{
+//    self.request = [NSURLRequest requestForProfile];
+//    [self.connection loadDataWithRequest:self.request entityName:self.entityName forObjectsKeyPath:@"" compareKey:@""];
+//}
 
 @end
 
