@@ -10,5 +10,5 @@
 #import "ETSProfile.h"
 
 @interface ETSProfileViewController : ETSTableViewController <ETSConnectionDelegate>
-@property (nonatomic, strong) ETSProfile *profile;
+
 @end

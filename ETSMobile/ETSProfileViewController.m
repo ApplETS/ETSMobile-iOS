@@ -33,20 +33,27 @@
     connection.request = [NSURLRequest requestForProfile];
     connection.entityName = @"Profile";
     connection.compareKey = @"lastName";
-    connection.objectsKeyPath = @"d.liste";
+    connection.objectsKeyPath = @"d";
 
     self.connection = connection;
     self.connection.delegate = self;
     
     self.formatter = [[NSNumberFormatter alloc] init];
     self.formatter.decimalSeparator = @",";
-    self.formatter.maximumFractionDigits = 1;
-    self.formatter.minimumFractionDigits = 1;
+    self.formatter.maximumFractionDigits = 2;
+    self.formatter.minimumFractionDigits = 2;
     self.formatter.minimumIntegerDigits = 1;
     
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
     
     self.title = @"Profil";
+    
+    if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
+        ETSAuthenticationViewController *ac = [self.storyboard instantiateAuthenticationViewController];
+        ac.delegate = self;
+        [self.navigationController pushViewController:ac animated:YES];
+    }
+
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -57,12 +64,10 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Profile" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    fetchRequest.fetchBatchSize = 10;
-    
-    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"firstName" ascending:YES]];
-    [fetchRequest setSortDescriptors:sortDescriptors];
+
+    fetchRequest.entity = entity;
+    fetchRequest.fetchLimit = 1;
+    fetchRequest.sortDescriptors = @[];
     
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     self.fetchedResultsController = aFetchedResultsController;
@@ -79,13 +84,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[self.fetchedResultsController sections] count] + 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
-    return [sectionInfo numberOfObjects];
+    if (section == 0) return 4;
+    //FIXME : à corriger lorsque l'on aura les infos sur la section Programme
+    return 0;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -98,53 +104,44 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+    //FIXME : à corriger lorsque l'on aura les infos sur la section Programme
+    if (indexPath.section == 1) return;
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+    ETSProfile *profile = nil;
+    if ([self.fetchedResultsController.fetchedObjects count] > 0) profile = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     
     if (indexPath.row == 0) {
         cell.textLabel.text = NSLocalizedString(@"Prénom", nil);
-        cell.detailTextLabel.text = self.profile.firstName;
+        cell.detailTextLabel.text = profile.firstName;
     }
     else if (indexPath.row == 1) {
         cell.textLabel.text = NSLocalizedString(@"Nom de famille", nil);
-        cell.detailTextLabel.text = self.profile.lastName;
+        cell.detailTextLabel.text = profile.lastName;
     }
     else if (indexPath.row == 2) {
         cell.textLabel.text = NSLocalizedString(@"Code permanent", nil);
-        cell.detailTextLabel.text = self.profile.permanentCode;
+        cell.detailTextLabel.text = profile.permanentCode;
     }
     else if (indexPath.row == 3) {
         cell.textLabel.text = NSLocalizedString(@"Balance", nil);
-        cell.detailTextLabel.text = [self.formatter stringFromNumber:self.profile.balance];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ $", [self.formatter stringFromNumber:profile.balance]];
     }
-}
-
-- (void)connection:(ETSConnection *)connection didReceiveDictionary:(NSDictionary *)dictionary
-{
-    NSDictionary *results = dictionary[@"d"];
-    self.profile.firstName      = results[@"nom"];
-    self.profile.lastName       = results[@"prenom"];
-    self.profile.permanentCode  = results[@"codePerm"];
-    self.profile.balance        = [NSDecimalNumber decimalNumberWithString:results[@"soldeTotal"]];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
 {
-    indexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section + 1];
-    if (newIndexPath) {
-        newIndexPath = [NSIndexPath indexPathForRow:newIndexPath.row inSection:newIndexPath.section + 1];
-    }
-    
-    [super controller:controller didChangeObject:anObject atIndexPath:indexPath forChangeType:type newIndexPath:newIndexPath];
-}
-
-- (void)connectionDidFinishLoading:(ETSConnection *)connection
-{
-    [super connectionDidFinishLoading:connection];
-    
-    NSInteger rows = [self.tableView numberOfRowsInSection:0];
-    for (NSInteger i = 0; i < rows; i++) {
+    //FIXME : à corriger lorsque l'on aura les infos sur la section Programme
+    for (NSInteger i = 0; i < 4; i++) {
         [self configureCell:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]] atIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
     }
+}
+
+- (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
+{
+    self.connection.request = [NSURLRequest requestForProfile];
+    [super controllerDidAuthenticate:controller];
 }
 
 @end

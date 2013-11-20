@@ -41,7 +41,7 @@
      {
          [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
          
-         //NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
+         NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
          
          if (!data) return;
          
@@ -156,14 +156,6 @@
                      [bself.delegate connection:bself didReceiveObject:lObject forManagedObject:managedObject];
                  i++;
              }
-             
-             if (bself.saveAutomatically) {
-                 NSError *error;
-                 if (![bself.managedObjectContext save:&error]) {
-                     // FIXME: Update to handle the error appropriately.
-                     NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-                 }
-             }
          }
          else if ([json isKindOfClass:[NSDictionary class]]) {
              NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -199,7 +191,13 @@
                  [managedObject safeSetValuesForKeysWithDictionary:json dateFormatter:dateFormatter mapping:mappings[bself.entityName]];
                  if ([bself.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)]) [bself.delegate connection:bself didReceiveObject:json forManagedObject:managedObject];
              }
-
+         }
+         if (bself.saveAutomatically) {
+             NSError *error;
+             if (![bself.managedObjectContext save:&error]) {
+                 // FIXME: Update to handle the error appropriately.
+                 NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+             }
          }
          if ([bself.delegate respondsToSelector:@selector(connectionDidFinishLoading:)])
              [bself.delegate connectionDidFinishLoading:bself];

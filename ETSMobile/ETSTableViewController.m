@@ -8,7 +8,6 @@
 
 #import "ETSTableViewController.h"
 #import "MFSideMenu.h"
-#import "UIStoryboard+ViewController.h"
 
 @interface ETSTableViewController ()
 

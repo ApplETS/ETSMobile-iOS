@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ETSConnection.h"
 #import "ETSAuthenticationViewController.h"
+#import "UIStoryboard+ViewController.h"
 
 @interface ETSTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, ETSConnectionDelegate, ETSAuthenticationViewControllerDelegate>
 
