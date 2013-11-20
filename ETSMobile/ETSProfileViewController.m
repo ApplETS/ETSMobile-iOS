@@ -7,67 +7,144 @@
 //
 
 #import "ETSProfileViewController.h"
-#import "ETSProfile.h"
-#import "ETSAuthenticationViewController.h"
 #import "NSURLRequest+API.h"
-#import "UIStoryboard+ViewController.h"
-#import <QuartzCore/QuartzCore.h>
+
+@interface ETSProfileViewController ()
+@property (nonatomic, strong) NSNumberFormatter *formatter;
+@property (nonatomic, assign) BOOL hadResults;
+@end
 
 @implementation ETSProfileViewController
+
+@synthesize fetchedResultsController=_fetchedResultsController;
+
+- (void)startRefresh:(id)sender
+{
+    [self.connection loadData];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title =  NSLocalizedString(@"Profil", nil);
     
-    self.connection = nil;
-    self.request = [NSURLRequest requestForProfile];
-    self.entityName = @"Profile";
-
+    self.cellIdentifier = @"ProfileIdentifier";
+    
     ETSConnection *connection = [[ETSConnection alloc] init];
+    connection.request = [NSURLRequest requestForProfile];
+    connection.entityName = @"Profile";
+    connection.compareKey = @"lastName";
+    connection.objectsKeyPath = @"d.liste";
+
     self.connection = connection;
     self.connection.delegate = self;
     
-    if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
-        ETSAuthenticationViewController *ac = [self.storyboard instantiateAuthenticationViewController];
-        ac.delegate = self;
-        [self.navigationController pushViewController:ac animated:YES];
+    self.formatter = [[NSNumberFormatter alloc] init];
+    self.formatter.decimalSeparator = @",";
+    self.formatter.maximumFractionDigits = 1;
+    self.formatter.minimumFractionDigits = 1;
+    self.formatter.minimumIntegerDigits = 1;
+    
+    [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
+    
+    self.title = @"Profil";
+}
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Profile" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    fetchRequest.fetchBatchSize = 10;
+    
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    self.fetchedResultsController = aFetchedResultsController;
+    _fetchedResultsController.delegate = self;
+    
+    NSError *error;
+    if (![_fetchedResultsController performFetch:&error]) {
+        // FIXME: Update to handle the error appropriately.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+    
+    return _fetchedResultsController;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [[self.fetchedResultsController sections] count] + 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
+    return [sectionInfo numberOfObjects];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)       return NSLocalizedString(@"Informations personnelles", nil);
+    else if (section == 1)  return NSLocalizedString(@"Programme", nil);
+    return nil;
+}
+
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    if (indexPath.row == 0) {
+        cell.textLabel.text = NSLocalizedString(@"Prénom", nil);
+        cell.detailTextLabel.text = self.profile.firstName;
+    }
+    else if (indexPath.row == 1) {
+        cell.textLabel.text = NSLocalizedString(@"Nom de famille", nil);
+        cell.detailTextLabel.text = self.profile.lastName;
+    }
+    else if (indexPath.row == 2) {
+        cell.textLabel.text = NSLocalizedString(@"Code permanent", nil);
+        cell.detailTextLabel.text = self.profile.permanentCode;
+    }
+    else if (indexPath.row == 3) {
+        cell.textLabel.text = NSLocalizedString(@"Balance", nil);
+        cell.detailTextLabel.text = [self.formatter stringFromNumber:self.profile.balance];
     }
 }
 
-- (void)connection:(ETSConnection *)connection didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
+- (void)connection:(ETSConnection *)connection didReceiveDictionary:(NSDictionary *)dictionary
 {
-    ETSProfile *profile = (ETSProfile *)managedObject;
-    NSLog(@"%@", profile);
+    NSDictionary *results = dictionary[@"d"];
+    self.profile.firstName      = results[@"nom"];
+    self.profile.lastName       = results[@"prenom"];
+    self.profile.permanentCode  = results[@"codePerm"];
+    self.profile.balance        = [NSDecimalNumber decimalNumberWithString:results[@"soldeTotal"]];
 }
 
-//- (void)connection:(ETSConnection *)connection didReveiveResponse:(ETSConnectionResponse)response
-//{
-//    
-//    if (response == ETSConnectionResponseAuthenticationError) {
-//        
-//        if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
-//            UIAlertView *av = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Authentification", nil) message:NSLocalizedString(@"Code d'accès ou mot de passe invalide", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-//            [av show];
-//        }
-//        else {
-//            ETSAuthenticationViewController *ac = [self.storyboard instantiateAuthenticationViewController];
-//            ac.delegate = self;
-//            [self.navigationController pushViewController:ac animated:YES];
-//        }
-//    }
-//    else if (response == ETSConnectionResponseValid) {
-//        if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
-//            [self.navigationController popViewControllerAnimated:YES];
-//        }
-//    }
-//}
-//
-//- (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
-//{
-//    self.request = [NSURLRequest requestForProfile];
-//    [self.connection loadDataWithRequest:self.request entityName:self.entityName forObjectsKeyPath:@"" compareKey:@""];
-//}
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
+{
+    indexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section + 1];
+    if (newIndexPath) {
+        newIndexPath = [NSIndexPath indexPathForRow:newIndexPath.row inSection:newIndexPath.section + 1];
+    }
+    
+    [super controller:controller didChangeObject:anObject atIndexPath:indexPath forChangeType:type newIndexPath:newIndexPath];
+}
+
+- (void)connectionDidFinishLoading:(ETSConnection *)connection
+{
+    [super connectionDidFinishLoading:connection];
+    
+    NSInteger rows = [self.tableView numberOfRowsInSection:0];
+    for (NSInteger i = 0; i < rows; i++) {
+        [self configureCell:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]] atIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+    }
+}
 
 @end
-
