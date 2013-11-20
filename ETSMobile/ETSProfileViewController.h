@@ -7,14 +7,8 @@
 //
 
 #import "ETSTableViewController.h"
-<<<<<<< HEAD
 #import "ETSProfile.h"
 
 @interface ETSProfileViewController : ETSTableViewController <ETSConnectionDelegate>
 @property (nonatomic, strong) ETSProfile *profile;
-=======
-
-@interface ETSProfileViewController : ETSTableViewController <ETSConnectionDelegate>
-
->>>>>>> 4ad2dbd58f0e7655d903c101132d96cc02f424b3
 @end
