@@ -50,6 +50,8 @@
     + (id)requestForCourses
     {
         NSURL *url = [NSURL URLForCourses];
+        
+        return [self requestSetup: url];
     }
 
     + (id)requestForProfile
@@ -87,8 +89,7 @@
         
         NSError *error = nil;
         [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:kNilOptions error:&error]];
-        return request
-        }
+        return request;
     }
 
 @end

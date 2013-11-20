@@ -17,9 +17,7 @@
     <entity name="Course" representedClassName="ETSCourse">
         <attribute name="acronym" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="credits" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="grade" optional="YES" attributeType="String">
-            <userInfo/>
-        </attribute>
+        <attribute name="grade" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="group" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mean" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="median" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -33,7 +31,6 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="evaluations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evaluation" inverseName="course" inverseEntity="Evaluation" syncable="YES"/>
-        <userInfo/>
     </entity>
     <entity name="Profile" syncable="YES">
         <attribute name="balance" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
@@ -64,7 +61,6 @@
         <element name="Contact" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Course" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Profile" positionX="0" positionY="0" width="0" height="0"/>
-    </elements>
         <element name="Evaluation" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
