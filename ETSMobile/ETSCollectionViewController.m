@@ -8,19 +8,40 @@
 
 #import "ETSCollectionViewController.h"
 #import "UIStoryboard+ViewController.h"
+#import "MFSideMenu.h"
 
 @interface ETSCollectionViewController ()
-
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @end
 
 @implementation ETSCollectionViewController
 
+- (void)startRefresh:(id)sender
+{
+    [self.connection loadData];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.collectionView addSubview:self.refreshControl];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [self.connection loadDataWithRequest:self.request entityName:self.entityName forObjectsKeyPath:self.objectsKeyPath compareKey:self.compareKey];
+    [self.navigationController setToolbarHidden:YES animated:animated];
+    
+    [self startRefresh:nil];
+    
+    if ([[self.navigationController viewControllers] count] > 1)
+        self.menuContainerViewController.panMode = MFSideMenuPanModeNone;
+    else
+        self.menuContainerViewController.panMode = MFSideMenuPanModeCenterViewController | MFSideMenuPanModeSideMenu;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -83,7 +104,7 @@
 {
 }
 
-- (void)connection:(ETSConnection *)connection didReveiveResponse:(ETSConnectionResponse)response
+- (void)connection:(ETSConnection *)connection didReceiveResponse:(ETSConnectionResponse)response
 {
 
     if (response == ETSConnectionResponseAuthenticationError) {
@@ -107,8 +128,16 @@
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
 {
-    [self.connection loadDataWithRequest:self.request entityName:self.entityName forObjectsKeyPath:self.objectsKeyPath compareKey:self.compareKey];
+    [self.connection loadData];
 }
 
+- (void)connection:(ETSConnection *)connection didReceiveDictionary:(NSDictionary *)dictionary
+{
+}
+
+- (void)connectionDidFinishLoading:(ETSConnection *)connection
+{
+    [self.refreshControl endRefreshing];
+}
 
 @end

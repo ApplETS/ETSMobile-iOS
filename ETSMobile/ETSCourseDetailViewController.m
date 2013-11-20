@@ -7,114 +7,196 @@
 //
 
 #import "ETSCourseDetailViewController.h"
+#import "NSURLRequest+API.h"
+#import "ETSEvaluation.h"
 
 @interface ETSCourseDetailViewController ()
-
+@property (nonatomic, strong) NSNumberFormatter *formatter;
+@property (nonatomic, assign) BOOL hadResults;
 @end
 
 @implementation ETSCourseDetailViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+@synthesize fetchedResultsController=_fetchedResultsController;
+
+- (void)startRefresh:(id)sender
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    [self.connection loadData];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.cellIdentifier = @"EvaluationIdentifier";
+    
+    ETSConnection *connection = [[ETSConnection alloc] init];
+    connection.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];
+    connection.entityName = @"Evaluation";
+    connection.compareKey = @"name";
+    connection.objectsKeyPath = @"d.liste";
+    connection.predicate = [NSPredicate predicateWithFormat:@"course.acronym == %@", self.course.acronym];
+    self.connection = connection;
+    self.connection.delegate = self;
+    
+    self.formatter = [[NSNumberFormatter alloc] init];
+    self.formatter.decimalSeparator = @",";
+    self.formatter.maximumFractionDigits = 1;
+    self.formatter.minimumFractionDigits = 1;
+    self.formatter.minimumIntegerDigits = 1;
+    
+    [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
+    
+    self.title = self.course.acronym;
+    
+    self.hadResults = [self.course.results floatValue] > 0;
 }
 
-- (void)didReceiveMemoryWarning
+- (NSFetchedResultsController *)fetchedResultsController
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Evaluation" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    fetchRequest.fetchBatchSize = 10;
+    
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"course.acronym == %@", self.course.acronym];
+    
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    self.fetchedResultsController = aFetchedResultsController;
+    _fetchedResultsController.delegate = self;
+    
+    NSError *error;
+    if (![_fetchedResultsController performFetch:&error]) {
+        // FIXME: Update to handle the error appropriately.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+    
+    return _fetchedResultsController;
 }
-
-#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return [[self.fetchedResultsController sections] count] + 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    if (section == 0) {
+        if ([self.course.results floatValue] > 0) return [self.course.grade length] > 0 ? 6 : 5;
+        else return [self.course.grade length] > 0 ? 1 : 0;
+    }
     
-    // Configure the cell...
+    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][0];
+    return [sectionInfo numberOfObjects];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)       return NSLocalizedString(@"Sommaire", nil);
+    else if (section == 1)  return NSLocalizedString(@"Évaluations", nil);
+    return nil;
+}
+
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 1) {
+        ETSEvaluation *evaluation = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
+        cell.textLabel.text = evaluation.name;
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:evaluation.result], [self.formatter stringFromNumber:evaluation.total]];
+    }
+    else {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        if (indexPath.row == 0) {
+            if ([self.course.results floatValue] == 0) {
+                cell.textLabel.text = NSLocalizedString(@"Cote au dossier", nil);
+                cell.detailTextLabel.text = self.course.grade;
+            }
+            else {
+                cell.textLabel.text = NSLocalizedString(@"Note à ce jour", nil);
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:self.course.results], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]]];
+            }
+        }
+        else if (indexPath.row == 1) {
+            cell.textLabel.text = NSLocalizedString(@"Moyenne du groupe", nil);
+            cell.detailTextLabel.text = [self.formatter stringFromNumber:self.course.mean];
+        }
+        else if (indexPath.row == 2) {
+            cell.textLabel.text = NSLocalizedString(@"Écart-type", nil);
+            cell.detailTextLabel.text = [self.formatter stringFromNumber:self.course.std];
+        }
+        else if (indexPath.row == 3) {
+            cell.textLabel.text = NSLocalizedString(@"Médiane", nil);
+            cell.detailTextLabel.text = [self.formatter stringFromNumber:self.course.median];
+        }
+        else if (indexPath.row == 4) {
+            cell.textLabel.text = NSLocalizedString(@"Rang centile", nil);
+            cell.detailTextLabel.text = [self.course.percentile stringValue];
+        }
+        else if (indexPath.row == 5) {
+            cell.textLabel.text = NSLocalizedString(@"Cote au dossier", nil);
+            cell.detailTextLabel.text = self.course.grade;
+        }
+    }
+}
+
+- (void)connection:(ETSConnection *)connection didReceiveDictionary:(NSDictionary *)dictionary
+{
+    NSDictionary *results = dictionary[@"d"];
+    self.course.results     = [self.formatter numberFromString:results[@"noteACeJour"]];
+    self.course.mean        = [self.formatter numberFromString:results[@"moyenneClasse"]];
+    self.course.std         = [self.formatter numberFromString:results[@"ecartTypeClasse"]];
+    self.course.median      = [self.formatter numberFromString:results[@"medianeClasse"]];
+    self.course.percentile  = [self.formatter numberFromString:results[@"rangCentileClasse"]];
     
-    return cell;
+    if (!self.hadResults && [self.course.results floatValue] > 0) {
+        NSInteger offset = 0;
+        if ([self.course.grade length] > 0) offset = 1;
+        
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0+offset inSection:0],
+                                                 [NSIndexPath indexPathForRow:1+offset inSection:0],
+                                                 [NSIndexPath indexPathForRow:2+offset inSection:0],
+                                                 [NSIndexPath indexPathForRow:3+offset inSection:0],
+                                                 [NSIndexPath indexPathForRow:4+offset inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        self.hadResults = YES;
+    }
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)connection:(ETSConnection *)connection didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    ETSEvaluation *evaluation = (ETSEvaluation *)managedObject;
+    evaluation.course = self.course;
+    evaluation.ignored = [object[@"ignoreDuCalcul"] isEqualToString:@"Non"] ? @NO : @YES;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    indexPath = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section + 1];
+    if (newIndexPath) {
+        newIndexPath = [NSIndexPath indexPathForRow:newIndexPath.row inSection:newIndexPath.section + 1];
+    }
+    
+    [super controller:controller didChangeObject:anObject atIndexPath:indexPath forChangeType:type newIndexPath:newIndexPath];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+- (void)connectionDidFinishLoading:(ETSConnection *)connection
 {
+    [super connectionDidFinishLoading:connection];
+    
+    NSInteger rows = [self.tableView numberOfRowsInSection:0];
+    for (NSInteger i = 0; i < rows; i++) {
+        [self configureCell:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]] atIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+    }
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

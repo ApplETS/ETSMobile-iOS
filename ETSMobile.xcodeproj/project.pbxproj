@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2601088B181583740037E795 /* ETSCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2601088A181583740037E795 /* ETSCourse.m */; };
 		2601088F181596820037E795 /* ETSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2601088E181596820037E795 /* ETSCollectionViewController.m */; };
 		26085B3D1829D84300FE35AB /* ETSAPIURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26085B3C1829D84300FE35AB /* ETSAPIURL.plist */; };
 		26085B401829D8D700FE35AB /* NSURL+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 26085B3F1829D8D700FE35AB /* NSURL+API.m */; };
 		262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */; };
+		263770941831AFB200D18F94 /* ETSEvaluation.m in Sources */ = {isa = PBXBuildFile; fileRef = 263770931831AFB200D18F94 /* ETSEvaluation.m */; };
 		266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE77F17ECEFF300F44252 /* MFSideMenuContainerViewController.m */; };
 		266BE78517ECEFF300F44252 /* MFSideMenuShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE78117ECEFF300F44252 /* MFSideMenuShadow.m */; };
 		266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */; };
+		266ED340182EC29D00DC1280 /* ETSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266ED33F182EC29D00DC1280 /* ETSTableViewController.m */; };
+		266ED35018300D2900DC1280 /* ETSCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 266ED34F18300D2900DC1280 /* ETSCourse.m */; };
+		2690F604183D088700FAD05A /* ETSWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2690F603183D088700FAD05A /* ETSWebViewViewController.m */; };
+		2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2693168718359EE200DE95A0 /* ETSDirectoryViewController.m */; };
+		269316941835DA2900DE95A0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269316931835DA2900DE95A0 /* AddressBook.framework */; };
+		269316961835DA2D00DE95A0 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269316951835DA2D00DE95A0 /* AddressBookUI.framework */; };
 		2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */; };
 		2698C6F518274F4B00F6281F /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F418274F4B00F6281F /* KeychainItemWrapper.m */; };
 		2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F9182834E000F6281F /* ETSCourseCell.m */; };
@@ -26,6 +32,7 @@
 		26AE185D17F296CD00DB1EB4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AE185B17F2966200DB1EB4 /* QuartzCore.framework */; };
 		26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */; };
 		26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */; };
+		26C97886183AD1DE005D66EF /* ETSContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C97885183AD1DE005D66EF /* ETSContact.m */; };
 		26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A717EA610D00469FA8 /* Foundation.framework */; };
 		26DD92AA17EA610D00469FA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A917EA610D00469FA8 /* CoreGraphics.framework */; };
 		26DD92AC17EA610D00469FA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AB17EA610D00469FA8 /* UIKit.framework */; };
@@ -61,8 +68,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		26010889181583740037E795 /* ETSCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourse.h; sourceTree = "<group>"; };
-		2601088A181583740037E795 /* ETSCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourse.m; sourceTree = "<group>"; };
 		2601088D181596820037E795 /* ETSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCollectionViewController.h; sourceTree = "<group>"; };
 		2601088E181596820037E795 /* ETSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCollectionViewController.m; sourceTree = "<group>"; };
 		26085B3C1829D84300FE35AB /* ETSAPIURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPIURL.plist; sourceTree = "<group>"; };
@@ -70,6 +75,8 @@
 		26085B3F1829D8D700FE35AB /* NSURL+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+API.m"; sourceTree = "<group>"; };
 		262A6344182B3DDA00B786A0 /* ETSCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourseDetailViewController.h; sourceTree = "<group>"; };
 		262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourseDetailViewController.m; sourceTree = "<group>"; };
+		263770921831AFB200D18F94 /* ETSEvaluation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSEvaluation.h; sourceTree = "<group>"; };
+		263770931831AFB200D18F94 /* ETSEvaluation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSEvaluation.m; sourceTree = "<group>"; };
 		266BE77D17ECEFF300F44252 /* MFSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSideMenu.h; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenu.h; sourceTree = "<group>"; };
 		266BE77E17ECEFF300F44252 /* MFSideMenuContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSideMenuContainerViewController.h; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuContainerViewController.h; sourceTree = "<group>"; };
 		266BE77F17ECEFF300F44252 /* MFSideMenuContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFSideMenuContainerViewController.m; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuContainerViewController.m; sourceTree = "<group>"; };
@@ -77,6 +84,16 @@
 		266BE78117ECEFF300F44252 /* MFSideMenuShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFSideMenuShadow.m; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuShadow.m; sourceTree = "<group>"; };
 		266BE78217ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MFSideMenuAdditions.h"; path = "Vendors/MFSideMenu/MFSideMenu/UIViewController+MFSideMenuAdditions.h"; sourceTree = "<group>"; };
 		266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MFSideMenuAdditions.m"; path = "Vendors/MFSideMenu/MFSideMenu/UIViewController+MFSideMenuAdditions.m"; sourceTree = "<group>"; };
+		266ED33E182EC29D00DC1280 /* ETSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSTableViewController.h; sourceTree = "<group>"; };
+		266ED33F182EC29D00DC1280 /* ETSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSTableViewController.m; sourceTree = "<group>"; };
+		266ED34E18300D2900DC1280 /* ETSCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourse.h; sourceTree = "<group>"; };
+		266ED34F18300D2900DC1280 /* ETSCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourse.m; sourceTree = "<group>"; };
+		2690F602183D088700FAD05A /* ETSWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSWebViewViewController.h; sourceTree = "<group>"; };
+		2690F603183D088700FAD05A /* ETSWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSWebViewViewController.m; sourceTree = "<group>"; };
+		2693168618359EE200DE95A0 /* ETSDirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSDirectoryViewController.h; sourceTree = "<group>"; };
+		2693168718359EE200DE95A0 /* ETSDirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSDirectoryViewController.m; sourceTree = "<group>"; };
+		269316931835DA2900DE95A0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		269316951835DA2D00DE95A0 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		2698C6F01827498800F6281F /* ETSAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSAuthenticationViewController.h; sourceTree = "<group>"; };
 		2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSAuthenticationViewController.m; sourceTree = "<group>"; };
 		2698C6F318274F4B00F6281F /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainItemWrapper.h; path = Vendors/KeychainWrapper/KeychainItemWrapper.h; sourceTree = "<group>"; };
@@ -97,6 +114,8 @@
 		26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Styles.m"; sourceTree = "<group>"; };
 		26AE186417F32CC800DB1EB4 /* UIStoryboard+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+ViewController.h"; sourceTree = "<group>"; };
 		26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+ViewController.m"; sourceTree = "<group>"; };
+		26C97884183AD1DE005D66EF /* ETSContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSContact.h; sourceTree = "<group>"; };
+		26C97885183AD1DE005D66EF /* ETSContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSContact.m; sourceTree = "<group>"; };
 		26DD92A417EA610D00469FA8 /* ETSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26DD92A717EA610D00469FA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26DD92A917EA610D00469FA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +153,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				269316961835DA2D00DE95A0 /* AddressBookUI.framework in Frameworks */,
+				269316941835DA2900DE95A0 /* AddressBook.framework in Frameworks */,
 				26AE185D17F296CD00DB1EB4 /* QuartzCore.framework in Frameworks */,
 				26DD92AA17EA610D00469FA8 /* CoreGraphics.framework in Frameworks */,
 				26DD92AE17EA610D00469FA8 /* CoreData.framework in Frameworks */,
@@ -163,8 +184,12 @@
 				269BFF511810A9A3005D2950 /* ETSConnection.m */,
 				2601088D181596820037E795 /* ETSCollectionViewController.h */,
 				2601088E181596820037E795 /* ETSCollectionViewController.m */,
+				266ED33E182EC29D00DC1280 /* ETSTableViewController.h */,
+				266ED33F182EC29D00DC1280 /* ETSTableViewController.m */,
 				2698C6F01827498800F6281F /* ETSAuthenticationViewController.h */,
 				2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */,
+				2690F602183D088700FAD05A /* ETSWebViewViewController.h */,
+				2690F603183D088700FAD05A /* ETSWebViewViewController.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -181,6 +206,15 @@
 				266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */,
 			);
 			name = MFSideMenu;
+			sourceTree = "<group>";
+		};
+		2693168518359ECA00DE95A0 /* Directory */ = {
+			isa = PBXGroup;
+			children = (
+				2693168618359EE200DE95A0 /* ETSDirectoryViewController.h */,
+				2693168718359EE200DE95A0 /* ETSDirectoryViewController.m */,
+			);
+			name = Directory;
 			sourceTree = "<group>";
 		};
 		2698C6F618274F4F00F6281F /* KeychainWrapper */ = {
@@ -261,6 +295,8 @@
 		26DD92A617EA610D00469FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				269316951835DA2D00DE95A0 /* AddressBookUI.framework */,
+				269316931835DA2900DE95A0 /* AddressBook.framework */,
 				26AE185B17F2966200DB1EB4 /* QuartzCore.framework */,
 				26DD92A717EA610D00469FA8 /* Foundation.framework */,
 				26DD92A917EA610D00469FA8 /* CoreGraphics.framework */,
@@ -328,8 +364,12 @@
 		26DD92E817EA612800469FA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				26010889181583740037E795 /* ETSCourse.h */,
-				2601088A181583740037E795 /* ETSCourse.m */,
+				26C97884183AD1DE005D66EF /* ETSContact.h */,
+				26C97885183AD1DE005D66EF /* ETSContact.m */,
+				266ED34E18300D2900DC1280 /* ETSCourse.h */,
+				266ED34F18300D2900DC1280 /* ETSCourse.m */,
+				263770921831AFB200D18F94 /* ETSEvaluation.h */,
+				263770931831AFB200D18F94 /* ETSEvaluation.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -339,6 +379,7 @@
 			children = (
 				260108901815968D0037E795 /* Base */,
 				269BFF591814C627005D2950 /* Courses */,
+				2693168518359ECA00DE95A0 /* Directory */,
 				26DD92ED17EA623300469FA8 /* Menu */,
 				26DD92EC17EA622D00469FA8 /* News */,
 			);
@@ -429,7 +470,7 @@
 				ORGANIZATIONNAME = ApplETS;
 				TargetAttributes = {
 					26DD92A317EA610D00469FA8 = {
-						DevelopmentTeam = 3R5C445LCQ;
+						DevelopmentTeam = N742HF354K;
 					};
 					26DD92CF17EA610D00469FA8 = {
 						TestTargetID = 26DD92A317EA610D00469FA8;
@@ -484,19 +525,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				266ED340182EC29D00DC1280 /* ETSTableViewController.m in Sources */,
 				262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */,
-				2601088B181583740037E795 /* ETSCourse.m in Sources */,
 				269BFF521810A9A3005D2950 /* ETSConnection.m in Sources */,
 				269BFF561811A41C005D2950 /* NSManagedObject+SetValues.m in Sources */,
 				26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */,
 				26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */,
+				26C97886183AD1DE005D66EF /* ETSContact.m in Sources */,
+				2690F604183D088700FAD05A /* ETSWebViewViewController.m in Sources */,
 				2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */,
 				26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */,
 				26DD92B617EA610D00469FA8 /* main.m in Sources */,
 				26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */,
 				26DD92C317EA610D00469FA8 /* ETSMobile.xcdatamodeld in Sources */,
+				263770941831AFB200D18F94 /* ETSEvaluation.m in Sources */,
 				26A65542182ABE6E00DEE9B7 /* NSURLRequest+API.m in Sources */,
 				266BE78517ECEFF300F44252 /* MFSideMenuShadow.m in Sources */,
+				2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */,
 				2601088F181596820037E795 /* ETSCollectionViewController.m in Sources */,
 				26DD92C617EA610D00469FA8 /* ETSMasterViewController.m in Sources */,
 				26085B401829D8D700FE35AB /* NSURL+API.m in Sources */,
@@ -504,6 +549,7 @@
 				26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */,
 				266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */,
 				2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */,
+				266ED35018300D2900DC1280 /* ETSCourse.m in Sources */,
 				269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */,
 				26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */,
 				26DD92C917EA610D00469FA8 /* ETSDetailViewController.m in Sources */,
@@ -645,10 +691,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_RECEIVER_WEAK = NO;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -662,10 +715,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_RECEIVER_WEAK = NO;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

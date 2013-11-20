@@ -25,4 +25,14 @@
     return [self instantiateViewControllerWithIdentifier:@"CoursesViewController"];
 }
 
+- (id)instantiateDirectoryViewController
+{
+    return [self instantiateViewControllerWithIdentifier:@"DirectoryViewController"];
+}
+
+- (id)instantiateLibraryViewController
+{
+    return [self instantiateViewControllerWithIdentifier:@"WebViewController"];
+}
+
 @end

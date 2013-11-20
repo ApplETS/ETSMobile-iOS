@@ -14,6 +14,8 @@
 #import "UIColor+Styles.h"
 #import "ETSConnection.h"
 #import "ETSCoursesViewController.h"
+#import "ETSConnection.h"
+#import "NSURLRequest+API.h"
 
 @implementation ETSAppDelegate
 
@@ -52,7 +54,6 @@
         
         [container setLeftMenuViewController:leftSideMenuViewController];
         [container setCenterViewController:navigationController];
-        
     
     }
     return YES;

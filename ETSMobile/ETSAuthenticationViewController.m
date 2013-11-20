@@ -8,6 +8,7 @@
 
 #import "ETSAuthenticationViewController.h"
 #import "KeychainItemWrapper.h"
+#import "MFSideMenu.h"
 
 NSString * const kKeychainId = @"ApplETS";
 
@@ -21,7 +22,9 @@ NSString * const kKeychainId = @"ApplETS";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    self.menuContainerViewController.panMode = MFSideMenuPanModeCenterViewController | MFSideMenuPanModeSideMenu;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -36,7 +39,10 @@ NSString * const kKeychainId = @"ApplETS";
         [self.passwordTextField becomeFirstResponder];
     }
     else {
-        [self.passwordTextField resignFirstResponder];
+        if ([self.usernameTextField.text length] == 0) [self.usernameTextField becomeFirstResponder];
+        else {
+            [self authenticate:nil];
+        }
     }
     return YES;
 }
@@ -51,6 +57,11 @@ NSString * const kKeychainId = @"ApplETS";
     [keychainItem setObject:self.usernameTextField.text forKey:(__bridge id)(kSecAttrAccount)];
     
     [self.delegate controllerDidAuthenticate:self];
+}
+
+- (IBAction)showMenu:(id)sender
+{
+    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
 }
 
 + (NSString *)passwordInKeychain

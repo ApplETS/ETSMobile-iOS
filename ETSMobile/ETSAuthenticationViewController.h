@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 - (IBAction)authenticate:(id)sender;
+- (IBAction)showMenu:(id)sender;
 + (NSString *)passwordInKeychain;
 + (NSString *)usernameInKeychain;
 + (void)resetKeychain;

@@ -18,13 +18,24 @@ typedef NS_ENUM(NSInteger, ETSConnectionResponse) {
 
 @interface ETSConnection : NSObject
 
-- (void)loadDataWithRequest:(NSURLRequest *)request entityName:(NSString *)entityName forObjectsKeyPath:(NSString *)objectsKeyPath compareKey:(NSString *)key;
+- (void)loadData;
+- (void)saveManagedObjectContext;
 
 @property (nonatomic, weak)   id<ETSConnectionDelegate> delegate;
+@property (nonatomic, strong) NSURLRequest *request;
+@property (nonatomic, copy)   NSString *entityName;
+@property (nonatomic, copy)   NSString *objectsKeyPath;
+@property (nonatomic, copy)   NSString *compareKey;
+@property (nonatomic, strong) NSPredicate *predicate;
+@property (nonatomic, strong) NSArray *ignoredAttributesFromUpdate;
+@property (nonatomic, assign) BOOL saveAutomatically;
 
 @end
 
-@protocol ETSConnectionDelegate
+@protocol ETSConnectionDelegate<NSObject>
+@optional
+- (void)connection:(ETSConnection *)connection didReceiveDictionary:(NSDictionary *)dictionary;
 - (void)connection:(ETSConnection *)connection didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject;
-- (void)connection:(ETSConnection *)connection didReveiveResponse:(ETSConnectionResponse)response;
+- (void)connection:(ETSConnection *)connection didReceiveResponse:(ETSConnectionResponse)response;
+- (void)connectionDidFinishLoading:(ETSConnection *)connection;
 @end

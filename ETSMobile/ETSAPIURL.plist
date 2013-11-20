@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Directory</key>
+	<string>http://etsmtl.ca/cmspages/webservice.asmx/Recherche</string>
+	<key>Evaluations</key>
+	<string>https://signets-ens.etsmtl.ca/Secure/WebServices/SignetsMobile.asmx/listeElementsEvaluation</string>
 	<key>Courses</key>
 	<string>https://signets-ens.etsmtl.ca/Secure/WebServices/SignetsMobile.asmx/listeCours</string>
 </dict>

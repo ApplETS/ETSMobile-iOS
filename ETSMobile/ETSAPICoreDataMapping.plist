@@ -2,6 +2,50 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Contact</key>
+	<dict>
+		<key>ext</key>
+		<string>Poste</string>
+		<key>service</key>
+		<string>Service</string>
+		<key>email</key>
+		<string>Courriel</string>
+		<key>firstName</key>
+		<string>Prenom</string>
+		<key>id</key>
+		<string>Id</string>
+		<key>job</key>
+		<string>Titre</string>
+		<key>lastName</key>
+		<string>Nom</string>
+		<key>office</key>
+		<string>Emplacement</string>
+		<key>phone</key>
+		<string>TelBureau</string>
+	</dict>
+	<key>Evaluation</key>
+	<dict>
+		<key>date</key>
+		<string>date</string>
+		<key>mean</key>
+		<string>moyenne</string>
+		<key>median</key>
+		<string>mediane</string>
+		<key>name</key>
+		<string>nom</string>
+		<key>percentile</key>
+		<string>rangCentile</string>
+		<key>result</key>
+		<string>note</string>
+		<key>std</key>
+		<string>ecartType</string>
+		<key>team</key>
+		<string>equipe</string>
+		<key>total</key>
+		<string>corrigeSur</string>
+		<key>weighting</key>
+		<string>ponderation</string>
+	</dict>
 	<key>Course</key>
 	<dict>
 		<key>session</key>
