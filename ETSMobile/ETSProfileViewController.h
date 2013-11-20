@@ -6,12 +6,8 @@
 //  Copyright (c) 2013 ApplETS. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "ETSConnection.h"
+#import "ETSTableViewController.h"
 
-@interface ETSProfileViewController : UITableViewController <ETSConnectionDelegate>
-    @property (nonatomic, copy)   NSString *entityName;
-    @property (nonatomic, strong) NSURLRequest *request;
+@interface ETSProfileViewController : ETSTableViewController <ETSConnectionDelegate>
 
-    @property (strong, nonatomic) ETSConnection *connection;
 @end
