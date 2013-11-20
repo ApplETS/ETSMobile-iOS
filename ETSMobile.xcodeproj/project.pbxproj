@@ -17,6 +17,7 @@
 		266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */; };
 		266ED340182EC29D00DC1280 /* ETSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266ED33F182EC29D00DC1280 /* ETSTableViewController.m */; };
 		266ED35018300D2900DC1280 /* ETSCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 266ED34F18300D2900DC1280 /* ETSCourse.m */; };
+		2690F604183D088700FAD05A /* ETSWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2690F603183D088700FAD05A /* ETSWebViewViewController.m */; };
 		2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2693168718359EE200DE95A0 /* ETSDirectoryViewController.m */; };
 		269316941835DA2900DE95A0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269316931835DA2900DE95A0 /* AddressBook.framework */; };
 		269316961835DA2D00DE95A0 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269316951835DA2D00DE95A0 /* AddressBookUI.framework */; };
@@ -87,6 +88,8 @@
 		266ED33F182EC29D00DC1280 /* ETSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSTableViewController.m; sourceTree = "<group>"; };
 		266ED34E18300D2900DC1280 /* ETSCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourse.h; sourceTree = "<group>"; };
 		266ED34F18300D2900DC1280 /* ETSCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourse.m; sourceTree = "<group>"; };
+		2690F602183D088700FAD05A /* ETSWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSWebViewViewController.h; sourceTree = "<group>"; };
+		2690F603183D088700FAD05A /* ETSWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSWebViewViewController.m; sourceTree = "<group>"; };
 		2693168618359EE200DE95A0 /* ETSDirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSDirectoryViewController.h; sourceTree = "<group>"; };
 		2693168718359EE200DE95A0 /* ETSDirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSDirectoryViewController.m; sourceTree = "<group>"; };
 		269316931835DA2900DE95A0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -185,6 +188,8 @@
 				266ED33F182EC29D00DC1280 /* ETSTableViewController.m */,
 				2698C6F01827498800F6281F /* ETSAuthenticationViewController.h */,
 				2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */,
+				2690F602183D088700FAD05A /* ETSWebViewViewController.h */,
+				2690F603183D088700FAD05A /* ETSWebViewViewController.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -527,6 +532,7 @@
 				26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */,
 				26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */,
 				26C97886183AD1DE005D66EF /* ETSContact.m in Sources */,
+				2690F604183D088700FAD05A /* ETSWebViewViewController.m in Sources */,
 				2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */,
 				26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */,
 				26DD92B617EA610D00469FA8 /* main.m in Sources */,

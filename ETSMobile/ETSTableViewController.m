@@ -31,6 +31,8 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self.navigationController setToolbarHidden:YES animated:animated];
+
     if (self.dataNeedRefresh) [self.connection loadData];
 
     if ([[self.navigationController viewControllers] count] > 1)

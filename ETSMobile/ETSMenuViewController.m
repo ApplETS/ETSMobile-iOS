@@ -9,6 +9,7 @@
 #import "ETSMenuViewController.h"
 #import "ETSNewsViewController.h"
 #import "ETSCoursesViewController.h"
+#import "ETSWebViewViewController.h"
 #import "MFSideMenuContainerViewController.h"
 #import "UIColor+Styles.h"
 #import "UIStoryboard+ViewController.h"
@@ -205,7 +206,8 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
             viewController = [self.storyboard instantiateDirectoryViewController];
         }
         else if (indexPath.row == ETSMenuUniversityLibrary) {
-
+            viewController = [self.storyboard instantiateLibraryViewController];
+            ((ETSWebViewViewController *)viewController).initialRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ets.mbiblio.ca"]];
         }
         else if (indexPath.row == ETSMenuUniversityRadio) {
 

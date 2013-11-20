@@ -195,6 +195,63 @@
             </objects>
             <point key="canvasLocation" x="-556" y="-2086"/>
         </scene>
+        <!--Web View View Controller-->
+        <scene sceneID="kCB-hW-O53">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="pBp-do-NzA" customClass="ETSWebViewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K9h-sM-wUd"/>
+                        <viewControllerLayoutGuide type="bottom" id="1ic-QU-xj7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1PD-wm-nc2" customClass="UIWebView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="delegate" destination="pBp-do-NzA" id="4rO-fn-SNz"/>
+                        </connections>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Précédent" id="iRo-88-4iQ">
+                            <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="goBack" destination="1PD-wm-nc2" id="ffW-a1-maM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Jhb-Fq-kMS"/>
+                        <barButtonItem title="Suivant" id="U8n-sS-Cce">
+                            <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="goForward" destination="1PD-wm-nc2" id="xs2-V9-EIZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="9Wu-rK-sMd"/>
+                        <barButtonItem systemItem="refresh" id="mfZ-YO-w6G">
+                            <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="reload" destination="1PD-wm-nc2" id="EXy-4P-Tcj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7jQ-LL-AYE"/>
+                        <barButtonItem systemItem="stop" id="0WK-4T-PF2">
+                            <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="stopLoading" destination="1PD-wm-nc2" id="ZaH-4W-941"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backBarButtonItem" destination="iRo-88-4iQ" id="j11-oP-Htm"/>
+                        <outlet property="nextBarButtonItem" destination="U8n-sS-Cce" id="xjR-2W-9Jm"/>
+                        <outlet property="refreshBarButtonItem" destination="mfZ-YO-w6G" id="gEY-fw-KEL"/>
+                        <outlet property="stopBarButtonItem" destination="0WK-4T-PF2" id="MzD-ZW-GOJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="593-bZ-A86" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="503" y="-2271"/>
+        </scene>
         <!--Courses View Controller-->
         <scene sceneID="qeo-zR-fV2">
             <objects>
