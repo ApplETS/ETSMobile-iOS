@@ -10,8 +10,9 @@
 #import "ETSCourse.h"
 
 @interface NSURLRequest (API)
-+ (id)requestForCourses;
-+ (id)requestForEvaluationsWithCourse:(ETSCourse *)course;
-+ (id)requestForDirectory;
-
+    + (id)requestSetup: (NSURL*)url;
+    + (id)requestForCourses;
+    + (id)requestForProfile;
+    + (id)requestForEvaluationsWithCourse:(ETSCourse *)course;
+    + (id)requestForDirectory;
 @end

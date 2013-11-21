@@ -63,5 +63,16 @@
 		<key>title</key>
 		<string>titreCours</string>
 	</dict>
+	<key>Profile</key>
+	<dict>
+		<key>firstName</key>
+		<string>nom</string>
+		<key>lastName</key>
+		<string>prenom</string>
+		<key>permanentCode</key>
+		<string>codePerm</string>
+		<key>balance</key>
+		<string>soldeTotal</string>
+	</dict>
 </dict>
 </plist>

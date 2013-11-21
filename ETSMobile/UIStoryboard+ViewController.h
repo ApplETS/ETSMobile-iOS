@@ -12,6 +12,7 @@
 - (id)instantiateNewsViewController;
 - (id)instantiateAuthenticationViewController;
 - (id)instantiateCoursesViewController;
+- (id)instantiateProfileViewController;
 - (id)instantiateDirectoryViewController;
 - (id)instantiateLibraryViewController;
 @end

@@ -26,7 +26,8 @@
         } else if (((attributeType == NSInteger16AttributeType) || (attributeType == NSInteger32AttributeType) || (attributeType == NSInteger64AttributeType) || (attributeType == NSBooleanAttributeType)) && ([value isKindOfClass:[NSString class]])) {
             value = @([value integerValue]);
         } else if ((attributeType == NSFloatAttributeType) &&  ([value isKindOfClass:[NSString class]])) {
-            value = @([[value stringByReplacingOccurrencesOfString:@"," withString:@"." ]  doubleValue]);
+            value = [value stringByReplacingOccurrencesOfString:@"," withString:@"."];
+            value = @([[value stringByReplacingOccurrencesOfString:@"$" withString:@"" ]  doubleValue]);
         } else if ((attributeType == NSDateAttributeType) && ([value isKindOfClass:[NSString class]]) && (dateFormatter != nil)) {
             value = [dateFormatter dateFromString:value];
         } else if ((attributeType == NSStringAttributeType) &&  ([value isKindOfClass:[NSNull class]])) {

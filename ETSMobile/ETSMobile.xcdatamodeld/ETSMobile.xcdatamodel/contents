@@ -17,9 +17,7 @@
     <entity name="Course" representedClassName="ETSCourse">
         <attribute name="acronym" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="credits" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="grade" optional="YES" attributeType="String">
-            <userInfo/>
-        </attribute>
+        <attribute name="grade" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="group" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mean" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="median" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -49,9 +47,21 @@
         <attribute name="weighting" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="evaluations" inverseEntity="Course" syncable="YES"/>
     </entity>
+    <entity name="Profile" syncable="YES">
+        <attribute name="balance" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="creditsFailed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="creditsPassed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="creditsSubscribed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gradeAverage" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="permanentCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="program" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Contact" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Course" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Profile" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Evaluation" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
