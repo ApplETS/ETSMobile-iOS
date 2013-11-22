@@ -41,7 +41,7 @@
      {
          [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
          
-         NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
+         //NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
          
          if (!data) return;
          

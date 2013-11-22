@@ -15,4 +15,5 @@
 - (id)instantiateProfileViewController;
 - (id)instantiateDirectoryViewController;
 - (id)instantiateLibraryViewController;
+- (id)instantiateRadioViewController;
 @end

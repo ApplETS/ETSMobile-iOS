@@ -40,4 +40,9 @@
     return [self instantiateViewControllerWithIdentifier:@"WebViewController"];
 }
 
+- (id)instantiateRadioViewController
+{
+    return [self instantiateViewControllerWithIdentifier:@"RadioViewController"];
+}
+
 @end
