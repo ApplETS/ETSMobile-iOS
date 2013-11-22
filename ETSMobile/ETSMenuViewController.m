@@ -126,7 +126,7 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
             cell.imageView.image = [UIImage imageNamed:@"ico_library.png"];
         }
         else if (indexPath.row == ETSMenuUniversityRadio) {
-            cell.textLabel.text = NSLocalizedString(@"Radio", nil);
+            cell.textLabel.text = NSLocalizedString(@"Radio Piranha", nil);
              cell.imageView.image = [UIImage imageNamed:@"ico_radio.png"];
         }
         else if (indexPath.row == ETSMenuUniversitySecurity) {
@@ -211,7 +211,7 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
             ((ETSWebViewViewController *)viewController).initialRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ets.mbiblio.ca"]];
         }
         else if (indexPath.row == ETSMenuUniversityRadio) {
-
+            viewController = [self.storyboard instantiateRadioViewController];
         }
         else if (indexPath.row == ETSMenuUniversitySecurity) {
 

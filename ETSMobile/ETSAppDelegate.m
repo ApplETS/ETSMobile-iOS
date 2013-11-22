@@ -14,15 +14,32 @@
 #import "UIColor+Styles.h"
 #import "ETSConnection.h"
 #import "NSURLRequest+API.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation ETSAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize radioPlayer = _radioPlayer;
+
+- (void)startRadio
+{
+    _radioPlayer = [AVPlayer playerWithURL:[NSURL  URLWithString:@"http://radiopiranha.com:8000/radiopiranha.mp3"]];
+    [_radioPlayer play];
+}
+
+- (void)stopRadio
+{
+    [_radioPlayer pause];
+    _radioPlayer = nil;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[AVAudioSession sharedInstance] setActive: YES error: NULL];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+        
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
