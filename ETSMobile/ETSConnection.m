@@ -41,7 +41,7 @@
      {
          [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
          
-         //NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
+         NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
          
          if (!data) return;
          
@@ -80,7 +80,9 @@
          }
          
          NSDictionary *mappings = [[NSDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ETSAPICoreDataMapping" ofType:@"plist"]];
-         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+         
+         if (!self.dateFormatter)
+             self.dateFormatter = [[NSDateFormatter alloc] init];
          
          if ([json isKindOfClass:[NSArray class]])
          {
@@ -122,7 +124,7 @@
                  
                  if (!rObject || comparisonResult == NSOrderedAscending) {
                      NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:bself.entityName inManagedObjectContext:bself.managedObjectContext];
-                     [managedObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:dateFormatter mapping:mappings[bself.entityName]];
+                     [managedObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:bself.dateFormatter mapping:mappings[bself.entityName]];
                      if ([bself.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)]) [bself.delegate connection:bself didReceiveObject:lObject forManagedObject:managedObject];
                  }
                  
@@ -142,7 +144,7 @@
                          }
                          [rObject setValue:nil forKey:attribute];
                      }
-                     [rObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:dateFormatter mapping:mappings[bself.entityName]];
+                     [rObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:bself.dateFormatter mapping:mappings[bself.entityName]];
                      if ([bself.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)])
                          [bself.delegate connection:bself didReceiveObject:lObject forManagedObject:rObject];
                  }
@@ -151,7 +153,7 @@
              while (i < [coredataArray count]) {
                  NSDictionary *lObject = json[i];
                  NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:bself.entityName inManagedObjectContext:bself.managedObjectContext];
-                 [managedObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:dateFormatter mapping:mappings[bself.entityName]];
+                 [managedObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:bself.dateFormatter mapping:mappings[bself.entityName]];
                  if ([bself.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)])
                      [bself.delegate connection:bself didReceiveObject:lObject forManagedObject:managedObject];
                  i++;
@@ -180,7 +182,7 @@
                      }
                      [coreObject setValue:nil forKey:attribute];
                  }
-                 [coreObject safeSetValuesForKeysWithDictionary:json dateFormatter:dateFormatter mapping:mappings[bself.entityName]];
+                 [coreObject safeSetValuesForKeysWithDictionary:json dateFormatter:bself.dateFormatter mapping:mappings[bself.entityName]];
                  if ([bself.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)])
                      [bself.delegate connection:bself didReceiveObject:json forManagedObject:coreObject];
                  
@@ -188,7 +190,7 @@
              
              else {
                  NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:bself.entityName inManagedObjectContext:bself.managedObjectContext];
-                 [managedObject safeSetValuesForKeysWithDictionary:json dateFormatter:dateFormatter mapping:mappings[bself.entityName]];
+                 [managedObject safeSetValuesForKeysWithDictionary:json dateFormatter:bself.dateFormatter mapping:mappings[bself.entityName]];
                  if ([bself.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)]) [bself.delegate connection:bself didReceiveObject:json forManagedObject:managedObject];
              }
          }

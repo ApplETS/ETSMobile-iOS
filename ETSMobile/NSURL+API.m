@@ -41,4 +41,16 @@
     return [NSURL URLWithString:[[NSURL dictionaryFromPlist] objectForKey:@"Profile"]];
 }
 
++ (id)URLForRadio
+{
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    [offsetComponents setDay:1];
+    NSDate *tomorrow = [gregorian dateByAddingComponents:offsetComponents toDate:[NSDate date] options:0];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"ddMMyyyy"];
+
+    return [NSURL URLWithString:[NSString stringWithFormat:[[NSURL dictionaryFromPlist] objectForKey:@"Radio"], [formatter stringFromDate:[NSDate date]], [formatter stringFromDate:tomorrow]]];
+}
+
 @end

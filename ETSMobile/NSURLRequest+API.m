@@ -33,63 +33,74 @@
 
 @implementation NSURLRequest (API)
 
-    + (id) requestSetup: (NSURL*)url
-    {
-        NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL: url];
-        
-        NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-        if ([ETSAuthenticationViewController passwordInKeychain]) [parameters setObject:[ETSAuthenticationViewController passwordInKeychain] forKey:@"motPasse"];
-        if ([ETSAuthenticationViewController usernameInKeychain]) [parameters setObject:[ETSAuthenticationViewController usernameInKeychain] forKey:@"codeAccesUniversel"];
-        
-        NSError *error = nil;
-        [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:kNilOptions error:&error]];
++ (id) requestSetup: (NSURL*)url
+{
+    NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL: url];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    if ([ETSAuthenticationViewController passwordInKeychain]) [parameters setObject:[ETSAuthenticationViewController passwordInKeychain] forKey:@"motPasse"];
+    if ([ETSAuthenticationViewController usernameInKeychain]) [parameters setObject:[ETSAuthenticationViewController usernameInKeychain] forKey:@"codeAccesUniversel"];
+    
+    NSError *error = nil;
+    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:kNilOptions error:&error]];
+    
+    return request;
+}
 
-        return request;
-    }
++ (id)requestForCourses
+{
+    NSURL *url = [NSURL URLForCourses];
+    
+    return [self requestSetup: url];
+}
 
-    + (id)requestForCourses
-    {
-        NSURL *url = [NSURL URLForCourses];
-        
-        return [self requestSetup: url];
-    }
++ (id)requestForProfile
+{
+    NSURL *url = [NSURL URLForProfile];
+    
+    return [self requestSetup: url];
+}
 
-    + (id)requestForProfile
-    {
-        NSURL *url = [NSURL URLForProfile];
-        
-        return [self requestSetup: url];
-    }
++ (id)requestForEvaluationsWithCourse:(ETSCourse *)course
+{
+    NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL:[NSURL URLForEvaluations]];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    if ([ETSAuthenticationViewController passwordInKeychain]) parameters[@"motPasse"] = [ETSAuthenticationViewController passwordInKeychain];
+    if ([ETSAuthenticationViewController usernameInKeychain]) parameters[@"codeAccesUniversel"] = [ETSAuthenticationViewController usernameInKeychain];
+    parameters[@"pSigle"] = course.acronym;
+    parameters[@"pGroupe"] = course.group;
+    parameters[@"pSession"] = course.session;
+    
+    NSError *error = nil;
+    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:kNilOptions error:&error]];
+    
+    return request;
+}
 
-    + (id)requestForEvaluationsWithCourse:(ETSCourse *)course
-    {
-        NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL:[NSURL URLForEvaluations]];
-        
-        NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-        if ([ETSAuthenticationViewController passwordInKeychain]) parameters[@"motPasse"] = [ETSAuthenticationViewController passwordInKeychain];
-        if ([ETSAuthenticationViewController usernameInKeychain]) parameters[@"codeAccesUniversel"] = [ETSAuthenticationViewController usernameInKeychain];
-        parameters[@"pSigle"] = course.acronym;
-        parameters[@"pGroupe"] = course.group;
-        parameters[@"pSession"] = course.session;
-        
-        NSError *error = nil;
-        [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:kNilOptions error:&error]];
-        
-        return request;
-    }
++ (id)requestForDirectory
+{
+    NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL:[NSURL URLForDirectory]];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"FiltreNom"] = @"";
+    parameters[@"FiltrePrenom"] = @"";
+    parameters[@"FiltreServiceCode"] = @"";
+    
+    NSError *error = nil;
+    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:kNilOptions error:&error]];
+    return request;
+}
 
-    + (id)requestForDirectory
-    {
-        NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL:[NSURL URLForDirectory]];
-        
-        NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-       parameters[@"FiltreNom"] = @"";
-       parameters[@"FiltrePrenom"] = @"";
-       parameters[@"FiltreServiceCode"] = @"";
-        
-        NSError *error = nil;
-        [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:kNilOptions error:&error]];
-        return request;
-    }
++ (id)requestForRadio
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForRadio]];
+    
+//    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    
+//    NSError *error = nil;
+//    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:kNilOptions error:&error]];
+    return request;
+}
 
 @end

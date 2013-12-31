@@ -47,7 +47,13 @@
         <attribute name="weighting" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="evaluations" inverseEntity="Course" syncable="YES"/>
     </entity>
-    <entity name="Profile" syncable="YES">
+    <entity name="Event" representedClassName="ETSEvent" syncable="YES">
+        <attribute name="end" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="start" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Profile" representedClassName="ETSProfile" syncable="YES">
         <attribute name="balance" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="creditsFailed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="creditsPassed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -61,7 +67,8 @@
     <elements>
         <element name="Contact" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Course" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Profile" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Evaluation" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Event" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Profile" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

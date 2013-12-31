@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 ApplETS. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ETSTableViewController.h"
 
-@interface ETSRadioViewController : UITableViewController
+@interface ETSRadioViewController : ETSTableViewController
 
 @end

@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Radio</key>
+	<string>http://api.clubapplets.ca/?message=GET&amp;calendar=programmation_radiopiranha&amp;start_min=%@&amp;start_max=%@</string>
 	<key>Directory</key>
 	<string>http://etsmtl.ca/cmspages/webservice.asmx/Recherche</string>
 	<key>Evaluations</key>
