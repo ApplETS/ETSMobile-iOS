@@ -27,6 +27,7 @@ typedef NS_ENUM(NSInteger, ETSConnectionResponse) {
 @property (nonatomic, copy)   NSString *objectsKeyPath;
 @property (nonatomic, copy)   NSString *compareKey;
 @property (nonatomic, strong) NSPredicate *predicate;
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @property (nonatomic, strong) NSArray *ignoredAttributesFromUpdate;
 @property (nonatomic, assign) BOOL saveAutomatically;
 

@@ -9,6 +9,7 @@
 #import "ETSRadioViewController.h"
 #import "ETSAppDelegate.h"
 #import "MFSideMenu.h"
+#import "ETSEvent.h"
 #import <AVFoundation/AVFoundation.h>
 
 @interface ETSRadioViewController ()
@@ -18,6 +19,8 @@
 @end
 
 @implementation ETSRadioViewController
+
+@synthesize fetchedResultsController = _fetchedResultsController;
 
 - (void)panLeftMenu
 {
@@ -45,6 +48,52 @@
         self.navigationItem.rightBarButtonItem = self.playBarButtonItem;
     
     self.title = @"Radio Piranha";
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+    
+    ETSConnection *connection = [[ETSConnection alloc] init];
+    connection.request = [NSURLRequest requestForRadio];
+    connection.entityName = @"Event";
+    connection.compareKey = @"id";
+    connection.objectsKeyPath = @"programmation_radiopiranha";
+    connection.predicate = nil;
+    connection.dateFormatter = dateFormatter;
+    
+    self.connection = connection;
+    self.connection.delegate = self;
+    
+    self.cellIdentifier = @"RadioCell";
+    
+    // CALENDRIER : VOIR SUNRISE
+}
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    fetchRequest.fetchBatchSize = 10;
+    
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"start" ascending:YES]];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    self.fetchedResultsController = aFetchedResultsController;
+    _fetchedResultsController.delegate = self;
+    
+    NSError *error;
+    if (![_fetchedResultsController performFetch:&error]) {
+        // FIXME: Update to handle the error appropriately.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+    
+    return _fetchedResultsController;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -62,26 +111,11 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    return 1;
-}
+    ETSEvent *event = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = event.title;
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    cell.textLabel.text = @"L'horaire sera ici…";
-    
-    return cell;
 }
 
 - (IBAction)playRadio:(id)sender

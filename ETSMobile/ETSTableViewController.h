@@ -10,6 +10,7 @@
 #import "ETSConnection.h"
 #import "ETSAuthenticationViewController.h"
 #import "UIStoryboard+ViewController.h"
+#import "NSURLRequest+API.h"
 
 @interface ETSTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, ETSConnectionDelegate, ETSAuthenticationViewControllerDelegate>
 
