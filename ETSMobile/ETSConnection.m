@@ -37,11 +37,12 @@
 {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     __weak typeof(self) bself = self;
+
     [NSURLConnection sendAsynchronousRequest:self.request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError)
      {
          [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
          
-         NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
+         //NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
          
          if (!data) return;
          
@@ -69,6 +70,10 @@
          }
          
          id json = [jsonObjects valueForKeyPath:bself.objectsKeyPath];
+         
+         
+         if ([bself.delegate respondsToSelector:@selector(connection:updateJSONObjects:)])
+             json = [bself.delegate connection:bself updateJSONObjects:json];
          
          if (bself.saveAutomatically)
              bself.managedObjectContext = [ETSConnection mainManagedObjectContext];

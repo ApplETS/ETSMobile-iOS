@@ -14,6 +14,7 @@
 #import "MFSideMenuContainerViewController.h"
 #import "UIColor+Styles.h"
 #import "UIStoryboard+ViewController.h"
+#import "ETSBandwidthViewController.h"
 
 typedef NS_ENUM(NSInteger, ETSMenuMe)
 {
@@ -195,7 +196,7 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
             viewController = [self.storyboard instantiateProfileViewController];
         }
         else if (indexPath.row == ETSMenuMeBandwidth) {
-
+            viewController = [self.storyboard instantiateBandwidthViewController];
         }
     }
     

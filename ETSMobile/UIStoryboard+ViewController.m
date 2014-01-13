@@ -45,4 +45,9 @@
     return [self instantiateViewControllerWithIdentifier:@"RadioViewController"];
 }
 
+- (id)instantiateBandwidthViewController
+{
+    return [self instantiateViewControllerWithIdentifier:@"BandwidthViewController"];
+}
+
 @end
