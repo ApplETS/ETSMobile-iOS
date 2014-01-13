@@ -428,61 +428,61 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Meb-Bp-PZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="y9b-yw-yJA" customClass="ETSLoginView">
-                    <rect key="frame" x="0.0" y="0.0" width="310" height="201"/>
+                    <rect key="frame" x="0.0" y="0.0" width="310" height="173"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Phase" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZO7-Pm-UUl">
-                            <rect key="frame" x="70" y="83" width="233" height="45"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Phase" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZO7-Pm-UUl">
+                            <rect key="frame" x="65" y="55" width="225" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="45" id="dDU-9v-BYT"/>
+                                <constraint firstAttribute="height" constant="40" id="dDU-9v-BYT"/>
                             </constraints>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Appartement" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vCO-PK-hKP">
-                            <rect key="frame" x="70" y="136" width="233" height="45"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Appartement" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vCO-PK-hKP">
+                            <rect key="frame" x="65" y="103" width="225" height="41"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="45" id="ISv-09-Cu2"/>
+                                <constraint firstAttribute="height" constant="41" id="ISv-09-Cu2"/>
                             </constraints>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apartment" translatesAutoresizingMaskIntoConstraints="NO" id="Vkq-Qs-kTa">
-                            <rect key="frame" x="17" y="83" width="45" height="45"/>
+                            <rect key="frame" x="17" y="55" width="40" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="45" id="jVS-o1-nCg"/>
-                                <constraint firstAttribute="width" constant="45" id="mAg-4O-O5c"/>
+                                <constraint firstAttribute="height" constant="40" id="jVS-o1-nCg"/>
+                                <constraint firstAttribute="width" constant="40" id="mAg-4O-O5c"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bed" translatesAutoresizingMaskIntoConstraints="NO" id="eNn-sg-xlt">
-                            <rect key="frame" x="17" y="136" width="45" height="45"/>
+                            <rect key="frame" x="17" y="103" width="40" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="45" id="C2W-m9-oD2"/>
-                                <constraint firstAttribute="height" constant="45" id="QTY-qS-zml"/>
+                                <constraint firstAttribute="width" constant="40" id="C2W-m9-oD2"/>
+                                <constraint firstAttribute="height" constant="40" id="QTY-qS-zml"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Consommation de la bande passante pour les étudiants habitant aux résidences universitaires :" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="ZiE-ne-e7W">
-                            <rect key="frame" x="17" y="20" width="286" height="55"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consommation de la bande passante pour les étudiants habitant aux résidences universitaires :" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="273" translatesAutoresizingMaskIntoConstraints="NO" id="ZiE-ne-e7W">
+                            <rect key="frame" x="17" y="20" width="273" height="27"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ZiE-ne-e7W" secondAttribute="trailing" constant="20" id="0AA-jK-Pyg"/>
                         <constraint firstItem="eNn-sg-xlt" firstAttribute="top" secondItem="Vkq-Qs-kTa" secondAttribute="bottom" constant="8" id="23L-mr-lcm"/>
                         <constraint firstItem="vCO-PK-hKP" firstAttribute="top" secondItem="ZO7-Pm-UUl" secondAttribute="bottom" constant="8" id="32o-kb-Yfa"/>
-                        <constraint firstAttribute="trailing" secondItem="ZO7-Pm-UUl" secondAttribute="trailing" constant="17" id="68B-Gy-3l2"/>
-                        <constraint firstAttribute="trailing" secondItem="ZiE-ne-e7W" secondAttribute="trailing" constant="17" id="EXV-Ns-ko5"/>
+                        <constraint firstAttribute="trailing" secondItem="vCO-PK-hKP" secondAttribute="trailing" constant="20" id="9TM-oJ-iVc"/>
                         <constraint firstItem="ZiE-ne-e7W" firstAttribute="leading" secondItem="y9b-yw-yJA" secondAttribute="leading" constant="17" id="F9c-fm-ARE"/>
                         <constraint firstItem="ZO7-Pm-UUl" firstAttribute="leading" secondItem="Vkq-Qs-kTa" secondAttribute="trailing" constant="8" id="FM4-aC-RZY"/>
                         <constraint firstItem="vCO-PK-hKP" firstAttribute="leading" secondItem="eNn-sg-xlt" secondAttribute="trailing" constant="8" id="I9x-hT-mny"/>
@@ -491,7 +491,7 @@
                         <constraint firstItem="ZO7-Pm-UUl" firstAttribute="top" secondItem="ZiE-ne-e7W" secondAttribute="bottom" constant="8" id="VCz-0H-UjL"/>
                         <constraint firstItem="Vkq-Qs-kTa" firstAttribute="top" secondItem="ZiE-ne-e7W" secondAttribute="bottom" constant="8" id="Vgf-gM-1er"/>
                         <constraint firstItem="eNn-sg-xlt" firstAttribute="leading" secondItem="y9b-yw-yJA" secondAttribute="leading" constant="17" id="oWV-RR-lug"/>
-                        <constraint firstAttribute="trailing" secondItem="vCO-PK-hKP" secondAttribute="trailing" constant="17" id="s8Y-Wo-bTA"/>
+                        <constraint firstAttribute="trailing" secondItem="ZO7-Pm-UUl" secondAttribute="trailing" constant="20" id="ovF-QE-CM7"/>
                     </constraints>
                     <connections>
                         <outlet property="apartmentTextField" destination="vCO-PK-hKP" id="1Pu-3R-zzy"/>
