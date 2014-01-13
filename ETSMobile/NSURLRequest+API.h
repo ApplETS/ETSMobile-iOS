@@ -16,4 +16,5 @@
 + (id)requestForEvaluationsWithCourse:(ETSCourse *)course;
 + (id)requestForDirectory;
 + (id)requestForRadio;
++ (id)requestForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase;
 @end

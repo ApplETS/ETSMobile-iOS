@@ -40,6 +40,9 @@
     
     self.formatter = [[NSNumberFormatter alloc] init];
     self.formatter.decimalSeparator = @",";
+    self.formatter.groupingSeparator = @" ";
+    self.formatter.groupingSize = 3;
+    self.formatter.usesGroupingSeparator = YES;
     self.formatter.maximumFractionDigits = 2;
     self.formatter.minimumFractionDigits = 2;
     self.formatter.minimumIntegerDigits = 1;

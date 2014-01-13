@@ -38,7 +38,12 @@
 
 + (id)URLForProfile
 {
-    return [NSURL URLWithString:[[NSURL dictionaryFromPlist] objectForKey:@"Profile"]];
+    return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Profile"]];
+}
+
++ (id)URLForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"Bandwidth"], phase, residence, residence, month]];
 }
 
 + (id)URLForRadio
@@ -50,7 +55,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"ddMMyyyy"];
 
-    return [NSURL URLWithString:[NSString stringWithFormat:[[NSURL dictionaryFromPlist] objectForKey:@"Radio"], [formatter stringFromDate:[NSDate date]], [formatter stringFromDate:tomorrow]]];
+    return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"Radio"], [formatter stringFromDate:[NSDate date]], [formatter stringFromDate:tomorrow]]];
 }
 
 @end

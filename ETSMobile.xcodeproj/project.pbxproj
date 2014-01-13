@@ -13,6 +13,10 @@
 		262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */; };
 		263770941831AFB200D18F94 /* ETSEvaluation.m in Sources */ = {isa = PBXBuildFile; fileRef = 263770931831AFB200D18F94 /* ETSEvaluation.m */; };
 		263AC8E918464D9F00AD5B21 /* ETSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 263AC8E818464D9F00AD5B21 /* ETSEvent.m */; };
+		264945B01880969800663D94 /* ETSBandwidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 264945AF1880969800663D94 /* ETSBandwidth.m */; };
+		26634D8A1881D91900644FFB /* ETSBandwidthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26634D891881D91900644FFB /* ETSBandwidthCell.m */; };
+		26634D8D1881F2FF00644FFB /* ETSLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26634D8C1881F2FF00644FFB /* ETSLoginView.m */; };
+		26634D951881F6C100644FFB /* ETSCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 26634D941881F6C100644FFB /* ETSCoreDataHelper.m */; };
 		266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE77F17ECEFF300F44252 /* MFSideMenuContainerViewController.m */; };
 		266BE78517ECEFF300F44252 /* MFSideMenuShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE78117ECEFF300F44252 /* MFSideMenuShadow.m */; };
 		266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */; };
@@ -33,6 +37,8 @@
 		26AE185D17F296CD00DB1EB4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AE185B17F2966200DB1EB4 /* QuartzCore.framework */; };
 		26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */; };
 		26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */; };
+		26B9A92818736265005D4410 /* ETSBandwidthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9A92718736265005D4410 /* ETSBandwidthViewController.m */; };
+		26B9A92C18736621005D4410 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9A92B18736621005D4410 /* CustomIOS7AlertView.m */; };
 		26C97886183AD1DE005D66EF /* ETSContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C97885183AD1DE005D66EF /* ETSContact.m */; };
 		26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A717EA610D00469FA8 /* Foundation.framework */; };
 		26DD92AA17EA610D00469FA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A917EA610D00469FA8 /* CoreGraphics.framework */; };
@@ -84,6 +90,14 @@
 		263770931831AFB200D18F94 /* ETSEvaluation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSEvaluation.m; sourceTree = "<group>"; };
 		263AC8E718464D9F00AD5B21 /* ETSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSEvent.h; sourceTree = "<group>"; };
 		263AC8E818464D9F00AD5B21 /* ETSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSEvent.m; sourceTree = "<group>"; };
+		264945AE1880969800663D94 /* ETSBandwidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSBandwidth.h; path = ../ETSBandwidth.h; sourceTree = "<group>"; };
+		264945AF1880969800663D94 /* ETSBandwidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSBandwidth.m; path = ../ETSBandwidth.m; sourceTree = "<group>"; };
+		26634D881881D91900644FFB /* ETSBandwidthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidthCell.h; sourceTree = "<group>"; };
+		26634D891881D91900644FFB /* ETSBandwidthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidthCell.m; sourceTree = "<group>"; };
+		26634D8B1881F2FF00644FFB /* ETSLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSLoginView.h; sourceTree = "<group>"; };
+		26634D8C1881F2FF00644FFB /* ETSLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSLoginView.m; sourceTree = "<group>"; };
+		26634D931881F6C100644FFB /* ETSCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCoreDataHelper.h; sourceTree = "<group>"; };
+		26634D941881F6C100644FFB /* ETSCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCoreDataHelper.m; sourceTree = "<group>"; };
 		266BE77D17ECEFF300F44252 /* MFSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSideMenu.h; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenu.h; sourceTree = "<group>"; };
 		266BE77E17ECEFF300F44252 /* MFSideMenuContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSideMenuContainerViewController.h; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuContainerViewController.h; sourceTree = "<group>"; };
 		266BE77F17ECEFF300F44252 /* MFSideMenuContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFSideMenuContainerViewController.m; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuContainerViewController.m; sourceTree = "<group>"; };
@@ -121,6 +135,10 @@
 		26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Styles.m"; sourceTree = "<group>"; };
 		26AE186417F32CC800DB1EB4 /* UIStoryboard+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+ViewController.h"; sourceTree = "<group>"; };
 		26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+ViewController.m"; sourceTree = "<group>"; };
+		26B9A92618736265005D4410 /* ETSBandwidthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidthViewController.h; sourceTree = "<group>"; };
+		26B9A92718736265005D4410 /* ETSBandwidthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidthViewController.m; sourceTree = "<group>"; };
+		26B9A92A18736621005D4410 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomIOS7AlertView.h; path = "Vendors/ios-custom-alertview/CustomIOS7AlertView/CustomIOS7AlertView/View/CustomIOS7AlertView.h"; sourceTree = "<group>"; };
+		26B9A92B18736621005D4410 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomIOS7AlertView.m; path = "Vendors/ios-custom-alertview/CustomIOS7AlertView/CustomIOS7AlertView/View/CustomIOS7AlertView.m"; sourceTree = "<group>"; };
 		26C97884183AD1DE005D66EF /* ETSContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSContact.h; sourceTree = "<group>"; };
 		26C97885183AD1DE005D66EF /* ETSContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSContact.m; sourceTree = "<group>"; };
 		26DD92A417EA610D00469FA8 /* ETSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +228,17 @@
 			name = Base;
 			sourceTree = "<group>";
 		};
+		26634D871881D90200644FFB /* Bandwidth */ = {
+			isa = PBXGroup;
+			children = (
+				26634D881881D91900644FFB /* ETSBandwidthCell.h */,
+				26634D891881D91900644FFB /* ETSBandwidthCell.m */,
+				26634D8B1881F2FF00644FFB /* ETSLoginView.h */,
+				26634D8C1881F2FF00644FFB /* ETSLoginView.m */,
+			);
+			name = Bandwidth;
+			sourceTree = "<group>";
+		};
 		266BE77C17ECEFDA00F44252 /* MFSideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,7 +302,7 @@
 			name = Styles;
 			sourceTree = "<group>";
 		};
-		26AE186317F32CA400DB1EB4 /* Categories */ = {
+		26AE186317F32CA400DB1EB4 /* Categories & Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				26AE186417F32CC800DB1EB4 /* UIStoryboard+ViewController.h */,
@@ -284,8 +313,28 @@
 				26085B3F1829D8D700FE35AB /* NSURL+API.m */,
 				26A65540182ABE6E00DEE9B7 /* NSURLRequest+API.h */,
 				26A65541182ABE6E00DEE9B7 /* NSURLRequest+API.m */,
+				26634D931881F6C100644FFB /* ETSCoreDataHelper.h */,
+				26634D941881F6C100644FFB /* ETSCoreDataHelper.m */,
 			);
-			name = Categories;
+			name = "Categories & Helpers";
+			sourceTree = "<group>";
+		};
+		26B9A92518736239005D4410 /* Bandwidth */ = {
+			isa = PBXGroup;
+			children = (
+				26B9A92618736265005D4410 /* ETSBandwidthViewController.h */,
+				26B9A92718736265005D4410 /* ETSBandwidthViewController.m */,
+			);
+			name = Bandwidth;
+			sourceTree = "<group>";
+		};
+		26B9A929187365F0005D4410 /* ios-custom-alertview */ = {
+			isa = PBXGroup;
+			children = (
+				26B9A92A18736621005D4410 /* CustomIOS7AlertView.h */,
+				26B9A92B18736621005D4410 /* CustomIOS7AlertView.m */,
+			);
+			name = "ios-custom-alertview";
 			sourceTree = "<group>";
 		};
 		26DD929B17EA610D00469FA8 = {
@@ -332,7 +381,7 @@
 				26DD92E917EA613400469FA8 /* Controllers */,
 				26DD92EA17EA613C00469FA8 /* Views */,
 				26AE185E17F3275600DB1EB4 /* Styles */,
-				26AE186317F32CA400DB1EB4 /* Categories */,
+				26AE186317F32CA400DB1EB4 /* Categories & Helpers */,
 				26DD92B817EA610D00469FA8 /* ETSAppDelegate.h */,
 				26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */,
 				26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */,
@@ -382,6 +431,8 @@
 		26DD92E817EA612800469FA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				264945AE1880969800663D94 /* ETSBandwidth.h */,
+				264945AF1880969800663D94 /* ETSBandwidth.m */,
 				26C97884183AD1DE005D66EF /* ETSContact.h */,
 				26C97885183AD1DE005D66EF /* ETSContact.m */,
 				266ED34E18300D2900DC1280 /* ETSCourse.h */,
@@ -406,6 +457,7 @@
 				D15F4AE1183992A10034605B /* Profile */,
 				26DD92EC17EA622D00469FA8 /* News */,
 				26F46A9D183ED0EE00232B5A /* Radio */,
+				26B9A92518736239005D4410 /* Bandwidth */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -413,6 +465,7 @@
 		26DD92EA17EA613C00469FA8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				26634D871881D90200644FFB /* Bandwidth */,
 				2698C6FB182834E500F6281F /* Courses */,
 			);
 			name = Views;
@@ -421,6 +474,7 @@
 		26DD92EB17EA615E00469FA8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				26B9A929187365F0005D4410 /* ios-custom-alertview */,
 				2698C6F618274F4F00F6281F /* KeychainWrapper */,
 				266BE77C17ECEFDA00F44252 /* MFSideMenu */,
 			);
@@ -578,12 +632,15 @@
 				266ED340182EC29D00DC1280 /* ETSTableViewController.m in Sources */,
 				262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */,
 				269BFF521810A9A3005D2950 /* ETSConnection.m in Sources */,
+				26B9A92818736265005D4410 /* ETSBandwidthViewController.m in Sources */,
 				269BFF561811A41C005D2950 /* NSManagedObject+SetValues.m in Sources */,
 				26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */,
+				26634D8A1881D91900644FFB /* ETSBandwidthCell.m in Sources */,
 				26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */,
 				D15F4AE71839A80B0034605B /* ETSProfile.m in Sources */,
 				26C97886183AD1DE005D66EF /* ETSContact.m in Sources */,
 				2690F604183D088700FAD05A /* ETSWebViewViewController.m in Sources */,
+				264945B01880969800663D94 /* ETSBandwidth.m in Sources */,
 				263AC8E918464D9F00AD5B21 /* ETSEvent.m in Sources */,
 				2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */,
 				26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */,
@@ -591,9 +648,11 @@
 				26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */,
 				26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */,
 				26DD92C317EA610D00469FA8 /* ETSMobile.xcdatamodeld in Sources */,
+				26634D8D1881F2FF00644FFB /* ETSLoginView.m in Sources */,
 				263770941831AFB200D18F94 /* ETSEvaluation.m in Sources */,
 				26A65542182ABE6E00DEE9B7 /* NSURLRequest+API.m in Sources */,
 				266BE78517ECEFF300F44252 /* MFSideMenuShadow.m in Sources */,
+				26634D951881F6C100644FFB /* ETSCoreDataHelper.m in Sources */,
 				2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */,
 				2601088F181596820037E795 /* ETSCollectionViewController.m in Sources */,
 				26DD92C617EA610D00469FA8 /* ETSMasterViewController.m in Sources */,
@@ -607,6 +666,7 @@
 				269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */,
 				26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */,
 				26DD92C917EA610D00469FA8 /* ETSDetailViewController.m in Sources */,
+				26B9A92C18736621005D4410 /* CustomIOS7AlertView.m in Sources */,
 				2698C6F518274F4B00F6281F /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

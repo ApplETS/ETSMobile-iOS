@@ -16,4 +16,5 @@
 - (id)instantiateDirectoryViewController;
 - (id)instantiateLibraryViewController;
 - (id)instantiateRadioViewController;
+- (id)instantiateBandwidthViewController;
 @end

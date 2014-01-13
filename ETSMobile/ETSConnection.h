@@ -39,4 +39,5 @@ typedef NS_ENUM(NSInteger, ETSConnectionResponse) {
 - (void)connection:(ETSConnection *)connection didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject;
 - (void)connection:(ETSConnection *)connection didReceiveResponse:(ETSConnectionResponse)response;
 - (void)connectionDidFinishLoading:(ETSConnection *)connection;
+- (id)connection:(ETSConnection *)connection updateJSONObjects:(id)objects;
 @end

@@ -38,8 +38,8 @@
     NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL: url];
     
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    if ([ETSAuthenticationViewController passwordInKeychain]) [parameters setObject:[ETSAuthenticationViewController passwordInKeychain] forKey:@"motPasse"];
-    if ([ETSAuthenticationViewController usernameInKeychain]) [parameters setObject:[ETSAuthenticationViewController usernameInKeychain] forKey:@"codeAccesUniversel"];
+    if ([ETSAuthenticationViewController passwordInKeychain]) parameters[@"motPasse"] = [ETSAuthenticationViewController passwordInKeychain];
+    if ([ETSAuthenticationViewController usernameInKeychain]) parameters[@"codeAccesUniversel"] = [ETSAuthenticationViewController usernameInKeychain];
     
     NSError *error = nil;
     [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:kNilOptions error:&error]];
@@ -100,6 +100,19 @@
     
 //    NSError *error = nil;
 //    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:kNilOptions error:&error]];
+    return request;
+}
+
++ (id)requestForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForBandwidthWithMonth:month residence:residence phase:phase]];
+    
+    [request setHTTPMethod: @"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"UTF-8" forHTTPHeaderField:@"Accept-Charset"];
+    [request setCachePolicy: NSURLRequestReloadIgnoringCacheData];
+
     return request;
 }
 
