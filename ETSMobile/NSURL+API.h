@@ -14,5 +14,6 @@
 + (id)URLForEvaluations;
 + (id)URLForDirectory;
 + (id)URLForRadio;
++ (id)URLForComment;
 + (id)URLForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase;
 @end

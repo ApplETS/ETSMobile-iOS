@@ -17,4 +17,5 @@
 - (id)instantiateLibraryViewController;
 - (id)instantiateRadioViewController;
 - (id)instantiateBandwidthViewController;
+- (id)instantiateCommentViewController;
 @end
