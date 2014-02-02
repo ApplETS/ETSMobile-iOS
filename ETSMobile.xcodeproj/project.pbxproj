@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D29A460188DB82400CF02EB /* ETSCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29A45F188DB82400CF02EB /* ETSCommentViewController.m */; };
+		1D29A464188DB9E500CF02EB /* ETSCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29A463188DB9E500CF02EB /* ETSCommentCell.m */; };
+		1D33BA24188F064600A5F1C8 /* ETSRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA23188F064600A5F1C8 /* ETSRateCell.m */; };
+		1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA26188F065600A5F1C8 /* ETSTextCell.m */; };
 		2601088F181596820037E795 /* ETSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2601088E181596820037E795 /* ETSCollectionViewController.m */; };
 		26085B3D1829D84300FE35AB /* ETSAPIURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26085B3C1829D84300FE35AB /* ETSAPIURL.plist */; };
 		26085B401829D8D700FE35AB /* NSURL+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 26085B3F1829D8D700FE35AB /* NSURL+API.m */; };
@@ -79,6 +83,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D29A45E188DB82400CF02EB /* ETSCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCommentViewController.h; sourceTree = "<group>"; };
+		1D29A45F188DB82400CF02EB /* ETSCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCommentViewController.m; sourceTree = "<group>"; };
+		1D29A462188DB9E500CF02EB /* ETSCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCommentCell.h; sourceTree = "<group>"; };
+		1D29A463188DB9E500CF02EB /* ETSCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCommentCell.m; sourceTree = "<group>"; };
+		1D33BA22188F064600A5F1C8 /* ETSRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRateCell.h; sourceTree = "<group>"; };
+		1D33BA23188F064600A5F1C8 /* ETSRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRateCell.m; sourceTree = "<group>"; };
+		1D33BA25188F065600A5F1C8 /* ETSTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSTextCell.h; sourceTree = "<group>"; };
+		1D33BA26188F065600A5F1C8 /* ETSTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSTextCell.m; sourceTree = "<group>"; };
 		2601088D181596820037E795 /* ETSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCollectionViewController.h; sourceTree = "<group>"; };
 		2601088E181596820037E795 /* ETSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCollectionViewController.m; sourceTree = "<group>"; };
 		26085B3C1829D84300FE35AB /* ETSAPIURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPIURL.plist; sourceTree = "<group>"; };
@@ -211,6 +223,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D29A45D188DB80800CF02EB /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				1D29A45E188DB82400CF02EB /* ETSCommentViewController.h */,
+				1D29A45F188DB82400CF02EB /* ETSCommentViewController.m */,
+			);
+			name = Comment;
+			sourceTree = "<group>";
+		};
+		1D29A461188DB9D100CF02EB /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				1D29A462188DB9E500CF02EB /* ETSCommentCell.h */,
+				1D29A463188DB9E500CF02EB /* ETSCommentCell.m */,
+				1D33BA22188F064600A5F1C8 /* ETSRateCell.h */,
+				1D33BA23188F064600A5F1C8 /* ETSRateCell.m */,
+				1D33BA25188F065600A5F1C8 /* ETSTextCell.h */,
+				1D33BA26188F065600A5F1C8 /* ETSTextCell.m */,
+			);
+			name = Comment;
+			sourceTree = "<group>";
+		};
 		260108901815968D0037E795 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +484,7 @@
 		26DD92E917EA613400469FA8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1D29A45D188DB80800CF02EB /* Comment */,
 				260108901815968D0037E795 /* Base */,
 				26DD92ED17EA623300469FA8 /* Menu */,
 				269BFF591814C627005D2950 /* Courses */,
@@ -465,6 +500,7 @@
 		26DD92EA17EA613C00469FA8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D29A461188DB9D100CF02EB /* Comment */,
 				26634D871881D90200644FFB /* Bandwidth */,
 				2698C6FB182834E500F6281F /* Courses */,
 			);
@@ -637,6 +673,7 @@
 				26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */,
 				26634D8A1881D91900644FFB /* ETSBandwidthCell.m in Sources */,
 				26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */,
+				1D33BA24188F064600A5F1C8 /* ETSRateCell.m in Sources */,
 				D15F4AE71839A80B0034605B /* ETSProfile.m in Sources */,
 				26C97886183AD1DE005D66EF /* ETSContact.m in Sources */,
 				2690F604183D088700FAD05A /* ETSWebViewViewController.m in Sources */,
@@ -659,11 +696,14 @@
 				26085B401829D8D700FE35AB /* NSURL+API.m in Sources */,
 				266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */,
 				D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */,
+				1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */,
 				26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */,
+				1D29A464188DB9E500CF02EB /* ETSCommentCell.m in Sources */,
 				266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */,
 				2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */,
 				266ED35018300D2900DC1280 /* ETSCourse.m in Sources */,
 				269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */,
+				1D29A460188DB82400CF02EB /* ETSCommentViewController.m in Sources */,
 				26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */,
 				26DD92C917EA610D00469FA8 /* ETSDetailViewController.m in Sources */,
 				26B9A92C18736621005D4410 /* CustomIOS7AlertView.m in Sources */,

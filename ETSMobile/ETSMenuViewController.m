@@ -221,7 +221,7 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
     
     else if (indexPath.section == 2) {
         if (indexPath.row == ETSMenuApplETSComments) {
-
+            viewController = [self.storyboard instantiateCommentViewController];
         }
         else if (indexPath.row == ETSMenuApplETSAbout) {
 

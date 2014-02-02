@@ -50,4 +50,9 @@
     return [self instantiateViewControllerWithIdentifier:@"BandwidthViewController"];
 }
 
+- (id)instantiateCommentViewController
+{
+    return [self instantiateViewControllerWithIdentifier:@"CommentViewController"];
+}
+
 @end

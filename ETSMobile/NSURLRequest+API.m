@@ -92,6 +92,27 @@
     return request;
 }
 
++ (id)requestForCommentWithName:(NSString *)name email:(NSString *)email title:(NSString *)title rating:(NSString *)rating comment:(NSString *)comment
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForComment]];
+
+    [request setHTTPMethod:@"POST"];
+ /*   NSString *parameters = [NSString stringWithFormat:@"sender_name=%@&sender_mail=%@&message=%@&subject=%@&rating=%@", name, email, comment, title, rating];
+    [request setHTTPBody:[parameters dataUsingEncoding:NSUTF8StringEncoding]];
+    */
+    NSMutableDictionary *p = [NSMutableDictionary dictionary];
+    p[@"sender_name"] = name;
+    p[@"sender_mail"] = email;
+    p[@"message"] = comment;
+    p[@"subject"] = title;
+    p[@"rating"] = rating;
+    
+    NSError *error = nil;
+    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:p options:kNilOptions error:&error]];
+    NSLog(@"%@", request.URL);
+    return request;
+}
+
 + (id)requestForRadio
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForRadio]];

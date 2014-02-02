@@ -41,6 +41,11 @@
     return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Profile"]];
 }
 
++ (id)URLForComment
+{
+    return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Comment"]];
+}
+
 + (id)URLForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase
 {
     return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"Bandwidth"], phase, residence, residence, month]];
