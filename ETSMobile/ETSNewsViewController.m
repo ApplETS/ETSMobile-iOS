@@ -7,120 +7,180 @@
 //
 
 #import "ETSNewsViewController.h"
+#import "ETSNewsSourceViewController.h"
 #import "MFSideMenuContainerViewController.h"
+#import "ETSNewsDetailsViewController.h"
+#import "ETSNewsCell.h"
+#import "NSURL+Document.h"
+#import "NSString+HTML.h"
+#import "ETSNews.h"
 
 @interface ETSNewsViewController ()
-
+@property (nonatomic, strong) NSMutableArray *sources;
+@property (nonatomic, copy) NSString *path;
 @end
 
 @implementation ETSNewsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+@synthesize fetchedResultsController=_fetchedResultsController;
+
+- (NSFetchedResultsController *)fetchedResultsController
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
     }
-    return self;
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"News" inManagedObjectContext:self.managedObjectContext];
+    
+    fetchRequest.entity = entity;
+    fetchRequest.fetchBatchSize = 10;
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"published" ascending:NO]];
+    
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    self.fetchedResultsController = aFetchedResultsController;
+    _fetchedResultsController.delegate = self;
+    
+    NSError *error;
+    if (![_fetchedResultsController performFetch:&error]) {
+        // FIXME: Update to handle the error appropriately.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+    
+    return _fetchedResultsController;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.path = [[[NSURL applicationDocumentsDirectory] URLByAppendingPathComponent:@"NewsSources.plist"] path];
+    
+    if(![[NSFileManager defaultManager] fileExistsAtPath:self.path]) {
+        [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"NewsSources" ofType:@"plist"] toPath:self.path error:nil];
+    }
+    
+    self.sources = [NSMutableArray arrayWithContentsOfFile:self.path];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+    
+    self.cellIdentifier = @"NewsIdentifier";
+    
+    ETSConnection *connection = [[ETSConnection alloc] init];
+    connection.request = [NSURLRequest requestForNewsWithSources:self.sources];
+    connection.entityName = @"News";
+    connection.compareKey = @"link";
+    connection.objectsKeyPath = @"query.results.feed";
+    connection.dateFormatter = dateFormatter;
+    self.connection = connection;
+    self.connection.delegate = self;
+    
+    
+    [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(panLeftMenu:)];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.connection.request = [NSURLRequest requestForNewsWithSources:self.sources];
+    [super viewWillAppear:animated];
 }
 
-- (IBAction)showLeftMenuPressed:(id)sender
+- (id)connection:(ETSConnection *)connection updateJSONObjects:(id)objects
+{
+    NSMutableArray *news = [NSMutableArray array];
+    for (NSDictionary *entry in objects) {
+        NSDictionary *item = entry[@"entry"];
+        if (![item[@"title"] isKindOfClass:[NSNull class]] && [item[@"title"] length] > 0) {
+            NSMutableDictionary *new = [NSMutableDictionary dictionaryWithDictionary:item];
+            new[@"link"] = item[@"link"][@"href"];
+            if (!item[@"summary"] && item[@"content"]) {
+                new[@"summary"] = item[@"content"];
+            }
+            [news addObject:new];
+        }
+    }
+    return news;
+}
+
+- (void)startRefresh:(id)sender
+{
+    [self.connection loadData];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"SourcesSegue"]) {
+        ETSNewsSourceViewController *destinationController = (ETSNewsSourceViewController *)segue.destinationViewController;
+        destinationController.sources = self.sources;
+        destinationController.savePath = self.path;
+    }
+    else if ([segue.identifier isEqualToString:@"NewsSegue"]) {
+        ETSNewsDetailsViewController *destinationController = (ETSNewsDetailsViewController *)segue.destinationViewController;
+        destinationController.news = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+    }
+}
+
+- (IBAction)panLeftMenu:(id)sender
 {
     [((MFSideMenuContainerViewController *)self.navigationController.parentViewController) toggleLeftSideMenuCompletion:nil];
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)configureCell:(ETSNewsCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    // Configure the cell...
+    NSDictionary *options = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType};
     
-    return cell;
+    NSError *error = nil;
+    
+    NSAttributedString *html = [[NSAttributedString alloc] initWithData:[news.content dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:&error];
+    
+    NSAttributedString *title = [[NSAttributedString alloc] initWithData:[news.title dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:&error];
+    
+    cell.titleLabel.text = [title string];
+    
+    NSMutableAttributedString *res = [html mutableCopy];
+    [res beginEditing];
+    [res enumerateAttribute:NSFontAttributeName
+                    inRange:NSMakeRange(0, res.length)
+                    options:0
+                 usingBlock:^(id value, NSRange range, BOOL *stop) {
+                     if (value) {
+                         
+                         UIFont *newFont = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+                         [res addAttribute:NSFontAttributeName value:newFont range:range];
+                     }
+                 }];
+    [res endEditing];
+    
+    cell.summaryLabel.attributedText = res;
+    
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)connection:(ETSConnection *)connection didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    ETSNews *news = (ETSNews *)managedObject;
+    for (NSDictionary *source in self.sources) {
+        if ([news.link rangeOfString:source[@"id"]].location != NSNotFound) {
+            news.source = source[@"id"];
+            break;
+        }
+    }
+    
+    if ([news.source isEqualToString:@"etsmtl.ca"]) {
+        NSMutableArray *lines = [NSMutableArray arrayWithArray:[[news.summary stringByStrippingHTML] componentsSeparatedByString:@"\n"]];
+        [lines removeObjectsInRange:NSMakeRange(0, 2)];
+        
+        news.content = [lines componentsJoinedByString:@"\n"];
+    }
+    
+    else {
+        news.content = [news.summary stringByStrippingHTML];
+    }
 }
 
- */
 
 @end

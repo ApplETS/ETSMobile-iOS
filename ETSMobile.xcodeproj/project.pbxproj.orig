@@ -536,8 +536,11 @@
 		26DD92EA17EA613C00469FA8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				263A4C43188B088100E38CAC /* News */,
+<<<<<<< Updated upstream
 				1D29A461188DB9D100CF02EB /* Comment */,
+=======
+				263A4C43188B088100E38CAC /* News */,
+>>>>>>> Stashed changes
 				26634D871881D90200644FFB /* Bandwidth */,
 				2698C6FB182834E500F6281F /* Courses */,
 			);
@@ -749,9 +752,12 @@
 				2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */,
 				266ED35018300D2900DC1280 /* ETSCourse.m in Sources */,
 				269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */,
+<<<<<<< Updated upstream
+				1D29A460188DB82400CF02EB /* ETSCommentViewController.m in Sources */,
+=======
 				264E86D31887A24E005F1820 /* ETSNews.m in Sources */,
 				263A4C421889D83000E38CAC /* ETSNewsDetailsViewController.m in Sources */,
-				1D29A460188DB82400CF02EB /* ETSCommentViewController.m in Sources */,
+>>>>>>> Stashed changes
 				26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */,
 				26DD92C917EA610D00469FA8 /* ETSDetailViewController.m in Sources */,
 				26B9A92C18736621005D4410 /* CustomIOS7AlertView.m in Sources */,

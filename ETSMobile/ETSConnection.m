@@ -47,8 +47,8 @@
          if (!data) return;
          
          NSError *jsonError = nil;
-         NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
-         
+         NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&jsonError];
+
          if ([bself.delegate respondsToSelector:@selector(connection:didReceiveDictionary:)]) [bself.delegate connection:bself didReceiveDictionary:jsonObjects];
          
          id apiError = [jsonObjects valueForKeyPath:@"d.erreur"];
@@ -112,7 +112,7 @@
              for (i = 0; i < [json count]; i++) {
                  
                  NSDictionary *lObject = json[i];
-                 NSManagedObject * rObject = nil;
+                 NSManagedObject *rObject = nil;
                  if (i < [coredataArray count]) rObject = coredataArray[i];
                  
                  id leftOperand = [lObject valueForKey:[mappings[bself.entityName] valueForKey:bself.compareKey]];
@@ -154,14 +154,18 @@
                          [bself.delegate connection:bself didReceiveObject:lObject forManagedObject:rObject];
                  }
              }
-             
+         
              while (i < [coredataArray count]) {
+                  NSManagedObject *rObject = coredataArray[i];
+                 [bself.managedObjectContext deleteObject:rObject];
+                 i++;
+                 /*
                  NSDictionary *lObject = json[i];
                  NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:bself.entityName inManagedObjectContext:bself.managedObjectContext];
                  [managedObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:bself.dateFormatter mapping:mappings[bself.entityName]];
                  if ([bself.delegate respondsToSelector:@selector(connection:didReceiveObject:forManagedObject:)])
                      [bself.delegate connection:bself didReceiveObject:lObject forManagedObject:managedObject];
-                 i++;
+                 i++; */
              }
          }
          else if ([json isKindOfClass:[NSDictionary class]]) {
