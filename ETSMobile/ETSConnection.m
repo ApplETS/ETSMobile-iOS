@@ -124,6 +124,7 @@
                  }
                  else if ([rightOperand isKindOfClass:[NSString class]]) {
                      comparisonResult = [leftOperand caseInsensitiveCompare:rightOperand];
+                     NSLog(@"\ng:%@\nd:%@", leftOperand, rightOperand);
                  }
                  
                  
