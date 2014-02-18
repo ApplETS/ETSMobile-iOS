@@ -50,6 +50,11 @@
     return [self instantiateViewControllerWithIdentifier:@"RadioViewController"];
 }
 
+- (id)instantiateSecurityViewController
+{
+    return [self instantiateViewControllerWithIdentifier:@"SecurityViewController"];
+}
+
 - (id)instantiateBandwidthViewController
 {
     return [self instantiateViewControllerWithIdentifier:@"BandwidthViewController"];
