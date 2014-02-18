@@ -93,6 +93,8 @@
 		26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F393221829984F00995E16 /* ETSSessionHeader.m */; };
 		26F46A99183ED03400232B5A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F46A98183ED03400232B5A /* AVFoundation.framework */; };
 		26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */; };
+		9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */; };
+		9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC88726189ED56B002A3D04 /* MapKit.framework */; };
 		D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15F4AE3183992D00034605B /* ETSProfileViewController.m */; };
 		D15F4AE71839A80B0034605B /* ETSProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = D15F4AE61839A80B0034605B /* ETSProfile.m */; };
 /* End PBXBuildFile section */
@@ -263,6 +265,9 @@
 		26F46A98183ED03400232B5A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		26F46A9A183ED0E200232B5A /* ETSRadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRadioViewController.h; sourceTree = "<group>"; };
 		26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRadioViewController.m; sourceTree = "<group>"; };
+		9CC88722189ECF43002A3D04 /* ETSSecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityViewController.h; sourceTree = "<group>"; };
+		9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSecurityViewController.m; sourceTree = "<group>"; };
+		9CC88726189ED56B002A3D04 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D15F4AE2183992D00034605B /* ETSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProfileViewController.h; sourceTree = "<group>"; };
 		D15F4AE3183992D00034605B /* ETSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSProfileViewController.m; sourceTree = "<group>"; };
 		D15F4AE51839A80B0034605B /* ETSProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProfile.h; sourceTree = "<group>"; };
@@ -274,6 +279,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */,
 				26F46A99183ED03400232B5A /* AVFoundation.framework in Frameworks */,
 				269316961835DA2D00DE95A0 /* AddressBookUI.framework in Frameworks */,
 				269316941835DA2900DE95A0 /* AddressBook.framework in Frameworks */,
@@ -536,8 +542,7 @@
 		26DD92A617EA610D00469FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				26DEB74F18EB4C8400161421 /* SystemConfiguration.framework */,
-				26DEB74D18EB4C7700161421 /* MobileCoreServices.framework */,
+				9CC88726189ED56B002A3D04 /* MapKit.framework */,
 				26F46A98183ED03400232B5A /* AVFoundation.framework */,
 				269316951835DA2D00DE95A0 /* AddressBookUI.framework */,
 				269316931835DA2900DE95A0 /* AddressBook.framework */,
@@ -635,6 +640,7 @@
 		26DD92E917EA613400469FA8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9C5071E6189AF5D8000CB45E /* Security */,
 				260108901815968D0037E795 /* Base */,
 				26DD92ED17EA623300469FA8 /* Menu */,
 				265FDFBC18E0C4DE00371078 /* Calendar */,
@@ -737,6 +743,15 @@
 			name = Radio;
 			sourceTree = "<group>";
 		};
+		9C5071E6189AF5D8000CB45E /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				9CC88722189ECF43002A3D04 /* ETSSecurityViewController.h */,
+				9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
 		D15F4AE1183992A10034605B /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -795,7 +810,7 @@
 				ORGANIZATIONNAME = ApplETS;
 				TargetAttributes = {
 					26DD92A317EA610D00469FA8 = {
-						DevelopmentTeam = N742HF354K;
+						DevelopmentTeam = 3R5C445LCQ;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -901,6 +916,9 @@
 				26634D951881F6C100644FFB /* ETSCoreDataHelper.m in Sources */,
 				2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */,
 				263FBD9918E4A0D0002E033E /* ETSEvaluationCell.m in Sources */,
+				9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */,
+				2601088F181596820037E795 /* ETSCollectionViewController.m in Sources */,
+				26DD92C617EA610D00469FA8 /* ETSMasterViewController.m in Sources */,
 				26085B401829D8D700FE35AB /* NSURL+API.m in Sources */,
 				266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */,
 				26DEB89318EC981100161421 /* UIColor+HexString.m in Sources */,

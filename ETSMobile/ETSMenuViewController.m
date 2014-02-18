@@ -211,7 +211,7 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
             viewController = [self.storyboard instantiateRadioViewController];
         }
         else if (indexPath.row == ETSMenuUniversitySecurity) {
-
+            viewController = [self.storyboard instantiateSecurityViewController];
         }
     }
     

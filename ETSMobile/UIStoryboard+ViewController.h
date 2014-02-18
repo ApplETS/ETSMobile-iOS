@@ -17,6 +17,7 @@
 - (id)instantiateDirectoryViewController;
 - (id)instantiateLibraryViewController;
 - (id)instantiateRadioViewController;
+- (id)instantiateSecurityViewController;
 - (id)instantiateBandwidthViewController;
 - (id)instantiateCommentViewController;
 - (id)instantiateAboutViewController;
