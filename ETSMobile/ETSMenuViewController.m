@@ -85,7 +85,7 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
     if (indexPath.section == 0) {
   /*      if (indexPath.row == ETSMenuMeToday) {
             cell.textLabel.text = NSLocalizedString(@"Aujourd'hui", nil);
-            cell.imageView.image = [UIImage imageNamed:@"ico_today_24x24.png"];
+            cell.imageView.image = [UIImage imageNamed:@"ico_aujourdhui.png"];
         }
         else*/ if (indexPath.row == ETSMenuMeSchedule) {
             cell.textLabel.text = NSLocalizedString(@"Horaire", nil);
@@ -93,7 +93,7 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
         }
         else if (indexPath.row == ETSMenuMeCourse) {
             cell.textLabel.text = NSLocalizedString(@"Notes", nil);
-            cell.imageView.image = [UIImage imageNamed:@"ico_notes_24x24.png"];
+            cell.imageView.image = [UIImage imageNamed:@"ico_notes.png"];
         }
 /*        else if (indexPath.row == ETSMenuMeInternship) {
             cell.textLabel.text = NSLocalizedString(@"Stages", nil);
