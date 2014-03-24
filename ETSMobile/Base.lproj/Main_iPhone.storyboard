@@ -804,7 +804,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageView" destination="F6h-2v-Cri" id="YQs-5t-ASM"/>
+                                    <outlet property="newsImageView" destination="F6h-2v-Cri" id="raj-mQ-BBr"/>
                                     <outlet property="summaryLabel" destination="Fnz-vW-8yd" id="YU0-HJ-IRP"/>
                                     <outlet property="titleLabel" destination="PES-K9-Wfo" id="5TU-rZ-bf6"/>
                                     <segue destination="Zcx-WD-r1i" kind="push" identifier="NewsSegue" id="wd1-Be-3AD"/>
