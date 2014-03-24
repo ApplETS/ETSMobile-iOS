@@ -41,6 +41,11 @@
     return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Profile"]];
 }
 
+<<<<<<< Updated upstream
++ (id)URLForComment
+{
+    return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Comment"]];
+=======
 + (id)URLForNewsWithSources:(NSArray *)sources
 {
     NSMutableArray *urls = [NSMutableArray array];
@@ -51,11 +56,7 @@
     }
     
     return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"News"], [urls componentsJoinedByString:@"%20OR%20"]]];
-}
-
-+ (id)URLForComment
-{
-    return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Comment"]];
+>>>>>>> Stashed changes
 }
 
 + (id)URLForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase

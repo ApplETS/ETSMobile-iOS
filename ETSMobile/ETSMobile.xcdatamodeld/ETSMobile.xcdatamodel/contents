@@ -61,6 +61,14 @@
         <attribute name="start" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="News" representedClassName="ETSNews" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="published" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Profile" representedClassName="ETSProfile" syncable="YES">
         <attribute name="balance" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="creditsFailed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -78,6 +86,7 @@
         <element name="Course" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Evaluation" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Event" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="News" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Profile" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

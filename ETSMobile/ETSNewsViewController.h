@@ -6,10 +6,8 @@
 //  Copyright (c) 2013 ApplETS. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ETSTableViewController.h"
 
-@interface ETSNewsViewController : UITableViewController
-
-- (IBAction)showLeftMenuPressed:(id)sender;
+@interface ETSNewsViewController : ETSTableViewController
 
 @end

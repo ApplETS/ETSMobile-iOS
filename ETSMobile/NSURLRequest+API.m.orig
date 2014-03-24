@@ -92,19 +92,7 @@
     return request;
 }
 
-+ (id)requestForNewsWithSources:(NSArray *)sources
-{
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForNewsWithSources:sources]];
-    NSLog(@"%@", [request URL]);
-    [request setHTTPMethod: @"GET"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"UTF-8" forHTTPHeaderField:@"Accept-Charset"];
-    [request setCachePolicy: NSURLRequestReloadIgnoringCacheData];
-    
-    return request;
-}
-
+<<<<<<< Updated upstream
 + (id)requestForCommentWithName:(NSString *)name email:(NSString *)email title:(NSString *)title rating:(NSString *)rating comment:(NSString *)comment
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForComment]];
@@ -123,6 +111,18 @@
     NSError *error = nil;
     [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:p options:kNilOptions error:&error]];
     NSLog(@"%@", request.URL);
+=======
++ (id)requestForNewsWithSources:(NSArray *)sources
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForNewsWithSources:sources]];
+    NSLog(@"%@", [request URL]);
+    [request setHTTPMethod: @"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"UTF-8" forHTTPHeaderField:@"Accept-Charset"];
+    [request setCachePolicy: NSURLRequestReloadIgnoringCacheData];
+    
+>>>>>>> Stashed changes
     return request;
 }
 
