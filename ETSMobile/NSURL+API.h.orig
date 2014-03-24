@@ -14,7 +14,10 @@
 + (id)URLForEvaluations;
 + (id)URLForDirectory;
 + (id)URLForRadio;
-+ (id)URLForNewsWithSources:(NSArray *)sources;
+<<<<<<< Updated upstream
 + (id)URLForComment;
+=======
++ (id)URLForNewsWithSources:(NSArray *)sources;
+>>>>>>> Stashed changes
 + (id)URLForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase;
 @end

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>id</key>
+		<string>etsmtl.ca</string>
+		<key>backgroundImageName</key>
+		<string>news-ets</string>
+		<key>name</key>
+		<string>Nouvelles ÉTS</string>
+		<key>url</key>
+		<string>http%3A%2F%2Fwww.etsmtl.ca%2Ffils-rss%3Frss%3DNouvellesRSS</string>
+		<key>enabled</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>facebook.com</string>
+		<key>backgroundImageName</key>
+		<string>news-facebook</string>
+		<key>name</key>
+		<string>Facebook ÉTS</string>
+		<key>url</key>
+		<string>http%3A%2F%2Fwww.facebook.com%2Ffeeds%2Fpage.php%3Fid%3D8632204375%26format%3Datom10</string>
+		<key>enabled</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>interfaceets.wordpress.com</string>
+		<key>backgroundImageName</key>
+		<string>news-newspaper</string>
+		<key>name</key>
+		<string>Interface</string>
+		<key>url</key>
+		<string>http%3A%2F%2Finterfaceets.wordpress.com%2Ffeed%2F</string>
+		<key>enabled</key>
+		<false/>
+	</dict>
+</array>
+</plist>
