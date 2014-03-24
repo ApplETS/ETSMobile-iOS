@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ETSConnection.h"
+#import "ETSSynchronization.h"
 #import "ETSAuthenticationViewController.h"
 
-@interface ETSCollectionViewController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, ETSConnectionDelegate, ETSAuthenticationViewControllerDelegate>
+@interface ETSCollectionViewController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, ETSSynchronizationDelegate, ETSAuthenticationViewControllerDelegate>
 
-@property (strong, nonatomic) ETSConnection *connection;
+@property (strong, nonatomic) ETSSynchronization *synchronization;
 @property (copy,   nonatomic) NSString *cellIdentifier;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

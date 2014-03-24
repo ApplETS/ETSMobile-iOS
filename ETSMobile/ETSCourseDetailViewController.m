@@ -21,7 +21,8 @@
 
 - (void)startRefresh:(id)sender
 {
-    [self.connection loadData];
+    NSError *error;
+    [self.synchronization synchronize:&error];
 }
 
 - (void)viewDidLoad
@@ -30,14 +31,14 @@
     
     self.cellIdentifier = @"EvaluationIdentifier";
     
-    ETSConnection *connection = [[ETSConnection alloc] init];
-    connection.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];
-    connection.entityName = @"Evaluation";
-    connection.compareKey = @"name";
-    connection.objectsKeyPath = @"d.liste";
-    connection.predicate = [NSPredicate predicateWithFormat:@"course.acronym == %@", self.course.acronym];
-    self.connection = connection;
-    self.connection.delegate = self;
+    ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
+    synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];
+    synchronization.entityName = @"Evaluation";
+    synchronization.compareKey = @"name";
+    synchronization.objectsKeyPath = @"d.liste";
+    synchronization.predicate = [NSPredicate predicateWithFormat:@"course.acronym == %@", self.course.acronym];
+    self.synchronization = synchronization;
+    self.synchronization.delegate = self;
     
     self.formatter = [[NSNumberFormatter alloc] init];
     self.formatter.decimalSeparator = @",";
@@ -149,7 +150,7 @@
     }
 }
 
-- (void)connection:(ETSConnection *)connection didReceiveDictionary:(NSDictionary *)dictionary
+- (void)synchronization:(ETSSynchronization *)synchronization didReceiveDictionary:(NSDictionary *)dictionary
 {
     NSDictionary *results = dictionary[@"d"];
     self.course.results     = [self.formatter numberFromString:results[@"noteACeJour"]];
@@ -172,7 +173,7 @@
     }
 }
 
-- (void)connection:(ETSConnection *)connection didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
+- (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     ETSEvaluation *evaluation = (ETSEvaluation *)managedObject;
     evaluation.course = self.course;
@@ -188,15 +189,16 @@
     
     [super controller:controller didChangeObject:anObject atIndexPath:indexPath forChangeType:type newIndexPath:newIndexPath];
 }
-
-- (void)connectionDidFinishLoading:(ETSConnection *)connection
+//FIXME
+/*
+- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
 {
-    [super connectionDidFinishLoading:connection];
+    [super connectionDidFinishLoading:synchronization];
     
     NSInteger rows = [self.tableView numberOfRowsInSection:0];
     for (NSInteger i = 0; i < rows; i++) {
         [self configureCell:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]] atIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
     }
 }
-
+*/
 @end

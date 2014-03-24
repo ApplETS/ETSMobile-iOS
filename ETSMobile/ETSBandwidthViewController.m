@@ -33,7 +33,8 @@
 
 - (void)startRefresh:(id)sender
 {
-    [self.connection loadData];
+    NSError *error;
+    [self.synchronization synchronize:&error];
 }
 
 - (void)panLeftMenu
@@ -59,13 +60,14 @@
         [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
 
         NSString *month = [@([[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:[NSDate date]] month]) stringValue];
-        self.connection.request = [NSURLRequest requestForBandwidthWithMonth:month residence:self.loginView.apartmentTextField.text phase:self.loginView.phaseTextField.text];
+        self.synchronization.request = [NSURLRequest requestForBandwidthWithMonth:month residence:self.loginView.apartmentTextField.text phase:self.loginView.phaseTextField.text];
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         [userDefaults setObject:self.loginView.apartmentTextField.text forKey:@"apartment"];
         [userDefaults setObject:self.loginView.phaseTextField.text forKey:@"phase"];
         self.phaseLabel.text = [NSString stringWithFormat:@"Phase %@", self.loginView.phaseTextField.text];
         self.apartmentLabel.text = [NSString stringWithFormat:@"Appartement %@", self.loginView.apartmentTextField.text];
-        [self.connection loadData];
+        NSError *error;
+        [self.synchronization synchronize:&error];
     }
     
     [alertView close];
@@ -85,15 +87,15 @@
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self.dateFormatter setDateFormat:@"yyyy-MM-dd"];
     
-    ETSConnection *connection = [[ETSConnection alloc] init];
-    connection.entityName = @"Bandwidth";
-    connection.compareKey = @"id";
-    connection.objectsKeyPath = @"query.results.table";
-    connection.dateFormatter = self.dateFormatter;
-    connection.predicate = [NSPredicate predicateWithFormat:@"month ==[c] %@", month];
+    ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
+    synchronization.entityName = @"Bandwidth";
+    synchronization.compareKey = @"id";
+    synchronization.objectsKeyPath = @"query.results.table";
+    synchronization.dateFormatter = self.dateFormatter;
+    synchronization.predicate = [NSPredicate predicateWithFormat:@"month ==[c] %@", month];
     
-    self.connection = connection;
-    self.connection.delegate = self;
+    self.synchronization = synchronization;
+    self.synchronization.delegate = self;
     
     self.formatter = [[NSNumberFormatter alloc] init];
     self.formatter.decimalSeparator = @",";
@@ -121,7 +123,7 @@
         self.tableView.tableHeaderView.hidden = YES;
     }
     else {
-        connection.request = [NSURLRequest requestForBandwidthWithMonth:month residence:apartment phase:phase];
+        synchronization.request = [NSURLRequest requestForBandwidthWithMonth:month residence:apartment phase:phase];
         self.phaseLabel.text = [NSString stringWithFormat:@"Phase %@", phase];
         self.apartmentLabel.text = [NSString stringWithFormat:@"Appartement %@", apartment];
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
@@ -175,7 +177,7 @@
     cell.downloadLabel.text = [NSString stringWithFormat:@"%@ Mo (⬇︎)", [self.formatter stringFromNumber:bandiwdth.download]];
 }
 
-- (id)connection:(ETSConnection *)connection updateJSONObjects:(id)objects
+- (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects
 {
     if (!objects || [objects isKindOfClass:[NSNull class]]) {
         [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];

@@ -18,6 +18,7 @@
 		263770941831AFB200D18F94 /* ETSEvaluation.m in Sources */ = {isa = PBXBuildFile; fileRef = 263770931831AFB200D18F94 /* ETSEvaluation.m */; };
 		263AC8E918464D9F00AD5B21 /* ETSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 263AC8E818464D9F00AD5B21 /* ETSEvent.m */; };
 		264945B01880969800663D94 /* ETSBandwidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 264945AF1880969800663D94 /* ETSBandwidth.m */; };
+		264ACF4F18DCDE0100928284 /* ETSSynchronization.m in Sources */ = {isa = PBXBuildFile; fileRef = 264ACF4E18DCDE0100928284 /* ETSSynchronization.m */; };
 		26634D8A1881D91900644FFB /* ETSBandwidthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26634D891881D91900644FFB /* ETSBandwidthCell.m */; };
 		26634D8D1881F2FF00644FFB /* ETSLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26634D8C1881F2FF00644FFB /* ETSLoginView.m */; };
 		26634D951881F6C100644FFB /* ETSCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 26634D941881F6C100644FFB /* ETSCoreDataHelper.m */; };
@@ -33,7 +34,6 @@
 		2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */; };
 		2698C6F518274F4B00F6281F /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F418274F4B00F6281F /* KeychainItemWrapper.m */; };
 		2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F9182834E000F6281F /* ETSCourseCell.m */; };
-		269BFF521810A9A3005D2950 /* ETSConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BFF511810A9A3005D2950 /* ETSConnection.m */; };
 		269BFF561811A41C005D2950 /* NSManagedObject+SetValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BFF551811A41C005D2950 /* NSManagedObject+SetValues.m */; };
 		269BFF581811A640005D2950 /* ETSAPICoreDataMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 269BFF571811A640005D2950 /* ETSAPICoreDataMapping.plist */; };
 		269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BFF5B1814C649005D2950 /* ETSCoursesViewController.m */; };
@@ -104,6 +104,8 @@
 		263AC8E818464D9F00AD5B21 /* ETSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSEvent.m; sourceTree = "<group>"; };
 		264945AE1880969800663D94 /* ETSBandwidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSBandwidth.h; path = ../ETSBandwidth.h; sourceTree = "<group>"; };
 		264945AF1880969800663D94 /* ETSBandwidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSBandwidth.m; path = ../ETSBandwidth.m; sourceTree = "<group>"; };
+		264ACF4D18DCDE0100928284 /* ETSSynchronization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSynchronization.h; sourceTree = "<group>"; };
+		264ACF4E18DCDE0100928284 /* ETSSynchronization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSynchronization.m; sourceTree = "<group>"; };
 		26634D881881D91900644FFB /* ETSBandwidthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidthCell.h; sourceTree = "<group>"; };
 		26634D891881D91900644FFB /* ETSBandwidthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidthCell.m; sourceTree = "<group>"; };
 		26634D8B1881F2FF00644FFB /* ETSLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSLoginView.h; sourceTree = "<group>"; };
@@ -133,8 +135,6 @@
 		2698C6F418274F4B00F6281F /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = Vendors/KeychainWrapper/KeychainItemWrapper.m; sourceTree = "<group>"; };
 		2698C6F8182834E000F6281F /* ETSCourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourseCell.h; sourceTree = "<group>"; };
 		2698C6F9182834E000F6281F /* ETSCourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourseCell.m; sourceTree = "<group>"; };
-		269BFF501810A9A3005D2950 /* ETSConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSConnection.h; sourceTree = "<group>"; };
-		269BFF511810A9A3005D2950 /* ETSConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSConnection.m; sourceTree = "<group>"; };
 		269BFF541811A41C005D2950 /* NSManagedObject+SetValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+SetValues.h"; sourceTree = "<group>"; };
 		269BFF551811A41C005D2950 /* NSManagedObject+SetValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+SetValues.m"; sourceTree = "<group>"; };
 		269BFF571811A640005D2950 /* ETSAPICoreDataMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPICoreDataMapping.plist; sourceTree = "<group>"; };
@@ -248,8 +248,8 @@
 		260108901815968D0037E795 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				269BFF501810A9A3005D2950 /* ETSConnection.h */,
-				269BFF511810A9A3005D2950 /* ETSConnection.m */,
+				264ACF4D18DCDE0100928284 /* ETSSynchronization.h */,
+				264ACF4E18DCDE0100928284 /* ETSSynchronization.m */,
 				2601088D181596820037E795 /* ETSCollectionViewController.h */,
 				2601088E181596820037E795 /* ETSCollectionViewController.m */,
 				266ED33E182EC29D00DC1280 /* ETSTableViewController.h */,
@@ -598,7 +598,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ETS;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = ApplETS;
 				TargetAttributes = {
 					26DD92A317EA610D00469FA8 = {
@@ -667,7 +667,6 @@
 			files = (
 				266ED340182EC29D00DC1280 /* ETSTableViewController.m in Sources */,
 				262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */,
-				269BFF521810A9A3005D2950 /* ETSConnection.m in Sources */,
 				26B9A92818736265005D4410 /* ETSBandwidthViewController.m in Sources */,
 				269BFF561811A41C005D2950 /* NSManagedObject+SetValues.m in Sources */,
 				26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */,
@@ -698,6 +697,7 @@
 				D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */,
 				1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */,
 				26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */,
+				264ACF4F18DCDE0100928284 /* ETSSynchronization.m in Sources */,
 				1D29A464188DB9E500CF02EB /* ETSCommentCell.m in Sources */,
 				266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */,
 				2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */,
@@ -769,7 +769,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -809,7 +808,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -890,7 +888,6 @@
 		26DD92E617EA610D00469FA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ETSMobile.app/ETSMobile";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -913,7 +910,6 @@
 		26DD92E717EA610D00469FA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ETSMobile.app/ETSMobile";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

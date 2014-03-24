@@ -8,6 +8,7 @@
 
 #import "ETSProfileViewController.h"
 #import "NSURLRequest+API.h"
+#import "MFSideMenu.h"
 
 @interface ETSProfileViewController ()
 @property (nonatomic, strong) NSNumberFormatter *formatter;
@@ -18,9 +19,15 @@
 
 @synthesize fetchedResultsController=_fetchedResultsController;
 
+- (void)panLeftMenu
+{
+    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
+}
+
 - (void)startRefresh:(id)sender
 {
-    [self.connection loadData];
+    NSError *error;
+    [self.synchronization synchronize:&error];
 }
 
 - (void)viewDidLoad
@@ -29,14 +36,14 @@
 
     self.cellIdentifier = @"ProfileIdentifier";
     
-    ETSConnection *connection = [[ETSConnection alloc] init];
-    connection.request = [NSURLRequest requestForProfile];
-    connection.entityName = @"Profile";
-    connection.compareKey = @"lastName";
-    connection.objectsKeyPath = @"d";
+    ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
+    synchronization.request = [NSURLRequest requestForProfile];
+    synchronization.entityName = @"Profile";
+    synchronization.compareKey = @"lastName";
+    synchronization.objectsKeyPath = @"d";
 
-    self.connection = connection;
-    self.connection.delegate = self;
+    self.synchronization = synchronization;
+    self.synchronization.delegate = self;
     
     self.formatter = [[NSNumberFormatter alloc] init];
     self.formatter.decimalSeparator = @",";
@@ -56,7 +63,8 @@
         ac.delegate = self;
         [self.navigationController pushViewController:ac animated:YES];
     }
-
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(panLeftMenu)];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -129,7 +137,11 @@
     }
     else if (indexPath.row == 3) {
         cell.textLabel.text = NSLocalizedString(@"Balance", nil);
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ $", [self.formatter stringFromNumber:profile.balance]];
+        if ([self.formatter stringFromNumber:profile.balance]) {
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ $", [self.formatter stringFromNumber:profile.balance]];
+        } else {
+            cell.detailTextLabel.text = @"";
+        }
     }
 }
 
@@ -143,8 +155,13 @@
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
 {
-    self.connection.request = [NSURLRequest requestForProfile];
+    self.synchronization.request = [NSURLRequest requestForProfile];
     [super controllerDidAuthenticate:controller];
+}
+
+- (ETSSynchronizationResponse)synchronization:(ETSSynchronization *)synchronization validateJSONResponse:(NSDictionary *)response
+{
+    return [ETSAuthenticationViewController validateJSONResponse:response];
 }
 
 @end

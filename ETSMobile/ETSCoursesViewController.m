@@ -41,14 +41,14 @@
     
     self.cellIdentifier = @"CourseIdentifier";
     
-    ETSConnection *connection = [[ETSConnection alloc] init];
-    connection.request = [NSURLRequest requestForCourses];
-    connection.entityName = @"Course";
-    connection.compareKey = @"acronym";
-    connection.objectsKeyPath = @"d.liste";
-    connection.ignoredAttributesFromUpdate = @[@"results", @"mean", @"median", @"std", @"percentile"];
-    self.connection = connection;
-    self.connection.delegate = self;
+    ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
+    synchronization.request = [NSURLRequest requestForCourses];
+    synchronization.entityName = @"Course";
+    synchronization.compareKey = @"acronym";
+    synchronization.objectsKeyPath = @"d.liste";
+    synchronization.ignoredAttributes = @[@"results", @"mean", @"median", @"std", @"percentile"];
+    self.synchronization = synchronization;
+    self.synchronization.delegate = self;
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
         ETSAuthenticationViewController *ac = [self.storyboard instantiateAuthenticationViewController];
@@ -157,7 +157,7 @@
     vc.managedObjectContext = self.managedObjectContext;
 }
 
-- (void)connection:(ETSConnection *)connection didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
+- (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     if ([managedObject isKindOfClass:[ETSEvaluation class]]) return;
     
@@ -189,7 +189,7 @@
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
 {
-    self.connection.request = [NSURLRequest requestForCourses];
+    self.synchronization.request = [NSURLRequest requestForCourses];
     [super controllerDidAuthenticate:controller];
 }
 

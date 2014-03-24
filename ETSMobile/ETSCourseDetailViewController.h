@@ -9,6 +9,6 @@
 #import "ETSTableViewController.h"
 #import "ETSCourse.h"
 
-@interface ETSCourseDetailViewController : ETSTableViewController <ETSConnectionDelegate>
+@interface ETSCourseDetailViewController : ETSTableViewController <ETSSynchronizationDelegate>
 @property (nonatomic, strong) ETSCourse *course;
 @end
