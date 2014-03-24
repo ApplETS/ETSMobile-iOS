@@ -129,6 +129,11 @@
     [((MFSideMenuContainerViewController *)self.navigationController.parentViewController) toggleLeftSideMenuCompletion:nil];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 126;
+}
+
 - (void)configureCell:(ETSNewsCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];

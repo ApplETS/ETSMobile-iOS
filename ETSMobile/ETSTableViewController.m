@@ -28,6 +28,12 @@
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    self.fetchedResultsController.delegate = nil;
+    [super viewDidDisappear:animated];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

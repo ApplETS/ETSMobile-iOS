@@ -241,9 +241,7 @@
 
 - (void)addControllerContextDidSave:(NSNotification*)saveNotification
 {
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        [[ETSSynchronization mainManagedObjectContext] mergeChangesFromContextDidSaveNotification:saveNotification];
-    });
+    [[ETSSynchronization mainManagedObjectContext] performSelectorOnMainThread:@selector(mergeChangesFromContextDidSaveNotification:) withObject:saveNotification waitUntilDone:YES];
 }
 
 - (void)saveManagedObjectContext
@@ -254,7 +252,7 @@
             // FIXME: Update to handle the error appropriately.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         }
-        
+    
         [[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextDidSaveNotification object:self.managedObjectContext];
         self.managedObjectContext = nil;
     }
