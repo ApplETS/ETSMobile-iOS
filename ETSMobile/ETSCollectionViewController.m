@@ -18,7 +18,8 @@
 
 - (void)startRefresh:(id)sender
 {
-    [self.connection loadData];
+    NSError *error;
+    [self.synchronization synchronize:&error];
 }
 
 - (void)viewDidLoad
@@ -100,14 +101,10 @@
     [self.collectionView reloadData];
 }
 
-- (void)connection:(ETSConnection *)connection didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
-{
-}
-
-- (void)connection:(ETSConnection *)connection didReceiveResponse:(ETSConnectionResponse)response
+- (void)synchronization:(ETSSynchronization *)synchronization didReceiveResponse:(ETSSynchronizationResponse)response
 {
 
-    if (response == ETSConnectionResponseAuthenticationError) {
+    if (response == ETSSynchronizationResponseAuthenticationError) {
         
     if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
         UIAlertView *av = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Authentification", nil) message:NSLocalizedString(@"Code d'accès ou mot de passe invalide", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -119,7 +116,7 @@
         [self.navigationController pushViewController:ac animated:YES];
     }
     }
-    else if (response == ETSConnectionResponseValid) {
+    else if (response == ETSSynchronizationResponseValid) {
         if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
             [self.navigationController popViewControllerAnimated:YES];
         }
@@ -128,14 +125,11 @@
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
 {
-    [self.connection loadData];
+    NSError *error;
+    [self.synchronization synchronize:&error];
 }
 
-- (void)connection:(ETSConnection *)connection didReceiveDictionary:(NSDictionary *)dictionary
-{
-}
-
-- (void)connectionDidFinishLoading:(ETSConnection *)connection
+- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
 {
     [self.refreshControl endRefreshing];
 }

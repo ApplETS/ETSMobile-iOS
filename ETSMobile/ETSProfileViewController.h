@@ -9,6 +9,6 @@
 #import "ETSTableViewController.h"
 #import "ETSProfile.h"
 
-@interface ETSProfileViewController : ETSTableViewController <ETSConnectionDelegate>
+@interface ETSProfileViewController : ETSTableViewController <ETSSynchronizationDelegate>
 
 @end

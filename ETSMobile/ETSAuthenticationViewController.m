@@ -18,6 +18,21 @@ NSString * const kKeychainId = @"ApplETS";
 
 @implementation ETSAuthenticationViewController
 
++ (ETSSynchronizationResponse) validateJSONResponse:(NSDictionary *)response
+{
+    id apiError = [response valueForKeyPath:@"d.erreur"];
+    
+    if ([apiError isKindOfClass:[NSString class]] && [apiError isEqualToString:@"Code d'accès ou mot de passe invalide"]) {
+        return ETSSynchronizationResponseAuthenticationError;
+    } else if ([apiError isKindOfClass:[NSString class]] && [apiError length] == 0) {
+        return ETSSynchronizationResponseValid;
+    } else if ([apiError isKindOfClass:[NSString class]] && [apiError length] > 0) {
+        return ETSSynchronizationResponseUnknownError;
+    }
+    
+    return ETSSynchronizationResponseValid;
+}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {

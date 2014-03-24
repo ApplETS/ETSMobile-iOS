@@ -12,7 +12,6 @@
 #import "MFSideMenuContainerViewController.h"
 #import "ETSMenuViewController.h"
 #import "UIColor+Styles.h"
-#import "ETSConnection.h"
 #import "NSURLRequest+API.h"
 #import <AVFoundation/AVFoundation.h>
 

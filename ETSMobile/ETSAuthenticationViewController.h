@@ -7,18 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ETSSynchronization.h"
 
 @protocol ETSAuthenticationViewControllerDelegate;
 
 @interface ETSAuthenticationViewController : UIViewController
-@property (weak, nonatomic) id<ETSAuthenticationViewControllerDelegate> delegate;
-@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+
++ (ETSSynchronizationResponse)validateJSONResponse:(NSDictionary *)response;
 - (IBAction)authenticate:(id)sender;
 - (IBAction)showMenu:(id)sender;
 + (NSString *)passwordInKeychain;
 + (NSString *)usernameInKeychain;
 + (void)resetKeychain;
+
+@property (weak, nonatomic) id<ETSAuthenticationViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+
 @end
 
 @protocol ETSAuthenticationViewControllerDelegate

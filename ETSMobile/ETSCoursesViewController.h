@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ETSCollectionViewController.h"
-#import "ETSConnection.h"
 
-@interface ETSCoursesViewController : ETSCollectionViewController <ETSConnectionDelegate>
+@interface ETSCoursesViewController : ETSCollectionViewController <ETSSynchronizationDelegate>
 
 @end

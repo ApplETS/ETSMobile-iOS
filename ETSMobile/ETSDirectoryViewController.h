@@ -8,5 +8,5 @@
 
 #import "ETSTableViewController.h"
 
-@interface ETSDirectoryViewController : ETSTableViewController <ETSConnectionDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
+@interface ETSDirectoryViewController : ETSTableViewController <ETSSynchronizationDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
 @end

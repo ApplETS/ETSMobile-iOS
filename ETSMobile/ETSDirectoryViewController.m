@@ -31,15 +31,15 @@
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(panLeftMenu)];
     
-    ETSConnection *connection = [[ETSConnection alloc] init];
-    connection.request = [NSURLRequest requestForDirectory];
-    connection.entityName = @"Contact";
-    connection.compareKey = @"id";
-    connection.objectsKeyPath = @"d";
-    connection.predicate = nil;
-    connection.saveAutomatically = NO;
-    self.connection = connection;
-    self.connection.delegate = self;
+    ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
+    synchronization.request = [NSURLRequest requestForDirectory];
+    synchronization.entityName = @"Contact";
+    synchronization.compareKey = @"id";
+    synchronization.objectsKeyPath = @"d";
+    synchronization.predicate = nil;
+    synchronization.saveAutomatically = NO;
+    self.synchronization = synchronization;
+    self.synchronization.delegate = self;
     
     self.cellIdentifier = @"ContactIdentifier";
     self.title = @"Bottin";
@@ -59,7 +59,7 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     self.fetchedResultsController.delegate = nil;
-    [self.connection saveManagedObjectContext];
+    [self.synchronization saveManagedObjectContext];
     [super viewDidDisappear:animated];
 }
 
@@ -234,7 +234,7 @@
     CFRelease(person);
 }
 
-- (void)connection:(ETSConnection *)connection didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
+- (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     ETSContact *contact = (ETSContact *)managedObject;
     
@@ -243,11 +243,11 @@
     contact.fullName = [NSString stringWithFormat:@"%@ %@", contact.firstName, contact.lastName];
 }
 
-- (void)connectionDidFinishLoading:(ETSConnection *)connection
+- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
 {
     self.dataNeedRefresh = NO;
     if ([[self.fetchedResultsController sections] count] == 0) {
-        [self.connection saveManagedObjectContext];
+        [self.synchronization saveManagedObjectContext];
     }
 }
 

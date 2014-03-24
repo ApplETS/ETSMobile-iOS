@@ -17,7 +17,8 @@
 
 - (void)startRefresh:(id)sender
 {
-    [self.connection loadData];
+    NSError *error;
+    [self.synchronization synchronize:&error];
 }
 
 - (void)viewDidLoad
@@ -33,7 +34,8 @@
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];
 
-    if (self.dataNeedRefresh) [self.connection loadData];
+    NSError *error;
+    if (self.dataNeedRefresh) [self.synchronization synchronize:&error];
 
     if ([[self.navigationController viewControllers] count] > 1)
         self.menuContainerViewController.panMode = MFSideMenuPanModeNone;
@@ -86,11 +88,11 @@
 {
     switch(type) {
         case NSFetchedResultsChangeInsert:
-            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
             
         case NSFetchedResultsChangeDelete:
-            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
     }
 }
@@ -101,11 +103,11 @@
     switch(type) {
             
         case NSFetchedResultsChangeInsert:
-            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
             
         case NSFetchedResultsChangeDelete:
-            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
             
         case NSFetchedResultsChangeUpdate:
@@ -113,8 +115,8 @@
             break;
             
         case NSFetchedResultsChangeMove:
-            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             break;
     }
 }
@@ -126,10 +128,9 @@
 }
 
 
-- (void)connection:(ETSConnection *)connection didReceiveResponse:(ETSConnectionResponse)response
+- (void)synchronization:(ETSSynchronization *)synchronization didReceiveResponse:(ETSSynchronizationResponse)response
 {
-    
-    if (response == ETSConnectionResponseAuthenticationError) {
+    if (response == ETSSynchronizationResponseAuthenticationError) {
         
         if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
             UIAlertView *av = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Authentification", nil) message:NSLocalizedString(@"Code d'accès ou mot de passe invalide", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -141,21 +142,22 @@
             [self.navigationController pushViewController:ac animated:YES];
         }
     }
-    else if (response == ETSConnectionResponseValid) {
+    else if (response == ETSSynchronizationResponseValid) {
         if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
             [self.navigationController popViewControllerAnimated:YES];
         }
     }
 }
 
-- (void)connectionDidFinishLoading:(ETSConnection *)connection
+- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
 {
     [self.refreshControl endRefreshing];
 }
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
 {
-    [self.connection loadData];
+    NSError *error;
+    [self.synchronization synchronize:&error];
 }
 
 @end

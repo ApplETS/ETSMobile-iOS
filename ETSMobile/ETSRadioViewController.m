@@ -52,16 +52,16 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
     
-    ETSConnection *connection = [[ETSConnection alloc] init];
-    connection.request = [NSURLRequest requestForRadio];
-    connection.entityName = @"Event";
-    connection.compareKey = @"id";
-    connection.objectsKeyPath = @"programmation_radiopiranha";
-    connection.predicate = nil;
-    connection.dateFormatter = dateFormatter;
+    ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
+    synchronization.request = [NSURLRequest requestForRadio];
+    synchronization.entityName = @"Event";
+    synchronization.compareKey = @"id";
+    synchronization.objectsKeyPath = @"programmation_radiopiranha";
+    synchronization.predicate = nil;
+    synchronization.dateFormatter = dateFormatter;
     
-    self.connection = connection;
-    self.connection.delegate = self;
+    self.synchronization = synchronization;
+    self.synchronization.delegate = self;
     
     self.cellIdentifier = @"RadioCell";
     
