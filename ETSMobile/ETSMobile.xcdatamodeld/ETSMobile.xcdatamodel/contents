@@ -63,7 +63,7 @@
     </entity>
     <entity name="News" representedClassName="ETSNews" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="published" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
