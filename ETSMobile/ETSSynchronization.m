@@ -69,7 +69,9 @@
     
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:self.request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        });
         
         //NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
         
@@ -131,8 +133,11 @@
                 NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             }
         }
-        if ([bself.delegate respondsToSelector:@selector(synchronizationDidFinishLoading:)])
-            [bself.delegate synchronizationDidFinishLoading:bself];
+        if ([bself.delegate respondsToSelector:@selector(synchronizationDidFinishLoading:)]) {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [bself.delegate synchronizationDidFinishLoading:bself];
+            });
+        }
 
     }];
     
