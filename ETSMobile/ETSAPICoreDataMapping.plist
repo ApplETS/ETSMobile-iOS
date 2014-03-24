@@ -103,9 +103,9 @@
 	<key>Profile</key>
 	<dict>
 		<key>firstName</key>
-		<string>nom</string>
-		<key>lastName</key>
 		<string>prenom</string>
+		<key>lastName</key>
+		<string>nom</string>
 		<key>permanentCode</key>
 		<string>codePerm</string>
 		<key>balance</key>

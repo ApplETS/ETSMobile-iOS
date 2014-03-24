@@ -6,4 +6,4 @@
 	url = git@github.com:croberts22/CRNavigationController.git
 [submodule "Vendors/ios-custom-alertview"]
 	path = Vendors/ios-custom-alertview
-	url = git@github.com:wimagguc/ios-custom-alertview.git
+	url = git@github.com:ApplETS/ios-custom-alertview.git

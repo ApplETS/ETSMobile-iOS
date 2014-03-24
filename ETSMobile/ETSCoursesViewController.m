@@ -95,7 +95,7 @@
     }
     else if ([course.results floatValue] > 0) {
         NSNumber *percent = @([course.results floatValue]/[[course totalEvaluationWeighting] floatValue]*100);
-        courseCell.gradeLabel.text = [NSString stringWithFormat:@"%lu %%", [percent integerValue]];
+        courseCell.gradeLabel.text = [NSString stringWithFormat:@"%lu %%", (long)[percent integerValue]];
     } else {
         courseCell.gradeLabel.text = @"—";
     }

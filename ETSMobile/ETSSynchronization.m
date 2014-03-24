@@ -14,8 +14,8 @@
 
 + (NSManagedObjectContext *)mainManagedObjectContext;
 + (NSDictionary *)mappings;
-- (void)synchronizeJSONArray:(NSArray *)jsonObjects error:(NSError * __autoreleasing *)error;
-- (void)synchronizeJSONDictionary:(NSDictionary *)jsonDictionary error:(NSError * __autoreleasing *)error;
+- (BOOL)synchronizeJSONArray:(NSArray *)jsonObjects error:(NSError * __autoreleasing *)error;
+- (BOOL)synchronizeJSONDictionary:(NSDictionary *)jsonDictionary error:(NSError * __autoreleasing *)error;
 - (void)deleteExpiredObjects:(NSArray *)objects forEntity:(NSString *)entity key:(NSString *)key managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 - (void)addControllerContextDidSave:(NSNotification*)saveNotification;
 
@@ -62,7 +62,7 @@
     }
 }
 
-- (void)synchronize:(NSError * __autoreleasing *)error
+- (BOOL)synchronize:(NSError * __autoreleasing *)error
 {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     __weak typeof(self) bself = self;
@@ -127,11 +127,14 @@
         else if ([json isKindOfClass:[NSDictionary class]]) [bself synchronizeJSONDictionary:json error:&syncError];
 
         if (bself.saveAutomatically) {
-            NSError *error;
-            if (![bself.managedObjectContext save:&error]) {
-                // FIXME: Update to handle the error appropriately.
-                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            }
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                NSError *error;
+                if (![bself.managedObjectContext save:&error]) {
+                    // FIXME: Update to handle the error appropriately.
+                    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                }
+                [[NSNotificationCenter defaultCenter] removeObserver:bself name:NSManagedObjectContextDidSaveNotification object:bself.managedObjectContext];
+            });
         }
         if ([bself.delegate respondsToSelector:@selector(synchronizationDidFinishLoading:)]) {
             dispatch_sync(dispatch_get_main_queue(), ^{
@@ -142,9 +145,10 @@
     }];
     
     [task resume];
+    return YES;
 }
 
-- (void)synchronizeJSONArray:(NSArray *)jsonObjects error:(NSError * __autoreleasing *)error
+- (BOOL)synchronizeJSONArray:(NSArray *)jsonObjects error:(NSError * __autoreleasing *)error
 {
     // Suppression des objets présents sur la base de données mais non sur la réponse de l'API.
     [self deleteExpiredObjects:jsonObjects forEntity:self.entityName key:self.compareKey managedObjectContext:self.managedObjectContext];
@@ -201,10 +205,10 @@
             i++;
         }
     }
-
+    return YES;
 }
 
-- (void)synchronizeJSONDictionary:(NSDictionary *)jsonDictionary error:(NSError * __autoreleasing *)error
+- (BOOL)synchronizeJSONDictionary:(NSDictionary *)jsonDictionary error:(NSError * __autoreleasing *)error
 {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:self.entityName inManagedObjectContext:self.managedObjectContext];
@@ -237,6 +241,7 @@
         [managedObject safeSetValuesForKeysWithDictionary:jsonDictionary dateFormatter:self.dateFormatter mapping:[ETSSynchronization mappings][self.entityName]];
         if ([self.delegate respondsToSelector:@selector(synchronization:didReceiveObject:forManagedObject:)]) [self.delegate synchronization:self didReceiveObject:jsonDictionary forManagedObject:managedObject];
     }
+    return YES;
 }
 
 - (void)addControllerContextDidSave:(NSNotification*)saveNotification

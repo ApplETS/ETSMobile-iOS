@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, ETSSynchronizationResponse) {
 
 @interface ETSSynchronization : NSObject
 
-- (void)synchronize:(NSError * __autoreleasing *)error;
+- (BOOL)synchronize:(NSError * __autoreleasing *)error;
 - (void)saveManagedObjectContext;
 
 @property (nonatomic, weak) id<ETSSynchronizationDelegate> delegate;
