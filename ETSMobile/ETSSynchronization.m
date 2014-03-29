@@ -73,11 +73,11 @@
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         });
         
-        //NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
-        
         // FIXME: traiter si data est vide ou s'il y a erreur
-        if (!data) return;
+        if (!data || [data length] == 0 || error) return;
         
+        //NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
+
         NSError *jsonError = nil;
         NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
         

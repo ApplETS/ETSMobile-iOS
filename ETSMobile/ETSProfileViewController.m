@@ -39,7 +39,7 @@
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForProfile];
     synchronization.entityName = @"Profile";
-    synchronization.compareKey = @"lastName";
+    synchronization.compareKey = @"permanentCode";
     synchronization.objectsKeyPath = @"d";
 
     self.synchronization = synchronization;
@@ -121,7 +121,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     ETSProfile *profile = nil;
-    if ([self.fetchedResultsController.fetchedObjects count] > 0) profile = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    if ([self.fetchedResultsController.fetchedObjects count] > 0) profile = self.fetchedResultsController.fetchedObjects[0];
     
     if (indexPath.row == 0) {
         cell.textLabel.text = NSLocalizedString(@"Prénom", nil);

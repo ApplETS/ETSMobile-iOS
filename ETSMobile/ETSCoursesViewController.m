@@ -193,4 +193,9 @@
     [super controllerDidAuthenticate:controller];
 }
 
+- (ETSSynchronizationResponse)synchronization:(ETSSynchronization *)synchronization validateJSONResponse:(NSDictionary *)response
+{
+    return [ETSAuthenticationViewController validateJSONResponse:response];
+}
+
 @end

@@ -61,6 +61,24 @@
     return [self requestSetup: url];
 }
 
++ (id)requestForCalendar
+{
+    NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL:[NSURL URLForCalendar]];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    if ([ETSAuthenticationViewController passwordInKeychain]) parameters[@"motPasse"] = [ETSAuthenticationViewController passwordInKeychain];
+    if ([ETSAuthenticationViewController usernameInKeychain]) parameters[@"codeAccesUniversel"] = [ETSAuthenticationViewController usernameInKeychain];
+    parameters[@"pCoursGroupe"] = @"";
+    parameters[@"pSession"] = @"A2013";
+    parameters[@"pDateDebut"] = @"";
+    parameters[@"pDateFin"] = @"";
+    
+    NSError *error = nil;
+    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:kNilOptions error:&error]];
+    
+    return request;
+}
+
 + (id)requestForEvaluationsWithCourse:(ETSCourse *)course
 {
     NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL:[NSURL URLForEvaluations]];
@@ -122,7 +140,7 @@
     
     NSError *error = nil;
     [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:p options:kNilOptions error:&error]];
-    NSLog(@"%@", request.URL);
+
     return request;
 }
 
