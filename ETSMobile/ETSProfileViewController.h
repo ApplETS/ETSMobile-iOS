@@ -7,8 +7,9 @@
 //
 
 #import "ETSTableViewController.h"
-#import "ETSProfile.h"
 
 @interface ETSProfileViewController : ETSTableViewController <ETSSynchronizationDelegate>
+
+- (IBAction)logout:(id)sender;
 
 @end

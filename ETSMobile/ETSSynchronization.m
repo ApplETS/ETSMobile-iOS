@@ -52,7 +52,13 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:entity];
     NSArray *objectsKeys = [objects valueForKey:[ETSSynchronization mappings][entity][key]];
     
-    request.predicate = [NSPredicate predicateWithFormat:@"NOT (%K IN %@)", key, objectsKeys];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (%K IN %@)", key, objectsKeys];
+    
+    if (self.predicate) {
+        predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[predicate, self.predicate]];
+    }
+    
+    request.predicate = predicate;
     request.includesPropertyValues = NO;
     NSError *error = nil;
     NSArray *expiratedObjects = [managedObjectContext executeFetchRequest:request error:&error];
@@ -178,6 +184,11 @@
         
         NSComparisonResult comparisonResult;
         if ([rightOperand isKindOfClass:[NSNumber class]]) {
+            if ([leftOperand isKindOfClass:[NSString class]]) {
+                NSNumberFormatter *f = [NSNumberFormatter new];
+                f.numberStyle = NSNumberFormatterDecimalStyle;
+                leftOperand = [f numberFromString:leftOperand];
+            }
             comparisonResult = [leftOperand compare:rightOperand];
         }
         else if ([rightOperand isKindOfClass:[NSString class]]) {

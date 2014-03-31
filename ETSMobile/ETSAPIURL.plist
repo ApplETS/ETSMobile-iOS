@@ -4,6 +4,8 @@
 <dict>
 	<key>Calendar</key>
 	<string>https://signets-ens.etsmtl.ca/Secure/WebServices/SignetsMobile.asmx/lireHoraireDesSeances</string>
+	<key>Program</key>
+	<string>https://signets-ens.etsmtl.ca/Secure/WebServices/SignetsMobile.asmx/listeProgrammes</string>
 	<key>News</key>
 	<string>http://query.yahooapis.com/v1/public/yql?q=SELECT%%20entry.title%%2C%%20entry.link.href%%2C%%20entry.published%%2C%%20entry.summary.content%%2C%%20entry.content.content%%20FROM%%20feednormalizer%%20WHERE%%20(%@)%%20AND%%20output%%3D&apos;atom_1.0&apos;%%20%%7C%%20unique(field%%3D%%22entry.link.href%%22%%2C%%20hideRepeatCount%%3D%%22true%%22)&amp;format=json&amp;callback=</string>
 	<key>Comment</key>

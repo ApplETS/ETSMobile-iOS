@@ -2,7 +2,7 @@
 //  ETSNews.h
 //  ETSMobile
 //
-//  Created by Jean-Philippe Martin on 2014-01-21.
+//  Created by Jean-Philippe Martin on 2014-03-29.
 //  Copyright (c) 2014 ApplETS. All rights reserved.
 //
 
@@ -18,5 +18,6 @@
 @property (nonatomic, retain) NSString * source;
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSData * image;
 
 @end

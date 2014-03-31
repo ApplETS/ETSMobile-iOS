@@ -130,12 +130,6 @@
     if (kind == UICollectionElementKindSectionHeader) {
         ETSSessionHeader *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SessionHeaderIdentifier" forIndexPath:indexPath];
         
-        CALayer *topBorder = [CALayer layer];
-        topBorder.frame = CGRectMake(0.0f, 0.0f, headerView.frame.size.width, 0.5f);
-        topBorder.backgroundColor = [UIColor lightGrayColor].CGColor;
-        [headerView.layer addSublayer:topBorder];
-
-        
         ETSCourse *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
         
         NSString *session = nil;

@@ -136,6 +136,8 @@
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveResponse:(ETSSynchronizationResponse)response
 {
+    if (synchronization != self.synchronization) return;
+    
     if (response == ETSSynchronizationResponseAuthenticationError) {
         
         if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {

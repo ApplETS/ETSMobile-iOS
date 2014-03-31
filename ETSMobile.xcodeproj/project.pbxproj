@@ -74,6 +74,7 @@
 		26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */; };
 		26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92F217EA625200469FA8 /* ETSNewsViewController.m */; };
 		26EF269818E612B8001D3454 /* ETSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EF269718E612B8001D3454 /* ETSCollectionViewController.m */; };
+		26EF269B18E70F12001D3454 /* ETSProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EF269A18E70F12001D3454 /* ETSProgram.m */; };
 		26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F393221829984F00995E16 /* ETSSessionHeader.m */; };
 		26F46A99183ED03400232B5A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F46A98183ED03400232B5A /* AVFoundation.framework */; };
 		26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */; };
@@ -207,6 +208,8 @@
 		26DD92F117EA625200469FA8 /* ETSNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsViewController.h; sourceTree = "<group>"; };
 		26DD92F217EA625200469FA8 /* ETSNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsViewController.m; sourceTree = "<group>"; };
 		26EF269718E612B8001D3454 /* ETSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCollectionViewController.m; sourceTree = "<group>"; };
+		26EF269918E70F12001D3454 /* ETSProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProgram.h; sourceTree = "<group>"; };
+		26EF269A18E70F12001D3454 /* ETSProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSProgram.m; sourceTree = "<group>"; };
 		26F393211829984F00995E16 /* ETSSessionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSessionHeader.h; sourceTree = "<group>"; };
 		26F393221829984F00995E16 /* ETSSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSessionHeader.m; sourceTree = "<group>"; };
 		26F3CD3E184FCF5100536ADB /* ETSMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ETSMobile.entitlements; sourceTree = "<group>"; };
@@ -516,6 +519,8 @@
 		26DD92E817EA612800469FA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				26EF269918E70F12001D3454 /* ETSProgram.h */,
+				26EF269A18E70F12001D3454 /* ETSProgram.m */,
 				264E86D11887A24E005F1820 /* ETSNews.h */,
 				264E86D21887A24E005F1820 /* ETSNews.m */,
 				26D44BA318E49BEF0006F9F0 /* ETSBandwidth.h */,
@@ -762,6 +767,7 @@
 				266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */,
 				D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */,
 				1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */,
+				26EF269B18E70F12001D3454 /* ETSProgram.m in Sources */,
 				26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */,
 				264ACF4F18DCDE0100928284 /* ETSSynchronization.m in Sources */,
 				26EF269818E612B8001D3454 /* ETSCollectionViewController.m in Sources */,
@@ -927,6 +933,7 @@
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -951,6 +958,7 @@
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

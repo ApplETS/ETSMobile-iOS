@@ -61,6 +61,13 @@
     return [self requestSetup: url];
 }
 
++ (id)requestForProgram
+{
+    NSURL *url = [NSURL URLForProgram];
+    
+    return [self requestSetup: url];
+}
+
 + (id)requestForCalendar
 {
     NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL:[NSURL URLForCalendar]];
