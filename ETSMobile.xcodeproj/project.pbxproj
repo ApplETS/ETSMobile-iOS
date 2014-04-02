@@ -93,6 +93,7 @@
 		26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F393221829984F00995E16 /* ETSSessionHeader.m */; };
 		26F46A99183ED03400232B5A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F46A98183ED03400232B5A /* AVFoundation.framework */; };
 		26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */; };
+		9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */; };
 		9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */; };
 		9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC88726189ED56B002A3D04 /* MapKit.framework */; };
 		D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15F4AE3183992D00034605B /* ETSProfileViewController.m */; };
@@ -265,6 +266,8 @@
 		26F46A98183ED03400232B5A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		26F46A9A183ED0E200232B5A /* ETSRadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRadioViewController.h; sourceTree = "<group>"; };
 		26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRadioViewController.m; sourceTree = "<group>"; };
+		9C5799CF18EC7F2D00AD8838 /* ETSSecurityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityDetailViewController.h; sourceTree = "<group>"; };
+		9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSecurityDetailViewController.m; sourceTree = "<group>"; };
 		9CC88722189ECF43002A3D04 /* ETSSecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityViewController.h; sourceTree = "<group>"; };
 		9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSecurityViewController.m; sourceTree = "<group>"; };
 		9CC88726189ED56B002A3D04 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -748,6 +751,8 @@
 			children = (
 				9CC88722189ECF43002A3D04 /* ETSSecurityViewController.h */,
 				9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */,
+				9C5799CF18EC7F2D00AD8838 /* ETSSecurityDetailViewController.h */,
+				9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */,
 			);
 			name = Security;
 			sourceTree = "<group>";
@@ -917,6 +922,7 @@
 				2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */,
 				263FBD9918E4A0D0002E033E /* ETSEvaluationCell.m in Sources */,
 				9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */,
+				9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */,
 				2601088F181596820037E795 /* ETSCollectionViewController.m in Sources */,
 				26DD92C617EA610D00469FA8 /* ETSMasterViewController.m in Sources */,
 				26085B401829D8D700FE35AB /* NSURL+API.m in Sources */,
@@ -1076,7 +1082,6 @@
 		26DD92E317EA610D00469FA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
@@ -1101,7 +1106,6 @@
 		26DD92E417EA610D00469FA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;

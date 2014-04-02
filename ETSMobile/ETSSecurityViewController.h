@@ -9,8 +9,9 @@
 #import "ETSTableViewController.h"
 #import <MapKit/MapKit.h>
 
-@interface ETSSecurityViewController : UIViewController
+@interface ETSSecurityViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) IBOutlet UITableView *procedures;
 
 @end
