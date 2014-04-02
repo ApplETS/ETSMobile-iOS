@@ -52,7 +52,13 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:entity];
     NSArray *objectsKeys = [objects valueForKey:[ETSSynchronization mappings][entity][key]];
     
-    request.predicate = [NSPredicate predicateWithFormat:@"NOT (%K IN %@)", key, objectsKeys];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (%K IN %@)", key, objectsKeys];
+    
+    if (self.predicate) {
+        predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[predicate, self.predicate]];
+    }
+    
+    request.predicate = predicate;
     request.includesPropertyValues = NO;
     NSError *error = nil;
     NSArray *expiratedObjects = [managedObjectContext executeFetchRequest:request error:&error];
@@ -73,11 +79,11 @@
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         });
         
-        //NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
-        
         // FIXME: traiter si data est vide ou s'il y a erreur
-        if (!data) return;
+        if (!data || [data length] == 0 || error) return;
         
+        //NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
+
         NSError *jsonError = nil;
         NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
         
@@ -178,6 +184,11 @@
         
         NSComparisonResult comparisonResult;
         if ([rightOperand isKindOfClass:[NSNumber class]]) {
+            if ([leftOperand isKindOfClass:[NSString class]]) {
+                NSNumberFormatter *f = [NSNumberFormatter new];
+                f.numberStyle = NSNumberFormatterDecimalStyle;
+                leftOperand = [f numberFromString:leftOperand];
+            }
             comparisonResult = [leftOperand compare:rightOperand];
         }
         else if ([rightOperand isKindOfClass:[NSString class]]) {

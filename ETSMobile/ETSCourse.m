@@ -16,17 +16,18 @@
 @dynamic credits;
 @dynamic grade;
 @dynamic group;
+@dynamic mean;
+@dynamic median;
+@dynamic order;
+@dynamic percentile;
 @dynamic program;
+@dynamic results;
 @dynamic season;
 @dynamic session;
+@dynamic std;
 @dynamic title;
 @dynamic year;
-@dynamic order;
-@dynamic results;
-@dynamic mean;
-@dynamic std;
-@dynamic median;
-@dynamic percentile;
+@dynamic resultOn100;
 @dynamic evaluations;
 
 - (NSNumber *)totalEvaluationWeighting

@@ -7,21 +7,17 @@
 //
 
 #import "ETSMenuViewController.h"
-#import "ETSNewsViewController.h"
-#import "ETSCoursesViewController.h"
-#import "ETSProfileViewController.h"
 #import "ETSWebViewViewController.h"
 #import "MFSideMenuContainerViewController.h"
 #import "UIColor+Styles.h"
 #import "UIStoryboard+ViewController.h"
-#import "ETSBandwidthViewController.h"
 
 typedef NS_ENUM(NSInteger, ETSMenuMe)
 {
-    ETSMenuMeToday,
+    //ETSMenuMeToday,
     ETSMenuMeSchedule,
     ETSMenuMeCourse,
-    ETSMenuMeInternship,
+    //ETSMenuMeInternship,
     ETSMenuMeProfile,
     ETSMenuMeBandwidth
 };
@@ -66,7 +62,7 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch (section) {
-        case 0: return 6;
+        case 0: return 4;
         case 1: return 5;
         case 2: return 3;
         default: return 0;
@@ -87,11 +83,11 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
     cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:15];
     
     if (indexPath.section == 0) {
-        if (indexPath.row == ETSMenuMeToday) {
+  /*      if (indexPath.row == ETSMenuMeToday) {
             cell.textLabel.text = NSLocalizedString(@"Aujourd'hui", nil);
             cell.imageView.image = [UIImage imageNamed:@"ico_today_24x24.png"];
         }
-        else if (indexPath.row == ETSMenuMeSchedule) {
+        else*/ if (indexPath.row == ETSMenuMeSchedule) {
             cell.textLabel.text = NSLocalizedString(@"Horaire", nil);
             cell.imageView.image = [UIImage imageNamed:@"ico_schedule_24x24.png"];
         }
@@ -99,10 +95,10 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
             cell.textLabel.text = NSLocalizedString(@"Notes", nil);
             cell.imageView.image = [UIImage imageNamed:@"ico_notes_24x24.png"];
         }
-        else if (indexPath.row == ETSMenuMeInternship) {
+/*        else if (indexPath.row == ETSMenuMeInternship) {
             cell.textLabel.text = NSLocalizedString(@"Stages", nil);
             cell.imageView.image = [UIImage imageNamed:@"ico_stage.png"];
-        }
+        }*/
         else if (indexPath.row == ETSMenuMeProfile) {
             cell.textLabel.text = NSLocalizedString(@"Profil", nil);
             cell.imageView.image = [UIImage imageNamed:@"ico_profil.png"];
@@ -180,18 +176,18 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
     UIViewController *viewController = nil;
     
     if (indexPath.section == 0) {
-        if (indexPath.row == ETSMenuMeToday) {
+/*        if (indexPath.row == ETSMenuMeToday) {
 
         }
-        else if (indexPath.row == ETSMenuMeSchedule) {
-        
+        else*/ if (indexPath.row == ETSMenuMeSchedule) {
+            viewController = [self.storyboard instantiateCalendarViewController];
         }
         else if (indexPath.row == ETSMenuMeCourse) {
             viewController = [self.storyboard instantiateCoursesViewController];
         }
-        else if (indexPath.row == ETSMenuMeInternship) {
+/*        else if (indexPath.row == ETSMenuMeInternship) {
             viewController = [self.storyboard instantiateAuthenticationViewController];
-        }
+        }*/
         else if (indexPath.row == ETSMenuMeProfile) {
             viewController = [self.storyboard instantiateProfileViewController];
         }

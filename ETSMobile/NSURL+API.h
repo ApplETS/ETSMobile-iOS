@@ -11,6 +11,8 @@
 @interface NSURL (API)
 + (id)URLForCourses;
 + (id)URLForProfile;
++ (id)URLForProgram;
++ (id)URLForCalendar;
 + (id)URLForEvaluations;
 + (id)URLForDirectory;
 + (id)URLForRadio;

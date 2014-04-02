@@ -5,6 +5,10 @@
 //  Created by Jean-Philippe Martin on 2013-10-21.
 //  Copyright (c) 2013 ApplETS. All rights reserved.
 //
+//  La mise à jour avec le NSFetchedResultsController est inspirée de
+//  Aleksandar Vacić on 26.9.13.
+//  https://github.com/radianttap/UICollectionView-NSFetchedResultsController
+//
 
 #import "ETSCollectionViewController.h"
 #import "UIStoryboard+ViewController.h"
@@ -12,6 +16,8 @@
 
 @interface ETSCollectionViewController ()
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+//@property (strong, nonatomic) NSBlockOperation *collectionViewBlockOperation;
+//@property (nonatomic) BOOL shouldReloadCollectionView;
 @end
 
 @implementation ETSCollectionViewController
@@ -25,6 +31,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+   // self.collectionViewBlockOperation = [NSBlockOperation new];
+   // self.shouldReloadCollectionView = NO;
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
@@ -67,37 +76,161 @@
 {
 }
 
+/*
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
+{
+	if (self.collectionViewBlockOperation.isExecuting) {
+		self.shouldReloadCollectionView = YES;
+		return;
+	}
+	
+	if (self.collectionViewBlockOperation.isFinished)
+		self.collectionViewBlockOperation = nil;
+	
+    __weak UICollectionView *collectionView = self.collectionView;
+	switch(type) {
+        case NSFetchedResultsChangeInsert: {
+            [self.collectionViewBlockOperation addExecutionBlock:^{
+                [collectionView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]];
+            }];
+            break;
+        }
+            
+        case NSFetchedResultsChangeDelete: {
+            [self.collectionViewBlockOperation addExecutionBlock:^{
+                [collectionView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]];
+            }];
+            break;
+        }
+            
+        case NSFetchedResultsChangeUpdate: {
+            [self.collectionViewBlockOperation addExecutionBlock:^{
+                [collectionView reloadSections:[NSIndexSet indexSetWithIndex:sectionIndex]];
+            }];
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath
 {
-/*
-    switch(type) {
-        case NSFetchedResultsChangeInsert:
-            NSLog(@"%ld, %ld", (long)newIndexPath.section, (long)newIndexPath.row);
-            [self.collectionView insertItemsAtIndexPaths:@[newIndexPath]];
+    if (self.collectionViewBlockOperation.isExecuting) {
+		self.shouldReloadCollectionView = YES;
+		return;
+	}
+	
+	if (self.collectionViewBlockOperation.isFinished)
+		self.collectionViewBlockOperation = nil;
+    
+    __weak UICollectionView *collectionView = self.collectionView;
+    
+    switch (type) {
+        case NSFetchedResultsChangeInsert: {
+            if ([self.collectionView numberOfSections] > 0) {
+                if ([self.collectionView numberOfItemsInSection:newIndexPath.section] == 0) {
+                    self.shouldReloadCollectionView = YES;
+                } else {
+                    [self.collectionViewBlockOperation addExecutionBlock:^{
+                        [collectionView insertItemsAtIndexPaths:@[newIndexPath]];
+                    }];
+                }
+            } else {
+                self.shouldReloadCollectionView = YES;
+            }
             break;
+        }
             
-        case NSFetchedResultsChangeDelete:
-            [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
+        case NSFetchedResultsChangeDelete: {
+            if ([self.collectionView numberOfItemsInSection:indexPath.section] == indexPath.item+1) {
+                self.shouldReloadCollectionView = YES;
+            } else {
+                [self.collectionViewBlockOperation addExecutionBlock:^{
+                    [collectionView deleteItemsAtIndexPaths:@[indexPath]];
+                }];
+            }
             break;
+        }
             
-        case NSFetchedResultsChangeUpdate:
-            [self configureCell:[self.collectionView cellForItemAtIndexPath:indexPath] atIndexPath:indexPath];
+        case NSFetchedResultsChangeUpdate: {
+            [self.collectionViewBlockOperation addExecutionBlock:^{
+                [collectionView reloadItemsAtIndexPaths:@[indexPath]];
+            }];
             break;
+        }
             
-        case NSFetchedResultsChangeMove:
-            [self.collectionView deleteItemsAtIndexPaths:@[indexPath]];
-            [self.collectionView insertItemsAtIndexPaths:@[newIndexPath]];
+        case NSFetchedResultsChangeMove: {
+            [self.collectionViewBlockOperation addExecutionBlock:^{
+                [collectionView moveItemAtIndexPath:indexPath toIndexPath:newIndexPath];
+            }];
+            break;
+        }
+            
+        default:
             break;
     }
- */
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-#warning Ajouter les animations.
+	if (!self) return;
+	
+	if (self.collectionView.window == nil) {
+		//	if collection view is not currently visible, then just reload data.
+		//	this prevents all sorts of crazy UICV crashes
+		self.collectionViewBlockOperation = nil;
+		self.shouldReloadCollectionView = NO;
+		[self.collectionView reloadData];
+        
+	} else if (self.shouldReloadCollectionView) {
+		// This is to prevent a bug in UICollectionView from occurring.
+		// The bug presents itself when inserting the first object or deleting the last object in a collection view.
+		// http://stackoverflow.com/questions/12611292/uicollectionview-assertion-failure
+		// This code should be removed once the bug has been fixed, it is tracked in OpenRadar
+		// http://openradar.appspot.com/12954582
+		self.collectionViewBlockOperation = nil;
+		self.shouldReloadCollectionView = NO;
+		[self.collectionView reloadData];
+		
+	} else if ([self.collectionViewBlockOperation.executionBlocks count] == 0) {
+		self.collectionViewBlockOperation = nil;
+		self.shouldReloadCollectionView = NO;
+		
+	} else {	//	BIG
+        
+		@try
+		{
+			[self.collectionView performBatchUpdates:^{
+				[self.collectionViewBlockOperation start];
+			} completion:^(BOOL finished) {
+				self.collectionViewBlockOperation = nil;
+			}];
+		}
+		@catch (NSException *except)
+		{
+			NSLog(@"DEBUG: failure to batch update.  %@", except.description);
+			self.collectionViewBlockOperation = nil;
+			self.shouldReloadCollectionView = NO;
+			[self.collectionView reloadData];
+		}
+		
+	}	//BIG else
+}
+
+- (void)clearChanges {
+    
+	self.collectionViewBlockOperation = nil;
+	self.shouldReloadCollectionView = NO;
+}
+ */
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
     [self.collectionView reloadData];
 }
 

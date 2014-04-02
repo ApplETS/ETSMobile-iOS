@@ -13,6 +13,7 @@
 - (id)instantiateAuthenticationViewController;
 - (id)instantiateCoursesViewController;
 - (id)instantiateProfileViewController;
+- (id)instantiateCalendarViewController;
 - (id)instantiateDirectoryViewController;
 - (id)instantiateLibraryViewController;
 - (id)instantiateRadioViewController;

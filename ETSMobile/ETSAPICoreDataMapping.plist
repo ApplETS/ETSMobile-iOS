@@ -2,6 +2,54 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Program</key>
+	<dict>
+		<key>code</key>
+		<string>code</string>
+		<key>name</key>
+		<string>libelle</string>
+		<key>profil</key>
+		<string>profile</string>
+		<key>status</key>
+		<string>statut</string>
+		<key>start</key>
+		<string>sessionDebut</string>
+		<key>end</key>
+		<string>sessionFin</string>
+		<key>results</key>
+		<string>moyenne</string>
+		<key>cequivalence</key>
+		<string>nbEquivalences</string>
+		<key>csucces</key>
+		<string>nbCrsReussis</string>
+		<key>cfailed</key>
+		<string>nbCrsEchoues</string>
+		<key>cregistred</key>
+		<string>nbCreditsInscrits</string>
+		<key>ccompleted</key>
+		<string>nbCreditsCompletes</string>
+		<key>cpotential</key>
+		<string>nbCreditsPotentiels</string>
+		<key>cresearch</key>
+		<string>nbCreditsRecherche</string>
+	</dict>
+	<key>Calendar</key>
+	<dict>
+		<key>id</key>
+		<string>id</string>
+		<key>start</key>
+		<string>dateDebut</string>
+		<key>end</key>
+		<string>dateFin</string>
+		<key>title</key>
+		<string>libelleCours</string>
+		<key>room</key>
+		<string>local</string>
+		<key>summary</key>
+		<string>descriptionActivite</string>
+		<key>course</key>
+		<string>coursGroupe</string>
+	</dict>
 	<key>News</key>
 	<dict>
 		<key>title</key>

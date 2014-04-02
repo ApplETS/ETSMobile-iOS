@@ -34,8 +34,11 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"News" inManagedObjectContext:self.managedObjectContext];
     
     fetchRequest.entity = entity;
-    fetchRequest.fetchBatchSize = 10;
+    fetchRequest.fetchBatchSize = 8;
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"published" ascending:NO]];
+    
+    //FIXME
+//    fetchRequest.predicate = self.synchronization.predicate;
     
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     self.fetchedResultsController = aFetchedResultsController;
@@ -73,6 +76,7 @@
     synchronization.compareKey = @"link";
     synchronization.objectsKeyPath = @"query.results.feed";
     synchronization.dateFormatter = dateFormatter;
+    synchronization.ignoredAttributes = @[@"image"];
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
     
@@ -84,6 +88,22 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    //FIXME
+/*    NSMutableArray *predicates = [NSMutableArray array];
+    for (NSDictionary *source in self.sources) {
+        if ([source[@"enabled"] boolValue]) {
+            NSLog(@"%@", source[@"id"]);
+            [predicates addObject:[NSPredicate predicateWithFormat:@"source ==[c] %@", source[@"id"]]];
+        }
+    }
+    
+    NSError *error;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        // FIXME: Update to handle the error appropriately.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+    
+    self.synchronization.predicate = [NSCompoundPredicate orPredicateWithSubpredicates:predicates]; */
     self.synchronization.request = [NSURLRequest requestForNewsWithSources:self.sources];
     [super viewWillAppear:animated];
 }
@@ -164,6 +184,11 @@
     
     cell.summaryLabel.attributedText = res;
     
+    if ([news.image length] > 0) {
+        cell.newsImageView.image = [UIImage imageWithData:news.image];
+    } else {
+        cell.newsImageView.image = nil;
+    }
 }
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
@@ -186,6 +211,48 @@
     else {
         news.content = [news.summary stringByStrippingHTML];
     }
+}
+
+- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
+{
+    [super synchronizationDidFinishLoading:synchronization];
+    NSBlockOperation *operations = [NSBlockOperation new];
+    __weak typeof(self) bself = self;
+
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    for (ETSNews *news in [self.fetchedResultsController fetchedObjects]) {
+        if ([news.image length] == 0) {
+            [operations addExecutionBlock:^{
+                NSString *url = nil;
+                NSScanner *scanner = [NSScanner scannerWithString:news.summary];
+                
+                [scanner scanUpToString:@"<img" intoString:nil];
+                if (![scanner isAtEnd]) {
+                    [scanner scanUpToString:@"src" intoString:nil];
+                    NSCharacterSet *charset = [NSCharacterSet characterSetWithCharactersInString:@"\"'"];
+                    [scanner scanUpToCharactersFromSet:charset intoString:nil];
+                    [scanner scanCharactersFromSet:charset intoString:nil];
+                    [scanner scanUpToCharactersFromSet:charset intoString:&url];
+                    
+                    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+                    
+                    if (data) news.image = data;
+                }
+            }];
+        }
+    }
+    //FIXME
+  /*
+    [operations setCompletionBlock:^{
+        NSError *error;
+        if (![bself.managedObjectContext save:&error]) {
+            // FIXME: Update to handle the error appropriately.
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        }
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    }]; */
+    [operations start];
 }
 
 

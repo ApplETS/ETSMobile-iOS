@@ -40,7 +40,7 @@
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
         
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+ /*   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
@@ -48,7 +48,7 @@
         UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
         ETSMasterViewController *controller = (ETSMasterViewController *)masterNavigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
-    } else {
+    } else {*/
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
         MFSideMenuContainerViewController *container = (MFSideMenuContainerViewController *)self.window.rootViewController;
         UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"navigationController"];
@@ -69,7 +69,7 @@
         [container setLeftMenuViewController:leftSideMenuViewController];
         [container setCenterViewController:navigationController];
     
-    }
+ //   }
     return YES;
 }
 							

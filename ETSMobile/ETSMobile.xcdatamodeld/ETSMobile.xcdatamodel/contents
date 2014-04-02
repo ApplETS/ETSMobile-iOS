@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Bandwidth" representedClassName="ETSBandwidth" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="download" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -7,6 +7,15 @@
         <attribute name="month" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="port" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="upload" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Calendar" representedClassName="ETSCalendar" syncable="YES">
+        <attribute name="course" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="end" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="room" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="start" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Contact" representedClassName="ETSContact" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -32,6 +41,7 @@
         <attribute name="order" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="percentile" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="program" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="resultOn100" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="results" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="season" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="session" optional="YES" attributeType="String" syncable="YES"/>
@@ -63,6 +73,7 @@
     </entity>
     <entity name="News" representedClassName="ETSNews" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="link" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="published" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
@@ -80,13 +91,31 @@
         <attribute name="permanentCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="program" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Program" representedClassName="ETSProgram" syncable="YES">
+        <attribute name="ccequivalence" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="ccompleted" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="cfailed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="code" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="cpotential" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="cregistred" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="cresearch" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="csucces" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="end" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="results" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="start" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Bandwidth" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Contact" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Course" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Evaluation" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Event" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="News" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Profile" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Bandwidth" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="Calendar" positionX="9" positionY="126" width="128" height="150"/>
+        <element name="Contact" positionX="0" positionY="0" width="128" height="225"/>
+        <element name="Course" positionX="0" positionY="0" width="128" height="300"/>
+        <element name="Evaluation" positionX="0" positionY="0" width="128" height="225"/>
+        <element name="Event" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="News" positionX="0" positionY="0" width="128" height="150"/>
+        <element name="Profile" positionX="0" positionY="0" width="128" height="180"/>
+        <element name="Program" positionX="9" positionY="135" width="128" height="253"/>
     </elements>
 </model>

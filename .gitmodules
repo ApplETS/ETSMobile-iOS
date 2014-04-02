@@ -7,3 +7,6 @@
 [submodule "Vendors/ios-custom-alertview"]
 	path = Vendors/ios-custom-alertview
 	url = git@github.com:ApplETS/ios-custom-alertview.git
+[submodule "Vendors/MSCollectionViewCalendarLayout"]
+	path = Vendors/MSCollectionViewCalendarLayout
+	url = git@github.com:ApplETS/MSCollectionViewCalendarLayout.git

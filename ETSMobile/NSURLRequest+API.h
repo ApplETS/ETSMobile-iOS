@@ -13,6 +13,8 @@
 + (id)requestSetup:(NSURL*)url;
 + (id)requestForCourses;
 + (id)requestForProfile;
++ (id)requestForProgram;
++ (id)requestForCalendar;
 + (id)requestForEvaluationsWithCourse:(ETSCourse *)course;
 + (id)requestForDirectory;
 + (id)requestForNewsWithSources:(NSArray *)sources;
