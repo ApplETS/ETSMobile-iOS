@@ -7,14 +7,10 @@
 //
 
 #import "ETSMenuViewController.h"
-#import "ETSNewsViewController.h"
-#import "ETSCoursesViewController.h"
-#import "ETSProfileViewController.h"
 #import "ETSWebViewViewController.h"
 #import "MFSideMenuContainerViewController.h"
 #import "UIColor+Styles.h"
 #import "UIStoryboard+ViewController.h"
-#import "ETSBandwidthViewController.h"
 
 typedef NS_ENUM(NSInteger, ETSMenuMe)
 {

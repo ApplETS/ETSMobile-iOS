@@ -7,7 +7,11 @@
 //
 
 #import "ETSTableViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
-@interface ETSCalendarViewController : ETSTableViewController
+@interface ETSCalendarViewController : UICollectionViewController
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
