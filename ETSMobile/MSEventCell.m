@@ -136,30 +136,6 @@
                                                              constant:-1],
                                ]
          ];
-
-        
-        
-        
-    /*
-        [self.borderView makeConstraints:^(MASConstraintMaker *make) {
-            make.height.equalTo(self.height);
-            make.width.equalTo(@(borderWidth));
-            make.left.equalTo(self.left);
-            make.top.equalTo(self.top);
-        }];
-        
-        [self.title makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.top).offset(contentPadding.top);
-            make.left.equalTo(self.left).offset(contentPadding.left);
-            make.right.equalTo(self.right).offset(-contentPadding.right);
-        }];
-        
-        [self.location makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.title.bottom).offset(contentMargin);
-            make.left.equalTo(self.left).offset(contentPadding.left);
-            make.right.equalTo(self.right).offset(-contentPadding.right);
-            make.bottom.lessThanOrEqualTo(self.bottom).offset(-contentPadding.bottom);
-        }]; */
     }
     return self;
 }
@@ -191,8 +167,12 @@
 - (void)setEvent:(ETSCalendar *)event
 {
     _event = event;
-    self.title.attributedText = [[NSAttributedString alloc] initWithString:event.title attributes:[self titleAttributesHighlighted:self.selected]];
-    self.location.attributedText = [[NSAttributedString alloc] initWithString:event.room attributes:[self subtitleAttributesHighlighted:self.selected]];;
+    
+    NSString *title = [NSString stringWithFormat:@"%@\n%@", event.title, event.course];
+    self.title.attributedText = [[NSAttributedString alloc] initWithString:title attributes:[self titleAttributesHighlighted:self.selected]];
+
+    NSString *details = [NSString stringWithFormat:@"%@\n%@", event.summary, event.room];
+    self.location.attributedText = [[NSAttributedString alloc] initWithString:details attributes:[self subtitleAttributesHighlighted:self.selected]];;
 }
 
 - (void)updateColors
@@ -208,7 +188,7 @@
     NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
     paragraphStyle.alignment = NSTextAlignmentLeft;
     paragraphStyle.hyphenationFactor = 1.0;
-    paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
+    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
     return @{
         NSFontAttributeName : [UIFont boldSystemFontOfSize:12.0],
         NSForegroundColorAttributeName : [self textColorHighlighted:highlighted],
