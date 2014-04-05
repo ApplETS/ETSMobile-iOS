@@ -78,6 +78,8 @@
 	</dict>
 	<key>Event</key>
 	<dict>
+		<key>source</key>
+		<string>source</string>
 		<key>id</key>
 		<string>id</string>
 		<key>title</key>

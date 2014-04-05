@@ -119,7 +119,9 @@
         
         if (!bself.dateFormatter) bself.dateFormatter = [[NSDateFormatter alloc] init];
 
-        __block id json = [jsonObjects valueForKeyPath:bself.objectsKeyPath];
+
+        __block id json = jsonObjects;
+        if (bself.objectsKeyPath && [bself.objectsKeyPath length] > 0) json = [jsonObjects valueForKeyPath:bself.objectsKeyPath];
         
         if ([bself.delegate respondsToSelector:@selector(synchronization:updateJSONObjects:)]) {
             dispatch_sync(dispatch_get_main_queue(), ^{

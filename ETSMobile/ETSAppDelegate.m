@@ -8,12 +8,18 @@
 
 #import "ETSAppDelegate.h"
 
-#import "ETSMasterViewController.h"
+#import "ETSNewsViewController.h"
 #import "MFSideMenuContainerViewController.h"
 #import "ETSMenuViewController.h"
 #import "UIColor+Styles.h"
 #import "NSURLRequest+API.h"
+#import "ETSRadioViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
+
+@interface ETSAppDelegate ()
+@property (nonatomic, strong) AVPlayerItem *playerItem;
+@end
 
 @implementation ETSAppDelegate
 
@@ -24,12 +30,36 @@
 
 - (void)startRadio
 {
-    _radioPlayer = [AVPlayer playerWithURL:[NSURL  URLWithString:@"http://radiopiranha.com:8000/radiopiranha.mp3"]];
+    
+    self.playerItem = [AVPlayerItem playerItemWithURL:[NSURL  URLWithString:@"http://radiopiranha.com:8000/radiopiranha.mp3"]];
+    
+    [self.playerItem addObserver:self forKeyPath:@"timedMetadata" options:NSKeyValueObservingOptionNew context:nil];
+
+    _radioPlayer = [AVPlayer playerWithPlayerItem:self.playerItem];
     [_radioPlayer play];
 }
 
+- (void) observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object
+                         change:(NSDictionary*)change context:(void*)context {
+    
+    if ([keyPath isEqualToString:@"timedMetadata"])
+    {
+        AVPlayerItem* playerItem = object;
+        for (AVMetadataItem* metadata in playerItem.timedMetadata)
+            if ([metadata.commonKey isEqualToString:@"title"]) self.currentRadioTitle = metadata.stringValue;
+        
+        UIViewController *controller = ((UINavigationController*)((MFSideMenuContainerViewController*)self.window.rootViewController).centerViewController).visibleViewController;
+        if ([controller isKindOfClass:[ETSRadioViewController class]]) {
+            controller.navigationItem.prompt = self.currentRadioTitle;
+        }
+    }
+}
+
+
 - (void)stopRadio
 {
+    self.currentRadioTitle = nil;
+    [self.playerItem removeObserver:self forKeyPath:@"timedMetadata"];
     [_radioPlayer pause];
     _radioPlayer = nil;
 }
@@ -55,8 +85,9 @@
 
         [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
         [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
         
-        ETSMasterViewController *controller = (ETSMasterViewController *)navigationController.topViewController;
+        ETSNewsViewController *controller = (ETSNewsViewController *)navigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
         
         ETSMenuViewController *leftSideMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];

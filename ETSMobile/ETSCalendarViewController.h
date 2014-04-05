@@ -7,7 +7,6 @@
 //
 
 #import "ETSTableViewController.h"
-#import <QuartzCore/QuartzCore.h>
 
 @interface ETSCalendarViewController : UICollectionViewController
 

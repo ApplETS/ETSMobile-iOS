@@ -8,6 +8,9 @@
 
 #import "ETSTableViewController.h"
 
-@interface ETSRadioViewController : ETSTableViewController
+@interface ETSRadioViewController : UICollectionViewController
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
