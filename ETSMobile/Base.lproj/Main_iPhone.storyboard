@@ -611,6 +611,151 @@
             </objects>
             <point key="canvasLocation" x="459" y="33"/>
         </scene>
+        <!--About View Controller - À propos d'ÉTSMobile-->
+        <scene sceneID="g96-oI-9kJ">
+            <objects>
+                <viewController storyboardIdentifier="AboutViewController" title="À propos d'ÉTSMobile" id="dr6-SO-0j9" customClass="ETSAboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TCN-9Z-PgL"/>
+                        <viewControllerLayoutGuide type="bottom" id="UiM-nn-iT8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d3z-Px-ZuY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gLh-4a-uaH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="21" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="293" translatesAutoresizingMaskIntoConstraints="NO" id="tws-7f-Q2q">
+                                        <rect key="frame" x="14" y="35" width="293" height="422"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="422" id="Vth-qn-tzF"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Réalisation — Équipe iOS">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
+Jean-Philippe Martin
+Maxime Lapointe
+Annie Caron
+
+</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Réalisation — API/Serveur">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
+Charles Lévesque
+Philippe Cloutier
+
+</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Responsables du club">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
+Laurence de Villers (capitaine)
+Marc-Antoine Hinse (trésorier)
+
+</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Remerciements">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
+François Coallier (DDTSA)
+Idrissa Konkobo (systèmes d’entreprise)
+Véronique Clabots (analyste)
+Olivier Lacasse (analyste)
+Robert Gervais (analyste)
+
+http://applets.etsmtl.ca</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="tws-7f-Q2q" firstAttribute="leading" secondItem="gLh-4a-uaH" secondAttribute="leading" priority="750" constant="14" id="54z-OG-tdP"/>
+                                    <constraint firstAttribute="trailing" secondItem="tws-7f-Q2q" secondAttribute="trailing" priority="750" constant="13" id="Fxw-k0-bbc"/>
+                                    <constraint firstItem="tws-7f-Q2q" firstAttribute="top" secondItem="gLh-4a-uaH" secondAttribute="top" priority="250" constant="35" id="Ubv-u2-o43"/>
+                                    <constraint firstAttribute="bottom" secondItem="tws-7f-Q2q" secondAttribute="bottom" priority="250" constant="50" id="Zvg-B5-MkY"/>
+                                    <constraint firstAttribute="centerX" secondItem="tws-7f-Q2q" secondAttribute="centerX" constant="-0.5" id="hEj-67-78I"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98855723505434778" green="0.98855723505434778" blue="0.98855723505434778" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gLh-4a-uaH" firstAttribute="top" secondItem="d3z-Px-ZuY" secondAttribute="top" id="A4v-de-8iW"/>
+                            <constraint firstItem="gLh-4a-uaH" firstAttribute="leading" secondItem="d3z-Px-ZuY" secondAttribute="leading" id="UWn-8G-T7S"/>
+                            <constraint firstItem="UiM-nn-iT8" firstAttribute="top" secondItem="gLh-4a-uaH" secondAttribute="bottom" id="anR-Kn-4qh"/>
+                            <constraint firstAttribute="trailing" secondItem="gLh-4a-uaH" secondAttribute="trailing" id="iU1-CE-eSu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="À propos d'ÉTSMobile" id="2a9-Gu-sRt">
+                        <barButtonItem key="leftBarButtonItem" image="menu-icon" id="1vV-6Z-8LK">
+                            <connections>
+                                <action selector="panLeftMenu:" destination="dr6-SO-0j9" id="uCa-Wn-FBG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="aboutLabel" destination="tws-7f-Q2q" id="8CO-2W-5YO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aec-6s-Dny" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="458" y="837"/>
+        </scene>
         <!--Bandwidth View Controller-->
         <scene sceneID="Zcj-oU-pyc">
             <objects>

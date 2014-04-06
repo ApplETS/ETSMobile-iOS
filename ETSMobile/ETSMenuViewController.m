@@ -220,7 +220,7 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
             viewController = [self.storyboard instantiateCommentViewController];
         }
         else if (indexPath.row == ETSMenuApplETSAbout) {
-
+            viewController = [self.storyboard instantiateAboutViewController];
         }
         else if (indexPath.row == ETSMenuApplETSSponsors) {
 

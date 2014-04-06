@@ -60,4 +60,8 @@
     return [self instantiateViewControllerWithIdentifier:@"CommentViewController"];
 }
 
+- (id)instantiateAboutViewController
+{
+    return [self instantiateViewControllerWithIdentifier:@"AboutViewController"];
+}
 @end
