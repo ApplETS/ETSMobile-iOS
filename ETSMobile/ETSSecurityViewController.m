@@ -126,7 +126,6 @@ NSString * const ProcedureFile = @"File";
 //
 //    return cell;
 }
->>>>>>> Avancement de Security
 
 
 
