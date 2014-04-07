@@ -60,4 +60,14 @@
     return [self instantiateViewControllerWithIdentifier:@"CommentViewController"];
 }
 
+- (id)instantiateAboutViewController
+{
+    return [self instantiateViewControllerWithIdentifier:@"AboutViewController"];
+}
+
+- (id)instantiateSponsorsViewController
+{
+    return [self instantiateViewControllerWithIdentifier:@"SponsorsViewController"];
+}
+
 @end

@@ -17,6 +17,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (strong, nonatomic) AVPlayer *radioPlayer;
+@property (copy, nonatomic) NSString *currentRadioTitle;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

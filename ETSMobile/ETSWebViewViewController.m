@@ -17,6 +17,12 @@
 
 @implementation ETSWebViewViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [((UIWebView *)self.view).scrollView setContentInset:UIEdgeInsetsMake(20, 0, 0, 0)];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {

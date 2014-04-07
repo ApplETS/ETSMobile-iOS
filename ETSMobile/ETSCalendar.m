@@ -18,6 +18,7 @@
 @dynamic start;
 @dynamic summary;
 @dynamic title;
+@dynamic session;
 
 - (NSDate *)day
 {

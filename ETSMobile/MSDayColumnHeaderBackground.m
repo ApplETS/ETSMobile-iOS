@@ -15,7 +15,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor colorWithHexString:@"f7f7f7"];
+        self.backgroundColor = [[UIColor colorWithHexString:@"f7f7f7"] colorWithAlphaComponent:0.95];
     }
     return self;
 }

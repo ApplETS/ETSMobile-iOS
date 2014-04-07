@@ -14,7 +14,8 @@
 + (id)requestForCourses;
 + (id)requestForProfile;
 + (id)requestForProgram;
-+ (id)requestForCalendar;
++ (id)requestForCalendar:(NSString *)session;
++ (id)requestForSession;
 + (id)requestForEvaluationsWithCourse:(ETSCourse *)course;
 + (id)requestForDirectory;
 + (id)requestForNewsWithSources:(NSArray *)sources;

@@ -68,7 +68,7 @@
     return [self requestSetup: url];
 }
 
-+ (id)requestForCalendar
++ (id)requestForCalendar:(NSString *)session
 {
     NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL:[NSURL URLForCalendar]];
     
@@ -76,7 +76,7 @@
     if ([ETSAuthenticationViewController passwordInKeychain]) parameters[@"motPasse"] = [ETSAuthenticationViewController passwordInKeychain];
     if ([ETSAuthenticationViewController usernameInKeychain]) parameters[@"codeAccesUniversel"] = [ETSAuthenticationViewController usernameInKeychain];
     parameters[@"pCoursGroupe"] = @"";
-    parameters[@"pSession"] = @"A2013";
+    parameters[@"pSession"] = session;
     parameters[@"pDateDebut"] = @"";
     parameters[@"pDateFin"] = @"";
     
@@ -84,6 +84,13 @@
     [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:kNilOptions error:&error]];
     
     return request;
+}
+
++ (id)requestForSession
+{
+    NSURL *url = [NSURL URLForSession];
+    
+    return [self requestSetup: url];
 }
 
 + (id)requestForEvaluationsWithCourse:(ETSCourse *)course
@@ -135,18 +142,19 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForComment]];
 
     [request setHTTPMethod:@"POST"];
- /*   NSString *parameters = [NSString stringWithFormat:@"sender_name=%@&sender_mail=%@&message=%@&subject=%@&rating=%@", name, email, comment, title, rating];
+    NSString *parameters = [NSString stringWithFormat:@"sender_name=%@&sender_mail=%@&message=%@&subject=%@&rating=%@", name, email, comment, title, rating];
     [request setHTTPBody:[parameters dataUsingEncoding:NSUTF8StringEncoding]];
-    */
+    
+    /*
     NSMutableDictionary *p = [NSMutableDictionary dictionary];
     p[@"sender_name"] = name;
     p[@"sender_mail"] = email;
     p[@"message"] = comment;
     p[@"subject"] = title;
-    p[@"rating"] = rating;
+    p[@"rating"] = rating; */
     
-    NSError *error = nil;
-    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:p options:kNilOptions error:&error]];
+    //NSError *error = nil;
+    //[request setHTTPBody:[NSJSONSerialization dataWithJSONObject:p options:kNilOptions error:&error]];
 
     return request;
 }

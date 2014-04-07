@@ -11,6 +11,7 @@
 #import "MFSideMenuContainerViewController.h"
 #import "ETSNewsDetailsViewController.h"
 #import "ETSNewsCell.h"
+#import "ETSNewsImageCell.h"
 #import "NSURL+Document.h"
 #import "NSString+HTML.h"
 #import "ETSNews.h"
@@ -154,7 +155,16 @@
     return 126;
 }
 
-- (void)configureCell:(ETSNewsCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[news.image length] == 0 ? @"NewsIdentifier" : @"NewsImageIdentifier" forIndexPath:indexPath];
+    [self configureCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
@@ -165,8 +175,6 @@
     NSAttributedString *html = [[NSAttributedString alloc] initWithData:[news.content dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:&error];
     
     NSAttributedString *title = [[NSAttributedString alloc] initWithData:[news.title dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:&error];
-    
-    cell.titleLabel.text = [title string];
     
     NSMutableAttributedString *res = [html mutableCopy];
     [res beginEditing];
@@ -182,13 +190,24 @@
                  }];
     [res endEditing];
     
-    cell.summaryLabel.attributedText = res;
     
-    if ([news.image length] > 0) {
-        cell.newsImageView.image = [UIImage imageWithData:news.image];
-    } else {
-        cell.newsImageView.image = nil;
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
+    dateFormatter.locale = locale;
+    dateFormatter.dateFormat = @"EEEE, MMMM d";
+    
+    if ([cell isKindOfClass:[ETSNewsImageCell class]]) {
+        ((ETSNewsImageCell *)cell).titleLabel.text = [title string];
+        ((ETSNewsImageCell *)cell).summaryLabel.attributedText = res;
+        ((ETSNewsImageCell *)cell).newsImageView.image = [UIImage imageWithData:news.image];
+    } else if ([cell isKindOfClass:[ETSNewsCell class]]) {
+        ((ETSNewsCell *)cell).titleLabel.text = [title string];
+        ((ETSNewsCell *)cell).summaryLabel.attributedText = res;
+        ((ETSNewsCell *)cell).dateLabel.text = [dateFormatter stringFromDate:news.published];
     }
+    
+    cell.layer.shouldRasterize = YES;
+    cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
 }
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
@@ -235,23 +254,30 @@
                     [scanner scanCharactersFromSet:charset intoString:nil];
                     [scanner scanUpToCharactersFromSet:charset intoString:&url];
                     
-                    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
-                    
-                    if (data) news.image = data;
+                    if ([url rangeOfString:@"f-partage.aspx" options:NSCaseInsensitiveSearch].location == NSNotFound) {
+                        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+                        if (data && [data length] > 0) {
+                            UIImage *image = [UIImage imageWithData:data];
+                            if (image.size.width > 20 && image.size.height > 20) {
+                                news.image = data;
+                                NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:news];
+                                [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+                            }
+                        }
+                    }
                 }
             }];
         }
     }
-    //FIXME
-  /*
+
     [operations setCompletionBlock:^{
-        NSError *error;
+/*        NSError *error;
         if (![bself.managedObjectContext save:&error]) {
             // FIXME: Update to handle the error appropriately.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        }
+        } */
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-    }]; */
+    }];
     [operations start];
 }
 

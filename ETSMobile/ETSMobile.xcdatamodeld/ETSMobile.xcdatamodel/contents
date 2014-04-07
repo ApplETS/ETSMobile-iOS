@@ -13,6 +13,7 @@
         <attribute name="end" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="room" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="session" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="start" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
@@ -68,6 +69,7 @@
     <entity name="Event" representedClassName="ETSEvent" syncable="YES">
         <attribute name="end" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="source" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="start" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -107,15 +109,21 @@
         <attribute name="start" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Session" representedClassName="ETSSession" syncable="YES">
+        <attribute name="acronym" attributeType="String" syncable="YES"/>
+        <attribute name="end" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="start" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Bandwidth" positionX="0" positionY="0" width="128" height="135"/>
-        <element name="Calendar" positionX="9" positionY="126" width="128" height="150"/>
+        <element name="Calendar" positionX="9" positionY="126" width="128" height="165"/>
         <element name="Contact" positionX="0" positionY="0" width="128" height="225"/>
         <element name="Course" positionX="0" positionY="0" width="128" height="300"/>
         <element name="Evaluation" positionX="0" positionY="0" width="128" height="225"/>
-        <element name="Event" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="Event" positionX="0" positionY="0" width="128" height="120"/>
         <element name="News" positionX="0" positionY="0" width="128" height="150"/>
         <element name="Profile" positionX="0" positionY="0" width="128" height="180"/>
         <element name="Program" positionX="9" positionY="135" width="128" height="253"/>
+        <element name="Session" positionX="9" positionY="153" width="128" height="88"/>
     </elements>
 </model>

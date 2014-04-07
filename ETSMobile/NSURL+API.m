@@ -51,6 +51,11 @@
     return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Calendar"]];
 }
 
++ (id)URLForSession
+{
+    return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Session"]];
+}
+
 + (id)URLForNewsWithSources:(NSArray *)sources
 {
     NSMutableArray *urls = [NSMutableArray array];
@@ -77,12 +82,12 @@
 {
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-    [offsetComponents setDay:1];
-    NSDate *tomorrow = [gregorian dateByAddingComponents:offsetComponents toDate:[NSDate date] options:0];
+    [offsetComponents setDay:2];
+    NSDate *nextWeek = [gregorian dateByAddingComponents:offsetComponents toDate:[NSDate date] options:0];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"ddMMyyyy"];
 
-    return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"Radio"], [formatter stringFromDate:[NSDate date]], [formatter stringFromDate:tomorrow]]];
+    return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"Radio"], [formatter stringFromDate:[NSDate date]], [formatter stringFromDate:nextWeek]]];
 }
 
 @end
