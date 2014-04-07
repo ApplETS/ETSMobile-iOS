@@ -26,11 +26,12 @@
     [super viewDidLoad];
     self.dataNeedRefresh = YES;
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
+    self.shouldRemoveFetchedDelegate = YES;
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    self.fetchedResultsController.delegate = nil;
+    if (self.shouldRemoveFetchedDelegate) self.fetchedResultsController.delegate = nil;
     [super viewDidDisappear:animated];
 }
 
@@ -89,7 +90,6 @@
     [self.tableView beginUpdates];
 }
 
-
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type
 {
     switch(type) {
@@ -102,7 +102,6 @@
             break;
     }
 }
-
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
 {
@@ -127,12 +126,10 @@
     }
 }
 
-
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView endUpdates];
 }
-
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveResponse:(ETSSynchronizationResponse)response
 {

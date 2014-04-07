@@ -1156,7 +1156,7 @@ http://applets.etsmtl.ca</string>
                                     <outlet property="newsImageView" destination="F6h-2v-Cri" id="pvM-N3-4zS"/>
                                     <outlet property="summaryLabel" destination="Fnz-vW-8yd" id="trn-Kj-8LW"/>
                                     <outlet property="titleLabel" destination="PES-K9-Wfo" id="8qf-zx-0ia"/>
-                                    <segue destination="Zcx-WD-r1i" kind="push" identifier="NewsSegue" id="wd1-Be-3AD"/>
+                                    <segue destination="Zcx-WD-r1i" kind="push" identifier="NewsImageSegue" id="wd1-Be-3AD"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsIdentifier" rowHeight="126" id="vYS-zD-tKa" customClass="ETSNewsCell">

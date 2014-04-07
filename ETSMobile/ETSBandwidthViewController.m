@@ -221,7 +221,7 @@
     f.decimalSeparator = @".";
     self.usedBandwidth = [f numberFromString:[days lastObject][@"td"][1][@"p"]];
     self.limitBandwidth = [f numberFromString:tables[1][@"tr"][1][@"td"][1][@"p"]];
-    NSLog(@"%@", [days lastObject][@"td"][1][@"p"]);
+
     NSNumber *used = [NSNumber numberWithFloat:[self.usedBandwidth floatValue]/1024];
     NSNumber *limit = [NSNumber numberWithFloat:[self.limitBandwidth floatValue]/1024];
     self.usageLabel.text = [NSString stringWithFormat:@"%@ Go sur %@ Go", [self.formatter stringFromNumber:used], [self.formatter stringFromNumber:limit]];
