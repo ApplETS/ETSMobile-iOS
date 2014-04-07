@@ -36,6 +36,8 @@
 		266ED35018300D2900DC1280 /* ETSCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 266ED34F18300D2900DC1280 /* ETSCourse.m */; };
 		26887B7218F090C500009EBA /* ETSRadioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7118F090C500009EBA /* ETSRadioCell.m */; };
 		26887B7718F1BA5800009EBA /* ETSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7618F1BA5800009EBA /* ETSAboutViewController.m */; };
+		26887B7B18F1D36600009EBA /* ETSSponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7A18F1D36600009EBA /* ETSSponsorsViewController.m */; };
+		26887B7E18F1D7B400009EBA /* ETSSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7D18F1D7B400009EBA /* ETSSession.m */; };
 		2690F604183D088700FAD05A /* ETSWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2690F603183D088700FAD05A /* ETSWebViewViewController.m */; };
 		2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2693168718359EE200DE95A0 /* ETSDirectoryViewController.m */; };
 		269316941835DA2900DE95A0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269316931835DA2900DE95A0 /* AddressBook.framework */; };
@@ -164,6 +166,10 @@
 		26887B7118F090C500009EBA /* ETSRadioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRadioCell.m; sourceTree = "<group>"; };
 		26887B7518F1BA5800009EBA /* ETSAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSAboutViewController.h; sourceTree = "<group>"; };
 		26887B7618F1BA5800009EBA /* ETSAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSAboutViewController.m; sourceTree = "<group>"; };
+		26887B7918F1D36600009EBA /* ETSSponsorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSponsorsViewController.h; sourceTree = "<group>"; };
+		26887B7A18F1D36600009EBA /* ETSSponsorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSponsorsViewController.m; sourceTree = "<group>"; };
+		26887B7C18F1D7B400009EBA /* ETSSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSession.h; sourceTree = "<group>"; };
+		26887B7D18F1D7B400009EBA /* ETSSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSession.m; sourceTree = "<group>"; };
 		2690F602183D088700FAD05A /* ETSWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSWebViewViewController.h; sourceTree = "<group>"; };
 		2690F603183D088700FAD05A /* ETSWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSWebViewViewController.m; sourceTree = "<group>"; };
 		2693168618359EE200DE95A0 /* ETSDirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSDirectoryViewController.h; sourceTree = "<group>"; };
@@ -404,6 +410,15 @@
 			name = About;
 			sourceTree = "<group>";
 		};
+		26887B7818F1D33000009EBA /* Sponsors */ = {
+			isa = PBXGroup;
+			children = (
+				26887B7918F1D36600009EBA /* ETSSponsorsViewController.h */,
+				26887B7A18F1D36600009EBA /* ETSSponsorsViewController.m */,
+			);
+			name = Sponsors;
+			sourceTree = "<group>";
+		};
 		2693168518359ECA00DE95A0 /* Directory */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,6 +606,8 @@
 		26DD92E817EA612800469FA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				26887B7C18F1D7B400009EBA /* ETSSession.h */,
+				26887B7D18F1D7B400009EBA /* ETSSession.m */,
 				26DEB74A18E9F2C000161421 /* ETSCalendar.h */,
 				26DEB74B18E9F2C000161421 /* ETSCalendar.m */,
 				26EF269918E70F12001D3454 /* ETSProgram.h */,
@@ -629,6 +646,7 @@
 				26F46A9D183ED0EE00232B5A /* Radio */,
 				26B9A92518736239005D4410 /* Bandwidth */,
 				26887B7418F1BA1E00009EBA /* About */,
+				26887B7818F1D33000009EBA /* Sponsors */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -851,6 +869,7 @@
 				26B9A92818736265005D4410 /* ETSBandwidthViewController.m in Sources */,
 				269BFF561811A41C005D2950 /* NSManagedObject+SetValues.m in Sources */,
 				26D44BA518E49BEF0006F9F0 /* ETSBandwidth.m in Sources */,
+				26887B7B18F1D36600009EBA /* ETSSponsorsViewController.m in Sources */,
 				26DEB88918EC97EC00161421 /* MSCurrentTimeGridline.m in Sources */,
 				26DEB89018EC97EC00161421 /* MSTimeRowHeaderBackground.m in Sources */,
 				26887B7718F1BA5800009EBA /* ETSAboutViewController.m in Sources */,
@@ -865,6 +884,7 @@
 				263AC8E918464D9F00AD5B21 /* ETSEvent.m in Sources */,
 				2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */,
 				26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */,
+				26887B7E18F1D7B400009EBA /* ETSSession.m in Sources */,
 				26DD92B617EA610D00469FA8 /* main.m in Sources */,
 				26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */,
 				26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */,
