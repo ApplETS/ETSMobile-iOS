@@ -7,40 +7,29 @@
 //
 
 #import "ETSSecurityViewController.h"
+#import "ETSSecurityDetailViewController.h"
 #import "MFSideMenu.h"
 
-NSString * const ProcedureTitle = @"Title";
-NSString * const ProcedureSummary = @"Summary";
-NSString * const ProcedureFile = @"File";
+NSString * const kProcedureTitle = @"Title";
+NSString * const kProcedureSummary = @"Summary";
+NSString * const kProcedureFile = @"File";
 
 @interface ETSSecurityViewController ()
-//@property (nonatomic, weak) NSArray *procedures;
+@property (nonatomic, strong) NSArray *procedures;
+- (IBAction)panLeftMenu:(id)sender;
 @end
 
 @implementation ETSSecurityViewController
 
-
-@synthesize procedures;
-@synthesize mapView;
-
-- (void)panLeftMenu
+- (IBAction)panLeftMenu:(id)sender
 {
     [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
 }
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.title = @"Sécurité";
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(panLeftMenu)];
-    
-    procedures.dataSource = self;
-    procedures.delegate = self;
-    
-   
     CLLocationCoordinate2D etsCoord = {.latitude =  45.494751265838346, .longitude = -73.56256484985352};
     MKCoordinateSpan span = {.latitudeDelta = 0.0017, .longitudeDelta = 0.005};
     MKCoordinateRegion region = {etsCoord, span};
@@ -53,118 +42,80 @@ NSString * const ProcedureFile = @"File";
     
     annotation.title = @"Sécurité";
     annotation.subtitle = @"1100 Notre-Dame Ouest, local A-0110";
-    //annotation.
-    
-    
     
 	[self.mapView addAnnotation:annotation];
-    
     [self.mapView selectAnnotation:annotation animated:NO];
     
+    self.procedures = [NSArray arrayWithContentsOfFile:[[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"SecuritySources.plist"]];
+    
+//    NSArray *imageProcedures = [NSArray arrayWithObjects:@"bomb.png", @"Arme1.png", @"incendie.png", @"incendie.png", @"incendie.png", @"electrique.png", @"arme.png", @"coeur.png", nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue destinationViewController] isKindOfClass:[ETSSecurityDetailViewController class]]) {
+        ETSSecurityDetailViewController *viewController = [segue destinationViewController];
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSDictionary *procedure = self.procedures[indexPath.row];
+        viewController.summary = [procedure objectForKey:kProcedureSummary];
+        viewController.title = [procedure objectForKey:kProcedureTitle];
+        viewController.file = [procedure objectForKey:kProcedureFile];
+    }
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 8;
+    return 2;
 }
 
-
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return section == 0 ? 2 : [self.procedures count];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"ProcedureCell";
-    UITableViewCell *thisCell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    UITableViewCell *cell = nil;
     
-    NSArray *procedures = [NSArray arrayWithObjects:@"Appel à la bombe", @"Colis suspect", @"Incendie", @"Odeur suspect", @"Panne d'ascenceur", @"Panne électrique", @"Personne armée", @"Urgence médicale", nil];
-    
-    NSArray *imageProcedures = [NSArray arrayWithObjects:@"bomb.png", @"Arme1.png", @"incendie.png", @"incendie.png", @"incendie.png", @"electrique.png", @"arme.png", @"coeur.png", nil];
-    
-    if(thisCell==nil)
-    {
-        thisCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    if (indexPath.section == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"callCell"];
+        
+        if (indexPath.row == 0) {
+            cell.textLabel.text = NSLocalizedString(@"Appel d’urgence", nil);
+            cell.detailTextLabel.text = @"514 396-8900";
+        }
+        else if (indexPath.row == 1) {
+            cell.textLabel.text = NSLocalizedString(@"À l’interne", nil);
+            cell.detailTextLabel.text = @"Poste 55";
+        }
     }
     
-    thisCell.textLabel.text = [procedures objectAtIndex:indexPath.row];
-    thisCell.imageView.image = [UIImage imageNamed:[imageProcedures objectAtIndex:indexPath.row]];
-    thisCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    else if (indexPath.section == 1) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"procedureCell"];
+        cell.textLabel.text = self.procedures[indexPath.row][kProcedureTitle];
+    }
     
-    return thisCell;
-//    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-//
-////    cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.bounds];
-////    cell.selectedBackgroundView.backgroundColor = [UIColor menuSelectedCellBackgroundColor];
-////
-//    cell.textLabel.textColor = [UIColor redColor];
-////    cell.textLabel.highlightedTextColor = [UIColor menuHighlightedLabelColor];
-//
-//    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:15];
-//
-//    if (indexPath.section == 0) {
-//        if (indexPath.row == 0) {
-//            cell.textLabel.text = NSLocalizedString(@"Aujourd'hui", nil);
-//            cell.imageView.image = [UIImage imageNamed:@"ico_today_24x24.png"];
-//        }
-//        else if (indexPath.row == 1) {
-//            cell.textLabel.text = NSLocalizedString(@"Horaire", nil);
-//            cell.imageView.image = [UIImage imageNamed:@"ico_schedule_24x24.png"];
-//        }
-//    }
-//
-//    else if (indexPath.section == 1) {
-//        if (indexPath.row == 0) {
-//            cell.textLabel.text = NSLocalizedString(@"Nouvelles", nil);
-//            cell.imageView.image = [UIImage imageNamed:@"ico_news.png"];
-//        }
-//        else if (indexPath.row == 1) {
-//            cell.textLabel.text = NSLocalizedString(@"Bottin", nil);
-//            cell.imageView.image = [UIImage imageNamed:@"ico_bottin.png"];
-//        }
-//    }
-//
-//    return cell;
+    return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if      (section == 0)  return NSLocalizedString(@"Joindre la sécurité", nil);
+    else if (section == 1)  return NSLocalizedString(@"Procédures d’urgence", nil);
+    return nil;
+}
 
+#pragma mark - Table view delegate
 
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//    return 2;
-//}
-//
-
-//
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-//{
-//    if (section == 0)       return NSLocalizedString(@"Informations personnelles", nil);
-//    else if (section == 1)  return NSLocalizedString(@"Programme", nil);
-//    return nil;
-//}
-//
-//
-//
-//
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 30)];
-//    headerView.backgroundColor = [UIColor lightGrayColor];
-//    
-//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 1, tableView.bounds.size.width, 20)];
-//    label.textColor = [UIColor blackColor];
-//    label.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:10];
-//    
-//    [headerView addSubview:label];
-//    
-//    switch (section)
-//    {
-//        case 0: label.text = [NSLocalizedString(@"Test 1", nil) uppercaseString]; break;
-//        case 1: label.text = [NSLocalizedString(@"Test 2", nil) uppercaseString]; break;
-//    }
-//    
-//    return headerView;
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        NSString *phoneNumber = @"telprompt://5143968900";
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+    }
+}
 
 @end

@@ -10,4 +10,7 @@
 
 @interface ETSSecurityDetailViewController : UIViewController
 
+@property (nonatomic, copy) NSString *summary;
+@property (nonatomic, copy) NSString *file;
+
 @end

@@ -9,41 +9,23 @@
 #import "ETSSecurityDetailViewController.h"
 
 @interface ETSSecurityDetailViewController ()
-
+@property (nonatomic, weak) IBOutlet UITextView *textView;
 @end
 
 @implementation ETSSecurityDetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.textView setTextContainerInset:UIEdgeInsetsMake(12, 0, 12, 12)];
+    NSDictionary *options = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType};
+    
+    NSString *content = [NSString stringWithFormat:@"<!DOCTYPE html>\n<html><head><style type=\"text/css\">html {font-family:\"IowanOldStyle-Roman\";font-size:11pt;text-align:left;line-height:110%%; word-break: hyphenate; -webkit-hyphens: auto;}</style><meta charset=\"UTF-8\"></head><body>%@</body></html>", self.summary];
+    
+    NSAttributedString *html = [[NSAttributedString alloc] initWithData:[content dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:nil];
+    
+    self.textView.attributedText = [html mutableCopy];
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
