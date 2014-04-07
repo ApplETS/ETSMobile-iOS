@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Session</key>
+	<dict>
+		<key>acronym</key>
+		<string>abrege</string>
+		<key>start</key>
+		<string>dateDebut</string>
+		<key>end</key>
+		<string>dateFin</string>
+	</dict>
 	<key>Program</key>
 	<dict>
 		<key>code</key>
@@ -35,6 +44,8 @@
 	</dict>
 	<key>Calendar</key>
 	<dict>
+		<key>session</key>
+		<string>session</string>
 		<key>id</key>
 		<string>id</string>
 		<key>start</key>

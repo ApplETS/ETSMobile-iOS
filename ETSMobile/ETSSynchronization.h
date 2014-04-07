@@ -29,6 +29,7 @@ typedef NS_ENUM(NSInteger, ETSSynchronizationResponse) {
 @property (nonatomic, strong) NSPredicate *predicate;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @property (nonatomic, strong) NSArray *ignoredAttributes;
+@property (nonatomic, assign) SEL sortSelector;
 @property (nonatomic, assign) BOOL saveAutomatically;
 
 @end

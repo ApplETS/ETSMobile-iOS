@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSDate * start;
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * session;
 
 - (NSDate *)day;
 

@@ -54,6 +54,12 @@
         self.menuContainerViewController.panMode = MFSideMenuPanModeCenterViewController | MFSideMenuPanModeSideMenu;
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    self.fetchedResultsController.delegate = nil;
+    [super viewWillDisappear:animated];
+}
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return [[self.fetchedResultsController sections] count];

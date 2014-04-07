@@ -20,6 +20,7 @@
 #import "MSCurrentTimeGridline.h"
 
 #import "ETSCalendar.h"
+#import "ETSSession.h"
 
 #import "MFSideMenu.h"
 #import "ETSAuthenticationViewController.h"
@@ -31,7 +32,8 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 @interface ETSCalendarViewController () <MSCollectionViewDelegateCalendarLayout, NSFetchedResultsControllerDelegate, ETSSynchronizationDelegate, ETSAuthenticationViewControllerDelegate>
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @property (nonatomic, strong) MSCollectionViewCalendarLayout *collectionViewCalendarLayout;
-@property (strong, nonatomic) ETSSynchronization *synchronization;
+@property (strong, nonatomic) ETSSynchronization *synchronizationSession;
+@property (strong, nonatomic) NSDictionary *synchronizations;
 @end
 
 @implementation ETSCalendarViewController
@@ -54,14 +56,17 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self.dateFormatter setDateFormat:@"yyyy-MM-dd' 'HH:mm"];
     
-    ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
-    synchronization.request = [NSURLRequest requestForCalendar];
-    synchronization.entityName = @"Calendar";
-    synchronization.compareKey = @"id";
-    synchronization.objectsKeyPath = @"d.ListeDesSeances";
-    synchronization.dateFormatter = self.dateFormatter;
-    self.synchronization = synchronization;
-    self.synchronization.delegate = self;
+    NSDateFormatter *sessionFormatter = [NSDateFormatter new];
+    sessionFormatter.dateFormat = @"yyyy-MM-dd";
+    ETSSynchronization *synchronizationSession = [[ETSSynchronization alloc] init];
+    synchronizationSession.request = [NSURLRequest requestForSession];
+    synchronizationSession.entityName = @"Session";
+    synchronizationSession.compareKey = @"acronym";
+    synchronizationSession.objectsKeyPath = @"d.liste";
+    synchronizationSession.sortSelector = @selector(localizedCaseInsensitiveCompare:);
+    synchronizationSession.dateFormatter = sessionFormatter;
+    self.synchronizationSession = synchronizationSession;
+    self.synchronizationSession.delegate = self;
 
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
@@ -79,6 +84,13 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Calendar"];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"start" ascending:YES]];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:[NSDate date]];
+    NSDate *today = [calendar dateFromComponents:components];
+    
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"start >= %@", today];
+    
 
     // Divide into sections by the "day" key path
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"day" cacheName:nil];
@@ -90,6 +102,48 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         ac.delegate = self;
         [self.navigationController pushViewController:ac animated:YES];
     }
+}
+
+- (NSArray *)activeSessions
+{
+    NSMutableArray *sessions = [NSMutableArray array];
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Session"];
+    NSDate *now = [NSDate date];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"end >= %@", now];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"start" ascending:YES]];
+    fetchRequest.returnsDistinctResults = YES;
+    fetchRequest.propertiesToFetch = @[@"acronym"];
+    
+    NSArray *results = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    for (ETSSession *session in results) {
+        [sessions addObject:session.acronym];
+    }
+    return sessions;
+}
+
+- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
+{
+    if (synchronization != self.synchronizationSession) return;
+    
+    NSArray *sessions = [self activeSessions];
+    
+    NSMutableDictionary *synchronizations = [NSMutableDictionary dictionary];
+    
+    for (NSString *session in sessions) {
+        ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
+        synchronization.request = [NSURLRequest requestForCalendar:session];
+        synchronization.entityName = @"Calendar";
+        synchronization.compareKey = @"id";
+        synchronization.objectsKeyPath = @"d.ListeDesSeances";
+        synchronization.dateFormatter = self.dateFormatter;
+        synchronization.delegate = self;
+        synchronization.predicate = [NSPredicate predicateWithFormat:@"session ==[c] %@", session];
+        
+        [synchronizations setObject:synchronization forKey:session];
+        [synchronization synchronize:nil];
+    }
+    self.synchronizations = synchronizations;
 }
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveResponse:(ETSSynchronizationResponse)response
@@ -116,9 +170,8 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
 {
-    self.synchronization.request = [NSURLRequest requestForCalendar];
-    NSError *error;
-    [self.synchronization synchronize:&error];
+    self.synchronizationSession.request = [NSURLRequest requestForSession];
+    [self.synchronizationSession synchronize:nil];
 }
 
 - (ETSSynchronizationResponse)synchronization:(ETSSynchronization *)synchronization validateJSONResponse:(NSDictionary *)response
@@ -129,8 +182,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSError *error;
-    [self.synchronization synchronize:&error];
+    [self.synchronizationSession synchronize:nil];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];
@@ -236,9 +288,14 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     return [self.dateFormatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:subdate]];
 }
 
+
 - (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects
 {
+    if (synchronization == self.synchronizationSession) return objects;
+    
     NSMutableArray *events = [NSMutableArray arrayWithCapacity:[objects count]];
+    NSArray* arrayOfKeys = [self.synchronizations allKeysForObject:synchronization];
+    if ([arrayOfKeys count] == 0) return nil;
     
     for (NSDictionary *object in objects) {
         NSMutableDictionary *event = [NSMutableDictionary dictionaryWithDictionary:object];
@@ -246,6 +303,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         event[@"dateDebut"] = [self dateStringFromAPIString:object[@"dateDebut"]];
         event[@"dateFin"]   = [self dateStringFromAPIString:object[@"dateFin"]];
         event[@"id"]        = [NSString stringWithFormat:@"%@%@%@", event[@"dateDebut"], event[@"dateFin"], event[@"coursGroupe"]];
+        event[@"session"]   = arrayOfKeys[0];
         
         [events addObject:event];
     }

@@ -33,7 +33,6 @@ NSString * const kKeychainId = @"ApplETS";
     return ETSSynchronizationResponseValid;
 }
 
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

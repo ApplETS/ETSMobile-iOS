@@ -611,6 +611,32 @@
             </objects>
             <point key="canvasLocation" x="459" y="33"/>
         </scene>
+        <!--Sponsors View Controller - Partenaires-->
+        <scene sceneID="L7F-yo-uym">
+            <objects>
+                <viewController storyboardIdentifier="SponsorsViewController" title="Partenaires" id="uoZ-7p-ZMR" customClass="ETSSponsorsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6cE-A3-ej9"/>
+                        <viewControllerLayoutGuide type="bottom" id="ipO-ZU-JPe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EHb-Ep-BY7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Partenaires" id="fdZ-aX-aMx">
+                        <barButtonItem key="leftBarButtonItem" image="menu-icon" id="J7F-tt-0pi">
+                            <connections>
+                                <action selector="panLeftMenu:" destination="uoZ-7p-ZMR" id="GMl-Xd-ywk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fet-zs-TSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96" y="710"/>
+        </scene>
         <!--About View Controller - À propos d'ÉTSMobile-->
         <scene sceneID="g96-oI-9kJ">
             <objects>
@@ -705,11 +731,11 @@ Marc-Antoine Hinse (trésorier)
                                             </fragment>
                                             <fragment>
                                                 <string key="content">
-François Coallier (DDTSA)
-Idrissa Konkobo (systèmes d’entreprise)
-Véronique Clabots (analyste)
-Olivier Lacasse (analyste)
-Robert Gervais (analyste)
+François Coallier
+Idrissa Konkobo
+Véronique Clabots
+Olivier Lacasse
+Robert Gervais
 
 http://applets.etsmtl.ca</string>
                                                 <attributes>

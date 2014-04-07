@@ -51,6 +51,11 @@
     return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Calendar"]];
 }
 
++ (id)URLForSession
+{
+    return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Session"]];
+}
+
 + (id)URLForNewsWithSources:(NSArray *)sources
 {
     NSMutableArray *urls = [NSMutableArray array];

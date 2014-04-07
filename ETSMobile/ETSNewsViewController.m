@@ -278,7 +278,7 @@
         } */
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     }];
-  //  [operations start];
+    [operations start];
 }
 
 

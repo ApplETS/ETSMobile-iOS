@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsControllerProfile;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsControllerProgram;
 @property (assign) NSInteger synchronizationDone;
+@property (assign, nonatomic) BOOL isCleaning;
 @end
 
 @implementation ETSProfileViewController
@@ -87,11 +88,23 @@
     }
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(panLeftMenu)];
+    
+    self.isCleaning = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     self.synchronizationDone = 0;
+    
+    if (self.isCleaning) {
+        
+        self.fetchedResultsControllerProgram.delegate = nil;
+        self.fetchedResultsControllerProfile.delegate = nil;
+        self.fetchedResultsControllerProgram = nil;
+        self.fetchedResultsControllerProfile = nil;
+        [self.tableView reloadData];
+        self.isCleaning = NO;
+    }
     
     [super viewWillAppear:animated];
     
@@ -214,7 +227,8 @@
             }
         }
     } else {
-        ETSProgram *program = self.fetchedResultsControllerProgram.fetchedObjects[indexPath.section-1];
+        ETSProgram *program = nil;
+        if ([self.fetchedResultsControllerProfile.fetchedObjects count] >= indexPath.section-1) program = self.fetchedResultsControllerProgram.fetchedObjects[indexPath.section-1];
         if (indexPath.row == 0) {
             cell.textLabel.text = NSLocalizedString(@"Statut", nil);
             cell.detailTextLabel.text = [program.status capitalizedString];
@@ -356,16 +370,21 @@
 
 - (IBAction)logout:(id)sender
 {
+    self.isCleaning = YES;
     self.fetchedResultsControllerProgram.delegate = nil;
     self.fetchedResultsControllerProfile.delegate = nil;
-    self.fetchedResultsControllerProfile = nil;
     self.fetchedResultsControllerProgram = nil;
+    self.fetchedResultsControllerProfile = nil;
+    
     [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Profile" inManagedObjectContext:self.managedObjectContext];
     [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Program" inManagedObjectContext:self.managedObjectContext];
     [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Calendar" inManagedObjectContext:self.managedObjectContext];
     [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Course" inManagedObjectContext:self.managedObjectContext];
     [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Evaluation" inManagedObjectContext:self.managedObjectContext];
     [ETSAuthenticationViewController resetKeychain];
+    
+    self.synchronizationProgram.request = nil;
+    self.synchronization.request = nil;
 
     ETSAuthenticationViewController *ac = [self.storyboard instantiateAuthenticationViewController];
     ac.delegate = self;

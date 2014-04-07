@@ -13,6 +13,7 @@
 + (id)URLForProfile;
 + (id)URLForProgram;
 + (id)URLForCalendar;
++ (id)URLForSession;
 + (id)URLForEvaluations;
 + (id)URLForDirectory;
 + (id)URLForRadio;

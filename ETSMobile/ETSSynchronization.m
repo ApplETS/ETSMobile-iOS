@@ -70,6 +70,8 @@
 
 - (BOOL)synchronize:(NSError * __autoreleasing *)error
 {
+    if (!self.request) return NO;
+    
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     __weak typeof(self) bself = self;
     
@@ -164,13 +166,21 @@
     // Ajout et mise à jour des autres objets de la réponse de l'API.
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:[[ETSSynchronization mappings][self.entityName] valueForKey:self.compareKey] ascending:YES];
     jsonObjects = [jsonObjects sortedArrayUsingDescriptors:@[descriptor]];
+
+//    NSString *key = [ETSSynchronization mappings][self.entityName][self.compareKey];
+//    jsonObjects = [jsonObjects sortedArrayUsingComparator:^NSComparisonResult(NSDictionary *obj1, NSDictionary *obj2) {
+//        return [obj1[key] localizedCaseInsensitiveCompare:obj2[key]];
+//    }];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:self.entityName];
     
     if (self.predicate) [fetchRequest setPredicate:self.predicate];
     
-    NSArray *sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:self.compareKey ascending:YES]];
-    [fetchRequest setSortDescriptors:sortDescriptors];
+    if (!self.sortSelector) {
+        [fetchRequest setSortDescriptors: @[[[NSSortDescriptor alloc] initWithKey:self.compareKey ascending:YES]]];
+    } else {
+        [fetchRequest setSortDescriptors: @[[[NSSortDescriptor alloc] initWithKey:self.compareKey ascending:YES selector:self.sortSelector]]];
+    }
     
     NSError *fetchError;
     NSMutableArray *coredataArray = [NSMutableArray arrayWithArray:[self.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError]];

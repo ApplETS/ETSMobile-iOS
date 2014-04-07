@@ -20,4 +20,5 @@
 - (id)instantiateBandwidthViewController;
 - (id)instantiateCommentViewController;
 - (id)instantiateAboutViewController;
+- (id)instantiateSponsorsViewController;
 @end
