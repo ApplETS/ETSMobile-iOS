@@ -12,19 +12,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 - (IBAction)shareNews:(id)sender;
 - (IBAction)openNews:(id)sender;
-
 @end
 
 @implementation ETSNewsDetailsViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -37,50 +27,32 @@
     
     NSError *error = nil;
     
-    NSMutableDictionary *attributes = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
     attributes[NSFontAttributeName] = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     
     NSMutableParagraphStyle *hyphenation = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     [hyphenation setHyphenationFactor:1.0];
     
-    attributes[NSParagraphStyleAttributeName]=hyphenation;
+    attributes[NSParagraphStyleAttributeName] = hyphenation;
     
     NSMutableArray *lines = [NSMutableArray arrayWithArray:[self.news.summary componentsSeparatedByString:@"\n"]];
     
+    // Petit hack pour enlever lien de partage facebook en début d'article.
     if ([self.news.source isEqualToString:@"etsmtl.ca"]) {
         [lines removeObjectsInRange:NSMakeRange(0, 2)];
         lines[0] = [lines[0] stringByReplacingOccurrencesOfString:@"<br><br>" withString:@""];
     }
     
-    NSLog(@"%@", self.news.link);
+    NSString *base = @"";
+    if ([self.news.source isEqualToString:@"facebook.com"]) {
+        base = @"<base href=\"http://www.facebook.com\"/>";
+    }
     
-    //FIXME: on doit ajouter <base href=\"http://www.facebook.com/\"/> pour que les liens fonctionnent.
-    NSString *content = [NSString stringWithFormat:@"<!DOCTYPE html>\n<html><head><style type=\"text/css\">html {font-family:\"IowanOldStyle-Roman\";font-size:14pt;text-align:justify;line-height:130%%; word-break: hyphenate; -webkit-hyphens: auto;} h1 {font-size:16pt; text-align:center;} img { text-align:center;}</style></head><body><h1>%@</h1>%@</body></html>", self.news.title, [lines componentsJoinedByString:@""]];
+    NSString *content = [NSString stringWithFormat:@"<!DOCTYPE html>\n<html><head>%@<style type=\"text/css\">html {font-family:\"IowanOldStyle-Roman\";font-size:14pt;text-align:justify;line-height:130%%; word-break: hyphenate; -webkit-hyphens: auto;} h1 {font-size:16pt; text-align:center;} img { text-align:center;}</style></head><body><h1>%@</h1>%@</body></html>", base, self.news.title, [lines componentsJoinedByString:@""]];
     
     NSAttributedString *html = [[NSAttributedString alloc] initWithData:[content dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:&error];
     
-    //    NSMutableDictionary *attributes2 = [[NSMutableDictionary alloc] init];
-    //    NSMutableParagraphStyle *hyphenation = [[NSParagraphStyle [html para]] mutableCopy];
-    //    [hyphenation setHyphenationFactor:1.0];
-    
-    
-    NSMutableAttributedString *res = [html mutableCopy];
-    /*[res beginEditing];
-     [res enumerateAttribute:NSFontAttributeName
-     inRange:NSMakeRange(0, res.length)
-     options:0
-     usingBlock:^(id value, NSRange range, BOOL *stop) {
-     if (value) {
-     
-     UIFont *newFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-     [res addAttribute:NSFontAttributeName value:newFont range:range];
-     }
-     }];
-     [res endEditing];*/
-    
-    
-    
-    self.textView.attributedText = res;
+    self.textView.attributedText = [html mutableCopy];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -88,12 +60,6 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:NO animated:animated];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)shareNews:(id)sender
