@@ -316,7 +316,8 @@
         NSMutableArray *indexes = [NSMutableArray array];
         for (ETSNews *news in newsToFetch) {
             if (news.image && [news.image length] > 0) {
-                [indexes addObject:[bself.fetchedResultsController indexPathForObject:news]];
+                NSIndexPath *indexPath = [bself.fetchedResultsController indexPathForObject:news];
+                if (indexPath) [indexes addObject:indexPath];
             }
         }
         dispatch_sync(dispatch_get_main_queue(), ^{

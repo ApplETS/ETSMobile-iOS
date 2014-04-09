@@ -28,7 +28,7 @@
 
 + (UIColor *)menuLabelColor
 {
-    return [UIColor colorWithRed:145.0f/255.0f green:145.0f/255.0f blue:145.0f/255.0f alpha:1];
+    return [UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f];
 }
 
 + (UIColor *)menuHighlightedLabelColor

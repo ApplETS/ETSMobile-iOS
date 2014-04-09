@@ -34,6 +34,16 @@
 		266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */; };
 		266ED340182EC29D00DC1280 /* ETSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266ED33F182EC29D00DC1280 /* ETSTableViewController.m */; };
 		266ED35018300D2900DC1280 /* ETSCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 266ED34F18300D2900DC1280 /* ETSCourse.m */; };
+		266F0B6218F4ED6B000F53C1 /* ETSSecurityProcedureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266F0B6118F4ED6B000F53C1 /* ETSSecurityProcedureViewController.m */; };
+		266F0B6C18F4EF22000F53C1 /* APPEL_A_LA_BOMBE_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6418F4EF22000F53C1 /* APPEL_A_LA_BOMBE_2009-04-01.pdf */; };
+		266F0B6D18F4EF22000F53C1 /* COLIS_SUSPECT_ET_NRBC_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6518F4EF22000F53C1 /* COLIS_SUSPECT_ET_NRBC_2009-04-01.pdf */; };
+		266F0B6E18F4EF22000F53C1 /* INCENDIE_EVACUATION_URGENCE.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6618F4EF22000F53C1 /* INCENDIE_EVACUATION_URGENCE.pdf */; };
+		266F0B6F18F4EF22000F53C1 /* ODEUR_SUSPECTE_FUITE_DE_GAZ_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6718F4EF22000F53C1 /* ODEUR_SUSPECTE_FUITE_DE_GAZ_2009-04-01.pdf */; };
+		266F0B7018F4EF22000F53C1 /* PANNE_D_ASCENSEUR_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6818F4EF22000F53C1 /* PANNE_D_ASCENSEUR_2009-04-01.pdf */; };
+		266F0B7118F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6918F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf */; };
+		266F0B7218F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6A18F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf */; };
+		266F0B7318F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6B18F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf */; };
+		2670C01018F35EED00A4B0D6 /* SecuritySources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2670C00F18F35EED00A4B0D6 /* SecuritySources.plist */; };
 		26887B7218F090C500009EBA /* ETSRadioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7118F090C500009EBA /* ETSRadioCell.m */; };
 		26887B7718F1BA5800009EBA /* ETSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7618F1BA5800009EBA /* ETSAboutViewController.m */; };
 		26887B7B18F1D36600009EBA /* ETSSponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7A18F1D36600009EBA /* ETSSponsorsViewController.m */; };
@@ -93,6 +103,9 @@
 		26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F393221829984F00995E16 /* ETSSessionHeader.m */; };
 		26F46A99183ED03400232B5A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F46A98183ED03400232B5A /* AVFoundation.framework */; };
 		26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */; };
+		9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */; };
+		9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */; };
+		9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC88726189ED56B002A3D04 /* MapKit.framework */; };
 		D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15F4AE3183992D00034605B /* ETSProfileViewController.m */; };
 		D15F4AE71839A80B0034605B /* ETSProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = D15F4AE61839A80B0034605B /* ETSProfile.m */; };
 /* End PBXBuildFile section */
@@ -162,6 +175,17 @@
 		266ED33F182EC29D00DC1280 /* ETSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSTableViewController.m; sourceTree = "<group>"; };
 		266ED34E18300D2900DC1280 /* ETSCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourse.h; sourceTree = "<group>"; };
 		266ED34F18300D2900DC1280 /* ETSCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourse.m; sourceTree = "<group>"; };
+		266F0B6018F4ED6B000F53C1 /* ETSSecurityProcedureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityProcedureViewController.h; sourceTree = "<group>"; };
+		266F0B6118F4ED6B000F53C1 /* ETSSecurityProcedureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSecurityProcedureViewController.m; sourceTree = "<group>"; };
+		266F0B6418F4EF22000F53C1 /* APPEL_A_LA_BOMBE_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "APPEL_A_LA_BOMBE_2009-04-01.pdf"; sourceTree = "<group>"; };
+		266F0B6518F4EF22000F53C1 /* COLIS_SUSPECT_ET_NRBC_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "COLIS_SUSPECT_ET_NRBC_2009-04-01.pdf"; sourceTree = "<group>"; };
+		266F0B6618F4EF22000F53C1 /* INCENDIE_EVACUATION_URGENCE.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = INCENDIE_EVACUATION_URGENCE.pdf; sourceTree = "<group>"; };
+		266F0B6718F4EF22000F53C1 /* ODEUR_SUSPECTE_FUITE_DE_GAZ_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ODEUR_SUSPECTE_FUITE_DE_GAZ_2009-04-01.pdf"; sourceTree = "<group>"; };
+		266F0B6818F4EF22000F53C1 /* PANNE_D_ASCENSEUR_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "PANNE_D_ASCENSEUR_2009-04-01.pdf"; sourceTree = "<group>"; };
+		266F0B6918F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "PANNE_ELECTRIQUE_2009-04-01.pdf"; sourceTree = "<group>"; };
+		266F0B6A18F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "PERSONNE_ARMEE_2009-04-01.pdf"; sourceTree = "<group>"; };
+		266F0B6B18F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "URGENCE_MEDICALE_2009-04-01.pdf"; sourceTree = "<group>"; };
+		2670C00F18F35EED00A4B0D6 /* SecuritySources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SecuritySources.plist; sourceTree = "<group>"; };
 		26887B7018F090C500009EBA /* ETSRadioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRadioCell.h; sourceTree = "<group>"; };
 		26887B7118F090C500009EBA /* ETSRadioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRadioCell.m; sourceTree = "<group>"; };
 		26887B7518F1BA5800009EBA /* ETSAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSAboutViewController.h; sourceTree = "<group>"; };
@@ -232,8 +256,6 @@
 		26DEB70A18E9E99F00161421 /* MSCollectionViewCalendarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCollectionViewCalendarLayout.m; path = Vendors/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.m; sourceTree = "<group>"; };
 		26DEB74A18E9F2C000161421 /* ETSCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCalendar.h; sourceTree = "<group>"; };
 		26DEB74B18E9F2C000161421 /* ETSCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCalendar.m; sourceTree = "<group>"; };
-		26DEB74D18EB4C7700161421 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		26DEB74F18EB4C8400161421 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		26DEB87918EC97EC00161421 /* MSCurrentTimeGridline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCurrentTimeGridline.h; sourceTree = "<group>"; };
 		26DEB87A18EC97EC00161421 /* MSCurrentTimeGridline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCurrentTimeGridline.m; sourceTree = "<group>"; };
 		26DEB87B18EC97EC00161421 /* MSCurrentTimeIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCurrentTimeIndicator.h; sourceTree = "<group>"; };
@@ -263,6 +285,11 @@
 		26F46A98183ED03400232B5A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		26F46A9A183ED0E200232B5A /* ETSRadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRadioViewController.h; sourceTree = "<group>"; };
 		26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRadioViewController.m; sourceTree = "<group>"; };
+		9C5799CF18EC7F2D00AD8838 /* ETSSecurityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityDetailViewController.h; sourceTree = "<group>"; };
+		9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSecurityDetailViewController.m; sourceTree = "<group>"; };
+		9CC88722189ECF43002A3D04 /* ETSSecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityViewController.h; sourceTree = "<group>"; };
+		9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSecurityViewController.m; sourceTree = "<group>"; };
+		9CC88726189ED56B002A3D04 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D15F4AE2183992D00034605B /* ETSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProfileViewController.h; sourceTree = "<group>"; };
 		D15F4AE3183992D00034605B /* ETSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSProfileViewController.m; sourceTree = "<group>"; };
 		D15F4AE51839A80B0034605B /* ETSProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProfile.h; sourceTree = "<group>"; };
@@ -274,6 +301,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */,
 				26F46A99183ED03400232B5A /* AVFoundation.framework in Frameworks */,
 				269316961835DA2D00DE95A0 /* AddressBookUI.framework in Frameworks */,
 				269316941835DA2900DE95A0 /* AddressBook.framework in Frameworks */,
@@ -381,6 +409,21 @@
 				266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */,
 			);
 			name = MFSideMenu;
+			sourceTree = "<group>";
+		};
+		266F0B6318F4EEFC000F53C1 /* Procedures */ = {
+			isa = PBXGroup;
+			children = (
+				266F0B6418F4EF22000F53C1 /* APPEL_A_LA_BOMBE_2009-04-01.pdf */,
+				266F0B6518F4EF22000F53C1 /* COLIS_SUSPECT_ET_NRBC_2009-04-01.pdf */,
+				266F0B6618F4EF22000F53C1 /* INCENDIE_EVACUATION_URGENCE.pdf */,
+				266F0B6718F4EF22000F53C1 /* ODEUR_SUSPECTE_FUITE_DE_GAZ_2009-04-01.pdf */,
+				266F0B6818F4EF22000F53C1 /* PANNE_D_ASCENSEUR_2009-04-01.pdf */,
+				266F0B6918F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf */,
+				266F0B6A18F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf */,
+				266F0B6B18F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf */,
+			);
+			name = Procedures;
 			sourceTree = "<group>";
 		};
 		26887B6E18F0908600009EBA /* Radio */ = {
@@ -536,8 +579,7 @@
 		26DD92A617EA610D00469FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				26DEB74F18EB4C8400161421 /* SystemConfiguration.framework */,
-				26DEB74D18EB4C7700161421 /* MobileCoreServices.framework */,
+				9CC88726189ED56B002A3D04 /* MapKit.framework */,
 				26F46A98183ED03400232B5A /* AVFoundation.framework */,
 				269316951835DA2D00DE95A0 /* AddressBookUI.framework */,
 				269316931835DA2900DE95A0 /* AddressBook.framework */,
@@ -574,6 +616,8 @@
 		26DD92B017EA610D00469FA8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				266F0B6318F4EEFC000F53C1 /* Procedures */,
+				2670C00F18F35EED00A4B0D6 /* SecuritySources.plist */,
 				269BFF571811A640005D2950 /* ETSAPICoreDataMapping.plist */,
 				26DD92B117EA610D00469FA8 /* ETSMobile-Info.plist */,
 				26085B3C1829D84300FE35AB /* ETSAPIURL.plist */,
@@ -647,6 +691,7 @@
 				26B9A92518736239005D4410 /* Bandwidth */,
 				26887B7418F1BA1E00009EBA /* About */,
 				26887B7818F1D33000009EBA /* Sponsors */,
+				9C5071E6189AF5D8000CB45E /* Security */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -735,6 +780,19 @@
 				26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */,
 			);
 			name = Radio;
+			sourceTree = "<group>";
+		};
+		9C5071E6189AF5D8000CB45E /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				9CC88722189ECF43002A3D04 /* ETSSecurityViewController.h */,
+				9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */,
+				9C5799CF18EC7F2D00AD8838 /* ETSSecurityDetailViewController.h */,
+				9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */,
+				266F0B6018F4ED6B000F53C1 /* ETSSecurityProcedureViewController.h */,
+				266F0B6118F4ED6B000F53C1 /* ETSSecurityProcedureViewController.m */,
+			);
+			name = Security;
 			sourceTree = "<group>";
 		};
 		D15F4AE1183992A10034605B /* Profile */ = {
@@ -834,10 +892,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				266F0B6E18F4EF22000F53C1 /* INCENDIE_EVACUATION_URGENCE.pdf in Resources */,
 				26085B3D1829D84300FE35AB /* ETSAPIURL.plist in Resources */,
+				266F0B6C18F4EF22000F53C1 /* APPEL_A_LA_BOMBE_2009-04-01.pdf in Resources */,
+				266F0B7218F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf in Resources */,
 				26DD92C017EA610D00469FA8 /* Main_iPad.storyboard in Resources */,
 				269BFF581811A640005D2950 /* ETSAPICoreDataMapping.plist in Resources */,
+				2670C01018F35EED00A4B0D6 /* SecuritySources.plist in Resources */,
+				266F0B6F18F4EF22000F53C1 /* ODEUR_SUSPECTE_FUITE_DE_GAZ_2009-04-01.pdf in Resources */,
+				266F0B6D18F4EF22000F53C1 /* COLIS_SUSPECT_ET_NRBC_2009-04-01.pdf in Resources */,
+				266F0B7018F4EF22000F53C1 /* PANNE_D_ASCENSEUR_2009-04-01.pdf in Resources */,
 				26DD92CB17EA610D00469FA8 /* Images.xcassets in Resources */,
+				266F0B7118F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf in Resources */,
+				266F0B7318F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */,
 				26DD92BD17EA610D00469FA8 /* Main_iPhone.storyboard in Resources */,
 				26DD92B417EA610D00469FA8 /* InfoPlist.strings in Resources */,
 				264E86CA1884E7E7005F1820 /* NewsSources.plist in Resources */,
@@ -898,9 +965,12 @@
 				26C0AC8E18EDCD82006ECF2B /* ETSNewsImageCell.m in Sources */,
 				26A65542182ABE6E00DEE9B7 /* NSURLRequest+API.m in Sources */,
 				266BE78517ECEFF300F44252 /* MFSideMenuShadow.m in Sources */,
+				266F0B6218F4ED6B000F53C1 /* ETSSecurityProcedureViewController.m in Sources */,
 				26634D951881F6C100644FFB /* ETSCoreDataHelper.m in Sources */,
 				2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */,
 				263FBD9918E4A0D0002E033E /* ETSEvaluationCell.m in Sources */,
+				9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */,
+				9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */,
 				26085B401829D8D700FE35AB /* NSURL+API.m in Sources */,
 				266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */,
 				26DEB89318EC981100161421 /* UIColor+HexString.m in Sources */,
@@ -1058,7 +1128,6 @@
 		26DD92E317EA610D00469FA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
@@ -1083,7 +1152,6 @@
 		26DD92E417EA610D00469FA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;

@@ -16,4 +16,12 @@
     [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self.navigationController setToolbarHidden:YES animated:animated];
+}
+
 @end
