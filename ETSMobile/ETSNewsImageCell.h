@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *newsImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *summaryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end

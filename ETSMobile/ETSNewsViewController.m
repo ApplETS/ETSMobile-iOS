@@ -183,7 +183,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 126;
+    return 154;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -231,6 +231,7 @@
         ((ETSNewsImageCell *)cell).summaryLabel.attributedText = res;
         UIImage *image = [UIImage imageWithData:news.image];
         ((ETSNewsImageCell *)cell).newsImageView.image = image;
+        ((ETSNewsCell *)cell).dateLabel.text = [dateFormatter stringFromDate:news.published];
     } else if ([cell isKindOfClass:[ETSNewsCell class]]) {
         ((ETSNewsCell *)cell).titleLabel.text = [title string];
         ((ETSNewsCell *)cell).summaryLabel.attributedText = res;
