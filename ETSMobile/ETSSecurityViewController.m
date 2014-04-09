@@ -47,8 +47,14 @@ NSString * const kProcedureFile = @"File";
     [self.mapView selectAnnotation:annotation animated:NO];
     
     self.procedures = [NSArray arrayWithContentsOfFile:[[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"SecuritySources.plist"]];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
-//    NSArray *imageProcedures = [NSArray arrayWithObjects:@"bomb.png", @"Arme1.png", @"incendie.png", @"incendie.png", @"incendie.png", @"electrique.png", @"arme.png", @"coeur.png", nil];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self.navigationController setToolbarHidden:YES animated:animated];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

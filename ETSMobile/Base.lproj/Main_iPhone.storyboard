@@ -207,6 +207,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMo-gm-PYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -601,6 +602,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="8QS-xD-Vo5" id="vBn-fY-epX"/>
                     </connections>
@@ -637,7 +639,23 @@
                             <constraint firstAttribute="trailing" secondItem="ijX-Gf-RF5" secondAttribute="trailing" id="avI-UO-Ct8"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Appel d’urgence" id="3Z1-Nw-ac3">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="emergencyCall:" destination="jDI-1D-FSk" id="jyf-eo-xQU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="FbG-cm-fto"/>
+                        <barButtonItem title="Procédure" id="84a-oR-eW3">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <segue destination="bMy-80-YN9" kind="push" identifier="SecurityProcedure" id="JAn-xH-G4O"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="5GF-JW-b67"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="textView" destination="ijX-Gf-RF5" id="U9i-2M-wse"/>
                     </connections>
@@ -646,23 +664,41 @@
             </objects>
             <point key="canvasLocation" x="860" y="-2987"/>
         </scene>
-        <!--Emergency Details View Controller-->
-        <scene sceneID="b1o-ZH-SPL">
+        <!--Security Procedure View Controller-->
+        <scene sceneID="AfW-Qj-MsQ">
             <objects>
-                <viewController id="fQT-82-evd" customClass="ETSMEmergencyDetailsViewController" sceneMemberID="viewController">
+                <viewController id="bMy-80-YN9" customClass="ETSSecurityProcedureViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PHn-oP-bgJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="Bgi-xu-lWJ"/>
+                        <viewControllerLayoutGuide type="top" id="wcM-W9-jaA"/>
+                        <viewControllerLayoutGuide type="bottom" id="bLF-Le-JFK"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ald-7F-mTy">
+                    <view key="view" contentMode="scaleToFill" id="a8U-Bj-kKF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2OT-qG-ke4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="2OT-qG-ke4" secondAttribute="bottom" id="Klr-pl-OzW"/>
+                            <constraint firstAttribute="trailing" secondItem="2OT-qG-ke4" secondAttribute="trailing" id="NGK-2B-7ug"/>
+                            <constraint firstItem="2OT-qG-ke4" firstAttribute="leading" secondItem="a8U-Bj-kKF" secondAttribute="leading" id="PqN-Ir-nDy"/>
+                            <constraint firstItem="2OT-qG-ke4" firstAttribute="top" secondItem="a8U-Bj-kKF" secondAttribute="top" id="djP-Ri-Z6u"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ajW-yb-LZe"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="webView" destination="2OT-qG-ke4" id="hLP-Pq-n6Y"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B5y-fZ-ESd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sAA-J9-leA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="497" y="-2086"/>
+            <point key="canvasLocation" x="1294" y="-2983"/>
         </scene>
         <!--Web View View Controller-->
         <scene sceneID="kCB-hW-O53">
@@ -682,7 +718,7 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem title="Précédent" id="iRo-88-4iQ">
-                            <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.79215693473815918" green="0.12156863510608673" blue="0.090196080505847931" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="goBack" destination="1PD-wm-nc2" id="ffW-a1-maM"/>
                             </connections>
@@ -732,7 +768,20 @@
                     <view key="view" contentMode="scaleToFill" id="EHb-Ep-BY7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="À venir…" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksf-pY-eqz">
+                                <rect key="frame" x="125" y="274" width="70" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="ksf-pY-eqz" secondAttribute="centerY" id="8RT-q0-00a"/>
+                            <constraint firstAttribute="centerX" secondItem="ksf-pY-eqz" secondAttribute="centerX" id="SUP-1K-LZ2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Partenaires" id="fdZ-aX-aMx">
                         <barButtonItem key="leftBarButtonItem" image="menu-icon" id="J7F-tt-0pi">
@@ -742,6 +791,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fet-zs-TSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
