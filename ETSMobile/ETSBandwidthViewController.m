@@ -37,7 +37,7 @@
     [self.synchronization synchronize:&error];
 }
 
-- (void)panLeftMenu
+- (IBAction)panLeftMenu:(id)sender
 {
     [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
 }
@@ -80,9 +80,6 @@
     NSString *month = [@([[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:[NSDate date]] month]) stringValue];
     
     self.cellIdentifier = @"BandwidthIdentifier";
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(panLeftMenu)];
-
     
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self.dateFormatter setDateFormat:@"yyyy-MM-dd"];

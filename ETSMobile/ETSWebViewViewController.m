@@ -20,15 +20,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [((UIWebView *)self.view).scrollView setContentInset:UIEdgeInsetsMake(20, 0, 0, 0)];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        [((UIWebView *)self.view).scrollView setContentInset:UIEdgeInsetsMake(20, 0, 0, 0)];
+    } else {
+        [((UIWebView *)self.view).scrollView setContentInset:UIEdgeInsetsMake(64, 0, 0, 0)];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-    [self.navigationController setToolbarHidden:NO animated:animated];
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        [self.navigationController setNavigationBarHidden:YES animated:animated];
+        [self.navigationController setToolbarHidden:NO animated:animated];
+    } else {
+        [self.navigationController setNavigationBarHidden:NO animated:animated];
+        [self.navigationController setToolbarHidden:NO animated:animated];
+    }
     
     if (self.initialRequest) {
         [((UIWebView *)self.view) loadRequest:self.initialRequest];

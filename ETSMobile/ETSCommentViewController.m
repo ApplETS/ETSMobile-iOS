@@ -19,16 +19,9 @@
 
 @implementation ETSCommentViewController
 
-- (void)panLeftMenu
+- (IBAction)panLeftMenu:(id)sender
 {
     [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(panLeftMenu)];
 }
 
 - (void)viewWillAppear:(BOOL)animated

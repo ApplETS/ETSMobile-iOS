@@ -11,6 +11,8 @@
 #import "MFSideMenuContainerViewController.h"
 #import "UIColor+Styles.h"
 #import "UIStoryboard+ViewController.h"
+#import "ETSAppDelegate.h"
+#import "ETSTableViewController.h"
 
 typedef NS_ENUM(NSInteger, ETSMenuMe)
 {
@@ -45,6 +47,7 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
     [super viewDidLoad];
     
     self.tableView.separatorColor = [UIColor menuSeparatorColor];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (MFSideMenuContainerViewController *)menuContainerViewController
@@ -76,6 +79,8 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
     
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.bounds];
     cell.selectedBackgroundView.backgroundColor = [UIColor menuSelectedCellBackgroundColor];
+    
+    cell.backgroundColor = [UIColor menuCellBackgroundColor];
 
     cell.textLabel.textColor = [UIColor menuLabelColor];
     cell.textLabel.highlightedTextColor = [UIColor menuHighlightedLabelColor];
@@ -236,6 +241,7 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
     NSArray *controllers = @[viewController];
     navigationController.viewControllers = controllers;
     [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
+    
 }
 
 

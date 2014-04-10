@@ -8,14 +8,20 @@
 
 #import "ETSAppDelegate.h"
 
-#import "ETSNewsViewController.h"
 #import "MFSideMenuContainerViewController.h"
 #import "ETSMenuViewController.h"
 #import "UIColor+Styles.h"
 #import "NSURLRequest+API.h"
-#import "ETSRadioViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
+
+#import "ETSNewsViewController.h"
+#import "ETSCoursesViewController_iPad.h"
+#import "ETSCourseDetailViewController.h"
+#import "ETSRadioViewController.h"
+#import "ETSWebViewViewController.h"
+#import "ETSSecurityViewController.h"
+#import "ETSDirectoryViewController.h"
 
 @interface ETSAppDelegate ()
 @property (nonatomic, strong) AVPlayerItem *playerItem;
@@ -48,9 +54,21 @@
         for (AVMetadataItem* metadata in playerItem.timedMetadata)
             if ([metadata.commonKey isEqualToString:@"title"]) self.currentRadioTitle = metadata.stringValue;
         
-        UIViewController *controller = ((UINavigationController*)((MFSideMenuContainerViewController*)self.window.rootViewController).centerViewController).visibleViewController;
-        if ([controller isKindOfClass:[ETSRadioViewController class]]) {
-            controller.navigationItem.prompt = self.currentRadioTitle;
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            
+            UIViewController *controller = ((UINavigationController*)((MFSideMenuContainerViewController*)self.window.rootViewController).centerViewController).visibleViewController;
+            if ([controller isKindOfClass:[ETSRadioViewController class]]) {
+                controller.navigationItem.prompt = self.currentRadioTitle;
+            }
+        }
+        else {
+            UITabBarController *tbc =  (UITabBarController *)self.window.rootViewController;
+
+            id svc = tbc.selectedViewController;
+            
+            if ([svc isKindOfClass:[UINavigationController class]] && [((UINavigationController *)svc).topViewController isKindOfClass:[ETSRadioViewController class]]) {
+                ((UINavigationController *)svc).topViewController.navigationItem.prompt = self.currentRadioTitle;
+            }
         }
     }
 }
@@ -68,25 +86,59 @@
 {
     [[AVAudioSession sharedInstance] setActive: YES error: NULL];
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-        
+    
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
     // Override point for customization after application launch.
- /*   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        splitViewController.delegate = (id)navigationController.topViewController;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         
-        UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
-        ETSMasterViewController *controller = (ETSMasterViewController *)masterNavigationController.topViewController;
-        controller.managedObjectContext = self.managedObjectContext;
-    } else {*/
+        UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+        [tabBarController.tabBar setSelectedImageTintColor:[UIColor whiteColor]];
+        tabBarController.moreNavigationController.navigationBar.tintColor = [UIColor whiteColor];
+        
+        for (id vc in tabBarController.viewControllers) {
+            id viewController = nil;
+            if ([vc isKindOfClass:[UINavigationController class]]) {
+                viewController = ((UINavigationController *)vc).topViewController;
+                
+                if ([viewController isKindOfClass:[ETSWebViewViewController class]]) {
+                    ((ETSWebViewViewController *)viewController).initialRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ets.mbiblio.ca"]];
+                }
+            }
+            else if ([vc isKindOfClass:[UISplitViewController class]]) {
+                UISplitViewController *splitViewController = (UISplitViewController *)vc;
+                viewController = ((UINavigationController *)splitViewController.viewControllers[0]).topViewController;
+                
+                id detailsViewController = nil;
+                if ([splitViewController.viewControllers[1] isKindOfClass:[UINavigationController class]]) {
+                    detailsViewController = ((UINavigationController *)splitViewController.viewControllers[1]).topViewController;
+                }
+                
+                if ([viewController isKindOfClass:[ETSCoursesViewController_iPad class]]) {
+                    splitViewController.delegate = detailsViewController;
+                    ((ETSCoursesViewController_iPad *)viewController).delegate = detailsViewController;
+                }
+                else if ([viewController isKindOfClass:[ETSSecurityViewController class]]) {
+                    splitViewController.delegate = detailsViewController;
+                    ((ETSSecurityViewController *)viewController).delegate = detailsViewController;
+                }
+                else if ([viewController isKindOfClass:[ETSDirectoryViewController class]]) {
+//                    splitViewController.delegate = detailsViewController;
+                    ((ETSDirectoryViewController *)viewController).splitViewController = splitViewController;
+                }
+            }
+            
+            if ([viewController respondsToSelector:@selector(setManagedObjectContext:)])
+                [viewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
+            }
+        
+    } else {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
         MFSideMenuContainerViewController *container = (MFSideMenuContainerViewController *)self.window.rootViewController;
         UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"navigationController"];
 
-        [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
-        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    
-        
         ETSNewsViewController *controller = (ETSNewsViewController *)navigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
         
@@ -100,7 +152,7 @@
         [container setLeftMenuViewController:leftSideMenuViewController];
         [container setCenterViewController:navigationController];
     
- //   }
+    }
     return YES;
 }
 							
@@ -184,7 +236,7 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ETSMobile.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ETSMobile09042014.sqlite"];
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];

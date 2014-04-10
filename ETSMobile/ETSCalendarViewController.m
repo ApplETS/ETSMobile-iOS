@@ -48,7 +48,10 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [super viewDidLoad];
     
     self.title = NSLocalizedString(@"Horaire", nil);
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(panLeftMenu)];
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(panLeftMenu)];
+    }
     
     self.collectionViewCalendarLayout = (MSCollectionViewCalendarLayout *)self.collectionViewLayout;
     self.collectionViewCalendarLayout.delegate = self;
@@ -91,7 +94,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"start >= %@", today];
     
-
     // Divide into sections by the "day" key path
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"day" cacheName:nil];
     self.fetchedResultsController.delegate = self;

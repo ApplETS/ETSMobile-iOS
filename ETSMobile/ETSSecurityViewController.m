@@ -121,6 +121,10 @@ NSString * const kProcedureFile = @"File";
     if (indexPath.section == 0) {
         NSString *phoneNumber = @"telprompt://5143968900";
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+    } else if (indexPath.section > 0 && [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+
+        NSDictionary *procedure = self.procedures[indexPath.row];
+        [self.delegate securityViewController:self didSelectProcedureWithTitle:procedure[kProcedureTitle] summary:procedure[kProcedureSummary] file:procedure[kProcedureFile]];
     }
 }
 

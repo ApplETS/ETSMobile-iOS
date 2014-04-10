@@ -10,10 +10,13 @@
 #import "NSURLRequest+API.h"
 #import "ETSEvaluation.h"
 #import "ETSEvaluationCell.h"
+#import "MFSideMenu.h"
 
 @interface ETSCourseDetailViewController ()
+@property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (nonatomic, strong) ETSCourse *courseForSynchronization;
 @property (nonatomic, strong) NSNumberFormatter *formatter;
+@property (nonatomic, strong) UIBarButtonItem *coursesBarButtonItem;
 @property (nonatomic, assign) BOOL hadResults;
 @end
 
@@ -34,14 +37,16 @@
     
     self.courseForSynchronization = nil;
     
-    ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
-    synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];
-    synchronization.entityName = @"Evaluation";
-    synchronization.compareKey = @"name";
-    synchronization.objectsKeyPath = @"d.liste";
-    synchronization.predicate = [NSPredicate predicateWithFormat:@"course.acronym == %@", self.course.acronym];
-    self.synchronization = synchronization;
-    self.synchronization.delegate = self;
+    if (self.course) {
+        ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
+        synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];
+        synchronization.entityName = @"Evaluation";
+        synchronization.compareKey = @"name";
+        synchronization.objectsKeyPath = @"d.liste";
+        synchronization.predicate = [NSPredicate predicateWithFormat:@"course.acronym == %@", self.course.acronym];
+        self.synchronization = synchronization;
+        self.synchronization.delegate = self;
+    }
     
     self.formatter = [[NSNumberFormatter alloc] init];
     self.formatter.decimalSeparator = @",";
@@ -56,8 +61,20 @@
     self.hadResults = [[self.fetchedResultsController sections][0] numberOfObjects] > 0;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+ 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    [self.coursesBarButtonItem.target performSelector:self.coursesBarButtonItem.action withObject:self.coursesBarButtonItem];
+#pragma clang diagnostic pop
+}
+
 - (NSFetchedResultsController *)fetchedResultsController
 {
+    if (!self.course) return nil;
+    
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
@@ -204,6 +221,15 @@
     }
 }
 
+- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
+{
+    [super synchronizationDidFinishLoading:synchronization];
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
+
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView beginUpdates];
@@ -233,5 +259,46 @@
     [super controllerDidChangeContent:controller];
 }
 
+#pragma mark - Split view
+
+- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
+{
+    self.coursesBarButtonItem = barButtonItem;
+    barButtonItem.title = NSLocalizedString(@"Cours", nil);
+    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+    self.masterPopoverController = popoverController;
+}
+
+- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    // Called when the view is shown again in the split view, invalidating the button and popover controller.
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    self.masterPopoverController = nil;
+}
+
+- (void)coursesViewController:(ETSCoursesViewController_iPad *)controller didSelectCourse:(ETSCourse *)course managedObjectContext:(NSManagedObjectContext *)context
+{
+    self.managedObjectContext = context;
+    self.course = course;
+    
+    self.synchronization.delegate = nil;
+    
+    ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
+    synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];
+    synchronization.entityName = @"Evaluation";
+    synchronization.compareKey = @"name";
+    synchronization.objectsKeyPath = @"d.liste";
+    synchronization.predicate = [NSPredicate predicateWithFormat:@"course.acronym == %@", self.course.acronym];
+    self.synchronization = synchronization;
+    self.synchronization.delegate = self;
+    
+    self.fetchedResultsController = nil;
+    self.hadResults = [[self.fetchedResultsController sections][0] numberOfObjects] > 0;
+
+    self.title = course.title;
+    
+    [self.tableView reloadData];
+    [self startRefresh:nil];
+}
 
 @end

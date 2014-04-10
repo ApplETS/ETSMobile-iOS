@@ -8,6 +8,6 @@
 
 #import "ETSTableViewController.h"
 
-@interface ETSNewsViewController : ETSTableViewController
+@interface ETSNewsViewController : ETSTableViewController <UIPopoverControllerDelegate>
 
 @end

@@ -21,7 +21,7 @@
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
-- (void)panLeftMenu
+- (IBAction)panLeftMenu:(id)sender
 {
     [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
 }
@@ -29,7 +29,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(panLeftMenu)];
     
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForDirectory];
@@ -192,7 +191,7 @@
     return [sectionInfo name];
 }
 
--(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ETSContact *contact = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
@@ -229,7 +228,11 @@
     [personController.view setTintColor:[UIColor blackColor]];
     
     self.menuContainerViewController.panMode = MFSideMenuPanModeNone;
-    [[self navigationController] pushViewController:personController animated:YES];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        ((UINavigationController *)self.splitViewController.viewControllers[1]).viewControllers = @[personController];
+    } else {
+        [[self navigationController] pushViewController:personController animated:YES];
+    }
     
     CFRelease(person);
 }

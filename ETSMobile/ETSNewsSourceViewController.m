@@ -33,6 +33,13 @@
 
 @implementation ETSNewsSourceViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.preferredContentSize = CGSizeMake(400, 250);
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [[NSFileManager defaultManager] removeItemAtPath:self.savePath error:nil];

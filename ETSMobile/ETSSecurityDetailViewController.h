@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ETSSecurityViewController.h"
 
-@interface ETSSecurityDetailViewController : UIViewController
+@interface ETSSecurityDetailViewController : UIViewController <ETSSecurityViewControllerDelegate>
 
 @property (nonatomic, copy) NSString *summary;
 @property (nonatomic, copy) NSString *file;

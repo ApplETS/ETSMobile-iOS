@@ -92,11 +92,9 @@
     self.synchronization.delegate = self;
     
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(panLeftMenu:)];
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)refreshNews
 {
     if (!self.shouldRemoveFetchedDelegate) {
         // Inspiré de http://stackoverflow.com/questions/13299120/nsfetchedresultscontrollers-delegate-doesnt-fire-after-predicate-is-changed
@@ -135,7 +133,11 @@
     
     self.synchronization.predicate = [self predicateForSelectedNews];
     self.synchronization.request = [NSURLRequest requestForNewsWithSources:self.sources];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self refreshNews];
     [super viewWillAppear:animated];
 }
 
@@ -169,11 +171,20 @@
         ETSNewsSourceViewController *destinationController = (ETSNewsSourceViewController *)segue.destinationViewController;
         destinationController.sources = self.sources;
         destinationController.savePath = self.path;
+        
+        if ([segue isKindOfClass:[UIStoryboardPopoverSegue class]]) {
+            ((UIStoryboardPopoverSegue *)segue).popoverController.delegate = self;
+        }
     }
     else if ([segue.identifier isEqualToString:@"NewsSegue"] || [segue.identifier isEqualToString:@"NewsImageSegue"]) {
         ETSNewsDetailsViewController *destinationController = (ETSNewsDetailsViewController *)segue.destinationViewController;
         destinationController.news = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
     }
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    [self refreshNews];
 }
 
 - (IBAction)panLeftMenu:(id)sender
@@ -183,7 +194,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 154;
+    return ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? 154 : 260;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -229,12 +240,14 @@
     if ([cell isKindOfClass:[ETSNewsImageCell class]]) {
         ((ETSNewsImageCell *)cell).titleLabel.text = [title string];
         ((ETSNewsImageCell *)cell).summaryLabel.attributedText = res;
+        ((ETSNewsImageCell *)cell).summaryLabel.text = [res string];
         UIImage *image = [UIImage imageWithData:news.image];
         ((ETSNewsImageCell *)cell).newsImageView.image = image;
         ((ETSNewsCell *)cell).dateLabel.text = [dateFormatter stringFromDate:news.published];
     } else if ([cell isKindOfClass:[ETSNewsCell class]]) {
         ((ETSNewsCell *)cell).titleLabel.text = [title string];
         ((ETSNewsCell *)cell).summaryLabel.attributedText = res;
+        ((ETSNewsCell *)cell).summaryLabel.text = [res string];
         ((ETSNewsCell *)cell).dateLabel.text = [dateFormatter stringFromDate:news.published];
     }
     

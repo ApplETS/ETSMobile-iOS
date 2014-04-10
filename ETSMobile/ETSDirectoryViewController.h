@@ -9,4 +9,7 @@
 #import "ETSTableViewController.h"
 
 @interface ETSDirectoryViewController : ETSTableViewController <ETSSynchronizationDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
+
+@property (nonatomic, weak) UISplitViewController *splitViewController;
+
 @end

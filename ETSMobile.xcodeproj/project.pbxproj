@@ -64,6 +64,8 @@
 		26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */; };
 		26B9A92818736265005D4410 /* ETSBandwidthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9A92718736265005D4410 /* ETSBandwidthViewController.m */; };
 		26B9A92C18736621005D4410 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9A92B18736621005D4410 /* CustomIOS7AlertView.m */; };
+		26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BB372B18F59580002CE5DD /* Main_iPad.storyboard */; };
+		26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */; };
 		26C0AC8E18EDCD82006ECF2B /* ETSNewsImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C0AC8D18EDCD82006ECF2B /* ETSNewsImageCell.m */; };
 		26C97886183AD1DE005D66EF /* ETSContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C97885183AD1DE005D66EF /* ETSContact.m */; };
 		26D44BA518E49BEF0006F9F0 /* ETSBandwidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D44BA418E49BEF0006F9F0 /* ETSBandwidth.m */; };
@@ -75,7 +77,6 @@
 		26DD92B617EA610D00469FA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92B517EA610D00469FA8 /* main.m */; };
 		26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */; };
 		26DD92BD17EA610D00469FA8 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */; };
-		26DD92C017EA610D00469FA8 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92BE17EA610D00469FA8 /* Main_iPad.storyboard */; };
 		26DD92C317EA610D00469FA8 /* ETSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */; };
 		26DD92CB17EA610D00469FA8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92CA17EA610D00469FA8 /* Images.xcassets */; };
 		26DD92D217EA610D00469FA8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92D117EA610D00469FA8 /* XCTest.framework */; };
@@ -222,6 +223,9 @@
 		26B9A92718736265005D4410 /* ETSBandwidthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidthViewController.m; sourceTree = "<group>"; };
 		26B9A92A18736621005D4410 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomIOS7AlertView.h; path = "Vendors/ios-custom-alertview/CustomIOS7AlertView/CustomIOS7AlertView/View/CustomIOS7AlertView.h"; sourceTree = "<group>"; };
 		26B9A92B18736621005D4410 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomIOS7AlertView.m; path = "Vendors/ios-custom-alertview/CustomIOS7AlertView/CustomIOS7AlertView/View/CustomIOS7AlertView.m"; sourceTree = "<group>"; };
+		26BB372C18F59580002CE5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ETSMobile/Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		26BB372E18F5E77E002CE5DD /* ETSCoursesViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCoursesViewController_iPad.h; sourceTree = "<group>"; };
+		26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCoursesViewController_iPad.m; sourceTree = "<group>"; };
 		26C0AC8C18EDCD82006ECF2B /* ETSNewsImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsImageCell.h; sourceTree = "<group>"; };
 		26C0AC8D18EDCD82006ECF2B /* ETSNewsImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsImageCell.m; sourceTree = "<group>"; };
 		26C97884183AD1DE005D66EF /* ETSContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSContact.h; sourceTree = "<group>"; };
@@ -240,7 +244,6 @@
 		26DD92B817EA610D00469FA8 /* ETSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSAppDelegate.h; sourceTree = "<group>"; };
 		26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSAppDelegate.m; sourceTree = "<group>"; };
 		26DD92BC17EA610D00469FA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		26DD92BF17EA610D00469FA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		26DD92C217EA610D00469FA8 /* ETSMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ETSMobile.xcdatamodel; sourceTree = "<group>"; };
 		26DD92CA17EA610D00469FA8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		26DD92D017EA610D00469FA8 /* ETSMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ETSMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -498,10 +501,19 @@
 			children = (
 				269BFF5A1814C649005D2950 /* ETSCoursesViewController.h */,
 				269BFF5B1814C649005D2950 /* ETSCoursesViewController.m */,
+				26BB372E18F5E77E002CE5DD /* ETSCoursesViewController_iPad.h */,
+				26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */,
 				262A6344182B3DDA00B786A0 /* ETSCourseDetailViewController.h */,
 				262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */,
 			);
 			name = Courses;
+			sourceTree = "<group>";
+		};
+		26A43D2E18F593E300DE69B5 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 		26AE185E17F3275600DB1EB4 /* Styles */ = {
@@ -596,6 +608,7 @@
 		26DD92AF17EA610D00469FA8 /* ETSMobile */ = {
 			isa = PBXGroup;
 			children = (
+				26A43D2E18F593E300DE69B5 /* iPad */,
 				26F3CD3E184FCF5100536ADB /* ETSMobile.entitlements */,
 				26DD92E817EA612800469FA8 /* Models */,
 				26DD92E917EA613400469FA8 /* Controllers */,
@@ -605,7 +618,7 @@
 				26DD92B817EA610D00469FA8 /* ETSAppDelegate.h */,
 				26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */,
 				26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */,
-				26DD92BE17EA610D00469FA8 /* Main_iPad.storyboard */,
+				26BB372B18F59580002CE5DD /* Main_iPad.storyboard */,
 				26DD92CA17EA610D00469FA8 /* Images.xcassets */,
 				26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */,
 				26DD92B017EA610D00469FA8 /* Supporting Files */,
@@ -896,12 +909,12 @@
 				26085B3D1829D84300FE35AB /* ETSAPIURL.plist in Resources */,
 				266F0B6C18F4EF22000F53C1 /* APPEL_A_LA_BOMBE_2009-04-01.pdf in Resources */,
 				266F0B7218F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf in Resources */,
-				26DD92C017EA610D00469FA8 /* Main_iPad.storyboard in Resources */,
 				269BFF581811A640005D2950 /* ETSAPICoreDataMapping.plist in Resources */,
 				2670C01018F35EED00A4B0D6 /* SecuritySources.plist in Resources */,
 				266F0B6F18F4EF22000F53C1 /* ODEUR_SUSPECTE_FUITE_DE_GAZ_2009-04-01.pdf in Resources */,
 				266F0B6D18F4EF22000F53C1 /* COLIS_SUSPECT_ET_NRBC_2009-04-01.pdf in Resources */,
 				266F0B7018F4EF22000F53C1 /* PANNE_D_ASCENSEUR_2009-04-01.pdf in Resources */,
+				26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */,
 				26DD92CB17EA610D00469FA8 /* Images.xcassets in Resources */,
 				266F0B7118F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf in Resources */,
 				266F0B7318F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */,
@@ -957,6 +970,7 @@
 				26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */,
 				26DEB74C18E9F2C000161421 /* ETSCalendar.m in Sources */,
 				26DEB88C18EC97EC00161421 /* MSDayColumnHeaderBackground.m in Sources */,
+				26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */,
 				26DD92C317EA610D00469FA8 /* ETSMobile.xcdatamodeld in Sources */,
 				264E86D0188796A7005F1820 /* NSURL+Document.m in Sources */,
 				263A4C4C188B14A800E38CAC /* NSString+HTML.m in Sources */,
@@ -1018,6 +1032,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		26BB372B18F59580002CE5DD /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26BB372C18F59580002CE5DD /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		26DD92B217EA610D00469FA8 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1032,14 +1055,6 @@
 				26DD92BC17EA610D00469FA8 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		26DD92BE17EA610D00469FA8 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				26DD92BF17EA610D00469FA8 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		26DD92DB17EA610D00469FA8 /* InfoPlist.strings */ = {
@@ -1143,9 +1158,10 @@
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1168,9 +1184,10 @@
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
