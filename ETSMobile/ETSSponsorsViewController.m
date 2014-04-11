@@ -16,6 +16,12 @@
     [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [TestFlight passCheckpoint:@"SPONSORS_VIEWCONTROLLER"];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

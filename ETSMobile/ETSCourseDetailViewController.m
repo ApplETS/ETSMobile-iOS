@@ -35,6 +35,8 @@
 {
     [super viewDidLoad];
     
+    [TestFlight passCheckpoint:@"COURSE_DETAILS"];
+    
     if (self.course) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
         synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];

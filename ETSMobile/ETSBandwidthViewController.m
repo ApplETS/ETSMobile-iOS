@@ -77,6 +77,8 @@
 {
     [super viewDidLoad];
     
+    [TestFlight passCheckpoint:@"BANDWIDTH_VIEWCONTROLLER"];
+    
     NSString *month = [@([[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:[NSDate date]] month]) stringValue];
     
     self.cellIdentifier = @"BandwidthIdentifier";

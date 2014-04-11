@@ -20,6 +20,8 @@
 {
     [super viewDidLoad];
     
+    [TestFlight passCheckpoint:@"STORY_VIEWCONTROLLER"];
+    
     [self.textView setTextContainerInset:UIEdgeInsetsMake(12, 12, 12, 12)];
     
     NSDictionary *options = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType};

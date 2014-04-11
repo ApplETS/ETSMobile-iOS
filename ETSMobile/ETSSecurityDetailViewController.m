@@ -37,6 +37,8 @@
 {
     [super viewDidLoad];
     
+    [TestFlight passCheckpoint:@"SECURITY_DETAILS_VIEWCONTROLLER"];
+    
     [self updateProcedure];
 }
 

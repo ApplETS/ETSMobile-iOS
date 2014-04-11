@@ -13,6 +13,8 @@
 		1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA26188F065600A5F1C8 /* ETSTextCell.m */; };
 		26085B3D1829D84300FE35AB /* ETSAPIURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26085B3C1829D84300FE35AB /* ETSAPIURL.plist */; };
 		26085B401829D8D700FE35AB /* NSURL+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 26085B3F1829D8D700FE35AB /* NSURL+API.m */; };
+		26274FA718F84D2500929CE2 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274F9F18F84BB200929CE2 /* libTestFlight.a */; };
+		26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274FA818F84D6A00929CE2 /* libz.dylib */; };
 		262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */; };
 		263770941831AFB200D18F94 /* ETSEvaluation.m in Sources */ = {isa = PBXBuildFile; fileRef = 263770931831AFB200D18F94 /* ETSEvaluation.m */; };
 		263A4C421889D83000E38CAC /* ETSNewsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263A4C411889D83000E38CAC /* ETSNewsDetailsViewController.m */; };
@@ -134,6 +136,11 @@
 		26085B3C1829D84300FE35AB /* ETSAPIURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPIURL.plist; sourceTree = "<group>"; };
 		26085B3E1829D8D700FE35AB /* NSURL+API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+API.h"; sourceTree = "<group>"; };
 		26085B3F1829D8D700FE35AB /* NSURL+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+API.m"; sourceTree = "<group>"; };
+		26274F9F18F84BB200929CE2 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Vendors/TestFlightSDK3/libTestFlight.a; sourceTree = "<group>"; };
+		26274FA418F84CD800929CE2 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = Vendors/TestFlightSDK3/TestFlight.h; sourceTree = "<group>"; };
+		26274FA518F84CD800929CE2 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+AsyncLogging.h"; path = "Vendors/TestFlightSDK3/TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		26274FA618F84CD800929CE2 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+ManualSessions.h"; path = "Vendors/TestFlightSDK3/TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		26274FA818F84D6A00929CE2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		262A6344182B3DDA00B786A0 /* ETSCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourseDetailViewController.h; sourceTree = "<group>"; };
 		262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourseDetailViewController.m; sourceTree = "<group>"; };
 		263770921831AFB200D18F94 /* ETSEvaluation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSEvaluation.h; sourceTree = "<group>"; };
@@ -304,6 +311,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */,
+				26274FA718F84D2500929CE2 /* libTestFlight.a in Frameworks */,
 				9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */,
 				26F46A99183ED03400232B5A /* AVFoundation.framework in Frameworks */,
 				269316961835DA2D00DE95A0 /* AddressBookUI.framework in Frameworks */,
@@ -367,6 +376,17 @@
 				2690F603183D088700FAD05A /* ETSWebViewViewController.m */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		26274F9E18F84BA100929CE2 /* TestFlight */ = {
+			isa = PBXGroup;
+			children = (
+				26274FA418F84CD800929CE2 /* TestFlight.h */,
+				26274FA518F84CD800929CE2 /* TestFlight+AsyncLogging.h */,
+				26274FA618F84CD800929CE2 /* TestFlight+ManualSessions.h */,
+				26274F9F18F84BB200929CE2 /* libTestFlight.a */,
+			);
+			name = TestFlight;
 			sourceTree = "<group>";
 		};
 		263A4C43188B088100E38CAC /* News */ = {
@@ -591,6 +611,7 @@
 		26DD92A617EA610D00469FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26274FA818F84D6A00929CE2 /* libz.dylib */,
 				9CC88726189ED56B002A3D04 /* MapKit.framework */,
 				26F46A98183ED03400232B5A /* AVFoundation.framework */,
 				269316951835DA2D00DE95A0 /* AddressBookUI.framework */,
@@ -724,6 +745,7 @@
 		26DD92EB17EA615E00469FA8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				26274F9E18F84BA100929CE2 /* TestFlight */,
 				26DEB6ED18E9E96800161421 /* MSCollectionViewCalendarLayout */,
 				26B9A929187365F0005D4410 /* ios-custom-alertview */,
 				2698C6F618274F4F00F6281F /* KeychainWrapper */,
@@ -1159,6 +1181,10 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendors/TestFlightSDK3",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1185,6 +1211,10 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendors/TestFlightSDK3",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

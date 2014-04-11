@@ -19,6 +19,8 @@
 {
     [super viewDidLoad];
     
+    [TestFlight passCheckpoint:@"SECURITY_PROCEDURE_VIEWCONTROLLER"];
+    
     self.webView.scalesPageToFit = YES;
     
     NSString *path = [[NSBundle mainBundle] pathForResource:self.file ofType:@"pdf"];
