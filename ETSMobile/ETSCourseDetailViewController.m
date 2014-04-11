@@ -35,8 +35,6 @@
 {
     [super viewDidLoad];
     
-    self.courseForSynchronization = nil;
-    
     if (self.course) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
         synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];
@@ -63,6 +61,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    self.courseForSynchronization = nil;
     [super viewDidAppear:animated];
  
 #pragma clang diagnostic push
@@ -226,7 +225,8 @@
     [super synchronizationDidFinishLoading:synchronization];
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        if ([self.tableView numberOfSections] > 0)
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 

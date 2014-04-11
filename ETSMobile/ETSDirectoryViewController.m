@@ -15,6 +15,8 @@
 
 @interface ETSDirectoryViewController ()
 @property (nonatomic, copy) NSString *searchText;
+@property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property (nonatomic, strong) UIBarButtonItem *directoryBarButtonItem;
 @end
 
 @implementation ETSDirectoryViewController
@@ -55,6 +57,16 @@
     }
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    //[self.directoryBarButtonItem.target performSelector:self.directoryBarButtonItem.action withObject:self.directoryBarButtonItem];
+#pragma clang diagnostic pop
+}
+
 - (void)viewDidDisappear:(BOOL)animated
 {
     self.fetchedResultsController.delegate = nil;
@@ -74,7 +86,7 @@
     
     fetchRequest.fetchBatchSize = 10;
     
-    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"lastName" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"firstName" ascending:YES]];
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"lastInitial" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"lastName" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"firstName" ascending:YES]];
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     NSString *sectionNameKeyPath = @"lastInitial";
@@ -230,6 +242,7 @@
     self.menuContainerViewController.panMode = MFSideMenuPanModeNone;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         ((UINavigationController *)self.splitViewController.viewControllers[1]).viewControllers = @[personController];
+        [personController.navigationItem setLeftBarButtonItem:self.directoryBarButtonItem animated:YES];
     } else {
         [[self navigationController] pushViewController:personController animated:YES];
     }
@@ -252,6 +265,20 @@
     if ([[self.fetchedResultsController sections] count] == 0) {
         [self.synchronization saveManagedObjectContext];
     }
+}
+
+- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
+{
+    self.directoryBarButtonItem = barButtonItem;
+    barButtonItem.title = NSLocalizedString(@"Personnes", nil);
+    [((UINavigationController *)self.splitViewController.viewControllers[1]).topViewController.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+    self.masterPopoverController = popoverController;
+}
+
+- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    self.masterPopoverController = nil;
 }
 
 @end

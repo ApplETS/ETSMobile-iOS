@@ -82,7 +82,7 @@
 {
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
-    [offsetComponents setDay:2];
+    [offsetComponents setDay:3];
     NSDate *nextWeek = [gregorian dateByAddingComponents:offsetComponents toDate:[NSDate date] options:0];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"ddMMyyyy"];

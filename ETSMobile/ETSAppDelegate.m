@@ -23,7 +23,7 @@
 #import "ETSSecurityViewController.h"
 #import "ETSDirectoryViewController.h"
 
-@interface ETSAppDelegate ()
+@interface ETSAppDelegate () <UITabBarControllerDelegate>
 @property (nonatomic, strong) AVPlayerItem *playerItem;
 @end
 
@@ -73,6 +73,10 @@
     }
 }
 
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
+{
+    return  YES;
+}
 
 - (void)stopRadio
 {
@@ -95,6 +99,7 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         
         UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+        tabBarController.delegate = self;
         [tabBarController.tabBar setSelectedImageTintColor:[UIColor whiteColor]];
         tabBarController.moreNavigationController.navigationBar.tintColor = [UIColor whiteColor];
         
@@ -125,7 +130,7 @@
                     ((ETSSecurityViewController *)viewController).delegate = detailsViewController;
                 }
                 else if ([viewController isKindOfClass:[ETSDirectoryViewController class]]) {
-//                    splitViewController.delegate = detailsViewController;
+                    splitViewController.delegate = viewController;
                     ((ETSDirectoryViewController *)viewController).splitViewController = splitViewController;
                 }
             }
