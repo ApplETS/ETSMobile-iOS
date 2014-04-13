@@ -32,6 +32,8 @@
 {
     [super viewDidLoad];
     
+    [TestFlight passCheckpoint:@"DIRECTORY_VIEWCONTROLLER"];
+    
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForDirectory];
     synchronization.entityName = @"Contact";

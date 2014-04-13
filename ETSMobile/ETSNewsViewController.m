@@ -67,6 +67,8 @@
 {
     [super viewDidLoad];
     
+    [TestFlight passCheckpoint:@"NEWS_VIEWCONTROLLER"];
+    
     self.path = [[[NSURL applicationDocumentsDirectory] URLByAppendingPathComponent:@"NewsSources.plist"] path];
     
     if(![[NSFileManager defaultManager] fileExistsAtPath:self.path]) {

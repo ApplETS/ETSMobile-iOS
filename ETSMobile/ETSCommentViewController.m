@@ -24,6 +24,12 @@
     [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [TestFlight passCheckpoint:@"COMMENT_VIEWCONTROLLER"];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

@@ -44,6 +44,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [TestFlight passCheckpoint:@"PROFILE_VIEWCONTROLLER"];
 
     self.cellIdentifier = @"ProfileIdentifier";
     self.synchronizationDone = 0;

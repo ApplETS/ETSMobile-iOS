@@ -37,6 +37,8 @@
 {
     [super viewDidLoad];
     
+    [TestFlight passCheckpoint:@"NEWSSOURCE_VIEWCONTROLLER"];
+    
     self.preferredContentSize = CGSizeMake(400, 250);
 }
 

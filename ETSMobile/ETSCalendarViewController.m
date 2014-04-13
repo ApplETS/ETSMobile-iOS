@@ -47,6 +47,8 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 {
     [super viewDidLoad];
     
+    [TestFlight passCheckpoint:@"CALENDAR_VIEWCONTROLLER"];
+    
     self.title = NSLocalizedString(@"Horaire", nil);
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {

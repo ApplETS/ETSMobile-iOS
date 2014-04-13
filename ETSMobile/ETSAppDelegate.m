@@ -36,7 +36,6 @@
 
 - (void)startRadio
 {
-    
     self.playerItem = [AVPlayerItem playerItemWithURL:[NSURL  URLWithString:@"http://radiopiranha.com:8000/radiopiranha.mp3"]];
     
     [self.playerItem addObserver:self forKeyPath:@"timedMetadata" options:NSKeyValueObservingOptionNew context:nil];
@@ -88,6 +87,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [TestFlight takeOff:@"79a6d72a-d113-4f4b-a5b8-e3f0c30dbf65"];
+    
     [[AVAudioSession sharedInstance] setActive: YES error: NULL];
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     

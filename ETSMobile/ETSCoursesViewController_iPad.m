@@ -24,6 +24,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [TestFlight passCheckpoint:@"COURSES_IPAD_VIEWCONTROLLER"];
+    
     self.title =  NSLocalizedString(@"Notes", nil);    
     
     self.cellIdentifier = @"CourseIdentifier";
