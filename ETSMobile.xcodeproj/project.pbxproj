@@ -1,0 +1,1335 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D29A460188DB82400CF02EB /* ETSCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29A45F188DB82400CF02EB /* ETSCommentViewController.m */; };
+		1D29A464188DB9E500CF02EB /* ETSCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29A463188DB9E500CF02EB /* ETSCommentCell.m */; };
+		1D33BA24188F064600A5F1C8 /* ETSRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA23188F064600A5F1C8 /* ETSRateCell.m */; };
+		1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA26188F065600A5F1C8 /* ETSTextCell.m */; };
+		26085B3D1829D84300FE35AB /* ETSAPIURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26085B3C1829D84300FE35AB /* ETSAPIURL.plist */; };
+		26085B401829D8D700FE35AB /* NSURL+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 26085B3F1829D8D700FE35AB /* NSURL+API.m */; };
+		26274FA718F84D2500929CE2 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274F9F18F84BB200929CE2 /* libTestFlight.a */; };
+		26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274FA818F84D6A00929CE2 /* libz.dylib */; };
+		262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */; };
+		263770941831AFB200D18F94 /* ETSEvaluation.m in Sources */ = {isa = PBXBuildFile; fileRef = 263770931831AFB200D18F94 /* ETSEvaluation.m */; };
+		263A4C421889D83000E38CAC /* ETSNewsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263A4C411889D83000E38CAC /* ETSNewsDetailsViewController.m */; };
+		263A4C46188B089800E38CAC /* ETSNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 263A4C45188B089800E38CAC /* ETSNewsCell.m */; };
+		263A4C4C188B14A800E38CAC /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 263A4C4B188B14A800E38CAC /* NSString+HTML.m */; };
+		263AC8E918464D9F00AD5B21 /* ETSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 263AC8E818464D9F00AD5B21 /* ETSEvent.m */; };
+		263FBD9918E4A0D0002E033E /* ETSEvaluationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 263FBD9818E4A0D0002E033E /* ETSEvaluationCell.m */; };
+		264ACF4F18DCDE0100928284 /* ETSSynchronization.m in Sources */ = {isa = PBXBuildFile; fileRef = 264ACF4E18DCDE0100928284 /* ETSSynchronization.m */; };
+		264E86CA1884E7E7005F1820 /* NewsSources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 264E86C91884E7E7005F1820 /* NewsSources.plist */; };
+		264E86CD18874E99005F1820 /* ETSNewsSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 264E86CC18874E99005F1820 /* ETSNewsSourceViewController.m */; };
+		264E86D0188796A7005F1820 /* NSURL+Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 264E86CF188796A7005F1820 /* NSURL+Document.m */; };
+		264E86D31887A24E005F1820 /* ETSNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 264E86D21887A24E005F1820 /* ETSNews.m */; };
+		265FDFBF18E0C50400371078 /* ETSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 265FDFBE18E0C50400371078 /* ETSCalendarViewController.m */; };
+		26634D8A1881D91900644FFB /* ETSBandwidthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26634D891881D91900644FFB /* ETSBandwidthCell.m */; };
+		26634D8D1881F2FF00644FFB /* ETSLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26634D8C1881F2FF00644FFB /* ETSLoginView.m */; };
+		26634D951881F6C100644FFB /* ETSCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 26634D941881F6C100644FFB /* ETSCoreDataHelper.m */; };
+		266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE77F17ECEFF300F44252 /* MFSideMenuContainerViewController.m */; };
+		266BE78517ECEFF300F44252 /* MFSideMenuShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE78117ECEFF300F44252 /* MFSideMenuShadow.m */; };
+		266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */; };
+		266ED340182EC29D00DC1280 /* ETSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266ED33F182EC29D00DC1280 /* ETSTableViewController.m */; };
+		266ED35018300D2900DC1280 /* ETSCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 266ED34F18300D2900DC1280 /* ETSCourse.m */; };
+		266F0B6218F4ED6B000F53C1 /* ETSSecurityProcedureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266F0B6118F4ED6B000F53C1 /* ETSSecurityProcedureViewController.m */; };
+		266F0B6C18F4EF22000F53C1 /* APPEL_A_LA_BOMBE_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6418F4EF22000F53C1 /* APPEL_A_LA_BOMBE_2009-04-01.pdf */; };
+		266F0B6D18F4EF22000F53C1 /* COLIS_SUSPECT_ET_NRBC_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6518F4EF22000F53C1 /* COLIS_SUSPECT_ET_NRBC_2009-04-01.pdf */; };
+		266F0B6E18F4EF22000F53C1 /* INCENDIE_EVACUATION_URGENCE.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6618F4EF22000F53C1 /* INCENDIE_EVACUATION_URGENCE.pdf */; };
+		266F0B6F18F4EF22000F53C1 /* ODEUR_SUSPECTE_FUITE_DE_GAZ_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6718F4EF22000F53C1 /* ODEUR_SUSPECTE_FUITE_DE_GAZ_2009-04-01.pdf */; };
+		266F0B7018F4EF22000F53C1 /* PANNE_D_ASCENSEUR_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6818F4EF22000F53C1 /* PANNE_D_ASCENSEUR_2009-04-01.pdf */; };
+		266F0B7118F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6918F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf */; };
+		266F0B7218F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6A18F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf */; };
+		266F0B7318F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6B18F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf */; };
+		2670C01018F35EED00A4B0D6 /* SecuritySources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2670C00F18F35EED00A4B0D6 /* SecuritySources.plist */; };
+		26887B7218F090C500009EBA /* ETSRadioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7118F090C500009EBA /* ETSRadioCell.m */; };
+		26887B7718F1BA5800009EBA /* ETSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7618F1BA5800009EBA /* ETSAboutViewController.m */; };
+		26887B7B18F1D36600009EBA /* ETSSponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7A18F1D36600009EBA /* ETSSponsorsViewController.m */; };
+		26887B7E18F1D7B400009EBA /* ETSSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7D18F1D7B400009EBA /* ETSSession.m */; };
+		268E8DEC18FB03F900D501E9 /* ETSMoodleCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268E8DEB18FB03F900D501E9 /* ETSMoodleCoursesViewController.m */; };
+		2690F604183D088700FAD05A /* ETSWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2690F603183D088700FAD05A /* ETSWebViewViewController.m */; };
+		2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2693168718359EE200DE95A0 /* ETSDirectoryViewController.m */; };
+		269316941835DA2900DE95A0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269316931835DA2900DE95A0 /* AddressBook.framework */; };
+		269316961835DA2D00DE95A0 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269316951835DA2D00DE95A0 /* AddressBookUI.framework */; };
+		2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */; };
+		2698C6F518274F4B00F6281F /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F418274F4B00F6281F /* KeychainItemWrapper.m */; };
+		2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F9182834E000F6281F /* ETSCourseCell.m */; };
+		269BFF561811A41C005D2950 /* NSManagedObject+SetValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BFF551811A41C005D2950 /* NSManagedObject+SetValues.m */; };
+		269BFF581811A640005D2950 /* ETSAPICoreDataMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 269BFF571811A640005D2950 /* ETSAPICoreDataMapping.plist */; };
+		269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BFF5B1814C649005D2950 /* ETSCoursesViewController.m */; };
+		26A65542182ABE6E00DEE9B7 /* NSURLRequest+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A65541182ABE6E00DEE9B7 /* NSURLRequest+API.m */; };
+		26AE185D17F296CD00DB1EB4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AE185B17F2966200DB1EB4 /* QuartzCore.framework */; };
+		26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */; };
+		26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */; };
+		26AF7CF618FB499200BD3982 /* ETSMoodleCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CF518FB499200BD3982 /* ETSMoodleCourse.m */; };
+		26AF7CF918FB641700BD3982 /* ETSMoodleCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CF818FB641700BD3982 /* ETSMoodleCourseDetailViewController.m */; };
+		26AF7CFF18FB8A0000BD3982 /* ETSMoodleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CFE18FB8A0000BD3982 /* ETSMoodleElement.m */; };
+		26B9A92818736265005D4410 /* ETSBandwidthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9A92718736265005D4410 /* ETSBandwidthViewController.m */; };
+		26B9A92C18736621005D4410 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9A92B18736621005D4410 /* CustomIOS7AlertView.m */; };
+		26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BB372B18F59580002CE5DD /* Main_iPad.storyboard */; };
+		26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */; };
+		26C0AC8E18EDCD82006ECF2B /* ETSNewsImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C0AC8D18EDCD82006ECF2B /* ETSNewsImageCell.m */; };
+		26C97886183AD1DE005D66EF /* ETSContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C97885183AD1DE005D66EF /* ETSContact.m */; };
+		26D44BA518E49BEF0006F9F0 /* ETSBandwidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D44BA418E49BEF0006F9F0 /* ETSBandwidth.m */; };
+		26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A717EA610D00469FA8 /* Foundation.framework */; };
+		26DD92AA17EA610D00469FA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A917EA610D00469FA8 /* CoreGraphics.framework */; };
+		26DD92AC17EA610D00469FA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AB17EA610D00469FA8 /* UIKit.framework */; };
+		26DD92AE17EA610D00469FA8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AD17EA610D00469FA8 /* CoreData.framework */; };
+		26DD92B417EA610D00469FA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92B217EA610D00469FA8 /* InfoPlist.strings */; };
+		26DD92B617EA610D00469FA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92B517EA610D00469FA8 /* main.m */; };
+		26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */; };
+		26DD92BD17EA610D00469FA8 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */; };
+		26DD92C317EA610D00469FA8 /* ETSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */; };
+		26DD92CB17EA610D00469FA8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92CA17EA610D00469FA8 /* Images.xcassets */; };
+		26DD92D217EA610D00469FA8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92D117EA610D00469FA8 /* XCTest.framework */; };
+		26DD92D317EA610D00469FA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A717EA610D00469FA8 /* Foundation.framework */; };
+		26DD92D417EA610D00469FA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AB17EA610D00469FA8 /* UIKit.framework */; };
+		26DD92D517EA610D00469FA8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AD17EA610D00469FA8 /* CoreData.framework */; };
+		26DD92DD17EA610D00469FA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92DB17EA610D00469FA8 /* InfoPlist.strings */; };
+		26DD92DF17EA610D00469FA8 /* ETSMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92DE17EA610D00469FA8 /* ETSMobileTests.m */; };
+		26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */; };
+		26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92F217EA625200469FA8 /* ETSNewsViewController.m */; };
+		26DEB70B18E9E99F00161421 /* MSCollectionViewCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB70A18E9E99F00161421 /* MSCollectionViewCalendarLayout.m */; };
+		26DEB74C18E9F2C000161421 /* ETSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB74B18E9F2C000161421 /* ETSCalendar.m */; };
+		26DEB88918EC97EC00161421 /* MSCurrentTimeGridline.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB87A18EC97EC00161421 /* MSCurrentTimeGridline.m */; };
+		26DEB88A18EC97EC00161421 /* MSCurrentTimeIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB87C18EC97EC00161421 /* MSCurrentTimeIndicator.m */; };
+		26DEB88B18EC97EC00161421 /* MSDayColumnHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB87E18EC97EC00161421 /* MSDayColumnHeader.m */; };
+		26DEB88C18EC97EC00161421 /* MSDayColumnHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB88018EC97EC00161421 /* MSDayColumnHeaderBackground.m */; };
+		26DEB88D18EC97EC00161421 /* MSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB88218EC97EC00161421 /* MSEventCell.m */; };
+		26DEB88E18EC97EC00161421 /* MSGridline.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB88418EC97EC00161421 /* MSGridline.m */; };
+		26DEB88F18EC97EC00161421 /* MSTimeRowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB88618EC97EC00161421 /* MSTimeRowHeader.m */; };
+		26DEB89018EC97EC00161421 /* MSTimeRowHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB88818EC97EC00161421 /* MSTimeRowHeaderBackground.m */; };
+		26DEB89318EC981100161421 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB89218EC981100161421 /* UIColor+HexString.m */; };
+		26DEB89618EC985600161421 /* NSDate+Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB89518EC985600161421 /* NSDate+Day.m */; };
+		26EF269818E612B8001D3454 /* ETSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EF269718E612B8001D3454 /* ETSCollectionViewController.m */; };
+		26EF269B18E70F12001D3454 /* ETSProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EF269A18E70F12001D3454 /* ETSProgram.m */; };
+		26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F393221829984F00995E16 /* ETSSessionHeader.m */; };
+		26F46A99183ED03400232B5A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F46A98183ED03400232B5A /* AVFoundation.framework */; };
+		26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */; };
+		9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */; };
+		9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */; };
+		9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC88726189ED56B002A3D04 /* MapKit.framework */; };
+		D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15F4AE3183992D00034605B /* ETSProfileViewController.m */; };
+		D15F4AE71839A80B0034605B /* ETSProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = D15F4AE61839A80B0034605B /* ETSProfile.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26DD92D617EA610D00469FA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26DD929C17EA610D00469FA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26DD92A317EA610D00469FA8;
+			remoteInfo = ETSMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D29A45E188DB82400CF02EB /* ETSCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCommentViewController.h; sourceTree = "<group>"; };
+		1D29A45F188DB82400CF02EB /* ETSCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCommentViewController.m; sourceTree = "<group>"; };
+		1D29A462188DB9E500CF02EB /* ETSCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCommentCell.h; sourceTree = "<group>"; };
+		1D29A463188DB9E500CF02EB /* ETSCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCommentCell.m; sourceTree = "<group>"; };
+		1D33BA22188F064600A5F1C8 /* ETSRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRateCell.h; sourceTree = "<group>"; };
+		1D33BA23188F064600A5F1C8 /* ETSRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRateCell.m; sourceTree = "<group>"; };
+		1D33BA25188F065600A5F1C8 /* ETSTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSTextCell.h; sourceTree = "<group>"; };
+		1D33BA26188F065600A5F1C8 /* ETSTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSTextCell.m; sourceTree = "<group>"; };
+		2601088D181596820037E795 /* ETSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCollectionViewController.h; sourceTree = "<group>"; };
+		26085B3C1829D84300FE35AB /* ETSAPIURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPIURL.plist; sourceTree = "<group>"; };
+		26085B3E1829D8D700FE35AB /* NSURL+API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+API.h"; sourceTree = "<group>"; };
+		26085B3F1829D8D700FE35AB /* NSURL+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+API.m"; sourceTree = "<group>"; };
+		26274F9F18F84BB200929CE2 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Vendors/TestFlightSDK3/libTestFlight.a; sourceTree = "<group>"; };
+		26274FA418F84CD800929CE2 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = Vendors/TestFlightSDK3/TestFlight.h; sourceTree = "<group>"; };
+		26274FA518F84CD800929CE2 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+AsyncLogging.h"; path = "Vendors/TestFlightSDK3/TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		26274FA618F84CD800929CE2 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+ManualSessions.h"; path = "Vendors/TestFlightSDK3/TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		26274FA818F84D6A00929CE2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		262A6344182B3DDA00B786A0 /* ETSCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourseDetailViewController.h; sourceTree = "<group>"; };
+		262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourseDetailViewController.m; sourceTree = "<group>"; };
+		263770921831AFB200D18F94 /* ETSEvaluation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSEvaluation.h; sourceTree = "<group>"; };
+		263770931831AFB200D18F94 /* ETSEvaluation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSEvaluation.m; sourceTree = "<group>"; };
+		263A4C401889D83000E38CAC /* ETSNewsDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsDetailsViewController.h; sourceTree = "<group>"; };
+		263A4C411889D83000E38CAC /* ETSNewsDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsDetailsViewController.m; sourceTree = "<group>"; };
+		263A4C44188B089800E38CAC /* ETSNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsCell.h; sourceTree = "<group>"; };
+		263A4C45188B089800E38CAC /* ETSNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsCell.m; sourceTree = "<group>"; };
+		263A4C4A188B14A800E38CAC /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		263A4C4B188B14A800E38CAC /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		263AC8E718464D9F00AD5B21 /* ETSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSEvent.h; sourceTree = "<group>"; };
+		263AC8E818464D9F00AD5B21 /* ETSEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSEvent.m; sourceTree = "<group>"; };
+		263FBD9718E4A0D0002E033E /* ETSEvaluationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSEvaluationCell.h; sourceTree = "<group>"; };
+		263FBD9818E4A0D0002E033E /* ETSEvaluationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSEvaluationCell.m; sourceTree = "<group>"; };
+		264ACF4D18DCDE0100928284 /* ETSSynchronization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSynchronization.h; sourceTree = "<group>"; };
+		264ACF4E18DCDE0100928284 /* ETSSynchronization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSynchronization.m; sourceTree = "<group>"; };
+		264E86C91884E7E7005F1820 /* NewsSources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NewsSources.plist; sourceTree = "<group>"; };
+		264E86CB18874E99005F1820 /* ETSNewsSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsSourceViewController.h; sourceTree = "<group>"; };
+		264E86CC18874E99005F1820 /* ETSNewsSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsSourceViewController.m; sourceTree = "<group>"; };
+		264E86CE188796A7005F1820 /* NSURL+Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Document.h"; sourceTree = "<group>"; };
+		264E86CF188796A7005F1820 /* NSURL+Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Document.m"; sourceTree = "<group>"; };
+		264E86D11887A24E005F1820 /* ETSNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNews.h; sourceTree = "<group>"; };
+		264E86D21887A24E005F1820 /* ETSNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNews.m; sourceTree = "<group>"; };
+		265FDFBD18E0C50400371078 /* ETSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCalendarViewController.h; sourceTree = "<group>"; };
+		265FDFBE18E0C50400371078 /* ETSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCalendarViewController.m; sourceTree = "<group>"; };
+		26634D881881D91900644FFB /* ETSBandwidthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidthCell.h; sourceTree = "<group>"; };
+		26634D891881D91900644FFB /* ETSBandwidthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidthCell.m; sourceTree = "<group>"; };
+		26634D8B1881F2FF00644FFB /* ETSLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSLoginView.h; sourceTree = "<group>"; };
+		26634D8C1881F2FF00644FFB /* ETSLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSLoginView.m; sourceTree = "<group>"; };
+		26634D931881F6C100644FFB /* ETSCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCoreDataHelper.h; sourceTree = "<group>"; };
+		26634D941881F6C100644FFB /* ETSCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCoreDataHelper.m; sourceTree = "<group>"; };
+		266BE77D17ECEFF300F44252 /* MFSideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSideMenu.h; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenu.h; sourceTree = "<group>"; };
+		266BE77E17ECEFF300F44252 /* MFSideMenuContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSideMenuContainerViewController.h; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuContainerViewController.h; sourceTree = "<group>"; };
+		266BE77F17ECEFF300F44252 /* MFSideMenuContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFSideMenuContainerViewController.m; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuContainerViewController.m; sourceTree = "<group>"; };
+		266BE78017ECEFF300F44252 /* MFSideMenuShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFSideMenuShadow.h; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuShadow.h; sourceTree = "<group>"; };
+		266BE78117ECEFF300F44252 /* MFSideMenuShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFSideMenuShadow.m; path = Vendors/MFSideMenu/MFSideMenu/MFSideMenuShadow.m; sourceTree = "<group>"; };
+		266BE78217ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MFSideMenuAdditions.h"; path = "Vendors/MFSideMenu/MFSideMenu/UIViewController+MFSideMenuAdditions.h"; sourceTree = "<group>"; };
+		266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MFSideMenuAdditions.m"; path = "Vendors/MFSideMenu/MFSideMenu/UIViewController+MFSideMenuAdditions.m"; sourceTree = "<group>"; };
+		266ED33E182EC29D00DC1280 /* ETSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSTableViewController.h; sourceTree = "<group>"; };
+		266ED33F182EC29D00DC1280 /* ETSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSTableViewController.m; sourceTree = "<group>"; };
+		266ED34E18300D2900DC1280 /* ETSCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourse.h; sourceTree = "<group>"; };
+		266ED34F18300D2900DC1280 /* ETSCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourse.m; sourceTree = "<group>"; };
+		266F0B6018F4ED6B000F53C1 /* ETSSecurityProcedureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityProcedureViewController.h; sourceTree = "<group>"; };
+		266F0B6118F4ED6B000F53C1 /* ETSSecurityProcedureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSecurityProcedureViewController.m; sourceTree = "<group>"; };
+		266F0B6418F4EF22000F53C1 /* APPEL_A_LA_BOMBE_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "APPEL_A_LA_BOMBE_2009-04-01.pdf"; sourceTree = "<group>"; };
+		266F0B6518F4EF22000F53C1 /* COLIS_SUSPECT_ET_NRBC_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "COLIS_SUSPECT_ET_NRBC_2009-04-01.pdf"; sourceTree = "<group>"; };
+		266F0B6618F4EF22000F53C1 /* INCENDIE_EVACUATION_URGENCE.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = INCENDIE_EVACUATION_URGENCE.pdf; sourceTree = "<group>"; };
+		266F0B6718F4EF22000F53C1 /* ODEUR_SUSPECTE_FUITE_DE_GAZ_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ODEUR_SUSPECTE_FUITE_DE_GAZ_2009-04-01.pdf"; sourceTree = "<group>"; };
+		266F0B6818F4EF22000F53C1 /* PANNE_D_ASCENSEUR_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "PANNE_D_ASCENSEUR_2009-04-01.pdf"; sourceTree = "<group>"; };
+		266F0B6918F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "PANNE_ELECTRIQUE_2009-04-01.pdf"; sourceTree = "<group>"; };
+		266F0B6A18F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "PERSONNE_ARMEE_2009-04-01.pdf"; sourceTree = "<group>"; };
+		266F0B6B18F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "URGENCE_MEDICALE_2009-04-01.pdf"; sourceTree = "<group>"; };
+		2670C00F18F35EED00A4B0D6 /* SecuritySources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SecuritySources.plist; sourceTree = "<group>"; };
+		26887B7018F090C500009EBA /* ETSRadioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRadioCell.h; sourceTree = "<group>"; };
+		26887B7118F090C500009EBA /* ETSRadioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRadioCell.m; sourceTree = "<group>"; };
+		26887B7518F1BA5800009EBA /* ETSAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSAboutViewController.h; sourceTree = "<group>"; };
+		26887B7618F1BA5800009EBA /* ETSAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSAboutViewController.m; sourceTree = "<group>"; };
+		26887B7918F1D36600009EBA /* ETSSponsorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSponsorsViewController.h; sourceTree = "<group>"; };
+		26887B7A18F1D36600009EBA /* ETSSponsorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSponsorsViewController.m; sourceTree = "<group>"; };
+		26887B7C18F1D7B400009EBA /* ETSSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSession.h; sourceTree = "<group>"; };
+		26887B7D18F1D7B400009EBA /* ETSSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSession.m; sourceTree = "<group>"; };
+		268E8DEA18FB03F900D501E9 /* ETSMoodleCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMoodleCoursesViewController.h; sourceTree = "<group>"; };
+		268E8DEB18FB03F900D501E9 /* ETSMoodleCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMoodleCoursesViewController.m; sourceTree = "<group>"; };
+		2690F602183D088700FAD05A /* ETSWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSWebViewViewController.h; sourceTree = "<group>"; };
+		2690F603183D088700FAD05A /* ETSWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSWebViewViewController.m; sourceTree = "<group>"; };
+		2693168618359EE200DE95A0 /* ETSDirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSDirectoryViewController.h; sourceTree = "<group>"; };
+		2693168718359EE200DE95A0 /* ETSDirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSDirectoryViewController.m; sourceTree = "<group>"; };
+		269316931835DA2900DE95A0 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		269316951835DA2D00DE95A0 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		2698C6F01827498800F6281F /* ETSAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSAuthenticationViewController.h; sourceTree = "<group>"; };
+		2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSAuthenticationViewController.m; sourceTree = "<group>"; };
+		2698C6F318274F4B00F6281F /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainItemWrapper.h; path = Vendors/KeychainWrapper/KeychainItemWrapper.h; sourceTree = "<group>"; };
+		2698C6F418274F4B00F6281F /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = Vendors/KeychainWrapper/KeychainItemWrapper.m; sourceTree = "<group>"; };
+		2698C6F8182834E000F6281F /* ETSCourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourseCell.h; sourceTree = "<group>"; };
+		2698C6F9182834E000F6281F /* ETSCourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourseCell.m; sourceTree = "<group>"; };
+		269BFF541811A41C005D2950 /* NSManagedObject+SetValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+SetValues.h"; sourceTree = "<group>"; };
+		269BFF551811A41C005D2950 /* NSManagedObject+SetValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+SetValues.m"; sourceTree = "<group>"; };
+		269BFF571811A640005D2950 /* ETSAPICoreDataMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPICoreDataMapping.plist; sourceTree = "<group>"; };
+		269BFF5A1814C649005D2950 /* ETSCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCoursesViewController.h; sourceTree = "<group>"; };
+		269BFF5B1814C649005D2950 /* ETSCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCoursesViewController.m; sourceTree = "<group>"; };
+		26A65540182ABE6E00DEE9B7 /* NSURLRequest+API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+API.h"; sourceTree = "<group>"; };
+		26A65541182ABE6E00DEE9B7 /* NSURLRequest+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+API.m"; sourceTree = "<group>"; };
+		26AE185B17F2966200DB1EB4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		26AE186017F327AC00DB1EB4 /* UIColor+Styles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Styles.h"; sourceTree = "<group>"; };
+		26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Styles.m"; sourceTree = "<group>"; };
+		26AE186417F32CC800DB1EB4 /* UIStoryboard+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+ViewController.h"; sourceTree = "<group>"; };
+		26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+ViewController.m"; sourceTree = "<group>"; };
+		26AF7CF418FB499200BD3982 /* ETSMoodleCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMoodleCourse.h; sourceTree = "<group>"; };
+		26AF7CF518FB499200BD3982 /* ETSMoodleCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMoodleCourse.m; sourceTree = "<group>"; };
+		26AF7CF718FB641700BD3982 /* ETSMoodleCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMoodleCourseDetailViewController.h; sourceTree = "<group>"; };
+		26AF7CF818FB641700BD3982 /* ETSMoodleCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMoodleCourseDetailViewController.m; sourceTree = "<group>"; };
+		26AF7CFD18FB8A0000BD3982 /* ETSMoodleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMoodleElement.h; sourceTree = "<group>"; };
+		26AF7CFE18FB8A0000BD3982 /* ETSMoodleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMoodleElement.m; sourceTree = "<group>"; };
+		26B9A92618736265005D4410 /* ETSBandwidthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidthViewController.h; sourceTree = "<group>"; };
+		26B9A92718736265005D4410 /* ETSBandwidthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidthViewController.m; sourceTree = "<group>"; };
+		26B9A92A18736621005D4410 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomIOS7AlertView.h; path = "Vendors/ios-custom-alertview/CustomIOS7AlertView/CustomIOS7AlertView/View/CustomIOS7AlertView.h"; sourceTree = "<group>"; };
+		26B9A92B18736621005D4410 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomIOS7AlertView.m; path = "Vendors/ios-custom-alertview/CustomIOS7AlertView/CustomIOS7AlertView/View/CustomIOS7AlertView.m"; sourceTree = "<group>"; };
+		26BB372C18F59580002CE5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ETSMobile/Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		26BB372E18F5E77E002CE5DD /* ETSCoursesViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCoursesViewController_iPad.h; sourceTree = "<group>"; };
+		26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCoursesViewController_iPad.m; sourceTree = "<group>"; };
+		26C0AC8C18EDCD82006ECF2B /* ETSNewsImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsImageCell.h; sourceTree = "<group>"; };
+		26C0AC8D18EDCD82006ECF2B /* ETSNewsImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsImageCell.m; sourceTree = "<group>"; };
+		26C97884183AD1DE005D66EF /* ETSContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSContact.h; sourceTree = "<group>"; };
+		26C97885183AD1DE005D66EF /* ETSContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSContact.m; sourceTree = "<group>"; };
+		26D44BA318E49BEF0006F9F0 /* ETSBandwidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidth.h; sourceTree = "<group>"; };
+		26D44BA418E49BEF0006F9F0 /* ETSBandwidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidth.m; sourceTree = "<group>"; };
+		26DD92A417EA610D00469FA8 /* ETSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26DD92A717EA610D00469FA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		26DD92A917EA610D00469FA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		26DD92AB17EA610D00469FA8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		26DD92AD17EA610D00469FA8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		26DD92B117EA610D00469FA8 /* ETSMobile-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ETSMobile-Info.plist"; sourceTree = "<group>"; };
+		26DD92B317EA610D00469FA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		26DD92B517EA610D00469FA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		26DD92B717EA610D00469FA8 /* ETSMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ETSMobile-Prefix.pch"; sourceTree = "<group>"; };
+		26DD92B817EA610D00469FA8 /* ETSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSAppDelegate.h; sourceTree = "<group>"; };
+		26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSAppDelegate.m; sourceTree = "<group>"; };
+		26DD92BC17EA610D00469FA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		26DD92C217EA610D00469FA8 /* ETSMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ETSMobile.xcdatamodel; sourceTree = "<group>"; };
+		26DD92CA17EA610D00469FA8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		26DD92D017EA610D00469FA8 /* ETSMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ETSMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26DD92D117EA610D00469FA8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		26DD92DA17EA610D00469FA8 /* ETSMobileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ETSMobileTests-Info.plist"; sourceTree = "<group>"; };
+		26DD92DC17EA610D00469FA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		26DD92DE17EA610D00469FA8 /* ETSMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSMobileTests.m; sourceTree = "<group>"; };
+		26DD92EE17EA624A00469FA8 /* ETSMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMenuViewController.h; sourceTree = "<group>"; };
+		26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMenuViewController.m; sourceTree = "<group>"; };
+		26DD92F117EA625200469FA8 /* ETSNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsViewController.h; sourceTree = "<group>"; };
+		26DD92F217EA625200469FA8 /* ETSNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsViewController.m; sourceTree = "<group>"; };
+		26DEB70918E9E99F00161421 /* MSCollectionViewCalendarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCollectionViewCalendarLayout.h; path = Vendors/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.h; sourceTree = "<group>"; };
+		26DEB70A18E9E99F00161421 /* MSCollectionViewCalendarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCollectionViewCalendarLayout.m; path = Vendors/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.m; sourceTree = "<group>"; };
+		26DEB74A18E9F2C000161421 /* ETSCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCalendar.h; sourceTree = "<group>"; };
+		26DEB74B18E9F2C000161421 /* ETSCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCalendar.m; sourceTree = "<group>"; };
+		26DEB87918EC97EC00161421 /* MSCurrentTimeGridline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCurrentTimeGridline.h; sourceTree = "<group>"; };
+		26DEB87A18EC97EC00161421 /* MSCurrentTimeGridline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCurrentTimeGridline.m; sourceTree = "<group>"; };
+		26DEB87B18EC97EC00161421 /* MSCurrentTimeIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCurrentTimeIndicator.h; sourceTree = "<group>"; };
+		26DEB87C18EC97EC00161421 /* MSCurrentTimeIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCurrentTimeIndicator.m; sourceTree = "<group>"; };
+		26DEB87D18EC97EC00161421 /* MSDayColumnHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDayColumnHeader.h; sourceTree = "<group>"; };
+		26DEB87E18EC97EC00161421 /* MSDayColumnHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDayColumnHeader.m; sourceTree = "<group>"; };
+		26DEB87F18EC97EC00161421 /* MSDayColumnHeaderBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDayColumnHeaderBackground.h; sourceTree = "<group>"; };
+		26DEB88018EC97EC00161421 /* MSDayColumnHeaderBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDayColumnHeaderBackground.m; sourceTree = "<group>"; };
+		26DEB88118EC97EC00161421 /* MSEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSEventCell.h; sourceTree = "<group>"; };
+		26DEB88218EC97EC00161421 /* MSEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEventCell.m; sourceTree = "<group>"; };
+		26DEB88318EC97EC00161421 /* MSGridline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGridline.h; sourceTree = "<group>"; };
+		26DEB88418EC97EC00161421 /* MSGridline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGridline.m; sourceTree = "<group>"; };
+		26DEB88518EC97EC00161421 /* MSTimeRowHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTimeRowHeader.h; sourceTree = "<group>"; };
+		26DEB88618EC97EC00161421 /* MSTimeRowHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTimeRowHeader.m; sourceTree = "<group>"; };
+		26DEB88718EC97EC00161421 /* MSTimeRowHeaderBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTimeRowHeaderBackground.h; sourceTree = "<group>"; };
+		26DEB88818EC97EC00161421 /* MSTimeRowHeaderBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTimeRowHeaderBackground.m; sourceTree = "<group>"; };
+		26DEB89118EC981100161421 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
+		26DEB89218EC981100161421 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
+		26DEB89418EC985600161421 /* NSDate+Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Day.h"; sourceTree = "<group>"; };
+		26DEB89518EC985600161421 /* NSDate+Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Day.m"; sourceTree = "<group>"; };
+		26EF269718E612B8001D3454 /* ETSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCollectionViewController.m; sourceTree = "<group>"; };
+		26EF269918E70F12001D3454 /* ETSProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProgram.h; sourceTree = "<group>"; };
+		26EF269A18E70F12001D3454 /* ETSProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSProgram.m; sourceTree = "<group>"; };
+		26F393211829984F00995E16 /* ETSSessionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSessionHeader.h; sourceTree = "<group>"; };
+		26F393221829984F00995E16 /* ETSSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSessionHeader.m; sourceTree = "<group>"; };
+		26F3CD3E184FCF5100536ADB /* ETSMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ETSMobile.entitlements; sourceTree = "<group>"; };
+		26F46A98183ED03400232B5A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		26F46A9A183ED0E200232B5A /* ETSRadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRadioViewController.h; sourceTree = "<group>"; };
+		26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRadioViewController.m; sourceTree = "<group>"; };
+		9C5799CF18EC7F2D00AD8838 /* ETSSecurityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityDetailViewController.h; sourceTree = "<group>"; };
+		9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSecurityDetailViewController.m; sourceTree = "<group>"; };
+		9CC88722189ECF43002A3D04 /* ETSSecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityViewController.h; sourceTree = "<group>"; };
+		9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSecurityViewController.m; sourceTree = "<group>"; };
+		9CC88726189ED56B002A3D04 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D15F4AE2183992D00034605B /* ETSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProfileViewController.h; sourceTree = "<group>"; };
+		D15F4AE3183992D00034605B /* ETSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSProfileViewController.m; sourceTree = "<group>"; };
+		D15F4AE51839A80B0034605B /* ETSProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProfile.h; sourceTree = "<group>"; };
+		D15F4AE61839A80B0034605B /* ETSProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSProfile.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26DD92A117EA610D00469FA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */,
+				26274FA718F84D2500929CE2 /* libTestFlight.a in Frameworks */,
+				9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */,
+				26F46A99183ED03400232B5A /* AVFoundation.framework in Frameworks */,
+				269316961835DA2D00DE95A0 /* AddressBookUI.framework in Frameworks */,
+				269316941835DA2900DE95A0 /* AddressBook.framework in Frameworks */,
+				26AE185D17F296CD00DB1EB4 /* QuartzCore.framework in Frameworks */,
+				26DD92AA17EA610D00469FA8 /* CoreGraphics.framework in Frameworks */,
+				26DD92AE17EA610D00469FA8 /* CoreData.framework in Frameworks */,
+				26DD92AC17EA610D00469FA8 /* UIKit.framework in Frameworks */,
+				26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DD92CD17EA610D00469FA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DD92D217EA610D00469FA8 /* XCTest.framework in Frameworks */,
+				26DD92D517EA610D00469FA8 /* CoreData.framework in Frameworks */,
+				26DD92D417EA610D00469FA8 /* UIKit.framework in Frameworks */,
+				26DD92D317EA610D00469FA8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D29A45D188DB80800CF02EB /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				1D29A45E188DB82400CF02EB /* ETSCommentViewController.h */,
+				1D29A45F188DB82400CF02EB /* ETSCommentViewController.m */,
+			);
+			name = Comment;
+			sourceTree = "<group>";
+		};
+		1D29A461188DB9D100CF02EB /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				1D29A462188DB9E500CF02EB /* ETSCommentCell.h */,
+				1D29A463188DB9E500CF02EB /* ETSCommentCell.m */,
+				1D33BA22188F064600A5F1C8 /* ETSRateCell.h */,
+				1D33BA23188F064600A5F1C8 /* ETSRateCell.m */,
+				1D33BA25188F065600A5F1C8 /* ETSTextCell.h */,
+				1D33BA26188F065600A5F1C8 /* ETSTextCell.m */,
+			);
+			name = Comment;
+			sourceTree = "<group>";
+		};
+		260108901815968D0037E795 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				264ACF4D18DCDE0100928284 /* ETSSynchronization.h */,
+				264ACF4E18DCDE0100928284 /* ETSSynchronization.m */,
+				2601088D181596820037E795 /* ETSCollectionViewController.h */,
+				26EF269718E612B8001D3454 /* ETSCollectionViewController.m */,
+				266ED33E182EC29D00DC1280 /* ETSTableViewController.h */,
+				266ED33F182EC29D00DC1280 /* ETSTableViewController.m */,
+				2698C6F01827498800F6281F /* ETSAuthenticationViewController.h */,
+				2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */,
+				2690F602183D088700FAD05A /* ETSWebViewViewController.h */,
+				2690F603183D088700FAD05A /* ETSWebViewViewController.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		26274F9E18F84BA100929CE2 /* TestFlight */ = {
+			isa = PBXGroup;
+			children = (
+				26274FA418F84CD800929CE2 /* TestFlight.h */,
+				26274FA518F84CD800929CE2 /* TestFlight+AsyncLogging.h */,
+				26274FA618F84CD800929CE2 /* TestFlight+ManualSessions.h */,
+				26274F9F18F84BB200929CE2 /* libTestFlight.a */,
+			);
+			name = TestFlight;
+			sourceTree = "<group>";
+		};
+		263A4C43188B088100E38CAC /* News */ = {
+			isa = PBXGroup;
+			children = (
+				263A4C44188B089800E38CAC /* ETSNewsCell.h */,
+				263A4C45188B089800E38CAC /* ETSNewsCell.m */,
+				26C0AC8C18EDCD82006ECF2B /* ETSNewsImageCell.h */,
+				26C0AC8D18EDCD82006ECF2B /* ETSNewsImageCell.m */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		265FDFBC18E0C4DE00371078 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				265FDFBD18E0C50400371078 /* ETSCalendarViewController.h */,
+				265FDFBE18E0C50400371078 /* ETSCalendarViewController.m */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
+		26634D871881D90200644FFB /* Bandwidth */ = {
+			isa = PBXGroup;
+			children = (
+				26634D881881D91900644FFB /* ETSBandwidthCell.h */,
+				26634D891881D91900644FFB /* ETSBandwidthCell.m */,
+				26634D8B1881F2FF00644FFB /* ETSLoginView.h */,
+				26634D8C1881F2FF00644FFB /* ETSLoginView.m */,
+			);
+			name = Bandwidth;
+			sourceTree = "<group>";
+		};
+		266BE77C17ECEFDA00F44252 /* MFSideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				266BE77D17ECEFF300F44252 /* MFSideMenu.h */,
+				266BE77E17ECEFF300F44252 /* MFSideMenuContainerViewController.h */,
+				266BE77F17ECEFF300F44252 /* MFSideMenuContainerViewController.m */,
+				266BE78017ECEFF300F44252 /* MFSideMenuShadow.h */,
+				266BE78117ECEFF300F44252 /* MFSideMenuShadow.m */,
+				266BE78217ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.h */,
+				266BE78317ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m */,
+			);
+			name = MFSideMenu;
+			sourceTree = "<group>";
+		};
+		266F0B6318F4EEFC000F53C1 /* Procedures */ = {
+			isa = PBXGroup;
+			children = (
+				266F0B6418F4EF22000F53C1 /* APPEL_A_LA_BOMBE_2009-04-01.pdf */,
+				266F0B6518F4EF22000F53C1 /* COLIS_SUSPECT_ET_NRBC_2009-04-01.pdf */,
+				266F0B6618F4EF22000F53C1 /* INCENDIE_EVACUATION_URGENCE.pdf */,
+				266F0B6718F4EF22000F53C1 /* ODEUR_SUSPECTE_FUITE_DE_GAZ_2009-04-01.pdf */,
+				266F0B6818F4EF22000F53C1 /* PANNE_D_ASCENSEUR_2009-04-01.pdf */,
+				266F0B6918F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf */,
+				266F0B6A18F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf */,
+				266F0B6B18F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf */,
+			);
+			name = Procedures;
+			sourceTree = "<group>";
+		};
+		26887B6E18F0908600009EBA /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				26887B7018F090C500009EBA /* ETSRadioCell.h */,
+				26887B7118F090C500009EBA /* ETSRadioCell.m */,
+			);
+			name = Radio;
+			sourceTree = "<group>";
+		};
+		26887B6F18F0909000009EBA /* ETS */ = {
+			isa = PBXGroup;
+			children = (
+				26DEB88118EC97EC00161421 /* MSEventCell.h */,
+				26DEB88218EC97EC00161421 /* MSEventCell.m */,
+			);
+			name = ETS;
+			sourceTree = "<group>";
+		};
+		26887B7418F1BA1E00009EBA /* About */ = {
+			isa = PBXGroup;
+			children = (
+				26887B7518F1BA5800009EBA /* ETSAboutViewController.h */,
+				26887B7618F1BA5800009EBA /* ETSAboutViewController.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		26887B7818F1D33000009EBA /* Sponsors */ = {
+			isa = PBXGroup;
+			children = (
+				26887B7918F1D36600009EBA /* ETSSponsorsViewController.h */,
+				26887B7A18F1D36600009EBA /* ETSSponsorsViewController.m */,
+			);
+			name = Sponsors;
+			sourceTree = "<group>";
+		};
+		268E8DE918FB03A400D501E9 /* Moodle */ = {
+			isa = PBXGroup;
+			children = (
+				268E8DEA18FB03F900D501E9 /* ETSMoodleCoursesViewController.h */,
+				268E8DEB18FB03F900D501E9 /* ETSMoodleCoursesViewController.m */,
+				26AF7CF718FB641700BD3982 /* ETSMoodleCourseDetailViewController.h */,
+				26AF7CF818FB641700BD3982 /* ETSMoodleCourseDetailViewController.m */,
+			);
+			name = Moodle;
+			sourceTree = "<group>";
+		};
+		2693168518359ECA00DE95A0 /* Directory */ = {
+			isa = PBXGroup;
+			children = (
+				2693168618359EE200DE95A0 /* ETSDirectoryViewController.h */,
+				2693168718359EE200DE95A0 /* ETSDirectoryViewController.m */,
+			);
+			name = Directory;
+			sourceTree = "<group>";
+		};
+		2698C6F618274F4F00F6281F /* KeychainWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				2698C6F318274F4B00F6281F /* KeychainItemWrapper.h */,
+				2698C6F418274F4B00F6281F /* KeychainItemWrapper.m */,
+			);
+			name = KeychainWrapper;
+			sourceTree = "<group>";
+		};
+		2698C6FB182834E500F6281F /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				2698C6F8182834E000F6281F /* ETSCourseCell.h */,
+				2698C6F9182834E000F6281F /* ETSCourseCell.m */,
+				26F393211829984F00995E16 /* ETSSessionHeader.h */,
+				26F393221829984F00995E16 /* ETSSessionHeader.m */,
+				263FBD9718E4A0D0002E033E /* ETSEvaluationCell.h */,
+				263FBD9818E4A0D0002E033E /* ETSEvaluationCell.m */,
+			);
+			name = Courses;
+			sourceTree = "<group>";
+		};
+		269BFF591814C627005D2950 /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				269BFF5A1814C649005D2950 /* ETSCoursesViewController.h */,
+				269BFF5B1814C649005D2950 /* ETSCoursesViewController.m */,
+				26BB372E18F5E77E002CE5DD /* ETSCoursesViewController_iPad.h */,
+				26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */,
+				262A6344182B3DDA00B786A0 /* ETSCourseDetailViewController.h */,
+				262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */,
+			);
+			name = Courses;
+			sourceTree = "<group>";
+		};
+		26AE185E17F3275600DB1EB4 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				26AE186017F327AC00DB1EB4 /* UIColor+Styles.h */,
+				26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */,
+			);
+			name = Styles;
+			sourceTree = "<group>";
+		};
+		26AE186317F32CA400DB1EB4 /* Categories & Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				26DEB89418EC985600161421 /* NSDate+Day.h */,
+				26DEB89518EC985600161421 /* NSDate+Day.m */,
+				26DEB89118EC981100161421 /* UIColor+HexString.h */,
+				26DEB89218EC981100161421 /* UIColor+HexString.m */,
+				26AE186417F32CC800DB1EB4 /* UIStoryboard+ViewController.h */,
+				26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */,
+				269BFF541811A41C005D2950 /* NSManagedObject+SetValues.h */,
+				269BFF551811A41C005D2950 /* NSManagedObject+SetValues.m */,
+				26085B3E1829D8D700FE35AB /* NSURL+API.h */,
+				26085B3F1829D8D700FE35AB /* NSURL+API.m */,
+				26A65540182ABE6E00DEE9B7 /* NSURLRequest+API.h */,
+				26A65541182ABE6E00DEE9B7 /* NSURLRequest+API.m */,
+				26634D931881F6C100644FFB /* ETSCoreDataHelper.h */,
+				26634D941881F6C100644FFB /* ETSCoreDataHelper.m */,
+				264E86CE188796A7005F1820 /* NSURL+Document.h */,
+				264E86CF188796A7005F1820 /* NSURL+Document.m */,
+				263A4C4A188B14A800E38CAC /* NSString+HTML.h */,
+				263A4C4B188B14A800E38CAC /* NSString+HTML.m */,
+			);
+			name = "Categories & Helpers";
+			sourceTree = "<group>";
+		};
+		26B9A92518736239005D4410 /* Bandwidth */ = {
+			isa = PBXGroup;
+			children = (
+				26B9A92618736265005D4410 /* ETSBandwidthViewController.h */,
+				26B9A92718736265005D4410 /* ETSBandwidthViewController.m */,
+			);
+			name = Bandwidth;
+			sourceTree = "<group>";
+		};
+		26B9A929187365F0005D4410 /* ios-custom-alertview */ = {
+			isa = PBXGroup;
+			children = (
+				26B9A92A18736621005D4410 /* CustomIOS7AlertView.h */,
+				26B9A92B18736621005D4410 /* CustomIOS7AlertView.m */,
+			);
+			name = "ios-custom-alertview";
+			sourceTree = "<group>";
+		};
+		26DD929B17EA610D00469FA8 = {
+			isa = PBXGroup;
+			children = (
+				26DD92EB17EA615E00469FA8 /* Vendors */,
+				26DD92AF17EA610D00469FA8 /* ETSMobile */,
+				26DD92D817EA610D00469FA8 /* ETSMobileTests */,
+				26DD92A617EA610D00469FA8 /* Frameworks */,
+				26DD92A517EA610D00469FA8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26DD92A517EA610D00469FA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26DD92A417EA610D00469FA8 /* ETSMobile.app */,
+				26DD92D017EA610D00469FA8 /* ETSMobileTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26DD92A617EA610D00469FA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26274FA818F84D6A00929CE2 /* libz.dylib */,
+				9CC88726189ED56B002A3D04 /* MapKit.framework */,
+				26F46A98183ED03400232B5A /* AVFoundation.framework */,
+				269316951835DA2D00DE95A0 /* AddressBookUI.framework */,
+				269316931835DA2900DE95A0 /* AddressBook.framework */,
+				26AE185B17F2966200DB1EB4 /* QuartzCore.framework */,
+				26DD92A717EA610D00469FA8 /* Foundation.framework */,
+				26DD92A917EA610D00469FA8 /* CoreGraphics.framework */,
+				26DD92AB17EA610D00469FA8 /* UIKit.framework */,
+				26DD92AD17EA610D00469FA8 /* CoreData.framework */,
+				26DD92D117EA610D00469FA8 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26DD92AF17EA610D00469FA8 /* ETSMobile */ = {
+			isa = PBXGroup;
+			children = (
+				26F3CD3E184FCF5100536ADB /* ETSMobile.entitlements */,
+				26DD92E817EA612800469FA8 /* Models */,
+				26DD92E917EA613400469FA8 /* Controllers */,
+				26DD92EA17EA613C00469FA8 /* Views */,
+				26AE185E17F3275600DB1EB4 /* Styles */,
+				26AE186317F32CA400DB1EB4 /* Categories & Helpers */,
+				26DD92B817EA610D00469FA8 /* ETSAppDelegate.h */,
+				26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */,
+				26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */,
+				26BB372B18F59580002CE5DD /* Main_iPad.storyboard */,
+				26DD92CA17EA610D00469FA8 /* Images.xcassets */,
+				26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */,
+				26DD92B017EA610D00469FA8 /* Supporting Files */,
+			);
+			path = ETSMobile;
+			sourceTree = "<group>";
+		};
+		26DD92B017EA610D00469FA8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				266F0B6318F4EEFC000F53C1 /* Procedures */,
+				2670C00F18F35EED00A4B0D6 /* SecuritySources.plist */,
+				269BFF571811A640005D2950 /* ETSAPICoreDataMapping.plist */,
+				26DD92B117EA610D00469FA8 /* ETSMobile-Info.plist */,
+				26085B3C1829D84300FE35AB /* ETSAPIURL.plist */,
+				26DD92B217EA610D00469FA8 /* InfoPlist.strings */,
+				26DD92B517EA610D00469FA8 /* main.m */,
+				26DD92B717EA610D00469FA8 /* ETSMobile-Prefix.pch */,
+				264E86C91884E7E7005F1820 /* NewsSources.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26DD92D817EA610D00469FA8 /* ETSMobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				26DD92DE17EA610D00469FA8 /* ETSMobileTests.m */,
+				26DD92D917EA610D00469FA8 /* Supporting Files */,
+			);
+			path = ETSMobileTests;
+			sourceTree = "<group>";
+		};
+		26DD92D917EA610D00469FA8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26DD92DA17EA610D00469FA8 /* ETSMobileTests-Info.plist */,
+				26DD92DB17EA610D00469FA8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26DD92E817EA612800469FA8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				26AF7CF418FB499200BD3982 /* ETSMoodleCourse.h */,
+				26AF7CF518FB499200BD3982 /* ETSMoodleCourse.m */,
+				26AF7CFD18FB8A0000BD3982 /* ETSMoodleElement.h */,
+				26AF7CFE18FB8A0000BD3982 /* ETSMoodleElement.m */,
+				26887B7C18F1D7B400009EBA /* ETSSession.h */,
+				26887B7D18F1D7B400009EBA /* ETSSession.m */,
+				26DEB74A18E9F2C000161421 /* ETSCalendar.h */,
+				26DEB74B18E9F2C000161421 /* ETSCalendar.m */,
+				26EF269918E70F12001D3454 /* ETSProgram.h */,
+				26EF269A18E70F12001D3454 /* ETSProgram.m */,
+				264E86D11887A24E005F1820 /* ETSNews.h */,
+				264E86D21887A24E005F1820 /* ETSNews.m */,
+				26D44BA318E49BEF0006F9F0 /* ETSBandwidth.h */,
+				26D44BA418E49BEF0006F9F0 /* ETSBandwidth.m */,
+				26C97884183AD1DE005D66EF /* ETSContact.h */,
+				26C97885183AD1DE005D66EF /* ETSContact.m */,
+				266ED34E18300D2900DC1280 /* ETSCourse.h */,
+				266ED34F18300D2900DC1280 /* ETSCourse.m */,
+				D15F4AE51839A80B0034605B /* ETSProfile.h */,
+				D15F4AE61839A80B0034605B /* ETSProfile.m */,
+				263770921831AFB200D18F94 /* ETSEvaluation.h */,
+				263770931831AFB200D18F94 /* ETSEvaluation.m */,
+				263AC8E718464D9F00AD5B21 /* ETSEvent.h */,
+				263AC8E818464D9F00AD5B21 /* ETSEvent.m */,
+				264E86D11887A24E005F1820 /* ETSNews.h */,
+				264E86D21887A24E005F1820 /* ETSNews.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		26DD92E917EA613400469FA8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				260108901815968D0037E795 /* Base */,
+				26DD92ED17EA623300469FA8 /* Menu */,
+				268E8DE918FB03A400D501E9 /* Moodle */,
+				265FDFBC18E0C4DE00371078 /* Calendar */,
+				1D29A45D188DB80800CF02EB /* Comment */,
+				269BFF591814C627005D2950 /* Courses */,
+				2693168518359ECA00DE95A0 /* Directory */,
+				D15F4AE1183992A10034605B /* Profile */,
+				26DD92EC17EA622D00469FA8 /* News */,
+				26F46A9D183ED0EE00232B5A /* Radio */,
+				26B9A92518736239005D4410 /* Bandwidth */,
+				26887B7418F1BA1E00009EBA /* About */,
+				26887B7818F1D33000009EBA /* Sponsors */,
+				9C5071E6189AF5D8000CB45E /* Security */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		26DD92EA17EA613C00469FA8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				26DEB87818EC97D600161421 /* Calendar */,
+				263A4C43188B088100E38CAC /* News */,
+				1D29A461188DB9D100CF02EB /* Comment */,
+				26634D871881D90200644FFB /* Bandwidth */,
+				2698C6FB182834E500F6281F /* Courses */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		26DD92EB17EA615E00469FA8 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				26274F9E18F84BA100929CE2 /* TestFlight */,
+				26DEB6ED18E9E96800161421 /* MSCollectionViewCalendarLayout */,
+				26B9A929187365F0005D4410 /* ios-custom-alertview */,
+				2698C6F618274F4F00F6281F /* KeychainWrapper */,
+				266BE77C17ECEFDA00F44252 /* MFSideMenu */,
+			);
+			name = Vendors;
+			sourceTree = "<group>";
+		};
+		26DD92EC17EA622D00469FA8 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				26DD92F117EA625200469FA8 /* ETSNewsViewController.h */,
+				26DD92F217EA625200469FA8 /* ETSNewsViewController.m */,
+				264E86CB18874E99005F1820 /* ETSNewsSourceViewController.h */,
+				264E86CC18874E99005F1820 /* ETSNewsSourceViewController.m */,
+				263A4C401889D83000E38CAC /* ETSNewsDetailsViewController.h */,
+				263A4C411889D83000E38CAC /* ETSNewsDetailsViewController.m */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		26DD92ED17EA623300469FA8 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				26DD92EE17EA624A00469FA8 /* ETSMenuViewController.h */,
+				26DD92EF17EA624A00469FA8 /* ETSMenuViewController.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		26DEB6ED18E9E96800161421 /* MSCollectionViewCalendarLayout */ = {
+			isa = PBXGroup;
+			children = (
+				26DEB70918E9E99F00161421 /* MSCollectionViewCalendarLayout.h */,
+				26DEB70A18E9E99F00161421 /* MSCollectionViewCalendarLayout.m */,
+			);
+			name = MSCollectionViewCalendarLayout;
+			sourceTree = "<group>";
+		};
+		26DEB87818EC97D600161421 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				26887B6F18F0909000009EBA /* ETS */,
+				26887B6E18F0908600009EBA /* Radio */,
+				26DEB87918EC97EC00161421 /* MSCurrentTimeGridline.h */,
+				26DEB87A18EC97EC00161421 /* MSCurrentTimeGridline.m */,
+				26DEB87B18EC97EC00161421 /* MSCurrentTimeIndicator.h */,
+				26DEB87C18EC97EC00161421 /* MSCurrentTimeIndicator.m */,
+				26DEB87D18EC97EC00161421 /* MSDayColumnHeader.h */,
+				26DEB87E18EC97EC00161421 /* MSDayColumnHeader.m */,
+				26DEB87F18EC97EC00161421 /* MSDayColumnHeaderBackground.h */,
+				26DEB88018EC97EC00161421 /* MSDayColumnHeaderBackground.m */,
+				26DEB88318EC97EC00161421 /* MSGridline.h */,
+				26DEB88418EC97EC00161421 /* MSGridline.m */,
+				26DEB88518EC97EC00161421 /* MSTimeRowHeader.h */,
+				26DEB88618EC97EC00161421 /* MSTimeRowHeader.m */,
+				26DEB88718EC97EC00161421 /* MSTimeRowHeaderBackground.h */,
+				26DEB88818EC97EC00161421 /* MSTimeRowHeaderBackground.m */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
+		26F46A9D183ED0EE00232B5A /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				26F46A9A183ED0E200232B5A /* ETSRadioViewController.h */,
+				26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */,
+			);
+			name = Radio;
+			sourceTree = "<group>";
+		};
+		9C5071E6189AF5D8000CB45E /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				9CC88722189ECF43002A3D04 /* ETSSecurityViewController.h */,
+				9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */,
+				9C5799CF18EC7F2D00AD8838 /* ETSSecurityDetailViewController.h */,
+				9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */,
+				266F0B6018F4ED6B000F53C1 /* ETSSecurityProcedureViewController.h */,
+				266F0B6118F4ED6B000F53C1 /* ETSSecurityProcedureViewController.m */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+		D15F4AE1183992A10034605B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D15F4AE2183992D00034605B /* ETSProfileViewController.h */,
+				D15F4AE3183992D00034605B /* ETSProfileViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26DD92A317EA610D00469FA8 /* ETSMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26DD92E217EA610D00469FA8 /* Build configuration list for PBXNativeTarget "ETSMobile" */;
+			buildPhases = (
+				26DD92A017EA610D00469FA8 /* Sources */,
+				26DD92A117EA610D00469FA8 /* Frameworks */,
+				26DD92A217EA610D00469FA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ETSMobile;
+			productName = ETSMobile;
+			productReference = 26DD92A417EA610D00469FA8 /* ETSMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		26DD92CF17EA610D00469FA8 /* ETSMobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26DD92E517EA610D00469FA8 /* Build configuration list for PBXNativeTarget "ETSMobileTests" */;
+			buildPhases = (
+				26DD92CC17EA610D00469FA8 /* Sources */,
+				26DD92CD17EA610D00469FA8 /* Frameworks */,
+				26DD92CE17EA610D00469FA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26DD92D717EA610D00469FA8 /* PBXTargetDependency */,
+			);
+			name = ETSMobileTests;
+			productName = ETSMobileTests;
+			productReference = 26DD92D017EA610D00469FA8 /* ETSMobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26DD929C17EA610D00469FA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ETS;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = ApplETS;
+				TargetAttributes = {
+					26DD92A317EA610D00469FA8 = {
+						DevelopmentTeam = N742HF354K;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Passbook = {
+								enabled = 0;
+							};
+						};
+					};
+					26DD92CF17EA610D00469FA8 = {
+						TestTargetID = 26DD92A317EA610D00469FA8;
+					};
+				};
+			};
+			buildConfigurationList = 26DD929F17EA610D00469FA8 /* Build configuration list for PBXProject "ETSMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 26DD929B17EA610D00469FA8;
+			productRefGroup = 26DD92A517EA610D00469FA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26DD92A317EA610D00469FA8 /* ETSMobile */,
+				26DD92CF17EA610D00469FA8 /* ETSMobileTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26DD92A217EA610D00469FA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				266F0B6E18F4EF22000F53C1 /* INCENDIE_EVACUATION_URGENCE.pdf in Resources */,
+				26085B3D1829D84300FE35AB /* ETSAPIURL.plist in Resources */,
+				266F0B6C18F4EF22000F53C1 /* APPEL_A_LA_BOMBE_2009-04-01.pdf in Resources */,
+				266F0B7218F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf in Resources */,
+				269BFF581811A640005D2950 /* ETSAPICoreDataMapping.plist in Resources */,
+				2670C01018F35EED00A4B0D6 /* SecuritySources.plist in Resources */,
+				266F0B6F18F4EF22000F53C1 /* ODEUR_SUSPECTE_FUITE_DE_GAZ_2009-04-01.pdf in Resources */,
+				266F0B6D18F4EF22000F53C1 /* COLIS_SUSPECT_ET_NRBC_2009-04-01.pdf in Resources */,
+				266F0B7018F4EF22000F53C1 /* PANNE_D_ASCENSEUR_2009-04-01.pdf in Resources */,
+				26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */,
+				26DD92CB17EA610D00469FA8 /* Images.xcassets in Resources */,
+				266F0B7118F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf in Resources */,
+				266F0B7318F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */,
+				26DD92BD17EA610D00469FA8 /* Main_iPhone.storyboard in Resources */,
+				26DD92B417EA610D00469FA8 /* InfoPlist.strings in Resources */,
+				264E86CA1884E7E7005F1820 /* NewsSources.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DD92CE17EA610D00469FA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DD92DD17EA610D00469FA8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26DD92A017EA610D00469FA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				266ED340182EC29D00DC1280 /* ETSTableViewController.m in Sources */,
+				263A4C46188B089800E38CAC /* ETSNewsCell.m in Sources */,
+				26DEB88A18EC97EC00161421 /* MSCurrentTimeIndicator.m in Sources */,
+				264E86CD18874E99005F1820 /* ETSNewsSourceViewController.m in Sources */,
+				26887B7218F090C500009EBA /* ETSRadioCell.m in Sources */,
+				26DEB88D18EC97EC00161421 /* MSEventCell.m in Sources */,
+				262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */,
+				26B9A92818736265005D4410 /* ETSBandwidthViewController.m in Sources */,
+				269BFF561811A41C005D2950 /* NSManagedObject+SetValues.m in Sources */,
+				26D44BA518E49BEF0006F9F0 /* ETSBandwidth.m in Sources */,
+				26887B7B18F1D36600009EBA /* ETSSponsorsViewController.m in Sources */,
+				26DEB88918EC97EC00161421 /* MSCurrentTimeGridline.m in Sources */,
+				26DEB89018EC97EC00161421 /* MSTimeRowHeaderBackground.m in Sources */,
+				26887B7718F1BA5800009EBA /* ETSAboutViewController.m in Sources */,
+				26DD92F017EA624A00469FA8 /* ETSMenuViewController.m in Sources */,
+				26634D8A1881D91900644FFB /* ETSBandwidthCell.m in Sources */,
+				26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */,
+				1D33BA24188F064600A5F1C8 /* ETSRateCell.m in Sources */,
+				26DEB89618EC985600161421 /* NSDate+Day.m in Sources */,
+				D15F4AE71839A80B0034605B /* ETSProfile.m in Sources */,
+				26C97886183AD1DE005D66EF /* ETSContact.m in Sources */,
+				2690F604183D088700FAD05A /* ETSWebViewViewController.m in Sources */,
+				263AC8E918464D9F00AD5B21 /* ETSEvent.m in Sources */,
+				2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */,
+				26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */,
+				26887B7E18F1D7B400009EBA /* ETSSession.m in Sources */,
+				26DD92B617EA610D00469FA8 /* main.m in Sources */,
+				26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */,
+				26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */,
+				26DEB74C18E9F2C000161421 /* ETSCalendar.m in Sources */,
+				26DEB88C18EC97EC00161421 /* MSDayColumnHeaderBackground.m in Sources */,
+				26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */,
+				26DD92C317EA610D00469FA8 /* ETSMobile.xcdatamodeld in Sources */,
+				264E86D0188796A7005F1820 /* NSURL+Document.m in Sources */,
+				263A4C4C188B14A800E38CAC /* NSString+HTML.m in Sources */,
+				26634D8D1881F2FF00644FFB /* ETSLoginView.m in Sources */,
+				263770941831AFB200D18F94 /* ETSEvaluation.m in Sources */,
+				26C0AC8E18EDCD82006ECF2B /* ETSNewsImageCell.m in Sources */,
+				26A65542182ABE6E00DEE9B7 /* NSURLRequest+API.m in Sources */,
+				266BE78517ECEFF300F44252 /* MFSideMenuShadow.m in Sources */,
+				266F0B6218F4ED6B000F53C1 /* ETSSecurityProcedureViewController.m in Sources */,
+				26634D951881F6C100644FFB /* ETSCoreDataHelper.m in Sources */,
+				2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */,
+				263FBD9918E4A0D0002E033E /* ETSEvaluationCell.m in Sources */,
+				268E8DEC18FB03F900D501E9 /* ETSMoodleCoursesViewController.m in Sources */,
+				26AF7CF918FB641700BD3982 /* ETSMoodleCourseDetailViewController.m in Sources */,
+				9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */,
+				9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */,
+				26085B401829D8D700FE35AB /* NSURL+API.m in Sources */,
+				266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */,
+				26DEB89318EC981100161421 /* UIColor+HexString.m in Sources */,
+				D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */,
+				1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */,
+				26EF269B18E70F12001D3454 /* ETSProgram.m in Sources */,
+				26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */,
+				26DEB88B18EC97EC00161421 /* MSDayColumnHeader.m in Sources */,
+				264ACF4F18DCDE0100928284 /* ETSSynchronization.m in Sources */,
+				26EF269818E612B8001D3454 /* ETSCollectionViewController.m in Sources */,
+				1D29A464188DB9E500CF02EB /* ETSCommentCell.m in Sources */,
+				266BE78617ECEFF300F44252 /* UIViewController+MFSideMenuAdditions.m in Sources */,
+				2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */,
+				26DEB70B18E9E99F00161421 /* MSCollectionViewCalendarLayout.m in Sources */,
+				266ED35018300D2900DC1280 /* ETSCourse.m in Sources */,
+				265FDFBF18E0C50400371078 /* ETSCalendarViewController.m in Sources */,
+				269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */,
+				264E86D31887A24E005F1820 /* ETSNews.m in Sources */,
+				26AF7CF618FB499200BD3982 /* ETSMoodleCourse.m in Sources */,
+				26AF7CFF18FB8A0000BD3982 /* ETSMoodleElement.m in Sources */,
+				263A4C421889D83000E38CAC /* ETSNewsDetailsViewController.m in Sources */,
+				1D29A460188DB82400CF02EB /* ETSCommentViewController.m in Sources */,
+				26DEB88F18EC97EC00161421 /* MSTimeRowHeader.m in Sources */,
+				26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */,
+				26DEB88E18EC97EC00161421 /* MSGridline.m in Sources */,
+				26B9A92C18736621005D4410 /* CustomIOS7AlertView.m in Sources */,
+				2698C6F518274F4B00F6281F /* KeychainItemWrapper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DD92CC17EA610D00469FA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26DD92DF17EA610D00469FA8 /* ETSMobileTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26DD92D717EA610D00469FA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26DD92A317EA610D00469FA8 /* ETSMobile */;
+			targetProxy = 26DD92D617EA610D00469FA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		26BB372B18F59580002CE5DD /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26BB372C18F59580002CE5DD /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		26DD92B217EA610D00469FA8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26DD92B317EA610D00469FA8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26DD92BC17EA610D00469FA8 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		26DD92DB17EA610D00469FA8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26DD92DC17EA610D00469FA8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26DD92E017EA610D00469FA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26DD92E117EA610D00469FA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26DD92E317EA610D00469FA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_RECEIVER_WEAK = NO;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendors/TestFlightSDK3",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		26DD92E417EA610D00469FA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_RECEIVER_WEAK = NO;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendors/TestFlightSDK3",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		26DD92E617EA610D00469FA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ETSMobile.app/ETSMobile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ETSMobileTests/ETSMobileTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		26DD92E717EA610D00469FA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ETSMobile.app/ETSMobile";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
+				INFOPLIST_FILE = "ETSMobileTests/ETSMobileTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26DD929F17EA610D00469FA8 /* Build configuration list for PBXProject "ETSMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26DD92E017EA610D00469FA8 /* Debug */,
+				26DD92E117EA610D00469FA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26DD92E217EA610D00469FA8 /* Build configuration list for PBXNativeTarget "ETSMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26DD92E317EA610D00469FA8 /* Debug */,
+				26DD92E417EA610D00469FA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26DD92E517EA610D00469FA8 /* Build configuration list for PBXNativeTarget "ETSMobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26DD92E617EA610D00469FA8 /* Debug */,
+				26DD92E717EA610D00469FA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				26DD92C217EA610D00469FA8 /* ETSMobile.xcdatamodel */,
+			);
+			currentVersion = 26DD92C217EA610D00469FA8 /* ETSMobile.xcdatamodel */;
+			path = ETSMobile.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 26DD929C17EA610D00469FA8 /* Project object */;
+}

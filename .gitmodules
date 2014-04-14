@@ -1,0 +1,12 @@
+[submodule "Vendors/MFSideMenu"]
+	path = Vendors/MFSideMenu
+	url = git@github.com:ApplETS/MFSideMenu.git
+[submodule "Vendors/CRNavigationController"]
+	path = Vendors/CRNavigationController
+	url = git@github.com:croberts22/CRNavigationController.git
+[submodule "Vendors/ios-custom-alertview"]
+	path = Vendors/ios-custom-alertview
+	url = git@github.com:ApplETS/ios-custom-alertview.git
+[submodule "Vendors/MSCollectionViewCalendarLayout"]
+	path = Vendors/MSCollectionViewCalendarLayout
+	url = git@github.com:ApplETS/MSCollectionViewCalendarLayout.git
