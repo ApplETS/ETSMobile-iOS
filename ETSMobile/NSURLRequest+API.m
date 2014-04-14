@@ -86,6 +86,33 @@
     return request;
 }
 
+
++ (id)requestForMoodleCoursesWithToken:(NSString *)token userid:(NSString *)userid
+{
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLForMoodle]];
+    
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *parameters = [NSString stringWithFormat:@"userid=%@&wsfunction=moodle_enrol_get_users_courses&wstoken=%@&", userid, token];
+    
+    [request setHTTPBody:[parameters dataUsingEncoding:NSUTF8StringEncoding]];
+
+    return request;
+}
+
++ (id)requestForMoodleCourseDetailWithToken:(NSString *)token courseid:(NSString *)courseid
+{
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLForMoodle]];
+    
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *parameters = [NSString stringWithFormat:@"courseid=%@&wsfunction=core_course_get_contents&wstoken=%@", courseid, token];
+    
+    [request setHTTPBody:[parameters dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    return request;
+}
+
 + (id)requestForSession
 {
     NSURL *url = [NSURL URLForSession];

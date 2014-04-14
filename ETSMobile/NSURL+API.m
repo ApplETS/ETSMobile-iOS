@@ -41,6 +41,11 @@
     return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Profile"]];
 }
 
++ (id)URLForMoodle
+{
+    return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"MoodleCourse"]];
+}
+
 + (id)URLForProgram
 {
     return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Program"]];

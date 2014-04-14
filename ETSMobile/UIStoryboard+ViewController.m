@@ -30,6 +30,11 @@
     return [self instantiateViewControllerWithIdentifier:@"ProfileViewController"];
 }
 
+- (id)instantiateMoodleViewController
+{
+    return [self instantiateViewControllerWithIdentifier:@"MoodleViewController"];
+}
+
 - (id)instantiateCalendarViewController
 {
     return [self instantiateViewControllerWithIdentifier:@"CalendarViewController"];
