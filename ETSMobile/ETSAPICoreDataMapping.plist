@@ -2,6 +2,42 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>MoodleElement</key>
+	<dict>
+		<key>visible</key>
+		<string>visible</string>
+		<key>parentid</key>
+		<string>parentid</string>
+		<key>header</key>
+		<string>header</string>
+		<key>name</key>
+		<string>name</string>
+		<key>id</key>
+		<string>id</string>
+		<key>filename</key>
+		<string>filename</string>
+		<key>type</key>
+		<string>type</string>
+		<key>url</key>
+		<string>url</string>
+	</dict>
+	<key>MoodleCourse</key>
+	<dict>
+		<key>acronym</key>
+		<string>acronym</string>
+		<key>name</key>
+		<string>name</string>
+		<key>session</key>
+		<string>session</string>
+		<key>visible</key>
+		<string>visible</string>
+		<key>id</key>
+		<string>id</string>
+		<key>fullname</key>
+		<string>fullname</string>
+		<key>shortname</key>
+		<string>shortname</string>
+	</dict>
 	<key>Session</key>
 	<dict>
 		<key>acronym</key>

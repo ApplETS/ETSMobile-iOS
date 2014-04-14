@@ -50,6 +50,7 @@
 		26887B7718F1BA5800009EBA /* ETSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7618F1BA5800009EBA /* ETSAboutViewController.m */; };
 		26887B7B18F1D36600009EBA /* ETSSponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7A18F1D36600009EBA /* ETSSponsorsViewController.m */; };
 		26887B7E18F1D7B400009EBA /* ETSSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7D18F1D7B400009EBA /* ETSSession.m */; };
+		268E8DEC18FB03F900D501E9 /* ETSMoodleCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268E8DEB18FB03F900D501E9 /* ETSMoodleCoursesViewController.m */; };
 		2690F604183D088700FAD05A /* ETSWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2690F603183D088700FAD05A /* ETSWebViewViewController.m */; };
 		2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2693168718359EE200DE95A0 /* ETSDirectoryViewController.m */; };
 		269316941835DA2900DE95A0 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269316931835DA2900DE95A0 /* AddressBook.framework */; };
@@ -64,6 +65,9 @@
 		26AE185D17F296CD00DB1EB4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AE185B17F2966200DB1EB4 /* QuartzCore.framework */; };
 		26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */; };
 		26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */; };
+		26AF7CF618FB499200BD3982 /* ETSMoodleCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CF518FB499200BD3982 /* ETSMoodleCourse.m */; };
+		26AF7CF918FB641700BD3982 /* ETSMoodleCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CF818FB641700BD3982 /* ETSMoodleCourseDetailViewController.m */; };
+		26AF7CFF18FB8A0000BD3982 /* ETSMoodleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CFE18FB8A0000BD3982 /* ETSMoodleElement.m */; };
 		26B9A92818736265005D4410 /* ETSBandwidthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9A92718736265005D4410 /* ETSBandwidthViewController.m */; };
 		26B9A92C18736621005D4410 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9A92B18736621005D4410 /* CustomIOS7AlertView.m */; };
 		26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BB372B18F59580002CE5DD /* Main_iPad.storyboard */; };
@@ -202,6 +206,8 @@
 		26887B7A18F1D36600009EBA /* ETSSponsorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSponsorsViewController.m; sourceTree = "<group>"; };
 		26887B7C18F1D7B400009EBA /* ETSSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSession.h; sourceTree = "<group>"; };
 		26887B7D18F1D7B400009EBA /* ETSSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSession.m; sourceTree = "<group>"; };
+		268E8DEA18FB03F900D501E9 /* ETSMoodleCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMoodleCoursesViewController.h; sourceTree = "<group>"; };
+		268E8DEB18FB03F900D501E9 /* ETSMoodleCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMoodleCoursesViewController.m; sourceTree = "<group>"; };
 		2690F602183D088700FAD05A /* ETSWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSWebViewViewController.h; sourceTree = "<group>"; };
 		2690F603183D088700FAD05A /* ETSWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSWebViewViewController.m; sourceTree = "<group>"; };
 		2693168618359EE200DE95A0 /* ETSDirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSDirectoryViewController.h; sourceTree = "<group>"; };
@@ -226,6 +232,12 @@
 		26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Styles.m"; sourceTree = "<group>"; };
 		26AE186417F32CC800DB1EB4 /* UIStoryboard+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+ViewController.h"; sourceTree = "<group>"; };
 		26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+ViewController.m"; sourceTree = "<group>"; };
+		26AF7CF418FB499200BD3982 /* ETSMoodleCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMoodleCourse.h; sourceTree = "<group>"; };
+		26AF7CF518FB499200BD3982 /* ETSMoodleCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMoodleCourse.m; sourceTree = "<group>"; };
+		26AF7CF718FB641700BD3982 /* ETSMoodleCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMoodleCourseDetailViewController.h; sourceTree = "<group>"; };
+		26AF7CF818FB641700BD3982 /* ETSMoodleCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMoodleCourseDetailViewController.m; sourceTree = "<group>"; };
+		26AF7CFD18FB8A0000BD3982 /* ETSMoodleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMoodleElement.h; sourceTree = "<group>"; };
+		26AF7CFE18FB8A0000BD3982 /* ETSMoodleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMoodleElement.m; sourceTree = "<group>"; };
 		26B9A92618736265005D4410 /* ETSBandwidthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidthViewController.h; sourceTree = "<group>"; };
 		26B9A92718736265005D4410 /* ETSBandwidthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidthViewController.m; sourceTree = "<group>"; };
 		26B9A92A18736621005D4410 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomIOS7AlertView.h; path = "Vendors/ios-custom-alertview/CustomIOS7AlertView/CustomIOS7AlertView/View/CustomIOS7AlertView.h"; sourceTree = "<group>"; };
@@ -485,6 +497,17 @@
 			name = Sponsors;
 			sourceTree = "<group>";
 		};
+		268E8DE918FB03A400D501E9 /* Moodle */ = {
+			isa = PBXGroup;
+			children = (
+				268E8DEA18FB03F900D501E9 /* ETSMoodleCoursesViewController.h */,
+				268E8DEB18FB03F900D501E9 /* ETSMoodleCoursesViewController.m */,
+				26AF7CF718FB641700BD3982 /* ETSMoodleCourseDetailViewController.h */,
+				26AF7CF818FB641700BD3982 /* ETSMoodleCourseDetailViewController.m */,
+			);
+			name = Moodle;
+			sourceTree = "<group>";
+		};
 		2693168518359ECA00DE95A0 /* Directory */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,13 +550,6 @@
 				262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */,
 			);
 			name = Courses;
-			sourceTree = "<group>";
-		};
-		26A43D2E18F593E300DE69B5 /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = iPad;
 			sourceTree = "<group>";
 		};
 		26AE185E17F3275600DB1EB4 /* Styles */ = {
@@ -629,7 +645,6 @@
 		26DD92AF17EA610D00469FA8 /* ETSMobile */ = {
 			isa = PBXGroup;
 			children = (
-				26A43D2E18F593E300DE69B5 /* iPad */,
 				26F3CD3E184FCF5100536ADB /* ETSMobile.entitlements */,
 				26DD92E817EA612800469FA8 /* Models */,
 				26DD92E917EA613400469FA8 /* Controllers */,
@@ -684,6 +699,10 @@
 		26DD92E817EA612800469FA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				26AF7CF418FB499200BD3982 /* ETSMoodleCourse.h */,
+				26AF7CF518FB499200BD3982 /* ETSMoodleCourse.m */,
+				26AF7CFD18FB8A0000BD3982 /* ETSMoodleElement.h */,
+				26AF7CFE18FB8A0000BD3982 /* ETSMoodleElement.m */,
 				26887B7C18F1D7B400009EBA /* ETSSession.h */,
 				26887B7D18F1D7B400009EBA /* ETSSession.m */,
 				26DEB74A18E9F2C000161421 /* ETSCalendar.h */,
@@ -715,6 +734,7 @@
 			children = (
 				260108901815968D0037E795 /* Base */,
 				26DD92ED17EA623300469FA8 /* Menu */,
+				268E8DE918FB03A400D501E9 /* Moodle */,
 				265FDFBC18E0C4DE00371078 /* Calendar */,
 				1D29A45D188DB80800CF02EB /* Comment */,
 				269BFF591814C627005D2950 /* Courses */,
@@ -1005,6 +1025,8 @@
 				26634D951881F6C100644FFB /* ETSCoreDataHelper.m in Sources */,
 				2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */,
 				263FBD9918E4A0D0002E033E /* ETSEvaluationCell.m in Sources */,
+				268E8DEC18FB03F900D501E9 /* ETSMoodleCoursesViewController.m in Sources */,
+				26AF7CF918FB641700BD3982 /* ETSMoodleCourseDetailViewController.m in Sources */,
 				9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */,
 				9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */,
 				26085B401829D8D700FE35AB /* NSURL+API.m in Sources */,
@@ -1025,6 +1047,8 @@
 				265FDFBF18E0C50400371078 /* ETSCalendarViewController.m in Sources */,
 				269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */,
 				264E86D31887A24E005F1820 /* ETSNews.m in Sources */,
+				26AF7CF618FB499200BD3982 /* ETSMoodleCourse.m in Sources */,
+				26AF7CFF18FB8A0000BD3982 /* ETSMoodleElement.m in Sources */,
 				263A4C421889D83000E38CAC /* ETSNewsDetailsViewController.m in Sources */,
 				1D29A460188DB82400CF02EB /* ETSCommentViewController.m in Sources */,
 				26DEB88F18EC97EC00161421 /* MSTimeRowHeader.m in Sources */,

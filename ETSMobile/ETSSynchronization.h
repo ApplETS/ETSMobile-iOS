@@ -22,6 +22,7 @@ typedef NS_ENUM(NSInteger, ETSSynchronizationResponse) {
 - (void)saveManagedObjectContext;
 
 @property (nonatomic, weak) id<ETSSynchronizationDelegate> delegate;
+@property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSURLRequest *request;
 @property (nonatomic, copy)   NSString *entityName;
 @property (nonatomic, copy)   NSString *objectsKeyPath;

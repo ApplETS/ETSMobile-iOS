@@ -381,6 +381,8 @@
     [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Calendar" inManagedObjectContext:self.managedObjectContext];
     [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Course" inManagedObjectContext:self.managedObjectContext];
     [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Evaluation" inManagedObjectContext:self.managedObjectContext];
+    [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"MoodleCourse" inManagedObjectContext:self.managedObjectContext];
+    [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"MoodleElement" inManagedObjectContext:self.managedObjectContext];
     [ETSAuthenticationViewController resetKeychain];
     
     self.synchronizationProgram.request = nil;

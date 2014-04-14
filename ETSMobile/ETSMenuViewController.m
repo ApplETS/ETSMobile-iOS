@@ -21,6 +21,7 @@ typedef NS_ENUM(NSInteger, ETSMenuMe)
     ETSMenuMeCourse,
     //ETSMenuMeInternship,
     ETSMenuMeProfile,
+    ETSMenuMeMoodle,
     ETSMenuMeBandwidth
 };
 
@@ -65,7 +66,7 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch (section) {
-        case 0: return 4;
+        case 0: return 5;
         case 1: return 5;
         case 2: return 3;
         default: return 0;
@@ -107,6 +108,10 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
         else if (indexPath.row == ETSMenuMeProfile) {
             cell.textLabel.text = NSLocalizedString(@"Profil", nil);
             cell.imageView.image = [UIImage imageNamed:@"ico_profil.png"];
+        }
+        else if (indexPath.row == ETSMenuMeMoodle) {
+            cell.textLabel.text = NSLocalizedString(@"Moodle", nil);
+            cell.imageView.image = [UIImage imageNamed:@"ico_moodle.png"];
         }
         else if (indexPath.row == ETSMenuMeBandwidth) {
             cell.textLabel.text = NSLocalizedString(@"Bande passante", nil);
@@ -195,6 +200,9 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
         }*/
         else if (indexPath.row == ETSMenuMeProfile) {
             viewController = [self.storyboard instantiateProfileViewController];
+        }
+        else if (indexPath.row == ETSMenuMeMoodle) {
+            viewController = [self.storyboard instantiateMoodleViewController];
         }
         else if (indexPath.row == ETSMenuMeBandwidth) {
             viewController = [self.storyboard instantiateBandwidthViewController];
