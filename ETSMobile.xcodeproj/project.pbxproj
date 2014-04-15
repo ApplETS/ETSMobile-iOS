@@ -28,6 +28,7 @@
 		264E86D0188796A7005F1820 /* NSURL+Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 264E86CF188796A7005F1820 /* NSURL+Document.m */; };
 		264E86D31887A24E005F1820 /* ETSNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 264E86D21887A24E005F1820 /* ETSNews.m */; };
 		265FDFBF18E0C50400371078 /* ETSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 265FDFBE18E0C50400371078 /* ETSCalendarViewController.m */; };
+		2661098218FD95EC00D817DA /* ETSRadioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2661098118FD95EC00D817DA /* ETSRadioPlayer.m */; };
 		26634D8A1881D91900644FFB /* ETSBandwidthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26634D891881D91900644FFB /* ETSBandwidthCell.m */; };
 		26634D8D1881F2FF00644FFB /* ETSLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26634D8C1881F2FF00644FFB /* ETSLoginView.m */; };
 		26634D951881F6C100644FFB /* ETSCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 26634D941881F6C100644FFB /* ETSCoreDataHelper.m */; };
@@ -64,7 +65,6 @@
 		26A65542182ABE6E00DEE9B7 /* NSURLRequest+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A65541182ABE6E00DEE9B7 /* NSURLRequest+API.m */; };
 		26AE185D17F296CD00DB1EB4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AE185B17F2966200DB1EB4 /* QuartzCore.framework */; };
 		26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */; };
-		26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */; };
 		26AF7CF618FB499200BD3982 /* ETSMoodleCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CF518FB499200BD3982 /* ETSMoodleCourse.m */; };
 		26AF7CF918FB641700BD3982 /* ETSMoodleCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CF818FB641700BD3982 /* ETSMoodleCourseDetailViewController.m */; };
 		26AF7CFF18FB8A0000BD3982 /* ETSMoodleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CFE18FB8A0000BD3982 /* ETSMoodleElement.m */; };
@@ -103,7 +103,6 @@
 		26DEB88E18EC97EC00161421 /* MSGridline.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB88418EC97EC00161421 /* MSGridline.m */; };
 		26DEB88F18EC97EC00161421 /* MSTimeRowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB88618EC97EC00161421 /* MSTimeRowHeader.m */; };
 		26DEB89018EC97EC00161421 /* MSTimeRowHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB88818EC97EC00161421 /* MSTimeRowHeaderBackground.m */; };
-		26DEB89318EC981100161421 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB89218EC981100161421 /* UIColor+HexString.m */; };
 		26DEB89618EC985600161421 /* NSDate+Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB89518EC985600161421 /* NSDate+Day.m */; };
 		26EF269818E612B8001D3454 /* ETSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EF269718E612B8001D3454 /* ETSCollectionViewController.m */; };
 		26EF269B18E70F12001D3454 /* ETSProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EF269A18E70F12001D3454 /* ETSProgram.m */; };
@@ -170,6 +169,8 @@
 		264E86D21887A24E005F1820 /* ETSNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNews.m; sourceTree = "<group>"; };
 		265FDFBD18E0C50400371078 /* ETSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCalendarViewController.h; sourceTree = "<group>"; };
 		265FDFBE18E0C50400371078 /* ETSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCalendarViewController.m; sourceTree = "<group>"; };
+		2661098018FD95EC00D817DA /* ETSRadioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRadioPlayer.h; sourceTree = "<group>"; };
+		2661098118FD95EC00D817DA /* ETSRadioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRadioPlayer.m; sourceTree = "<group>"; };
 		26634D881881D91900644FFB /* ETSBandwidthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidthCell.h; sourceTree = "<group>"; };
 		26634D891881D91900644FFB /* ETSBandwidthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidthCell.m; sourceTree = "<group>"; };
 		26634D8B1881F2FF00644FFB /* ETSLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSLoginView.h; sourceTree = "<group>"; };
@@ -230,8 +231,6 @@
 		26AE185B17F2966200DB1EB4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		26AE186017F327AC00DB1EB4 /* UIColor+Styles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Styles.h"; sourceTree = "<group>"; };
 		26AE186117F327AC00DB1EB4 /* UIColor+Styles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Styles.m"; sourceTree = "<group>"; };
-		26AE186417F32CC800DB1EB4 /* UIStoryboard+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+ViewController.h"; sourceTree = "<group>"; };
-		26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+ViewController.m"; sourceTree = "<group>"; };
 		26AF7CF418FB499200BD3982 /* ETSMoodleCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMoodleCourse.h; sourceTree = "<group>"; };
 		26AF7CF518FB499200BD3982 /* ETSMoodleCourse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMoodleCourse.m; sourceTree = "<group>"; };
 		26AF7CF718FB641700BD3982 /* ETSMoodleCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMoodleCourseDetailViewController.h; sourceTree = "<group>"; };
@@ -294,8 +293,6 @@
 		26DEB88618EC97EC00161421 /* MSTimeRowHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTimeRowHeader.m; sourceTree = "<group>"; };
 		26DEB88718EC97EC00161421 /* MSTimeRowHeaderBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTimeRowHeaderBackground.h; sourceTree = "<group>"; };
 		26DEB88818EC97EC00161421 /* MSTimeRowHeaderBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTimeRowHeaderBackground.m; sourceTree = "<group>"; };
-		26DEB89118EC981100161421 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
-		26DEB89218EC981100161421 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
 		26DEB89418EC985600161421 /* NSDate+Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Day.h"; sourceTree = "<group>"; };
 		26DEB89518EC985600161421 /* NSDate+Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Day.m"; sourceTree = "<group>"; };
 		26EF269718E612B8001D3454 /* ETSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCollectionViewController.m; sourceTree = "<group>"; };
@@ -566,10 +563,6 @@
 			children = (
 				26DEB89418EC985600161421 /* NSDate+Day.h */,
 				26DEB89518EC985600161421 /* NSDate+Day.m */,
-				26DEB89118EC981100161421 /* UIColor+HexString.h */,
-				26DEB89218EC981100161421 /* UIColor+HexString.m */,
-				26AE186417F32CC800DB1EB4 /* UIStoryboard+ViewController.h */,
-				26AE186517F32CC800DB1EB4 /* UIStoryboard+ViewController.m */,
 				269BFF541811A41C005D2950 /* NSManagedObject+SetValues.h */,
 				269BFF551811A41C005D2950 /* NSManagedObject+SetValues.m */,
 				26085B3E1829D8D700FE35AB /* NSURL+API.h */,
@@ -833,6 +826,8 @@
 			children = (
 				26F46A9A183ED0E200232B5A /* ETSRadioViewController.h */,
 				26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */,
+				2661098018FD95EC00D817DA /* ETSRadioPlayer.h */,
+				2661098118FD95EC00D817DA /* ETSRadioPlayer.m */,
 			);
 			name = Radio;
 			sourceTree = "<group>";
@@ -984,6 +979,7 @@
 				266ED340182EC29D00DC1280 /* ETSTableViewController.m in Sources */,
 				263A4C46188B089800E38CAC /* ETSNewsCell.m in Sources */,
 				26DEB88A18EC97EC00161421 /* MSCurrentTimeIndicator.m in Sources */,
+				2661098218FD95EC00D817DA /* ETSRadioPlayer.m in Sources */,
 				264E86CD18874E99005F1820 /* ETSNewsSourceViewController.m in Sources */,
 				26887B7218F090C500009EBA /* ETSRadioCell.m in Sources */,
 				26DEB88D18EC97EC00161421 /* MSEventCell.m in Sources */,
@@ -1005,7 +1001,6 @@
 				2690F604183D088700FAD05A /* ETSWebViewViewController.m in Sources */,
 				263AC8E918464D9F00AD5B21 /* ETSEvent.m in Sources */,
 				2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */,
-				26AE186617F32CC800DB1EB4 /* UIStoryboard+ViewController.m in Sources */,
 				26887B7E18F1D7B400009EBA /* ETSSession.m in Sources */,
 				26DD92B617EA610D00469FA8 /* main.m in Sources */,
 				26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */,
@@ -1031,7 +1026,6 @@
 				9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */,
 				26085B401829D8D700FE35AB /* NSURL+API.m in Sources */,
 				266BE78417ECEFF300F44252 /* MFSideMenuContainerViewController.m in Sources */,
-				26DEB89318EC981100161421 /* UIColor+HexString.m in Sources */,
 				D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */,
 				1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */,
 				26EF269B18E70F12001D3454 /* ETSProgram.m in Sources */,
@@ -1130,6 +1124,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1148,6 +1143,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1169,6 +1165,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1180,6 +1177,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1204,13 +1202,13 @@
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendors/TestFlightSDK3",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "517CF5F0-1259-41C8-BEDA-6B1FDB4664CB";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1234,13 +1232,13 @@
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendors/TestFlightSDK3",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "517CF5F0-1259-41C8-BEDA-6B1FDB4664CB";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

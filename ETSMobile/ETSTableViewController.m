@@ -7,6 +7,7 @@
 //
 
 #import "ETSTableViewController.h"
+#import "ETSMenuViewController.h"
 #import "MFSideMenu.h"
 
 @interface ETSTableViewController ()
@@ -142,7 +143,7 @@
             [av show];
         }
         else {
-            ETSAuthenticationViewController *ac = [self.storyboard instantiateAuthenticationViewController];
+            ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
             ac.delegate = self;
             [self.navigationController pushViewController:ac animated:YES];
         }

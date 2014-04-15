@@ -10,9 +10,23 @@
 #import "ETSWebViewViewController.h"
 #import "MFSideMenuContainerViewController.h"
 #import "UIColor+Styles.h"
-#import "UIStoryboard+ViewController.h"
 #import "ETSAppDelegate.h"
 #import "ETSTableViewController.h"
+
+NSString * const kStoryboardNewsViewController              = @"NewsViewController";
+NSString * const kStoryboardAuthenticationViewController    = @"AuthenticationViewController";
+NSString * const kStoryboardCoursesViewController           = @"CoursesViewController";
+NSString * const kStoryboardProfileViewController           = @"ProfileViewController";
+NSString * const kStoryboardMoodleViewController            = @"MoodleViewController";
+NSString * const kStoryboardCalendarViewController          = @"CalendarViewController";
+NSString * const kStoryboardDirectoryViewController         = @"DirectoryViewController";
+NSString * const kStoryboardLibraryViewController           = @"WebViewController";
+NSString * const kStoryboardRadioViewController             = @"RadioViewController";
+NSString * const kStoryboardSecurityViewController          = @"SecurityViewController";
+NSString * const kStoryboardBandwidthViewController         = @"BandwidthViewController";
+NSString * const kStoryboardCommentViewController           = @"CommentViewController";
+NSString * const kStoryboardAboutViewController             = @"AboutViewController";
+NSString * const kStoryboardSponsorsViewController          = @"SponsorsViewController";
 
 typedef NS_ENUM(NSInteger, ETSMenuMe)
 {
@@ -190,53 +204,53 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
 
         }
         else*/ if (indexPath.row == ETSMenuMeSchedule) {
-            viewController = [self.storyboard instantiateCalendarViewController];
+            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardCalendarViewController];
         }
         else if (indexPath.row == ETSMenuMeCourse) {
-            viewController = [self.storyboard instantiateCoursesViewController];
+            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardCoursesViewController];
         }
 /*        else if (indexPath.row == ETSMenuMeInternship) {
             viewController = [self.storyboard instantiateAuthenticationViewController];
         }*/
         else if (indexPath.row == ETSMenuMeProfile) {
-            viewController = [self.storyboard instantiateProfileViewController];
+            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardProfileViewController];
         }
         else if (indexPath.row == ETSMenuMeMoodle) {
-            viewController = [self.storyboard instantiateMoodleViewController];
+            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardMoodleViewController];
         }
         else if (indexPath.row == ETSMenuMeBandwidth) {
-            viewController = [self.storyboard instantiateBandwidthViewController];
+            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardBandwidthViewController];
         }
     }
     
     else if (indexPath.section == 1) {
         if (indexPath.row == ETSMenuUniversityNews) {
-            viewController = [self.storyboard instantiateNewsViewController];
+            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardNewsViewController];
         }
         else if (indexPath.row == ETSMenuUniversityDirectory) {
-            viewController = [self.storyboard instantiateDirectoryViewController];
+            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardDirectoryViewController];
         }
         else if (indexPath.row == ETSMenuUniversityLibrary) {
-            viewController = [self.storyboard instantiateLibraryViewController];
+            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardLibraryViewController];
             ((ETSWebViewViewController *)viewController).initialRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ets.mbiblio.ca"]];
         }
         else if (indexPath.row == ETSMenuUniversityRadio) {
-            viewController = [self.storyboard instantiateRadioViewController];
+            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardRadioViewController];
         }
         else if (indexPath.row == ETSMenuUniversitySecurity) {
-            viewController = [self.storyboard instantiateSecurityViewController];
+            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardSecurityViewController];
         }
     }
     
     else if (indexPath.section == 2) {
         if (indexPath.row == ETSMenuApplETSComments) {
-            viewController = [self.storyboard instantiateCommentViewController];
+            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardCommentViewController];
         }
         else if (indexPath.row == ETSMenuApplETSAbout) {
-            viewController = [self.storyboard instantiateAboutViewController];
+            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAboutViewController];
         }
         else if (indexPath.row == ETSMenuApplETSSponsors) {
-            viewController = [self.storyboard instantiateSponsorsViewController];
+            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardSponsorsViewController];
         }
     }
     
@@ -249,8 +263,6 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
     NSArray *controllers = @[viewController];
     navigationController.viewControllers = controllers;
     [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
-    
 }
-
 
 @end

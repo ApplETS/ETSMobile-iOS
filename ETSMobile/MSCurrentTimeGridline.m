@@ -7,7 +7,6 @@
 //
 
 #import "MSCurrentTimeGridline.h"
-#import "UIColor+HexString.h"
 
 @implementation MSCurrentTimeGridline
 
@@ -15,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor colorWithHexString:@"fd3935"];
+        self.backgroundColor = [UIColor colorWithRed:253/255.0f green:57/255.0f blue:53/255.0f alpha:1];
     }
     return self;
 }

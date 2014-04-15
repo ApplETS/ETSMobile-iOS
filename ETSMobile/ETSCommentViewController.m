@@ -102,7 +102,7 @@
     NSInteger rating = ((ETSRateCell*)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]]).rating;
     
     if ([name length] == 0 || [email length] == 0 || [comment length] == 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Formulaire incomplet", nil) message:NSLocalizedString(@"Vous vous assurer d'entrer votre nom, courriel et commentaire", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Formulaire incomplet", nil) message:NSLocalizedString(@"Vous devez vous assurer d'entrer votre nom, courriel et commentaire", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }
     

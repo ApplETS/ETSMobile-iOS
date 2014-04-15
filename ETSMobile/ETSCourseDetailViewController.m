@@ -14,7 +14,6 @@
 
 @interface ETSCourseDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
-@property (nonatomic, strong) ETSCourse *courseForSynchronization;
 @property (nonatomic, strong) NSNumberFormatter *formatter;
 @property (nonatomic, strong) UIBarButtonItem *coursesBarButtonItem;
 @property (nonatomic, assign) BOOL hadResults;
@@ -28,7 +27,6 @@
 {
     NSError *error;
     [self.synchronization synchronize:&error];
-    self.courseForSynchronization = nil;
 }
 
 - (void)viewDidLoad
@@ -63,7 +61,6 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    self.courseForSynchronization = nil;
     [super viewDidAppear:animated];
  
 #pragma clang diagnostic push
@@ -106,7 +103,9 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return self.hadResults + (self.course.grade && [self.course.grade length] > 0);
+    if (self.hadResults) return 2;
+    else if (self.course.grade && [self.course.grade length] > 0) return 1;
+    else return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -202,24 +201,9 @@
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
-    if (!self.courseForSynchronization) {
-        NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Course"];
-        
-        request.predicate = [NSPredicate predicateWithFormat:@"acronym == %@", self.course.acronym];
-
-        NSError *error = nil;
-        NSArray *courseObjets = [managedObject.managedObjectContext executeFetchRequest:request error:&error];
-
-        if ([courseObjets count] > 0) {
-            self.courseForSynchronization = courseObjets[0];
-        }
-    }
-    
-    if (self.courseForSynchronization) {
-        ETSEvaluation *evaluation = (ETSEvaluation *)managedObject;
-        evaluation.course = self.courseForSynchronization;
-        evaluation.ignored = [object[@"ignoreDuCalcul"] isEqualToString:@"Non"] ? @NO : @YES;
-    }
+    ETSEvaluation *evaluation = (ETSEvaluation *)managedObject;
+    evaluation.course = (ETSCourse *)[evaluation.managedObjectContext objectWithID:[self.course objectID]];
+    evaluation.ignored = [object[@"ignoreDuCalcul"] isEqualToString:@"Non"] ? @NO : @YES;
 }
 
 - (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
@@ -235,7 +219,13 @@
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView beginUpdates];
-    if (!self.hadResults) [self.tableView insertSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
+    if (!self.hadResults) {
+        if ([self.tableView numberOfSections] == 0) {
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)] withRowAnimation:UITableViewRowAnimationAutomatic];
+        } else {
+            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+    }
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
@@ -257,6 +247,12 @@
                                                  [NSIndexPath indexPathForRow:2 inSection:0],
                                                  [NSIndexPath indexPathForRow:3 inSection:0],
                                                  [NSIndexPath indexPathForRow:4 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    } else {
+        [self configureCell:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] atIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        [self configureCell:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] atIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+        [self configureCell:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]] atIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+        [self configureCell:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]] atIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+        [self configureCell:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]] atIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]];
     }
     [super controllerDidChangeContent:controller];
 }

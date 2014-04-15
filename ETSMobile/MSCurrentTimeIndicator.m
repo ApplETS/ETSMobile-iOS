@@ -7,7 +7,6 @@
 //
 
 #import "MSCurrentTimeIndicator.h"
-#import "UIColor+HexString.h"
 
 @interface MSCurrentTimeIndicator ()
 
@@ -27,7 +26,7 @@
         
         self.time = [UILabel new];
         self.time.font = [UIFont boldSystemFontOfSize:10.0];
-        self.time.textColor = [UIColor colorWithHexString:@"fd3935"];
+        self.time.textColor = [UIColor colorWithRed:253/255.0f green:57/255.0f blue:53/255.0f alpha:1];
         [self addSubview:self.time];
         /*
         [self.time makeConstraints:^(MASConstraintMaker *make) {

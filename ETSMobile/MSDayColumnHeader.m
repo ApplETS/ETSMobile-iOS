@@ -7,7 +7,6 @@
 //
 
 #import "MSDayColumnHeader.h"
-#import "UIColor+HexString.h"
 
 @interface MSDayColumnHeader ()
 
@@ -110,13 +109,11 @@
     _currentDay = currentDay;
     
     if (currentDay) {
-        self.title.textColor = [UIColor colorWithHexString:@"fd3935"];
+        self.title.textColor = [UIColor colorWithRed:253/255.0f green:57/255.0f blue:53/255.0f alpha:1];
         self.title.font = [UIFont boldSystemFontOfSize:16.0];
-//        self.titleBackground.backgroundColor = [UIColor colorWithHexString:@"fd3935"];
     } else {
         self.title.font = [UIFont systemFontOfSize:16.0];
         self.title.textColor = [UIColor blackColor];
-//        self.titleBackground.backgroundColor = [UIColor clearColor];
     }
 }
 

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ETSSynchronization.h"
 #import "ETSAuthenticationViewController.h"
-#import "UIStoryboard+ViewController.h"
 #import "NSURLRequest+API.h"
 
 @interface ETSTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, ETSSynchronizationDelegate, ETSAuthenticationViewControllerDelegate>

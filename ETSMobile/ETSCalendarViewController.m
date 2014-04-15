@@ -24,6 +24,7 @@
 
 #import "MFSideMenu.h"
 #import "ETSAuthenticationViewController.h"
+#import "ETSMenuViewController.h"
 
 NSString * const MSEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
 NSString * const MSDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";
@@ -102,7 +103,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.fetchedResultsController performFetch:nil];
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
-        ETSAuthenticationViewController *ac = [self.storyboard instantiateAuthenticationViewController];
+        ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
         ac.delegate = self;
         [self.navigationController pushViewController:ac animated:YES];
     }
@@ -144,7 +145,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         synchronization.delegate = self;
         synchronization.predicate = [NSPredicate predicateWithFormat:@"session ==[c] %@", session];
         
-        [synchronizations setObject:synchronization forKey:session];
+        synchronizations[session] = synchronization;
         [synchronization synchronize:nil];
     }
     self.synchronizations = synchronizations;
@@ -160,7 +161,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
             [av show];
         }
         else {
-            ETSAuthenticationViewController *ac = [self.storyboard instantiateAuthenticationViewController];
+            ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
             ac.delegate = self;
             [self.navigationController pushViewController:ac animated:YES];
         }
@@ -263,7 +264,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout dayForSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController.sections objectAtIndex:section];
+    id <NSFetchedResultsSectionInfo> sectionInfo = (self.fetchedResultsController.sections)[section];
     ETSCalendar *event = [sectionInfo.objects firstObject];
     return event.day;
 }

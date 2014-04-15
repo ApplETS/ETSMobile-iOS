@@ -23,75 +23,16 @@
 #import "ETSSecurityViewController.h"
 #import "ETSDirectoryViewController.h"
 
-@interface ETSAppDelegate () <UITabBarControllerDelegate>
-@property (nonatomic, strong) AVPlayerItem *playerItem;
-@end
-
 @implementation ETSAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-@synthesize radioPlayer = _radioPlayer;
 
-- (void)startRadio
-{
-    self.playerItem = [AVPlayerItem playerItemWithURL:[NSURL  URLWithString:@"http://radiopiranha.com:8000/radiopiranha.mp3"]];
-    
-    [self.playerItem addObserver:self forKeyPath:@"timedMetadata" options:NSKeyValueObservingOptionNew context:nil];
-
-    _radioPlayer = [AVPlayer playerWithPlayerItem:self.playerItem];
-    [_radioPlayer play];
-}
-
-- (void) observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object
-                         change:(NSDictionary*)change context:(void*)context {
-    
-    if ([keyPath isEqualToString:@"timedMetadata"])
-    {
-        AVPlayerItem* playerItem = object;
-        for (AVMetadataItem* metadata in playerItem.timedMetadata)
-            if ([metadata.commonKey isEqualToString:@"title"]) self.currentRadioTitle = metadata.stringValue;
-        
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            
-            UIViewController *controller = ((UINavigationController*)((MFSideMenuContainerViewController*)self.window.rootViewController).centerViewController).visibleViewController;
-            if ([controller isKindOfClass:[ETSRadioViewController class]]) {
-                controller.navigationItem.prompt = self.currentRadioTitle;
-            }
-        }
-        else {
-            UITabBarController *tbc =  (UITabBarController *)self.window.rootViewController;
-
-            id svc = tbc.selectedViewController;
-            
-            if ([svc isKindOfClass:[UINavigationController class]] && [((UINavigationController *)svc).topViewController isKindOfClass:[ETSRadioViewController class]]) {
-                ((UINavigationController *)svc).topViewController.navigationItem.prompt = self.currentRadioTitle;
-            }
-        }
-    }
-}
-
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
-{
-    return  YES;
-}
-
-- (void)stopRadio
-{
-    self.currentRadioTitle = nil;
-    [self.playerItem removeObserver:self forKeyPath:@"timedMetadata"];
-    [_radioPlayer pause];
-    _radioPlayer = nil;
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [TestFlight takeOff:@"79a6d72a-d113-4f4b-a5b8-e3f0c30dbf65"];
-    
-    [[AVAudioSession sharedInstance] setActive: YES error: NULL];
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-    
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
@@ -100,7 +41,7 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         
         UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-        tabBarController.delegate = self;
+
         [tabBarController.tabBar setSelectedImageTintColor:[UIColor whiteColor]];
         tabBarController.moreNavigationController.navigationBar.tintColor = [UIColor whiteColor];
         
@@ -242,7 +183,7 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ETSMobile09042014.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ETSMobile15042014.sqlite"];
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];

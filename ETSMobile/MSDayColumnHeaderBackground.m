@@ -7,7 +7,6 @@
 //
 
 #import "MSDayColumnHeaderBackground.h"
-#import "UIColor+HexString.h"
 
 @implementation MSDayColumnHeaderBackground
 
@@ -15,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [[UIColor colorWithHexString:@"f7f7f7"] colorWithAlphaComponent:0.95];
+        self.backgroundColor = [UIColor colorWithRed:247/255.0f green:247/255.0f blue:247/255.0f alpha:0.95f];
     }
     return self;
 }

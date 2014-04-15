@@ -13,8 +13,8 @@
 #import "ETSCourseCell.h"
 #import "ETSSessionHeader.h"
 #import "NSURLRequest+API.h"
-#import "UIStoryboard+ViewController.h"
 #import "ETSCourseDetailViewController.h"
+#import "ETSMenuViewController.h"
 #import "MFSideMenu.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -52,7 +52,7 @@
     self.synchronization.delegate = self;
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
-        ETSAuthenticationViewController *ac = [self.storyboard instantiateAuthenticationViewController];
+        ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
         ac.delegate = self;
         [self.navigationController pushViewController:ac animated:YES];
     }
@@ -107,8 +107,6 @@
 //    [Var_1 appendString:@"\n,"];
     
     courseCell.acronymLabel.text = course.acronym;
-    
-   
     
     courseCell.layer.cornerRadius = 2.0f;
     courseCell.layer.borderColor = [UIColor colorWithRed:190.0f/255.0f green:0.0f/255.0f blue:10.0f/255.0f alpha:1].CGColor;

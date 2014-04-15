@@ -10,6 +10,7 @@
 #import "ETSAppDelegate.h"
 #import "MFSideMenu.h"
 #import "ETSEvent.h"
+#import "ETSRadioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
 
 #import "NSURLRequest+API.h"
@@ -34,7 +35,6 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 @property (strong, nonatomic) ETSSynchronization *synchronization;
 @property (nonatomic, strong) UIBarButtonItem *playBarButtonItem;
 @property (nonatomic, strong) UIBarButtonItem *pauseBarButtonItem;
-- (AVPlayer *)radioPlayer;
 @end
 
 @implementation ETSRadioViewController
@@ -44,11 +44,6 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 - (void)panLeftMenu
 {
     [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
-}
-
-- (AVPlayer *)radioPlayer
-{
-    return [(ETSAppDelegate *)[[UIApplication sharedApplication] delegate] radioPlayer];
 }
 
 - (void)viewDidLoad
@@ -64,7 +59,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     self.playBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(playRadio:)];
     self.pauseBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(pauseRadio:)];
 
-    if ([self radioPlayer] && [[self radioPlayer] rate])
+    if ([[ETSRadioPlayer sharedInstance] isPlaying])
         self.navigationItem.rightBarButtonItem = self.pauseBarButtonItem;
     else
         self.navigationItem.rightBarButtonItem = self.playBarButtonItem;
@@ -155,8 +150,8 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     else
         self.menuContainerViewController.panMode = MFSideMenuPanModeCenterViewController | MFSideMenuPanModeSideMenu;
     
-    if ([(ETSAppDelegate *)[[UIApplication sharedApplication] delegate] currentRadioTitle]) {
-        self.navigationItem.prompt = [(ETSAppDelegate *)[[UIApplication sharedApplication] delegate] currentRadioTitle];
+    if ([[ETSRadioPlayer sharedInstance] currentTitle]) {
+        self.navigationItem.prompt = [[ETSRadioPlayer sharedInstance] currentTitle];
     } else {
         self.navigationItem.prompt = nil;
     }
@@ -236,7 +231,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 
 - (NSDate *)collectionView:(UICollectionView *)collectionView layout:(MSCollectionViewCalendarLayout *)collectionViewCalendarLayout dayForSection:(NSInteger)section
 {
-    id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController.sections objectAtIndex:section];
+    id <NSFetchedResultsSectionInfo> sectionInfo = (self.fetchedResultsController.sections)[section];
     ETSEvent *event = [sectionInfo.objects firstObject];
     return event.day;
 }
@@ -260,14 +255,14 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 
 - (IBAction)playRadio:(id)sender
 {
-    [(ETSAppDelegate *)[[UIApplication sharedApplication] delegate] startRadio];
+    [[ETSRadioPlayer sharedInstance] startRadio];
     
     self.navigationItem.rightBarButtonItem = self.pauseBarButtonItem;
 }
 
 - (IBAction)pauseRadio:(id)sender
 {
-    [(ETSAppDelegate *)[[UIApplication sharedApplication] delegate] stopRadio];
+    [[ETSRadioPlayer sharedInstance] stopRadio];
     self.navigationItem.prompt = nil;
     
     self.navigationItem.rightBarButtonItem = self.playBarButtonItem;
