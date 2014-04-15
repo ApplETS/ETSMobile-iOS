@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4kb-Uc-ris">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4kb-Uc-ris">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -819,80 +819,91 @@
             </objects>
             <point key="canvasLocation" x="3414" y="-3015"/>
         </scene>
+        <!--Web View View Controller - Bibliothèque-->
+        <scene sceneID="Bg2-gy-qBC">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" title="Bibliothèque" id="Bn8-a7-xXR" customClass="ETSWebViewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gvN-9q-c0h"/>
+                        <viewControllerLayoutGuide type="bottom" id="aiT-fB-ZVj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pc2-6d-XYV">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RbO-M4-kUd">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RbO-M4-kUd" firstAttribute="leading" secondItem="Pc2-6d-XYV" secondAttribute="leading" id="AP7-6U-e9P"/>
+                            <constraint firstAttribute="bottom" secondItem="RbO-M4-kUd" secondAttribute="bottom" id="ZTm-FP-Wqp"/>
+                            <constraint firstAttribute="trailing" secondItem="RbO-M4-kUd" secondAttribute="trailing" id="qed-Po-vpf"/>
+                            <constraint firstItem="RbO-M4-kUd" firstAttribute="top" secondItem="gvN-9q-c0h" secondAttribute="bottom" id="zw7-TC-n5Y"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Précédent" id="a41-vF-YQ5">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="goBack" destination="RbO-M4-kUd" id="dNG-Bx-ZM6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="YYK-5b-9Ka"/>
+                        <barButtonItem title="Suivant" id="lwQ-Yf-kip">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="goForward" destination="RbO-M4-kUd" id="04T-LG-ALD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="dDL-i0-mtE"/>
+                        <barButtonItem systemItem="refresh" id="6Gq-Vp-cz7">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="reload" destination="RbO-M4-kUd" id="5qK-MA-FAD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7jE-WJ-Pzm"/>
+                        <barButtonItem systemItem="stop" id="jB2-Km-pz5">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="stopLoading" destination="RbO-M4-kUd" id="cH1-cV-Kbs"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Bibliothèque" id="wiw-Js-V6w"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <connections>
+                        <outlet property="backBarButtonItem" destination="a41-vF-YQ5" id="1TR-be-P8t"/>
+                        <outlet property="nextBarButtonItem" destination="lwQ-Yf-kip" id="30B-mT-OZw"/>
+                        <outlet property="refreshBarButtonItem" destination="6Gq-Vp-cz7" id="pid-jk-oPU"/>
+                        <outlet property="stopBarButtonItem" destination="jB2-Km-pz5" id="5uA-kV-Beg"/>
+                        <outlet property="webView" destination="RbO-M4-kUd" id="CPV-X3-eil"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cnR-09-JeI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3665" y="3472"/>
+        </scene>
         <!--Navigation Controller - Bibliothèque-->
         <scene sceneID="eMJ-jg-krb">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oho-Xh-xyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="bLM-Sw-n0V" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Bibliothèque" image="ico_library" id="4Ma-ss-HAP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7dM-Fg-tcb">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="pBp-do-NzA" kind="relationship" relationship="rootViewController" id="NKe-EA-qbt"/>
+                        <segue destination="Bn8-a7-xXR" kind="relationship" relationship="rootViewController" id="dZl-ld-0tC"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Oho-Xh-xyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2710" y="3472"/>
-        </scene>
-        <!--Web View View Controller - Bibliothèque-->
-        <scene sceneID="kCB-hW-O53">
-            <objects>
-                <viewController storyboardIdentifier="WebViewController" title="Bibliothèque" id="pBp-do-NzA" customClass="ETSWebViewViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="K9h-sM-wUd"/>
-                        <viewControllerLayoutGuide type="bottom" id="1ic-QU-xj7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1PD-wm-nc2" customClass="UIWebView">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="delegate" destination="pBp-do-NzA" id="4rO-fn-SNz"/>
-                        </connections>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="t7F-sn-dti"/>
-                    <toolbarItems>
-                        <barButtonItem title="Précédent" id="iRo-88-4iQ">
-                            <color key="tintColor" red="0.79215693473815918" green="0.12156863510608673" blue="0.090196080505847931" alpha="1" colorSpace="deviceRGB"/>
-                            <connections>
-                                <action selector="goBack" destination="1PD-wm-nc2" id="ffW-a1-maM"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Jhb-Fq-kMS"/>
-                        <barButtonItem title="Suivant" id="U8n-sS-Cce">
-                            <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="goForward" destination="1PD-wm-nc2" id="xs2-V9-EIZ"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="9Wu-rK-sMd"/>
-                        <barButtonItem systemItem="refresh" id="mfZ-YO-w6G">
-                            <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="reload" destination="1PD-wm-nc2" id="EXy-4P-Tcj"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7jQ-LL-AYE"/>
-                        <barButtonItem systemItem="stop" id="0WK-4T-PF2">
-                            <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="stopLoading" destination="1PD-wm-nc2" id="ZaH-4W-941"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Bibliothèque" id="lfL-eH-QCo"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="backBarButtonItem" destination="iRo-88-4iQ" id="j11-oP-Htm"/>
-                        <outlet property="nextBarButtonItem" destination="U8n-sS-Cce" id="xjR-2W-9Jm"/>
-                        <outlet property="refreshBarButtonItem" destination="mfZ-YO-w6G" id="gEY-fw-KEL"/>
-                        <outlet property="stopBarButtonItem" destination="0WK-4T-PF2" id="MzD-ZW-GOJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="593-bZ-A86" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3665" y="3483"/>
+            <point key="canvasLocation" x="2701" y="3472"/>
         </scene>
         <!--Navigation Controller - Partenaires-->
         <scene sceneID="PnW-hS-TxE">

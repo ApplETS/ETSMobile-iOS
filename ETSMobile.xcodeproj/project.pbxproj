@@ -13,6 +13,7 @@
 		1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA26188F065600A5F1C8 /* ETSTextCell.m */; };
 		26085B3D1829D84300FE35AB /* ETSAPIURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26085B3C1829D84300FE35AB /* ETSAPIURL.plist */; };
 		26085B401829D8D700FE35AB /* NSURL+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 26085B3F1829D8D700FE35AB /* NSURL+API.m */; };
+		2610879E18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610879D18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m */; };
 		26274FA718F84D2500929CE2 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274F9F18F84BB200929CE2 /* libTestFlight.a */; };
 		26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274FA818F84D6A00929CE2 /* libz.dylib */; };
 		262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */; };
@@ -139,6 +140,8 @@
 		26085B3C1829D84300FE35AB /* ETSAPIURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPIURL.plist; sourceTree = "<group>"; };
 		26085B3E1829D8D700FE35AB /* NSURL+API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+API.h"; sourceTree = "<group>"; };
 		26085B3F1829D8D700FE35AB /* NSURL+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+API.m"; sourceTree = "<group>"; };
+		2610879C18FDDAF400F84100 /* UIViewController+ScrollingNavbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+ScrollingNavbar.h"; path = "Vendors/AMScrollingNavbar/AMScrollingNavbar/UIViewController+ScrollingNavbar.h"; sourceTree = "<group>"; };
+		2610879D18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+ScrollingNavbar.m"; path = "Vendors/AMScrollingNavbar/AMScrollingNavbar/UIViewController+ScrollingNavbar.m"; sourceTree = "<group>"; };
 		26274F9F18F84BB200929CE2 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Vendors/TestFlightSDK3/libTestFlight.a; sourceTree = "<group>"; };
 		26274FA418F84CD800929CE2 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = Vendors/TestFlightSDK3/TestFlight.h; sourceTree = "<group>"; };
 		26274FA518F84CD800929CE2 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+AsyncLogging.h"; path = "Vendors/TestFlightSDK3/TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
@@ -385,6 +388,15 @@
 				2690F603183D088700FAD05A /* ETSWebViewViewController.m */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		2610879A18FDDAE300F84100 /* AMScrollingNavbar */ = {
+			isa = PBXGroup;
+			children = (
+				2610879C18FDDAF400F84100 /* UIViewController+ScrollingNavbar.h */,
+				2610879D18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m */,
+			);
+			name = AMScrollingNavbar;
 			sourceTree = "<group>";
 		};
 		26274F9E18F84BA100929CE2 /* TestFlight */ = {
@@ -758,6 +770,7 @@
 		26DD92EB17EA615E00469FA8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				2610879A18FDDAE300F84100 /* AMScrollingNavbar */,
 				26274F9E18F84BA100929CE2 /* TestFlight */,
 				26DEB6ED18E9E96800161421 /* MSCollectionViewCalendarLayout */,
 				26B9A929187365F0005D4410 /* ios-custom-alertview */,
@@ -1005,6 +1018,7 @@
 				26DD92B617EA610D00469FA8 /* main.m in Sources */,
 				26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */,
 				26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */,
+				2610879E18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m in Sources */,
 				26DEB74C18E9F2C000161421 /* ETSCalendar.m in Sources */,
 				26DEB88C18EC97EC00161421 /* MSDayColumnHeaderBackground.m in Sources */,
 				26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */,
