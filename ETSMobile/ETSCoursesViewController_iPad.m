@@ -10,6 +10,7 @@
 #import "ETSCourseDetailViewController.h"
 #import "ETSCourse.h"
 #import "ETSEvaluation.h"
+#import "ETSMenuViewController.h"
 #import "MFSideMenu.h"
 
 @interface ETSCoursesViewController_iPad ()
@@ -41,7 +42,7 @@
     self.synchronization.delegate = self;
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
-        ETSAuthenticationViewController *ac = [self.storyboard instantiateAuthenticationViewController];
+        ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
         ac.delegate = self;
         [self.navigationController pushViewController:ac animated:YES];
     }

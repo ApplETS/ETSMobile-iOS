@@ -7,7 +7,6 @@
 //
 
 #import "ETSRadioCell.h"
-#import "UIColor+HexString.h"
 #import "ETSEvent.h"
 
 @interface ETSRadioCell ()
@@ -210,12 +209,12 @@
 
 - (UIColor *)backgroundColorHighlighted:(BOOL)selected
 {
-    return selected ? [UIColor colorWithHexString:@"35b1f1"] : [[UIColor colorWithHexString:@"35b1f1"] colorWithAlphaComponent:0.2];
+    return selected ? [UIColor colorWithRed:53/255.0f green:177/255.0f blue:241/255.0f alpha:1] : [UIColor colorWithRed:53/255.0f green:177/255.0f blue:241/255.0f alpha:0.2f];
 }
 
 - (UIColor *)textColorHighlighted:(BOOL)selected
 {
-    return selected ? [UIColor whiteColor] : [UIColor colorWithHexString:@"21729c"];
+    return selected ? [UIColor whiteColor] : [UIColor colorWithRed:33/255.0f green:114/255.0f blue:156/255.0f alpha:1.0];
 }
 
 - (UIColor *)borderColor

@@ -166,11 +166,6 @@
     // Ajout et mise à jour des autres objets de la réponse de l'API.
     NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:[[ETSSynchronization mappings][self.entityName] valueForKey:self.compareKey] ascending:YES];
     jsonObjects = [jsonObjects sortedArrayUsingDescriptors:@[descriptor]];
-
-//    NSString *key = [ETSSynchronization mappings][self.entityName][self.compareKey];
-//    jsonObjects = [jsonObjects sortedArrayUsingComparator:^NSComparisonResult(NSDictionary *obj1, NSDictionary *obj2) {
-//        return [obj1[key] localizedCaseInsensitiveCompare:obj2[key]];
-//    }];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:self.entityName];
     

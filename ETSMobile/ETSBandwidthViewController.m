@@ -194,7 +194,7 @@
         return nil;
     }
     
-    NSArray *days = [tables[0] objectForKey:@"tr"];
+    NSArray *days = (tables[0])[@"tr"];
 
     NSInteger i = 0;
     for (NSDictionary * day in days) {
@@ -207,12 +207,12 @@
         NSMutableDictionary *entry = [NSMutableDictionary dictionary];
         NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[self.dateFormatter dateFromString:date]];
         
-        [entry setObject:day[@"td"][0][@"p"] forKey:@"port"];
-        [entry setObject:date forKey:@"date"];
-        [entry setObject:day[@"td"][2][@"p"] forKey:@"upload"];
-        [entry setObject:day[@"td"][3][@"p"] forKey:@"download"];
-        [entry setObject:[@([components month]) stringValue] forKey:@"month"];
-        [entry setObject:[NSString stringWithFormat:@"%@-%@", day[@"td"][0][@"p"], date] forKey:@"id"];
+        entry[@"port"] = day[@"td"][0][@"p"];
+        entry[@"date"] = date;
+        entry[@"upload"] = day[@"td"][2][@"p"];
+        entry[@"download"] = day[@"td"][3][@"p"];
+        entry[@"month"] = [@([components month]) stringValue];
+        entry[@"id"] = [NSString stringWithFormat:@"%@-%@", day[@"td"][0][@"p"], date];
         [entries addObject:entry];
     }
     
@@ -221,8 +221,8 @@
     self.usedBandwidth = [f numberFromString:[days lastObject][@"td"][1][@"p"]];
     self.limitBandwidth = [f numberFromString:tables[1][@"tr"][1][@"td"][1][@"p"]];
 
-    NSNumber *used = [NSNumber numberWithFloat:[self.usedBandwidth floatValue]/1024];
-    NSNumber *limit = [NSNumber numberWithFloat:[self.limitBandwidth floatValue]/1024];
+    NSNumber *used = @([self.usedBandwidth floatValue]/1024);
+    NSNumber *limit = @([self.limitBandwidth floatValue]/1024);
     self.usageLabel.text = [NSString stringWithFormat:@"%@ Go sur %@ Go", [self.formatter stringFromNumber:used], [self.formatter stringFromNumber:limit]];
     self.usageProgressView.progress = [self.usedBandwidth floatValue] / [self.limitBandwidth floatValue];
     

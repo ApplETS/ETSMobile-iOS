@@ -7,7 +7,6 @@
 //
 
 #import "MSGridline.h"
-#import "UIColor+HexString.h"
 
 @implementation MSGridline
 
@@ -15,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor colorWithHexString:@"d7d7d7"];
+        self.backgroundColor = [UIColor colorWithRed:215/255.0f green:215/255.0f blue:215/255.0f alpha:1.0f];
     }
     return self;
 }

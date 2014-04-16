@@ -85,7 +85,7 @@
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.news.link]];
         }
     } else {
-        [NSURL URLWithString:self.news.link];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.news.link]];
     }
 }
 

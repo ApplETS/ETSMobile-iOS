@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AVFoundation/AVFoundation.h>
 
 @interface ETSAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -16,12 +15,8 @@
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (strong, nonatomic) AVPlayer *radioPlayer;
-@property (copy, nonatomic) NSString *currentRadioTitle;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
-- (void)stopRadio;
-- (void)startRadio;
 
 @end

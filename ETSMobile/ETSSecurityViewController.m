@@ -66,9 +66,9 @@ NSString * const kProcedureFile = @"File";
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDictionary *procedure = self.procedures[indexPath.row];
-        viewController.summary = [procedure objectForKey:kProcedureSummary];
-        viewController.title = [procedure objectForKey:kProcedureTitle];
-        viewController.file = [procedure objectForKey:kProcedureFile];
+        viewController.summary = procedure[kProcedureSummary];
+        viewController.title = procedure[kProcedureTitle];
+        viewController.file = procedure[kProcedureFile];
     }
 }
 

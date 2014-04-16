@@ -10,11 +10,7 @@
 #import "NSURL+API.h"
 #import "ETSAuthenticationViewController.h"
 
-@interface NSURLRequest (API_PRIVATE)
-+ (id)JSONRequestWithURL:(NSURL *)URL;
-@end
-
-@implementation NSURLRequest (API_PRIVATE)
+@implementation NSURLRequest (API)
 
 + (id)JSONRequestWithURL:(NSURL *)URL
 {
@@ -29,11 +25,7 @@
     return request;
 }
 
-@end
-
-@implementation NSURLRequest (API)
-
-+ (id) requestSetup: (NSURL*)url
++ (NSMutableURLRequest *)requestWithUsernameAndPassword:(NSURL*)url
 {
     NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL: url];
     
@@ -49,23 +41,17 @@
 
 + (id)requestForCourses
 {
-    NSURL *url = [NSURL URLForCourses];
-    
-    return [self requestSetup: url];
+    return [self requestWithUsernameAndPassword:[NSURL URLForCourses]];
 }
 
 + (id)requestForProfile
 {
-    NSURL *url = [NSURL URLForProfile];
-    
-    return [self requestSetup: url];
+    return [self requestWithUsernameAndPassword:[NSURL URLForProfile]];
 }
 
 + (id)requestForProgram
 {
-    NSURL *url = [NSURL URLForProgram];
-    
-    return [self requestSetup: url];
+    return [self requestWithUsernameAndPassword:[NSURL URLForProgram]];
 }
 
 + (id)requestForCalendar:(NSString *)session
@@ -90,34 +76,24 @@
 + (id)requestForMoodleCoursesWithToken:(NSString *)token userid:(NSString *)userid
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLForMoodle]];
-    
     [request setHTTPMethod:@"POST"];
-    
     NSString *parameters = [NSString stringWithFormat:@"userid=%@&wsfunction=moodle_enrol_get_users_courses&wstoken=%@&", userid, token];
-    
     [request setHTTPBody:[parameters dataUsingEncoding:NSUTF8StringEncoding]];
-
     return request;
 }
 
 + (id)requestForMoodleCourseDetailWithToken:(NSString *)token courseid:(NSString *)courseid
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLForMoodle]];
-    
     [request setHTTPMethod:@"POST"];
-    
     NSString *parameters = [NSString stringWithFormat:@"courseid=%@&wsfunction=core_course_get_contents&wstoken=%@", courseid, token];
-    
     [request setHTTPBody:[parameters dataUsingEncoding:NSUTF8StringEncoding]];
-    
     return request;
 }
 
 + (id)requestForSession
 {
-    NSURL *url = [NSURL URLForSession];
-    
-    return [self requestSetup: url];
+    return [self requestWithUsernameAndPassword:[NSURL URLForSession]];
 }
 
 + (id)requestForEvaluationsWithCourse:(ETSCourse *)course
@@ -159,7 +135,7 @@
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"UTF-8" forHTTPHeaderField:@"Accept-Charset"];
-    [request setCachePolicy: NSURLRequestReloadIgnoringCacheData];
+    [request setCachePolicy:NSURLRequestReloadIgnoringCacheData];
     
     return request;
 }
@@ -171,30 +147,13 @@
     [request setHTTPMethod:@"POST"];
     NSString *parameters = [NSString stringWithFormat:@"sender_name=%@&sender_mail=%@&message=%@&subject=%@&rating=%@", name, email, comment, title, rating];
     [request setHTTPBody:[parameters dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    /*
-    NSMutableDictionary *p = [NSMutableDictionary dictionary];
-    p[@"sender_name"] = name;
-    p[@"sender_mail"] = email;
-    p[@"message"] = comment;
-    p[@"subject"] = title;
-    p[@"rating"] = rating; */
-    
-    //NSError *error = nil;
-    //[request setHTTPBody:[NSJSONSerialization dataWithJSONObject:p options:kNilOptions error:&error]];
 
     return request;
 }
 
 + (id)requestForRadio
 {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForRadio]];
-    
-//    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    
-//    NSError *error = nil;
-//    [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:parameters options:kNilOptions error:&error]];
-    return request;
+    return [[NSURLRequest alloc] initWithURL:[NSURL URLForRadio]];
 }
 
 + (id)requestForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase

@@ -13,14 +13,15 @@
 #import "ETSCourseCell.h"
 #import "ETSSessionHeader.h"
 #import "NSURLRequest+API.h"
-#import "UIStoryboard+ViewController.h"
 #import "ETSCourseDetailViewController.h"
+#import "ETSMenuViewController.h"
 #import "MFSideMenu.h"
 #import <QuartzCore/QuartzCore.h>
 
 
 @interface ETSCoursesViewController ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSIndexPath *lastSelectedIndexPath;
 @end
 
 @implementation ETSCoursesViewController
@@ -47,14 +48,22 @@
     synchronization.entityName = @"Course";
     synchronization.compareKey = @"acronym";
     synchronization.objectsKeyPath = @"d.liste";
-    synchronization.ignoredAttributes = @[@"results", @"mean", @"median", @"std", @"percentile"];
+    synchronization.ignoredAttributes = @[@"results", @"resultOn100", @"mean", @"median", @"std", @"percentile"];
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
-        ETSAuthenticationViewController *ac = [self.storyboard instantiateAuthenticationViewController];
+        ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
         ac.delegate = self;
         [self.navigationController pushViewController:ac animated:YES];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.lastSelectedIndexPath) {
+        [self configureCell:[self.collectionView cellForItemAtIndexPath:self.lastSelectedIndexPath] atIndexPath:self.lastSelectedIndexPath];
     }
 }
 
@@ -90,30 +99,22 @@
 {
     ETSCourse *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
     ETSCourseCell *courseCell = (ETSCourseCell *)cell;
-    
+
     if ([course.grade length] > 0) {
         courseCell.gradeLabel.text = course.grade;
     }
-    else if ([course.results floatValue] > 0) {
-        NSNumber *percent = @([course.results floatValue]/[[course totalEvaluationWeighting] floatValue]*100);
+    else if ([course.resultOn100 floatValue] > 0) {
+        NSNumber *percent = @([course.resultOn100 floatValue]/[[course totalEvaluationWeighting] floatValue]*100);
         courseCell.gradeLabel.text = [NSString stringWithFormat:@"%lu %%", (long)[percent integerValue]];
     } else {
         courseCell.gradeLabel.text = @"—";
     }
     
-    
-//    NSMutableString *Var_1 =[NSMutableString stringWithCapacity:0];
-//    [Var_1 setString:course.acronym];
-//    [Var_1 appendString:@"\n,"];
-    
     courseCell.acronymLabel.text = course.acronym;
-    
-   
     
     courseCell.layer.cornerRadius = 2.0f;
     courseCell.layer.borderColor = [UIColor colorWithRed:190.0f/255.0f green:0.0f/255.0f blue:10.0f/255.0f alpha:1].CGColor;
     courseCell.layer.borderWidth = 1.0f;
-    //courseCell.lay
 }
 
 - (void)collectionView:(UICollectionView *)colView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -150,6 +151,7 @@
     ETSCourseDetailViewController *vc = [segue destinationViewController];
     vc.course = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
     vc.managedObjectContext = self.managedObjectContext;
+    self.lastSelectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
 }
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject

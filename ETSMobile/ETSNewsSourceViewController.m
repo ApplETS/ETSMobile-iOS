@@ -67,9 +67,9 @@
     static NSString *CellIdentifier = @"SourceIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = [self.sources[indexPath.row] objectForKey:@"name"];
+    cell.textLabel.text = (self.sources[indexPath.row])[@"name"];
     cell.accessoryType = ([self.sources[indexPath.row] isSourceEnabled] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone);
-    cell.imageView.image = [UIImage imageNamed:[self.sources[indexPath.row] objectForKey:@"backgroundImageName"]];
+    cell.imageView.image = [UIImage imageNamed:(self.sources[indexPath.row])[@"backgroundImageName"]];
     
     return cell;
 }
@@ -89,7 +89,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.sources[indexPath.row] setSourceEnabled:![self.sources[indexPath.row] isSourceEnabled]];
-    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 @end

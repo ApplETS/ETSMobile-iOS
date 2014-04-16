@@ -9,6 +9,7 @@
 #import "ETSMoodleCoursesViewController.h"
 #import "ETSMoodleCourseDetailViewController.h"
 #import "ETSMoodleCourse.h"
+#import "ETSMenuViewController.h"
 #import "MFSideMenu.h"
 
 NSString * const kUnknownSession = @"000000";
@@ -47,7 +48,7 @@ NSString * const kUnknownSession = @"000000";
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
-        ETSAuthenticationViewController *ac = [self.storyboard instantiateAuthenticationViewController];
+        ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
         ac.delegate = self;
         [self.navigationController pushViewController:ac animated:YES];
     } else {
@@ -122,7 +123,7 @@ NSString * const kUnknownSession = @"000000";
                   });
               }
               else {
-                  ETSAuthenticationViewController *ac = [bself.storyboard instantiateAuthenticationViewController];
+                  ETSAuthenticationViewController *ac = [bself.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
                   ac.delegate = bself;
                   dispatch_sync(dispatch_get_main_queue(), ^{
                       [bself.navigationController pushViewController:ac animated:YES];

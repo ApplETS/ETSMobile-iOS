@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4kb-Uc-ris">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="4kb-Uc-ris">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -819,6 +819,76 @@
             </objects>
             <point key="canvasLocation" x="3414" y="-3015"/>
         </scene>
+        <!--Web View View Controller - Bibliothèque-->
+        <scene sceneID="Bg2-gy-qBC">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" title="Bibliothèque" id="Bn8-a7-xXR" customClass="ETSWebViewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gvN-9q-c0h"/>
+                        <viewControllerLayoutGuide type="bottom" id="aiT-fB-ZVj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pc2-6d-XYV">
+                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RbO-M4-kUd">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aiT-fB-ZVj" firstAttribute="top" secondItem="RbO-M4-kUd" secondAttribute="bottom" id="Nv9-al-gqr"/>
+                            <constraint firstAttribute="trailing" secondItem="RbO-M4-kUd" secondAttribute="trailing" id="bUy-9W-Y8e"/>
+                            <constraint firstItem="RbO-M4-kUd" firstAttribute="leading" secondItem="Pc2-6d-XYV" secondAttribute="leading" id="jdG-y2-xf9"/>
+                            <constraint firstItem="RbO-M4-kUd" firstAttribute="top" secondItem="gvN-9q-c0h" secondAttribute="bottom" id="nhz-mU-wdB"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Précédent" id="a41-vF-YQ5">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="goBack" destination="RbO-M4-kUd" id="dNG-Bx-ZM6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="YYK-5b-9Ka"/>
+                        <barButtonItem title="Suivant" id="lwQ-Yf-kip">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="goForward" destination="RbO-M4-kUd" id="04T-LG-ALD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="dDL-i0-mtE"/>
+                        <barButtonItem systemItem="refresh" id="6Gq-Vp-cz7">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="reload" destination="RbO-M4-kUd" id="5qK-MA-FAD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7jE-WJ-Pzm"/>
+                        <barButtonItem systemItem="stop" id="jB2-Km-pz5">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="stopLoading" destination="RbO-M4-kUd" id="cH1-cV-Kbs"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Bibliothèque" id="wiw-Js-V6w"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <connections>
+                        <outlet property="backBarButtonItem" destination="a41-vF-YQ5" id="1TR-be-P8t"/>
+                        <outlet property="nextBarButtonItem" destination="lwQ-Yf-kip" id="30B-mT-OZw"/>
+                        <outlet property="refreshBarButtonItem" destination="6Gq-Vp-cz7" id="pid-jk-oPU"/>
+                        <outlet property="stopBarButtonItem" destination="jB2-Km-pz5" id="5uA-kV-Beg"/>
+                        <outlet property="webView" destination="RbO-M4-kUd" id="CPV-X3-eil"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cnR-09-JeI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3665" y="3472"/>
+        </scene>
         <!--Navigation Controller - Bibliothèque-->
         <scene sceneID="eMJ-jg-krb">
             <objects>
@@ -828,71 +898,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="pBp-do-NzA" kind="relationship" relationship="rootViewController" id="NKe-EA-qbt"/>
+                        <segue destination="Bn8-a7-xXR" kind="relationship" relationship="rootViewController" id="dZl-ld-0tC"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oho-Xh-xyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2710" y="3472"/>
-        </scene>
-        <!--Web View View Controller - Bibliothèque-->
-        <scene sceneID="kCB-hW-O53">
-            <objects>
-                <viewController storyboardIdentifier="WebViewController" title="Bibliothèque" id="pBp-do-NzA" customClass="ETSWebViewViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="K9h-sM-wUd"/>
-                        <viewControllerLayoutGuide type="bottom" id="1ic-QU-xj7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1PD-wm-nc2" customClass="UIWebView">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="delegate" destination="pBp-do-NzA" id="4rO-fn-SNz"/>
-                        </connections>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="t7F-sn-dti"/>
-                    <toolbarItems>
-                        <barButtonItem title="Précédent" id="iRo-88-4iQ">
-                            <color key="tintColor" red="0.79215693473815918" green="0.12156863510608673" blue="0.090196080505847931" alpha="1" colorSpace="deviceRGB"/>
-                            <connections>
-                                <action selector="goBack" destination="1PD-wm-nc2" id="ffW-a1-maM"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Jhb-Fq-kMS"/>
-                        <barButtonItem title="Suivant" id="U8n-sS-Cce">
-                            <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="goForward" destination="1PD-wm-nc2" id="xs2-V9-EIZ"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="9Wu-rK-sMd"/>
-                        <barButtonItem systemItem="refresh" id="mfZ-YO-w6G">
-                            <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="reload" destination="1PD-wm-nc2" id="EXy-4P-Tcj"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="7jQ-LL-AYE"/>
-                        <barButtonItem systemItem="stop" id="0WK-4T-PF2">
-                            <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="stopLoading" destination="1PD-wm-nc2" id="ZaH-4W-941"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Bibliothèque" id="lfL-eH-QCo"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="backBarButtonItem" destination="iRo-88-4iQ" id="j11-oP-Htm"/>
-                        <outlet property="nextBarButtonItem" destination="U8n-sS-Cce" id="xjR-2W-9Jm"/>
-                        <outlet property="refreshBarButtonItem" destination="mfZ-YO-w6G" id="gEY-fw-KEL"/>
-                        <outlet property="stopBarButtonItem" destination="0WK-4T-PF2" id="MzD-ZW-GOJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="593-bZ-A86" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3665" y="3483"/>
+            <point key="canvasLocation" x="2701" y="3472"/>
         </scene>
         <!--Navigation Controller - Partenaires-->
         <scene sceneID="PnW-hS-TxE">
@@ -1399,8 +1410,8 @@ http://applets.etsmtl.ca</string>
                                     <rect key="frame" x="0.0" y="0.0" width="735" height="259"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="715" translatesAutoresizingMaskIntoConstraints="NO" id="PES-K9-Wfo">
-                                            <rect key="frame" x="20" y="5" width="715" height="41"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="715" translatesAutoresizingMaskIntoConstraints="NO" id="PES-K9-Wfo">
+                                            <rect key="frame" x="20" y="5" width="715" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="BtC-2c-HjF"/>
@@ -1408,10 +1419,9 @@ http://applets.etsmtl.ca</string>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="495" translatesAutoresizingMaskIntoConstraints="NO" id="Fnz-vW-8yd">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="495" translatesAutoresizingMaskIntoConstraints="NO" id="Fnz-vW-8yd">
                                             <rect key="frame" x="240" y="77" width="495" height="161"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus scelerisque accumsan. Integer quis aliquet quam, id facilisis urna. Mauris sodales, purus quis congue tempor, nulla magna rhoncus massa, sit amet rhoncus ante lorem hendrerit tortor. Ut libero lorem, lacinia vitae nunc quis, iaculis imperdiet mauris. Curabitur lacinia, lorem sit amet malesuada auctor, eros lorem venenatis nibh, a imperdiet lorem diam ut lorem. Pellentesque luctus mauris ut justo mattis eleifend. Cras placerat pretium felis, id sagittis dui. Pellentesque eget nunc nec dui bibendum fringilla.</string>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1424,7 +1434,7 @@ http://applets.etsmtl.ca</string>
                                                 <constraint firstAttribute="width" constant="212" id="jOy-df-W6I"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieR-hk-fGL">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieR-hk-fGL">
                                             <rect key="frame" x="20" y="56" width="715" height="12"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
@@ -1466,7 +1476,7 @@ http://applets.etsmtl.ca</string>
                                     <rect key="frame" x="0.0" y="0.0" width="735" height="259"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="500" text="Titre asdfsadf hsajdbfjbs dkjfbkjashbdfkjhabsdkjfhbkjasdhf" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="715" translatesAutoresizingMaskIntoConstraints="NO" id="fcf-W7-Bgw">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="500" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="715" translatesAutoresizingMaskIntoConstraints="NO" id="fcf-W7-Bgw">
                                             <rect key="frame" x="20" y="5" width="715" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
@@ -1476,14 +1486,13 @@ http://applets.etsmtl.ca</string>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="715" translatesAutoresizingMaskIntoConstraints="NO" id="3c5-oa-RBf">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="715" translatesAutoresizingMaskIntoConstraints="NO" id="3c5-oa-RBf">
                                             <rect key="frame" x="20" y="76" width="715" height="163"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rhoncus scelerisque accumsan. Integer quis aliquet quam, id facilisis urna. Mauris sodales, purus quis congue tempor, nulla magna rhoncus massa, sit amet rhoncus ante lorem hendrerit tortor. Ut libero lorem, lacinia vitae nunc quis, iaculis imperdiet mauris. Curabitur lacinia, lorem sit amet malesuada auctor, eros lorem venenatis nibh, a imperdiet lorem diam ut lorem. Pellentesque luctus mauris ut justo mattis eleifend. Cras placerat pretium felis, id sagittis dui. Pellentesque eget nunc nec dui bibendum fringilla.</string>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Date" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="715" translatesAutoresizingMaskIntoConstraints="NO" id="d6f-XS-ft6">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="715" translatesAutoresizingMaskIntoConstraints="NO" id="d6f-XS-ft6">
                                             <rect key="frame" x="20" y="56" width="715" height="12"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>

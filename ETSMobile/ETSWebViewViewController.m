@@ -7,8 +7,11 @@
 //
 
 #import "ETSWebViewViewController.h"
+#import "UIViewController+ScrollingNavbar.h"
+#import "MFSideMenu.h"
 
-@interface ETSWebViewViewController ()
+@interface ETSWebViewViewController () <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *backBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextBarButtonItem;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *refreshBarButtonItem;
@@ -17,33 +20,44 @@
 
 @implementation ETSWebViewViewController
 
+- (IBAction)panLeftMenu:(id)sender
+{
+    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        [((UIWebView *)self.view).scrollView setContentInset:UIEdgeInsetsMake(20, 0, 0, 0)];
-    } else {
-        [((UIWebView *)self.view).scrollView setContentInset:UIEdgeInsetsMake(64, 0, 0, 0)];
-    }
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.toolbar setTranslucent:NO];
+    [self followScrollView:self.webView];
+	self.webView.scrollView.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        [self.navigationController setNavigationBarHidden:YES animated:animated];
-        [self.navigationController setToolbarHidden:NO animated:animated];
-    } else {
-        [self.navigationController setNavigationBarHidden:NO animated:animated];
-        [self.navigationController setToolbarHidden:NO animated:animated];
-    }
+   
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self.navigationController setToolbarHidden:NO animated:animated];
     
     if (self.initialRequest) {
-        [((UIWebView *)self.view) loadRequest:self.initialRequest];
+        [self.webView loadRequest:self.initialRequest];
         self.stopBarButtonItem.enabled = YES;
         self.refreshBarButtonItem.enabled = NO;
     }
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+ 	[super viewDidDisappear:animated];
+	[self showNavBarAnimated:NO];
+}
+
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
+{
+	[self showNavbar];	
+	return YES;
 }
 
 #pragma UIWebViewDelegate methods
