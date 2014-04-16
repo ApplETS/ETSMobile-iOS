@@ -146,6 +146,8 @@
 
 - (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects
 {
+    if (!objects || [objects isKindOfClass:[NSNull class]]) return nil;
+
     NSMutableArray *news = [NSMutableArray array];
     for (NSDictionary *entry in objects) {
         NSDictionary *item = entry[@"entry"];
