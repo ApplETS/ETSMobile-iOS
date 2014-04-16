@@ -197,6 +197,7 @@
     self.course.std         = [self.formatter numberFromString:results[@"ecartTypeClasse"]];
     self.course.median      = [self.formatter numberFromString:results[@"medianeClasse"]];
     self.course.percentile  = [self.formatter numberFromString:results[@"rangCentileClasse"]];
+    [self.course.managedObjectContext save:nil];
 }
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject

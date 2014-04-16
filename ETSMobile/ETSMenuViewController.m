@@ -260,6 +260,8 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
         [viewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
     
     UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
+    [navigationController.navigationBar setTranslucent:YES];
+    [navigationController.toolbar setTranslucent:YES];
     NSArray *controllers = @[viewController];
     navigationController.viewControllers = controllers;
     [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];

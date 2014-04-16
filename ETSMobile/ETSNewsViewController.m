@@ -45,7 +45,7 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"News"];
     
-    fetchRequest.fetchBatchSize = 8;
+    fetchRequest.fetchBatchSize = 20;
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"published" ascending:NO]];
     fetchRequest.predicate = [self predicateForSelectedNews];
     
@@ -94,6 +94,7 @@
     self.synchronization.delegate = self;
     
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl.tintColor = [UIColor lightGrayColor];
 }
 
 - (void)refreshNews
@@ -241,14 +242,12 @@
     
     if ([cell isKindOfClass:[ETSNewsImageCell class]]) {
         ((ETSNewsImageCell *)cell).titleLabel.text = [title string];
-        ((ETSNewsImageCell *)cell).summaryLabel.attributedText = res;
         ((ETSNewsImageCell *)cell).summaryLabel.text = [res string];
         UIImage *image = [UIImage imageWithData:news.image];
         ((ETSNewsImageCell *)cell).newsImageView.image = image;
         ((ETSNewsCell *)cell).dateLabel.text = [dateFormatter stringFromDate:news.published];
     } else if ([cell isKindOfClass:[ETSNewsCell class]]) {
         ((ETSNewsCell *)cell).titleLabel.text = [title string];
-        ((ETSNewsCell *)cell).summaryLabel.attributedText = res;
         ((ETSNewsCell *)cell).summaryLabel.text = [res string];
         ((ETSNewsCell *)cell).dateLabel.text = [dateFormatter stringFromDate:news.published];
     }
