@@ -7,14 +7,8 @@
 //
 
 #import "ETSAboutViewController.h"
-#import "MFSideMenu.h"
 
 @implementation ETSAboutViewController
-
-- (IBAction)panLeftMenu:(id)sender
-{
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
-}
 
 - (void)viewDidLoad
 {

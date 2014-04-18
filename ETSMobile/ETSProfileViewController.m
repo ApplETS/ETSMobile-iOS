@@ -9,7 +9,6 @@
 #import "ETSProfileViewController.h"
 #import "ETSMenuViewController.h"
 #import "NSURLRequest+API.h"
-#import "MFSideMenu.h"
 #import "ETSProfile.h"
 #import "ETSProgram.h"
 #import "ETSCoreDataHelper.h"
@@ -27,11 +26,6 @@
 @implementation ETSProfileViewController
 
 @synthesize fetchedResultsController = _fetchedResultsController;
-
-- (IBAction)panLeftMenu:(id)sender
-{
-	[self.menuContainerViewController toggleLeftSideMenuCompletion: ^{}];
-}
 
 - (void)startRefresh:(id)sender
 {

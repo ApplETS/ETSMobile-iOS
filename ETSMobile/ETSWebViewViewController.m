@@ -8,7 +8,6 @@
 
 #import "ETSWebViewViewController.h"
 #import "UIViewController+ScrollingNavbar.h"
-#import "MFSideMenu.h"
 
 @interface ETSWebViewViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -19,11 +18,6 @@
 @end
 
 @implementation ETSWebViewViewController
-
-- (IBAction)panLeftMenu:(id)sender
-{
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
-}
 
 - (void)viewDidLoad
 {

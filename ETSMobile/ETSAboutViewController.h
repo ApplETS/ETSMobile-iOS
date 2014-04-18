@@ -12,6 +12,4 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *aboutLabel;
 
-- (IBAction)panLeftMenu:(id)sender;
-
 @end

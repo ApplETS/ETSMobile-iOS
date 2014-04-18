@@ -8,7 +8,8 @@
 
 #import "ETSAuthenticationViewController.h"
 #import "KeychainItemWrapper.h"
-#import "MFSideMenu.h"
+#import "ETSAppDelegate.h"
+#import "MSDynamicsDrawerViewController.h"
 
 NSString * const kKeychainId = @"ApplETS";
 
@@ -17,6 +18,12 @@ NSString * const kKeychainId = @"ApplETS";
 @end
 
 @implementation ETSAuthenticationViewController
+
+- (IBAction)panLeftMenu:(id)sender
+{
+    MSDynamicsDrawerViewController *dynamicsDrawerViewController = ((ETSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
+    [dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateOpen animated:YES allowUserInterruption:YES completion:^{}];
+}
 
 + (ETSSynchronizationResponse) validateJSONResponse:(NSDictionary *)response
 {
@@ -38,7 +45,9 @@ NSString * const kKeychainId = @"ApplETS";
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:animated];
-    self.menuContainerViewController.panMode = MFSideMenuPanModeCenterViewController | MFSideMenuPanModeSideMenu;
+    
+    MSDynamicsDrawerViewController *dynamicsDrawerViewController = ((ETSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
+    [dynamicsDrawerViewController setPaneDragRevealEnabled:YES forDirection:MSDynamicsDrawerDirectionLeft];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -71,11 +80,6 @@ NSString * const kKeychainId = @"ApplETS";
     [keychainItem setObject:self.usernameTextField.text forKey:(__bridge id)(kSecAttrAccount)];
     
     [self.delegate controllerDidAuthenticate:self];
-}
-
-- (IBAction)showMenu:(id)sender
-{
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
 }
 
 + (NSString *)passwordInKeychain

@@ -9,7 +9,6 @@
 #import "ETSDirectoryViewController.h"
 #import "NSURLRequest+API.h"
 #import "ETSContact.h"
-#import "MFSideMenu.h"
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
 
@@ -22,11 +21,6 @@
 @implementation ETSDirectoryViewController
 
 @synthesize fetchedResultsController = _fetchedResultsController;
-
-- (IBAction)panLeftMenu:(id)sender
-{
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
-}
 
 - (void)viewDidLoad
 {
@@ -240,8 +234,7 @@
     personController.allowsAddingToAddressBook = YES;
     personController.displayedPerson = person;
     [personController.view setTintColor:[UIColor blackColor]];
-    
-    self.menuContainerViewController.panMode = MFSideMenuPanModeNone;
+  
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         ((UINavigationController *)self.splitViewController.viewControllers[1]).viewControllers = @[personController];
         [personController.navigationItem setLeftBarButtonItem:self.directoryBarButtonItem animated:YES];

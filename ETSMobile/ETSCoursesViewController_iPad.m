@@ -11,7 +11,6 @@
 #import "ETSCourse.h"
 #import "ETSEvaluation.h"
 #import "ETSMenuViewController.h"
-#import "MFSideMenu.h"
 
 @interface ETSCoursesViewController_iPad ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;

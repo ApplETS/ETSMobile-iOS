@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ETSLoginView : UIView
-@property (nonatomic, weak) IBOutlet UITextField *phaseTextField;
-@property (nonatomic, weak) IBOutlet UITextField *apartmentTextField;
+@property (nonatomic, weak) IBOutlet UISegmentedControl *phaseSegmentedControl;
+@property (nonatomic, weak) IBOutlet UITextField        *apartmentTextField;
 @end

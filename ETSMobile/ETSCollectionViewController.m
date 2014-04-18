@@ -8,7 +8,6 @@
 
 #import "ETSCollectionViewController.h"
 #import "ETSMenuViewController.h"
-#import "MFSideMenu.h"
 
 @interface ETSCollectionViewController ()
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -38,11 +37,6 @@
     [self.navigationController setToolbarHidden:YES animated:animated];
     
     [self startRefresh:nil];
-    
-    if ([[self.navigationController viewControllers] count] > 1)
-        self.menuContainerViewController.panMode = MFSideMenuPanModeNone;
-    else
-        self.menuContainerViewController.panMode = MFSideMenuPanModeCenterViewController | MFSideMenuPanModeSideMenu;
 }
 
 - (void)viewWillDisappear:(BOOL)animated

@@ -8,7 +8,7 @@
 
 #import "ETSAppDelegate.h"
 
-#import "MFSideMenuContainerViewController.h"
+#import "MSDynamicsDrawerViewController.h"
 #import "ETSMenuViewController.h"
 #import "UIColor+Styles.h"
 #import "NSURLRequest+API.h"
@@ -83,21 +83,24 @@
         
     } else {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
-        MFSideMenuContainerViewController *container = (MFSideMenuContainerViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"navigationController"];
+        self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
+        self.dynamicsDrawerViewController.screenEdgePanCancelsConflictingGestures = NO;
+        [self.dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerScaleStyler styler], [MSDynamicsDrawerFadeStyler styler], [MSDynamicsDrawerParallaxStyler styler]] forDirection:MSDynamicsDrawerDirectionLeft];
 
-        ETSNewsViewController *controller = (ETSNewsViewController *)navigationController.topViewController;
-        controller.managedObjectContext = self.managedObjectContext;
+        ETSMenuViewController *menuViewController = [storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
+        menuViewController.managedObjectContext = self.managedObjectContext;
+
+        menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
+        [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
         
-        ETSMenuViewController *leftSideMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
-        leftSideMenuViewController.managedObjectContext = self.managedObjectContext;
+        // Transition to the first view controller
+        [menuViewController transitionToViewController:ETSPaneViewControllerTypeNews];
         
-        [container.shadow setEnabled:YES];
-        [container.shadow setRadius:5.0f];
-        [container.shadow setColor:[UIColor blackColor]];
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        self.window.rootViewController = self.dynamicsDrawerViewController;
+        [self.window makeKeyAndVisible];
         
-        [container setLeftMenuViewController:leftSideMenuViewController];
-        [container setCenterViewController:navigationController];
+        return YES;
     
     }
     return YES;

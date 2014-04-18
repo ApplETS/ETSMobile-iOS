@@ -10,7 +10,6 @@
 #import "NSURLRequest+API.h"
 #import "ETSEvaluation.h"
 #import "ETSEvaluationCell.h"
-#import "MFSideMenu.h"
 
 @interface ETSCourseDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;

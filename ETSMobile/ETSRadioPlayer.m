@@ -8,7 +8,6 @@
 
 #import "ETSRadioPlayer.h"
 #import "ETSRadioViewController.h"
-#import "MFSideMenu.h"
 #import "ETSAppDelegate.h"
 
 @interface ETSRadioPlayer ()
@@ -67,7 +66,8 @@
         
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             
-            UIViewController *controller = ((UINavigationController*)((MFSideMenuContainerViewController*)[(ETSAppDelegate *)[[UIApplication sharedApplication] delegate] window].rootViewController).centerViewController).visibleViewController;
+// FIXME TESTER!!!
+            UIViewController *controller = [[[[UIApplication sharedApplication] keyWindow] subviews] lastObject];
             if ([controller isKindOfClass:[ETSRadioViewController class]]) {
                 controller.navigationItem.prompt = self.currentTitle;
             }

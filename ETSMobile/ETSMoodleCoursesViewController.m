@@ -10,7 +10,6 @@
 #import "ETSMoodleCourseDetailViewController.h"
 #import "ETSMoodleCourse.h"
 #import "ETSMenuViewController.h"
-#import "MFSideMenu.h"
 
 NSString * const kUnknownSession = @"000000";
 
@@ -26,11 +25,6 @@ NSString * const kUnknownSession = @"000000";
 @implementation ETSMoodleCoursesViewController
 
 @synthesize fetchedResultsController = _fetchedResultsController;
-
-- (IBAction)panLeftMenu:(id)sender
-{
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
-}
 
 - (void)startRefresh:(id)sender
 {

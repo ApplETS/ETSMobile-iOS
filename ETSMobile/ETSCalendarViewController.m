@@ -22,7 +22,6 @@
 #import "ETSCalendar.h"
 #import "ETSSession.h"
 
-#import "MFSideMenu.h"
 #import "ETSAuthenticationViewController.h"
 #import "ETSMenuViewController.h"
 
@@ -39,11 +38,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 @implementation ETSCalendarViewController
 
-- (void)panLeftMenu
-{
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -51,10 +45,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [TestFlight passCheckpoint:@"CALENDAR_VIEWCONTROLLER"];
     
     self.title = NSLocalizedString(@"Horaire", nil);
-    
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(panLeftMenu)];
-    }
     
     self.collectionViewCalendarLayout = (MSCollectionViewCalendarLayout *)self.collectionViewLayout;
     self.collectionViewCalendarLayout.delegate = self;

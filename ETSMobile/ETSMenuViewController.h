@@ -7,24 +7,32 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MSDynamicsDrawerStyler.h"
 
-extern NSString * const kStoryboardNewsViewController;
 extern NSString * const kStoryboardAuthenticationViewController;
-extern NSString * const kStoryboardCoursesViewController;
-extern NSString * const kStoryboardProfileViewController;
-extern NSString * const kStoryboardMoodleViewController;
-extern NSString * const kStoryboardCalendarViewController;
-extern NSString * const kStoryboardDirectoryViewController;
-extern NSString * const kStoryboardLibraryViewController;
-extern NSString * const kStoryboardRadioViewController;
-extern NSString * const kStoryboardSecurityViewController;
-extern NSString * const kStoryboardBandwidthViewController;
-extern NSString * const kStoryboardCommentViewController;
-extern NSString * const kStoryboardAboutViewController;
-extern NSString * const kStoryboardSponsorsViewController;
+
+typedef NS_ENUM(NSUInteger, ETSPaneViewControllerType) {
+    ETSPaneViewControllerTypeCalendar,
+    ETSPaneViewControllerTypeCourses,
+    ETSPaneViewControllerTypeProfile,
+    ETSPaneViewControllerTypeMoodle,
+    ETSPaneViewControllerTypeBandwidth,
+    ETSPaneViewControllerTypeNews,
+    ETSPaneViewControllerTypeDirectory,
+    ETSPaneViewControllerTypeLibrary,
+    ETSPaneViewControllerTypeRadio,
+    ETSPaneViewControllerTypeSecurity,
+    ETSPaneViewControllerTypeComment,
+    ETSPaneViewControllerTypeAbout,
+    ETSPaneViewControllerTypeSponsors
+};
 
 @interface ETSMenuViewController : UITableViewController
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, assign) ETSPaneViewControllerType paneViewControllerType;
+@property (nonatomic, weak)   MSDynamicsDrawerViewController *dynamicsDrawerViewController;
+
+- (void)transitionToViewController:(ETSPaneViewControllerType)paneViewControllerType;
 
 @end

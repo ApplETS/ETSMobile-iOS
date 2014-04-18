@@ -8,7 +8,6 @@
 
 #import "ETSTableViewController.h"
 #import "ETSMenuViewController.h"
-#import "MFSideMenu.h"
 
 @interface ETSTableViewController ()
 
@@ -44,11 +43,6 @@
 
     NSError *error;
     if (self.dataNeedRefresh) [self.synchronization synchronize:&error];
-
-    if ([[self.navigationController viewControllers] count] > 1)
-        self.menuContainerViewController.panMode = MFSideMenuPanModeNone;
-    else
-        self.menuContainerViewController.panMode = MFSideMenuPanModeCenterViewController | MFSideMenuPanModeSideMenu;
 }
 
 - (void)didReceiveMemoryWarning

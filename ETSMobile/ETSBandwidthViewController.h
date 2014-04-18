@@ -7,8 +7,7 @@
 //
 
 #import "ETSTableViewController.h"
-#import "CustomIOS7AlertView.h"
 
-@interface ETSBandwidthViewController : ETSTableViewController <CustomIOS7AlertViewDelegate>
+@interface ETSBandwidthViewController : ETSTableViewController
 
 @end

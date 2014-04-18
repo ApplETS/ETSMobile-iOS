@@ -10,7 +10,6 @@
 #import "ETSCommentCell.h"
 #import "ETSRateCell.h"
 #import "ETSTextCell.h"
-#import "MFSideMenu.h"
 #import "NSURLRequest+API.h"
 
 @interface ETSCommentViewController ()
@@ -18,11 +17,6 @@
 @end
 
 @implementation ETSCommentViewController
-
-- (IBAction)panLeftMenu:(id)sender
-{
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
-}
 
 - (void)viewDidLoad
 {

@@ -8,7 +8,6 @@
 
 #import "ETSNewsViewController.h"
 #import "ETSNewsSourceViewController.h"
-#import "MFSideMenuContainerViewController.h"
 #import "ETSNewsDetailsViewController.h"
 #import "ETSNewsCell.h"
 #import "ETSNewsImageCell.h"
@@ -190,11 +189,6 @@
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {
     [self refreshNews];
-}
-
-- (IBAction)panLeftMenu:(id)sender
-{
-    [((MFSideMenuContainerViewController *)self.navigationController.parentViewController) toggleLeftSideMenuCompletion:nil];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -8,7 +8,6 @@
 
 #import "ETSRadioViewController.h"
 #import "ETSAppDelegate.h"
-#import "MFSideMenu.h"
 #import "ETSEvent.h"
 #import "ETSRadioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
@@ -41,20 +40,11 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 
-- (void)panLeftMenu
-{
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     [TestFlight passCheckpoint:@"RADIO_VIEWCONTROLLER"];
-    
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(panLeftMenu)];
-    }
     
     self.playBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(playRadio:)];
     self.pauseBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(pauseRadio:)];
@@ -144,11 +134,6 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];
-    
-    if ([[self.navigationController viewControllers] count] > 1)
-        self.menuContainerViewController.panMode = MFSideMenuPanModeNone;
-    else
-        self.menuContainerViewController.panMode = MFSideMenuPanModeCenterViewController | MFSideMenuPanModeSideMenu;
     
     if ([[ETSRadioPlayer sharedInstance] currentTitle]) {
         self.navigationItem.prompt = [[ETSRadioPlayer sharedInstance] currentTitle];
