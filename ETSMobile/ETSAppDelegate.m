@@ -85,6 +85,8 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
         self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
         self.dynamicsDrawerViewController.screenEdgePanCancelsConflictingGestures = NO;
+        self.dynamicsDrawerViewController.paneViewSlideOffAnimationEnabled = NO;
+        self.dynamicsDrawerViewController.paneDragRequiresScreenEdgePan = YES;
         [self.dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerScaleStyler styler], [MSDynamicsDrawerFadeStyler styler], [MSDynamicsDrawerParallaxStyler styler]] forDirection:MSDynamicsDrawerDirectionLeft];
 
         ETSMenuViewController *menuViewController = [storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];

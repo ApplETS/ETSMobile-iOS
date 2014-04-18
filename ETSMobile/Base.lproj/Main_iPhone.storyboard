@@ -1436,7 +1436,7 @@ http://applets.etsmtl.ca</string>
             </objects>
             <point key="canvasLocation" x="-868" y="-750"/>
         </scene>
-        <!--News View Controller - Nouvelles-->
+        <!--News View Controller - Actualités-->
         <scene sceneID="5Jw-jp-LRi">
             <objects>
                 <tableViewController id="lz9-DU-0Fb" customClass="ETSNewsViewController" sceneMemberID="viewController">
@@ -1569,7 +1569,7 @@ http://applets.etsmtl.ca</string>
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Nouvelles" id="mFY-3n-Uhd">
+                    <navigationItem key="navigationItem" title="Actualités" id="mFY-3n-Uhd">
                         <barButtonItem key="rightBarButtonItem" title="Sources" id="mRq-cK-Rgw">
                             <connections>
                                 <segue destination="Mmq-HF-Scu" kind="push" identifier="SourcesSegue" id="Fpv-gH-Ipn"/>
@@ -1599,7 +1599,7 @@ http://applets.etsmtl.ca</string>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBO-Mo-9GS">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1613,10 +1613,10 @@ http://applets.etsmtl.ca</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xI8-oR-RsP" firstAttribute="top" secondItem="cBO-Mo-9GS" secondAttribute="bottom" id="B4I-b3-7Cx"/>
-                            <constraint firstItem="cBO-Mo-9GS" firstAttribute="leading" secondItem="D79-F9-aay" secondAttribute="leading" id="GuE-8X-H0v"/>
-                            <constraint firstItem="cBO-Mo-9GS" firstAttribute="top" secondItem="D79-F9-aay" secondAttribute="top" id="WOe-Nb-P1m"/>
-                            <constraint firstAttribute="trailing" secondItem="cBO-Mo-9GS" secondAttribute="trailing" id="aiv-BY-omR"/>
+                            <constraint firstItem="cBO-Mo-9GS" firstAttribute="leading" secondItem="D79-F9-aay" secondAttribute="leading" id="5Zr-DP-WbB"/>
+                            <constraint firstAttribute="trailing" secondItem="cBO-Mo-9GS" secondAttribute="trailing" id="CRz-9L-TgD"/>
+                            <constraint firstAttribute="bottom" secondItem="cBO-Mo-9GS" secondAttribute="bottom" id="HCC-ZU-NUH"/>
+                            <constraint firstItem="cBO-Mo-9GS" firstAttribute="top" secondItem="D79-F9-aay" secondAttribute="top" id="Lji-16-Tz8"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -1635,6 +1635,7 @@ http://applets.etsmtl.ca</string>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="hgn-30-eCg"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="textView" destination="cBO-Mo-9GS" id="h1M-be-K43"/>
