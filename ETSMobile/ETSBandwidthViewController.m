@@ -55,7 +55,7 @@
     if (self.phase)     loginView.phaseSegmentedControl.selectedSegmentIndex = [self.phase integerValue]-1;
     if (self.apartment) loginView.apartmentTextField.text = self.apartment;
     
-    loginViewController.preferredContentSize = CGSizeMake(295, 95);
+    loginViewController.preferredContentSize = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? CGSizeMake(295, 95) : CGSizeMake(357, 170);
     self.popover = [[UIPopoverController alloc] initWithContentViewController:loginViewController];
     self.popover.delegate = self;
     [self.popover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
