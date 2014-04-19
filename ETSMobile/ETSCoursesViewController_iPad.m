@@ -41,9 +41,12 @@
     self.synchronization.delegate = self;
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
-        ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-        ac.delegate = self;
-        [self.navigationController pushViewController:ac animated:YES];
+        UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+        ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
+        authenticationController.delegate = self;
+        navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+        navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self.navigationController presentViewController:navigationController animated:YES completion:nil];
     }
 }
 

@@ -48,6 +48,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     self.collectionViewCalendarLayout = (MSCollectionViewCalendarLayout *)self.collectionViewLayout;
     self.collectionViewCalendarLayout.delegate = self;
+    self.collectionViewCalendarLayout.hourHeight = 40;
     
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self.dateFormatter setDateFormat:@"yyyy-MM-dd' 'HH:mm"];
@@ -93,9 +94,18 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     [self.fetchedResultsController performFetch:nil];
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
-        ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-        ac.delegate = self;
-        [self.navigationController pushViewController:ac animated:YES];
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+            ac.delegate = self;
+            [self.navigationController pushViewController:ac animated:YES];
+        } else {
+            UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+            ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
+            authenticationController.delegate = self;
+            navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+            navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            [self.navigationController presentViewController:navigationController animated:YES completion:nil];
+        }
     }
 }
 
@@ -146,19 +156,32 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     if (response == ETSSynchronizationResponseAuthenticationError) {
         
-        if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
+        if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]] || self.presentedViewController) {
             UIAlertView *av = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Authentification", nil) message:NSLocalizedString(@"Code d'accès ou mot de passe invalide", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [av show];
         }
         else {
-            ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-            ac.delegate = self;
-            [self.navigationController pushViewController:ac animated:YES];
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+                ac.delegate = self;
+                [self.navigationController pushViewController:ac animated:YES];
+            } else {
+                UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+                ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
+                authenticationController.delegate = self;
+                navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+                navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+                [self.navigationController presentViewController:navigationController animated:YES completion:nil];
+            }
         }
     }
     else if (response == ETSSynchronizationResponseValid) {
-        if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
-            [self.navigationController popViewControllerAnimated:YES];
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        } else {
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
     }
 }

@@ -79,9 +79,18 @@
 	self.title = @"Profil";
     
 	if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
-		ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-		ac.delegate = self;
-		[self.navigationController pushViewController:ac animated:YES];
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+            ac.delegate = self;
+            [self.navigationController pushViewController:ac animated:YES];
+        } else {
+            UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+            ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
+            authenticationController.delegate = self;
+            navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+            navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            [self.navigationController presentViewController:navigationController animated:YES completion:nil];
+        }
 	}
     
 	self.isCleaning = NO;
@@ -390,9 +399,20 @@
 	self.synchronizationProgram.request = nil;
 	self.synchronization.request = nil;
     
-	ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-	ac.delegate = self;
-	[self.navigationController pushViewController:ac animated:YES];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+        ac.delegate = self;
+        [self.navigationController pushViewController:ac animated:YES];
+    } else {
+        [self.tableView reloadData];
+        self.navigationItem.rightBarButtonItem.title = @"Connexion";
+        UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+        ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
+        authenticationController.delegate = self;
+        navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+        navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self.navigationController presentViewController:navigationController animated:YES completion:nil];
+    }
 }
 
 @end

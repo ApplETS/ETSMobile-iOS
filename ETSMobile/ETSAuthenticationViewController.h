@@ -15,6 +15,7 @@
 
 + (ETSSynchronizationResponse)validateJSONResponse:(NSDictionary *)response;
 - (IBAction)authenticate:(id)sender;
+- (IBAction)cancel:(id)sender;
 + (NSString *)passwordInKeychain;
 + (NSString *)usernameInKeychain;
 + (void)resetKeychain;

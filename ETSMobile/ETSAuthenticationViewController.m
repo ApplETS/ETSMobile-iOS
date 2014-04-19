@@ -44,7 +44,7 @@ NSString * const kKeychainId = @"ApplETS";
 {
     [super viewWillAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self.navigationController setNavigationBarHidden:[[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone animated:animated];
     
     MSDynamicsDrawerViewController *dynamicsDrawerViewController = ((ETSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
     [dynamicsDrawerViewController setPaneDragRevealEnabled:YES forDirection:MSDynamicsDrawerDirectionLeft];
@@ -80,6 +80,11 @@ NSString * const kKeychainId = @"ApplETS";
     [keychainItem setObject:self.usernameTextField.text forKey:(__bridge id)(kSecAttrAccount)];
     
     [self.delegate controllerDidAuthenticate:self];
+}
+
+- (IBAction)cancel:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 + (NSString *)passwordInKeychain

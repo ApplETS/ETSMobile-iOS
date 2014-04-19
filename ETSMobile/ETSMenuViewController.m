@@ -13,6 +13,9 @@
 #import "ETSTableViewController.h"
 #import "ETSMenuCell.h"
 #import "ETSMenuTableViewHeader.h"
+#import "ETSCoursesViewController_iPad.h"
+#import "ETSSecurityViewController.h"
+#import "ETSDirectoryViewController.h"
 
 NSString * const kStoryboardAuthenticationViewController = @"AuthenticationViewController";
 NSString * const ETSMenuCellReuseIdentifier = @"MenuCell";
@@ -202,6 +205,37 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
     else if ([paneViewController isKindOfClass:[UINavigationController class]] && [((UINavigationController *)paneViewController).topViewController respondsToSelector:@selector(setManagedObjectContext:)])
         [((UINavigationController *)paneViewController).topViewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
     
+    if ([paneViewController isKindOfClass:[UISplitViewController class]]) {
+        UISplitViewController *splitViewController = (UISplitViewController *)paneViewController;
+        splitViewController.presentsWithGesture = NO;
+        
+        id viewController = ((UINavigationController *)splitViewController.viewControllers[0]).topViewController;
+        
+        id detailsViewController = nil;
+        if ([splitViewController.viewControllers[1] isKindOfClass:[UINavigationController class]]) {
+            detailsViewController = ((UINavigationController *)splitViewController.viewControllers[1]).topViewController;
+        }
+        
+        id masterViewController = nil;
+        if ([splitViewController.viewControllers[0] isKindOfClass:[UINavigationController class]]) {
+            masterViewController = ((UINavigationController *)splitViewController.viewControllers[0]).topViewController;
+            if ([masterViewController respondsToSelector:@selector(setManagedObjectContext:)])
+                [masterViewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
+        }
+        
+        if ([viewController isKindOfClass:[ETSCoursesViewController_iPad class]]) {
+            splitViewController.delegate = detailsViewController;
+            ((ETSCoursesViewController_iPad *)viewController).delegate = detailsViewController;
+        }
+        else if ([viewController isKindOfClass:[ETSSecurityViewController class]]) {
+            splitViewController.delegate = detailsViewController;
+            ((ETSSecurityViewController *)viewController).delegate = detailsViewController;
+        }
+        else if ([viewController isKindOfClass:[ETSDirectoryViewController class]]) {
+            splitViewController.delegate = viewController;
+            ((ETSDirectoryViewController *)viewController).splitViewController = splitViewController;
+        }
+    }
     
     paneViewController.navigationItem.title = self.paneViewControllerTitles[@(paneViewControllerType)];
     
@@ -213,8 +247,6 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
         paneViewController.navigationItem.leftBarButtonItem = self.paneRevealLeftBarButtonItem;
     }
 
-    
-//    UINavigationController *paneNavigationViewController = [[UINavigationController alloc] initWithRootViewController:paneViewController];
     [self.dynamicsDrawerViewController setPaneViewController:paneViewController animated:animateTransition completion:nil];
     
     self.paneViewControllerType = paneViewControllerType;

@@ -42,9 +42,18 @@ NSString * const kUnknownSession = @"000000";
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
-        ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-        ac.delegate = self;
-        [self.navigationController pushViewController:ac animated:YES];
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+            ac.delegate = self;
+            [self.navigationController pushViewController:ac animated:YES];
+        } else {
+            UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+            ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
+            authenticationController.delegate = self;
+            navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+            navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            [self.navigationController presentViewController:navigationController animated:YES completion:nil];
+        }
     } else {
         [self requestTokenAndUserID];
     }
