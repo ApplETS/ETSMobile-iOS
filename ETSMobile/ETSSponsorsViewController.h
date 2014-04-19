@@ -10,6 +10,4 @@
 
 @interface ETSSponsorsViewController : UIViewController
 
-- (IBAction)panLeftMenu:(id)sender;
-
 @end

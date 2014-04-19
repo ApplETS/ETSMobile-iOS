@@ -11,20 +11,24 @@
 #import "ETSBandwidthCell.h"
 #import "ETSLoginView.h"
 #import "ETSCoreDataHelper.h"
-#import "MFSideMenu.h"
+#import "UIPopoverController+iPhone.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface ETSBandwidthViewController ()
+@interface ETSBandwidthViewController () <UIPopoverControllerDelegate>
 @property (nonatomic, strong) NSNumberFormatter *formatter;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
-@property (nonatomic, weak) IBOutlet ETSLoginView *loginView;
+@property (nonatomic, strong) UIPopoverController *popover;
 @property (nonatomic, strong) NSNumber *usedBandwidth;
 @property (nonatomic, strong) NSNumber *limitBandwidth;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *loginButton;
 @property (weak, nonatomic) IBOutlet UILabel *phaseLabel;
 @property (weak, nonatomic) IBOutlet UILabel *apartmentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usageLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *usageProgressView;
+@property (nonatomic, copy)   NSString *apartment;
+@property (nonatomic, strong) NSString *phase;
+@property (nonatomic, copy)   NSString *month;
 @end
 
 @implementation ETSBandwidthViewController
@@ -37,49 +41,61 @@
     [self.synchronization synchronize:&error];
 }
 
-- (IBAction)panLeftMenu:(id)sender
+- (IBAction)viewApartmentAlert:(id)sender
 {
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
-}
-
-
-- (void)viewApartmentAlert
-{
-    CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] init];
-    self.loginView.layer.cornerRadius = 7;
-    [alertView setContainerView:self.loginView];
-    [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"OK", @"Annuler", nil]];
-    [alertView setUseMotionEffects:TRUE];
-    [alertView setDelegate:self];
-    [alertView show];
-}
-
-- (void)customIOS7dialogButtonTouchUpInside: (CustomIOS7AlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
-{
-    if (buttonIndex == 0) {
-        [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
-
-        NSString *month = [@([[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:[NSDate date]] month]) stringValue];
-        self.synchronization.request = [NSURLRequest requestForBandwidthWithMonth:month residence:self.loginView.apartmentTextField.text phase:self.loginView.phaseTextField.text];
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        [userDefaults setObject:self.loginView.apartmentTextField.text forKey:@"apartment"];
-        [userDefaults setObject:self.loginView.phaseTextField.text forKey:@"phase"];
-        self.phaseLabel.text = [NSString stringWithFormat:@"Phase %@", self.loginView.phaseTextField.text];
-        self.apartmentLabel.text = [NSString stringWithFormat:@"Appartement %@", self.loginView.apartmentTextField.text];
-        NSError *error;
-        [self.synchronization synchronize:&error];
+    if ([self.popover isPopoverVisible]) {
+        [self.popover dismissPopoverAnimated:YES];
+        self.popover = nil;
+        return;
     }
     
-    [alertView close];
+    UIViewController *loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"BandwidthPopover"];
+    ETSLoginView *loginView = (ETSLoginView *)loginViewController.view;
+    
+    if (self.phase)     loginView.phaseSegmentedControl.selectedSegmentIndex = [self.phase integerValue]-1;
+    if (self.apartment) loginView.apartmentTextField.text = self.apartment;
+    
+    loginViewController.preferredContentSize = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? CGSizeMake(295, 95) : CGSizeMake(357, 170);
+    self.popover = [[UIPopoverController alloc] initWithContentViewController:loginViewController];
+    self.popover.delegate = self;
+    [self.popover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+}
+
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
+    
+    ETSLoginView *loginView = (ETSLoginView*)popoverController.contentViewController.view;
+    
+    NSString *phase = [@(loginView.phaseSegmentedControl.selectedSegmentIndex+1) stringValue];
+    
+    self.synchronization.request = [NSURLRequest requestForBandwidthWithMonth:self.month residence:loginView.apartmentTextField.text phase:phase];
+
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:loginView.apartmentTextField.text forKey:@"apartment"];
+    [userDefaults setObject:phase forKey:@"phase"];
+    
+    self.phaseLabel.text = [NSString stringWithFormat:@"Phase %@", phase];
+    self.apartmentLabel.text = [NSString stringWithFormat:@"Appartement %@", loginView.apartmentTextField.text];
+    
+    self.phase = phase;
+    self.apartment = loginView.apartmentTextField.text;
+    
+    NSError *error;
+    [self.synchronization synchronize:&error];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    [self.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
+    [self setModalPresentationStyle:UIModalPresentationCurrentContext];
+    
     [TestFlight passCheckpoint:@"BANDWIDTH_VIEWCONTROLLER"];
     
-    NSString *month = [@([[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:[NSDate date]] month]) stringValue];
+    self.month = [@([[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:[NSDate date]] month]) stringValue];
     
     self.cellIdentifier = @"BandwidthIdentifier";
     
@@ -91,7 +107,7 @@
     synchronization.compareKey = @"id";
     synchronization.objectsKeyPath = @"query.results.table";
     synchronization.dateFormatter = self.dateFormatter;
-    synchronization.predicate = [NSPredicate predicateWithFormat:@"month ==[c] %@", month];
+    synchronization.predicate = [NSPredicate predicateWithFormat:@"month ==[c] %@", self.month];
     
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
@@ -109,26 +125,31 @@
     
     self.title = @"Bande passante";
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"home"] style:UIBarButtonItemStyleBordered target:self action:@selector(viewApartmentAlert)];
-    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *apartment = [userDefaults stringForKey:@"apartment"];
-    NSString *phase = [userDefaults stringForKey:@"phase"];
+    self.apartment = [userDefaults stringForKey:@"apartment"];
+    self.phase = [userDefaults stringForKey:@"phase"];
     
-    if ([apartment length] == 0 || [phase length] == 0) {
-        [self viewApartmentAlert];
-        self.dataNeedRefresh = NO;
-        [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
-        self.tableView.tableHeaderView.hidden = YES;
-    }
-    else {
-        synchronization.request = [NSURLRequest requestForBandwidthWithMonth:month residence:apartment phase:phase];
-        self.phaseLabel.text = [NSString stringWithFormat:@"Phase %@", phase];
-        self.apartmentLabel.text = [NSString stringWithFormat:@"Appartement %@", apartment];
+    if ([self.apartment length] > 0 && [self.phase integerValue] > 0) {
+        self.synchronization.request = [NSURLRequest requestForBandwidthWithMonth:self.month residence:self.apartment phase:self.phase];
+        self.phaseLabel.text = [NSString stringWithFormat:@"Phase %@", self.phase];
+        self.apartmentLabel.text = [NSString stringWithFormat:@"Appartement %@", self.apartment];
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
         df.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
         df.dateFormat = @"LLLL yyyy";
         self.dateLabel.text = [NSString stringWithFormat:@"Consommation, %@ :", [df stringFromDate:[NSDate date]]];
+    } else {
+        self.tableView.tableHeaderView.hidden = YES;
+        self.dataNeedRefresh = NO;
+        [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if ([self.apartment length] == 0 || [self.phase integerValue] == 0) {
+        [self viewApartmentAlert:self.loginButton];
     }
 }
 

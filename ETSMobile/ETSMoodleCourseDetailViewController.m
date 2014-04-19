@@ -8,7 +8,6 @@
 
 #import "ETSMoodleCourseDetailViewController.h"
 #import "ETSMoodleElement.h"
-#import "MFSideMenu.h"
 
 @implementation ETSMoodleCourseDetailViewController
 

@@ -8,7 +8,8 @@
 
 #import "ETSAuthenticationViewController.h"
 #import "KeychainItemWrapper.h"
-#import "MFSideMenu.h"
+#import "ETSAppDelegate.h"
+#import "MSDynamicsDrawerViewController.h"
 
 NSString * const kKeychainId = @"ApplETS";
 
@@ -17,6 +18,12 @@ NSString * const kKeychainId = @"ApplETS";
 @end
 
 @implementation ETSAuthenticationViewController
+
+- (IBAction)panLeftMenu:(id)sender
+{
+    MSDynamicsDrawerViewController *dynamicsDrawerViewController = ((ETSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
+    [dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateOpen animated:YES allowUserInterruption:YES completion:^{}];
+}
 
 + (ETSSynchronizationResponse) validateJSONResponse:(NSDictionary *)response
 {
@@ -37,8 +44,10 @@ NSString * const kKeychainId = @"ApplETS";
 {
     [super viewWillAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-    self.menuContainerViewController.panMode = MFSideMenuPanModeCenterViewController | MFSideMenuPanModeSideMenu;
+    [self.navigationController setNavigationBarHidden:[[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone animated:animated];
+    
+    MSDynamicsDrawerViewController *dynamicsDrawerViewController = ((ETSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
+    [dynamicsDrawerViewController setPaneDragRevealEnabled:YES forDirection:MSDynamicsDrawerDirectionLeft];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -73,9 +82,9 @@ NSString * const kKeychainId = @"ApplETS";
     [self.delegate controllerDidAuthenticate:self];
 }
 
-- (IBAction)showMenu:(id)sender
+- (IBAction)cancel:(id)sender
 {
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 + (NSString *)passwordInKeychain

@@ -8,7 +8,6 @@
 
 #import "ETSRadioPlayer.h"
 #import "ETSRadioViewController.h"
-#import "MFSideMenu.h"
 #import "ETSAppDelegate.h"
 
 @interface ETSRadioPlayer ()
@@ -56,30 +55,20 @@
     return self.player && self.player.rate;
 }
 
-- (void) observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object
-                         change:(NSDictionary*)change context:(void*)context {
-    
+- (void)observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void*)context
+{
     if ([keyPath isEqualToString:@"timedMetadata"])
     {
         AVPlayerItem* playerItem = object;
         for (AVMetadataItem* metadata in playerItem.timedMetadata)
             if ([metadata.commonKey isEqualToString:@"title"]) self.currentTitle = metadata.stringValue;
         
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            
-            UIViewController *controller = ((UINavigationController*)((MFSideMenuContainerViewController*)[(ETSAppDelegate *)[[UIApplication sharedApplication] delegate] window].rootViewController).centerViewController).visibleViewController;
-            if ([controller isKindOfClass:[ETSRadioViewController class]]) {
-                controller.navigationItem.prompt = self.currentTitle;
-            }
-        }
-        else {
-            UITabBarController *tbc =  (UITabBarController *)[(ETSAppDelegate *)[[UIApplication sharedApplication] delegate] window].rootViewController;
-            
-            id svc = tbc.selectedViewController;
-            
-            if ([svc isKindOfClass:[UINavigationController class]] && [((UINavigationController *)svc).topViewController isKindOfClass:[ETSRadioViewController class]]) {
-                ((UINavigationController *)svc).topViewController.navigationItem.prompt = self.currentTitle;
-            }
+        id controller = ((ETSAppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController.paneViewController;
+        
+        if ([controller isKindOfClass:[UINavigationController class]]) controller = ((UINavigationController *)controller).topViewController;
+        
+        if ([controller isKindOfClass:[ETSRadioViewController class]]) {
+            ((ETSRadioViewController *)controller).navigationItem.prompt = self.currentTitle;
         }
     }
 }

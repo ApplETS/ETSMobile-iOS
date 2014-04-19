@@ -8,7 +8,7 @@
 
 #import "ETSAppDelegate.h"
 
-#import "MFSideMenuContainerViewController.h"
+#import "MSDynamicsDrawerViewController.h"
 #import "ETSMenuViewController.h"
 #import "UIColor+Styles.h"
 #import "NSURLRequest+API.h"
@@ -36,73 +36,33 @@
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+
+    self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
+    self.dynamicsDrawerViewController.screenEdgePanCancelsConflictingGestures = NO;
+    self.dynamicsDrawerViewController.paneViewSlideOffAnimationEnabled = NO;
+    self.dynamicsDrawerViewController.paneDragRequiresScreenEdgePan = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone);
+    [self.dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerScaleStyler styler], [MSDynamicsDrawerFadeStyler styler], [MSDynamicsDrawerParallaxStyler styler]] forDirection:MSDynamicsDrawerDirectionLeft];
     
-    // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        
-        UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-
-        [tabBarController.tabBar setSelectedImageTintColor:[UIColor whiteColor]];
-        tabBarController.moreNavigationController.navigationBar.tintColor = [UIColor whiteColor];
-        
-        for (id vc in tabBarController.viewControllers) {
-            id viewController = nil;
-            if ([vc isKindOfClass:[UINavigationController class]]) {
-                viewController = ((UINavigationController *)vc).topViewController;
-                
-                if ([viewController isKindOfClass:[ETSWebViewViewController class]]) {
-                    ((ETSWebViewViewController *)viewController).initialRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ets.mbiblio.ca"]];
-                }
-            }
-            else if ([vc isKindOfClass:[UISplitViewController class]]) {
-                UISplitViewController *splitViewController = (UISplitViewController *)vc;
-                viewController = ((UINavigationController *)splitViewController.viewControllers[0]).topViewController;
-                
-                id detailsViewController = nil;
-                if ([splitViewController.viewControllers[1] isKindOfClass:[UINavigationController class]]) {
-                    detailsViewController = ((UINavigationController *)splitViewController.viewControllers[1]).topViewController;
-                }
-                
-                if ([viewController isKindOfClass:[ETSCoursesViewController_iPad class]]) {
-                    splitViewController.delegate = detailsViewController;
-                    ((ETSCoursesViewController_iPad *)viewController).delegate = detailsViewController;
-                }
-                else if ([viewController isKindOfClass:[ETSSecurityViewController class]]) {
-                    splitViewController.delegate = detailsViewController;
-                    ((ETSSecurityViewController *)viewController).delegate = detailsViewController;
-                }
-                else if ([viewController isKindOfClass:[ETSDirectoryViewController class]]) {
-                    splitViewController.delegate = viewController;
-                    ((ETSDirectoryViewController *)viewController).splitViewController = splitViewController;
-                }
-            }
-            
-            if ([viewController respondsToSelector:@selector(setManagedObjectContext:)])
-                [viewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
-            }
-        
-    } else {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:[NSBundle mainBundle]];
-        MFSideMenuContainerViewController *container = (MFSideMenuContainerViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"navigationController"];
-
-        ETSNewsViewController *controller = (ETSNewsViewController *)navigationController.topViewController;
-        controller.managedObjectContext = self.managedObjectContext;
-        
-        ETSMenuViewController *leftSideMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
-        leftSideMenuViewController.managedObjectContext = self.managedObjectContext;
-        
-        [container.shadow setEnabled:YES];
-        [container.shadow setRadius:5.0f];
-        [container.shadow setColor:[UIColor blackColor]];
-        
-        [container setLeftMenuViewController:leftSideMenuViewController];
-        [container setCenterViewController:navigationController];
-    
+        self.dynamicsDrawerViewController.paneView.clipsToBounds = YES;
     }
+    
+    ETSMenuViewController *menuViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
+    menuViewController.managedObjectContext = self.managedObjectContext;
+    
+    menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
+    [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
+    
+    // Transition to the first view controller
+    [menuViewController transitionToViewController:ETSPaneViewControllerTypeNews];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = self.dynamicsDrawerViewController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
