@@ -364,6 +364,7 @@
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
 {
+    self.navigationItem.rightBarButtonItem.title = @"Déconnexion";
 	self.synchronizationDone = 0;
 	self.synchronization.request = [NSURLRequest requestForProfile];
 	self.synchronizationProgram.request = [NSURLRequest requestForProgram];

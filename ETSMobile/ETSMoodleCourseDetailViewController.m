@@ -9,6 +9,10 @@
 #import "ETSMoodleCourseDetailViewController.h"
 #import "ETSMoodleElement.h"
 
+@interface ETSMoodleCourseDetailViewController ()
+@property (nonatomic, copy) NSString *searchText;
+@end
+
 @implementation ETSMoodleCourseDetailViewController
 
 @synthesize fetchedResultsController = _fetchedResultsController;
@@ -25,6 +29,8 @@
     [TestFlight passCheckpoint:@"MOODLE_DETAIL_VIEWCONTROLLER"];
     
     self.cellIdentifier = @"MoodleIdentifier";
+    
+    self.searchText = nil;
     
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
     
@@ -66,7 +72,14 @@
     fetchRequest.entity = entity;
     fetchRequest.fetchBatchSize = 20;
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"parentid" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"id" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
-    fetchRequest.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[[NSPredicate predicateWithFormat:@"visible == YES"], [NSPredicate predicateWithFormat:@"course.id == %@", self.course.id]]];
+    
+    NSMutableArray *predicates = [NSMutableArray arrayWithArray:@[[NSPredicate predicateWithFormat:@"visible == YES"], [NSPredicate predicateWithFormat:@"course.id == %@", self.course.id]]];
+    
+    if (self.searchDisplayController.searchBar.text && [self.searchText length] > 0) {
+        [predicates addObject:[NSPredicate predicateWithFormat:@"(name contains[cd] %@)", self.searchText]];
+    }
+    
+    fetchRequest.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
     
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"parentid" cacheName:nil];
     self.fetchedResultsController = aFetchedResultsController;
@@ -113,6 +126,28 @@
     return elements;
 }
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    self.searchText = searchText;
+    self.fetchedResultsController = nil;
+    NSError *error;
+    if (![[self fetchedResultsController] performFetch:&error]) {
+        // FIXME: Update to handle the error appropriately.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    self.searchText = nil;
+    self.fetchedResultsController = nil;
+    NSError *error;
+    if (![[self fetchedResultsController] performFetch:&error]) {
+        // FIXME: Update to handle the error appropriately.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+}
+
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     ETSMoodleElement *element = (ETSMoodleElement *)managedObject;
@@ -123,6 +158,20 @@
 {
     ETSMoodleElement *element = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
     return element.header;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell;
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        cell = [self.tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
+    } else {
+        cell = [self.tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
+    }
+    
+    [self configureCell:cell atIndexPath:indexPath];
+    return cell;
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
