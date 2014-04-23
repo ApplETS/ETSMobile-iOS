@@ -11,6 +11,7 @@
 		1D29A464188DB9E500CF02EB /* ETSCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29A463188DB9E500CF02EB /* ETSCommentCell.m */; };
 		1D33BA24188F064600A5F1C8 /* ETSRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA23188F064600A5F1C8 /* ETSRateCell.m */; };
 		1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA26188F065600A5F1C8 /* ETSTextCell.m */; };
+		2600DB07190767000039039A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2600DB06190767000039039A /* MobileCoreServices.framework */; };
 		26085B3D1829D84300FE35AB /* ETSAPIURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26085B3C1829D84300FE35AB /* ETSAPIURL.plist */; };
 		26085B401829D8D700FE35AB /* NSURL+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 26085B3F1829D8D700FE35AB /* NSURL+API.m */; };
 		2610879E18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610879D18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m */; };
@@ -137,6 +138,7 @@
 		1D33BA23188F064600A5F1C8 /* ETSRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRateCell.m; sourceTree = "<group>"; };
 		1D33BA25188F065600A5F1C8 /* ETSTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSTextCell.h; sourceTree = "<group>"; };
 		1D33BA26188F065600A5F1C8 /* ETSTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSTextCell.m; sourceTree = "<group>"; };
+		2600DB06190767000039039A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2601088D181596820037E795 /* ETSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCollectionViewController.h; sourceTree = "<group>"; };
 		26085B3C1829D84300FE35AB /* ETSAPIURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPIURL.plist; sourceTree = "<group>"; };
 		26085B3E1829D8D700FE35AB /* NSURL+API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+API.h"; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2600DB07190767000039039A /* MobileCoreServices.framework in Frameworks */,
 				26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */,
 				26274FA718F84D2500929CE2 /* libTestFlight.a in Frameworks */,
 				9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */,
@@ -635,6 +638,7 @@
 		26DD92A617EA610D00469FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2600DB06190767000039039A /* MobileCoreServices.framework */,
 				26274FA818F84D6A00929CE2 /* libz.dylib */,
 				9CC88726189ED56B002A3D04 /* MapKit.framework */,
 				26F46A98183ED03400232B5A /* AVFoundation.framework */,

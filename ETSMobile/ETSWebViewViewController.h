@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ETSWebViewViewController : UIViewController
-@property (nonatomic, strong) NSURLRequest *initialRequest;
+@interface ETSWebViewViewController : UIViewController <UISplitViewControllerDelegate>
+@property (nonatomic, strong) NSURLRequest *request;
+-(void)loadData:(NSData *)data MIMEType:(NSString *)MIMEType textEncodingName:(NSString *)textEncodingName baseURL:(NSURL *)baseURL;
 @end

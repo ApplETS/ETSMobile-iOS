@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Cj2-BH-2uQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D45a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Cj2-BH-2uQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -541,13 +541,16 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MoodleIdentifier" id="LR2-Vd-Rat">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MoodleIdentifier" id="LR2-Vd-Rat">
                                 <rect key="frame" x="0.0" y="163" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LR2-Vd-Rat" id="zVd-9V-k1v">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ucY-u0-Eou" kind="push" identifier="pageSegue" id="VgT-u1-y8l"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -918,7 +921,7 @@
         <!--Web View View Controller - Bibliothèque-->
         <scene sceneID="y6B-h0-1u4">
             <objects>
-                <viewController title="Bibliothèque" id="NxR-56-9fe" customClass="ETSWebViewViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SingleWebViewController" title="Bibliothèque" id="NxR-56-9fe" customClass="ETSWebViewViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aVZ-qP-MLq"/>
                         <viewControllerLayoutGuide type="bottom" id="al1-LZ-Wr7"/>
@@ -931,6 +934,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="NxR-56-9fe" id="mTe-YT-PUh"/>
+                                </connections>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1945,6 +1951,79 @@ http://applets.etsmtl.ca</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1390" y="-1940"/>
+        </scene>
+        <!--Web View View Controller - Bibliothèque-->
+        <scene sceneID="VtQ-zB-E5k">
+            <objects>
+                <viewController title="Bibliothèque" id="ucY-u0-Eou" customClass="ETSWebViewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cDg-xc-d8U"/>
+                        <viewControllerLayoutGuide type="bottom" id="4dJ-ei-d2e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="opn-2I-wKW">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="426-Hf-xfx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ucY-u0-Eou" id="MDz-6f-8HV"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4dJ-ei-d2e" firstAttribute="top" secondItem="426-Hf-xfx" secondAttribute="bottom" id="4cU-vl-W7G"/>
+                            <constraint firstItem="426-Hf-xfx" firstAttribute="top" secondItem="cDg-xc-d8U" secondAttribute="bottom" id="L5E-aA-RsY"/>
+                            <constraint firstItem="426-Hf-xfx" firstAttribute="leading" secondItem="opn-2I-wKW" secondAttribute="leading" id="i7b-pP-trw"/>
+                            <constraint firstAttribute="trailing" secondItem="426-Hf-xfx" secondAttribute="trailing" id="mlw-5t-N3j"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Précédent" id="L77-g8-cSY">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="goBack" destination="426-Hf-xfx" id="EY5-HT-RAL"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="uPQ-Tr-y9L"/>
+                        <barButtonItem title="Suivant" id="eRK-eP-ZqY">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="goForward" destination="426-Hf-xfx" id="fI1-al-g9Y"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="tZS-k1-X6M"/>
+                        <barButtonItem systemItem="refresh" id="5p1-m0-trZ">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="reload" destination="426-Hf-xfx" id="nGT-ns-3Ln"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="aDK-wf-dgB"/>
+                        <barButtonItem systemItem="stop" id="hch-Bn-SyL">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="stopLoading" destination="426-Hf-xfx" id="hIp-q3-Wdv"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="AUU-4L-viK"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <connections>
+                        <outlet property="backBarButtonItem" destination="L77-g8-cSY" id="4NQ-J0-b7n"/>
+                        <outlet property="nextBarButtonItem" destination="eRK-eP-ZqY" id="xgc-MO-kPE"/>
+                        <outlet property="refreshBarButtonItem" destination="5p1-m0-trZ" id="ZSH-tj-hba"/>
+                        <outlet property="stopBarButtonItem" destination="hch-Bn-SyL" id="Xqn-39-GSO"/>
+                        <outlet property="webView" destination="426-Hf-xfx" id="Epl-lc-bXR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KKB-c7-eJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6" y="-4388"/>
         </scene>
     </scenes>
     <resources>

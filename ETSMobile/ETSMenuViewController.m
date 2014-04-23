@@ -16,6 +16,7 @@
 #import "ETSCoursesViewController_iPad.h"
 #import "ETSSecurityViewController.h"
 #import "ETSDirectoryViewController.h"
+#import "ETSMoodleCoursesViewController.h"
 
 NSString * const kStoryboardAuthenticationViewController = @"AuthenticationViewController";
 NSString * const ETSMenuCellReuseIdentifier = @"MenuCell";
@@ -198,7 +199,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
     if (!paneViewController) return;
     
     if (paneViewControllerType == ETSPaneViewControllerTypeLibrary)
-        ((ETSWebViewViewController *)((UINavigationController *)paneViewController).topViewController).initialRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ets.mbiblio.ca"]];
+        ((ETSWebViewViewController *)((UINavigationController *)paneViewController).topViewController).request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ets.mbiblio.ca"]];
     
     if ([paneViewController respondsToSelector:@selector(setManagedObjectContext:)])
         [paneViewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
@@ -234,6 +235,9 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
         else if ([viewController isKindOfClass:[ETSDirectoryViewController class]]) {
             splitViewController.delegate = viewController;
             ((ETSDirectoryViewController *)viewController).splitViewController = splitViewController;
+        }
+        else if ([viewController isKindOfClass:[ETSMoodleCoursesViewController class]]) {
+            splitViewController.delegate = detailsViewController;
         }
     }
     
