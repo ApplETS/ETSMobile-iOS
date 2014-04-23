@@ -11,7 +11,6 @@
 #import "ETSCourse.h"
 #import "ETSEvaluation.h"
 #import "ETSMenuViewController.h"
-#import "MFSideMenu.h"
 
 @interface ETSCoursesViewController_iPad ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
@@ -42,9 +41,12 @@
     self.synchronization.delegate = self;
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
-        ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-        ac.delegate = self;
-        [self.navigationController pushViewController:ac animated:YES];
+        UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+        ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
+        authenticationController.delegate = self;
+        navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+        navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self.navigationController presentViewController:navigationController animated:YES completion:nil];
     }
 }
 
@@ -96,7 +98,7 @@
         cell.detailTextLabel.text = course.grade;
     }
     else if ([course.results floatValue] > 0) {
-        NSNumber *percent = @([course.results floatValue]/[[course totalEvaluationWeighting] floatValue]*100);
+        NSNumber *percent = @([course.resultOn100 floatValue]/[[course totalEvaluationWeighting] floatValue]*100);
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu %%", (long)[percent integerValue]];
     } else {
         cell.detailTextLabel.text = @"";

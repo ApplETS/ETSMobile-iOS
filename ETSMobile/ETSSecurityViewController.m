@@ -8,7 +8,6 @@
 
 #import "ETSSecurityViewController.h"
 #import "ETSSecurityDetailViewController.h"
-#import "MFSideMenu.h"
 
 NSString * const kProcedureTitle = @"Title";
 NSString * const kProcedureSummary = @"Summary";
@@ -16,15 +15,9 @@ NSString * const kProcedureFile = @"File";
 
 @interface ETSSecurityViewController ()
 @property (nonatomic, strong) NSArray *procedures;
-- (IBAction)panLeftMenu:(id)sender;
 @end
 
 @implementation ETSSecurityViewController
-
-- (IBAction)panLeftMenu:(id)sender
-{
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
-}
 
 - (void)viewDidLoad
 {

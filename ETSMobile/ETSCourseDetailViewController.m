@@ -10,7 +10,6 @@
 #import "NSURLRequest+API.h"
 #import "ETSEvaluation.h"
 #import "ETSEvaluationCell.h"
-#import "MFSideMenu.h"
 
 @interface ETSCourseDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -65,7 +64,7 @@
  
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-    [self.coursesBarButtonItem.target performSelector:self.coursesBarButtonItem.action withObject:self.coursesBarButtonItem];
+  //  [self.coursesBarButtonItem.target performSelector:self.coursesBarButtonItem.action withObject:self.coursesBarButtonItem];
 #pragma clang diagnostic pop
 }
 

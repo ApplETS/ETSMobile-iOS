@@ -34,7 +34,7 @@
 {
     float sum = 0;
     for (ETSEvaluation *evaluation in self.evaluations) {
-        if (![evaluation.ignored boolValue]) {
+        if (![evaluation.ignored boolValue] && [evaluation.mean floatValue] > 0) {
             sum += [evaluation.weighting floatValue];
         }
     }

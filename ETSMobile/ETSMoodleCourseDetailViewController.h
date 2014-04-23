@@ -9,7 +9,7 @@
 #import "ETSTableViewController.h"
 #import "ETSMoodleCourse.h"
 
-@interface ETSMoodleCourseDetailViewController : ETSTableViewController
+@interface ETSMoodleCourseDetailViewController : ETSTableViewController <UISearchDisplayDelegate, UISearchBarDelegate>
 
 @property (nonatomic, strong) ETSMoodleCourse *course;
 @property (nonatomic, copy) NSString *token;

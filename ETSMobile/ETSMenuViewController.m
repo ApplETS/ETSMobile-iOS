@@ -8,54 +8,42 @@
 
 #import "ETSMenuViewController.h"
 #import "ETSWebViewViewController.h"
-#import "MFSideMenuContainerViewController.h"
 #import "UIColor+Styles.h"
 #import "ETSAppDelegate.h"
 #import "ETSTableViewController.h"
+#import "ETSMenuCell.h"
+#import "ETSMenuTableViewHeader.h"
+#import "ETSCoursesViewController_iPad.h"
+#import "ETSSecurityViewController.h"
+#import "ETSDirectoryViewController.h"
+#import "ETSMoodleCoursesViewController.h"
 
-NSString * const kStoryboardNewsViewController              = @"NewsViewController";
-NSString * const kStoryboardAuthenticationViewController    = @"AuthenticationViewController";
-NSString * const kStoryboardCoursesViewController           = @"CoursesViewController";
-NSString * const kStoryboardProfileViewController           = @"ProfileViewController";
-NSString * const kStoryboardMoodleViewController            = @"MoodleViewController";
-NSString * const kStoryboardCalendarViewController          = @"CalendarViewController";
-NSString * const kStoryboardDirectoryViewController         = @"DirectoryViewController";
-NSString * const kStoryboardLibraryViewController           = @"WebViewController";
-NSString * const kStoryboardRadioViewController             = @"RadioViewController";
-NSString * const kStoryboardSecurityViewController          = @"SecurityViewController";
-NSString * const kStoryboardBandwidthViewController         = @"BandwidthViewController";
-NSString * const kStoryboardCommentViewController           = @"CommentViewController";
-NSString * const kStoryboardAboutViewController             = @"AboutViewController";
-NSString * const kStoryboardSponsorsViewController          = @"SponsorsViewController";
+NSString * const kStoryboardAuthenticationViewController = @"AuthenticationViewController";
+NSString * const ETSMenuCellReuseIdentifier = @"MenuCell";
+NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
 
-typedef NS_ENUM(NSInteger, ETSMenuMe)
-{
-    //ETSMenuMeToday,
-    ETSMenuMeSchedule,
-    ETSMenuMeCourse,
-    //ETSMenuMeInternship,
-    ETSMenuMeProfile,
-    ETSMenuMeMoodle,
-    ETSMenuMeBandwidth
-};
-
-typedef NS_ENUM(NSInteger, ETSMenuUniversity)
-{
-    ETSMenuUniversityNews,
-    ETSMenuUniversityDirectory,
-    ETSMenuUniversityLibrary,
-    ETSMenuUniversityRadio,
-    ETSMenuUniversitySecurity
-};
-
-typedef NS_ENUM(NSInteger, ETSMenuApplETS)
-{
-    ETSMenuApplETSComments,
-    ETSMenuApplETSAbout,
-    ETSMenuApplETSSponsors
-};
+@interface ETSMenuViewController ()
+@property (nonatomic, strong) NSDictionary *paneViewControllerTitles;
+@property (nonatomic, strong) NSDictionary *paneViewControllerIcons;
+@property (nonatomic, strong) NSDictionary *paneViewControllerIdentifiers;
+@property (nonatomic, strong) UIBarButtonItem *paneRevealLeftBarButtonItem;
+@end
 
 @implementation ETSMenuViewController
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self initialize];
+    }
+    return self;
+}
+
+- (void)loadView
+{
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+}
 
 - (void)viewDidLoad
 {
@@ -63,11 +51,60 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
     
     self.tableView.separatorColor = [UIColor menuSeparatorColor];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.backgroundColor = [UIColor colorWithRed:33/255.0f green:33/255.0f blue:33/255.0f alpha:1];
+    [self.tableView registerClass:[ETSMenuCell class] forCellReuseIdentifier:ETSMenuCellReuseIdentifier];
+    [self.tableView registerClass:[ETSMenuTableViewHeader class] forHeaderFooterViewReuseIdentifier:ETSDrawerHeaderReuseIdentifier];
 }
 
-- (MFSideMenuContainerViewController *)menuContainerViewController
+- (void)initialize
 {
-    return (MFSideMenuContainerViewController *)self.parentViewController;
+    self.paneViewControllerTitles = @{
+                                           @(ETSPaneViewControllerTypeAbout)        : NSLocalizedString(@"À propos d’ÉTSMobile", nil),
+                                           @(ETSPaneViewControllerTypeBandwidth)    : NSLocalizedString(@"Bande passante", nil),
+                                           @(ETSPaneViewControllerTypeCalendar)     : NSLocalizedString(@"Horaire", nil),
+                                           @(ETSPaneViewControllerTypeComment)      : NSLocalizedString(@"Problème ou commentaire?", nil),
+                                           @(ETSPaneViewControllerTypeCourses)      : NSLocalizedString(@"Notes", nil),
+                                           @(ETSPaneViewControllerTypeDirectory)    : NSLocalizedString(@"Bottin", nil),
+                                           @(ETSPaneViewControllerTypeLibrary)      : NSLocalizedString(@"Bibliothèque", nil),
+                                           @(ETSPaneViewControllerTypeMoodle)       : NSLocalizedString(@"Moodle", nil),
+                                           @(ETSPaneViewControllerTypeNews)         : NSLocalizedString(@"Actualités", nil),
+                                           @(ETSPaneViewControllerTypeProfile)      : NSLocalizedString(@"Profil", nil),
+                                           @(ETSPaneViewControllerTypeRadio)        : NSLocalizedString(@"Radio Piranha", nil),
+                                           @(ETSPaneViewControllerTypeSecurity)     : NSLocalizedString(@"Sécurité", nil),
+                                           @(ETSPaneViewControllerTypeSponsors)     : NSLocalizedString(@"Nos partenaires", nil),
+                                           };
+    
+    self.paneViewControllerIcons = @{
+                                           @(ETSPaneViewControllerTypeAbout)        : [UIImage imageNamed:@"ico_about"],
+                                           @(ETSPaneViewControllerTypeBandwidth)    : [UIImage imageNamed:@"ico_internet"],
+                                           @(ETSPaneViewControllerTypeCalendar)     : [UIImage imageNamed:@"ico_schedule_24x24"],
+                                           @(ETSPaneViewControllerTypeComment)      : [UIImage imageNamed:@"ico_comment"],
+                                           @(ETSPaneViewControllerTypeCourses)      : [UIImage imageNamed:@"ico_notes"],
+                                           @(ETSPaneViewControllerTypeDirectory)    : [UIImage imageNamed:@"ico_bottin"],
+                                           @(ETSPaneViewControllerTypeLibrary)      : [UIImage imageNamed:@"ico_library"],
+                                           @(ETSPaneViewControllerTypeMoodle)       : [UIImage imageNamed:@"ico_moodle"],
+                                           @(ETSPaneViewControllerTypeNews)         : [UIImage imageNamed:@"ico_news"],
+                                           @(ETSPaneViewControllerTypeProfile)      : [UIImage imageNamed:@"ico_profil"],
+                                           @(ETSPaneViewControllerTypeRadio)        : [UIImage imageNamed:@"ico_radio"],
+                                           @(ETSPaneViewControllerTypeSecurity)     : [UIImage imageNamed:@"ico_security"],
+                                           @(ETSPaneViewControllerTypeSponsors)     : [UIImage imageNamed:@"ico_partners"],
+                                           };
+    
+    self.paneViewControllerIdentifiers = @{
+                                           @(ETSPaneViewControllerTypeAbout)        : @"AboutViewController",
+                                           @(ETSPaneViewControllerTypeBandwidth)    : @"BandwidthViewController",
+                                           @(ETSPaneViewControllerTypeCalendar)     : @"CalendarViewController",
+                                           @(ETSPaneViewControllerTypeComment)      : @"CommentViewController",
+                                           @(ETSPaneViewControllerTypeCourses)      : @"CoursesViewController",
+                                           @(ETSPaneViewControllerTypeDirectory)    : @"DirectoryViewController",
+                                           @(ETSPaneViewControllerTypeLibrary)      : @"WebViewController",
+                                           @(ETSPaneViewControllerTypeMoodle)       : @"MoodleViewController",
+                                           @(ETSPaneViewControllerTypeNews)         : @"NewsViewController",
+                                           @(ETSPaneViewControllerTypeProfile)      : @"ProfileViewController",
+                                           @(ETSPaneViewControllerTypeRadio)        : @"RadioViewController",
+                                           @(ETSPaneViewControllerTypeSecurity)     : @"SecurityViewController",
+                                           @(ETSPaneViewControllerTypeSponsors)     : @"SponsorsViewController",
+                                           };
 }
 
 #pragma mark - Table view data source
@@ -89,182 +126,139 @@ typedef NS_ENUM(NSInteger, ETSMenuApplETS)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"MenuCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ETSMenuCellReuseIdentifier forIndexPath:indexPath];
     
-    cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.bounds];
-    cell.selectedBackgroundView.backgroundColor = [UIColor menuSelectedCellBackgroundColor];
-    
-    cell.backgroundColor = [UIColor menuCellBackgroundColor];
-
-    cell.textLabel.textColor = [UIColor menuLabelColor];
-    cell.textLabel.highlightedTextColor = [UIColor menuHighlightedLabelColor];
-    
-    cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:15];
-    
-    if (indexPath.section == 0) {
-  /*      if (indexPath.row == ETSMenuMeToday) {
-            cell.textLabel.text = NSLocalizedString(@"Aujourd'hui", nil);
-            cell.imageView.image = [UIImage imageNamed:@"ico_aujourdhui.png"];
-        }
-        else*/ if (indexPath.row == ETSMenuMeSchedule) {
-            cell.textLabel.text = NSLocalizedString(@"Horaire", nil);
-            cell.imageView.image = [UIImage imageNamed:@"ico_schedule_24x24.png"];
-        }
-        else if (indexPath.row == ETSMenuMeCourse) {
-            cell.textLabel.text = NSLocalizedString(@"Notes", nil);
-            cell.imageView.image = [UIImage imageNamed:@"ico_notes.png"];
-        }
-/*        else if (indexPath.row == ETSMenuMeInternship) {
-            cell.textLabel.text = NSLocalizedString(@"Stages", nil);
-            cell.imageView.image = [UIImage imageNamed:@"ico_stage.png"];
-        }*/
-        else if (indexPath.row == ETSMenuMeProfile) {
-            cell.textLabel.text = NSLocalizedString(@"Profil", nil);
-            cell.imageView.image = [UIImage imageNamed:@"ico_profil.png"];
-        }
-        else if (indexPath.row == ETSMenuMeMoodle) {
-            cell.textLabel.text = NSLocalizedString(@"Moodle", nil);
-            cell.imageView.image = [UIImage imageNamed:@"ico_moodle.png"];
-        }
-        else if (indexPath.row == ETSMenuMeBandwidth) {
-            cell.textLabel.text = NSLocalizedString(@"Bande passante", nil);
-            cell.imageView.image = [UIImage imageNamed:@"ico_internet.png"];
-        }
-    }
-    
-    else if (indexPath.section == 1) {
-        if (indexPath.row == ETSMenuUniversityNews) {
-            cell.textLabel.text = NSLocalizedString(@"Nouvelles", nil);
-            cell.imageView.image = [UIImage imageNamed:@"ico_news.png"];
-        }
-        else if (indexPath.row == ETSMenuUniversityDirectory) {
-            cell.textLabel.text = NSLocalizedString(@"Bottin", nil);
-            cell.imageView.image = [UIImage imageNamed:@"ico_bottin.png"];
-        }
-        else if (indexPath.row == ETSMenuUniversityLibrary) {
-            cell.textLabel.text = NSLocalizedString(@"Bibliothèque", nil);
-            cell.imageView.image = [UIImage imageNamed:@"ico_library.png"];
-        }
-        else if (indexPath.row == ETSMenuUniversityRadio) {
-            cell.textLabel.text = NSLocalizedString(@"Radio Piranha", nil);
-             cell.imageView.image = [UIImage imageNamed:@"ico_radio.png"];
-        }
-        else if (indexPath.row == ETSMenuUniversitySecurity) {
-            cell.textLabel.text = NSLocalizedString(@"Sécurité", nil);
-             cell.imageView.image = [UIImage imageNamed:@"ico_security.png"];
-        }
-    }
-    
-    else if (indexPath.section == 2) {
-        if (indexPath.row == ETSMenuApplETSComments) {
-            cell.textLabel.text = NSLocalizedString(@"Problème ou commentaire?", nil);
-            cell.imageView.image = [UIImage imageNamed:@"ico_comment.png"];
-        }
-        else if (indexPath.row == ETSMenuApplETSAbout) {
-            cell.textLabel.text = NSLocalizedString(@"À propos d'ÉTSMobile", nil);
-            cell.imageView.image = [UIImage imageNamed:@"ico_about.png"];
-        }
-        else if (indexPath.row == ETSMenuApplETSSponsors) {
-            cell.textLabel.text = NSLocalizedString(@"Nos partenaires", nil);
-            cell.imageView.image = [UIImage imageNamed:@"ico_partners.png"];
-        }
-    }
+    cell.textLabel.text = self.paneViewControllerTitles[@([self paneViewControllerTypeForIndexPath:indexPath])];
+    cell.imageView.image = self.paneViewControllerIcons[@([self paneViewControllerTypeForIndexPath:indexPath])];
 
     return cell;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 30)];
-    headerView.backgroundColor = [UIColor menuSectionBackgroundColor];
-    
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 1, tableView.bounds.size.width, 20)];
-    label.textColor = [UIColor menuLabelColor];
-    label.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:10];
-    
-    [headerView addSubview:label];
-    
+
+    UITableViewHeaderFooterView *headerView = [self.tableView dequeueReusableHeaderFooterViewWithIdentifier:ETSDrawerHeaderReuseIdentifier];
     switch (section)
     {
-        case 0: label.text = [NSLocalizedString(@"Moi", nil) uppercaseString]; break;
-        case 1: label.text = [NSLocalizedString(@"École de technologie supérieure", nil) uppercaseString]; break;
-        case 2: label.text = [NSLocalizedString(@"ApplETS", nil) uppercaseString]; break;
+        case 0: headerView.textLabel.text = [NSLocalizedString(@"Moi", nil) uppercaseString]; break;
+        case 1: headerView.textLabel.text = [NSLocalizedString(@"École de technologie supérieure", nil) uppercaseString]; break;
+        case 2: headerView.textLabel.text = [NSLocalizedString(@"ApplETS", nil) uppercaseString]; break;
     }
     
     return headerView;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 28.0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return FLT_EPSILON;
+}
+
+- (ETSPaneViewControllerType)paneViewControllerTypeForIndexPath:(NSIndexPath *)indexPath
+{
+    NSUInteger row = 0;
+    for (NSUInteger i = 0; i < indexPath.section; i++) {
+        row += [self.tableView numberOfRowsInSection:i];
+    }
+    row += indexPath.row;
+    
+    return row;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIViewController *viewController = nil;
+    ETSPaneViewControllerType paneViewControllerType = [self paneViewControllerTypeForIndexPath:indexPath];
+    [self transitionToViewController:paneViewControllerType];
     
-    if (indexPath.section == 0) {
-/*        if (indexPath.row == ETSMenuMeToday) {
+    // Prevent visual display bug with cell dividers
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    double delayInSeconds = 0.3;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self.tableView reloadData];
+    });
+}
 
+
+- (void)transitionToViewController:(ETSPaneViewControllerType)paneViewControllerType
+{
+    // Close pane if already displaying the pane view controller
+    if (paneViewControllerType == self.paneViewControllerType) {
+        [self.dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateClosed animated:YES allowUserInterruption:YES completion:nil];
+        return;
+    }
+    
+    BOOL animateTransition = self.dynamicsDrawerViewController.paneViewController != nil;
+    
+    UIViewController *paneViewController = [self.storyboard instantiateViewControllerWithIdentifier:self.paneViewControllerIdentifiers[@(paneViewControllerType)]];
+    
+    if (!paneViewController) return;
+    
+    if (paneViewControllerType == ETSPaneViewControllerTypeLibrary)
+        ((ETSWebViewViewController *)((UINavigationController *)paneViewController).topViewController).request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ets.mbiblio.ca"]];
+    
+    if ([paneViewController respondsToSelector:@selector(setManagedObjectContext:)])
+        [paneViewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
+    else if ([paneViewController isKindOfClass:[UINavigationController class]] && [((UINavigationController *)paneViewController).topViewController respondsToSelector:@selector(setManagedObjectContext:)])
+        [((UINavigationController *)paneViewController).topViewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
+    
+    if ([paneViewController isKindOfClass:[UISplitViewController class]]) {
+        UISplitViewController *splitViewController = (UISplitViewController *)paneViewController;
+        splitViewController.presentsWithGesture = NO;
+        
+        id viewController = ((UINavigationController *)splitViewController.viewControllers[0]).topViewController;
+        
+        id detailsViewController = nil;
+        if ([splitViewController.viewControllers[1] isKindOfClass:[UINavigationController class]]) {
+            detailsViewController = ((UINavigationController *)splitViewController.viewControllers[1]).topViewController;
         }
-        else*/ if (indexPath.row == ETSMenuMeSchedule) {
-            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardCalendarViewController];
+        
+        id masterViewController = nil;
+        if ([splitViewController.viewControllers[0] isKindOfClass:[UINavigationController class]]) {
+            masterViewController = ((UINavigationController *)splitViewController.viewControllers[0]).topViewController;
+            if ([masterViewController respondsToSelector:@selector(setManagedObjectContext:)])
+                [masterViewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
         }
-        else if (indexPath.row == ETSMenuMeCourse) {
-            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardCoursesViewController];
+        
+        if ([viewController isKindOfClass:[ETSCoursesViewController_iPad class]]) {
+            splitViewController.delegate = detailsViewController;
+            ((ETSCoursesViewController_iPad *)viewController).delegate = detailsViewController;
         }
-/*        else if (indexPath.row == ETSMenuMeInternship) {
-            viewController = [self.storyboard instantiateAuthenticationViewController];
-        }*/
-        else if (indexPath.row == ETSMenuMeProfile) {
-            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardProfileViewController];
+        else if ([viewController isKindOfClass:[ETSSecurityViewController class]]) {
+            splitViewController.delegate = detailsViewController;
+            ((ETSSecurityViewController *)viewController).delegate = detailsViewController;
         }
-        else if (indexPath.row == ETSMenuMeMoodle) {
-            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardMoodleViewController];
+        else if ([viewController isKindOfClass:[ETSDirectoryViewController class]]) {
+            splitViewController.delegate = viewController;
+            ((ETSDirectoryViewController *)viewController).splitViewController = splitViewController;
         }
-        else if (indexPath.row == ETSMenuMeBandwidth) {
-            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardBandwidthViewController];
+        else if ([viewController isKindOfClass:[ETSMoodleCoursesViewController class]]) {
+            splitViewController.delegate = detailsViewController;
         }
     }
     
-    else if (indexPath.section == 1) {
-        if (indexPath.row == ETSMenuUniversityNews) {
-            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardNewsViewController];
-        }
-        else if (indexPath.row == ETSMenuUniversityDirectory) {
-            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardDirectoryViewController];
-        }
-        else if (indexPath.row == ETSMenuUniversityLibrary) {
-            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardLibraryViewController];
-            ((ETSWebViewViewController *)viewController).initialRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ets.mbiblio.ca"]];
-        }
-        else if (indexPath.row == ETSMenuUniversityRadio) {
-            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardRadioViewController];
-        }
-        else if (indexPath.row == ETSMenuUniversitySecurity) {
-            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardSecurityViewController];
-        }
+    paneViewController.navigationItem.title = self.paneViewControllerTitles[@(paneViewControllerType)];
+    
+    self.paneRevealLeftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStyleBordered target:self action:@selector(dynamicsDrawerRevealLeftBarButtonItemTapped:)];
+   
+    if ([paneViewController isKindOfClass:[UINavigationController class]]) {
+        ((UINavigationController *)paneViewController).topViewController.navigationItem.leftBarButtonItem = self.paneRevealLeftBarButtonItem;
+    } else if ([paneViewController isKindOfClass:[UIViewController class]]) {
+        paneViewController.navigationItem.leftBarButtonItem = self.paneRevealLeftBarButtonItem;
     }
+
+    [self.dynamicsDrawerViewController setPaneViewController:paneViewController animated:animateTransition completion:nil];
     
-    else if (indexPath.section == 2) {
-        if (indexPath.row == ETSMenuApplETSComments) {
-            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardCommentViewController];
-        }
-        else if (indexPath.row == ETSMenuApplETSAbout) {
-            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAboutViewController];
-        }
-        else if (indexPath.row == ETSMenuApplETSSponsors) {
-            viewController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardSponsorsViewController];
-        }
-    }
-    
-    if (!viewController) return;
-    
-    if ([viewController respondsToSelector:@selector(setManagedObjectContext:)])
-        [viewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
-    
-    UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
-    [navigationController.navigationBar setTranslucent:YES];
-    [navigationController.toolbar setTranslucent:YES];
-    NSArray *controllers = @[viewController];
-    navigationController.viewControllers = controllers;
-    [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
+    self.paneViewControllerType = paneViewControllerType;
+}
+
+- (void)dynamicsDrawerRevealLeftBarButtonItemTapped:(id)sender
+{
+    [self.dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateOpen inDirection:MSDynamicsDrawerDirectionLeft animated:YES allowUserInterruption:YES completion:nil];
 }
 
 @end

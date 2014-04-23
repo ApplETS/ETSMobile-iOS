@@ -15,7 +15,6 @@
 #import "NSURLRequest+API.h"
 #import "ETSCourseDetailViewController.h"
 #import "ETSMenuViewController.h"
-#import "MFSideMenu.h"
 #import <QuartzCore/QuartzCore.h>
 
 
@@ -26,20 +25,13 @@
 
 @implementation ETSCoursesViewController
 
-@synthesize fetchedResultsController=_fetchedResultsController;
-
-- (void)panLeftMenu
-{
-    [self.menuContainerViewController toggleLeftSideMenuCompletion:^{}];
-}
+@synthesize fetchedResultsController = _fetchedResultsController;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [TestFlight passCheckpoint:@"COURSES_VIEWCONTROLLER"];
     self.title =  NSLocalizedString(@"Notes", nil);
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(panLeftMenu)];
-    
     
     self.cellIdentifier = @"CourseIdentifier";
     
