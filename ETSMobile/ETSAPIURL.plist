@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UniversityCalendar</key>
+	<string>http://api.clubapplets.ca/calendar/parser/get?calendar=ets&amp;start_min=%@&amp;start_max=%@</string>
 	<key>MoodleCourse</key>
 	<string>https://ena.etsmtl.ca/webservice/rest/server.php?moodlewsrestformat=json</string>
 	<key>Session</key>

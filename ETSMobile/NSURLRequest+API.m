@@ -156,6 +156,11 @@
     return [[NSURLRequest alloc] initWithURL:[NSURL URLForRadio]];
 }
 
++ (id)requestForUniversityCalendarStart:(NSDate *)start end:(NSDate *)end
+{
+    return [[NSURLRequest alloc] initWithURL:[NSURL URLForUniversityCalendarStart:start end:end]];
+}
+
 + (id)requestForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForBandwidthWithMonth:month residence:residence phase:phase]];

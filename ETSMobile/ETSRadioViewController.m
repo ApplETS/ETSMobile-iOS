@@ -68,7 +68,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     synchronization.entityName = @"Event";
     synchronization.compareKey = @"id";
     synchronization.objectsKeyPath = @"";
-    synchronization.predicate = nil;
+    synchronization.predicate = [NSPredicate predicateWithFormat:@"source !=[c] %@", @"etsmtl"];
     synchronization.dateFormatter = dateFormatter;
     self.synchronization = synchronization;
     self.synchronization.delegate = self;

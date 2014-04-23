@@ -21,6 +21,7 @@
 + (id)requestForDirectory;
 + (id)requestForNewsWithSources:(NSArray *)sources;
 + (id)requestForRadio;
++ (id)requestForUniversityCalendarStart:(NSDate *)start end:(NSDate *)end;
 + (id)requestForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase;
 + (id)requestForCommentWithName:(NSString *)name email:(NSString *)email title:(NSString *)title rating:(NSString *)rating comment:(NSString *)comment;
 @end

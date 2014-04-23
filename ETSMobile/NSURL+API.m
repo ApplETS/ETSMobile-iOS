@@ -95,4 +95,11 @@
     return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"Radio"], [formatter stringFromDate:[NSDate date]], [formatter stringFromDate:nextWeek]]];
 }
 
++ (id)URLForUniversityCalendarStart:(NSDate *)start end:(NSDate *)end
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"ddMMyyyy"];
+    return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"UniversityCalendar"], [formatter stringFromDate:start], [formatter stringFromDate:end]]];
+}
+
 @end
