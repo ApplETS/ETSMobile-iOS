@@ -40,6 +40,10 @@
     self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
     self.dynamicsDrawerViewController.screenEdgePanCancelsConflictingGestures = NO;
     self.dynamicsDrawerViewController.paneViewSlideOffAnimationEnabled = NO;
+    self.dynamicsDrawerViewController.gravityMagnitude = 6;
+    self.dynamicsDrawerViewController.bounceElasticity = 0;
+    self.dynamicsDrawerViewController.bounceMagnitude = 0;
+    self.dynamicsDrawerViewController.elasticity = 0;
     self.dynamicsDrawerViewController.paneDragRequiresScreenEdgePan = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone);
     [self.dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerScaleStyler styler], [MSDynamicsDrawerFadeStyler styler], [MSDynamicsDrawerParallaxStyler styler]] forDirection:MSDynamicsDrawerDirectionLeft];
     
