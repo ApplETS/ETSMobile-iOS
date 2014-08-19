@@ -36,21 +36,9 @@
     
     attributes[NSParagraphStyleAttributeName] = hyphenation;
     
-    NSMutableArray *lines = [NSMutableArray arrayWithArray:[self.news.summary componentsSeparatedByString:@"\n"]];
+    NSMutableArray *lines = [NSMutableArray arrayWithArray:[self.news.content componentsSeparatedByString:@"\n"]];
     
-    NSString *base = @"";
-    // Petit hack pour enlever lien de partage facebook en début d'article.
-    if ([self.news.source isEqualToString:@"etsmtl.ca"]) {
-        [lines removeObjectsInRange:NSMakeRange(0, 2)];
-        lines[0] = [lines[0] stringByReplacingOccurrencesOfString:@"<br><br>" withString:@""];
-    }
-    
-    // Petit hack pour que les liens des articles facebook fonctionnent
-    else if ([self.news.source isEqualToString:@"facebook.com"]) {
-        base = @"<base href=\"http://www.facebook.com\"/>";
-    }
-    
-    NSString *content = [NSString stringWithFormat:@"<!DOCTYPE html>\n<html><head>%@<style type=\"text/css\">html {font-family:\"IowanOldStyle-Roman\";font-size:14pt;text-align:justify;line-height:130%%; word-break: hyphenate; -webkit-hyphens: auto;} h1 {font-size:16pt; text-align:center;} img { text-align:center;}</style><meta charset=\"UTF-8\"></head><body><h1>%@</h1>%@</body></html>", base, self.news.title, [lines componentsJoinedByString:@""]];
+    NSString *content = [NSString stringWithFormat:@"<!DOCTYPE html>\n<html><head><base href=\"http://www.facebook.com\"/><style type=\"text/css\">html {font-family:\"IowanOldStyle-Roman\";font-size:14pt;text-align:justify;line-height:130%%; word-break: hyphenate; -webkit-hyphens: auto;} h1 {font-size:16pt; text-align:center;} img { text-align:center;}</style><meta charset=\"UTF-8\"></head><body>%@</body></html>", [lines componentsJoinedByString:@""]];
     
     NSAttributedString *html = [[NSAttributedString alloc] initWithData:[content dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:&error];
     
@@ -65,16 +53,16 @@
 }
 
 - (IBAction)shareNews:(id)sender
-{
+{/*
     NSArray *activityItems = @[self.news.title, [NSURL URLWithString:self.news.link]];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     
-    [self presentViewController:activityViewController animated:YES completion:nil];
+    [self presentViewController:activityViewController animated:YES completion:nil];*/
 }
 
 - (IBAction)openNews:(id)sender
-{
+{/*
     if ([self.news.link rangeOfString:@"facebook.com"].location != NSNotFound && [self.news.link rangeOfString:@"/posts/"].location != NSNotFound) {
         
         NSArray *components = [self.news.link componentsSeparatedByString:@"/"];
@@ -86,7 +74,7 @@
         }
     } else {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.news.link]];
-    }
+    }*/
 }
 
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange

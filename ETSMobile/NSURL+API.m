@@ -7,6 +7,7 @@
 //
 
 #import "NSURL+API.h"
+#import "NSString+HTML.h"
 
 @interface NSURL (API_PRIVATE)
 + (NSDictionary *)dictionaryFromPlist;
@@ -67,10 +68,10 @@
     
     for (NSDictionary *source in sources) {
         if ([source[@"enabled"] boolValue])
-            [urls addObject:[NSString stringWithFormat:@"url%%3D'%@'", source[@"url"]]];
+            [urls addObject:[NSString stringWithFormat:@"%@", [source[@"url"] urlEncodeUsingEncoding:NSUTF8StringEncoding]]];
     }
     
-    return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"News"], [urls componentsJoinedByString:@"%20OR%20"]]];
+    return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"News"], [urls componentsJoinedByString:@"%22%2C%22"]]];
 }
 
 + (id)URLForComment

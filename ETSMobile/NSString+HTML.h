@@ -11,5 +11,6 @@
 @interface NSString (HTML)
 
 - (NSString *)stringByStrippingHTML;
+- (NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding;
 
 @end

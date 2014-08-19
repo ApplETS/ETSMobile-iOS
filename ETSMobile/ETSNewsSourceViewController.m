@@ -69,7 +69,6 @@
     
     cell.textLabel.text = (self.sources[indexPath.row])[@"name"];
     cell.accessoryType = ([self.sources[indexPath.row] isSourceEnabled] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone);
-    cell.imageView.image = [UIImage imageNamed:(self.sources[indexPath.row])[@"backgroundImageName"]];
     
     return cell;
 }
@@ -77,11 +76,6 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return @"Sources à afficher :";
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 52.0f;
 }
 
 #pragma mark - Table view delegate

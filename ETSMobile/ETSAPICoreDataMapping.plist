@@ -99,14 +99,16 @@
 	</dict>
 	<key>News</key>
 	<dict>
-		<key>title</key>
-		<string>title</string>
-		<key>link</key>
-		<string>link</string>
-		<key>summary</key>
-		<string>summary</string>
-		<key>published</key>
-		<string>published</string>
+		<key>contentStripped</key>
+		<string>contentStripped</string>
+		<key>author</key>
+		<string>author</string>
+		<key>id</key>
+		<string>id</string>
+		<key>content</key>
+		<string>content</string>
+		<key>updated</key>
+		<string>updated</string>
 	</dict>
 	<key>Bandwidth</key>
 	<dict>
