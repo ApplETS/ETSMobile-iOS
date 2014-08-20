@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6220.14" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Bandwidth" representedClassName="ETSBandwidth" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="download" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -99,7 +99,10 @@
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="contentStripped" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="ymdDate" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="NewsSource" representedClassName="ETSNewsSource" syncable="YES">
         <attribute name="enabled" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -149,10 +152,10 @@
         <element name="Event" positionX="0" positionY="0" width="128" height="120"/>
         <element name="MoodleCourse" positionX="9" positionY="153" width="128" height="163"/>
         <element name="MoodleElement" positionX="18" positionY="162" width="128" height="178"/>
-        <element name="News" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="News" positionX="0" positionY="0" width="128" height="165"/>
+        <element name="NewsSource" positionX="9" positionY="153" width="128" height="120"/>
         <element name="Profile" positionX="0" positionY="0" width="128" height="180"/>
         <element name="Program" positionX="9" positionY="135" width="128" height="253"/>
         <element name="Session" positionX="9" positionY="153" width="128" height="88"/>
-        <element name="NewsSource" positionX="9" positionY="153" width="128" height="120"/>
     </elements>
 </model>

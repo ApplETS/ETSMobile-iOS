@@ -58,9 +58,9 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"News"];
     
     fetchRequest.fetchBatchSize = 5;
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"updatedDate" ascending:NO]];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"ymdDate" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"updatedDate" ascending:NO]];
     
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"ymdDate" cacheName:nil];
     
     self.fetchedResultsController = aFetchedResultsController;
     _fetchedResultsController.delegate = self;
@@ -110,11 +110,20 @@
 {
     NSMutableArray *news = [NSMutableArray array];
     
+    NSDateFormatter *ymdFormatter = [NSDateFormatter new];
+    [ymdFormatter setDateFormat:@"yyyy-MM-dd"];
+    
     for (NSDictionary *object in objects) {
         NSString *strippedContent = [object[@"entries"][@"content"] stringByStrippingHTML];
         if ([strippedContent length] > 0) {
+            
+            NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"entries"][@"updated"]];
+
             [news addObject:@{@"id"                 : object[@"entries"][@"id"],
+                              @"title"              : object[@"entries"][@"title"],
+                              @"alternate"          : object[@"entries"][@"alternate"],
                               @"updated"            : object[@"entries"][@"updated"],
+                              @"ymdDate"            : [ymdFormatter stringFromDate:date],
                               @"content"            : object[@"entries"][@"content"],
                               @"contentStripped"    : strippedContent,
                               @"author"             : object[@"entries"][@"author"][@"name"]}];
@@ -161,5 +170,25 @@
     cell.textLabel.text = res.string;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+
+    NSDateFormatter *ymdFormatter = [NSDateFormatter new];
+    ymdFormatter.dateFormat = @"yyyy-MM-dd";
+    NSDate *date = [ymdFormatter dateFromString:sectionInfo.name];
+    
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
+    dateFormatter.locale = locale;
+    dateFormatter.dateFormat = @"EEEE, d MMMM YYYY";
+
+    return [dateFormatter stringFromDate:date];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 125.0f;
+}
 
 @end

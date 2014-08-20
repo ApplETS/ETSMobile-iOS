@@ -15,6 +15,9 @@
 @dynamic contentStripped;
 @dynamic id;
 @dynamic updatedDate;
+@dynamic ymdDate;
 @dynamic author;
+@dynamic title;
+@dynamic link;
 
 @end

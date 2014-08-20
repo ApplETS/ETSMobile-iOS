@@ -54,18 +54,6 @@
 		<key>group</key>
 		<integer>2</integer>
 		<key>id</key>
-		<string>120898177988603</string>
-		<key>name</key>
-		<string>EtSPERANTO</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=120898177988603&amp;format=json</string>
-		<key>enabled</key>
-		<true/>
-	</dict>
-	<dict>
-		<key>group</key>
-		<integer>2</integer>
-		<key>id</key>
 		<string>102887646514478</string>
 		<key>name</key>
 		<string>E-sporTS</string>
@@ -194,7 +182,7 @@
 		<key>enabled</key>
 		<true/>
 	</dict>
-    <dict>
+	<dict>
 		<key>group</key>
 		<integer>3</integer>
 		<key>id</key>

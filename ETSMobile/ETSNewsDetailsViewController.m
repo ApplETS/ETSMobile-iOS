@@ -53,28 +53,17 @@
 }
 
 - (IBAction)shareNews:(id)sender
-{/*
+{
     NSArray *activityItems = @[self.news.title, [NSURL URLWithString:self.news.link]];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     
-    [self presentViewController:activityViewController animated:YES completion:nil];*/
+    [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
 - (IBAction)openNews:(id)sender
-{/*
-    if ([self.news.link rangeOfString:@"facebook.com"].location != NSNotFound && [self.news.link rangeOfString:@"/posts/"].location != NSNotFound) {
-        
-        NSArray *components = [self.news.link componentsSeparatedByString:@"/"];
-        NSURL *fbURL = [NSURL URLWithString:[NSString stringWithFormat:@"fb://post/%@", components.lastObject]];
-        if ([[UIApplication sharedApplication] canOpenURL:fbURL]) {
-            [[UIApplication sharedApplication] openURL:fbURL];
-        } else {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.news.link]];
-        }
-    } else {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.news.link]];
-    }*/
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.news.link]];
 }
 
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange

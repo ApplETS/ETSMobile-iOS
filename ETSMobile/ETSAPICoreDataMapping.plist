@@ -112,6 +112,12 @@
 	</dict>
 	<key>News</key>
 	<dict>
+		<key>link</key>
+		<string>alternate</string>
+		<key>title</key>
+		<string>title</string>
+		<key>ymdDate</key>
+		<string>ymdDate</string>
 		<key>contentStripped</key>
 		<string>contentStripped</string>
 		<key>author</key>

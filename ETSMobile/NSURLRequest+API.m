@@ -130,7 +130,7 @@
 + (id)requestForNewsWithSources:(NSArray *)sources
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForNewsWithSources:sources]];
-
+    
     [request setHTTPMethod: @"GET"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
