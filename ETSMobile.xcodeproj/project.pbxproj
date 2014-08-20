@@ -13,6 +13,7 @@
 		1D29A464188DB9E500CF02EB /* ETSCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29A463188DB9E500CF02EB /* ETSCommentCell.m */; };
 		1D33BA24188F064600A5F1C8 /* ETSRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA23188F064600A5F1C8 /* ETSRateCell.m */; };
 		1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA26188F065600A5F1C8 /* ETSTextCell.m */; };
+		1DBF6C6919A507EA00761C44 /* ETSNewsSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */; };
 		2600DB07190767000039039A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2600DB06190767000039039A /* MobileCoreServices.framework */; };
 		26085B3D1829D84300FE35AB /* ETSAPIURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26085B3C1829D84300FE35AB /* ETSAPIURL.plist */; };
 		26085B401829D8D700FE35AB /* NSURL+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 26085B3F1829D8D700FE35AB /* NSURL+API.m */; };
@@ -143,6 +144,8 @@
 		1D33BA23188F064600A5F1C8 /* ETSRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRateCell.m; sourceTree = "<group>"; };
 		1D33BA25188F065600A5F1C8 /* ETSTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSTextCell.h; sourceTree = "<group>"; };
 		1D33BA26188F065600A5F1C8 /* ETSTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSTextCell.m; sourceTree = "<group>"; };
+		1DBF6C6719A507EA00761C44 /* ETSNewsSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsSource.h; sourceTree = "<group>"; };
+		1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsSource.m; sourceTree = "<group>"; };
 		2600DB06190767000039039A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2601088D181596820037E795 /* ETSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCollectionViewController.h; sourceTree = "<group>"; };
 		26085B3C1829D84300FE35AB /* ETSAPIURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPIURL.plist; sourceTree = "<group>"; };
@@ -716,6 +719,8 @@
 		26DD92E817EA612800469FA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1DBF6C6719A507EA00761C44 /* ETSNewsSource.h */,
+				1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */,
 				1D25DD8719A3E63B00C71387 /* ETSNews.h */,
 				1D25DD8819A3E63B00C71387 /* ETSNews.m */,
 				26AF7CF418FB499200BD3982 /* ETSMoodleCourse.h */,
@@ -1059,6 +1064,7 @@
 				26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */,
 				1D25DD8919A3E63B00C71387 /* ETSNews.m in Sources */,
 				26DEB88B18EC97EC00161421 /* MSDayColumnHeader.m in Sources */,
+				1DBF6C6919A507EA00761C44 /* ETSNewsSource.m in Sources */,
 				2664F1E318FF2FCC0054BF58 /* ETSMenuCell.m in Sources */,
 				264ACF4F18DCDE0100928284 /* ETSSynchronization.m in Sources */,
 				1D25DD8319A3C95900C71387 /* ETSNewsViewController.m in Sources */,
@@ -1215,6 +1221,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
@@ -1229,12 +1236,14 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendors/TestFlightSDK3",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1245,6 +1254,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
@@ -1259,6 +1269,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendors/TestFlightSDK3",

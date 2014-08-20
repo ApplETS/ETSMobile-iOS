@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NewsSource</key>
+	<dict>
+		<key>enabled</key>
+		<string>enabled</string>
+		<key>name</key>
+		<string>name</string>
+		<key>link</key>
+		<string>url</string>
+		<key>group</key>
+		<string>group</string>
+		<key>id</key>
+		<string>id</string>
+	</dict>
 	<key>MoodleElement</key>
 	<dict>
 		<key>visible</key>
@@ -107,7 +120,7 @@
 		<string>id</string>
 		<key>content</key>
 		<string>content</string>
-		<key>updated</key>
+		<key>updatedDate</key>
 		<string>updated</string>
 	</dict>
 	<key>Bandwidth</key>

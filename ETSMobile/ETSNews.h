@@ -15,7 +15,7 @@
 @property (nonatomic, retain) NSString * content;
 @property (nonatomic, retain) NSString * contentStripped;
 @property (nonatomic, retain) NSString * id;
-@property (nonatomic, retain) NSDate * updated;
+@property (nonatomic, retain) NSDate * updatedDate;
 @property (nonatomic, retain) NSString * author;
 
 @end

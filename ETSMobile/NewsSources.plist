@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>group</key>
+		<integer>0</integer>
 		<key>id</key>
 		<string>8632204375</string>
 		<key>name</key>
@@ -13,6 +15,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>0</integer>
 		<key>id</key>
 		<string>318301358296527</string>
 		<key>name</key>
@@ -23,6 +27,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>0</integer>
 		<key>id</key>
 		<string>218060244914450</string>
 		<key>name</key>
@@ -33,16 +39,44 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>163718447011305</string>
 		<key>name</key>
-		<string>Club ApplETS</string>
+		<string>ApplETS</string>
 		<key>url</key>
 		<string>https://www.facebook.com/feeds/page.php?id=163718447011305&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>2</integer>
+		<key>id</key>
+		<string>120898177988603</string>
+		<key>name</key>
+		<string>EtSPERANTO</string>
+		<key>url</key>
+		<string>https://www.facebook.com/feeds/page.php?id=120898177988603&amp;format=json</string>
+		<key>enabled</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>group</key>
+		<integer>2</integer>
+		<key>id</key>
+		<string>102887646514478</string>
+		<key>name</key>
+		<string>E-sporTS</string>
+		<key>url</key>
+		<string>https://www.facebook.com/feeds/page.php?id=102887646514478&amp;format=json</string>
+		<key>enabled</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>group</key>
+		<integer>4</integer>
 		<key>id</key>
 		<string>105690876298164</string>
 		<key>name</key>
@@ -53,6 +87,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>2</integer>
 		<key>id</key>
 		<string>121015754713487</string>
 		<key>name</key>
@@ -63,6 +99,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>110486232446955</string>
 		<key>name</key>
@@ -73,6 +111,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>395414797183821</string>
 		<key>name</key>
@@ -83,6 +123,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>4</integer>
 		<key>id</key>
 		<string>164607013559595</string>
 		<key>name</key>
@@ -93,6 +135,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>126837807493669</string>
 		<key>name</key>
@@ -103,6 +147,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>4</integer>
 		<key>id</key>
 		<string>360076647398495</string>
 		<key>name</key>
@@ -113,6 +159,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>4</integer>
 		<key>id</key>
 		<string>460299537349517</string>
 		<key>name</key>
@@ -123,6 +171,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>2</integer>
 		<key>id</key>
 		<string>491557250876569</string>
 		<key>name</key>
@@ -133,6 +183,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>3</integer>
 		<key>id</key>
 		<string>447702428615807</string>
 		<key>name</key>
@@ -142,7 +194,21 @@
 		<key>enabled</key>
 		<true/>
 	</dict>
+    <dict>
+		<key>group</key>
+		<integer>3</integer>
+		<key>id</key>
+		<string>211557725590576</string>
+		<key>name</key>
+		<string>Radio Piranha</string>
+		<key>url</key>
+		<string>https://www.facebook.com/feeds/page.php?id=211557725590576&amp;format=json</string>
+		<key>enabled</key>
+		<true/>
+	</dict>
 	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>337552962995346</string>
 		<key>name</key>
@@ -153,6 +219,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>4</integer>
 		<key>id</key>
 		<string>323542067682533</string>
 		<key>name</key>
@@ -163,6 +231,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>0</integer>
 		<key>id</key>
 		<string>371898792845924</string>
 		<key>name</key>
@@ -173,16 +243,20 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>4</integer>
 		<key>id</key>
 		<string>377006705649358</string>
 		<key>name</key>
-		<string>Rugby Club - ÉTS</string>
+		<string>Rugby Club</string>
 		<key>url</key>
 		<string>https://www.facebook.com/feeds/page.php?id=377006705649358&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>0</integer>
 		<key>id</key>
 		<string>188297367906485</string>
 		<key>name</key>
@@ -193,16 +267,20 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>248185595191443</string>
 		<key>name</key>
-		<string>Club Capra</string>
+		<string>Capra</string>
 		<key>url</key>
 		<string>https://www.facebook.com/feeds/page.php?id=248185595191443&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>103792316390557</string>
 		<key>name</key>
@@ -213,6 +291,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>0</integer>
 		<key>id</key>
 		<string>167760619914316</string>
 		<key>name</key>
@@ -223,6 +303,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>184102168309598</string>
 		<key>name</key>
@@ -233,6 +315,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>185170678185125</string>
 		<key>name</key>
@@ -243,6 +327,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>164949146900986</string>
 		<key>name</key>
@@ -253,6 +339,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>213055515399417</string>
 		<key>name</key>
@@ -263,6 +351,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>202479516430909</string>
 		<key>name</key>
@@ -273,6 +363,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>2</integer>
 		<key>id</key>
 		<string>103903173690</string>
 		<key>name</key>
@@ -283,6 +375,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>189628483266</string>
 		<key>name</key>
@@ -293,6 +387,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>166160473418379</string>
 		<key>name</key>
@@ -303,6 +399,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>3</integer>
 		<key>id</key>
 		<string>134552903275289</string>
 		<key>name</key>
@@ -313,6 +411,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>2</integer>
 		<key>id</key>
 		<string>224658708833</string>
 		<key>name</key>
@@ -323,6 +423,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>3</integer>
 		<key>id</key>
 		<string>153080808058020</string>
 		<key>name</key>
@@ -333,6 +435,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>2</integer>
 		<key>id</key>
 		<string>149411625347</string>
 		<key>name</key>
@@ -343,6 +447,20 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>2</integer>
+		<key>id</key>
+		<string>460887617354502</string>
+		<key>name</key>
+		<string>DécliQ</string>
+		<key>url</key>
+		<string>https://www.facebook.com/feeds/page.php?id=460887617354502&amp;format=json</string>
+		<key>enabled</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>117505511647516</string>
 		<key>name</key>
@@ -353,6 +471,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>1</integer>
 		<key>id</key>
 		<string>122163981170182</string>
 		<key>name</key>
@@ -363,6 +483,8 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>3</integer>
 		<key>id</key>
 		<string>109108485778606</string>
 		<key>name</key>
@@ -373,6 +495,20 @@
 		<true/>
 	</dict>
 	<dict>
+		<key>group</key>
+		<integer>3</integer>
+		<key>id</key>
+		<string>107613412598931</string>
+		<key>name</key>
+		<string>Radio sans génie</string>
+		<key>url</key>
+		<string>https://www.facebook.com/feeds/page.php?id=107613412598931&amp;format=json</string>
+		<key>enabled</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>group</key>
+		<integer>2</integer>
 		<key>id</key>
 		<string>357404254892</string>
 		<key>name</key>

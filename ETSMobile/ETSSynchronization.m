@@ -14,12 +14,8 @@
 
 + (NSManagedObjectContext *)mainManagedObjectContext;
 + (NSDictionary *)mappings;
-- (BOOL)synchronizeJSONArray:(NSArray *)jsonObjects error:(NSError * __autoreleasing *)error;
-- (BOOL)synchronizeJSONDictionary:(NSDictionary *)jsonDictionary error:(NSError * __autoreleasing *)error;
 - (void)deleteExpiredObjects:(NSArray *)objects forEntity:(NSString *)entity key:(NSString *)key managedObjectContext:(NSManagedObjectContext *)managedObjectContext;
 - (void)addControllerContextDidSave:(NSNotification*)saveNotification;
-
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end
 

@@ -8,6 +8,7 @@
 
 #import "NSURL+API.h"
 #import "NSString+HTML.h"
+#import "ETSNewsSource.h"
 
 @interface NSURL (API_PRIVATE)
 + (NSDictionary *)dictionaryFromPlist;
@@ -66,9 +67,8 @@
 {
     NSMutableArray *urls = [NSMutableArray array];
     
-    for (NSDictionary *source in sources) {
-        if ([source[@"enabled"] boolValue])
-            [urls addObject:[NSString stringWithFormat:@"%@", [source[@"url"] urlEncodeUsingEncoding:NSUTF8StringEncoding]]];
+    for (ETSNewsSource *source in sources) {
+        [urls addObject:[NSString stringWithFormat:@"%@", [source.link urlEncodeUsingEncoding:NSUTF8StringEncoding]]];
     }
     
     return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"News"], [urls componentsJoinedByString:@"%22%2C%22"]]];

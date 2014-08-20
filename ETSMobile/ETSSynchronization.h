@@ -19,10 +19,13 @@ typedef NS_ENUM(NSInteger, ETSSynchronizationResponse) {
 @interface ETSSynchronization : NSObject
 
 - (BOOL)synchronize:(NSError * __autoreleasing *)error;
+- (BOOL)synchronizeJSONArray:(NSArray *)jsonObjects error:(NSError * __autoreleasing *)error;
+- (BOOL)synchronizeJSONDictionary:(NSDictionary *)jsonDictionary error:(NSError * __autoreleasing *)error;
+
 - (void)saveManagedObjectContext;
 
 @property (nonatomic, weak) id<ETSSynchronizationDelegate> delegate;
-@property (nonatomic, strong, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSURLRequest *request;
 @property (nonatomic, copy)   NSString *entityName;
 @property (nonatomic, copy)   NSString *objectsKeyPath;
