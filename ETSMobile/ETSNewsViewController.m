@@ -10,6 +10,7 @@
 #import "ETSNewsSourceViewController.h"
 #import "ETSNewsDetailsViewController.h"
 #import "ETSNewsCell.h"
+#import "ETSNewsEmptyCell.h"
 #import "NSURL+Document.h"
 #import "ETSNews.h"
 #import "NSString+HTML.h"
@@ -112,12 +113,41 @@
     
     NSDateFormatter *ymdFormatter = [NSDateFormatter new];
     [ymdFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSDictionary *options = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType};
     
     for (NSDictionary *object in objects) {
         NSString *strippedContent = [object[@"entries"][@"content"] stringByStrippingHTML];
         if ([strippedContent length] > 0) {
             
             NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"entries"][@"updated"]];
+            
+            NSString *url = nil;
+            
+            NSScanner *scanner = [NSScanner scannerWithString:object[@"entries"][@"content"]];
+
+            [scanner scanUpToString:@"<img" intoString:nil];
+            if (![scanner isAtEnd]) {
+                [scanner scanUpToString:@"src" intoString:nil];
+                NSCharacterSet *charset = [NSCharacterSet characterSetWithCharactersInString:@"\"'"];
+                [scanner scanUpToCharactersFromSet:charset intoString:nil];
+                [scanner scanCharactersFromSet:charset intoString:nil];
+                [scanner scanUpToCharactersFromSet:charset intoString:&url];
+            }
+            
+            if (url && [url rangeOfString:@"/safe_image.php"].location != NSNotFound) {
+                NSRange range = [url rangeOfString:@"&amp;url="];
+                url = [[url substringFromIndex:range.location + range.length] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            }
+            else if (!url) {
+                url = @"";
+            }
+            
+            if (![url hasSuffix:@".jpg"]) {
+                url = @"";
+            }
+
+            NSAttributedString *contentStripped = [[NSAttributedString alloc] initWithData:[strippedContent dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:nil];
+            NSAttributedString *author = [[NSAttributedString alloc] initWithData:[object[@"entries"][@"author"][@"name"] dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:nil];
 
             [news addObject:@{@"id"                 : object[@"entries"][@"id"],
                               @"title"              : object[@"entries"][@"title"],
@@ -125,8 +155,9 @@
                               @"updated"            : object[@"entries"][@"updated"],
                               @"ymdDate"            : [ymdFormatter stringFromDate:date],
                               @"content"            : object[@"entries"][@"content"],
-                              @"contentStripped"    : strippedContent,
-                              @"author"             : object[@"entries"][@"author"][@"name"]}];
+                              @"contentStripped"    : contentStripped.string,
+                              @"author"             : author.string,
+                              @"thumbnailURL"       : url}];
         }
     }
     return news;
@@ -145,29 +176,36 @@
     }
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+    UITableViewCell *cell = nil;
+    if (news.thumbnailURL && news.thumbnailURL.length > 0) {
+        cell = [self.tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
+    } else {
+        cell = [self.tableView dequeueReusableCellWithIdentifier:@"NewsEmptyIdentifier" forIndexPath:indexPath];
+    }
+    [self configureCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (void)configureCell:(UITableView *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    NSDictionary *options = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType};
-    NSError *error = nil;
+    if ([cell isKindOfClass:[ETSNewsCell class]]) {
+        ((ETSNewsCell *)cell).contentLabel.text = news.contentStripped;
+        ((ETSNewsCell *)cell).authorLabel.text = news.author;
+        ((ETSNewsCell *)cell).thumbnailView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:news.thumbnailURL]]];
+        ((ETSNewsCell *)cell).thumbnailView.clipsToBounds = YES;
+    } else if ([cell isKindOfClass:[ETSNewsEmptyCell class]]) {
+        ((ETSNewsEmptyCell *)cell).contentLabel.text = news.contentStripped;
+        ((ETSNewsEmptyCell *)cell).authorLabel.text = news.author;
+    }
     
-    NSAttributedString *html = [[NSAttributedString alloc] initWithData:[news.contentStripped dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:&error];
-    
-    NSMutableAttributedString *res = [html mutableCopy];
-    [res beginEditing];
-    [res enumerateAttribute:NSFontAttributeName
-                    inRange:NSMakeRange(0, res.length)
-                    options:0
-                 usingBlock:^(id value, NSRange range, BOOL *stop) {
-                     if (value) {
-                         UIFont *newFont = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
-                         [res addAttribute:NSFontAttributeName value:newFont range:range];
-                     }
-                 }];
-    [res endEditing];
-    
-    cell.textLabel.text = res.string;
+    cell.layer.shouldRasterize = YES;
+    cell.layer.rasterizationScale = [[UIScreen mainScreen] scale];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -188,7 +226,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 125.0f;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+        return 108.0f;
+    else
+        return 221.0f;
 }
 
 @end

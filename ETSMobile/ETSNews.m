@@ -19,5 +19,6 @@
 @dynamic author;
 @dynamic title;
 @dynamic link;
+@dynamic thumbnailURL;
 
 @end

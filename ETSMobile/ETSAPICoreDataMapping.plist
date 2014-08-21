@@ -112,6 +112,8 @@
 	</dict>
 	<key>News</key>
 	<dict>
+		<key>thumbnailURL</key>
+		<string>thumbnailURL</string>
 		<key>link</key>
 		<string>alternate</string>
 		<key>title</key>
