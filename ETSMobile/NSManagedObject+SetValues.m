@@ -14,8 +14,17 @@
 
 - (void)safeSetValuesForKeysWithDictionary:(NSDictionary *)keyedValues dateFormatter:(NSDateFormatter *)dateFormatter mapping:(NSDictionary *)mapping
 {
+    [self safeSetValuesForKeysWithDictionary:keyedValues dateFormatter:dateFormatter mapping:mapping ignoredAttributes:nil];
+}
+
+- (void)safeSetValuesForKeysWithDictionary:(NSDictionary *)keyedValues dateFormatter:(NSDateFormatter *)dateFormatter mapping:(NSDictionary *)mapping ignoredAttributes:(NSArray *)ignoredAttributes
+{
     NSDictionary *attributes = [[self entity] attributesByName];
     for (NSString *attribute in attributes) {
+        if ([ignoredAttributes count] > 0 &&
+            [[ignoredAttributes filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self == %@", attribute]] count] > 0) {
+            continue;
+        }
         id value = keyedValues[mapping[attribute]];
         if (value == nil) {
             continue;

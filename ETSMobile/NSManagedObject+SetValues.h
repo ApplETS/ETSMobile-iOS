@@ -10,4 +10,5 @@
 
 @interface NSManagedObject (SetValues)
 - (void)safeSetValuesForKeysWithDictionary:(NSDictionary *)keyedValues dateFormatter:(NSDateFormatter *)dateFormatter mapping:(NSDictionary *)mapping;
+- (void)safeSetValuesForKeysWithDictionary:(NSDictionary *)keyedValues dateFormatter:(NSDateFormatter *)dateFormatter mapping:(NSDictionary *)mapping ignoredAttributes:(NSArray *)ignoredAttributes;
 @end
