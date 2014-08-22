@@ -24,6 +24,7 @@
 
 #import "ETSAuthenticationViewController.h"
 #import "ETSMenuViewController.h"
+#import "ETSUniversityCalendarViewController.h"
 
 NSString * const MSEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
 NSString * const MSDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";
@@ -125,6 +126,32 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         [sessions addObject:session.acronym];
     }
     return sessions;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    ETSUniversityCalendarViewController *controller = [segue destinationViewController];
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) controller.preferredContentSize = CGSizeMake(400, 600);
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Session"];
+    NSDate *now = [NSDate date];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"end >= %@", now];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"start" ascending:YES]];
+    fetchRequest.returnsDistinctResults = YES;
+    
+    NSDate *min = nil;
+    NSDate *max = nil;
+    
+    NSArray *results = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    for (ETSSession *session in results) {
+        if (!min || session.start < min) min = session.start;
+        if (!max || session.end > max) max = session.end;
+    }
+    
+    controller.start = min;
+    controller.end = max;
+    controller.managedObjectContext = self.managedObjectContext;
 }
 
 - (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization

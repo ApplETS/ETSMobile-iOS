@@ -18,6 +18,7 @@
 + (id)URLForEvaluations;
 + (id)URLForDirectory;
 + (id)URLForRadio;
++ (id)URLForUniversityCalendarStart:(NSDate *)start end:(NSDate *)end;
 + (id)URLForNewsWithSources:(NSArray *)sources;
 + (id)URLForComment;
 + (id)URLForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase;

@@ -6,11 +6,8 @@
 //  Copyright (c) 2014 ApplETS. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ETSTableViewController.h"
 
-@interface ETSNewsSourceViewController : UITableViewController
-
-@property (nonatomic, weak) NSArray *sources;
-@property (nonatomic, copy) NSString *savePath;
+@interface ETSNewsSourceViewController : ETSTableViewController
 
 @end

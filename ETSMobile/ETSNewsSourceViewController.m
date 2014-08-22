@@ -7,31 +7,45 @@
 //
 
 #import "ETSNewsSourceViewController.h"
+#import "ETSNewsSource.h"
 
-@interface NSMutableDictionary (Source)
-- (BOOL)isSourceEnabled;
-- (void)setSourceEnabled:(BOOL)enabled;
-@end
-
-@implementation NSMutableDictionary (Source)
-
-- (BOOL)isSourceEnabled
-{
-    return [self[@"enabled"] boolValue];
-}
-
-- (void)setSourceEnabled:(BOOL)enabled
-{
-    self[@"enabled"] = enabled ? @YES : @NO;
-}
-
-@end
-
-@interface ETSNewsSourceViewController ()
-
+@interface ETSNewsSourceViewController()
+@property (nonatomic, strong) NSArray *sources;
 @end
 
 @implementation ETSNewsSourceViewController
+
+@synthesize fetchedResultsController = _fetchedResultsController;
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"NewsSource"];
+    
+    fetchRequest.fetchBatchSize = 30;
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"group" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"group" cacheName:nil];
+    
+    self.fetchedResultsController = aFetchedResultsController;
+    _fetchedResultsController.delegate = self;
+    
+    NSError *error;
+    if (![_fetchedResultsController performFetch:&error]) {
+        // FIXME: Update to handle the error appropriately.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+    
+    return _fetchedResultsController;
+}
+
+- (NSInteger)numberOfEnabledSources
+{
+    return [[self.sources valueForKeyPath:@"@sum.enabled"] integerValue];
+}
 
 - (void)viewDidLoad
 {
@@ -39,56 +53,58 @@
     
     [TestFlight passCheckpoint:@"NEWSSOURCE_VIEWCONTROLLER"];
     
-    self.preferredContentSize = CGSizeMake(400, 250);
+    self.cellIdentifier = @"SourceIdentifier";
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"NewsSource"];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"group" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    self.sources = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [[NSFileManager defaultManager] removeItemAtPath:self.savePath error:nil];
-    [self.sources writeToFile:self.savePath atomically:YES];
-
+    NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
+        // FIXME: Update to handle the error appropriately.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
     [super viewWillDisappear:animated];
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    return 1;
-}
+    ETSNewsSource *source = [self.fetchedResultsController objectAtIndexPath:indexPath];
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.sources count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"SourceIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    cell.textLabel.text = (self.sources[indexPath.row])[@"name"];
-    cell.accessoryType = ([self.sources[indexPath.row] isSourceEnabled] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone);
-    cell.imageView.image = [UIImage imageNamed:(self.sources[indexPath.row])[@"backgroundImageName"]];
-    
-    return cell;
+    cell.textLabel.text = source.name;
+    cell.accessoryType = ([source.enabled boolValue] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone);
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"Sources à afficher :";
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 52.0f;
+    switch (section) {
+        case 0: return @"";
+        case 1: return @"Services";
+        case 2: return @"Science et technologie";
+        case 3: return @"Engagement social et coopératif";
+        case 4: return @"Art et culture";
+        case 5: return @"Sports";
+        default: return @"";
+    }
 }
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.sources[indexPath.row] setSourceEnabled:![self.sources[indexPath.row] isSourceEnabled]];
+    ETSNewsSource *source = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    BOOL wantToDisable = [source.enabled boolValue];
+    
+    if (!wantToDisable || [self numberOfEnabledSources] > 1) {
+        source.enabled = [NSNumber numberWithBool:![source.enabled boolValue]];
+    }
+    
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 

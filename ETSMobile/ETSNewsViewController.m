@@ -2,38 +2,52 @@
 //  ETSNewsViewController.m
 //  ETSMobile
 //
-//  Created by Jean-Philippe Martin on 2013-07-14.
-//  Copyright (c) 2013 ApplETS. All rights reserved.
+//  Created by Jean-Philippe Martin on 2014-08-19.
+//  Copyright (c) 2014 ApplETS. All rights reserved.
 //
 
 #import "ETSNewsViewController.h"
 #import "ETSNewsSourceViewController.h"
 #import "ETSNewsDetailsViewController.h"
 #import "ETSNewsCell.h"
-#import "ETSNewsImageCell.h"
+#import "ETSNewsEmptyCell.h"
 #import "NSURL+Document.h"
-#import "NSString+HTML.h"
 #import "ETSNews.h"
-
-@interface ETSNewsViewController ()
-@property (nonatomic, strong) NSMutableArray *sources;
-@property (nonatomic, copy) NSString *path;
-@end
+#import "NSString+HTML.h"
 
 @implementation ETSNewsViewController
 
-@synthesize fetchedResultsController=_fetchedResultsController;
+@synthesize fetchedResultsController = _fetchedResultsController;
 
-- (NSPredicate *)predicateForSelectedNews
+- (void)updateDefaultNewsSource
 {
-    NSMutableArray *predicates = [NSMutableArray array];
-    for (NSDictionary *source in self.sources) {
-        if ([source[@"enabled"] boolValue]) {
-            [predicates addObject:[NSPredicate predicateWithFormat:@"source ==[c] %@", source[@"id"]]];
-        }
-    }
+    NSArray *sources = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NewsSources" ofType:@"plist"]];
     
-    return [NSCompoundPredicate orPredicateWithSubpredicates:predicates];
+    ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
+    synchronization.entityName = @"NewsSource";
+    synchronization.compareKey = @"id";
+    synchronization.ignoredAttributes = @[@"enabled"];
+    synchronization.managedObjectContext = self.managedObjectContext;
+    
+    NSError *error = nil;
+    [synchronization synchronizeJSONArray:sources error:&error];
+    if (![self.managedObjectContext save:&error]) {
+        // FIXME: Update to handle the error appropriately.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+}
+
+- (NSArray *)enabledSources
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"NewsSource"];
+    request.predicate = [NSPredicate predicateWithFormat:@"enabled == 1"];
+    return [self.managedObjectContext executeFetchRequest:request error:nil];
+}
+
+- (void)startRefresh:(id)sender
+{
+    NSError *error;
+    [self.synchronization synchronize:&error];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -44,12 +58,11 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"News"];
     
-    fetchRequest.fetchBatchSize = 20;
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"published" ascending:NO]];
-    fetchRequest.predicate = [self predicateForSelectedNews];
+    fetchRequest.fetchBatchSize = 5;
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"ymdDate" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"updatedDate" ascending:NO]];
     
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
-
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"ymdDate" cacheName:nil];
+    
     self.fetchedResultsController = aFetchedResultsController;
     _fetchedResultsController.delegate = self;
     
@@ -68,27 +81,19 @@
     
     [TestFlight passCheckpoint:@"NEWS_VIEWCONTROLLER"];
     
-    self.path = [[[NSURL applicationDocumentsDirectory] URLByAppendingPathComponent:@"NewsSources.plist"] path];
+    [self updateDefaultNewsSource];
     
-    if(![[NSFileManager defaultManager] fileExistsAtPath:self.path]) {
-        [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:@"NewsSources" ofType:@"plist"] toPath:self.path error:nil];
-    }
-    
-    self.sources = [NSMutableArray arrayWithContentsOfFile:self.path];
+    self.cellIdentifier = @"NewsIdentifier";
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
     
-    self.cellIdentifier = @"NewsIdentifier";
-    
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
-    synchronization.request = [NSURLRequest requestForNewsWithSources:self.sources];
+    synchronization.request = [NSURLRequest requestForNewsWithSources:[self enabledSources]];
     synchronization.entityName = @"News";
-    synchronization.compareKey = @"link";
-    synchronization.objectsKeyPath = @"query.results.feed";
+    synchronization.compareKey = @"id";
+    synchronization.objectsKeyPath = @"query.results.json";
     synchronization.dateFormatter = dateFormatter;
-    synchronization.ignoredAttributes = @[@"image"];
-    synchronization.predicate = [self predicateForSelectedNews];
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
     
@@ -96,76 +101,71 @@
     self.refreshControl.tintColor = [UIColor lightGrayColor];
 }
 
-- (void)refreshNews
-{
-    if (!self.shouldRemoveFetchedDelegate) {
-        // Inspiré de http://stackoverflow.com/questions/13299120/nsfetchedresultscontrollers-delegate-doesnt-fire-after-predicate-is-changed
-        // Le delegate du NSFetchedResultsController n'appelle pas les animations lorsque l'on
-        // change le predicate et que l'on effectue un performFetch.
-        NSArray* objectsBefore = self.fetchedResultsController.fetchedObjects;
-        
-        self.fetchedResultsController.fetchRequest.predicate = [self predicateForSelectedNews];
-        [self.fetchedResultsController performFetch:nil];
-        
-        NSArray* objectsAfter = self.fetchedResultsController.fetchedObjects;
-        
-        [self.tableView beginUpdates];
-        
-        if (objectsBefore.count > 0) {
-            for (id objectBefore in objectsBefore) {
-                if ([objectsAfter indexOfObject:objectBefore] == NSNotFound) {
-                    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:[objectsBefore indexOfObject:objectBefore] inSection:0];
-                    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
-                }
-            }
-        }
-        
-        if (objectsAfter.count > 0) {
-            for (id objectAfter in objectsAfter) {
-                if ([objectsBefore indexOfObject:objectAfter] == NSNotFound) {
-                    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:[objectsAfter indexOfObject:objectAfter] inSection:0];
-                    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
-                }
-            }
-        }
-        
-        [self.tableView endUpdates];
-        self.shouldRemoveFetchedDelegate = YES;
-    }
-    
-    self.synchronization.predicate = [self predicateForSelectedNews];
-    self.synchronization.request = [NSURLRequest requestForNewsWithSources:self.sources];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self refreshNews];
+    self.synchronization.request = [NSURLRequest requestForNewsWithSources:[self enabledSources]];
     [super viewWillAppear:animated];
 }
 
 - (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects
 {
-    if (!objects || [objects isKindOfClass:[NSNull class]]) return nil;
-
     NSMutableArray *news = [NSMutableArray array];
-    for (NSDictionary *entry in objects) {
-        NSDictionary *item = entry[@"entry"];
-        if (![item[@"title"] isKindOfClass:[NSNull class]] && [item[@"title"] length] > 0) {
-            NSMutableDictionary *new = [NSMutableDictionary dictionaryWithDictionary:item];
-            new[@"link"] = item[@"link"][@"href"];
-            if (!item[@"summary"] && item[@"content"]) {
-                new[@"summary"] = item[@"content"];
+    
+    NSDateFormatter *ymdFormatter = [NSDateFormatter new];
+    [ymdFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSDictionary *options = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType};
+    
+    for (NSDictionary *object in objects) {
+        
+        NSString *strippedContent = [object[@"entries"][@"content"] stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
+        strippedContent = [strippedContent stringByReplacingOccurrencesOfString:@"<br/>" withString:@"\n"];
+        strippedContent = [strippedContent stringByStrippingHTML];
+        strippedContent = [strippedContent stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"];
+
+        if ([[object[@"entries"][@"content"] stringByStrippingHTML] length] > 0) {
+            
+            NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"entries"][@"updated"]];
+            
+            NSString *url = nil;
+            
+            NSScanner *scanner = [NSScanner scannerWithString:object[@"entries"][@"content"]];
+
+            [scanner scanUpToString:@"<img" intoString:nil];
+            if (![scanner isAtEnd]) {
+                [scanner scanUpToString:@"src" intoString:nil];
+                NSCharacterSet *charset = [NSCharacterSet characterSetWithCharactersInString:@"\"'"];
+                [scanner scanUpToCharactersFromSet:charset intoString:nil];
+                [scanner scanCharactersFromSet:charset intoString:nil];
+                [scanner scanUpToCharactersFromSet:charset intoString:&url];
             }
-            [news addObject:new];
+            
+            if (url && [url rangeOfString:@"/safe_image.php"].location != NSNotFound) {
+                NSRange range = [url rangeOfString:@"&amp;url="];
+                url = [[url substringFromIndex:range.location + range.length] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            }
+            else if (!url) {
+                url = @"";
+            }
+            
+            if (![url hasSuffix:@".jpg"]) {
+                url = @"";
+            }
+
+            NSAttributedString *contentStripped = [[NSAttributedString alloc] initWithData:[strippedContent dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:nil];
+            NSAttributedString *author = [[NSAttributedString alloc] initWithData:[object[@"entries"][@"author"][@"name"] dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:nil];
+
+            [news addObject:@{@"id"                 : object[@"entries"][@"id"],
+                              @"title"              : object[@"entries"][@"title"],
+                              @"alternate"          : object[@"entries"][@"alternate"],
+                              @"updated"            : object[@"entries"][@"updated"],
+                              @"ymdDate"            : [ymdFormatter stringFromDate:date],
+                              @"content"            : object[@"entries"][@"content"],
+                              @"contentStripped"    : contentStripped.string,
+                              @"author"             : author.string,
+                              @"thumbnailURL"       : url}];
         }
     }
     return news;
-}
-
-- (void)startRefresh:(id)sender
-{
-    NSError *error;
-    [self.synchronization synchronize:&error];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -173,177 +173,84 @@
     self.shouldRemoveFetchedDelegate = NO;
     if ([segue.identifier isEqualToString:@"SourcesSegue"]) {
         ETSNewsSourceViewController *destinationController = (ETSNewsSourceViewController *)segue.destinationViewController;
-        destinationController.sources = self.sources;
-        destinationController.savePath = self.path;
-        
-        if ([segue isKindOfClass:[UIStoryboardPopoverSegue class]]) {
-            ((UIStoryboardPopoverSegue *)segue).popoverController.delegate = self;
-        }
+        destinationController.managedObjectContext = self.managedObjectContext;
     }
     else if ([segue.identifier isEqualToString:@"NewsSegue"] || [segue.identifier isEqualToString:@"NewsImageSegue"]) {
         ETSNewsDetailsViewController *destinationController = (ETSNewsDetailsViewController *)segue.destinationViewController;
         destinationController.news = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        destinationController.title = destinationController.news.author;
     }
-}
-
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
-{
-    [self refreshNews];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) ? 154 : 260;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[news.image length] == 0 ? @"NewsIdentifier" : @"NewsImageIdentifier" forIndexPath:indexPath];
+
+    UITableViewCell *cell = nil;
+    if (news.thumbnailURL && news.thumbnailURL.length > 0) {
+        cell = [self.tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
+    } else {
+        cell = [self.tableView dequeueReusableCellWithIdentifier:@"NewsEmptyIdentifier" forIndexPath:indexPath];
+    }
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void)configureCell:(UITableView *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    NSDictionary *options = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType};
+    if ([cell isKindOfClass:[ETSNewsCell class]]) {
+        ((ETSNewsCell *)cell).contentLabel.text = news.contentStripped;
+        ((ETSNewsCell *)cell).authorLabel.text = news.author;
+        ((ETSNewsCell *)cell).thumbnailView.image = nil;
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:news.thumbnailURL] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10];
+        NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                          {
+                              if (data) {
+                                  UIImage *image = [UIImage imageWithData:data];
+                                  if (image && image.size.height > 0 && image.size.width > 0) {
+                                      dispatch_sync(dispatch_get_main_queue(), ^{
+                                          ((ETSNewsCell *)cell).thumbnailView.image = [UIImage imageWithData:data];
+                                      });
+                                  }
+                              }
+                          }];
+        [task resume];
+        
+        ((ETSNewsCell *)cell).thumbnailView.clipsToBounds = YES;
+    } else if ([cell isKindOfClass:[ETSNewsEmptyCell class]]) {
+        ((ETSNewsEmptyCell *)cell).contentLabel.text = news.contentStripped;
+        ((ETSNewsEmptyCell *)cell).authorLabel.text = news.author;
+    }
     
-    NSError *error = nil;
-    
-    NSAttributedString *html = [[NSAttributedString alloc] initWithData:[news.content dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:&error];
-    
-    NSAttributedString *title = [[NSAttributedString alloc] initWithData:[news.title dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:&error];
-    
-    NSMutableAttributedString *res = [html mutableCopy];
-    [res beginEditing];
-    [res enumerateAttribute:NSFontAttributeName
-                    inRange:NSMakeRange(0, res.length)
-                    options:0
-                 usingBlock:^(id value, NSRange range, BOOL *stop) {
-                     if (value) {
-                         UIFont *newFont = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
-                         [res addAttribute:NSFontAttributeName value:newFont range:range];
-                     }
-                 }];
-    [res endEditing];
-    
+    cell.layer.shouldRasterize = YES;
+    cell.layer.rasterizationScale = [[UIScreen mainScreen] scale];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+
+    NSDateFormatter *ymdFormatter = [NSDateFormatter new];
+    ymdFormatter.dateFormat = @"yyyy-MM-dd";
+    NSDate *date = [ymdFormatter dateFromString:sectionInfo.name];
     
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
     NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
     dateFormatter.locale = locale;
-    dateFormatter.dateFormat = @"EEEE, MMMM d";
-    
-    if ([cell isKindOfClass:[ETSNewsImageCell class]]) {
-        ((ETSNewsImageCell *)cell).titleLabel.text = [title string];
-        ((ETSNewsImageCell *)cell).summaryLabel.text = [res string];
-        UIImage *image = [UIImage imageWithData:news.image];
-        ((ETSNewsImageCell *)cell).newsImageView.image = image;
-        ((ETSNewsCell *)cell).dateLabel.text = [dateFormatter stringFromDate:news.published];
-    } else if ([cell isKindOfClass:[ETSNewsCell class]]) {
-        ((ETSNewsCell *)cell).titleLabel.text = [title string];
-        ((ETSNewsCell *)cell).summaryLabel.text = [res string];
-        ((ETSNewsCell *)cell).dateLabel.text = [dateFormatter stringFromDate:news.published];
-    }
-    
-    cell.layer.shouldRasterize = YES;
-    cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    dateFormatter.dateFormat = @"EEEE, d MMMM YYYY";
+
+    return [dateFormatter stringFromDate:date];
 }
 
-- (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ETSNews *news = (ETSNews *)managedObject;
-    for (NSDictionary *source in self.sources) {
-        if ([news.link rangeOfString:source[@"id"]].location != NSNotFound) {
-            news.source = source[@"id"];
-            break;
-        }
-    }
-    
-    if ([news.source isEqualToString:@"etsmtl.ca"]) {
-        NSMutableArray *lines = [NSMutableArray arrayWithArray:[[news.summary stringByStrippingHTML] componentsSeparatedByString:@"\n"]];
-        [lines removeObjectsInRange:NSMakeRange(0, 2)];
-        
-        news.content = [lines componentsJoinedByString:@"\n"];
-    }
-    
-    else {
-        news.content = [news.summary stringByStrippingHTML];
-    }
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+        return 108.0f;
+    else
+        return 221.0f;
 }
-
-- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
-{
-    [super synchronizationDidFinishLoading:synchronization];
-    
-    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSConfinementConcurrencyType];
-    context.persistentStoreCoordinator = self.managedObjectContext.persistentStoreCoordinator;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addControllerContextDidSave:) name:NSManagedObjectContextDidSaveNotification object:context];
-    
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"News"];
-    request.predicate = [NSPredicate predicateWithFormat:@"image == nil"];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"published" ascending:YES]];
-    NSArray *newsToFetch = [context executeFetchRequest:request error:nil];
-    
-    NSBlockOperation *operations = [NSBlockOperation new];
-    __weak typeof(self) bself = self;
-    
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    for (ETSNews *news in newsToFetch) {
-        if ([news.image length] == 0) {
-            [operations addExecutionBlock:^{
-                NSString *url = nil;
-                NSScanner *scanner = [NSScanner scannerWithString:news.summary];
-                
-                [scanner scanUpToString:@"<img" intoString:nil];
-                if (![scanner isAtEnd]) {
-                    [scanner scanUpToString:@"src" intoString:nil];
-                    NSCharacterSet *charset = [NSCharacterSet characterSetWithCharactersInString:@"\"'"];
-                    [scanner scanUpToCharactersFromSet:charset intoString:nil];
-                    [scanner scanCharactersFromSet:charset intoString:nil];
-                    [scanner scanUpToCharactersFromSet:charset intoString:&url];
-                    
-                    if (url && [url length] > 0 && [url rangeOfString:@"f-partage.aspx" options:NSCaseInsensitiveSearch].location == NSNotFound) {
-                        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
-                        if (data && [data length] > 0) {
-                            UIImage *image = [UIImage imageWithData:data];
-                            if (image.size.width > 20 && image.size.height > 20) {
-                                news.image = data;
-                            }
-                        }
-                    }
-                }
-            }];
-        }
-    }
-
-    [operations setCompletionBlock:^{
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        [context save:nil];
-        [[NSNotificationCenter defaultCenter] removeObserver:bself name:NSManagedObjectContextDidSaveNotification object:context];
-        
-        NSMutableArray *indexes = [NSMutableArray array];
-        for (ETSNews *news in newsToFetch) {
-            if (news.image && [news.image length] > 0) {
-                NSIndexPath *indexPath = [bself.fetchedResultsController indexPathForObject:news];
-                if (indexPath) [indexes addObject:indexPath];
-            }
-        }
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            [bself.tableView reloadRowsAtIndexPaths:indexes withRowAnimation:UITableViewRowAnimationAutomatic];
-        });
-        
-    }];
-    [operations start];
-}
-
-- (void)addControllerContextDidSave:(NSNotification*)saveNotification
-{
-    [self.managedObjectContext performSelectorOnMainThread:@selector(mergeChangesFromContextDidSaveNotification:) withObject:saveNotification waitUntilDone:YES];
-}
-
-
 
 @end

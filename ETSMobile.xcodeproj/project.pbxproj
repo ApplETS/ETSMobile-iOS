@@ -7,17 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D25DD8319A3C95900C71387 /* ETSNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D25DD8219A3C95900C71387 /* ETSNewsViewController.m */; };
+		1D25DD8919A3E63B00C71387 /* ETSNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D25DD8819A3E63B00C71387 /* ETSNews.m */; };
 		1D29A460188DB82400CF02EB /* ETSCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29A45F188DB82400CF02EB /* ETSCommentViewController.m */; };
 		1D29A464188DB9E500CF02EB /* ETSCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29A463188DB9E500CF02EB /* ETSCommentCell.m */; };
 		1D33BA24188F064600A5F1C8 /* ETSRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA23188F064600A5F1C8 /* ETSRateCell.m */; };
 		1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA26188F065600A5F1C8 /* ETSTextCell.m */; };
+		1DBF6C6919A507EA00761C44 /* ETSNewsSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */; };
 		2600DB07190767000039039A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2600DB06190767000039039A /* MobileCoreServices.framework */; };
 		26085B3D1829D84300FE35AB /* ETSAPIURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26085B3C1829D84300FE35AB /* ETSAPIURL.plist */; };
 		26085B401829D8D700FE35AB /* NSURL+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 26085B3F1829D8D700FE35AB /* NSURL+API.m */; };
 		2610879E18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610879D18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m */; };
+		261409E519A686FB00E6CD29 /* ETSNewsEmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 261409E419A686FB00E6CD29 /* ETSNewsEmptyCell.m */; };
 		26274FA718F84D2500929CE2 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274F9F18F84BB200929CE2 /* libTestFlight.a */; };
 		26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274FA818F84D6A00929CE2 /* libz.dylib */; };
 		262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */; };
+		2633EFDD19085419009BC485 /* ETSUniversityCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2633EFDC19085419009BC485 /* ETSUniversityCalendarViewController.m */; };
 		263770941831AFB200D18F94 /* ETSEvaluation.m in Sources */ = {isa = PBXBuildFile; fileRef = 263770931831AFB200D18F94 /* ETSEvaluation.m */; };
 		263A4C421889D83000E38CAC /* ETSNewsDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263A4C411889D83000E38CAC /* ETSNewsDetailsViewController.m */; };
 		263A4C46188B089800E38CAC /* ETSNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 263A4C45188B089800E38CAC /* ETSNewsCell.m */; };
@@ -28,7 +33,6 @@
 		264E86CA1884E7E7005F1820 /* NewsSources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 264E86C91884E7E7005F1820 /* NewsSources.plist */; };
 		264E86CD18874E99005F1820 /* ETSNewsSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 264E86CC18874E99005F1820 /* ETSNewsSourceViewController.m */; };
 		264E86D0188796A7005F1820 /* NSURL+Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 264E86CF188796A7005F1820 /* NSURL+Document.m */; };
-		264E86D31887A24E005F1820 /* ETSNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 264E86D21887A24E005F1820 /* ETSNews.m */; };
 		265FDFBF18E0C50400371078 /* ETSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 265FDFBE18E0C50400371078 /* ETSCalendarViewController.m */; };
 		2661098218FD95EC00D817DA /* ETSRadioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2661098118FD95EC00D817DA /* ETSRadioPlayer.m */; };
 		26634D8A1881D91900644FFB /* ETSBandwidthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26634D891881D91900644FFB /* ETSBandwidthCell.m */; };
@@ -76,7 +80,6 @@
 		26B9A92818736265005D4410 /* ETSBandwidthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9A92718736265005D4410 /* ETSBandwidthViewController.m */; };
 		26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BB372B18F59580002CE5DD /* Main_iPad.storyboard */; };
 		26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */; };
-		26C0AC8E18EDCD82006ECF2B /* ETSNewsImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C0AC8D18EDCD82006ECF2B /* ETSNewsImageCell.m */; };
 		26C97886183AD1DE005D66EF /* ETSContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C97885183AD1DE005D66EF /* ETSContact.m */; };
 		26D44BA518E49BEF0006F9F0 /* ETSBandwidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D44BA418E49BEF0006F9F0 /* ETSBandwidth.m */; };
 		26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A717EA610D00469FA8 /* Foundation.framework */; };
@@ -95,7 +98,6 @@
 		26DD92D517EA610D00469FA8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AD17EA610D00469FA8 /* CoreData.framework */; };
 		26DD92DD17EA610D00469FA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92DB17EA610D00469FA8 /* InfoPlist.strings */; };
 		26DD92DF17EA610D00469FA8 /* ETSMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92DE17EA610D00469FA8 /* ETSMobileTests.m */; };
-		26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92F217EA625200469FA8 /* ETSNewsViewController.m */; };
 		26DEB70B18E9E99F00161421 /* MSCollectionViewCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB70A18E9E99F00161421 /* MSCollectionViewCalendarLayout.m */; };
 		26DEB74C18E9F2C000161421 /* ETSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB74B18E9F2C000161421 /* ETSCalendar.m */; };
 		26DEB88918EC97EC00161421 /* MSCurrentTimeGridline.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB87A18EC97EC00161421 /* MSCurrentTimeGridline.m */; };
@@ -130,6 +132,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D25DD8119A3C95900C71387 /* ETSNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsViewController.h; sourceTree = "<group>"; };
+		1D25DD8219A3C95900C71387 /* ETSNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsViewController.m; sourceTree = "<group>"; };
+		1D25DD8719A3E63B00C71387 /* ETSNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNews.h; sourceTree = "<group>"; };
+		1D25DD8819A3E63B00C71387 /* ETSNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNews.m; sourceTree = "<group>"; };
 		1D29A45E188DB82400CF02EB /* ETSCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCommentViewController.h; sourceTree = "<group>"; };
 		1D29A45F188DB82400CF02EB /* ETSCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCommentViewController.m; sourceTree = "<group>"; };
 		1D29A462188DB9E500CF02EB /* ETSCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCommentCell.h; sourceTree = "<group>"; };
@@ -138,6 +144,8 @@
 		1D33BA23188F064600A5F1C8 /* ETSRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRateCell.m; sourceTree = "<group>"; };
 		1D33BA25188F065600A5F1C8 /* ETSTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSTextCell.h; sourceTree = "<group>"; };
 		1D33BA26188F065600A5F1C8 /* ETSTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSTextCell.m; sourceTree = "<group>"; };
+		1DBF6C6719A507EA00761C44 /* ETSNewsSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsSource.h; sourceTree = "<group>"; };
+		1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsSource.m; sourceTree = "<group>"; };
 		2600DB06190767000039039A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2601088D181596820037E795 /* ETSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCollectionViewController.h; sourceTree = "<group>"; };
 		26085B3C1829D84300FE35AB /* ETSAPIURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPIURL.plist; sourceTree = "<group>"; };
@@ -145,6 +153,8 @@
 		26085B3F1829D8D700FE35AB /* NSURL+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+API.m"; sourceTree = "<group>"; };
 		2610879C18FDDAF400F84100 /* UIViewController+ScrollingNavbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+ScrollingNavbar.h"; path = "Vendors/AMScrollingNavbar/AMScrollingNavbar/UIViewController+ScrollingNavbar.h"; sourceTree = "<group>"; };
 		2610879D18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+ScrollingNavbar.m"; path = "Vendors/AMScrollingNavbar/AMScrollingNavbar/UIViewController+ScrollingNavbar.m"; sourceTree = "<group>"; };
+		261409E319A686FB00E6CD29 /* ETSNewsEmptyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsEmptyCell.h; sourceTree = "<group>"; };
+		261409E419A686FB00E6CD29 /* ETSNewsEmptyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsEmptyCell.m; sourceTree = "<group>"; };
 		26274F9F18F84BB200929CE2 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Vendors/TestFlightSDK3/libTestFlight.a; sourceTree = "<group>"; };
 		26274FA418F84CD800929CE2 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = Vendors/TestFlightSDK3/TestFlight.h; sourceTree = "<group>"; };
 		26274FA518F84CD800929CE2 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+AsyncLogging.h"; path = "Vendors/TestFlightSDK3/TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
@@ -152,6 +162,8 @@
 		26274FA818F84D6A00929CE2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		262A6344182B3DDA00B786A0 /* ETSCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourseDetailViewController.h; sourceTree = "<group>"; };
 		262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourseDetailViewController.m; sourceTree = "<group>"; };
+		2633EFDB19085419009BC485 /* ETSUniversityCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSUniversityCalendarViewController.h; sourceTree = "<group>"; };
+		2633EFDC19085419009BC485 /* ETSUniversityCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSUniversityCalendarViewController.m; sourceTree = "<group>"; };
 		263770921831AFB200D18F94 /* ETSEvaluation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSEvaluation.h; sourceTree = "<group>"; };
 		263770931831AFB200D18F94 /* ETSEvaluation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSEvaluation.m; sourceTree = "<group>"; };
 		263A4C401889D83000E38CAC /* ETSNewsDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsDetailsViewController.h; sourceTree = "<group>"; };
@@ -171,8 +183,6 @@
 		264E86CC18874E99005F1820 /* ETSNewsSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsSourceViewController.m; sourceTree = "<group>"; };
 		264E86CE188796A7005F1820 /* NSURL+Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Document.h"; sourceTree = "<group>"; };
 		264E86CF188796A7005F1820 /* NSURL+Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Document.m"; sourceTree = "<group>"; };
-		264E86D11887A24E005F1820 /* ETSNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNews.h; sourceTree = "<group>"; };
-		264E86D21887A24E005F1820 /* ETSNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNews.m; sourceTree = "<group>"; };
 		265FDFBD18E0C50400371078 /* ETSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCalendarViewController.h; sourceTree = "<group>"; };
 		265FDFBE18E0C50400371078 /* ETSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCalendarViewController.m; sourceTree = "<group>"; };
 		2661098018FD95EC00D817DA /* ETSRadioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRadioPlayer.h; sourceTree = "<group>"; };
@@ -252,8 +262,6 @@
 		26BB372C18F59580002CE5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ETSMobile/Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		26BB372E18F5E77E002CE5DD /* ETSCoursesViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCoursesViewController_iPad.h; sourceTree = "<group>"; };
 		26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCoursesViewController_iPad.m; sourceTree = "<group>"; };
-		26C0AC8C18EDCD82006ECF2B /* ETSNewsImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsImageCell.h; sourceTree = "<group>"; };
-		26C0AC8D18EDCD82006ECF2B /* ETSNewsImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsImageCell.m; sourceTree = "<group>"; };
 		26C97884183AD1DE005D66EF /* ETSContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSContact.h; sourceTree = "<group>"; };
 		26C97885183AD1DE005D66EF /* ETSContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSContact.m; sourceTree = "<group>"; };
 		26D44BA318E49BEF0006F9F0 /* ETSBandwidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidth.h; sourceTree = "<group>"; };
@@ -278,8 +286,6 @@
 		26DD92DC17EA610D00469FA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26DD92DE17EA610D00469FA8 /* ETSMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSMobileTests.m; sourceTree = "<group>"; };
 		26DD92EE17EA624A00469FA8 /* ETSMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMenuViewController.h; sourceTree = "<group>"; };
-		26DD92F117EA625200469FA8 /* ETSNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsViewController.h; sourceTree = "<group>"; };
-		26DD92F217EA625200469FA8 /* ETSNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsViewController.m; sourceTree = "<group>"; };
 		26DEB70918E9E99F00161421 /* MSCollectionViewCalendarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCollectionViewCalendarLayout.h; path = Vendors/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.h; sourceTree = "<group>"; };
 		26DEB70A18E9E99F00161421 /* MSCollectionViewCalendarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCollectionViewCalendarLayout.m; path = Vendors/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.m; sourceTree = "<group>"; };
 		26DEB74A18E9F2C000161421 /* ETSCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCalendar.h; sourceTree = "<group>"; };
@@ -420,8 +426,8 @@
 			children = (
 				263A4C44188B089800E38CAC /* ETSNewsCell.h */,
 				263A4C45188B089800E38CAC /* ETSNewsCell.m */,
-				26C0AC8C18EDCD82006ECF2B /* ETSNewsImageCell.h */,
-				26C0AC8D18EDCD82006ECF2B /* ETSNewsImageCell.m */,
+				261409E319A686FB00E6CD29 /* ETSNewsEmptyCell.h */,
+				261409E419A686FB00E6CD29 /* ETSNewsEmptyCell.m */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -431,6 +437,8 @@
 			children = (
 				265FDFBD18E0C50400371078 /* ETSCalendarViewController.h */,
 				265FDFBE18E0C50400371078 /* ETSCalendarViewController.m */,
+				2633EFDB19085419009BC485 /* ETSUniversityCalendarViewController.h */,
+				2633EFDC19085419009BC485 /* ETSUniversityCalendarViewController.m */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -711,6 +719,10 @@
 		26DD92E817EA612800469FA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1DBF6C6719A507EA00761C44 /* ETSNewsSource.h */,
+				1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */,
+				1D25DD8719A3E63B00C71387 /* ETSNews.h */,
+				1D25DD8819A3E63B00C71387 /* ETSNews.m */,
 				26AF7CF418FB499200BD3982 /* ETSMoodleCourse.h */,
 				26AF7CF518FB499200BD3982 /* ETSMoodleCourse.m */,
 				26AF7CFD18FB8A0000BD3982 /* ETSMoodleElement.h */,
@@ -721,8 +733,6 @@
 				26DEB74B18E9F2C000161421 /* ETSCalendar.m */,
 				26EF269918E70F12001D3454 /* ETSProgram.h */,
 				26EF269A18E70F12001D3454 /* ETSProgram.m */,
-				264E86D11887A24E005F1820 /* ETSNews.h */,
-				264E86D21887A24E005F1820 /* ETSNews.m */,
 				26D44BA318E49BEF0006F9F0 /* ETSBandwidth.h */,
 				26D44BA418E49BEF0006F9F0 /* ETSBandwidth.m */,
 				26C97884183AD1DE005D66EF /* ETSContact.h */,
@@ -735,8 +745,6 @@
 				263770931831AFB200D18F94 /* ETSEvaluation.m */,
 				263AC8E718464D9F00AD5B21 /* ETSEvent.h */,
 				263AC8E818464D9F00AD5B21 /* ETSEvent.m */,
-				264E86D11887A24E005F1820 /* ETSNews.h */,
-				264E86D21887A24E005F1820 /* ETSNews.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -790,8 +798,8 @@
 		26DD92EC17EA622D00469FA8 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				26DD92F117EA625200469FA8 /* ETSNewsViewController.h */,
-				26DD92F217EA625200469FA8 /* ETSNewsViewController.m */,
+				1D25DD8119A3C95900C71387 /* ETSNewsViewController.h */,
+				1D25DD8219A3C95900C71387 /* ETSNewsViewController.m */,
 				264E86CB18874E99005F1820 /* ETSNewsSourceViewController.h */,
 				264E86CC18874E99005F1820 /* ETSNewsSourceViewController.m */,
 				263A4C401889D83000E38CAC /* ETSNewsDetailsViewController.h */,
@@ -999,6 +1007,7 @@
 				266ED340182EC29D00DC1280 /* ETSTableViewController.m in Sources */,
 				263A4C46188B089800E38CAC /* ETSNewsCell.m in Sources */,
 				26DEB88A18EC97EC00161421 /* MSCurrentTimeIndicator.m in Sources */,
+				261409E519A686FB00E6CD29 /* ETSNewsEmptyCell.m in Sources */,
 				2661098218FD95EC00D817DA /* ETSRadioPlayer.m in Sources */,
 				264E86CD18874E99005F1820 /* ETSNewsSourceViewController.m in Sources */,
 				26887B7218F090C500009EBA /* ETSRadioCell.m in Sources */,
@@ -1012,6 +1021,7 @@
 				26D44BA518E49BEF0006F9F0 /* ETSBandwidth.m in Sources */,
 				26887B7B18F1D36600009EBA /* ETSSponsorsViewController.m in Sources */,
 				26DEB88918EC97EC00161421 /* MSCurrentTimeGridline.m in Sources */,
+				2633EFDD19085419009BC485 /* ETSUniversityCalendarViewController.m in Sources */,
 				26DEB89018EC97EC00161421 /* MSTimeRowHeaderBackground.m in Sources */,
 				26887B7718F1BA5800009EBA /* ETSAboutViewController.m in Sources */,
 				2664F1DC18FF1D7F0054BF58 /* MSDynamicsDrawerViewController.m in Sources */,
@@ -1038,7 +1048,6 @@
 				263A4C4C188B14A800E38CAC /* NSString+HTML.m in Sources */,
 				26634D8D1881F2FF00644FFB /* ETSLoginView.m in Sources */,
 				263770941831AFB200D18F94 /* ETSEvaluation.m in Sources */,
-				26C0AC8E18EDCD82006ECF2B /* ETSNewsImageCell.m in Sources */,
 				26A65542182ABE6E00DEE9B7 /* NSURLRequest+API.m in Sources */,
 				266F0B6218F4ED6B000F53C1 /* ETSSecurityProcedureViewController.m in Sources */,
 				26634D951881F6C100644FFB /* ETSCoreDataHelper.m in Sources */,
@@ -1053,9 +1062,12 @@
 				1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */,
 				26EF269B18E70F12001D3454 /* ETSProgram.m in Sources */,
 				26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */,
+				1D25DD8919A3E63B00C71387 /* ETSNews.m in Sources */,
 				26DEB88B18EC97EC00161421 /* MSDayColumnHeader.m in Sources */,
+				1DBF6C6919A507EA00761C44 /* ETSNewsSource.m in Sources */,
 				2664F1E318FF2FCC0054BF58 /* ETSMenuCell.m in Sources */,
 				264ACF4F18DCDE0100928284 /* ETSSynchronization.m in Sources */,
+				1D25DD8319A3C95900C71387 /* ETSNewsViewController.m in Sources */,
 				26EF269818E612B8001D3454 /* ETSCollectionViewController.m in Sources */,
 				1D29A464188DB9E500CF02EB /* ETSCommentCell.m in Sources */,
 				2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */,
@@ -1063,13 +1075,11 @@
 				266ED35018300D2900DC1280 /* ETSCourse.m in Sources */,
 				265FDFBF18E0C50400371078 /* ETSCalendarViewController.m in Sources */,
 				269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */,
-				264E86D31887A24E005F1820 /* ETSNews.m in Sources */,
 				26AF7CF618FB499200BD3982 /* ETSMoodleCourse.m in Sources */,
 				26AF7CFF18FB8A0000BD3982 /* ETSMoodleElement.m in Sources */,
 				263A4C421889D83000E38CAC /* ETSNewsDetailsViewController.m in Sources */,
 				1D29A460188DB82400CF02EB /* ETSCommentViewController.m in Sources */,
 				26DEB88F18EC97EC00161421 /* MSTimeRowHeader.m in Sources */,
-				26DD92F317EA625200469FA8 /* ETSNewsViewController.m in Sources */,
 				26DEB88E18EC97EC00161421 /* MSGridline.m in Sources */,
 				2698C6F518274F4B00F6281F /* KeychainItemWrapper.m in Sources */,
 			);
@@ -1211,6 +1221,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
@@ -1225,12 +1236,14 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendors/TestFlightSDK3",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1241,6 +1254,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
@@ -1255,6 +1269,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendors/TestFlightSDK3",

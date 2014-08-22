@@ -130,7 +130,7 @@
 + (id)requestForNewsWithSources:(NSArray *)sources
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForNewsWithSources:sources]];
-
+    
     [request setHTTPMethod: @"GET"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -154,6 +154,11 @@
 + (id)requestForRadio
 {
     return [[NSURLRequest alloc] initWithURL:[NSURL URLForRadio]];
+}
+
++ (id)requestForUniversityCalendarStart:(NSDate *)start end:(NSDate *)end
+{
+    return [[NSURLRequest alloc] initWithURL:[NSURL URLForUniversityCalendarStart:start end:end]];
 }
 
 + (id)requestForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase

@@ -2,7 +2,7 @@
 //  ETSNews.h
 //  ETSMobile
 //
-//  Created by Jean-Philippe Martin on 2014-03-29.
+//  Created by Jean-Philippe Martin on 2014-08-19.
 //  Copyright (c) 2014 ApplETS. All rights reserved.
 //
 
@@ -13,11 +13,14 @@
 @interface ETSNews : NSManagedObject
 
 @property (nonatomic, retain) NSString * content;
-@property (nonatomic, retain) NSString * link;
-@property (nonatomic, retain) NSDate * published;
-@property (nonatomic, retain) NSString * source;
-@property (nonatomic, retain) NSString * summary;
+@property (nonatomic, retain) NSString * contentStripped;
+@property (nonatomic, retain) NSString * id;
+@property (nonatomic, retain) NSDate * updatedDate;
+@property (nonatomic, retain) NSString * ymdDate;
+@property (nonatomic, retain) NSString * author;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSData * image;
+@property (nonatomic, retain) NSString * link;
+@property (nonatomic, retain) NSString * thumbnailURL;
+
 
 @end
