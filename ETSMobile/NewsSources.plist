@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>group</key>
-		<integer>0</integer>
+		<integer>-1</integer>
 		<key>id</key>
 		<string>8632204375</string>
 		<key>name</key>
@@ -16,7 +16,7 @@
 	</dict>
 	<dict>
 		<key>group</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>id</key>
 		<string>318301358296527</string>
 		<key>name</key>
@@ -154,7 +154,7 @@
 		<key>name</key>
 		<string>Football ÉTS</string>
 		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=211557725590576&amp;format=json</string>
+		<string>https://www.facebook.com/feeds/page.php?id=460299537349517&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -220,7 +220,7 @@
 	</dict>
 	<dict>
 		<key>group</key>
-		<integer>0</integer>
+		<integer>2</integer>
 		<key>id</key>
 		<string>371898792845924</string>
 		<key>name</key>
@@ -280,7 +280,7 @@
 	</dict>
 	<dict>
 		<key>group</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>id</key>
 		<string>167760619914316</string>
 		<key>name</key>
@@ -503,6 +503,18 @@
 		<string>Librairie Coop ÉTS</string>
 		<key>url</key>
 		<string>https://www.facebook.com/feeds/page.php?id=357404254892&amp;format=json</string>
+		<key>enabled</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>group</key>
+		<integer>2</integer>
+		<key>id</key>
+		<string>1452026945085279</string>
+		<key>name</key>
+		<string>Intégrale ÉTS</string>
+		<key>url</key>
+		<string>https://www.facebook.com/feeds/page.php?id=1452026945085279&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>

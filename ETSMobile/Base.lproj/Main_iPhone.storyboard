@@ -1613,6 +1613,7 @@ http://applets.etsmtl.ca</string>
                                 <connections>
                                     <outlet property="authorLabel" destination="V8f-ML-adh" id="MXQ-A9-pgj"/>
                                     <outlet property="contentLabel" destination="Uiw-p2-5aC" id="wf1-F7-YTP"/>
+                                    <segue destination="Zcx-WD-r1i" kind="push" identifier="NewsImageSegue" id="mTl-tJ-LSY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -2058,4 +2059,7 @@ http://applets.etsmtl.ca</string>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="mTl-tJ-LSY"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -116,8 +116,13 @@
     NSDictionary *options = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType};
     
     for (NSDictionary *object in objects) {
-        NSString *strippedContent = [object[@"entries"][@"content"] stringByStrippingHTML];
-        if ([strippedContent length] > 0) {
+        
+        NSString *strippedContent = [object[@"entries"][@"content"] stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
+        strippedContent = [strippedContent stringByReplacingOccurrencesOfString:@"<br/>" withString:@"\n"];
+        strippedContent = [strippedContent stringByStrippingHTML];
+        strippedContent = [strippedContent stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"];
+
+        if ([[object[@"entries"][@"content"] stringByStrippingHTML] length] > 0) {
             
             NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"entries"][@"updated"]];
             
@@ -173,6 +178,7 @@
     else if ([segue.identifier isEqualToString:@"NewsSegue"] || [segue.identifier isEqualToString:@"NewsImageSegue"]) {
         ETSNewsDetailsViewController *destinationController = (ETSNewsDetailsViewController *)segue.destinationViewController;
         destinationController.news = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        destinationController.title = destinationController.news.author;
     }
 }
 
@@ -197,7 +203,22 @@
     if ([cell isKindOfClass:[ETSNewsCell class]]) {
         ((ETSNewsCell *)cell).contentLabel.text = news.contentStripped;
         ((ETSNewsCell *)cell).authorLabel.text = news.author;
-        ((ETSNewsCell *)cell).thumbnailView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:news.thumbnailURL]]];
+        ((ETSNewsCell *)cell).thumbnailView.image = nil;
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:news.thumbnailURL] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10];
+        NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                          {
+                              if (data) {
+                                  UIImage *image = [UIImage imageWithData:data];
+                                  if (image && image.size.height > 0 && image.size.width > 0) {
+                                      dispatch_sync(dispatch_get_main_queue(), ^{
+                                          ((ETSNewsCell *)cell).thumbnailView.image = [UIImage imageWithData:data];
+                                      });
+                                  }
+                              }
+                          }];
+        [task resume];
+        
         ((ETSNewsCell *)cell).thumbnailView.clipsToBounds = YES;
     } else if ([cell isKindOfClass:[ETSNewsEmptyCell class]]) {
         ((ETSNewsEmptyCell *)cell).contentLabel.text = news.contentStripped;

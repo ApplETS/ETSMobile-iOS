@@ -213,7 +213,7 @@
                 }
                 [rObject setValue:nil forKey:attribute];
             }
-            [rObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:self.dateFormatter mapping:[ETSSynchronization mappings][self.entityName]];
+            [rObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:self.dateFormatter mapping:[ETSSynchronization mappings][self.entityName] ignoredAttributes:self.ignoredAttributes];
             if ([self.delegate respondsToSelector:@selector(synchronization:didReceiveObject:forManagedObject:)])
                 [self.delegate synchronization:self didReceiveObject:lObject forManagedObject:rObject];
             i++;

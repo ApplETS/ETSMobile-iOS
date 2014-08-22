@@ -13,7 +13,7 @@
 	<key>Program</key>
 	<string>https://signets-ens.etsmtl.ca/Secure/WebServices/SignetsMobile.asmx/listeProgrammes</string>
 	<key>News</key>
-	<string>https://query.yahooapis.com/v1/public/yql?q=SELECT%%20entries.id%%2C%%20entries.title%%2C%%20entries.alternate%%2C%%20entries.updated%%2C%%20entries.author.name%%2C%%20entries.content%%20FROM%%20json%%20WHERE%%20url%%20IN%%20(%%22%@%%22)%%20%%7C%%20sort(field%%3D%%22entries.updated%%22%%2C%%20descending%%3D%%22true%%22)%%20%%7C%%20truncate(count%%3D25)&amp;format=json&amp;callback=</string>
+	<string>https://query.yahooapis.com/v1/public/yql?q=SELECT%%20entries.id%%2C%%20entries.title%%2C%%20entries.alternate%%2C%%20entries.updated%%2C%%20entries.author.name%%2C%%20entries.content%%20FROM%%20json%%20WHERE%%20url%%20IN%%20(%%22%@%%22)%%20%%7C%%20sort(field%%3D%%22entries.updated%%22%%2C%%20descending%%3D%%22true%%22)%%20%%7C%%20truncate(count%%3D75)&amp;format=json&amp;callback=</string>
 	<key>Comment</key>
 	<string>http://api.clubapplets.ca/mail/send/notification_to_club</string>
 	<key>Bandwidth</key>

@@ -1641,7 +1641,7 @@ http://applets.etsmtl.ca</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KRl-Hr-YgE">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KRl-Hr-YgE">
                                             <rect key="frame" x="20" y="49" width="228" height="155"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
@@ -1706,6 +1706,7 @@ http://applets.etsmtl.ca</string>
                                 <connections>
                                     <outlet property="authorLabel" destination="gXP-wh-NOp" id="V8j-yF-gt2"/>
                                     <outlet property="contentLabel" destination="sHh-fB-SWT" id="ziZ-dD-mqh"/>
+                                    <segue destination="Zcx-WD-r1i" kind="push" identifier="NewsImageSegue" id="PeS-Yw-kQG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1718,9 +1719,7 @@ http://applets.etsmtl.ca</string>
                     <navigationItem key="navigationItem" title="Nouvelles" id="mFY-3n-Uhd">
                         <barButtonItem key="rightBarButtonItem" title="Sources" id="mRq-cK-Rgw">
                             <connections>
-                                <segue destination="Mmq-HF-Scu" kind="popover" identifier="SourcesSegue" popoverAnchorBarButtonItem="mRq-cK-Rgw" id="Fpv-gH-Ipn">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <segue destination="Mmq-HF-Scu" kind="push" identifier="SourcesSegue" id="Fpv-gH-Ipn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1821,7 +1820,7 @@ http://applets.etsmtl.ca</string>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SourceIdentifier" textLabel="SBo-1V-fcc" rowHeight="70" style="IBUITableViewCellStyleDefault" id="mNJ-0T-daf">
-                                <rect key="frame" x="0.0" y="55" width="768" height="70"/>
+                                <rect key="frame" x="0.0" y="119" width="768" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mNJ-0T-daf" id="cZT-5E-5V2">
                                     <rect key="frame" x="0.0" y="0.0" width="768" height="69"/>
@@ -2162,4 +2161,7 @@ http://applets.etsmtl.ca</string>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="a6C-Vc-8jI"/>
+    </inferredMetricsTieBreakers>
 </document>
