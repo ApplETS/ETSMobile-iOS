@@ -14,6 +14,7 @@
 #import "NSURL+Document.h"
 #import "ETSNews.h"
 #import "NSString+HTML.h"
+#import "GTMNSString+HTML.h"
 
 @implementation ETSNewsViewController
 
@@ -113,14 +114,12 @@
     
     NSDateFormatter *ymdFormatter = [NSDateFormatter new];
     [ymdFormatter setDateFormat:@"yyyy-MM-dd"];
-    NSDictionary *options = @{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType};
     
     for (NSDictionary *object in objects) {
         
         NSString *strippedContent = [object[@"entries"][@"content"] stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
         strippedContent = [strippedContent stringByReplacingOccurrencesOfString:@"<br/>" withString:@"\n"];
         strippedContent = [strippedContent stringByStrippingHTML];
-        strippedContent = [strippedContent stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"];
 
         if ([[object[@"entries"][@"content"] stringByStrippingHTML] length] > 0) {
             
@@ -150,18 +149,15 @@
             if (![url hasSuffix:@".jpg"]) {
                 url = @"";
             }
-
-            NSAttributedString *contentStripped = [[NSAttributedString alloc] initWithData:[strippedContent dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:nil];
-            NSAttributedString *author = [[NSAttributedString alloc] initWithData:[object[@"entries"][@"author"][@"name"] dataUsingEncoding:NSUnicodeStringEncoding] options:options documentAttributes:nil error:nil];
-
+            
             [news addObject:@{@"id"                 : object[@"entries"][@"id"],
                               @"title"              : object[@"entries"][@"title"],
                               @"alternate"          : object[@"entries"][@"alternate"],
                               @"updated"            : object[@"entries"][@"updated"],
                               @"ymdDate"            : [ymdFormatter stringFromDate:date],
                               @"content"            : object[@"entries"][@"content"],
-                              @"contentStripped"    : contentStripped.string,
-                              @"author"             : author.string,
+                              @"contentStripped"    : [strippedContent gtm_stringByUnescapingFromHTML],
+                              @"author"             : [object[@"entries"][@"author"][@"name"] gtm_stringByUnescapingFromHTML],
                               @"thumbnailURL"       : url}];
         }
     }

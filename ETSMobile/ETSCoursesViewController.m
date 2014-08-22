@@ -47,7 +47,7 @@
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
         ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
         ac.delegate = self;
-        [self.navigationController pushViewController:ac animated:YES];
+        [self.navigationController pushViewController:ac animated:NO];
     }
 }
 

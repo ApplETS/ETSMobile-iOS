@@ -98,14 +98,14 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
             ac.delegate = self;
-            [self.navigationController pushViewController:ac animated:YES];
+            [self.navigationController pushViewController:ac animated:NO];
         } else {
             UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
             ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
             authenticationController.delegate = self;
             navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
             navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-            [self.navigationController presentViewController:navigationController animated:YES completion:nil];
+            [self.navigationController presentViewController:navigationController animated:NO completion:nil];
         }
     }
 }
