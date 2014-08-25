@@ -11,7 +11,7 @@
 
 @protocol ETSAuthenticationViewControllerDelegate;
 
-@interface ETSAuthenticationViewController : UIViewController
+@interface ETSAuthenticationViewController : UIViewController <UITextFieldDelegate>
 
 + (ETSSynchronizationResponse)validateJSONResponse:(NSDictionary *)response;
 - (IBAction)authenticate:(id)sender;

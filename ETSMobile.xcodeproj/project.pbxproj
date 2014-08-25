@@ -13,6 +13,7 @@
 		1D29A464188DB9E500CF02EB /* ETSCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29A463188DB9E500CF02EB /* ETSCommentCell.m */; };
 		1D33BA24188F064600A5F1C8 /* ETSRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA23188F064600A5F1C8 /* ETSRateCell.m */; };
 		1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA26188F065600A5F1C8 /* ETSTextCell.m */; };
+		1D8B140E19A7B1E80033CBA7 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8B140D19A7B1E80033CBA7 /* GTMNSString+HTML.m */; };
 		1DBF6C6919A507EA00761C44 /* ETSNewsSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */; };
 		2600DB07190767000039039A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2600DB06190767000039039A /* MobileCoreServices.framework */; };
 		26085B3D1829D84300FE35AB /* ETSAPIURL.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26085B3C1829D84300FE35AB /* ETSAPIURL.plist */; };
@@ -144,6 +145,8 @@
 		1D33BA23188F064600A5F1C8 /* ETSRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRateCell.m; sourceTree = "<group>"; };
 		1D33BA25188F065600A5F1C8 /* ETSTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSTextCell.h; sourceTree = "<group>"; };
 		1D33BA26188F065600A5F1C8 /* ETSTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSTextCell.m; sourceTree = "<group>"; };
+		1D8B140C19A7B1E80033CBA7 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GTMNSString+HTML.h"; path = "Vendors/GTMNSString+HTML/GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		1D8B140D19A7B1E80033CBA7 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GTMNSString+HTML.m"; path = "Vendors/GTMNSString+HTML/GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		1DBF6C6719A507EA00761C44 /* ETSNewsSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsSource.h; sourceTree = "<group>"; };
 		1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsSource.m; sourceTree = "<group>"; };
 		2600DB06190767000039039A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -382,6 +385,15 @@
 				1D33BA26188F065600A5F1C8 /* ETSTextCell.m */,
 			);
 			name = Comment;
+			sourceTree = "<group>";
+		};
+		1D8B140B19A7B1D90033CBA7 /* GTMNSString+HTML */ = {
+			isa = PBXGroup;
+			children = (
+				1D8B140C19A7B1E80033CBA7 /* GTMNSString+HTML.h */,
+				1D8B140D19A7B1E80033CBA7 /* GTMNSString+HTML.m */,
+			);
+			name = "GTMNSString+HTML";
 			sourceTree = "<group>";
 		};
 		260108901815968D0037E795 /* Base */ = {
@@ -786,6 +798,7 @@
 		26DD92EB17EA615E00469FA8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				1D8B140B19A7B1D90033CBA7 /* GTMNSString+HTML */,
 				2664F1D618FF1D5B0054BF58 /* MSDynamicsDrawerViewController */,
 				2610879A18FDDAE300F84100 /* AMScrollingNavbar */,
 				26274F9E18F84BA100929CE2 /* TestFlight */,
@@ -1006,6 +1019,7 @@
 			files = (
 				266ED340182EC29D00DC1280 /* ETSTableViewController.m in Sources */,
 				263A4C46188B089800E38CAC /* ETSNewsCell.m in Sources */,
+				1D8B140E19A7B1E80033CBA7 /* GTMNSString+HTML.m in Sources */,
 				26DEB88A18EC97EC00161421 /* MSCurrentTimeIndicator.m in Sources */,
 				261409E519A686FB00E6CD29 /* ETSNewsEmptyCell.m in Sources */,
 				2661098218FD95EC00D817DA /* ETSRadioPlayer.m in Sources */,

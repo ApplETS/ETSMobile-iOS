@@ -46,7 +46,7 @@
         authenticationController.delegate = self;
         navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
         navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [self.navigationController presentViewController:navigationController animated:YES completion:nil];
+        [self.navigationController presentViewController:navigationController animated:NO completion:nil];
     }
 }
 
