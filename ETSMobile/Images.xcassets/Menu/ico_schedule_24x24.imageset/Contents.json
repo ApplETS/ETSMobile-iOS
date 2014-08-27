@@ -3,11 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "ico_schedule_24x24.png"
+      "filename" : "ico_calendar.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "ico_calendar@2x.png"
     }
   ],
   "info" : {

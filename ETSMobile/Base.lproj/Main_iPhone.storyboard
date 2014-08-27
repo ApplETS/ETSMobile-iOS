@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Cj2-BH-2uQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Cj2-BH-2uQ">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Dynamics Drawer View Controller-->
@@ -51,7 +51,7 @@
             </objects>
             <point key="canvasLocation" x="-868" y="794"/>
         </scene>
-        <!--Calendrier universitaire-->
+        <!--University Calendar View Controller - Calendrier universitaire-->
         <scene sceneID="T3f-x8-RuB">
             <objects>
                 <tableViewController id="p9e-pm-6yn" customClass="ETSUniversityCalendarViewController" sceneMemberID="viewController">
@@ -96,7 +96,7 @@
             </objects>
             <point key="canvasLocation" x="-427" y="790"/>
         </scene>
-        <!--Commentaire-->
+        <!--Comment View Controller - Commentaire-->
         <scene sceneID="tlV-6T-k3a">
             <objects>
                 <tableViewController id="k3t-rL-7u1" customClass="ETSCommentViewController" sceneMemberID="viewController">
@@ -504,7 +504,7 @@
             </objects>
             <point key="canvasLocation" x="-1390" y="-4388"/>
         </scene>
-        <!--Moodle-->
+        <!--Moodle Courses View Controller - Moodle-->
         <scene sceneID="jyn-VA-al6">
             <objects>
                 <tableViewController id="1WN-OC-rSq" customClass="ETSMoodleCoursesViewController" sceneMemberID="viewController">
@@ -556,7 +556,7 @@
             </objects>
             <point key="canvasLocation" x="-868" y="-4388"/>
         </scene>
-        <!--Title-->
+        <!--Moodle Course Detail View Controller - Title-->
         <scene sceneID="wXp-RY-nMi">
             <objects>
                 <tableViewController id="lDD-UG-AbV" customClass="ETSMoodleCourseDetailViewController" sceneMemberID="viewController">
@@ -635,7 +635,7 @@
             </objects>
             <point key="canvasLocation" x="-1384" y="-3627"/>
         </scene>
-        <!--Title-->
+        <!--Directory View Controller - Title-->
         <scene sceneID="mu7-mv-yvd">
             <objects>
                 <tableViewController id="xZN-cK-yA7" customClass="ETSDirectoryViewController" sceneMemberID="viewController">
@@ -701,7 +701,7 @@
             </objects>
             <point key="canvasLocation" x="-868" y="-3627"/>
         </scene>
-        <!--Sécurité-->
+        <!--Security View Controller - Sécurité-->
         <scene sceneID="GjL-aY-NK4">
             <objects>
                 <tableViewController title="Sécurité" id="I43-QW-w0b" customClass="ETSSecurityViewController" sceneMemberID="viewController">
@@ -944,7 +944,7 @@
             </objects>
             <point key="canvasLocation" x="-1390" y="-2897"/>
         </scene>
-        <!--Bibliothèque-->
+        <!--Web View View Controller - Bibliothèque-->
         <scene sceneID="y6B-h0-1u4">
             <objects>
                 <viewController storyboardIdentifier="SingleWebViewController" title="Bibliothèque" id="NxR-56-9fe" customClass="ETSWebViewViewController" sceneMemberID="viewController">
@@ -1016,7 +1016,7 @@
             </objects>
             <point key="canvasLocation" x="-868" y="-2897"/>
         </scene>
-        <!--Partenaires-->
+        <!--Sponsors View Controller - Partenaires-->
         <scene sceneID="L7F-yo-uym">
             <objects>
                 <viewController title="Partenaires" id="uoZ-7p-ZMR" customClass="ETSSponsorsViewController" sceneMemberID="viewController">
@@ -1079,7 +1079,7 @@
             </objects>
             <point key="canvasLocation" x="-1390" y="53"/>
         </scene>
-        <!--À propos d'ÉTSMobile-->
+        <!--About View Controller - À propos d'ÉTSMobile-->
         <scene sceneID="g96-oI-9kJ">
             <objects>
                 <viewController title="À propos d'ÉTSMobile" id="dr6-SO-0j9" customClass="ETSAboutViewController" sceneMemberID="viewController">
@@ -1231,7 +1231,7 @@ http://applets.etsmtl.ca</string>
             </objects>
             <point key="canvasLocation" x="806" y="-3057"/>
         </scene>
-        <!--Title-->
+        <!--Bandwidth View Controller - Title-->
         <scene sceneID="Zcj-oU-pyc">
             <objects>
                 <tableViewController id="Dqs-Y1-i9q" customClass="ETSBandwidthViewController" sceneMemberID="viewController">
@@ -1479,7 +1479,7 @@ http://applets.etsmtl.ca</string>
             </objects>
             <point key="canvasLocation" x="-868" y="-750"/>
         </scene>
-        <!--Actualités-->
+        <!--News View Controller - Actualités-->
         <scene sceneID="5Jw-jp-LRi">
             <objects>
                 <tableViewController id="lz9-DU-0Fb" customClass="ETSNewsViewController" sceneMemberID="viewController">
@@ -1702,7 +1702,7 @@ http://applets.etsmtl.ca</string>
             </objects>
             <point key="canvasLocation" x="806" y="-1435"/>
         </scene>
-        <!--Sources-->
+        <!--News Source View Controller - Sources-->
         <scene sceneID="wPf-oM-Mqr">
             <objects>
                 <tableViewController id="Mmq-HF-Scu" customClass="ETSNewsSourceViewController" sceneMemberID="viewController">
@@ -1756,7 +1756,7 @@ http://applets.etsmtl.ca</string>
             </objects>
             <point key="canvasLocation" x="806" y="66"/>
         </scene>
-        <!--Title-->
+        <!--Profile View Controller - Title-->
         <scene sceneID="63K-v4-Gko">
             <objects>
                 <tableViewController id="Dlf-Hn-LBA" customClass="ETSProfileViewController" sceneMemberID="viewController">
@@ -1920,7 +1920,7 @@ http://applets.etsmtl.ca</string>
             </objects>
             <point key="canvasLocation" x="-1390" y="-1940"/>
         </scene>
-        <!--Bibliothèque-->
+        <!--Web View View Controller - Bibliothèque-->
         <scene sceneID="VtQ-zB-E5k">
             <objects>
                 <viewController title="Bibliothèque" id="ucY-u0-Eou" customClass="ETSWebViewViewController" sceneMemberID="viewController">
@@ -1994,22 +1994,19 @@ http://applets.etsmtl.ca</string>
         </scene>
     </scenes>
     <resources>
-        <image name="AuthenticationBackground" width="792" height="1470"/>
+        <image name="AuthenticationBackground" width="396" height="735"/>
         <image name="apartment" width="45" height="45"/>
         <image name="bed" width="45" height="45"/>
         <image name="home" width="22" height="22"/>
         <image name="menu-icon" width="22" height="17"/>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4">
-            <size key="portraitSize" width="320" height="568"/>
-            <size key="landscapeSize" width="568" height="320"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="mTl-tJ-LSY"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
