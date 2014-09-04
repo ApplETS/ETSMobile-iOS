@@ -1611,7 +1611,7 @@ http://applets.etsmtl.ca</string>
             </objects>
             <point key="canvasLocation" x="2701" y="1096"/>
         </scene>
-        <!--News View Controller - Nouvelles-->
+        <!--News View Controller - Actualités-->
         <scene sceneID="5Jw-jp-LRi">
             <objects>
                 <tableViewController id="lz9-DU-0Fb" customClass="ETSNewsViewController" sceneMemberID="viewController">
@@ -1718,7 +1718,7 @@ http://applets.etsmtl.ca</string>
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Nouvelles" id="mFY-3n-Uhd">
+                    <navigationItem key="navigationItem" title="Actualités" id="mFY-3n-Uhd">
                         <barButtonItem key="rightBarButtonItem" title="Sources" id="mRq-cK-Rgw">
                             <connections>
                                 <segue destination="Mmq-HF-Scu" kind="push" identifier="SourcesSegue" id="Fpv-gH-Ipn"/>
