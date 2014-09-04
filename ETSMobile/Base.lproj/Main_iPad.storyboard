@@ -1228,21 +1228,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gLh-4a-uaH">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gLh-4a-uaH">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="21" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="741" translatesAutoresizingMaskIntoConstraints="NO" id="tws-7f-Q2q">
-                                        <rect key="frame" x="14" y="35" width="741" height="422"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="29" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="741" translatesAutoresizingMaskIntoConstraints="NO" id="tws-7f-Q2q">
+                                        <rect key="frame" x="14" y="35" width="741" height="567"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="422" id="Vth-qn-tzF"/>
+                                            <constraint firstAttribute="height" constant="567" id="Vth-qn-tzF"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Réalisation — Équipe iOS">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     <integer key="NSUnderline" value="1"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
@@ -1253,17 +1253,17 @@ Annie Caron
 
 </string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="Réalisation — API/Serveur">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     <integer key="NSUnderline" value="1"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
@@ -1273,17 +1273,17 @@ Philippe Cloutier
 
 </string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="Responsables du club">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     <integer key="NSUnderline" value="1"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
@@ -1293,17 +1293,17 @@ Marc-Antoine Hinse (trésorier)
 
 </string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="Remerciements">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     <integer key="NSUnderline" value="1"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
@@ -1314,11 +1314,33 @@ Véronique Clabots
 Olivier Lacasse
 Robert Gervais
 
+</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="ÉTSMobile utilise les codes sources ouverts suivants :">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
+MSCollectionViewCalendarLayout
+MSDynamicsDrawerViewController
+AMScrollingNavbar
+GTMNSString+HTML
+
 http://applets.etsmtl.ca</string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -1329,7 +1351,7 @@ http://applets.etsmtl.ca</string>
                                     <constraint firstItem="tws-7f-Q2q" firstAttribute="leading" secondItem="gLh-4a-uaH" secondAttribute="leading" priority="750" constant="14" id="54z-OG-tdP"/>
                                     <constraint firstAttribute="trailing" secondItem="tws-7f-Q2q" secondAttribute="trailing" priority="750" constant="13" id="Fxw-k0-bbc"/>
                                     <constraint firstItem="tws-7f-Q2q" firstAttribute="top" secondItem="gLh-4a-uaH" secondAttribute="top" priority="250" constant="35" id="Ubv-u2-o43"/>
-                                    <constraint firstAttribute="bottom" secondItem="tws-7f-Q2q" secondAttribute="bottom" priority="250" constant="50" id="Zvg-B5-MkY"/>
+                                    <constraint firstAttribute="bottom" secondItem="tws-7f-Q2q" secondAttribute="bottom" priority="250" constant="422" id="Zvg-B5-MkY"/>
                                     <constraint firstAttribute="centerX" secondItem="tws-7f-Q2q" secondAttribute="centerX" constant="-0.5" id="hEj-67-78I"/>
                                 </constraints>
                             </scrollView>
