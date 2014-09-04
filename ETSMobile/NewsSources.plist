@@ -518,5 +518,17 @@
 		<key>enabled</key>
 		<true/>
 	</dict>
+	<dict>
+		<key>group</key>
+		<integer>1</integer>
+		<key>id</key>
+		<string>419586744817217</string>
+		<key>name</key>
+		<string>GéniAle ÉTS</string>
+		<key>url</key>
+		<string>https://www.facebook.com/feeds/page.php?id=419586744817217&amp;format=json</string>
+		<key>enabled</key>
+		<true/>
+	</dict>
 </array>
 </plist>
