@@ -150,15 +150,22 @@
                 url = @"";
             }
             
-            [news addObject:@{@"id"                 : object[@"entries"][@"id"],
-                              @"title"              : object[@"entries"][@"title"],
-                              @"alternate"          : object[@"entries"][@"alternate"],
-                              @"updated"            : object[@"entries"][@"updated"],
-                              @"ymdDate"            : [ymdFormatter stringFromDate:date],
-                              @"content"            : object[@"entries"][@"content"],
-                              @"contentStripped"    : [strippedContent gtm_stringByUnescapingFromHTML],
-                              @"author"             : [object[@"entries"][@"author"][@"name"] gtm_stringByUnescapingFromHTML],
-                              @"thumbnailURL"       : url}];
+            NSString *unescapedContent = [strippedContent gtm_stringByUnescapingFromHTML];
+            NSString *unescapedAuthor = [object[@"entries"][@"author"][@"name"] gtm_stringByUnescapingFromHTML];
+            
+            BOOL isComplete = object[@"entries"][@"id"] && object[@"entries"][@"title"] && object[@"entries"][@"alternate"] && object[@"entries"][@"updated"] && [ymdFormatter stringFromDate:date] && object[@"entries"][@"content"] && unescapedContent && unescapedAuthor && url;
+            
+            if (isComplete) {
+                [news addObject:@{@"id"                 : object[@"entries"][@"id"],
+                                  @"title"              : object[@"entries"][@"title"],
+                                  @"alternate"          : object[@"entries"][@"alternate"],
+                                  @"updated"            : object[@"entries"][@"updated"],
+                                  @"ymdDate"            : [ymdFormatter stringFromDate:date],
+                                  @"content"            : object[@"entries"][@"content"],
+                                  @"contentStripped"    : unescapedContent,
+                                  @"author"             : unescapedAuthor,
+                                  @"thumbnailURL"       : url}];
+            }
         }
     }
     return news;
