@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ETSSponsorsViewController : UIViewController
+typedef NS_ENUM(NSUInteger, ETSSponsor) {
+    ETSSponsorETS,
+    ETSSponsorBell,
+    ETSSponsorAEETS,
+    ETSSponsorFDETS,
+    ETSSponsorGitHub,
+    ETSSponsorBugSense,
+    ETSSponsorAtlassian
+};
+
+@interface ETSSponsorsViewController : UICollectionViewController
 
 @end
