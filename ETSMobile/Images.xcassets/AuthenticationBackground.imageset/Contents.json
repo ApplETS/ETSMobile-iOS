@@ -3,11 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "authentication background.png"
+      "filename" : "AuthenticationBackground.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "AuthenticationBackground@2x.png"
     }
   ],
   "info" : {

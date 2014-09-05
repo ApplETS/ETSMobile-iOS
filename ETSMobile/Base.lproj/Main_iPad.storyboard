@@ -1157,7 +1157,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="uoZ-7p-ZMR" kind="relationship" relationship="rootViewController" id="aHj-9y-2BY"/>
+                        <segue destination="6dD-44-xaw" kind="relationship" relationship="rootViewController" id="RAA-Za-etH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVF-6y-wUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1165,38 +1165,40 @@
             <point key="canvasLocation" x="1566" y="11524"/>
         </scene>
         <!--Sponsors View Controller - Partenaires-->
-        <scene sceneID="L7F-yo-uym">
+        <scene sceneID="fXK-pg-dAB">
             <objects>
-                <viewController title="Partenaires" id="uoZ-7p-ZMR" customClass="ETSSponsorsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6cE-A3-ej9"/>
-                        <viewControllerLayoutGuide type="bottom" id="ipO-ZU-JPe"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EHb-Ep-BY7">
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" title="Partenaires" id="6dD-44-xaw" customClass="ETSSponsorsViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="RCL-bH-c2i">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="À venir…" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ksf-pY-eqz">
-                                <rect key="frame" x="349" y="502" width="70" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="ksf-pY-eqz" secondAttribute="centerY" id="8RT-q0-00a"/>
-                            <constraint firstAttribute="centerX" secondItem="ksf-pY-eqz" secondAttribute="centerX" id="SUP-1K-LZ2"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="9oa-2J-Esf"/>
-                    <navigationItem key="navigationItem" title="Partenaires" id="fdZ-aX-aMx"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fet-zs-TSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Rv-D4-Nqm">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SponsorIdentifier" id="vZY-eL-6cn">
+                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="6dD-44-xaw" id="TlP-w0-etd"/>
+                            <outlet property="delegate" destination="6dD-44-xaw" id="WjL-fL-9uA"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Partenaires" id="obS-3h-c5y"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tgl-aC-PGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2728" y="11551"/>
+            <point key="canvasLocation" x="2715" y="11524"/>
         </scene>
         <!--Navigation Controller - À propos-->
         <scene sceneID="BTw-e5-D3H">
@@ -1226,21 +1228,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gLh-4a-uaH">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gLh-4a-uaH">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="21" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="741" translatesAutoresizingMaskIntoConstraints="NO" id="tws-7f-Q2q">
-                                        <rect key="frame" x="14" y="35" width="741" height="422"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="422" id="Vth-qn-tzF"/>
-                                        </constraints>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="29" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="768" translatesAutoresizingMaskIntoConstraints="NO" id="tws-7f-Q2q">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Réalisation — Équipe iOS">
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     <integer key="NSUnderline" value="1"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
@@ -1252,16 +1251,16 @@ Annie Caron
 </string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="Réalisation — API/Serveur">
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     <integer key="NSUnderline" value="1"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
@@ -1272,16 +1271,16 @@ Philippe Cloutier
 </string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="Responsables du club">
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     <integer key="NSUnderline" value="1"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
@@ -1292,16 +1291,16 @@ Marc-Antoine Hinse (trésorier)
 </string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="Remerciements">
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     <integer key="NSUnderline" value="1"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment>
@@ -1312,11 +1311,33 @@ Véronique Clabots
 Olivier Lacasse
 Robert Gervais
 
+</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="ÉTSMobile utilise les codes sources ouverts suivants :">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
+MSCollectionViewCalendarLayout
+MSDynamicsDrawerViewController
+AMScrollingNavbar
+GTMNSString+HTML
+
 http://applets.etsmtl.ca</string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
-                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <color key="NSUnderlineColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -1324,20 +1345,21 @@ http://applets.etsmtl.ca</string>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="tws-7f-Q2q" firstAttribute="leading" secondItem="gLh-4a-uaH" secondAttribute="leading" priority="750" constant="14" id="54z-OG-tdP"/>
-                                    <constraint firstAttribute="trailing" secondItem="tws-7f-Q2q" secondAttribute="trailing" priority="750" constant="13" id="Fxw-k0-bbc"/>
-                                    <constraint firstItem="tws-7f-Q2q" firstAttribute="top" secondItem="gLh-4a-uaH" secondAttribute="top" priority="250" constant="35" id="Ubv-u2-o43"/>
-                                    <constraint firstAttribute="bottom" secondItem="tws-7f-Q2q" secondAttribute="bottom" priority="250" constant="50" id="Zvg-B5-MkY"/>
-                                    <constraint firstAttribute="centerX" secondItem="tws-7f-Q2q" secondAttribute="centerX" constant="-0.5" id="hEj-67-78I"/>
+                                    <constraint firstItem="tws-7f-Q2q" firstAttribute="centerY" secondItem="gLh-4a-uaH" secondAttribute="centerY" id="Evd-FR-YCG"/>
+                                    <constraint firstItem="tws-7f-Q2q" firstAttribute="centerX" secondItem="gLh-4a-uaH" secondAttribute="centerX" id="aQI-vI-Ufc"/>
+                                    <constraint firstAttribute="trailing" secondItem="tws-7f-Q2q" secondAttribute="trailing" id="ea5-Co-DHm"/>
+                                    <constraint firstItem="tws-7f-Q2q" firstAttribute="top" secondItem="gLh-4a-uaH" secondAttribute="top" id="lLK-Vg-ZAe"/>
+                                    <constraint firstItem="tws-7f-Q2q" firstAttribute="leading" secondItem="gLh-4a-uaH" secondAttribute="leading" id="pQo-3K-nqE"/>
+                                    <constraint firstAttribute="bottom" secondItem="tws-7f-Q2q" secondAttribute="bottom" id="xGE-ae-VGv"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.98855723505434778" green="0.98855723505434778" blue="0.98855723505434778" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="gLh-4a-uaH" firstAttribute="top" secondItem="d3z-Px-ZuY" secondAttribute="top" id="A4v-de-8iW"/>
-                            <constraint firstItem="gLh-4a-uaH" firstAttribute="leading" secondItem="d3z-Px-ZuY" secondAttribute="leading" id="UWn-8G-T7S"/>
-                            <constraint firstItem="UiM-nn-iT8" firstAttribute="top" secondItem="gLh-4a-uaH" secondAttribute="bottom" id="anR-Kn-4qh"/>
-                            <constraint firstAttribute="trailing" secondItem="gLh-4a-uaH" secondAttribute="trailing" id="iU1-CE-eSu"/>
+                            <constraint firstItem="gLh-4a-uaH" firstAttribute="top" secondItem="d3z-Px-ZuY" secondAttribute="top" id="7xR-Zo-GKf"/>
+                            <constraint firstItem="gLh-4a-uaH" firstAttribute="leading" secondItem="d3z-Px-ZuY" secondAttribute="leading" id="Mkc-dM-lY1"/>
+                            <constraint firstAttribute="trailing" secondItem="gLh-4a-uaH" secondAttribute="trailing" id="s6d-pR-jVi"/>
+                            <constraint firstAttribute="bottom" secondItem="gLh-4a-uaH" secondAttribute="bottom" id="x6D-gC-gqR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="À propos d'ÉTSMobile" id="2a9-Gu-sRt"/>
@@ -1609,7 +1631,7 @@ http://applets.etsmtl.ca</string>
             </objects>
             <point key="canvasLocation" x="2701" y="1096"/>
         </scene>
-        <!--News View Controller - Nouvelles-->
+        <!--News View Controller - Actualités-->
         <scene sceneID="5Jw-jp-LRi">
             <objects>
                 <tableViewController id="lz9-DU-0Fb" customClass="ETSNewsViewController" sceneMemberID="viewController">
@@ -1716,7 +1738,7 @@ http://applets.etsmtl.ca</string>
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Nouvelles" id="mFY-3n-Uhd">
+                    <navigationItem key="navigationItem" title="Actualités" id="mFY-3n-Uhd">
                         <barButtonItem key="rightBarButtonItem" title="Sources" id="mRq-cK-Rgw">
                             <connections>
                                 <segue destination="Mmq-HF-Scu" kind="push" identifier="SourcesSegue" id="Fpv-gH-Ipn"/>
@@ -2138,7 +2160,7 @@ http://applets.etsmtl.ca</string>
         </scene>
     </scenes>
     <resources>
-        <image name="AuthenticationBackground" width="792" height="1470"/>
+        <image name="AuthenticationBackground" width="396" height="735"/>
         <image name="apartment" width="45" height="45"/>
         <image name="bed" width="45" height="45"/>
         <image name="home" width="22" height="22"/>
@@ -2150,9 +2172,9 @@ http://applets.etsmtl.ca</string>
         <image name="ico_news" width="24" height="24"/>
         <image name="ico_notes" width="24" height="24"/>
         <image name="ico_partners" width="24" height="24"/>
-        <image name="ico_profil" width="24" height="23"/>
+        <image name="ico_profil" width="24" height="24"/>
         <image name="ico_radio" width="24" height="24"/>
-        <image name="ico_schedule_24x24" width="23" height="23"/>
+        <image name="ico_schedule_24x24" width="24" height="24"/>
         <image name="ico_security" width="24" height="24"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
