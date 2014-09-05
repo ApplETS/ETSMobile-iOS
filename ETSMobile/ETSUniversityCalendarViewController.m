@@ -89,8 +89,8 @@ NSString * const ETSUniversityCalendarSource = @"ets";
     } else {
         cell.detailTextLabel.text = [NSString stringWithFormat:@"Du %@ au %@", [self.dateFormatter stringFromDate:event.start], [self.dateFormatter stringFromDate:event.end]];
     }
-    
-    if ([NSDate date] > event.start && [NSDate date] < event.end) {
+    NSDate *now = [NSDate date];
+    if ([now compare:event.start] == NSOrderedDescending && [now compare:event.end] == NSOrderedAscending) {
         cell.backgroundColor = [UIColor colorWithRed:176/255.0f green:0 blue:16/255.0f alpha:0.05];
     } else {
         cell.backgroundColor = [UIColor whiteColor];
