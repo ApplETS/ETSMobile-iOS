@@ -31,8 +31,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+    #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"COURSE_DETAILS"];
+    #endif
+    
+    #ifdef __USE_BUGSENSE
+    [BugSenseController leaveBreadcrumb:@"COURSE_DETAILS"];
+    #endif
     
     if (self.course) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];

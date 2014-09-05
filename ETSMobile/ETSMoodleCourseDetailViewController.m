@@ -32,7 +32,13 @@
     
     self.acceptedTypes = @[@"url", @"resource", @"forum", @"choicegroup", @"wiki", @"assign", @"page"];
     
+    #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"MOODLE_DETAIL_VIEWCONTROLLER"];
+    #endif
+    
+    #ifdef __USE_BUGSENSE
+    [BugSenseController leaveBreadcrumb:@"MOODLE_DETAIL_VIEWCONTROLLER"];
+    #endif
     
     self.cellIdentifier = @"MoodleIdentifier";
     

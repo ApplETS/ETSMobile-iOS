@@ -20,7 +20,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"SPONSORS_VIEWCONTROLLER"];
+    #endif
+    
+    #ifdef __USE_BUGSENSE
+    [BugSenseController leaveBreadcrumb:@"SPONSORS_VIEWCONTROLLER"];
+    #endif
+
     
     self.sponsorsImages = @{
                             @(ETSSponsorETS)        : [UIImage imageNamed:@"LogoETS"],

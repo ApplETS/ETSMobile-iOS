@@ -80,7 +80,9 @@
 {
     [super viewDidLoad];
     
+    #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"NEWS_VIEWCONTROLLER"];
+    #endif
     
     [self updateDefaultNewsSource];
     

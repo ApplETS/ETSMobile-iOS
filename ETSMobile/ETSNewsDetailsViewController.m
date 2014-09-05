@@ -20,7 +20,9 @@
 {
     [super viewDidLoad];
     
+    #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"STORY_VIEWCONTROLLER"];
+    #endif
     
     [self.textView setTextContainerInset:UIEdgeInsetsMake(12, 12, 12, 12)];
     

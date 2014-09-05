@@ -44,7 +44,13 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 {
     [super viewDidLoad];
     
+    #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"RADIO_VIEWCONTROLLER"];
+    #endif
+    
+    #ifdef __USE_BUGSENSE
+    [BugSenseController leaveBreadcrumb:@"RADIO_VIEWCONTROLLER"];
+    #endif
     
     self.playBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(playRadio:)];
     self.pauseBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(pauseRadio:)];
