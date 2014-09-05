@@ -1114,7 +1114,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="Réalisation — Équipe iOS">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     <integer key="NSUnderline" value="1"/>
@@ -1128,14 +1128,14 @@ Annie Caron
 
 </string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="Réalisation — API/Serveur">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     <integer key="NSUnderline" value="1"/>
@@ -1148,14 +1148,14 @@ Philippe Cloutier
 
 </string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="Responsables du club">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     <integer key="NSUnderline" value="1"/>
@@ -1168,14 +1168,14 @@ Marc-Antoine Hinse (trésorier)
 
 </string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="Remerciements">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     <integer key="NSUnderline" value="1"/>
@@ -1191,14 +1191,14 @@ Robert Gervais
 
 </string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
                                             </fragment>
                                             <fragment content="ÉTSMobile utilise les codes sources ouverts suivants :">
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                     <integer key="NSUnderline" value="1"/>
                                                 </attributes>
@@ -1210,7 +1210,7 @@ MSDynamicsDrawerViewController
 AMScrollingNavbar
 GTMNSString+HTML</string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
                                             </fragment>
@@ -1219,7 +1219,7 @@ GTMNSString+HTML</string>
 
 http://applets.etsmtl.ca</string>
                                                 <attributes>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
