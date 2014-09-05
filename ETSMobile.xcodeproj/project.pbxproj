@@ -20,7 +20,6 @@
 		26085B401829D8D700FE35AB /* NSURL+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 26085B3F1829D8D700FE35AB /* NSURL+API.m */; };
 		2610879E18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610879D18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m */; };
 		261409E519A686FB00E6CD29 /* ETSNewsEmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 261409E419A686FB00E6CD29 /* ETSNewsEmptyCell.m */; };
-		261D953119BA28620007FD28 /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261D952F19BA28470007FD28 /* BugSense-iOS.framework */; };
 		261D953319BA287B0007FD28 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261D953219BA287B0007FD28 /* SystemConfiguration.framework */; };
 		26274FA718F84D2500929CE2 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274F9F18F84BB200929CE2 /* libTestFlight.a */; };
 		26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274FA818F84D6A00929CE2 /* libz.dylib */; };
@@ -80,6 +79,7 @@
 		26AF7CF618FB499200BD3982 /* ETSMoodleCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CF518FB499200BD3982 /* ETSMoodleCourse.m */; };
 		26AF7CF918FB641700BD3982 /* ETSMoodleCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CF818FB641700BD3982 /* ETSMoodleCourseDetailViewController.m */; };
 		26AF7CFF18FB8A0000BD3982 /* ETSMoodleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CFE18FB8A0000BD3982 /* ETSMoodleElement.m */; };
+		26B3C5FD19BA2FE000B25689 /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261D952F19BA28470007FD28 /* BugSense-iOS.framework */; };
 		26B9A92818736265005D4410 /* ETSBandwidthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9A92718736265005D4410 /* ETSBandwidthViewController.m */; };
 		26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BB372B18F59580002CE5DD /* Main_iPad.storyboard */; };
 		26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */; };
@@ -341,7 +341,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				261D953119BA28620007FD28 /* BugSense-iOS.framework in Frameworks */,
+				26B3C5FD19BA2FE000B25689 /* BugSense-iOS.framework in Frameworks */,
 				261D953319BA287B0007FD28 /* SystemConfiguration.framework in Frameworks */,
 				2600DB07190767000039039A /* MobileCoreServices.framework in Frameworks */,
 				26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */,
