@@ -20,6 +20,8 @@
 		26085B401829D8D700FE35AB /* NSURL+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 26085B3F1829D8D700FE35AB /* NSURL+API.m */; };
 		2610879E18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610879D18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m */; };
 		261409E519A686FB00E6CD29 /* ETSNewsEmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 261409E419A686FB00E6CD29 /* ETSNewsEmptyCell.m */; };
+		261D953119BA28620007FD28 /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261D952F19BA28470007FD28 /* BugSense-iOS.framework */; };
+		261D953319BA287B0007FD28 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261D953219BA287B0007FD28 /* SystemConfiguration.framework */; };
 		26274FA718F84D2500929CE2 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274F9F18F84BB200929CE2 /* libTestFlight.a */; };
 		26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274FA818F84D6A00929CE2 /* libz.dylib */; };
 		262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */; };
@@ -158,6 +160,9 @@
 		2610879D18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+ScrollingNavbar.m"; path = "Vendors/AMScrollingNavbar/AMScrollingNavbar/UIViewController+ScrollingNavbar.m"; sourceTree = "<group>"; };
 		261409E319A686FB00E6CD29 /* ETSNewsEmptyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsEmptyCell.h; sourceTree = "<group>"; };
 		261409E419A686FB00E6CD29 /* ETSNewsEmptyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsEmptyCell.m; sourceTree = "<group>"; };
+		261D952F19BA28470007FD28 /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "BugSense-iOS.framework"; sourceTree = "<group>"; };
+		261D953019BA28470007FD28 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		261D953219BA287B0007FD28 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		26274F9F18F84BB200929CE2 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Vendors/TestFlightSDK3/libTestFlight.a; sourceTree = "<group>"; };
 		26274FA418F84CD800929CE2 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = Vendors/TestFlightSDK3/TestFlight.h; sourceTree = "<group>"; };
 		26274FA518F84CD800929CE2 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+AsyncLogging.h"; path = "Vendors/TestFlightSDK3/TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
@@ -336,6 +341,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				261D953119BA28620007FD28 /* BugSense-iOS.framework in Frameworks */,
+				261D953319BA287B0007FD28 /* SystemConfiguration.framework in Frameworks */,
 				2600DB07190767000039039A /* MobileCoreServices.framework in Frameworks */,
 				26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */,
 				26274FA718F84D2500929CE2 /* libTestFlight.a in Frameworks */,
@@ -420,6 +427,16 @@
 				2610879D18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m */,
 			);
 			name = AMScrollingNavbar;
+			sourceTree = "<group>";
+		};
+		261D952E19BA28470007FD28 /* BugSense 3.6 */ = {
+			isa = PBXGroup;
+			children = (
+				261D952F19BA28470007FD28 /* BugSense-iOS.framework */,
+				261D953019BA28470007FD28 /* LICENSE */,
+			);
+			name = "BugSense 3.6";
+			path = "Vendors/BugSense 3.6";
 			sourceTree = "<group>";
 		};
 		26274F9E18F84BA100929CE2 /* TestFlight */ = {
@@ -658,6 +675,8 @@
 		26DD92A617EA610D00469FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				261D953219BA287B0007FD28 /* SystemConfiguration.framework */,
+				261D952E19BA28470007FD28 /* BugSense 3.6 */,
 				2600DB06190767000039039A /* MobileCoreServices.framework */,
 				26274FA818F84D6A00929CE2 /* libz.dylib */,
 				9CC88726189ED56B002A3D04 /* MapKit.framework */,
@@ -1244,6 +1263,11 @@
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendors/BugSense",
+					3.6,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
@@ -1277,6 +1301,11 @@
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendors/BugSense",
+					3.6,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;

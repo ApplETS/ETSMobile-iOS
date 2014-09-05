@@ -21,7 +21,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"COMMENT_VIEWCONTROLLER"];
+    #endif
 }
 
 - (void)viewWillAppear:(BOOL)animated

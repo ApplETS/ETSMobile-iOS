@@ -32,7 +32,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [TestFlight takeOff:@"79a6d72a-d113-4f4b-a5b8-e3f0c30dbf65"];
+    #ifdef __USE_TESTFLIGHT
+    #error TestFlight needs API Key
+    [TestFlight takeOff:@""];
+    #endif
+    
+    #ifdef __USE_BUGSENSE
+    #error BugSense needs API Key
+    [BugSenseController sharedControllerWithBugSenseAPIKey:@""];
+    #endif
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];

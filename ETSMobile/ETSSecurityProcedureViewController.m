@@ -19,7 +19,13 @@
 {
     [super viewDidLoad];
     
+    #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"SECURITY_PROCEDURE_VIEWCONTROLLER"];
+    #endif
+    
+    #ifdef __USE_BUGSENSE
+    [BugSenseController leaveBreadcrumb:@"SECURITY_PROCEDURE_VIEWCONTROLLER"];
+    #endif
     
     self.webView.scalesPageToFit = YES;
     

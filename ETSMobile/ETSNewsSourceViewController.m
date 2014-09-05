@@ -51,7 +51,13 @@
 {
     [super viewDidLoad];
     
+    #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"NEWSSOURCE_VIEWCONTROLLER"];
+    #endif
+
+    #ifdef __USE_BUGSENSE
+    [BugSenseController leaveBreadcrumb:@"NEWSSOURCE_VIEWCONTROLLER"];
+    #endif
     
     self.cellIdentifier = @"SourceIdentifier";
     

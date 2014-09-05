@@ -40,7 +40,9 @@
 {
 	[super viewDidLoad];
     
+    #ifdef __USE_TESTFLIGHT
 	[TestFlight passCheckpoint:@"PROFILE_VIEWCONTROLLER"];
+    #endif
     
 	self.cellIdentifier = @"ProfileIdentifier";
 	self.synchronizationDone = 0;

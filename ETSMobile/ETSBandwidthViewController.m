@@ -93,7 +93,13 @@
     [self.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
     
+    #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"BANDWIDTH_VIEWCONTROLLER"];
+    #endif
+    
+    #ifdef __USE_BUGSENSE
+    [BugSenseController leaveBreadcrumb:@"BANDWIDTH_VIEWCONTROLLER"];
+    #endif
     
     self.month = [@([[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:[NSDate date]] month]) stringValue];
     

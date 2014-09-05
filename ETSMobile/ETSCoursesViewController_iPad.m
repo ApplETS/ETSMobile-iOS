@@ -25,9 +25,15 @@
 {
     [super viewDidLoad];
     
+    #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"COURSES_IPAD_VIEWCONTROLLER"];
+    #endif
     
-    self.title =  NSLocalizedString(@"Notes", nil);    
+    #ifdef __USE_BUGSENSE
+    [BugSenseController leaveBreadcrumb:@"COURSES_IPAD_VIEWCONTROLLER"];
+    #endif
+    
+    self.title =  NSLocalizedString(@"Notes", nil);
     
     self.cellIdentifier = @"CourseIdentifier";
     
