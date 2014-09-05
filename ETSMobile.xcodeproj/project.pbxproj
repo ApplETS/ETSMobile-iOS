@@ -79,7 +79,7 @@
 		26AF7CF618FB499200BD3982 /* ETSMoodleCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CF518FB499200BD3982 /* ETSMoodleCourse.m */; };
 		26AF7CF918FB641700BD3982 /* ETSMoodleCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CF818FB641700BD3982 /* ETSMoodleCourseDetailViewController.m */; };
 		26AF7CFF18FB8A0000BD3982 /* ETSMoodleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CFE18FB8A0000BD3982 /* ETSMoodleElement.m */; };
-		26B3C5FD19BA2FE000B25689 /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261D952F19BA28470007FD28 /* BugSense-iOS.framework */; };
+		26B3C5FF19BA307F00B25689 /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B3C5FE19BA307F00B25689 /* BugSense-iOS.framework */; };
 		26B9A92818736265005D4410 /* ETSBandwidthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9A92718736265005D4410 /* ETSBandwidthViewController.m */; };
 		26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BB372B18F59580002CE5DD /* Main_iPad.storyboard */; };
 		26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */; };
@@ -265,6 +265,7 @@
 		26AF7CF818FB641700BD3982 /* ETSMoodleCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMoodleCourseDetailViewController.m; sourceTree = "<group>"; };
 		26AF7CFD18FB8A0000BD3982 /* ETSMoodleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMoodleElement.h; sourceTree = "<group>"; };
 		26AF7CFE18FB8A0000BD3982 /* ETSMoodleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMoodleElement.m; sourceTree = "<group>"; };
+		26B3C5FE19BA307F00B25689 /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BugSense-iOS.framework"; path = "Vendors/BugSense3.6/BugSense-iOS.framework"; sourceTree = "<group>"; };
 		26B9A92618736265005D4410 /* ETSBandwidthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidthViewController.h; sourceTree = "<group>"; };
 		26B9A92718736265005D4410 /* ETSBandwidthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidthViewController.m; sourceTree = "<group>"; };
 		26BB372C18F59580002CE5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ETSMobile/Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
@@ -341,7 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26B3C5FD19BA2FE000B25689 /* BugSense-iOS.framework in Frameworks */,
+				26B3C5FF19BA307F00B25689 /* BugSense-iOS.framework in Frameworks */,
 				261D953319BA287B0007FD28 /* SystemConfiguration.framework in Frameworks */,
 				2600DB07190767000039039A /* MobileCoreServices.framework in Frameworks */,
 				26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */,
@@ -675,6 +676,7 @@
 		26DD92A617EA610D00469FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26B3C5FE19BA307F00B25689 /* BugSense-iOS.framework */,
 				261D953219BA287B0007FD28 /* SystemConfiguration.framework */,
 				261D952E19BA28470007FD28 /* BugSense 3.6 */,
 				2600DB06190767000039039A /* MobileCoreServices.framework */,
@@ -1265,8 +1267,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Vendors/BugSense",
-					3.6,
+					"$(PROJECT_DIR)/Vendors/BugSense3.6",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
@@ -1303,8 +1304,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Vendors/BugSense",
-					3.6,
+					"$(PROJECT_DIR)/Vendors/BugSense3.6",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
