@@ -68,7 +68,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     synchronization.entityName = @"Event";
     synchronization.compareKey = @"id";
     synchronization.objectsKeyPath = @"";
-    synchronization.predicate = [NSPredicate predicateWithFormat:@"source !=[c] %@", @"etsmtl"];
+    synchronization.predicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[[NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha_com"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha2"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha1"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"programmation_radiopiranha"]]];
     synchronization.dateFormatter = dateFormatter;
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
@@ -115,6 +115,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"start" ascending:YES]];
+    fetchRequest.predicate = self.synchronization.predicate;
     
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"day" cacheName:nil];
     self.fetchedResultsController = aFetchedResultsController;
