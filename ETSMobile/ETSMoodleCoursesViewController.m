@@ -125,18 +125,31 @@ NSString * const kUnknownSession = @"000000";
               bself.tokenExpiration = nil;
               bself.userid = nil;
               
-              if ([[bself.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
+              if ([[bself.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]] || self.presentedViewController) {
                   UIAlertView *av = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Authentification", nil) message:NSLocalizedString(@"Code d’accès ou mot de passe invalide", nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                   dispatch_sync(dispatch_get_main_queue(), ^{
                       [av show];
                   });
               }
               else {
-                  ETSAuthenticationViewController *ac = [bself.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-                  ac.delegate = bself;
-                  dispatch_sync(dispatch_get_main_queue(), ^{
-                      [bself.navigationController pushViewController:ac animated:YES];
-                  });
+                  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+                      ETSAuthenticationViewController *ac = [bself.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+                      ac.delegate = bself;
+                      dispatch_sync(dispatch_get_main_queue(), ^{
+                          [bself.navigationController pushViewController:ac animated:YES];
+                      });
+                  } else {
+                      UINavigationController *navigationController = [bself.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+                      ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
+                      authenticationController.delegate = bself;
+                      navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+                      navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+                      dispatch_sync(dispatch_get_main_queue(), ^{
+                          [bself.navigationController presentViewController:navigationController animated:NO completion:nil];
+                      });
+                  }
+                  
+                  
               }
           } else {
               [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
