@@ -9,5 +9,6 @@
 #import "ETSTableViewController.h"
 
 @interface ETSBandwidthViewController : ETSTableViewController
-
+@property (nonatomic, weak) IBOutlet UISegmentedControl *phaseSegmentedControl;
+@property (nonatomic, weak) IBOutlet UITextField        *apartmentTextField;
 @end

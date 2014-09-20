@@ -11,7 +11,6 @@
 #import "ETSBandwidthCell.h"
 #import "ETSLoginView.h"
 #import "ETSCoreDataHelper.h"
-#import "UIPopoverController+iPhone.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface ETSBandwidthViewController () <UIPopoverControllerDelegate>
@@ -43,6 +42,8 @@
 
 - (IBAction)viewApartmentAlert:(id)sender
 {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) return;
+    
     if ([self.popover isPopoverVisible]) {
         [self.popover dismissPopoverAnimated:YES];
         self.popover = nil;
@@ -64,23 +65,31 @@
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {
+    ETSLoginView *loginView = (ETSLoginView*)popoverController.contentViewController.view;
+    NSString *phase = [@(loginView.phaseSegmentedControl.selectedSegmentIndex+1) stringValue];
+    NSString *apartment = loginView.apartmentTextField.text;
+    [self updateBandwidthWithPhase:phase apartment:apartment];
+}
+
+- (void)updateBandwidthWithPhase:(NSString *)phase apartment:(NSString *)apartment
+{
+    if ([phase length] == 0 || [apartment length] == 0) {
+        return;
+    }
+    
     [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
     
-    ETSLoginView *loginView = (ETSLoginView*)popoverController.contentViewController.view;
+    self.synchronization.request = [NSURLRequest requestForBandwidthWithMonth:self.month residence:apartment phase:phase];
     
-    NSString *phase = [@(loginView.phaseSegmentedControl.selectedSegmentIndex+1) stringValue];
-    
-    self.synchronization.request = [NSURLRequest requestForBandwidthWithMonth:self.month residence:loginView.apartmentTextField.text phase:phase];
-
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:loginView.apartmentTextField.text forKey:@"apartment"];
+    [userDefaults setObject:apartment forKey:@"apartment"];
     [userDefaults setObject:phase forKey:@"phase"];
     
     self.phaseLabel.text = [NSString stringWithFormat:@"Phase %@", phase];
-    self.apartmentLabel.text = [NSString stringWithFormat:@"Appartement %@", loginView.apartmentTextField.text];
+    self.apartmentLabel.text = [NSString stringWithFormat:@"Appartement %@", apartment];
     
     self.phase = phase;
-    self.apartment = loginView.apartmentTextField.text;
+    self.apartment = apartment;
     
     NSError *error;
     [self.synchronization synchronize:&error];
@@ -139,15 +148,31 @@
         self.synchronization.request = [NSURLRequest requestForBandwidthWithMonth:self.month residence:self.apartment phase:self.phase];
         self.phaseLabel.text = [NSString stringWithFormat:@"Phase %@", self.phase];
         self.apartmentLabel.text = [NSString stringWithFormat:@"Appartement %@", self.apartment];
+        self.phaseSegmentedControl.selectedSegmentIndex = [self.phase integerValue] - 1;
+        self.apartmentTextField.text = self.apartment;
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
         df.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
         df.dateFormat = @"LLLL yyyy";
         self.dateLabel.text = [NSString stringWithFormat:@"Consommation, %@ :", [df stringFromDate:[NSDate date]]];
     } else {
-        self.tableView.tableHeaderView.hidden = YES;
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) self.tableView.tableHeaderView.hidden = YES;
         self.dataNeedRefresh = NO;
         [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
     }
+    
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]
+                                           initWithTarget:self
+                                           action:@selector(hideKeyBoard)];
+    
+    [self.tableView addGestureRecognizer:tapGesture];
+}
+
+-(void)hideKeyBoard {
+    [self.apartmentTextField resignFirstResponder];
+    
+    NSString *phase = [@(self.phaseSegmentedControl.selectedSegmentIndex+1) stringValue];
+    if (![self.phase isEqualToString:phase] || ![self.apartment isEqualToString:self.apartmentTextField.text])
+        [self updateBandwidthWithPhase:phase apartment:self.apartmentTextField.text];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -185,6 +210,11 @@
     return _fetchedResultsController;
 }
 
+- (IBAction)phaseDidChange:(id)sender
+{
+    [self updateBandwidthWithPhase:[@(self.phaseSegmentedControl.selectedSegmentIndex+1) stringValue] apartment:self.apartmentTextField.text];
+}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     ETSBandwidth *bandwidth = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
@@ -207,7 +237,7 @@
 {
     if (!objects || [objects isKindOfClass:[NSNull class]]) {
         [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
-        self.tableView.tableHeaderView.hidden = YES;
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) self.tableView.tableHeaderView.hidden = YES;
         return nil;
     }
     
