@@ -145,18 +145,18 @@
         <attribute name="start" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Bandwidth" positionX="0" positionY="0" width="128" height="135"/>
-        <element name="Calendar" positionX="9" positionY="126" width="128" height="165"/>
-        <element name="Contact" positionX="0" positionY="0" width="128" height="225"/>
-        <element name="Course" positionX="0" positionY="0" width="128" height="300"/>
-        <element name="Evaluation" positionX="0" positionY="0" width="128" height="225"/>
-        <element name="Event" positionX="0" positionY="0" width="128" height="120"/>
-        <element name="MoodleCourse" positionX="9" positionY="153" width="128" height="163"/>
-        <element name="MoodleElement" positionX="18" positionY="162" width="128" height="178"/>
-        <element name="News" positionX="0" positionY="0" width="128" height="180"/>
-        <element name="NewsSource" positionX="9" positionY="153" width="128" height="120"/>
-        <element name="Profile" positionX="0" positionY="0" width="128" height="180"/>
-        <element name="Program" positionX="9" positionY="135" width="128" height="253"/>
-        <element name="Session" positionX="9" positionY="153" width="128" height="88"/>
+        <element name="Bandwidth" positionX="-281" positionY="-27" width="128" height="135"/>
+        <element name="Calendar" positionX="79" positionY="45" width="128" height="165"/>
+        <element name="Contact" positionX="-452" positionY="-360" width="128" height="225"/>
+        <element name="Course" positionX="243" positionY="-360" width="128" height="300"/>
+        <element name="Evaluation" positionX="396" positionY="-360" width="128" height="225"/>
+        <element name="Event" positionX="-108" positionY="-54" width="128" height="120"/>
+        <element name="MoodleCourse" positionX="79" positionY="-360" width="128" height="163"/>
+        <element name="MoodleElement" positionX="-110" positionY="-360" width="128" height="178"/>
+        <element name="News" positionX="-281" positionY="-360" width="128" height="180"/>
+        <element name="NewsSource" positionX="-281" positionY="-165" width="128" height="120"/>
+        <element name="Profile" positionX="81" positionY="-171" width="128" height="180"/>
+        <element name="Program" positionX="243" positionY="-37" width="128" height="253"/>
+        <element name="Session" positionX="-110" positionY="-160" width="128" height="88"/>
     </elements>
 </model>

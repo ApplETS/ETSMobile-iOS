@@ -21,7 +21,6 @@
 		2610879E18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610879D18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m */; };
 		261409E519A686FB00E6CD29 /* ETSNewsEmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 261409E419A686FB00E6CD29 /* ETSNewsEmptyCell.m */; };
 		261D953319BA287B0007FD28 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261D953219BA287B0007FD28 /* SystemConfiguration.framework */; };
-		26274FA718F84D2500929CE2 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274F9F18F84BB200929CE2 /* libTestFlight.a */; };
 		26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274FA818F84D6A00929CE2 /* libz.dylib */; };
 		262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */; };
 		2633EFDD19085419009BC485 /* ETSUniversityCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2633EFDC19085419009BC485 /* ETSUniversityCalendarViewController.m */; };
@@ -151,6 +150,10 @@
 		1D8B140D19A7B1E80033CBA7 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GTMNSString+HTML.m"; path = "Vendors/GTMNSString+HTML/GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		1DBF6C6719A507EA00761C44 /* ETSNewsSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsSource.h; sourceTree = "<group>"; };
 		1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsSource.m; sourceTree = "<group>"; };
+		2600C3AD19BA36B900966CD3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		2600C3AE19BA36B900966CD3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ETSMobile/fr.lproj/Main_iPad.strings; sourceTree = "<group>"; };
+		2600C3AF19BA36BA00966CD3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2600C3B019BA36BA00966CD3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2600DB06190767000039039A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2601088D181596820037E795 /* ETSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCollectionViewController.h; sourceTree = "<group>"; };
 		26085B3C1829D84300FE35AB /* ETSAPIURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPIURL.plist; sourceTree = "<group>"; };
@@ -281,7 +284,6 @@
 		26DD92AB17EA610D00469FA8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		26DD92AD17EA610D00469FA8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		26DD92B117EA610D00469FA8 /* ETSMobile-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ETSMobile-Info.plist"; sourceTree = "<group>"; };
-		26DD92B317EA610D00469FA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26DD92B517EA610D00469FA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		26DD92B717EA610D00469FA8 /* ETSMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ETSMobile-Prefix.pch"; sourceTree = "<group>"; };
 		26DD92B817EA610D00469FA8 /* ETSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSAppDelegate.h; sourceTree = "<group>"; };
@@ -292,7 +294,6 @@
 		26DD92D017EA610D00469FA8 /* ETSMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ETSMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26DD92D117EA610D00469FA8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		26DD92DA17EA610D00469FA8 /* ETSMobileTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ETSMobileTests-Info.plist"; sourceTree = "<group>"; };
-		26DD92DC17EA610D00469FA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26DD92DE17EA610D00469FA8 /* ETSMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSMobileTests.m; sourceTree = "<group>"; };
 		26DD92EE17EA624A00469FA8 /* ETSMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMenuViewController.h; sourceTree = "<group>"; };
 		26DEB70918E9E99F00161421 /* MSCollectionViewCalendarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCollectionViewCalendarLayout.h; path = Vendors/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.h; sourceTree = "<group>"; };
@@ -346,7 +347,6 @@
 				261D953319BA287B0007FD28 /* SystemConfiguration.framework in Frameworks */,
 				2600DB07190767000039039A /* MobileCoreServices.framework in Frameworks */,
 				26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */,
-				26274FA718F84D2500929CE2 /* libTestFlight.a in Frameworks */,
 				9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */,
 				26F46A99183ED03400232B5A /* AVFoundation.framework in Frameworks */,
 				269316961835DA2D00DE95A0 /* AddressBookUI.framework in Frameworks */,
@@ -987,6 +987,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 26DD929B17EA610D00469FA8;
 			productRefGroup = 26DD92A517EA610D00469FA8 /* Products */;
@@ -1143,6 +1144,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				26BB372C18F59580002CE5DD /* Base */,
+				2600C3AE19BA36B900966CD3 /* fr */,
 			);
 			name = Main_iPad.storyboard;
 			path = ..;
@@ -1151,7 +1153,7 @@
 		26DD92B217EA610D00469FA8 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				26DD92B317EA610D00469FA8 /* en */,
+				2600C3AF19BA36BA00966CD3 /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -1160,6 +1162,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				26DD92BC17EA610D00469FA8 /* Base */,
+				2600C3AD19BA36B900966CD3 /* fr */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -1167,7 +1170,7 @@
 		26DD92DB17EA610D00469FA8 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				26DD92DC17EA610D00469FA8 /* en */,
+				2600C3B019BA36BA00966CD3 /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
