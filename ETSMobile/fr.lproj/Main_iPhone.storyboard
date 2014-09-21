@@ -1238,7 +1238,7 @@ http://applets.etsmtl.ca</string>
                                     </constraints>
                                 </progressView>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="237" text="Consommation :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7U9-qe-25E">
-                                    <rect key="frame" x="8" y="87" width="120" height="19.5"/>
+                                    <rect key="frame" x="8" y="87" width="303.5" height="19.5"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -1268,7 +1268,7 @@ http://applets.etsmtl.ca</string>
                                         <action selector="phaseDidChange:" destination="Dqs-Y1-i9q" eventType="valueChanged" id="e2T-bW-sRX"/>
                                     </connections>
                                 </segmentedControl>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="App." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="07u-K8-NX6">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ex. : 40" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="07u-K8-NX6">
                                     <rect key="frame" x="192" y="35" width="120" height="30"/>
                                     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
@@ -1301,6 +1301,7 @@ http://applets.etsmtl.ca</string>
                                 <constraint firstItem="MmD-o5-in1" firstAttribute="leading" secondItem="S7q-r6-SdL" secondAttribute="leading" constant="8" id="mz4-Vu-Wko"/>
                                 <constraint firstItem="MmD-o5-in1" firstAttribute="top" secondItem="7U9-qe-25E" secondAttribute="bottom" constant="9" id="o3a-Yo-tTV"/>
                                 <constraint firstItem="7U9-qe-25E" firstAttribute="leading" secondItem="S7q-r6-SdL" secondAttribute="leading" constant="8" id="pEh-ZG-yjI"/>
+                                <constraint firstAttribute="trailing" secondItem="7U9-qe-25E" secondAttribute="trailing" constant="8" id="vZc-gg-5Gh"/>
                                 <constraint firstItem="Trs-ja-8oR" firstAttribute="leading" secondItem="S7q-r6-SdL" secondAttribute="leading" constant="8" id="w6u-2T-ZBc"/>
                                 <constraint firstItem="7Ns-VM-AMw" firstAttribute="leading" secondItem="S7q-r6-SdL" secondAttribute="leading" constant="8" id="wcF-ya-Hm6"/>
                                 <constraint firstItem="Eks-RG-bco" firstAttribute="top" secondItem="7Ns-VM-AMw" secondAttribute="bottom" constant="7" id="yMn-m0-l1r"/>

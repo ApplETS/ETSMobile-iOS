@@ -88,7 +88,6 @@
 		26DD92AA17EA610D00469FA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A917EA610D00469FA8 /* CoreGraphics.framework */; };
 		26DD92AC17EA610D00469FA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AB17EA610D00469FA8 /* UIKit.framework */; };
 		26DD92AE17EA610D00469FA8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AD17EA610D00469FA8 /* CoreData.framework */; };
-		26DD92B417EA610D00469FA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92B217EA610D00469FA8 /* InfoPlist.strings */; };
 		26DD92B617EA610D00469FA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92B517EA610D00469FA8 /* main.m */; };
 		26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */; };
 		26DD92BD17EA610D00469FA8 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */; };
@@ -98,7 +97,6 @@
 		26DD92D317EA610D00469FA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A717EA610D00469FA8 /* Foundation.framework */; };
 		26DD92D417EA610D00469FA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AB17EA610D00469FA8 /* UIKit.framework */; };
 		26DD92D517EA610D00469FA8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AD17EA610D00469FA8 /* CoreData.framework */; };
-		26DD92DD17EA610D00469FA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92DB17EA610D00469FA8 /* InfoPlist.strings */; };
 		26DD92DF17EA610D00469FA8 /* ETSMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92DE17EA610D00469FA8 /* ETSMobileTests.m */; };
 		26DEB70B18E9E99F00161421 /* MSCollectionViewCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB70A18E9E99F00161421 /* MSCollectionViewCalendarLayout.m */; };
 		26DEB74C18E9F2C000161421 /* ETSCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB74B18E9F2C000161421 /* ETSCalendar.m */; };
@@ -150,10 +148,6 @@
 		1D8B140D19A7B1E80033CBA7 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GTMNSString+HTML.m"; path = "Vendors/GTMNSString+HTML/GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		1DBF6C6719A507EA00761C44 /* ETSNewsSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsSource.h; sourceTree = "<group>"; };
 		1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsSource.m; sourceTree = "<group>"; };
-		2600C3AD19BA36B900966CD3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
-		2600C3AE19BA36B900966CD3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ETSMobile/fr.lproj/Main_iPad.strings; sourceTree = "<group>"; };
-		2600C3AF19BA36BA00966CD3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2600C3B019BA36BA00966CD3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2600DB06190767000039039A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2601088D181596820037E795 /* ETSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCollectionViewController.h; sourceTree = "<group>"; };
 		26085B3C1829D84300FE35AB /* ETSAPIURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPIURL.plist; sourceTree = "<group>"; };
@@ -194,6 +188,8 @@
 		264E86CC18874E99005F1820 /* ETSNewsSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsSourceViewController.m; sourceTree = "<group>"; };
 		264E86CE188796A7005F1820 /* NSURL+Document.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Document.h"; sourceTree = "<group>"; };
 		264E86CF188796A7005F1820 /* NSURL+Document.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Document.m"; sourceTree = "<group>"; };
+		2653785919CE7514002BC7AB /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		2653785A19CE7514002BC7AB /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		265FDFBD18E0C50400371078 /* ETSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCalendarViewController.h; sourceTree = "<group>"; };
 		265FDFBE18E0C50400371078 /* ETSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCalendarViewController.m; sourceTree = "<group>"; };
 		2661098018FD95EC00D817DA /* ETSRadioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRadioPlayer.h; sourceTree = "<group>"; };
@@ -275,7 +271,6 @@
 		26B3C5FE19BA307F00B25689 /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BugSense-iOS.framework"; path = "Vendors/BugSense3.6/BugSense-iOS.framework"; sourceTree = "<group>"; };
 		26B9A92618736265005D4410 /* ETSBandwidthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidthViewController.h; sourceTree = "<group>"; };
 		26B9A92718736265005D4410 /* ETSBandwidthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidthViewController.m; sourceTree = "<group>"; };
-		26BB372C18F59580002CE5DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ETSMobile/Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		26BB372E18F5E77E002CE5DD /* ETSCoursesViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCoursesViewController_iPad.h; sourceTree = "<group>"; };
 		26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCoursesViewController_iPad.m; sourceTree = "<group>"; };
 		26C97884183AD1DE005D66EF /* ETSContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSContact.h; sourceTree = "<group>"; };
@@ -292,7 +287,6 @@
 		26DD92B717EA610D00469FA8 /* ETSMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ETSMobile-Prefix.pch"; sourceTree = "<group>"; };
 		26DD92B817EA610D00469FA8 /* ETSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSAppDelegate.h; sourceTree = "<group>"; };
 		26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSAppDelegate.m; sourceTree = "<group>"; };
-		26DD92BC17EA610D00469FA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		26DD92C217EA610D00469FA8 /* ETSMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ETSMobile.xcdatamodel; sourceTree = "<group>"; };
 		26DD92CA17EA610D00469FA8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		26DD92D017EA610D00469FA8 /* ETSMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ETSMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -741,7 +735,6 @@
 				269BFF571811A640005D2950 /* ETSAPICoreDataMapping.plist */,
 				26DD92B117EA610D00469FA8 /* ETSMobile-Info.plist */,
 				26085B3C1829D84300FE35AB /* ETSAPIURL.plist */,
-				26DD92B217EA610D00469FA8 /* InfoPlist.strings */,
 				26DD92B517EA610D00469FA8 /* main.m */,
 				26DD92B717EA610D00469FA8 /* ETSMobile-Prefix.pch */,
 				264E86C91884E7E7005F1820 /* NewsSources.plist */,
@@ -762,7 +755,6 @@
 			isa = PBXGroup;
 			children = (
 				26DD92DA17EA610D00469FA8 /* ETSMobileTests-Info.plist */,
-				26DD92DB17EA610D00469FA8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1003,8 +995,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
-				Base,
 				fr,
 			);
 			mainGroup = 26DD929B17EA610D00469FA8;
@@ -1037,7 +1027,6 @@
 				266F0B7118F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf in Resources */,
 				266F0B7318F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */,
 				26DD92BD17EA610D00469FA8 /* Main_iPhone.storyboard in Resources */,
-				26DD92B417EA610D00469FA8 /* InfoPlist.strings in Resources */,
 				264E86CA1884E7E7005F1820 /* NewsSources.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1046,7 +1035,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26DD92DD17EA610D00469FA8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1160,36 +1148,18 @@
 		26BB372B18F59580002CE5DD /* Main_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				26BB372C18F59580002CE5DD /* Base */,
-				2600C3AE19BA36B900966CD3 /* fr */,
+				2653785A19CE7514002BC7AB /* fr */,
 			);
 			name = Main_iPad.storyboard;
 			path = ..;
 			sourceTree = "<group>";
 		};
-		26DD92B217EA610D00469FA8 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2600C3AF19BA36BA00966CD3 /* fr */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				26DD92BC17EA610D00469FA8 /* Base */,
-				2600C3AD19BA36B900966CD3 /* fr */,
+				2653785919CE7514002BC7AB /* fr */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		26DD92DB17EA610D00469FA8 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2600C3B019BA36BA00966CD3 /* fr */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
