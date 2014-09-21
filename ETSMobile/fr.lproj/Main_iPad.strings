@@ -1,0 +1,267 @@
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "1Lr-pE-hgz"; */
+"1Lr-pE-hgz.text" = "Title";
+
+/* Class = "IBUIButton"; normalTitle = "★"; ObjectID = "1Rd-4Z-3lu"; */
+"1Rd-4Z-3lu.normalTitle" = "★";
+
+/* Class = "IBUILabel"; text = "Appartement "; ObjectID = "2UW-tq-2p4"; */
+"2UW-tq-2p4.text" = "Appartement ";
+
+/* Class = "IBUINavigationItem"; title = "À propos d'ÉTSMobile"; ObjectID = "2a9-Gu-sRt"; */
+"2a9-Gu-sRt.title" = "À propos d'ÉTSMobile";
+
+/* Class = "IBUIBarButtonItem"; title = "Appel d’urgence"; ObjectID = "3Z1-Nw-ac3"; */
+"3Z1-Nw-ac3.title" = "Appel d’urgence";
+
+/* Class = "IBUITabBarItem"; title = "Bibliothèque"; ObjectID = "4Ma-ss-HAP"; */
+"4Ma-ss-HAP.title" = "Bibliothèque";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "4gb-hy-hDg"; */
+"4gb-hy-hDg.text" = "Title";
+
+/* Class = "IBUINavigationItem"; title = "Title"; ObjectID = "5da-Kz-usl"; */
+"5da-Kz-usl.title" = "Title";
+
+/* Class = "IBUIBarButtonItem"; title = "Déconnexion"; ObjectID = "6Oh-s1-ioH"; */
+"6Oh-s1-ioH.title" = "Déconnexion";
+
+/* Class = "IBUICollectionViewController"; title = "Partenaires"; ObjectID = "6dD-44-xaw"; */
+"6dD-44-xaw.title" = "Partenaires";
+
+/* Class = "IBUIBarButtonItem"; title = "Se connecter"; ObjectID = "6ij-tg-diu"; */
+"6ij-tg-diu.title" = "Se connecter";
+
+/* Class = "IBUILabel"; text = "Consommation :"; ObjectID = "7U9-qe-25E"; */
+"7U9-qe-25E.text" = "Consommation :";
+
+/* Class = "IBUIBarButtonItem"; title = "Procédure"; ObjectID = "84a-oR-eW3"; */
+"84a-oR-eW3.title" = "Procédure";
+
+/* Class = "IBUITabBarItem"; title = "Commentaire"; ObjectID = "951-H9-kiF"; */
+"951-H9-kiF.title" = "Commentaire";
+
+/* Class = "IBUITabBarItem"; title = "Partenaires"; ObjectID = "BEd-ZL-Xd8"; */
+"BEd-ZL-Xd8.title" = "Partenaires";
+
+/* Class = "IBUITabBarItem"; title = "Sécurité"; ObjectID = "BPv-fe-ZxB"; */
+"BPv-fe-ZxB.title" = "Sécurité";
+
+/* Class = "IBUIViewController"; title = "Bibliothèque"; ObjectID = "Bn8-a7-xXR"; */
+"Bn8-a7-xXR.title" = "Bibliothèque";
+
+/* Class = "IBUISearchBar"; placeholder = "Rechercher"; ObjectID = "BsZ-eq-fZs"; */
+"BsZ-eq-fZs.placeholder" = "Rechercher";
+
+/* Class = "IBUILabel"; text = "Port :"; ObjectID = "Ccj-GG-ffh"; */
+"Ccj-GG-ffh.text" = "Port :";
+
+/* Class = "IBUITextField"; placeholder = "Placeholder"; ObjectID = "Dch-Em-rmo"; */
+"Dch-Em-rmo.placeholder" = "Placeholder";
+
+/* Class = "IBUITabBarItem"; title = "Radio Piranha"; ObjectID = "Dth-l2-E2B"; */
+"Dth-l2-E2B.title" = "Radio Piranha";
+
+/* Class = "IBUISearchBar"; placeholder = "Rechercher"; ObjectID = "E9g-kg-JpW"; */
+"E9g-kg-JpW.placeholder" = "Rechercher";
+
+/* Class = "IBUIBarButtonItem"; title = "Envoyer"; ObjectID = "GDc-te-Ucu"; */
+"GDc-te-Ucu.title" = "Envoyer";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "I3T-n9-l3M"; */
+"I3T-n9-l3M.text" = "Title";
+
+/* Class = "IBUITableViewController"; title = "Sécurité"; ObjectID = "I43-QW-w0b"; */
+"I43-QW-w0b.title" = "Sécurité";
+
+/* Class = "IBUITabBarItem"; title = "Bottin"; ObjectID = "IF8-qi-fYf"; */
+"IF8-qi-fYf.title" = "Bottin";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "IJt-TC-k5h"; */
+"IJt-TC-k5h.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Écart-type :"; ObjectID = "JrU-aW-s8D"; */
+"JrU-aW-s8D.text" = "Écart-type :";
+
+/* Class = "IBUILabel"; text = "Moyenne :"; ObjectID = "KEB-kv-32x"; */
+"KEB-kv-32x.text" = "Moyenne :";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "LdD-2X-tQZ"; */
+"LdD-2X-tQZ.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "SBo-1V-fcc"; */
+"SBo-1V-fcc.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Rang centile :"; ObjectID = "SCJ-Am-oXE"; */
+"SCJ-Am-oXE.text" = "Rang centile :";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "TCM-cr-Tnh"; */
+"TCM-cr-Tnh.text" = "Subtitle";
+
+/* Class = "IBUITabBarItem"; title = "Bande passante"; ObjectID = "TXe-NP-cGw"; */
+"TXe-NP-cGw.title" = "Bande passante";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "TiS-0u-6iz"; */
+"TiS-0u-6iz.text" = "Detail";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "Uf7-US-Kxd"; */
+"Uf7-US-Kxd.text" = "Label";
+
+/* Class = "IBUINavigationItem"; title = "Cours"; ObjectID = "WHJ-ef-636"; */
+"WHJ-ef-636.title" = "Cours";
+
+/* Class = "IBUITabBarItem"; title = "Bande passante"; ObjectID = "XtF-gd-t5h"; */
+"XtF-gd-t5h.title" = "Bande passante";
+
+/* Class = "IBUIButton"; normalTitle = "★"; ObjectID = "YF4-17-7si"; */
+"YF4-17-7si.normalTitle" = "★";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "YZe-Aj-wwY"; */
+"YZe-Aj-wwY.text" = "Subtitle";
+
+/* Class = "IBUITextField"; placeholder = "Appartement"; ObjectID = "ZX0-hq-zFf"; */
+"ZX0-hq-zFf.placeholder" = "Appartement";
+
+/* Class = "IBUITabBarItem"; title = "Notes"; ObjectID = "ZbN-bz-L4Z"; */
+"ZbN-bz-L4Z.title" = "Notes";
+
+/* Class = "IBUITextField"; placeholder = "Code d'usager (AJ0000)"; ObjectID = "ZzG-wX-PJr"; */
+"ZzG-wX-PJr.placeholder" = "Code d'usager (AJ0000)";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "a2C-e3-kEC"; */
+"a2C-e3-kEC.text" = "Label";
+
+/* Class = "IBUIBarButtonItem"; title = "Précédent"; ObjectID = "a41-vF-YQ5"; */
+"a41-vF-YQ5.title" = "Précédent";
+
+/* Class = "IBUIButton"; normalTitle = "★"; ObjectID = "aJ5-9f-bIw"; */
+"aJ5-9f-bIw.normalTitle" = "★";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "cRB-3w-9bv"; */
+"cRB-3w-9bv.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "d6X-jL-OYT"; */
+"d6X-jL-OYT.text" = "Label";
+
+/* Class = "IBUIViewController"; title = "À propos d'ÉTSMobile"; ObjectID = "dr6-SO-0j9"; */
+"dr6-SO-0j9.title" = "À propos d'ÉTSMobile";
+
+/* Class = "IBUIButton"; normalTitle = "★"; ObjectID = "dwv-l0-lCF"; */
+"dwv-l0-lCF.normalTitle" = "★";
+
+/* Class = "IBUIBarButtonItem"; title = "Suivant"; ObjectID = "e4w-PF-sxj"; */
+"e4w-PF-sxj.title" = "Suivant";
+
+/* Class = "IBUIButton"; normalTitle = "★"; ObjectID = "eqd-NF-Vwt"; */
+"eqd-NF-Vwt.normalTitle" = "★";
+
+/* Class = "IBUITabBarItem"; title = "Profil"; ObjectID = "erQ-rw-KQw"; */
+"erQ-rw-KQw.title" = "Profil";
+
+/* Class = "IBUITabBarItem"; title = "Horaire"; ObjectID = "f7d-jC-fIe"; */
+"f7d-jC-fIe.title" = "Horaire";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "fNe-2w-kDb"; */
+"fNe-2w-kDb.text" = "Detail";
+
+/* Class = "IBUIBarButtonItem"; title = "ÉTS"; ObjectID = "gEI-rS-XSq"; */
+"gEI-rS-XSq.title" = "ÉTS";
+
+/* Class = "IBUINavigationItem"; title = "Commentaire"; ObjectID = "gW6-8o-pe4"; */
+"gW6-8o-pe4.title" = "Commentaire";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "gXP-wh-NOp"; */
+"gXP-wh-NOp.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Phase "; ObjectID = "hMg-1d-dbu"; */
+"hMg-1d-dbu.text" = "Phase ";
+
+/* Class = "IBUILabel"; text = "000000000"; ObjectID = "iRh-VO-CpB"; */
+"iRh-VO-CpB.text" = "000000000";
+
+/* Class = "IBUITextField"; placeholder = "Mot de passe"; ObjectID = "j9h-bC-qug"; */
+"j9h-bC-qug.placeholder" = "Mot de passe";
+
+/* Class = "IBUIBarButtonItem"; title = "Ouvrir"; ObjectID = "lfH-Ha-UkX"; */
+"lfH-Ha-UkX.title" = "Ouvrir";
+
+/* Class = "IBUIBarButtonItem"; title = "Suivant"; ObjectID = "lwQ-Yf-kip"; */
+"lwQ-Yf-kip.title" = "Suivant";
+
+/* Class = "IBUINavigationItem"; title = "Actualités"; ObjectID = "mFY-3n-Uhd"; */
+"mFY-3n-Uhd.title" = "Actualités";
+
+/* Class = "IBUIBarButtonItem"; title = "Sources"; ObjectID = "mRq-cK-Rgw"; */
+"mRq-cK-Rgw.title" = "Sources";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "mx1-Rd-aL7"; */
+"mx1-Rd-aL7.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Consommation de la bande passante pour les étudiants habitant aux résidences universitaires :"; ObjectID = "obR-fM-cBQ"; */
+"obR-fM-cBQ.text" = "Consommation de la bande passante pour les étudiants habitant aux résidences universitaires :";
+
+/* Class = "IBUINavigationItem"; title = "Partenaires"; ObjectID = "obS-3h-c5y"; */
+"obS-3h-c5y.title" = "Partenaires";
+
+/* Class = "IBUIBarButtonItem"; title = "Annuler"; ObjectID = "ofl-nr-N17"; */
+"ofl-nr-N17.title" = "Annuler";
+
+/* Class = "IBUITabBarItem"; title = "Nouvelles"; ObjectID = "ohF-6z-paW"; */
+"ohF-6z-paW.title" = "Nouvelles";
+
+/* Class = "IBUINavigationItem"; title = "Root View Controller"; ObjectID = "pIO-XD-NVY"; */
+"pIO-XD-NVY.title" = "Root View Controller";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "rr1-4G-zxn"; */
+"rr1-4G-zxn.text" = "Detail";
+
+/* Class = "IBUINavigationItem"; title = "Sécurité"; ObjectID = "s6l-r3-fZR"; */
+"s6l-r3-fZR.title" = "Sécurité";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "sHh-fB-SWT"; */
+"sHh-fB-SWT.text" = "Label";
+
+/* Class = "IBUINavigationItem"; title = "Sources"; ObjectID = "snr-gY-QIh"; */
+"snr-gY-QIh.title" = "Sources";
+
+/* Class = "IBUILabel"; text = "10 000,00 Mo (⬇︎)"; ObjectID = "szP-nE-3yb"; */
+"szP-nE-3yb.text" = "10 000,00 Mo (⬇︎)";
+
+/* Class = "IBUIBarButtonItem"; title = "Précédent"; ObjectID = "teW-TL-80I"; */
+"teW-TL-80I.title" = "Précédent";
+
+/* Class = "IBUILabel"; text = "Médiane :"; ObjectID = "uLg-kM-E79"; */
+"uLg-kM-E79.text" = "Médiane :";
+
+/* Class = "IBUISegmentedControl"; uYV-Bd-bSy.segmentTitles[0] = "1"; ObjectID = "uYV-Bd-bSy"; */
+"uYV-Bd-bSy.segmentTitles[0]" = "1";
+
+/* Class = "IBUISegmentedControl"; uYV-Bd-bSy.segmentTitles[1] = "2"; ObjectID = "uYV-Bd-bSy"; */
+"uYV-Bd-bSy.segmentTitles[1]" = "2";
+
+/* Class = "IBUISegmentedControl"; uYV-Bd-bSy.segmentTitles[2] = "3"; ObjectID = "uYV-Bd-bSy"; */
+"uYV-Bd-bSy.segmentTitles[2]" = "3";
+
+/* Class = "IBUISegmentedControl"; uYV-Bd-bSy.segmentTitles[3] = "4"; ObjectID = "uYV-Bd-bSy"; */
+"uYV-Bd-bSy.segmentTitles[3]" = "4";
+
+/* Class = "IBUITabBarItem"; title = "À propos"; ObjectID = "vkO-Vq-XkP"; */
+"vkO-Vq-XkP.title" = "À propos";
+
+/* Class = "IBUITabBarItem"; title = "Commentaire"; ObjectID = "vqw-mJ-Sgh"; */
+"vqw-mJ-Sgh.title" = "Commentaire";
+
+/* Class = "IBUILabel"; text = "10 000,00 Mo (⬆︎)"; ObjectID = "wVA-ua-Bid"; */
+"wVA-ua-Bid.text" = "10 000,00 Mo (⬆︎)";
+
+/* Class = "IBUINavigationItem"; title = "Bibliothèque"; ObjectID = "wiw-Js-V6w"; */
+"wiw-Js-V6w.title" = "Bibliothèque";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "x1y-7W-7XQ"; */
+"x1y-7W-7XQ.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "xAz-7b-Nhn"; */
+"xAz-7b-Nhn.text" = "Title";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "xpc-58-gb7"; */
+"xpc-58-gb7.text" = "Title";

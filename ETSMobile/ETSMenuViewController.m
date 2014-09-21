@@ -39,11 +39,11 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
     }
     return self;
 }
-
+/*
 - (void)loadView
 {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-}
+//    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+}*/
 
 - (void)viewDidLoad
 {
@@ -146,6 +146,13 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
     }
     
     return headerView;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(ETSMenuTableViewHeader *)view forSection:(NSInteger)section
+{
+    // Cette fonction est un petit hack pour iOS 8 qui ne supporte pas la fonction load de ETSMenuTableViewHeader.
+    view.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:12];
+    view.textLabel.textColor = [UIColor menuLabelColor];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
