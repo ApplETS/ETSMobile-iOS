@@ -25,7 +25,7 @@
 + (void)load
 {
     id labelAppearance = [UILabel appearanceWhenContainedIn:[self class], nil];
-    [labelAppearance setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:10]];
+    [labelAppearance setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:12]];
     [labelAppearance setTextColor:[UIColor menuLabelColor]];
 }
 
