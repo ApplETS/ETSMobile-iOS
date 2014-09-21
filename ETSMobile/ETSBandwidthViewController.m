@@ -73,11 +73,15 @@
 
 - (void)updateBandwidthWithPhase:(NSString *)phase apartment:(NSString *)apartment
 {
+    
+    [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
+    self.usageLabel.text = @" ";
+    self.usageProgressView.progress = 0;
+    self.dateLabel.text = @"Consommation :";
+    
     if ([phase length] == 0 || [apartment length] == 0) {
         return;
     }
-    
-    [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
     
     self.synchronization.request = [NSURLRequest requestForBandwidthWithMonth:self.month residence:apartment phase:phase];
     
@@ -160,19 +164,17 @@
         [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
     }
     
-    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]
-                                           initWithTarget:self
-                                           action:@selector(hideKeyBoard)];
-    
-    [self.tableView addGestureRecognizer:tapGesture];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
+        [self.tableView addGestureRecognizer:tapGesture];
+    }
 }
 
 -(void)hideKeyBoard {
     [self.apartmentTextField resignFirstResponder];
     
     NSString *phase = [@(self.phaseSegmentedControl.selectedSegmentIndex+1) stringValue];
-    if (![self.phase isEqualToString:phase] || ![self.apartment isEqualToString:self.apartmentTextField.text])
-        [self updateBandwidthWithPhase:phase apartment:self.apartmentTextField.text];
+    [self updateBandwidthWithPhase:phase apartment:self.apartmentTextField.text];
 }
 
 - (void)viewDidAppear:(BOOL)animated
