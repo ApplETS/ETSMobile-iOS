@@ -68,6 +68,8 @@
 		2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */; };
 		2698C6F518274F4B00F6281F /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F418274F4B00F6281F /* KeychainItemWrapper.m */; };
 		2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F9182834E000F6281F /* ETSCourseCell.m */; };
+		269B46D71A1121090052E4B7 /* SplunkMint-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269B46D61A1121090052E4B7 /* SplunkMint-iOS.framework */; };
+		269B46D91A1123300052E4B7 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269B46D81A1123300052E4B7 /* CoreTelephony.framework */; };
 		269BFF561811A41C005D2950 /* NSManagedObject+SetValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BFF551811A41C005D2950 /* NSManagedObject+SetValues.m */; };
 		269BFF581811A640005D2950 /* ETSAPICoreDataMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 269BFF571811A640005D2950 /* ETSAPICoreDataMapping.plist */; };
 		269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BFF5B1814C649005D2950 /* ETSCoursesViewController.m */; };
@@ -77,7 +79,6 @@
 		26AF7CF618FB499200BD3982 /* ETSMoodleCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CF518FB499200BD3982 /* ETSMoodleCourse.m */; };
 		26AF7CF918FB641700BD3982 /* ETSMoodleCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CF818FB641700BD3982 /* ETSMoodleCourseDetailViewController.m */; };
 		26AF7CFF18FB8A0000BD3982 /* ETSMoodleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF7CFE18FB8A0000BD3982 /* ETSMoodleElement.m */; };
-		26B3C5FF19BA307F00B25689 /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B3C5FE19BA307F00B25689 /* BugSense-iOS.framework */; };
 		26B9A92818736265005D4410 /* ETSBandwidthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B9A92718736265005D4410 /* ETSBandwidthViewController.m */; };
 		26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BB372B18F59580002CE5DD /* Main_iPad.storyboard */; };
 		26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */; };
@@ -251,6 +252,8 @@
 		2698C6F418274F4B00F6281F /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = Vendors/KeychainWrapper/KeychainItemWrapper.m; sourceTree = "<group>"; };
 		2698C6F8182834E000F6281F /* ETSCourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourseCell.h; sourceTree = "<group>"; };
 		2698C6F9182834E000F6281F /* ETSCourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourseCell.m; sourceTree = "<group>"; };
+		269B46D61A1121090052E4B7 /* SplunkMint-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "SplunkMint-iOS.framework"; path = "Vendors/SplunkMint-iOS/SplunkMint-iOS.framework"; sourceTree = "<group>"; };
+		269B46D81A1123300052E4B7 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		269BFF541811A41C005D2950 /* NSManagedObject+SetValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+SetValues.h"; sourceTree = "<group>"; };
 		269BFF551811A41C005D2950 /* NSManagedObject+SetValues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+SetValues.m"; sourceTree = "<group>"; };
 		269BFF571811A640005D2950 /* ETSAPICoreDataMapping.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPICoreDataMapping.plist; sourceTree = "<group>"; };
@@ -340,7 +343,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26B3C5FF19BA307F00B25689 /* BugSense-iOS.framework in Frameworks */,
+				269B46D91A1123300052E4B7 /* CoreTelephony.framework in Frameworks */,
+				269B46D71A1121090052E4B7 /* SplunkMint-iOS.framework in Frameworks */,
 				261D953319BA287B0007FD28 /* SystemConfiguration.framework in Frameworks */,
 				2600DB07190767000039039A /* MobileCoreServices.framework in Frameworks */,
 				26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */,
@@ -685,6 +689,8 @@
 		26DD92A617EA610D00469FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				269B46D81A1123300052E4B7 /* CoreTelephony.framework */,
+				269B46D61A1121090052E4B7 /* SplunkMint-iOS.framework */,
 				268AE41119CE151400569123 /* TestFlightSDK3 */,
 				26B3C5FE19BA307F00B25689 /* BugSense-iOS.framework */,
 				261D953219BA287B0007FD28 /* SystemConfiguration.framework */,
@@ -1255,7 +1261,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Vendors/BugSense3.6",
+					"$(PROJECT_DIR)/Vendors/SplunkMint-iOS",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
@@ -1267,6 +1273,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendors/TestFlightSDK3",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1292,7 +1302,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Vendors/BugSense3.6",
+					"$(PROJECT_DIR)/Vendors/SplunkMint-iOS",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
@@ -1304,6 +1314,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendors/TestFlightSDK3",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

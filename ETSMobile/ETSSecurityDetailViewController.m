@@ -42,7 +42,7 @@
     #endif
     
     #ifdef __USE_BUGSENSE
-    [BugSenseController leaveBreadcrumb:@"SECURITY_DETAILS_VIEWCONTROLLER"];
+    [[Mint sharedInstance] leaveBreadcrumb:@"SECURITY_DETAILS_VIEWCONTROLLER"];
     #endif
     
     [self updateProcedure];

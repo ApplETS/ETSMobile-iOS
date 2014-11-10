@@ -30,7 +30,7 @@
     #endif
     
     #ifdef __USE_BUGSENSE
-    [BugSenseController leaveBreadcrumb:@"COURSES_IPAD_VIEWCONTROLLER"];
+    [[Mint sharedInstance] leaveBreadcrumb:@"COURSES_IPAD_VIEWCONTROLLER"];
     #endif
     
     self.title =  NSLocalizedString(@"Notes", nil);

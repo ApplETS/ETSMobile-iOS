@@ -37,7 +37,7 @@
     #endif
     
     #ifdef __USE_BUGSENSE
-    [BugSenseController leaveBreadcrumb:@"MOODLE_DETAIL_VIEWCONTROLLER"];
+    [[Mint sharedInstance] leaveBreadcrumb:@"MOODLE_DETAIL_VIEWCONTROLLER"];
     #endif
     
     self.cellIdentifier = @"MoodleIdentifier";

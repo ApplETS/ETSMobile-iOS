@@ -24,7 +24,7 @@
     #endif
     
     #ifdef __USE_BUGSENSE
-    [BugSenseController leaveBreadcrumb:@"SECURITY_PROCEDURE_VIEWCONTROLLER"];
+    [[Mint sharedInstance] leaveBreadcrumb:@"SECURITY_PROCEDURE_VIEWCONTROLLER"];
     #endif
     
     self.webView.scalesPageToFit = YES;

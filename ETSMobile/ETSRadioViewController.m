@@ -49,7 +49,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     #endif
     
     #ifdef __USE_BUGSENSE
-    [BugSenseController leaveBreadcrumb:@"RADIO_VIEWCONTROLLER"];
+    [[Mint sharedInstance] leaveBreadcrumb:@"RADIO_VIEWCONTROLLER"];
     #endif
     
     self.playBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(playRadio:)];

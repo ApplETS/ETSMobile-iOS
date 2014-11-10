@@ -56,7 +56,7 @@
     #endif
 
     #ifdef __USE_BUGSENSE
-    [BugSenseController leaveBreadcrumb:@"NEWSSOURCE_VIEWCONTROLLER"];
+    [[Mint sharedInstance] leaveBreadcrumb:@"NEWSSOURCE_VIEWCONTROLLER"];
     #endif
     
     self.cellIdentifier = @"SourceIdentifier";

@@ -38,8 +38,8 @@
     #endif
     
     #ifdef __USE_BUGSENSE
-    #error BugSense needs API Key
-    [BugSenseController sharedControllerWithBugSenseAPIKey:@""];
+//    #error BugSense needs API Key
+    [[Mint sharedInstance] initAndStartSession:@"4cbcf0f5"];
     #endif
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
