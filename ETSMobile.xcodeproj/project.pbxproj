@@ -60,7 +60,6 @@
 		26887B7718F1BA5800009EBA /* ETSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7618F1BA5800009EBA /* ETSAboutViewController.m */; };
 		26887B7B18F1D36600009EBA /* ETSSponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7A18F1D36600009EBA /* ETSSponsorsViewController.m */; };
 		26887B7E18F1D7B400009EBA /* ETSSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7D18F1D7B400009EBA /* ETSSession.m */; };
-		268AE41819CE159200569123 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 268AE41219CE151400569123 /* libTestFlight.a */; };
 		268E8DEC18FB03F900D501E9 /* ETSMoodleCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 268E8DEB18FB03F900D501E9 /* ETSMoodleCoursesViewController.m */; };
 		2690F604183D088700FAD05A /* ETSWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2690F603183D088700FAD05A /* ETSWebViewViewController.m */; };
 		2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2693168718359EE200DE95A0 /* ETSDirectoryViewController.m */; };
@@ -341,7 +340,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				268AE41819CE159200569123 /* libTestFlight.a in Frameworks */,
 				26B3C5FF19BA307F00B25689 /* BugSense-iOS.framework in Frameworks */,
 				261D953319BA287B0007FD28 /* SystemConfiguration.framework in Frameworks */,
 				2600DB07190767000039039A /* MobileCoreServices.framework in Frameworks */,
