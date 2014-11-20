@@ -68,7 +68,6 @@
 		2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */; };
 		2698C6F518274F4B00F6281F /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F418274F4B00F6281F /* KeychainItemWrapper.m */; };
 		2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F9182834E000F6281F /* ETSCourseCell.m */; };
-		269B46D71A1121090052E4B7 /* SplunkMint-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269B46D61A1121090052E4B7 /* SplunkMint-iOS.framework */; };
 		269B46D91A1123300052E4B7 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269B46D81A1123300052E4B7 /* CoreTelephony.framework */; };
 		269BFF561811A41C005D2950 /* NSManagedObject+SetValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BFF551811A41C005D2950 /* NSManagedObject+SetValues.m */; };
 		269BFF581811A640005D2950 /* ETSAPICoreDataMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 269BFF571811A640005D2950 /* ETSAPICoreDataMapping.plist */; };
@@ -83,6 +82,8 @@
 		26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BB372B18F59580002CE5DD /* Main_iPad.storyboard */; };
 		26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */; };
 		26C97886183AD1DE005D66EF /* ETSContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C97885183AD1DE005D66EF /* ETSContact.m */; };
+		26D161001A1E4A5C004A53B1 /* SplunkMint-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269B46D61A1121090052E4B7 /* SplunkMint-iOS.framework */; };
+		26D161031A1E4C94004A53B1 /* SplunkMint-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D161021A1E4C94004A53B1 /* SplunkMint-iOS.framework */; };
 		26D44BA518E49BEF0006F9F0 /* ETSBandwidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D44BA418E49BEF0006F9F0 /* ETSBandwidth.m */; };
 		26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A717EA610D00469FA8 /* Foundation.framework */; };
 		26DD92AA17EA610D00469FA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A917EA610D00469FA8 /* CoreGraphics.framework */; };
@@ -270,13 +271,13 @@
 		26AF7CF818FB641700BD3982 /* ETSMoodleCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMoodleCourseDetailViewController.m; sourceTree = "<group>"; };
 		26AF7CFD18FB8A0000BD3982 /* ETSMoodleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSMoodleElement.h; sourceTree = "<group>"; };
 		26AF7CFE18FB8A0000BD3982 /* ETSMoodleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSMoodleElement.m; sourceTree = "<group>"; };
-		26B3C5FE19BA307F00B25689 /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BugSense-iOS.framework"; path = "Vendors/BugSense3.6/BugSense-iOS.framework"; sourceTree = "<group>"; };
 		26B9A92618736265005D4410 /* ETSBandwidthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidthViewController.h; sourceTree = "<group>"; };
 		26B9A92718736265005D4410 /* ETSBandwidthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidthViewController.m; sourceTree = "<group>"; };
 		26BB372E18F5E77E002CE5DD /* ETSCoursesViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCoursesViewController_iPad.h; sourceTree = "<group>"; };
 		26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCoursesViewController_iPad.m; sourceTree = "<group>"; };
 		26C97884183AD1DE005D66EF /* ETSContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSContact.h; sourceTree = "<group>"; };
 		26C97885183AD1DE005D66EF /* ETSContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSContact.m; sourceTree = "<group>"; };
+		26D161021A1E4C94004A53B1 /* SplunkMint-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "SplunkMint-iOS.framework"; sourceTree = "<group>"; };
 		26D44BA318E49BEF0006F9F0 /* ETSBandwidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidth.h; sourceTree = "<group>"; };
 		26D44BA418E49BEF0006F9F0 /* ETSBandwidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidth.m; sourceTree = "<group>"; };
 		26DD92A417EA610D00469FA8 /* ETSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -343,8 +344,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D161001A1E4A5C004A53B1 /* SplunkMint-iOS.framework in Frameworks */,
 				269B46D91A1123300052E4B7 /* CoreTelephony.framework in Frameworks */,
-				269B46D71A1121090052E4B7 /* SplunkMint-iOS.framework in Frameworks */,
 				261D953319BA287B0007FD28 /* SystemConfiguration.framework in Frameworks */,
 				2600DB07190767000039039A /* MobileCoreServices.framework in Frameworks */,
 				26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */,
@@ -357,6 +358,7 @@
 				26DD92AE17EA610D00469FA8 /* CoreData.framework in Frameworks */,
 				26DD92AC17EA610D00469FA8 /* UIKit.framework in Frameworks */,
 				26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */,
+				26D161031A1E4C94004A53B1 /* SplunkMint-iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +668,15 @@
 			name = Bandwidth;
 			sourceTree = "<group>";
 		};
+		26D161011A1E4C94004A53B1 /* SplunkMint-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				26D161021A1E4C94004A53B1 /* SplunkMint-iOS.framework */,
+			);
+			name = "SplunkMint-iOS";
+			path = "Vendors/SplunkMint-iOS";
+			sourceTree = "<group>";
+		};
 		26DD929B17EA610D00469FA8 = {
 			isa = PBXGroup;
 			children = (
@@ -692,7 +703,6 @@
 				269B46D81A1123300052E4B7 /* CoreTelephony.framework */,
 				269B46D61A1121090052E4B7 /* SplunkMint-iOS.framework */,
 				268AE41119CE151400569123 /* TestFlightSDK3 */,
-				26B3C5FE19BA307F00B25689 /* BugSense-iOS.framework */,
 				261D953219BA287B0007FD28 /* SystemConfiguration.framework */,
 				261D952E19BA28470007FD28 /* BugSense 3.6 */,
 				2600DB06190767000039039A /* MobileCoreServices.framework */,
@@ -833,6 +843,7 @@
 		26DD92EB17EA615E00469FA8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				26D161011A1E4C94004A53B1 /* SplunkMint-iOS */,
 				1D8B140B19A7B1D90033CBA7 /* GTMNSString+HTML */,
 				2664F1D618FF1D5B0054BF58 /* MSDynamicsDrawerViewController */,
 				2610879A18FDDAE300F84100 /* AMScrollingNavbar */,
@@ -1282,6 +1293,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Vendors/SplunkMint-iOS";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1322,6 +1334,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Vendors/SplunkMint-iOS";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
