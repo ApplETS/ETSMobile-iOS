@@ -111,7 +111,7 @@
     #endif
     
     #ifdef __USE_BUGSENSE
-    [BugSenseController leaveBreadcrumb:@"BANDWIDTH_VIEWCONTROLLER"];
+    [[Mint sharedInstance] leaveBreadcrumb:@"BANDWIDTH_VIEWCONTROLLER"];
     #endif
     
     self.month = [@([[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:[NSDate date]] month]) stringValue];

@@ -37,7 +37,7 @@
     #endif
     
     #ifdef __USE_BUGSENSE
-    [BugSenseController leaveBreadcrumb:@"COURSE_DETAILS"];
+    [[Mint sharedInstance] leaveBreadcrumb:@"COURSE_DETAILS"];
     #endif
     
     if (self.course) {

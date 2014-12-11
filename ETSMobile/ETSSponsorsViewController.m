@@ -26,7 +26,7 @@
     #endif
     
     #ifdef __USE_BUGSENSE
-    [BugSenseController leaveBreadcrumb:@"SPONSORS_VIEWCONTROLLER"];
+    [[Mint sharedInstance] leaveBreadcrumb:@"SPONSORS_VIEWCONTROLLER"];
     #endif
 
     

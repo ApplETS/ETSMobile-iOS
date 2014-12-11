@@ -28,7 +28,7 @@ NSString * const kProcedureFile = @"File";
     #endif
     
     #ifdef __USE_BUGSENSE
-    [BugSenseController leaveBreadcrumb:@"SECURITY_VIEWCONTROLLER"];
+    [[Mint sharedInstance] leaveBreadcrumb:@"SECURITY_VIEWCONTROLLER"];
     #endif
     
     CLLocationCoordinate2D etsCoord = {.latitude =  45.494751265838346, .longitude = -73.56256484985352};

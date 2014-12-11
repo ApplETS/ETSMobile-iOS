@@ -31,7 +31,7 @@
     #endif
     
     #ifdef __USE_BUGSENSE
-    [BugSenseController leaveBreadcrumb:@"DIRECTORY_VIEWCONTROLLER"];
+    [[Mint sharedInstance] leaveBreadcrumb:@"DIRECTORY_VIEWCONTROLLER"];
     #endif
     
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
