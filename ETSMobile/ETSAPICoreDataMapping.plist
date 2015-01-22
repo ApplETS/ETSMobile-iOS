@@ -153,7 +153,7 @@
 		<key>id</key>
 		<string>id</string>
 		<key>title</key>
-		<string>title</string>
+		<string>summary</string>
 		<key>start</key>
 		<string>start_date</string>
 		<key>end</key>

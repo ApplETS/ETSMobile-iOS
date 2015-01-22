@@ -36,7 +36,7 @@
     #error TestFlight needs API Key
     [TestFlight takeOff:@""];
     #endif
-    
+
     #ifdef __USE_BUGSENSE
     #error BugSense needs API Key
     [BugSenseController sharedControllerWithBugSenseAPIKey:@""];

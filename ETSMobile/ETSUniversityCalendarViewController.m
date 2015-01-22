@@ -30,7 +30,8 @@ NSString * const ETSUniversityCalendarSource = @"ets";
     synchronization.request = [NSURLRequest requestForUniversityCalendarStart:self.start end:self.end];
     synchronization.entityName = @"Event";
     synchronization.compareKey = @"id";
-    synchronization.objectsKeyPath = @"ets";
+    synchronization.objectsKeyPath = @"data.ets";
+    synchronization.appletsServer = YES;
     synchronization.predicate = [NSPredicate predicateWithFormat:@"source ==[c] %@", ETSUniversityCalendarSource];
     synchronization.dateFormatter = dateFormatter;
     self.synchronization = synchronization;
@@ -70,6 +71,7 @@ NSString * const ETSUniversityCalendarSource = @"ets";
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     ((ETSEvent *)managedObject).source = ETSUniversityCalendarSource;
+    ((ETSEvent *)managedObject).id = ((ETSEvent *)managedObject).title;
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath

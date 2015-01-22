@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>UniversityCalendar</key>
-	<string>http://api.clubapplets.ca/calendar/parser/get?calendar=ets&amp;start_min=%@&amp;start_max=%@</string>
+	<string>https://ec2-54-173-198-15.compute-1.amazonaws.com/calendar/ets.json?start_min=%@</string>
 	<key>MoodleCourse</key>
 	<string>https://ena.etsmtl.ca/webservice/rest/server.php?moodlewsrestformat=json</string>
 	<key>Session</key>

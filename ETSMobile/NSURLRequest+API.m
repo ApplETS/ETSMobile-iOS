@@ -9,6 +9,7 @@
 #import "NSURLRequest+API.h"
 #import "NSURL+API.h"
 #import "ETSAuthenticationViewController.h"
+#import "NSMutableURLRequest+BasicAuth.h"
 
 @implementation NSURLRequest (API)
 
@@ -158,7 +159,12 @@
 
 + (id)requestForUniversityCalendarStart:(NSDate *)start end:(NSDate *)end
 {
-    return [[NSURLRequest alloc] initWithURL:[NSURL URLForUniversityCalendarStart:start end:end]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    #warning "Authentification au serveur requise"
+    [request basicAuthForRequestWithUsername:@"" password:@""];
+    request.URL = [NSURL URLForUniversityCalendarStart:start end:end];
+    return request;
 }
 
 + (id)requestForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase

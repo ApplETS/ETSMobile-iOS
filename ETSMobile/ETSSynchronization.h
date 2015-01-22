@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, ETSSynchronizationResponse) {
 
 @protocol ETSSynchronizationDelegate;
 
-@interface ETSSynchronization : NSObject
+@interface ETSSynchronization : NSObject <NSURLSessionDataDelegate>
 
 - (BOOL)synchronize:(NSError * __autoreleasing *)error;
 - (BOOL)synchronizeJSONArray:(NSArray *)jsonObjects error:(NSError * __autoreleasing *)error;
@@ -35,6 +35,7 @@ typedef NS_ENUM(NSInteger, ETSSynchronizationResponse) {
 @property (nonatomic, strong) NSArray *ignoredAttributes;
 @property (nonatomic, assign) SEL sortSelector;
 @property (nonatomic, assign) BOOL saveAutomatically;
+@property (nonatomic, assign) BOOL appletsServer;
 
 @end
 

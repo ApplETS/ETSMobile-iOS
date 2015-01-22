@@ -39,6 +39,7 @@
         self.saveAutomatically = YES;
         self.managedObjectContext = nil;
         self.ignoredAttributes = nil;
+        self.appletsServer = NO;
     }
     return self;
 }
@@ -64,6 +65,15 @@
     }
 }
 
+- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler{
+    if([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]){
+        if([challenge.protectionSpace.host isEqualToString:@"ec2-54-173-198-15.compute-1.amazonaws.com"]){
+            NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+            completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
+        }
+    }
+}
+
 - (BOOL)synchronize:(NSError * __autoreleasing *)error
 {
     if (!self.request) return NO;
@@ -71,7 +81,15 @@
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     __weak typeof(self) bself = self;
     
-    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:self.request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    NSURLSession *session = nil;
+    if (self.appletsServer) {
+        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        session = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:self delegateQueue:Nil];
+    } else {
+        session = [NSURLSession sharedSession];
+    }
+    
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:self.request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
         dispatch_sync(dispatch_get_main_queue(), ^{
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];

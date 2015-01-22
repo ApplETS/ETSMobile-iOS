@@ -74,6 +74,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     synchronization.entityName = @"Event";
     synchronization.compareKey = @"id";
     synchronization.objectsKeyPath = @"";
+    synchronization.appletsServer = YES;
     synchronization.predicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[[NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha_com"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha2"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha1"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"programmation_radiopiranha"]]];
     synchronization.dateFormatter = dateFormatter;
     self.synchronization = synchronization;
