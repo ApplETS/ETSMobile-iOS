@@ -53,7 +53,7 @@ NSString * const ETSUniversityCalendarSource = @"ets";
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Event"];
 	fetchRequest.fetchBatchSize = 10;
 	fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"start" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"end" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"source ==[c] %@", ETSUniversityCalendarSource];
+    fetchRequest.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[[NSPredicate predicateWithFormat:@"source ==[c] %@", ETSUniversityCalendarSource], [NSPredicate predicateWithFormat:@"start >= %@", self.start]]];
     
 	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
 	self.fetchedResultsController = aFetchedResultsController;
@@ -71,7 +71,6 @@ NSString * const ETSUniversityCalendarSource = @"ets";
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     ((ETSEvent *)managedObject).source = ETSUniversityCalendarSource;
-    ((ETSEvent *)managedObject).id = ((ETSEvent *)managedObject).title;
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath

@@ -120,8 +120,13 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
         return _fetchedResultsController;
     }
     
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"ddMMyyyy"];
+    
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"start" ascending:YES]];
+//    fetchRequest.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[self.synchronization.predicate, [NSPredicate predicateWithFormat:@"start >= %@", [formatter stringFromDate:[NSDate date]]]]];
+    
     fetchRequest.predicate = self.synchronization.predicate;
     
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"day" cacheName:nil];

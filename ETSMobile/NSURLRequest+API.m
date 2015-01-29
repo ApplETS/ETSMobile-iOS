@@ -176,7 +176,6 @@
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"UTF-8" forHTTPHeaderField:@"Accept-Charset"];
     [request setCachePolicy: NSURLRequestReloadIgnoringCacheData];
-
     return request;
 }
 
