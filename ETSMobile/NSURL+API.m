@@ -91,16 +91,19 @@
     [offsetComponents setDay:3];
     NSDate *nextWeek = [gregorian dateByAddingComponents:offsetComponents toDate:[NSDate date] options:0];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"ddMMyyyy"];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
 
     return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"Radio"], [formatter stringFromDate:[NSDate date]], [formatter stringFromDate:nextWeek]]];
+    
+ //   return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"Radio"], [formatter stringFromDate:[NSDate date]]]];
 }
 
 + (id)URLForUniversityCalendarStart:(NSDate *)start end:(NSDate *)end
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"ddMMyyyy"];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
     return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"UniversityCalendar"], [formatter stringFromDate:start], [formatter stringFromDate:end]]];
+//        return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"UniversityCalendar"], [formatter stringFromDate:start]]];
 }
 
 @end

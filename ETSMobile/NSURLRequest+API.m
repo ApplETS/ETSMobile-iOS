@@ -154,7 +154,12 @@
 
 + (id)requestForRadio
 {
-    return [[NSURLRequest alloc] initWithURL:[NSURL URLForRadio]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    #warning "Authentification au serveur requise"
+    [request basicAuthForRequestWithUsername:@"" password:@"@"];
+    request.URL = [NSURL URLForRadio];
+    return request;
 }
 
 + (id)requestForUniversityCalendarStart:(NSDate *)start end:(NSDate *)end
@@ -162,7 +167,7 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     #warning "Authentification au serveur requise"
-    [request basicAuthForRequestWithUsername:@"" password:@""];
+    [request basicAuthForRequestWithUsername:@"" password:@"@"];
     request.URL = [NSURL URLForUniversityCalendarStart:start end:end];
     return request;
 }

@@ -73,9 +73,9 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     synchronization.request = [NSURLRequest requestForRadio];
     synchronization.entityName = @"Event";
     synchronization.compareKey = @"id";
-    synchronization.objectsKeyPath = @"";
+    synchronization.objectsKeyPath = @"data";
     synchronization.appletsServer = YES;
-    synchronization.predicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[[NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha_com"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha2"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha1"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"programmation_radiopiranha"]]];
+    synchronization.predicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[[NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha1"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha2"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"programmationradiopiranha"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranhacom"]]];
     synchronization.dateFormatter = dateFormatter;
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
@@ -97,7 +97,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 
 - (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects
 {
-    NSArray *channels = @[@"radiopiranha_com", @"radiopiranha2", @"radiopiranha1", @"programmation_radiopiranha"];
+    NSArray *channels = @[@"radiopiranha1", @"radiopiranha2", @"programmationradiopiranha", @"radiopiranhacom"];
     
     NSMutableArray *events = [NSMutableArray array];
     
@@ -120,12 +120,10 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
         return _fetchedResultsController;
     }
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"ddMMyyyy"];
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"start" ascending:YES]];
-//    fetchRequest.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[self.synchronization.predicate, [NSPredicate predicateWithFormat:@"start >= %@", [formatter stringFromDate:[NSDate date]]]]];
+    fetchRequest.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[self.synchronization.predicate, [NSPredicate predicateWithFormat:@"start >= %@", [NSDate date]]]];
     
     fetchRequest.predicate = self.synchronization.predicate;
     
