@@ -89,14 +89,15 @@
     self.cellIdentifier = @"NewsIdentifier";
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForNewsWithSources:[self enabledSources]];
     synchronization.entityName = @"News";
     synchronization.compareKey = @"id";
-    synchronization.objectsKeyPath = @"query.results.json";
+    synchronization.objectsKeyPath = @"data";
     synchronization.dateFormatter = dateFormatter;
+    synchronization.appletsServer = YES;
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
     
@@ -117,8 +118,23 @@
     NSDateFormatter *ymdFormatter = [NSDateFormatter new];
     [ymdFormatter setDateFormat:@"yyyy-MM-dd"];
     
-    for (NSDictionary *object in objects) {
+    NSArray *keys = [((NSDictionary *)objects) allKeys];
+    
+    for (NSString *key in keys) {
         
+      //  [news addObjectsFromArray:objects[key]];
+        
+        for (NSDictionary *object in objects[key]) {
+            NSMutableDictionary *entry = [NSMutableDictionary dictionaryWithDictionary:object];
+            NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"updated_time"]];
+            entry[@"ymdDate"] = [ymdFormatter stringFromDate:date];
+            [news addObject:entry];
+            NSLog(@"%@", entry[@"message"]);
+        }
+        
+        
+        
+        /*
         NSString *strippedContent = [object[@"entries"][@"content"] stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
         strippedContent = [strippedContent stringByReplacingOccurrencesOfString:@"<br/>" withString:@"\n"];
         strippedContent = [strippedContent stringByStrippingHTML];
@@ -169,6 +185,7 @@
                                   @"thumbnailURL"       : url}];
             }
         }
+         */
     }
     return news;
 }
@@ -206,7 +223,7 @@
     ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     if ([cell isKindOfClass:[ETSNewsCell class]]) {
-        ((ETSNewsCell *)cell).contentLabel.text = news.contentStripped;
+        ((ETSNewsCell *)cell).contentLabel.text = news.title;
         ((ETSNewsCell *)cell).authorLabel.text = news.author;
         ((ETSNewsCell *)cell).thumbnailView.image = nil;
         

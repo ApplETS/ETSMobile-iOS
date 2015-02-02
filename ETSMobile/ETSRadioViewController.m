@@ -68,6 +68,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"US/Eastern"]];
     
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForRadio];
@@ -112,6 +113,12 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
         }
     }
     return events;
+}
+
+- (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
+{
+    ETSEvent *event = (ETSEvent *)managedObject;
+    NSLog(@"%@\n%@\n%@\n%@\n\n", event.title, object[@"start_date"], object[@"end_date"], event.source);
 }
 
 - (NSFetchedResultsController *)fetchedResultsController

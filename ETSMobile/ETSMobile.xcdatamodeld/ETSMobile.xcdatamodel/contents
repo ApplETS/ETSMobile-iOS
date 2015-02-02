@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Bandwidth" representedClassName="ETSBandwidth" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="download" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -109,7 +109,6 @@
         <attribute name="enabled" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="group" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Profile" representedClassName="ETSProfile" syncable="YES">
@@ -154,7 +153,7 @@
         <element name="MoodleCourse" positionX="79" positionY="-360" width="128" height="163"/>
         <element name="MoodleElement" positionX="-110" positionY="-360" width="128" height="178"/>
         <element name="News" positionX="-281" positionY="-360" width="128" height="180"/>
-        <element name="NewsSource" positionX="-281" positionY="-165" width="128" height="120"/>
+        <element name="NewsSource" positionX="-281" positionY="-165" width="128" height="105"/>
         <element name="Profile" positionX="81" positionY="-171" width="128" height="180"/>
         <element name="Program" positionX="243" positionY="-37" width="128" height="253"/>
         <element name="Session" positionX="-110" positionY="-160" width="128" height="88"/>

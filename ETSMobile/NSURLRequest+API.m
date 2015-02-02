@@ -130,14 +130,12 @@
 
 + (id)requestForNewsWithSources:(NSArray *)sources
 {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForNewsWithSources:sources]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    [request setHTTPMethod: @"GET"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"UTF-8" forHTTPHeaderField:@"Accept-Charset"];
-    [request setCachePolicy:NSURLRequestReloadIgnoringCacheData];
-    
+    #warning "Authentification au serveur requise"
+    [request basicAuthForRequestWithUsername:@"" password:@""];
+    request.URL = [NSURL URLForNewsWithSources:sources];
+
     return request;
 }
 
@@ -157,7 +155,7 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     #warning "Authentification au serveur requise"
-    [request basicAuthForRequestWithUsername:@"" password:@"@"];
+    [request basicAuthForRequestWithUsername:@"" password:@""];
     request.URL = [NSURL URLForRadio];
     return request;
 }
@@ -167,7 +165,7 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     #warning "Authentification au serveur requise"
-    [request basicAuthForRequestWithUsername:@"" password:@"@"];
+    [request basicAuthForRequestWithUsername:@"" password:@""];
     request.URL = [NSURL URLForUniversityCalendarStart:start end:end];
     return request;
 }

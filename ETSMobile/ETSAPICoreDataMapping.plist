@@ -113,9 +113,9 @@
 	<key>News</key>
 	<dict>
 		<key>thumbnailURL</key>
-		<string>thumbnailURL</string>
+		<string>image</string>
 		<key>link</key>
-		<string>alternate</string>
+		<string>facebook_link</string>
 		<key>title</key>
 		<string>title</string>
 		<key>ymdDate</key>
@@ -123,13 +123,13 @@
 		<key>contentStripped</key>
 		<string>contentStripped</string>
 		<key>author</key>
-		<string>author</string>
+		<string>from</string>
 		<key>id</key>
 		<string>id</string>
 		<key>content</key>
-		<string>content</string>
+		<string>title</string>
 		<key>updatedDate</key>
-		<string>updated</string>
+		<string>updated_time</string>
 	</dict>
 	<key>Bandwidth</key>
 	<dict>

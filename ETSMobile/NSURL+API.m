@@ -68,10 +68,17 @@
     NSMutableArray *urls = [NSMutableArray array];
     
     for (ETSNewsSource *source in sources) {
-        [urls addObject:[NSString stringWithFormat:@"%@", [source.link urlEncodeUsingEncoding:NSUTF8StringEncoding]]];
+        [urls addObject:[NSString stringWithFormat:@"%@", [source.id urlEncodeUsingEncoding:NSUTF8StringEncoding]]];
     }
     
-    return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"News"], [urls componentsJoinedByString:@"%22%2C%22"]]];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    [offsetComponents setDay:-7];
+    NSDate *lastWeek = [gregorian dateByAddingComponents:offsetComponents toDate:[NSDate date] options:0];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+
+    return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"News"], [urls componentsJoinedByString:@","], [formatter stringFromDate:lastWeek]]];
 }
 
 + (id)URLForComment
