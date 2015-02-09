@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>UniversityCalendar</key>
-	<string>https://ec2-54-173-198-15.compute-1.amazonaws.com/calendar/ets.json?start_min=%@&amp;start_max=%@</string>
+	<string>https://api.clubapplets.ca/calendar/ets.json?start_min=%@&amp;start_max=%@</string>
 	<key>MoodleCourse</key>
 	<string>https://ena.etsmtl.ca/webservice/rest/server.php?moodlewsrestformat=json</string>
 	<key>Session</key>
@@ -13,13 +13,13 @@
 	<key>Program</key>
 	<string>https://signets-ens.etsmtl.ca/Secure/WebServices/SignetsMobile.asmx/listeProgrammes</string>
 	<key>News</key>
-	<string>https://ec2-54-173-198-15.compute-1.amazonaws.com/news/%@.json?post_date_min=%@</string>
+	<string>https://api.clubapplets.ca/news/%@.json?post_date_min=%@&amp;post_date_max=%@</string>
 	<key>Comment</key>
-	<string>http://api.clubapplets.ca/mail/send/notification_to_club</string>
+	<string>https://api.clubapplets.ca/mail</string>
 	<key>Bandwidth</key>
 	<string>http://query.yahooapis.com/v1/public/yql?q=select%%20*%%20from%%20html%%20where%%20url%%3D%%22http%%3A%%2F%%2Fets-res%@-%@%%3Aets%@%%40www2.cooptel.qc.ca%%2Fservices%%2Ftemps%%2F%%3Fmois%%3D%@%%26cmd%%3DVisualiser%%22%%20and%%0A%%20%%20%%20%%20%%20%%20xpath%%3D&apos;%%2F%%2Ftable%%5B%%40border%%3D%%221%%22%%5D&apos;&amp;format=json&amp;callback=</string>
 	<key>Radio</key>
-	<string>https://ec2-54-173-198-15.compute-1.amazonaws.com/calendar/radiopiranha1,radiopiranha2,programmationradiopiranha,radiopiranhacom.json?start_min=%@&amp;start_max=%@</string>
+	<string>https://api.clubapplets.ca/calendar/radiopiranha1,radiopiranha2,programmationradiopiranha,radiopiranhacom.json?start_min=%@&amp;start_max=%@</string>
 	<key>Directory</key>
 	<string>http://etsmtl.ca/cmspages/webservice.asmx/Recherche</string>
 	<key>Evaluations</key>

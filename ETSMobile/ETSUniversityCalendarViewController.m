@@ -24,7 +24,7 @@ NSString * const ETSUniversityCalendarSource = @"ets";
     [super viewDidLoad];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
 
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForUniversityCalendarStart:self.start end:self.end];

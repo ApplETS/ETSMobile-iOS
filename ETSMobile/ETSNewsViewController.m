@@ -89,7 +89,7 @@
     self.cellIdentifier = @"NewsIdentifier";
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
     
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForNewsWithSources:[self enabledSources]];
@@ -116,7 +116,7 @@
     NSMutableArray *news = [NSMutableArray array];
     
     NSDateFormatter *ymdFormatter = [NSDateFormatter new];
-    [ymdFormatter setDateFormat:@"yyyy-MM-dd"];
+    [ymdFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
     
     NSArray *keys = [((NSDictionary *)objects) allKeys];
     
@@ -128,8 +128,11 @@
             NSMutableDictionary *entry = [NSMutableDictionary dictionaryWithDictionary:object];
             NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"updated_time"]];
             entry[@"ymdDate"] = [ymdFormatter stringFromDate:date];
+            
+  /*          if ([entry[@"message"] isKindOfClass:[NSString class]] && [entry[@"message"] length] > 0) {
+                entry[@"title"] = entry[@"message"];
+            }*/
             [news addObject:entry];
-            NSLog(@"%@", entry[@"message"]);
         }
         
         
@@ -243,7 +246,7 @@
         
         ((ETSNewsCell *)cell).thumbnailView.clipsToBounds = YES;
     } else if ([cell isKindOfClass:[ETSNewsEmptyCell class]]) {
-        ((ETSNewsEmptyCell *)cell).contentLabel.text = news.contentStripped;
+        ((ETSNewsEmptyCell *)cell).contentLabel.text = news.content;
         ((ETSNewsEmptyCell *)cell).authorLabel.text = news.author;
     }
     

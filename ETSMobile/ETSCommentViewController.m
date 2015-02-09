@@ -89,6 +89,14 @@
     return indexPath.section == 0 ? 44 : 190;
 }
 
+- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler{
+    if([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]){
+        if([challenge.protectionSpace.host isEqualToString:@"api.clubapplets.ca"]){
+            NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+            completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
+        }
+    }
+}
 
 - (IBAction)sendComment:(UIBarButtonItem *)sender
 {
@@ -110,12 +118,12 @@
         
         NSURLRequest *request = [NSURLRequest requestForCommentWithName:name email:email title:@"ÉTSMobile-iOS : Commentaire" rating:[NSString stringWithFormat:@"%li sur 5", (long)rating] comment:comment];
          
-        NSLog(@"%@", [NSString stringWithUTF8String:[[request HTTPBody] bytes]]);
+        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:self delegateQueue:Nil];
         
-        NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-            NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 

@@ -97,7 +97,6 @@
     <entity name="News" representedClassName="ETSNews" syncable="YES">
         <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="contentStripped" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="thumbnailURL" optional="YES" attributeType="String" syncable="YES"/>
@@ -152,7 +151,7 @@
         <element name="Event" positionX="-108" positionY="-54" width="128" height="120"/>
         <element name="MoodleCourse" positionX="79" positionY="-360" width="128" height="163"/>
         <element name="MoodleElement" positionX="-110" positionY="-360" width="128" height="178"/>
-        <element name="News" positionX="-281" positionY="-360" width="128" height="180"/>
+        <element name="News" positionX="-281" positionY="-360" width="128" height="165"/>
         <element name="NewsSource" positionX="-281" positionY="-165" width="128" height="105"/>
         <element name="Profile" positionX="81" positionY="-171" width="128" height="180"/>
         <element name="Program" positionX="243" positionY="-37" width="128" height="253"/>

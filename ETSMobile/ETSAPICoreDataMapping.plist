@@ -120,8 +120,6 @@
 		<string>title</string>
 		<key>ymdDate</key>
 		<string>ymdDate</string>
-		<key>contentStripped</key>
-		<string>contentStripped</string>
 		<key>author</key>
 		<string>from</string>
 		<key>id</key>

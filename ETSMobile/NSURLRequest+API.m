@@ -11,6 +11,10 @@
 #import "ETSAuthenticationViewController.h"
 #import "NSMutableURLRequest+BasicAuth.h"
 
+#warning "Authentification au serveur requise"
+NSString *const kApplETSUsername = @"";
+NSString *const kApplETSPassword = @"";
+
 @implementation NSURLRequest (API)
 
 + (id)JSONRequestWithURL:(NSURL *)URL
@@ -132,8 +136,7 @@
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    #warning "Authentification au serveur requise"
-    [request basicAuthForRequestWithUsername:@"" password:@""];
+    [request basicAuthForRequestWithUsername:kApplETSUsername password:kApplETSPassword];
     request.URL = [NSURL URLForNewsWithSources:sources];
 
     return request;
@@ -141,7 +144,10 @@
 
 + (id)requestForCommentWithName:(NSString *)name email:(NSString *)email title:(NSString *)title rating:(NSString *)rating comment:(NSString *)comment
 {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForComment]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request basicAuthForRequestWithUsername:kApplETSUsername password:kApplETSPassword];
+    request.URL = [NSURL URLForComment];
 
     [request setHTTPMethod:@"POST"];
     NSString *parameters = [NSString stringWithFormat:@"sender_name=%@&sender_mail=%@&message=%@&subject=%@&rating=%@", name, email, comment, title, rating];
@@ -154,8 +160,7 @@
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    #warning "Authentification au serveur requise"
-    [request basicAuthForRequestWithUsername:@"" password:@""];
+    [request basicAuthForRequestWithUsername:kApplETSUsername password:kApplETSPassword];
     request.URL = [NSURL URLForRadio];
     return request;
 }
@@ -164,8 +169,7 @@
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    #warning "Authentification au serveur requise"
-    [request basicAuthForRequestWithUsername:@"" password:@""];
+    [request basicAuthForRequestWithUsername:kApplETSUsername password:kApplETSPassword];
     request.URL = [NSURL URLForUniversityCalendarStart:start end:end];
     return request;
 }

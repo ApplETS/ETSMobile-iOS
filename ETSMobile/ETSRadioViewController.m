@@ -67,8 +67,8 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     self.collectionViewCalendarLayout.hourHeight = 40;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"US/Eastern"]];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
     
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForRadio];
@@ -118,7 +118,9 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     ETSEvent *event = (ETSEvent *)managedObject;
-    NSLog(@"%@\n%@\n%@\n%@\n\n", event.title, object[@"start_date"], object[@"end_date"], event.source);
+    NSDateFormatter *f = [NSDateFormatter new];
+    f.dateFormat = @"yyyy-MM-dd HH:mm";
+    NSLog(@"%@\n%@\n%@\n%@\n%@\n%@\n\n", event.title, object[@"start_date"], object[@"end_date"], [f stringFromDate:event.start], [f stringFromDate:event.end], event.source);
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
