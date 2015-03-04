@@ -10,10 +10,9 @@
 #import "NSURL+API.h"
 #import "ETSAuthenticationViewController.h"
 #import "NSMutableURLRequest+BasicAuth.h"
+#import "EnvConst.h"
 
 #warning "Authentification au serveur requise"
-NSString *const kApplETSUsername = @"";
-NSString *const kApplETSPassword = @"";
 
 @implementation NSURLRequest (API)
 
