@@ -6,11 +6,9 @@
 		<key>group</key>
 		<integer>-1</integer>
 		<key>id</key>
-		<string>8632204375</string>
+		<string>ets</string>
 		<key>name</key>
 		<string>École de technologie supérieure</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=8632204375&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -18,11 +16,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>318301358296527</string>
+		<string>substance</string>
 		<key>name</key>
 		<string>Substance ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=318301358296527&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -30,11 +26,9 @@
 		<key>group</key>
 		<integer>0</integer>
 		<key>id</key>
-		<string>218060244914450</string>
+		<string>centresportif</string>
 		<key>name</key>
 		<string>Centre sportif ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=218060244914450&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -42,11 +36,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>163718447011305</string>
+		<string>applets</string>
 		<key>name</key>
 		<string>ApplETS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=163718447011305&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -54,11 +46,9 @@
 		<key>group</key>
 		<integer>2</integer>
 		<key>id</key>
-		<string>102887646514478</string>
+		<string>esports</string>
 		<key>name</key>
 		<string>E-sporTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=102887646514478&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -66,11 +56,9 @@
 		<key>group</key>
 		<integer>4</integer>
 		<key>id</key>
-		<string>105690876298164</string>
+		<string>rafale</string>
 		<key>name</key>
 		<string>Rafale ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=105690876298164&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -78,11 +66,9 @@
 		<key>group</key>
 		<integer>2</integer>
 		<key>id</key>
-		<string>121015754713487</string>
+		<string>rockanddance</string>
 		<key>name</key>
 		<string>R&amp;D - Rock &amp; Dance ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=121015754713487&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -90,11 +76,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>110486232446955</string>
+		<string>conjure</string>
 		<key>name</key>
 		<string>Conjure</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=110486232446955&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -102,11 +86,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>395414797183821</string>
+		<string>rockets</string>
 		<key>name</key>
 		<string>RockÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=395414797183821&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -114,11 +96,9 @@
 		<key>group</key>
 		<integer>4</integer>
 		<key>id</key>
-		<string>164607013559595</string>
+		<string>phoenix</string>
 		<key>name</key>
 		<string>Phoenix ÉTS Fireball</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=164607013559595&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -126,11 +106,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>126837807493669</string>
+		<string>avioncargo</string>
 		<key>name</key>
 		<string>ACE, Avion Cargo ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=126837807493669&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -138,11 +116,9 @@
 		<key>group</key>
 		<integer>4</integer>
 		<key>id</key>
-		<string>360076647398495</string>
+		<string>clubcycliste</string>
 		<key>name</key>
 		<string>Club Cycliste Cinétique à l&apos;ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=360076647398495&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -150,11 +126,9 @@
 		<key>group</key>
 		<integer>4</integer>
 		<key>id</key>
-		<string>460299537349517</string>
+		<string>football</string>
 		<key>name</key>
 		<string>Football ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=460299537349517&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -162,11 +136,9 @@
 		<key>group</key>
 		<integer>2</integer>
 		<key>id</key>
-		<string>491557250876569</string>
+		<string>ingenieuses</string>
 		<key>name</key>
 		<string>INGénieuses de L&apos;ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=491557250876569&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -174,11 +146,9 @@
 		<key>group</key>
 		<integer>3</integer>
 		<key>id</key>
-		<string>447702428615807</string>
+		<string>debatpiranha</string>
 		<key>name</key>
 		<string>Débat Piranha</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=447702428615807&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -186,11 +156,9 @@
 		<key>group</key>
 		<integer>3</integer>
 		<key>id</key>
-		<string>211557725590576</string>
+		<string>radiopiranha</string>
 		<key>name</key>
 		<string>Radio Piranha</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=211557725590576&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -198,11 +166,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>337552962995346</string>
+		<string>walkingmachine</string>
 		<key>name</key>
 		<string>Walking Machine</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=337552962995346&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -210,11 +176,9 @@
 		<key>group</key>
 		<integer>4</integer>
 		<key>id</key>
-		<string>323542067682533</string>
+		<string>atlhetsiques</string>
 		<key>name</key>
 		<string>Les AthlÉTSiques</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=323542067682533&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -222,11 +186,9 @@
 		<key>group</key>
 		<integer>2</integer>
 		<key>id</key>
-		<string>371898792845924</string>
+		<string>aeets</string>
 		<key>name</key>
 		<string>AÉÉTS - Association étudiante de l&apos;ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=371898792845924&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -234,11 +196,9 @@
 		<key>group</key>
 		<integer>4</integer>
 		<key>id</key>
-		<string>377006705649358</string>
+		<string>rugby</string>
 		<key>name</key>
 		<string>Rugby Club</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=377006705649358&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -246,11 +206,9 @@
 		<key>group</key>
 		<integer>0</integer>
 		<key>id</key>
-		<string>188297367906485</string>
+		<string>bibliotheque</string>
 		<key>name</key>
 		<string>Bibliothèque ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=188297367906485&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -258,11 +216,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>248185595191443</string>
+		<string>capra</string>
 		<key>name</key>
 		<string>Capra</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=248185595191443&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -270,11 +226,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>103792316390557</string>
+		<string>ieee</string>
 		<key>name</key>
 		<string>IEEE-ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=103792316390557&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -282,11 +236,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>167760619914316</string>
+		<string>pontpop</string>
 		<key>name</key>
 		<string>Compétition PontPop ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=167760619914316&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -294,11 +246,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>184102168309598</string>
+		<string>omer</string>
 		<key>name</key>
 		<string>Omer ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=184102168309598&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -306,11 +256,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>185170678185125</string>
+		<string>baja</string>
 		<key>name</key>
 		<string>Baja ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=185170678185125&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -318,11 +266,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>164949146900986</string>
+		<string>canoedebeton</string>
 		<key>name</key>
 		<string>Le canoë de béton de l&apos;ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=164949146900986&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -330,11 +276,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>213055515399417</string>
+		<string>chinook</string>
 		<key>name</key>
 		<string>Club Chinook ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=213055515399417&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -342,11 +286,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>202479516430909</string>
+		<string>sonia</string>
 		<key>name</key>
 		<string>Sonia AUV</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=202479516430909&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -354,11 +296,9 @@
 		<key>group</key>
 		<integer>2</integer>
 		<key>id</key>
-		<string>103903173690</string>
+		<string>lanets</string>
 		<key>name</key>
 		<string>Lan ETS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=103903173690&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -366,11 +306,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>189628483266</string>
+		<string>formuleets</string>
 		<key>name</key>
 		<string>Formule ÉTS propulsée par Vidéotron</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=189628483266&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -378,11 +316,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>166160473418379</string>
+		<string>eclipse</string>
 		<key>name</key>
 		<string>Véhicule Solaire Éclipse</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=166160473418379&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -390,11 +326,9 @@
 		<key>group</key>
 		<integer>3</integer>
 		<key>id</key>
-		<string>134552903275289</string>
+		<string>turbulence</string>
 		<key>name</key>
 		<string>Stage Band Turbulence</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=134552903275289&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -402,11 +336,9 @@
 		<key>group</key>
 		<integer>2</integer>
 		<key>id</key>
-		<string>224658708833</string>
+		<string>preci</string>
 		<key>name</key>
 		<string>PRECI</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=224658708833&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -414,11 +346,9 @@
 		<key>group</key>
 		<integer>3</integer>
 		<key>id</key>
-		<string>153080808058020</string>
+		<string>reflets</string>
 		<key>name</key>
 		<string>ReflETS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=153080808058020&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -426,11 +356,9 @@
 		<key>group</key>
 		<integer>2</integer>
 		<key>id</key>
-		<string>149411625347</string>
+		<string>crabeets</string>
 		<key>name</key>
 		<string>CRABE ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=149411625347&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -438,11 +366,9 @@
 		<key>group</key>
 		<integer>2</integer>
 		<key>id</key>
-		<string>460887617354502</string>
+		<string>decliq</string>
 		<key>name</key>
 		<string>DécliQ</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=460887617354502&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -450,11 +376,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>117505511647516</string>
+		<string>quiets</string>
 		<key>name</key>
 		<string>QuiETS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=117505511647516&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -462,11 +386,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>122163981170182</string>
+		<string>dronolab</string>
 		<key>name</key>
 		<string>Dronolab</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=122163981170182&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -474,11 +396,9 @@
 		<key>group</key>
 		<integer>3</integer>
 		<key>id</key>
-		<string>109108485778606</string>
+		<string>liets</string>
 		<key>name</key>
 		<string>LiÉTS - Ligue d&apos;improvisation de l’ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=109108485778606&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -486,11 +406,9 @@
 		<key>group</key>
 		<integer>3</integer>
 		<key>id</key>
-		<string>107613412598931</string>
+		<string>radiosansgenie</string>
 		<key>name</key>
 		<string>Radio sans génie</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=107613412598931&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -498,11 +416,9 @@
 		<key>group</key>
 		<integer>2</integer>
 		<key>id</key>
-		<string>357404254892</string>
+		<string>coopets</string>
 		<key>name</key>
 		<string>Librairie Coop ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=357404254892&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -510,11 +426,9 @@
 		<key>group</key>
 		<integer>2</integer>
 		<key>id</key>
-		<string>1452026945085279</string>
+		<string>integrale</string>
 		<key>name</key>
 		<string>Intégrale ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=1452026945085279&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>
@@ -522,11 +436,9 @@
 		<key>group</key>
 		<integer>1</integer>
 		<key>id</key>
-		<string>419586744817217</string>
+		<string>geniale</string>
 		<key>name</key>
 		<string>GéniAle ÉTS</string>
-		<key>url</key>
-		<string>https://www.facebook.com/feeds/page.php?id=419586744817217&amp;format=json</string>
 		<key>enabled</key>
 		<true/>
 	</dict>

@@ -14,7 +14,6 @@
 
 @property (nonatomic, retain) NSString * id;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * link;
 @property (nonatomic, retain) NSNumber * group;
 @property (nonatomic, retain) NSNumber * enabled;
 

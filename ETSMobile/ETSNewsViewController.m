@@ -89,14 +89,15 @@
     self.cellIdentifier = @"NewsIdentifier";
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
     
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForNewsWithSources:[self enabledSources]];
     synchronization.entityName = @"News";
     synchronization.compareKey = @"id";
-    synchronization.objectsKeyPath = @"query.results.json";
+    synchronization.objectsKeyPath = @"data";
     synchronization.dateFormatter = dateFormatter;
+    synchronization.appletsServer = YES;
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
     
@@ -115,10 +116,28 @@
     NSMutableArray *news = [NSMutableArray array];
     
     NSDateFormatter *ymdFormatter = [NSDateFormatter new];
-    [ymdFormatter setDateFormat:@"yyyy-MM-dd"];
+    [ymdFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
     
-    for (NSDictionary *object in objects) {
+    NSArray *keys = [((NSDictionary *)objects) allKeys];
+    
+    for (NSString *key in keys) {
         
+      //  [news addObjectsFromArray:objects[key]];
+        
+        for (NSDictionary *object in objects[key]) {
+            NSMutableDictionary *entry = [NSMutableDictionary dictionaryWithDictionary:object];
+            NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"updated_time"]];
+            entry[@"ymdDate"] = [ymdFormatter stringFromDate:date];
+            
+  /*          if ([entry[@"message"] isKindOfClass:[NSString class]] && [entry[@"message"] length] > 0) {
+                entry[@"title"] = entry[@"message"];
+            }*/
+            [news addObject:entry];
+        }
+        
+        
+        
+        /*
         NSString *strippedContent = [object[@"entries"][@"content"] stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
         strippedContent = [strippedContent stringByReplacingOccurrencesOfString:@"<br/>" withString:@"\n"];
         strippedContent = [strippedContent stringByStrippingHTML];
@@ -169,6 +188,7 @@
                                   @"thumbnailURL"       : url}];
             }
         }
+         */
     }
     return news;
 }
@@ -206,7 +226,7 @@
     ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     if ([cell isKindOfClass:[ETSNewsCell class]]) {
-        ((ETSNewsCell *)cell).contentLabel.text = news.contentStripped;
+        ((ETSNewsCell *)cell).contentLabel.text = news.title;
         ((ETSNewsCell *)cell).authorLabel.text = news.author;
         ((ETSNewsCell *)cell).thumbnailView.image = nil;
         
@@ -226,7 +246,7 @@
         
         ((ETSNewsCell *)cell).thumbnailView.clipsToBounds = YES;
     } else if ([cell isKindOfClass:[ETSNewsEmptyCell class]]) {
-        ((ETSNewsEmptyCell *)cell).contentLabel.text = news.contentStripped;
+        ((ETSNewsEmptyCell *)cell).contentLabel.text = news.content;
         ((ETSNewsEmptyCell *)cell).authorLabel.text = news.author;
     }
     

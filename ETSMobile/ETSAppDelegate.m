@@ -36,7 +36,7 @@
     #error TestFlight needs API Key
     [TestFlight takeOff:@""];
     #endif
-    
+
     #ifdef __USE_BUGSENSE
     #error BugSense needs API Key
     [[Mint sharedInstance] initAndStartSession:@""];
@@ -155,7 +155,7 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ETSMobile04092014.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ETSMobile02012015.sqlite"];
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];

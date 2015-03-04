@@ -67,14 +67,16 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     self.collectionViewCalendarLayout.hourHeight = 40;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
     
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForRadio];
     synchronization.entityName = @"Event";
     synchronization.compareKey = @"id";
-    synchronization.objectsKeyPath = @"";
-    synchronization.predicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[[NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha_com"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha2"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha1"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"programmation_radiopiranha"]]];
+    synchronization.objectsKeyPath = @"data";
+    synchronization.appletsServer = YES;
+    synchronization.predicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[[NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha1"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranha2"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"programmationradiopiranha"], [NSPredicate predicateWithFormat:@"source ==[c] %@", @"radiopiranhacom"]]];
     synchronization.dateFormatter = dateFormatter;
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
@@ -96,7 +98,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 
 - (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects
 {
-    NSArray *channels = @[@"radiopiranha_com", @"radiopiranha2", @"radiopiranha1", @"programmation_radiopiranha"];
+    NSArray *channels = @[@"radiopiranha1", @"radiopiranha2", @"programmationradiopiranha", @"radiopiranhacom"];
     
     NSMutableArray *events = [NSMutableArray array];
     
@@ -113,14 +115,25 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     return events;
 }
 
+- (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
+{
+    ETSEvent *event = (ETSEvent *)managedObject;
+    NSDateFormatter *f = [NSDateFormatter new];
+    f.dateFormat = @"yyyy-MM-dd HH:mm";
+    NSLog(@"%@\n%@\n%@\n%@\n%@\n%@\n\n", event.title, object[@"start_date"], object[@"end_date"], [f stringFromDate:event.start], [f stringFromDate:event.end], event.source);
+}
+
 - (NSFetchedResultsController *)fetchedResultsController
 {
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
     
+    
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"start" ascending:YES]];
+    fetchRequest.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[self.synchronization.predicate, [NSPredicate predicateWithFormat:@"start >= %@", [NSDate date]]]];
+    
     fetchRequest.predicate = self.synchronization.predicate;
     
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"day" cacheName:nil];

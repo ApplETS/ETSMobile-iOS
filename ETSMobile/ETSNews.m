@@ -12,7 +12,6 @@
 @implementation ETSNews
 
 @dynamic content;
-@dynamic contentStripped;
 @dynamic id;
 @dynamic updatedDate;
 @dynamic ymdDate;

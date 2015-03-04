@@ -68,10 +68,19 @@
     NSMutableArray *urls = [NSMutableArray array];
     
     for (ETSNewsSource *source in sources) {
-        [urls addObject:[NSString stringWithFormat:@"%@", [source.link urlEncodeUsingEncoding:NSUTF8StringEncoding]]];
+        [urls addObject:[NSString stringWithFormat:@"%@", [source.id urlEncodeUsingEncoding:NSUTF8StringEncoding]]];
     }
     
-    return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"News"], [urls componentsJoinedByString:@"%22%2C%22"]]];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
+    [offsetComponents setDay:-7];
+    NSDate *lastWeek = [gregorian dateByAddingComponents:offsetComponents toDate:[NSDate date] options:0];
+    [offsetComponents setDay:1];
+    NSDate *tomorrow = [gregorian dateByAddingComponents:offsetComponents toDate:[NSDate date] options:0];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+
+    return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"News"], [urls componentsJoinedByString:@","], [formatter stringFromDate:lastWeek], [formatter stringFromDate:tomorrow]]];
 }
 
 + (id)URLForComment
@@ -86,21 +95,31 @@
 
 + (id)URLForRadio
 {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:[NSDate date]];
+    
+    NSDate *today = [calendar dateFromComponents:components];
+    
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *offsetComponents = [[NSDateComponents alloc] init];
     [offsetComponents setDay:3];
-    NSDate *nextWeek = [gregorian dateByAddingComponents:offsetComponents toDate:[NSDate date] options:0];
+    NSDate *nextWeek = [gregorian dateByAddingComponents:offsetComponents toDate:today options:0];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"ddMMyyyy"];
+    
+    [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    [formatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
 
-    return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"Radio"], [formatter stringFromDate:[NSDate date]], [formatter stringFromDate:nextWeek]]];
+    return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"Radio"], [formatter stringFromDate:today], [formatter stringFromDate:nextWeek]]];
+    
+ //   return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"Radio"], [formatter stringFromDate:[NSDate date]]]];
 }
 
 + (id)URLForUniversityCalendarStart:(NSDate *)start end:(NSDate *)end
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"ddMMyyyy"];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
     return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"UniversityCalendar"], [formatter stringFromDate:start], [formatter stringFromDate:end]]];
+//        return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"UniversityCalendar"], [formatter stringFromDate:start]]];
 }
 
 @end

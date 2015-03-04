@@ -13,7 +13,6 @@
 
 @dynamic id;
 @dynamic name;
-@dynamic link;
 @dynamic group;
 @dynamic enabled;
 
