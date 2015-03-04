@@ -88,7 +88,7 @@
     } else {
         session = [NSURLSession sharedSession];
     }
-    NSLog(@"%@", [self.request URL]);
+ //   NSLog(@"%@", [self.request URL]);
     NSURLSessionDataTask *task = [session dataTaskWithRequest:self.request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
         dispatch_sync(dispatch_get_main_queue(), ^{
@@ -98,7 +98,7 @@
         // FIXME: traiter si data est vide ou s'il y a erreur
         if (!data || [data length] == 0 || error) return;
         
-        NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
+  //      NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
 
         NSError *jsonError = nil;
         NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
