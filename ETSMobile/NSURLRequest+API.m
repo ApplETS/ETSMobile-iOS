@@ -10,7 +10,14 @@
 #import "NSURL+API.h"
 #import "ETSAuthenticationViewController.h"
 #import "NSMutableURLRequest+BasicAuth.h"
+#if defined(__has_include)
+#if __has_include("EnvConst.h")
 #import "EnvConst.h"
+#else
+#define kApplETSUsername @""
+#define kApplETSPassword @""
+#endif
+#endif
 
 #warning "Authentification au serveur requise"
 
