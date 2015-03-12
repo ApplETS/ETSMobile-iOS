@@ -10,9 +10,8 @@
 #import "NSURL+API.h"
 #import "ETSAuthenticationViewController.h"
 #import "NSMutableURLRequest+BasicAuth.h"
+// Ce fichier est disponible sous le Wiki du club. http://wiki.clubapplets.ca:8090/display/ETSM/Configuration+iOS
 #import "EnvConst.h"
-
-#warning "Authentification au serveur requise"
 
 @implementation NSURLRequest (API)
 
