@@ -154,6 +154,7 @@
 		1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsSource.m; sourceTree = "<group>"; };
 		2600DB06190767000039039A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2601088D181596820037E795 /* ETSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCollectionViewController.h; sourceTree = "<group>"; };
+		2604443B1AB13AF7009EE644 /* EnvConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnvConst.h; sourceTree = "<group>"; };
 		26085B3C1829D84300FE35AB /* ETSAPIURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPIURL.plist; sourceTree = "<group>"; };
 		26085B3E1829D8D700FE35AB /* NSURL+API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+API.h"; sourceTree = "<group>"; };
 		26085B3F1829D8D700FE35AB /* NSURL+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+API.m"; sourceTree = "<group>"; };
@@ -331,7 +332,6 @@
 		26F46A98183ED03400232B5A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		26F46A9A183ED0E200232B5A /* ETSRadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRadioViewController.h; sourceTree = "<group>"; };
 		26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRadioViewController.m; sourceTree = "<group>"; };
-		735759871AA79C7300C7E5B5 /* EnvConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnvConst.h; sourceTree = "<group>"; };
 		9C5799CF18EC7F2D00AD8838 /* ETSSecurityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityDetailViewController.h; sourceTree = "<group>"; };
 		9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSecurityDetailViewController.m; sourceTree = "<group>"; };
 		9CC88722189ECF43002A3D04 /* ETSSecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityViewController.h; sourceTree = "<group>"; };
@@ -743,7 +743,7 @@
 				26DD92CA17EA610D00469FA8 /* Images.xcassets */,
 				26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */,
 				26DD92B017EA610D00469FA8 /* Supporting Files */,
-				735759871AA79C7300C7E5B5 /* EnvConst.h */,
+				2604443B1AB13AF7009EE644 /* EnvConst.h */,
 			);
 			path = ETSMobile;
 			sourceTree = "<group>";

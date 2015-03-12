@@ -12,14 +12,13 @@
 #import "NSMutableURLRequest+BasicAuth.h"
 #if defined(__has_include)
 #if __has_include("EnvConst.h")
+// Ce fichier est disponible sous le Wiki du club. http://wiki.clubapplets.ca:8090/display/ETSM/Configuration+iOS
 #import "EnvConst.h"
 #else
 #define kApplETSUsername @""
 #define kApplETSPassword @""
 #endif
 #endif
-
-#warning "Authentification au serveur requise"
 
 @implementation NSURLRequest (API)
 

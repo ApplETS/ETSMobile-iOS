@@ -116,7 +116,7 @@
     NSMutableArray *news = [NSMutableArray array];
     
     NSDateFormatter *ymdFormatter = [NSDateFormatter new];
-    [ymdFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
+    [ymdFormatter setDateFormat:@"yyyy'-'MM'-'dd"];
     
     NSArray *keys = [((NSDictionary *)objects) allKeys];
     
