@@ -84,8 +84,8 @@
 		26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */; };
 		26C97886183AD1DE005D66EF /* ETSContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C97885183AD1DE005D66EF /* ETSContact.m */; };
 		26D161001A1E4A5C004A53B1 /* SplunkMint-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269B46D61A1121090052E4B7 /* SplunkMint-iOS.framework */; };
-		26D161031A1E4C94004A53B1 /* SplunkMint-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D161021A1E4C94004A53B1 /* SplunkMint-iOS.framework */; };
 		26D44BA518E49BEF0006F9F0 /* ETSBandwidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D44BA418E49BEF0006F9F0 /* ETSBandwidth.m */; };
+		26D6A71B1AB3A005003FA21D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D6A71A1AB3A005003FA21D /* LaunchScreen.xib */; };
 		26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A717EA610D00469FA8 /* Foundation.framework */; };
 		26DD92AA17EA610D00469FA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A917EA610D00469FA8 /* CoreGraphics.framework */; };
 		26DD92AC17EA610D00469FA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AB17EA610D00469FA8 /* UIKit.framework */; };
@@ -284,6 +284,7 @@
 		26D161021A1E4C94004A53B1 /* SplunkMint-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "SplunkMint-iOS.framework"; sourceTree = "<group>"; };
 		26D44BA318E49BEF0006F9F0 /* ETSBandwidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidth.h; sourceTree = "<group>"; };
 		26D44BA418E49BEF0006F9F0 /* ETSBandwidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidth.m; sourceTree = "<group>"; };
+		26D6A71A1AB3A005003FA21D /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = ../LaunchScreen.xib; sourceTree = "<group>"; };
 		26DD92A417EA610D00469FA8 /* ETSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26DD92A717EA610D00469FA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26DD92A917EA610D00469FA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -362,7 +363,6 @@
 				26DD92AE17EA610D00469FA8 /* CoreData.framework in Frameworks */,
 				26DD92AC17EA610D00469FA8 /* UIKit.framework in Frameworks */,
 				26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */,
-				26D161031A1E4C94004A53B1 /* SplunkMint-iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,6 +740,7 @@
 				26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */,
 				26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */,
 				26BB372B18F59580002CE5DD /* Main_iPad.storyboard */,
+				26D6A71A1AB3A005003FA21D /* LaunchScreen.xib */,
 				26DD92CA17EA610D00469FA8 /* Images.xcassets */,
 				26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */,
 				26DD92B017EA610D00469FA8 /* Supporting Files */,
@@ -1047,6 +1048,7 @@
 				26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */,
 				26DD92CB17EA610D00469FA8 /* Images.xcassets in Resources */,
 				266F0B7118F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf in Resources */,
+				26D6A71B1AB3A005003FA21D /* LaunchScreen.xib in Resources */,
 				266F0B7318F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */,
 				26DD92BD17EA610D00469FA8 /* Main_iPhone.storyboard in Resources */,
 				264E86CA1884E7E7005F1820 /* NewsSources.plist in Resources */,
