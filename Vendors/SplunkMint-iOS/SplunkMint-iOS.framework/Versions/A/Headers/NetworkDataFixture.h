@@ -35,5 +35,6 @@
 - (void) appendWithError:(NSError*)error;
 - (void) appendGlobalExtraData;
 - (void) debugPrint;
+- (void) saveToDisk;
 
 @end

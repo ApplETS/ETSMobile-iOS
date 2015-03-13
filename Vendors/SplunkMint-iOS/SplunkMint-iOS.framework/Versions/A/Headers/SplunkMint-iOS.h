@@ -59,6 +59,7 @@
 #import <SplunkMint-iOS/TrStart.h>
 #import <SplunkMint-iOS/TrStop.h>
 #import <SplunkMint-iOS/UnhandledCrashReportArgs.h>
+#import <SplunkMint-iOS/XamarinHelper.h>
 
 #import <SplunkMint-iOS/SPLJSONValueTransformer.h>
 #import <SplunkMint-iOS/SPLJSONKeyMapper.h>

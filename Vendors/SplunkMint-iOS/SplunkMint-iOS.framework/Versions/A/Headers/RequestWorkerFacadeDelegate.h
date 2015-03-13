@@ -18,6 +18,7 @@
 #import "RequestJsonSerializerDelegate.h"
 #import "ContentTypeDelegate.h"
 #import "RequestWorkerDelegate.h"
+#import "ExceptionDataFixture.h"
 
 @protocol RequestWorkerFacadeDelegate <NSObject>
 
@@ -50,9 +51,10 @@
     - (void) sendExceptionAsync: (NSException*)exception limitedExtraDataList: (LimitedExtraDataList*)extraDataList completionBlock: (ResponseResultBlock)completed;
     - (void) logExceptionAsync: (NSException*)exception extraDataKey: (NSString*)key extraDataValue: (NSString*)value completionBlock: (LogResultBlock)completed;
     - (void) logExceptionAsync: (NSException*)exception limitedExtraDataList: (LimitedExtraDataList*)extraDataList completionBlock: (LogResultBlock)completed;
-    - (MintLogResult*) logException: (NSException*)exception extraDataKey: (NSString*)key extraDataValue: (NSString*)value;
-    - (MintLogResult*) logException: (NSException*)exception limitedExtraDataList: (LimitedExtraDataList*)extraDataList;
+    - (void) xamarinLogExceptionAsync:(NSException*)exception andCompletionBlock:(LogResultBlock)completed;
+    - (MintLogResult*) xamarinLogException:(NSException*)exception;
+    - (ExceptionDataFixture*) exceptionFixtureFrom:(NSException*)exception;
     - (void) logEventAsyncWithName:(NSString *)name logLevel:(MintLogLevel)logLevel andCompletionBlock:(LogResultBlock)completed;
-    - (void) logSplunkMintLogWithMessage:(NSString*)message andLogLevel:(MintLogLevel)logLevel;
+    - (void) logSplunkMintLogWithMessage:(NSString *)message logLevel:(MintLogLevel)logLevel andCompletionBlock: (LogResultBlock)completionBlock;
 
 @end
