@@ -253,32 +253,32 @@
         return nil;
     }
     
-    NSArray *days = (tables[0])[@"tr"];
+    NSArray *days = (tables[0])[@"tbody"][@"tr"];
 
     NSInteger i = 0;
     for (NSDictionary * day in days) {
         if (i++ == 0) continue;
         if ([day[@"td"] count] != 4) continue;
         
-        NSString *date = day[@"td"][1][@"p"];
+        NSString *date = day[@"td"][1];
         if ([date isEqualToString:@"Journée en cours"]) date = [self.dateFormatter stringFromDate:[NSDate date]];
         
         NSMutableDictionary *entry = [NSMutableDictionary dictionary];
         NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[self.dateFormatter dateFromString:date]];
         
-        entry[@"port"] = day[@"td"][0][@"p"];
+        entry[@"port"] = day[@"td"][0];
         entry[@"date"] = date;
-        entry[@"upload"] = day[@"td"][2][@"p"];
-        entry[@"download"] = day[@"td"][3][@"p"];
+        entry[@"upload"] = day[@"td"][2][@"content"];
+        entry[@"download"] = day[@"td"][3][@"content"];
         entry[@"month"] = [@([components month]) stringValue];
-        entry[@"id"] = [NSString stringWithFormat:@"%@-%@", day[@"td"][0][@"p"], date];
+        entry[@"id"] = [NSString stringWithFormat:@"%@-%@", day[@"td"][0], date];
         [entries addObject:entry];
     }
     
     NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
     f.decimalSeparator = @".";
-    self.usedBandwidth = [f numberFromString:[days lastObject][@"td"][1][@"p"]];
-    self.limitBandwidth = [f numberFromString:tables[1][@"tr"][1][@"td"][1][@"p"]];
+    self.usedBandwidth = [f numberFromString:[days lastObject][@"td"][1][@"content"]];
+    self.limitBandwidth = [f numberFromString:tables[1][@"tbody"][@"tr"][1][@"td"][1][@"content"]];
 
     NSNumber *used = @([self.usedBandwidth floatValue]/1024);
     NSNumber *limit = @([self.limitBandwidth floatValue]/1024);
