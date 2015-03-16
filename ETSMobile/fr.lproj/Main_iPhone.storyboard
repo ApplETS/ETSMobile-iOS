@@ -1069,7 +1069,23 @@
                                             </fragment>
                                             <fragment>
                                                 <string key="content">
-Jean-Philippe Martin
+Jean-Philippe Martin</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
+Maxime Mongeau</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content">
 Maxime Lapointe
 Annie Caron
 
@@ -1109,9 +1125,38 @@ Philippe Cloutier
                                                 </attributes>
                                             </fragment>
                                             <fragment>
-                                                <string key="content">
-Laurence de Villers (capitaine)
-Marc-Antoine Hinse (trésorier)
+                                                <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Thibaut Tauveron">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content"> (capitaine)
+</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Philippe Cloutier">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content"> (trésorier)
 
 </string>
                                                 <attributes>
@@ -1164,7 +1209,7 @@ GTMNSString+HTML</string>
                                             <fragment>
                                                 <string key="content">
 
-http://applets.etsmtl.ca</string>
+http://www.clubapplets.ca</string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <font key="NSOriginalFont" size="17" name="HelveticaNeue-Light"/>
