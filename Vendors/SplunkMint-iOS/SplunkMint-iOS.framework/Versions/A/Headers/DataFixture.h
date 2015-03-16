@@ -110,4 +110,9 @@
  */
 @property (nonatomic, strong) NSMutableDictionary<SPLOptional>* extraData;
 
+/**
+ *  The screen orientation
+ */
+@property (nonatomic, strong) NSString* screenOrientation;
+
 @end

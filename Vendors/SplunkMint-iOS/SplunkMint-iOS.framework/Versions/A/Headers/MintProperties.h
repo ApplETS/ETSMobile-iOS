@@ -67,5 +67,7 @@ extern BOOL IsSplunkPlugin;
 @property (nonatomic, assign) BOOL enableLogging;
 @property (nonatomic, strong) NSNumber* loggingLines;
 @property (nonatomic, assign) BOOL isCrashReportingEnabled;
+@property (nonatomic, strong) NSString* xamarinArchitecture;
+@property (nonatomic, strong) NSString* xamarinVersion;
 
 @end

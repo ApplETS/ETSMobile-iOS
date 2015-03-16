@@ -13,7 +13,6 @@
 @interface ETSNews : NSManagedObject
 
 @property (nonatomic, retain) NSString * content;
-@property (nonatomic, retain) NSString * contentStripped;
 @property (nonatomic, retain) NSString * id;
 @property (nonatomic, retain) NSDate * updatedDate;
 @property (nonatomic, retain) NSString * ymdDate;

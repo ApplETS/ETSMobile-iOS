@@ -13,6 +13,7 @@
 		1D29A464188DB9E500CF02EB /* ETSCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29A463188DB9E500CF02EB /* ETSCommentCell.m */; };
 		1D33BA24188F064600A5F1C8 /* ETSRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA23188F064600A5F1C8 /* ETSRateCell.m */; };
 		1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D33BA26188F065600A5F1C8 /* ETSTextCell.m */; };
+		1D7F20161A71738200527ACB /* NSMutableURLRequest+BasicAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F20151A71738200527ACB /* NSMutableURLRequest+BasicAuth.m */; };
 		1D8B140E19A7B1E80033CBA7 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8B140D19A7B1E80033CBA7 /* GTMNSString+HTML.m */; };
 		1DBF6C6919A507EA00761C44 /* ETSNewsSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */; };
 		2600DB07190767000039039A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2600DB06190767000039039A /* MobileCoreServices.framework */; };
@@ -83,8 +84,8 @@
 		26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */; };
 		26C97886183AD1DE005D66EF /* ETSContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C97885183AD1DE005D66EF /* ETSContact.m */; };
 		26D161001A1E4A5C004A53B1 /* SplunkMint-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269B46D61A1121090052E4B7 /* SplunkMint-iOS.framework */; };
-		26D161031A1E4C94004A53B1 /* SplunkMint-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D161021A1E4C94004A53B1 /* SplunkMint-iOS.framework */; };
 		26D44BA518E49BEF0006F9F0 /* ETSBandwidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D44BA418E49BEF0006F9F0 /* ETSBandwidth.m */; };
+		26D6A71B1AB3A005003FA21D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D6A71A1AB3A005003FA21D /* LaunchScreen.xib */; };
 		26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A717EA610D00469FA8 /* Foundation.framework */; };
 		26DD92AA17EA610D00469FA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A917EA610D00469FA8 /* CoreGraphics.framework */; };
 		26DD92AC17EA610D00469FA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92AB17EA610D00469FA8 /* UIKit.framework */; };
@@ -145,12 +146,15 @@
 		1D33BA23188F064600A5F1C8 /* ETSRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRateCell.m; sourceTree = "<group>"; };
 		1D33BA25188F065600A5F1C8 /* ETSTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSTextCell.h; sourceTree = "<group>"; };
 		1D33BA26188F065600A5F1C8 /* ETSTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSTextCell.m; sourceTree = "<group>"; };
+		1D7F20141A71738200527ACB /* NSMutableURLRequest+BasicAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+BasicAuth.h"; sourceTree = "<group>"; };
+		1D7F20151A71738200527ACB /* NSMutableURLRequest+BasicAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+BasicAuth.m"; sourceTree = "<group>"; };
 		1D8B140C19A7B1E80033CBA7 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GTMNSString+HTML.h"; path = "Vendors/GTMNSString+HTML/GTMNSString+HTML.h"; sourceTree = "<group>"; };
 		1D8B140D19A7B1E80033CBA7 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GTMNSString+HTML.m"; path = "Vendors/GTMNSString+HTML/GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		1DBF6C6719A507EA00761C44 /* ETSNewsSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsSource.h; sourceTree = "<group>"; };
 		1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsSource.m; sourceTree = "<group>"; };
 		2600DB06190767000039039A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2601088D181596820037E795 /* ETSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCollectionViewController.h; sourceTree = "<group>"; };
+		2604443B1AB13AF7009EE644 /* EnvConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnvConst.h; sourceTree = "<group>"; };
 		26085B3C1829D84300FE35AB /* ETSAPIURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPIURL.plist; sourceTree = "<group>"; };
 		26085B3E1829D8D700FE35AB /* NSURL+API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+API.h"; sourceTree = "<group>"; };
 		26085B3F1829D8D700FE35AB /* NSURL+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+API.m"; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 		26D161021A1E4C94004A53B1 /* SplunkMint-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "SplunkMint-iOS.framework"; sourceTree = "<group>"; };
 		26D44BA318E49BEF0006F9F0 /* ETSBandwidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidth.h; sourceTree = "<group>"; };
 		26D44BA418E49BEF0006F9F0 /* ETSBandwidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidth.m; sourceTree = "<group>"; };
+		26D6A71A1AB3A005003FA21D /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		26DD92A417EA610D00469FA8 /* ETSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26DD92A717EA610D00469FA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26DD92A917EA610D00469FA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -358,7 +363,6 @@
 				26DD92AE17EA610D00469FA8 /* CoreData.framework in Frameworks */,
 				26DD92AC17EA610D00469FA8 /* UIKit.framework in Frameworks */,
 				26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */,
-				26D161031A1E4C94004A53B1 /* SplunkMint-iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,6 +645,8 @@
 		26AE186317F32CA400DB1EB4 /* Categories & Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1D7F20141A71738200527ACB /* NSMutableURLRequest+BasicAuth.h */,
+				1D7F20151A71738200527ACB /* NSMutableURLRequest+BasicAuth.m */,
 				26DEB89418EC985600161421 /* NSDate+Day.h */,
 				26DEB89518EC985600161421 /* NSDate+Day.m */,
 				269BFF541811A41C005D2950 /* NSManagedObject+SetValues.h */,
@@ -734,9 +740,11 @@
 				26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */,
 				26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */,
 				26BB372B18F59580002CE5DD /* Main_iPad.storyboard */,
+				26D6A71A1AB3A005003FA21D /* LaunchScreen.xib */,
 				26DD92CA17EA610D00469FA8 /* Images.xcassets */,
 				26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */,
 				26DD92B017EA610D00469FA8 /* Supporting Files */,
+				2604443B1AB13AF7009EE644 /* EnvConst.h */,
 			);
 			path = ETSMobile;
 			sourceTree = "<group>";
@@ -1040,6 +1048,7 @@
 				26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */,
 				26DD92CB17EA610D00469FA8 /* Images.xcassets in Resources */,
 				266F0B7118F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf in Resources */,
+				26D6A71B1AB3A005003FA21D /* LaunchScreen.xib in Resources */,
 				266F0B7318F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */,
 				26DD92BD17EA610D00469FA8 /* Main_iPhone.storyboard in Resources */,
 				264E86CA1884E7E7005F1820 /* NewsSources.plist in Resources */,
@@ -1077,6 +1086,7 @@
 				26D44BA518E49BEF0006F9F0 /* ETSBandwidth.m in Sources */,
 				26887B7B18F1D36600009EBA /* ETSSponsorsViewController.m in Sources */,
 				26DEB88918EC97EC00161421 /* MSCurrentTimeGridline.m in Sources */,
+				1D7F20161A71738200527ACB /* NSMutableURLRequest+BasicAuth.m in Sources */,
 				2633EFDD19085419009BC485 /* ETSUniversityCalendarViewController.m in Sources */,
 				26DEB89018EC97EC00161421 /* MSTimeRowHeaderBackground.m in Sources */,
 				26887B7718F1BA5800009EBA /* ETSAboutViewController.m in Sources */,

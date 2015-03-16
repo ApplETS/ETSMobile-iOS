@@ -24,13 +24,14 @@ NSString * const ETSUniversityCalendarSource = @"ets";
     [super viewDidLoad];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
 
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForUniversityCalendarStart:self.start end:self.end];
     synchronization.entityName = @"Event";
     synchronization.compareKey = @"id";
-    synchronization.objectsKeyPath = @"ets";
+    synchronization.objectsKeyPath = @"data.ets";
+    synchronization.appletsServer = YES;
     synchronization.predicate = [NSPredicate predicateWithFormat:@"source ==[c] %@", ETSUniversityCalendarSource];
     synchronization.dateFormatter = dateFormatter;
     self.synchronization = synchronization;
@@ -52,7 +53,7 @@ NSString * const ETSUniversityCalendarSource = @"ets";
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Event"];
 	fetchRequest.fetchBatchSize = 10;
 	fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"start" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"end" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"source ==[c] %@", ETSUniversityCalendarSource];
+    fetchRequest.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[[NSPredicate predicateWithFormat:@"source ==[c] %@", ETSUniversityCalendarSource], [NSPredicate predicateWithFormat:@"start >= %@", self.start]]];
     
 	NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
 	self.fetchedResultsController = aFetchedResultsController;

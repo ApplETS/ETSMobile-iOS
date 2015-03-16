@@ -82,6 +82,13 @@
 - (void) addURLToBlackList:(NSString*)url;
 
 /**
+ *  The URLs blacklisted from network interception.
+ *
+ *  @return NSMutableArray of NSString
+ */
+- (NSMutableArray*) blacklistUrls;
+
+/**
  *  Logs an event with a log level, sends the log entry to the console window, and caches a request to send to the server.
  *
  *  @param name      The name of the event (up to 256 characters).
@@ -89,5 +96,30 @@
  *  @param completed The block to invoke with additional information when complete.
  */
 - (void) logEventAsyncWithName:(NSString*)name logLevel:(MintLogLevel)logLevel andCompletionBlock:(LogResultBlock)completed;
+
+/**
+ *  Helper Xamarin method for logging exceptions as unhandled.
+ *
+ *  @param exception The NSException thrown.
+ *
+ */
+- (void) xamarinLogException:(NSException*)exception andCompletionBlock:(LogResultBlock)completed;
+
+/**
+ *  Helper Xamarin method for logging exceptions as unhandled.
+ *
+ *  @param exception The NSException thrown.
+ *
+ */
+- (MintLogResult*) xamarinLogException:(NSException*)exception;
+
+/**
+ *  Get an ExceptionDataFixture from a NSException
+ *
+ *  @param exception The NSException
+ *
+ *  @return The ExceptionDataFixture JSON string model.
+ */
+- (NSString*) exceptionFixtureFrom:(NSException*)exception;
 
 @end

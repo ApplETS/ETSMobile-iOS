@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ETSCommentViewController : UITableViewController
+@interface ETSCommentViewController : UITableViewController <NSURLSessionDataDelegate>
 
 @end

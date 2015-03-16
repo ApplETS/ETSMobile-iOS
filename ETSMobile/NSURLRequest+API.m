@@ -9,6 +9,16 @@
 #import "NSURLRequest+API.h"
 #import "NSURL+API.h"
 #import "ETSAuthenticationViewController.h"
+#import "NSMutableURLRequest+BasicAuth.h"
+#if defined(__has_include)
+#if __has_include("EnvConst.h")
+// Ce fichier est disponible sous le Wiki du club. http://wiki.clubapplets.ca:8090/display/ETSM/Configuration+iOS
+#import "EnvConst.h"
+#else
+#define kApplETSUsername @""
+#define kApplETSPassword @""
+#endif
+#endif
 
 @implementation NSURLRequest (API)
 
@@ -129,20 +139,20 @@
 
 + (id)requestForNewsWithSources:(NSArray *)sources
 {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForNewsWithSources:sources]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    [request setHTTPMethod: @"GET"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"UTF-8" forHTTPHeaderField:@"Accept-Charset"];
-    [request setCachePolicy:NSURLRequestReloadIgnoringCacheData];
-    
+    [request basicAuthForRequestWithUsername:kApplETSUsername password:kApplETSPassword];
+    request.URL = [NSURL URLForNewsWithSources:sources];
+
     return request;
 }
 
 + (id)requestForCommentWithName:(NSString *)name email:(NSString *)email title:(NSString *)title rating:(NSString *)rating comment:(NSString *)comment
 {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForComment]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request basicAuthForRequestWithUsername:kApplETSUsername password:kApplETSPassword];
+    request.URL = [NSURL URLForComment];
 
     [request setHTTPMethod:@"POST"];
     NSString *parameters = [NSString stringWithFormat:@"sender_name=%@&sender_mail=%@&message=%@&subject=%@&rating=%@", name, email, comment, title, rating];
@@ -153,12 +163,20 @@
 
 + (id)requestForRadio
 {
-    return [[NSURLRequest alloc] initWithURL:[NSURL URLForRadio]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request basicAuthForRequestWithUsername:kApplETSUsername password:kApplETSPassword];
+    request.URL = [NSURL URLForRadio];
+    return request;
 }
 
 + (id)requestForUniversityCalendarStart:(NSDate *)start end:(NSDate *)end
 {
-    return [[NSURLRequest alloc] initWithURL:[NSURL URLForUniversityCalendarStart:start end:end]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request basicAuthForRequestWithUsername:kApplETSUsername password:kApplETSPassword];
+    request.URL = [NSURL URLForUniversityCalendarStart:start end:end];
+    return request;
 }
 
 + (id)requestForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase
@@ -170,7 +188,6 @@
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"UTF-8" forHTTPHeaderField:@"Accept-Charset"];
     [request setCachePolicy: NSURLRequestReloadIgnoringCacheData];
-
     return request;
 }
 

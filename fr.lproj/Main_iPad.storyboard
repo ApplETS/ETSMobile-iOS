@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="7DH-VJ-xqe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="7DH-VJ-xqe">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--Horaire-->
@@ -1245,6 +1246,7 @@
                                             <fragment>
                                                 <string key="content">
 Jean-Philippe Martin
+Maxime Mongeau
 Maxime Lapointe
 Annie Caron
 
@@ -1285,8 +1287,8 @@ Philippe Cloutier
                                             </fragment>
                                             <fragment>
                                                 <string key="content">
-Laurence de Villers (capitaine)
-Marc-Antoine Hinse (trésorier)
+Thibaut Tauveron (capitaine)
+Philippe Cloutier (trésorier)
 
 </string>
                                                 <attributes>
@@ -1333,7 +1335,7 @@ MSDynamicsDrawerViewController
 AMScrollingNavbar
 GTMNSString+HTML
 
-http://applets.etsmtl.ca</string>
+http://www.clubapplets.ca</string>
                                                 <attributes>
                                                     <font key="NSFont" size="17" name="HelveticaNeue-Light"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>

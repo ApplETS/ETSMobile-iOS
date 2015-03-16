@@ -39,6 +39,7 @@
         self.saveAutomatically = YES;
         self.managedObjectContext = nil;
         self.ignoredAttributes = nil;
+        self.appletsServer = NO;
     }
     return self;
 }
@@ -64,6 +65,15 @@
     }
 }
 
+- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler{
+    if([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]){
+        if([challenge.protectionSpace.host isEqualToString:@"api.clubapplets.ca"]){
+            NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+            completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
+        }
+    }
+}
+
 - (BOOL)synchronize:(NSError * __autoreleasing *)error
 {
     if (!self.request) return NO;
@@ -71,7 +81,15 @@
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     __weak typeof(self) bself = self;
     
-    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:self.request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    NSURLSession *session = nil;
+    if (self.appletsServer) {
+        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        session = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:self delegateQueue:Nil];
+    } else {
+        session = [NSURLSession sharedSession];
+    }
+ //   NSLog(@"%@", [self.request URL]);
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:self.request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
         dispatch_sync(dispatch_get_main_queue(), ^{
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
@@ -80,7 +98,7 @@
         // FIXME: traiter si data est vide ou s'il y a erreur
         if (!data || [data length] == 0 || error) return;
         
-        //NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
+  //      NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
 
         NSError *jsonError = nil;
         NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
@@ -121,7 +139,7 @@
         __block id json = jsonObjects;
         if (bself.objectsKeyPath && [bself.objectsKeyPath length] > 0) json = [jsonObjects valueForKeyPath:bself.objectsKeyPath];
         
-        if ([bself.delegate respondsToSelector:@selector(synchronization:updateJSONObjects:)]) {
+        if (json != (id)[NSNull null] && [bself.delegate respondsToSelector:@selector(synchronization:updateJSONObjects:)]) {
             dispatch_sync(dispatch_get_main_queue(), ^{
                 json = [bself.delegate synchronization:bself updateJSONObjects:json];
             });
