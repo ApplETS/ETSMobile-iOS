@@ -14,6 +14,7 @@
 #import "ETSNews.h"
 #import "NSString+HTML.h"
 #import "GTMNSString+HTML.h"
+#import "UIImageView+WebCache.h"
 
 @implementation ETSNewsViewController
 
@@ -205,19 +206,7 @@
         ((ETSNewsCell *)cell).authorLabel.text = news.author;
         ((ETSNewsCell *)cell).thumbnailView.image = nil;
         
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:news.thumbnailURL] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10];
-        NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-                          {
-                              if (data) {
-                                  UIImage *image = [UIImage imageWithData:data];
-                                  if (image && image.size.height > 0 && image.size.width > 0) {
-                                      dispatch_sync(dispatch_get_main_queue(), ^{
-                                          ((ETSNewsCell *)cell).thumbnailView.image = [UIImage imageWithData:data];
-                                      });
-                                  }
-                              }
-                          }];
-        [task resume];
+        [((ETSNewsCell *)cell).thumbnailView sd_setImageWithURL:[NSURL URLWithString:news.thumbnailURL]];
         
         ((ETSNewsCell *)cell).thumbnailView.clipsToBounds = YES;
     } else if ([cell isKindOfClass:[ETSNewsEmptyCell class]]) {
