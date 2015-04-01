@@ -214,7 +214,13 @@
         ((ETSNewsCell *)cell).contentLabel.text = news.title;
         ((ETSNewsCell *)cell).authorLabel.text = news.author;
         ((ETSNewsCell *)cell).thumbnailView.image = nil;
+<<<<<<< HEAD
         [((ETSNewsCell *)cell).thumbnailView sd_setImageWithURL:[NSURL URLWithString:news.thumbnailURL]];
+=======
+        
+        [((ETSNewsCell *)cell).thumbnailView sd_setImageWithURL:[NSURL URLWithString:news.thumbnailURL]];
+        
+>>>>>>> Utilisation de la cache pour les images des actualités.
         ((ETSNewsCell *)cell).thumbnailView.clipsToBounds = YES;
     } else if ([cell isKindOfClass:[ETSNewsEmptyCell class]]) {
         ((ETSNewsEmptyCell *)cell).contentLabel.text = news.content;
