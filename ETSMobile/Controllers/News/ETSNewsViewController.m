@@ -202,15 +202,16 @@
     ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     if ([cell isKindOfClass:[ETSNewsCell class]]) {
-        ((ETSNewsCell *)cell).contentLabel.text = news.title;
+        ((ETSNewsCell *)cell).contentTextView.text = news.content;
+        ((ETSNewsCell *)cell).contentTextView.textColor = [UIColor blackColor];
+        ((ETSNewsCell *)cell).contentTextView.textContainer.exclusionPaths = @[[UIBezierPath bezierPathWithRect:((ETSNewsCell *)cell).thumbnailView.bounds]];
         ((ETSNewsCell *)cell).authorLabel.text = news.author;
         ((ETSNewsCell *)cell).thumbnailView.image = nil;
-        
         [((ETSNewsCell *)cell).thumbnailView sd_setImageWithURL:[NSURL URLWithString:news.thumbnailURL]];
-        
-        ((ETSNewsCell *)cell).thumbnailView.clipsToBounds = YES;
+                ((ETSNewsCell *)cell).thumbnailView.clipsToBounds = YES;
     } else if ([cell isKindOfClass:[ETSNewsEmptyCell class]]) {
-        ((ETSNewsEmptyCell *)cell).contentLabel.text = news.content;
+        ((ETSNewsEmptyCell *)cell).contentTextView.text = news.content;
+        ((ETSNewsCell *)cell).contentTextView.textColor = [UIColor blackColor];
         ((ETSNewsEmptyCell *)cell).authorLabel.text = news.author;
     }
     

@@ -10,6 +10,6 @@
 
 @interface ETSNewsCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnailView;
-@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @end
