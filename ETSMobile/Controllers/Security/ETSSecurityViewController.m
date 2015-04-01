@@ -60,15 +60,15 @@ NSString * const kProcedureFile = @"File";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue destinationViewController] isKindOfClass:[ETSSecurityDetailViewController class]]) {
-        ETSSecurityDetailViewController *viewController = [segue destinationViewController];
+
+        ETSSecurityDetailViewController *viewController = (ETSSecurityDetailViewController *)[[segue destinationViewController] topViewController];
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDictionary *procedure = self.procedures[indexPath.row];
         viewController.summary = procedure[kProcedureSummary];
         viewController.title = procedure[kProcedureTitle];
         viewController.file = procedure[kProcedureFile];
-    }
+    
 }
 
 #pragma mark - Table view data source
