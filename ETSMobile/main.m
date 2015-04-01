@@ -2,17 +2,15 @@
 //  main.m
 //  ETSMobile
 //
-//  Created by Jean-Philippe Martin on 2013-09-18.
-//  Copyright (c) 2013 ApplETS. All rights reserved.
+//  Created by Jean-Philippe Martin on 2015-03-16.
+//  Copyright (c) 2015 ApplETS. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
-#import "ETSAppDelegate.h"
-
-int main(int argc, char * argv[])
-{
+int main(int argc, char * argv[]) {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([ETSAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
