@@ -976,19 +976,68 @@ http://www.clubapplets.ca</string>
             <point key="canvasLocation" x="-1489" y="-1531"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="XrO-xk-bTg">
+        <scene sceneID="MC6-Cb-NcY">
             <objects>
-                <navigationController storyboardIdentifier="DirectoryViewController" definesPresentationContext="YES" id="nva-Jb-gDM" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dTf-cy-leg">
+                <navigationController id="4HO-wx-uu4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b9n-9m-p2o">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="IGY-yU-Oxq" kind="relationship" relationship="rootViewController" id="xFE-nq-nWs"/>
+                        <segue destination="UgM-Wa-ACa" kind="relationship" relationship="rootViewController" id="YOd-Zv-HgJ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eZC-jf-HCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bee-oY-297" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1489" y="-3091"/>
+            <point key="canvasLocation" x="-1455" y="-3669"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7px-S2-qOB">
+            <objects>
+                <viewController id="UgM-Wa-ACa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jVp-LT-gsT"/>
+                        <viewControllerLayoutGuide type="bottom" id="zCh-wc-6UW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ten-Bm-ZwC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kRb-M5-3Jk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="teH-ud-FyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-736" y="-3669"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fWN-xD-pC6">
+            <objects>
+                <navigationController id="jib-T0-Kqz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="avP-V2-LRb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IGY-yU-Oxq" kind="relationship" relationship="rootViewController" id="emm-VN-Hfc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SbZ-de-2uY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1469" y="-4439"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="Kg6-OA-4hE">
+            <objects>
+                <splitViewController storyboardIdentifier="DirectoryViewController" id="AHc-El-Oky" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="jib-T0-Kqz" kind="relationship" relationship="masterViewController" id="EJs-nA-fW8"/>
+                        <segue destination="4HO-wx-uu4" kind="relationship" relationship="detailViewController" id="7AD-97-YvP"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vp9-cq-ryw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2285" y="-4111"/>
         </scene>
         <!--Bottin-->
         <scene sceneID="z0z-CB-qpy">
@@ -1022,6 +1071,9 @@ http://www.clubapplets.ca</string>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="4HO-wx-uu4" kind="showDetail" id="aLx-hw-zzG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1045,7 +1097,7 @@ http://www.clubapplets.ca</string>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-720" y="-3091"/>
+            <point key="canvasLocation" x="-736" y="-4439"/>
         </scene>
         <!--Actualités-->
         <scene sceneID="2yK-zO-cQU">
@@ -2185,6 +2237,7 @@ http://www.clubapplets.ca</string>
         <image name="menu-icon" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="aLx-hw-zzG"/>
         <segue reference="nOM-IS-xlO"/>
         <segue reference="iQl-a7-9O4"/>
         <segue reference="lOy-zL-CqT"/>

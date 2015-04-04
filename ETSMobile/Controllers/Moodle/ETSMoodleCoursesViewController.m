@@ -271,12 +271,15 @@ NSString * const kUnknownSession = @"000000";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.destinationViewController isKindOfClass:[ETSMoodleCourseDetailViewController class]]) {
+    if ([segue.destinationViewController isKindOfClass:[UINavigationController class]] && [((UINavigationController *) segue.destinationViewController).topViewController isKindOfClass:[ETSMoodleCourseDetailViewController class]]) {
+
+        ETSMoodleCourseDetailViewController *detailsViewController = (ETSMoodleCourseDetailViewController *)((UINavigationController *) segue.destinationViewController).topViewController;
+        
         ETSMoodleCourse *course = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
-        ((ETSMoodleCourseDetailViewController *)segue.destinationViewController).token = self.token;
-        ((ETSMoodleCourseDetailViewController *)segue.destinationViewController).course = course;
-        ((ETSMoodleCourseDetailViewController *)segue.destinationViewController).title = course.acronym;
-        ((ETSMoodleCourseDetailViewController *)segue.destinationViewController).managedObjectContext = self.managedObjectContext;
+        detailsViewController.token = self.token;
+        detailsViewController.course = course;
+        detailsViewController.title = course.acronym;
+        detailsViewController.managedObjectContext = self.managedObjectContext;
     }
 }
 
@@ -288,6 +291,14 @@ NSString * const kUnknownSession = @"000000";
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller;
 {
     [self requestTokenAndUserID];
+}
+
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController
+{
+    
+    return ([secondaryViewController isKindOfClass:[UINavigationController class]]
+            && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[ETSMoodleCourseDetailViewController class]]
+            && ([(ETSMoodleCourseDetailViewController *)[(UINavigationController *)secondaryViewController topViewController] course] == nil));
 }
 
 @end

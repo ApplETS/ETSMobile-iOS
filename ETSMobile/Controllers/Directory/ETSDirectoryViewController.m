@@ -209,6 +209,48 @@
     return [sectionInfo name];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+
+    ETSContact *contact = [self.fetchedResultsController objectAtIndexPath:self.tableView.indexPathForSelectedRow];
+
+    UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+    ABUnknownPersonViewController *personController = [ABUnknownPersonViewController new];
+    
+    ABRecordRef person = ABPersonCreate();
+    CFErrorRef  anError = NULL;
+    
+    ABRecordSetValue(person, kABPersonFirstNameProperty, (__bridge void*)contact.firstName, &anError);
+    ABRecordSetValue(person, kABPersonLastNameProperty, (__bridge void*)contact.lastName, &anError);
+    ABRecordSetValue(person, kABPersonDepartmentProperty, (__bridge void*)contact.service, &anError);
+    ABRecordSetValue(person, kABPersonJobTitleProperty, (__bridge void*)contact.job, &anError);
+    
+    if(contact.office) {
+        ABRecordSetValue(person, kABPersonNoteProperty, (__bridge void*)contact.office, &anError);
+    }
+    
+    if (contact.email) {
+        ABMutableMultiValueRef multiEmail = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+        ABMultiValueAddValueAndLabel(multiEmail,(__bridge void*)contact.email, (__bridge CFStringRef)@"email", nil);
+        ABRecordSetValue(person, kABPersonEmailProperty, multiEmail, &anError);
+        CFRelease(multiEmail);
+    }
+    
+    if (contact.phone) {
+        ABMutableMultiValueRef phone = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+        ABMultiValueAddValueAndLabel(phone, (__bridge void*)contact.phone, kABWorkLabel, nil);
+        ABRecordSetValue(person, kABPersonPhoneProperty, phone, &anError);
+        CFRelease(phone);
+    }
+    
+    personController.allowsAddingToAddressBook = YES;
+    personController.displayedPerson = person;
+    [personController.view setTintColor:[UIColor blackColor]];
+    
+    CFRelease(person);
+    navController.viewControllers = @[personController];
+}
+/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ETSContact *contact = [self.fetchedResultsController objectAtIndexPath:indexPath];
@@ -253,7 +295,7 @@
     }
     
     CFRelease(person);
-}
+}*/
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
@@ -272,18 +314,11 @@
     }
 }
 
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController
 {
-    self.directoryBarButtonItem = barButtonItem;
-    barButtonItem.title = NSLocalizedString(@"Personnes", nil);
-    [((UINavigationController *)self.splitViewController.viewControllers[1]).topViewController.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-    self.masterPopoverController = popoverController;
-}
-
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    self.masterPopoverController = nil;
+    
+    return ([secondaryViewController isKindOfClass:[UINavigationController class]]
+            && ![[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[ABUnknownPersonViewController class]]);
 }
 
 @end

@@ -125,4 +125,12 @@ NSString * const kProcedureFile = @"File";
     }
 }
 
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController
+{
+    
+    return ([secondaryViewController isKindOfClass:[UINavigationController class]]
+        && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[ETSSecurityDetailViewController class]]
+            && ([(ETSSecurityDetailViewController *)[(UINavigationController *)secondaryViewController topViewController] title] == nil));
+}
+
 @end
