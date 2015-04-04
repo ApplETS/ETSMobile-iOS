@@ -50,6 +50,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+<<<<<<< HEAD
+=======
+
+    #ifdef __USE_BUGSENSE
+    [[Mint sharedInstance] leaveBreadcrumb:@"NEWSSOURCE_VIEWCONTROLLER"];
+    #endif
+>>>>>>> Retrait de TestFlight.
     
     self.cellIdentifier = @"SourceIdentifier";
     

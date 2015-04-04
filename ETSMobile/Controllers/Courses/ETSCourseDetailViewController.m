@@ -31,6 +31,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+<<<<<<< HEAD
+=======
+    
+    #ifdef __USE_BUGSENSE
+    [[Mint sharedInstance] leaveBreadcrumb:@"COURSE_DETAILS"];
+    #endif
+>>>>>>> Retrait de TestFlight.
     
     if (self.course && self.course.acronym.length > 0) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];

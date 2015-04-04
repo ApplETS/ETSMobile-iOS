@@ -80,8 +80,8 @@
 {
     [super viewDidLoad];
     
-    #ifdef __USE_TESTFLIGHT
-    [TestFlight passCheckpoint:@"NEWS_VIEWCONTROLLER"];
+    #ifdef __USE_BUGSENSE
+    [[Mint sharedInstance] leaveBreadcrumb:@"NEWS_VIEWCONTROLLER"];
     #endif
     
     self.tableView.estimatedRowHeight = 133.0f;

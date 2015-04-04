@@ -27,12 +27,15 @@
 {
     [super viewDidLoad];
     
+<<<<<<< HEAD
 <<<<<<< HEAD:ETSMobile/ETSDirectoryViewController.m
 =======
     #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"DIRECTORY_VIEWCONTROLLER"];
     #endif
     
+=======
+>>>>>>> Retrait de TestFlight.
     #ifdef __USE_BUGSENSE
     [[Mint sharedInstance] leaveBreadcrumb:@"DIRECTORY_VIEWCONTROLLER"];
     #endif

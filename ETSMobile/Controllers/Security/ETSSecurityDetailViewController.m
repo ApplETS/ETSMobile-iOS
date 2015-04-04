@@ -37,6 +37,13 @@
 {
     [super viewDidLoad];
     
+<<<<<<< HEAD
+=======
+    #ifdef __USE_BUGSENSE
+    [[Mint sharedInstance] leaveBreadcrumb:@"SECURITY_DETAILS_VIEWCONTROLLER"];
+    #endif
+    
+>>>>>>> Retrait de TestFlight.
     [self updateProcedure];
 }
 

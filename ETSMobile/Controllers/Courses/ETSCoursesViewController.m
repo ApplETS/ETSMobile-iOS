@@ -29,7 +29,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+<<<<<<< HEAD
 
+=======
+    
+    #ifdef __USE_BUGSENSE
+    [[Mint sharedInstance] leaveBreadcrumb:@"COURSES_VIEWCONTROLLER"];
+    #endif
+    
+>>>>>>> Retrait de TestFlight.
     self.title =  NSLocalizedString(@"Notes", nil);
     
     self.cellIdentifier = @"CourseIdentifier";

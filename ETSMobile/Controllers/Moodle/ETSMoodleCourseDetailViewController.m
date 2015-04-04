@@ -32,6 +32,13 @@
     
     self.acceptedTypes = @[@"url", @"resource", @"forum", @"choicegroup", @"wiki", @"assign", @"page"];
     
+<<<<<<< HEAD
+=======
+    #ifdef __USE_BUGSENSE
+    [[Mint sharedInstance] leaveBreadcrumb:@"MOODLE_DETAIL_VIEWCONTROLLER"];
+    #endif
+    
+>>>>>>> Retrait de TestFlight.
     self.cellIdentifier = @"MoodleIdentifier";
     
     self.searchText = nil;

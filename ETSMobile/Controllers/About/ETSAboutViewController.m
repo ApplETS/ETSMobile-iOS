@@ -10,6 +10,18 @@
 
 @implementation ETSAboutViewController
 
+<<<<<<< HEAD
+=======
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    #ifdef __USE_BUGSENSE
+    [[Mint sharedInstance] leaveBreadcrumb:@"ABOUT_VIEWCONTROLLER"];
+    #endif
+}
+
+>>>>>>> Retrait de TestFlight.
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
