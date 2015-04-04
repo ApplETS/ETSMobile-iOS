@@ -22,8 +22,8 @@
 {
     [super viewDidLoad];
     
-    #ifdef __USE_TESTFLIGHT
-    [TestFlight passCheckpoint:@"COMMENT_VIEWCONTROLLER"];
+    #ifdef __USE_BUGSENSE
+    [[Mint sharedInstance] leaveBreadcrumb:@"COMMENT_VIEWCONTROLLER"];
     #endif
 }
 

@@ -22,10 +22,6 @@ NSString * const kProcedureFile = @"File";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    #ifdef __USE_TESTFLIGHT
-    [TestFlight passCheckpoint:@"SECURITY_VIEWCONTROLLER"];
-    #endif
     
     #ifdef __USE_BUGSENSE
     [[Mint sharedInstance] leaveBreadcrumb:@"SECURITY_VIEWCONTROLLER"];

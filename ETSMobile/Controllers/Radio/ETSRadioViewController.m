@@ -43,11 +43,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    #ifdef __USE_TESTFLIGHT
-    [TestFlight passCheckpoint:@"RADIO_VIEWCONTROLLER"];
-    #endif
-    
+
     #ifdef __USE_BUGSENSE
     [[Mint sharedInstance] leaveBreadcrumb:@"RADIO_VIEWCONTROLLER"];
     #endif

@@ -44,8 +44,8 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 {
     [super viewDidLoad];
     
-    #ifdef __USE_TESTFLIGHT
-    [TestFlight passCheckpoint:@"CALENDAR_VIEWCONTROLLER"];
+    #ifdef __USE_BUGSENSE
+    [[Mint sharedInstance] leaveBreadcrumb:@"CALENDAR_VIEWCONTROLLER"];
     #endif
     
     self.title = NSLocalizedString(@"Horaire", nil);

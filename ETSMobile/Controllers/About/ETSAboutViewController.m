@@ -14,10 +14,6 @@
 {
     [super viewDidLoad];
     
-    #ifdef __USE_TESTFLIGHT
-    [TestFlight passCheckpoint:@"ABOUT_VIEWCONTROLLER"];
-    #endif
-    
     #ifdef __USE_BUGSENSE
     [[Mint sharedInstance] leaveBreadcrumb:@"ABOUT_VIEWCONTROLLER"];
     #endif

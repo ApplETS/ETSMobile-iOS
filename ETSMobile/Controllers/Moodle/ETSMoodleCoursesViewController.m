@@ -35,10 +35,6 @@ NSString * const kUnknownSession = @"000000";
 {
     [super viewDidLoad];
 
-    #ifdef __USE_TESTFLIGHT
-    [TestFlight passCheckpoint:@"MOODLE_VIEWCONTROLLER"];
-    #endif
-    
     #ifdef __USE_BUGSENSE
     [[Mint sharedInstance] leaveBreadcrumb:@"MOODLE_VIEWCONTROLLER"];
     #endif

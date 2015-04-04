@@ -74,10 +74,6 @@
     [self.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
     
-    #ifdef __USE_TESTFLIGHT
-    [TestFlight passCheckpoint:@"BANDWIDTH_VIEWCONTROLLER"];
-    #endif
-    
     #ifdef __USE_BUGSENSE
     [[Mint sharedInstance] leaveBreadcrumb:@"BANDWIDTH_VIEWCONTROLLER"];
     #endif

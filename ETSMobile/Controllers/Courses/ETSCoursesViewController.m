@@ -31,8 +31,8 @@
 {
     [super viewDidLoad];
     
-    #ifdef __USE_TESTFLIGHT
-    [TestFlight passCheckpoint:@"COURSES_VIEWCONTROLLER"];
+    #ifdef __USE_BUGSENSE
+    [[Mint sharedInstance] leaveBreadcrumb:@"COURSES_VIEWCONTROLLER"];
     #endif
     
     self.title =  NSLocalizedString(@"Notes", nil);

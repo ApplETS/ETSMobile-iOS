@@ -31,10 +31,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    #ifdef __USE_TESTFLIGHT
-    [TestFlight passCheckpoint:@"COURSE_DETAILS"];
-    #endif
     
     #ifdef __USE_BUGSENSE
     [[Mint sharedInstance] leaveBreadcrumb:@"COURSE_DETAILS"];
