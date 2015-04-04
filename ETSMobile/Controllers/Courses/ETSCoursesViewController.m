@@ -190,4 +190,12 @@
     return [ETSAuthenticationViewController validateJSONResponse:response];
 }
 
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController
+{
+    
+    return ([secondaryViewController isKindOfClass:[UINavigationController class]]
+        && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[ETSCourseDetailViewController class]]
+        && ([(ETSCourseDetailViewController *)[(UINavigationController *)secondaryViewController topViewController] course] == nil));
+}
+
 @end

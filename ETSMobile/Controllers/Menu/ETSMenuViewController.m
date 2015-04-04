@@ -171,6 +171,14 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
 {
     ETSPaneViewControllerType paneViewControllerType = [self paneViewControllerTypeForIndexPath:indexPath];
     [self transitionToViewController:paneViewControllerType];
+    
+    // Prevent visual display bug with cell dividers
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    double delayInSeconds = 0.3;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self.tableView reloadData];
+    });
 }
 
 
@@ -200,8 +208,6 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
         UISplitViewController *splitViewController = (UISplitViewController *)paneViewController;
         splitViewController.presentsWithGesture = NO;
         
-        id viewController = ((UINavigationController *)splitViewController.viewControllers[0]).topViewController;
-        
         id detailsViewController = nil;
         if ([splitViewController.viewControllers[1] isKindOfClass:[UINavigationController class]]) {
             detailsViewController = ((UINavigationController *)splitViewController.viewControllers[1]).topViewController;
@@ -213,25 +219,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
             if ([masterViewController respondsToSelector:@selector(setManagedObjectContext:)])
                 [masterViewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
         }
-        
-        //FIXME
-        /*
-        if ([viewController isKindOfClass:[ETSCoursesViewController_iPad class]]) {
-            splitViewController.delegate = detailsViewController;
-            ((ETSCoursesViewController_iPad *)viewController).delegate = detailsViewController;
-        }
-        else if ([viewController isKindOfClass:[ETSSecurityViewController class]]) {
-            splitViewController.delegate = detailsViewController;
-            ((ETSSecurityViewController *)viewController).delegate = detailsViewController;
-        }
-        else if ([viewController isKindOfClass:[ETSDirectoryViewController class]]) {
-            splitViewController.delegate = viewController;
-            ((ETSDirectoryViewController *)viewController).splitViewController = splitViewController;
-        }
-        else if ([viewController isKindOfClass:[ETSMoodleCoursesViewController class]]) {
-            splitViewController.delegate = detailsViewController;
-        }
-         */
+        splitViewController.delegate = masterViewController;
     }
     
     paneViewController.navigationItem.title = self.paneViewControllerTitles[@(paneViewControllerType)];
