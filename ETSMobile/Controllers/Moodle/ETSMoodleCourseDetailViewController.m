@@ -9,7 +9,7 @@
 #import "ETSMoodleCourseDetailViewController.h"
 #import "ETSMoodleElement.h"
 #import "ETSWebViewViewController.h"
-#import "ETSAppDelegate.h"
+#import "AppDelegate.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
 @interface ETSMoodleCourseDetailViewController ()

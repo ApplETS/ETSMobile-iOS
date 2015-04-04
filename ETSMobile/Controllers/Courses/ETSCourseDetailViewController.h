@@ -7,9 +7,8 @@
 //
 
 #import "ETSTableViewController.h"
-#import "ETSCoursesViewController_iPad.h"
 #import "ETSCourse.h"
 
-@interface ETSCourseDetailViewController : ETSTableViewController <ETSSynchronizationDelegate, NSFetchedResultsControllerDelegate, UISplitViewControllerDelegate, ETSCoursesViewControllerDelegate>
+@interface ETSCourseDetailViewController : ETSTableViewController <ETSSynchronizationDelegate, NSFetchedResultsControllerDelegate, UISplitViewControllerDelegate>
 @property (nonatomic, strong) ETSCourse *course;
 @end

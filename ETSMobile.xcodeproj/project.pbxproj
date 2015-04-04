@@ -240,6 +240,13 @@
 		264187951AB7895E0027561B /* NSURL+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 264187911AB7895E0027561B /* NSURL+API.m */; };
 		264187961AB7895E0027561B /* NSURLRequest+API.m in Sources */ = {isa = PBXBuildFile; fileRef = 264187931AB7895E0027561B /* NSURLRequest+API.m */; };
 		264187991AB789A70027561B /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 264187981AB789A70027561B /* NSString+HTML.m */; };
+		265008CE1AD056170033FB64 /* ETSCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 265008CB1AD056170033FB64 /* ETSCourseDetailViewController.m */; };
+		265008CF1AD056170033FB64 /* ETSCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 265008CD1AD056170033FB64 /* ETSCoursesViewController.m */; };
+		265008D41AD056260033FB64 /* ETSMoodleCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 265008D11AD056260033FB64 /* ETSMoodleCourseDetailViewController.m */; };
+		265008D51AD056260033FB64 /* ETSMoodleCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 265008D31AD056260033FB64 /* ETSMoodleCoursesViewController.m */; };
+		265008DD1AD056490033FB64 /* ETSCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 265008D81AD056490033FB64 /* ETSCourseCell.m */; };
+		265008DE1AD056490033FB64 /* ETSEvaluationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 265008DA1AD056490033FB64 /* ETSEvaluationCell.m */; };
+		265008DF1AD056490033FB64 /* ETSSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 265008DC1AD056490033FB64 /* ETSSessionHeader.m */; };
 		26731FCA1ABA1AC50045EBD2 /* MSDynamicsDrawerStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = 26731FC61ABA1AC50045EBD2 /* MSDynamicsDrawerStyler.m */; };
 		26731FCB1ABA1AC50045EBD2 /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26731FC91ABA1AC50045EBD2 /* MSDynamicsDrawerViewController.m */; };
 		26731FCE1ABA1AD50045EBD2 /* MSCollectionViewCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 26731FCD1ABA1AD50045EBD2 /* MSCollectionViewCalendarLayout.m */; };
@@ -249,7 +256,11 @@
 		26A7E1A81ACC429900B83C5F /* ETSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7E1A51ACC429900B83C5F /* ETSCalendarViewController.m */; };
 		26A7E1A91ACC429900B83C5F /* ETSUniversityCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7E1A71ACC429900B83C5F /* ETSUniversityCalendarViewController.m */; };
 		26A7E1AD1ACC42B300B83C5F /* MSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7E1AC1ACC42B300B83C5F /* MSEventCell.m */; };
+<<<<<<< HEAD
 >>>>>>> Conversion pour iOS 8 seulement.
+=======
+		26D00E311ACE3BB90062BF6F /* SecuritySources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26D00E301ACE3BB90062BF6F /* SecuritySources.plist */; };
+>>>>>>> Ajout des contrôleurs manquants.
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -684,6 +695,20 @@
 		264187931AB7895E0027561B /* NSURLRequest+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+API.m"; path = "Categories/NSURLRequest+API.m"; sourceTree = "<group>"; };
 		264187971AB789A70027561B /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+HTML.h"; path = "Categories/NSString+HTML.h"; sourceTree = "<group>"; };
 		264187981AB789A70027561B /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+HTML.m"; path = "Categories/NSString+HTML.m"; sourceTree = "<group>"; };
+		265008CA1AD056170033FB64 /* ETSCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSCourseDetailViewController.h; path = Controllers/Courses/ETSCourseDetailViewController.h; sourceTree = "<group>"; };
+		265008CB1AD056170033FB64 /* ETSCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSCourseDetailViewController.m; path = Controllers/Courses/ETSCourseDetailViewController.m; sourceTree = "<group>"; };
+		265008CC1AD056170033FB64 /* ETSCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSCoursesViewController.h; path = Controllers/Courses/ETSCoursesViewController.h; sourceTree = "<group>"; };
+		265008CD1AD056170033FB64 /* ETSCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSCoursesViewController.m; path = Controllers/Courses/ETSCoursesViewController.m; sourceTree = "<group>"; };
+		265008D01AD056260033FB64 /* ETSMoodleCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSMoodleCourseDetailViewController.h; path = Controllers/Moodle/ETSMoodleCourseDetailViewController.h; sourceTree = "<group>"; };
+		265008D11AD056260033FB64 /* ETSMoodleCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSMoodleCourseDetailViewController.m; path = Controllers/Moodle/ETSMoodleCourseDetailViewController.m; sourceTree = "<group>"; };
+		265008D21AD056260033FB64 /* ETSMoodleCoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSMoodleCoursesViewController.h; path = Controllers/Moodle/ETSMoodleCoursesViewController.h; sourceTree = "<group>"; };
+		265008D31AD056260033FB64 /* ETSMoodleCoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSMoodleCoursesViewController.m; path = Controllers/Moodle/ETSMoodleCoursesViewController.m; sourceTree = "<group>"; };
+		265008D71AD056490033FB64 /* ETSCourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSCourseCell.h; path = Views/Courses/ETSCourseCell.h; sourceTree = "<group>"; };
+		265008D81AD056490033FB64 /* ETSCourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSCourseCell.m; path = Views/Courses/ETSCourseCell.m; sourceTree = "<group>"; };
+		265008D91AD056490033FB64 /* ETSEvaluationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSEvaluationCell.h; path = Views/Courses/ETSEvaluationCell.h; sourceTree = "<group>"; };
+		265008DA1AD056490033FB64 /* ETSEvaluationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSEvaluationCell.m; path = Views/Courses/ETSEvaluationCell.m; sourceTree = "<group>"; };
+		265008DB1AD056490033FB64 /* ETSSessionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSSessionHeader.h; path = Views/Courses/ETSSessionHeader.h; sourceTree = "<group>"; };
+		265008DC1AD056490033FB64 /* ETSSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSSessionHeader.m; path = Views/Courses/ETSSessionHeader.m; sourceTree = "<group>"; };
 		26731FC51ABA1AC50045EBD2 /* MSDynamicsDrawerStyler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSDynamicsDrawerStyler.h; path = Vendors/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController/MSDynamicsDrawerStyler.h; sourceTree = SOURCE_ROOT; };
 		26731FC61ABA1AC50045EBD2 /* MSDynamicsDrawerStyler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSDynamicsDrawerStyler.m; path = Vendors/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController/MSDynamicsDrawerStyler.m; sourceTree = SOURCE_ROOT; };
 		26731FC71ABA1AC50045EBD2 /* MSDynamicsDrawerViewController-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MSDynamicsDrawerViewController-Prefix.pch"; path = "Vendors/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController-Prefix.pch"; sourceTree = SOURCE_ROOT; };
@@ -704,7 +729,11 @@
 		26A7E1A71ACC429900B83C5F /* ETSUniversityCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSUniversityCalendarViewController.m; path = Controllers/Calendar/ETSUniversityCalendarViewController.m; sourceTree = "<group>"; };
 		26A7E1AB1ACC42B300B83C5F /* MSEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSEventCell.h; path = Views/Calendar/ETS/MSEventCell.h; sourceTree = "<group>"; };
 		26A7E1AC1ACC42B300B83C5F /* MSEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSEventCell.m; path = Views/Calendar/ETS/MSEventCell.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 >>>>>>> Conversion pour iOS 8 seulement.
+=======
+		26D00E301ACE3BB90062BF6F /* SecuritySources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SecuritySources.plist; path = "Supporting Files/SecuritySources.plist"; sourceTree = "<group>"; };
+>>>>>>> Ajout des contrôleurs manquants.
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1040,6 +1069,7 @@
 				264187841AB787830027561B /* ETSAPICoreDataMapping.plist */,
 				264187851AB787830027561B /* ETSAPIURL.plist */,
 				264187861AB787830027561B /* NewsSources.plist */,
+				26D00E301ACE3BB90062BF6F /* SecuritySources.plist */,
 				264186EE1AB779F40027561B /* Info.plist */,
 				264186EF1AB779F40027561B /* main.m */,
 			);
@@ -1286,6 +1316,8 @@
 				2641876F1AB786B60027561B /* Menu */,
 				26A7E1A31ACC428700B83C5F /* Calendar */,
 				26A7E19F1ACC39E200B83C5F /* Profile */,
+				265008C81AD055DB0033FB64 /* Courses */,
+				265008C91AD055E60033FB64 /* Moodle */,
 				260244EF1ACA12C8001B57C3 /* Bandwidth */,
 				2602453A1ACB8FC9001B57C3 /* News */,
 				260245361ACB53FE001B57C3 /* Directory */,
@@ -1383,11 +1415,47 @@
 			name = "Categories & Helpers";
 			sourceTree = "<group>";
 		};
+		265008C81AD055DB0033FB64 /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				265008CA1AD056170033FB64 /* ETSCourseDetailViewController.h */,
+				265008CB1AD056170033FB64 /* ETSCourseDetailViewController.m */,
+				265008CC1AD056170033FB64 /* ETSCoursesViewController.h */,
+				265008CD1AD056170033FB64 /* ETSCoursesViewController.m */,
+			);
+			name = Courses;
+			sourceTree = "<group>";
+		};
+		265008C91AD055E60033FB64 /* Moodle */ = {
+			isa = PBXGroup;
+			children = (
+				265008D01AD056260033FB64 /* ETSMoodleCourseDetailViewController.h */,
+				265008D11AD056260033FB64 /* ETSMoodleCourseDetailViewController.m */,
+				265008D21AD056260033FB64 /* ETSMoodleCoursesViewController.h */,
+				265008D31AD056260033FB64 /* ETSMoodleCoursesViewController.m */,
+			);
+			name = Moodle;
+			sourceTree = "<group>";
+		};
+		265008D61AD0563A0033FB64 /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				265008D71AD056490033FB64 /* ETSCourseCell.h */,
+				265008D81AD056490033FB64 /* ETSCourseCell.m */,
+				265008D91AD056490033FB64 /* ETSEvaluationCell.h */,
+				265008DA1AD056490033FB64 /* ETSEvaluationCell.m */,
+				265008DB1AD056490033FB64 /* ETSSessionHeader.h */,
+				265008DC1AD056490033FB64 /* ETSSessionHeader.m */,
+			);
+			name = Courses;
+			sourceTree = "<group>";
+		};
 		26731FD51ABA1BC80045EBD2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				260245411ACB9002001B57C3 /* News */,
 				260245111ACB4F04001B57C3 /* Calendar */,
+				265008D61AD0563A0033FB64 /* Courses */,
 				260244FB1ACA51FE001B57C3 /* Comment */,
 				26065D7C1ABB8939008955D3 /* Menu */,
 				260244F31ACA136C001B57C3 /* Bandwidth */,
@@ -1530,6 +1598,7 @@
 				264187881AB787830027561B /* ETSAPIURL.plist in Resources */,
 				264187831AB787770027561B /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */,
 				2641877E1AB787770027561B /* INCENDIE_EVACUATION_URGENCE.pdf in Resources */,
+				26D00E311ACE3BB90062BF6F /* SecuritySources.plist in Resources */,
 				264187011AB779F40027561B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1707,6 +1776,7 @@
 				26731FCB1ABA1AC50045EBD2 /* MSDynamicsDrawerViewController.m in Sources */,
 				260245331ACB4F3A001B57C3 /* ETSRadioViewController.m in Sources */,
 				26731FCA1ABA1AC50045EBD2 /* MSDynamicsDrawerStyler.m in Sources */,
+				265008D41AD056260033FB64 /* ETSMoodleCourseDetailViewController.m in Sources */,
 				2641876D1AB786A80027561B /* ETSTableViewController.m in Sources */,
 				264187721AB786DF0027561B /* ETSMenuViewController.m in Sources */,
 				1DF8B0231ACC5E3F00E350BA /* UIImageView+WebCache.m in Sources */,
@@ -1716,9 +1786,12 @@
 				264186F01AB779F40027561B /* main.m in Sources */,
 				1DF8B01C1ACC5E3F00E350BA /* SDWebImageManager.m in Sources */,
 				260245041ACA524B001B57C3 /* ETSTextCell.m in Sources */,
+				265008DE1AD056490033FB64 /* ETSEvaluationCell.m in Sources */,
+				265008DD1AD056490033FB64 /* ETSCourseCell.m in Sources */,
 				1DF8B01B1ACC5E3F00E350BA /* SDWebImageDownloaderOperation.m in Sources */,
 				26A7E1AD1ACC42B300B83C5F /* MSEventCell.m in Sources */,
 				1DF8B0191ACC5E3F00E350BA /* SDWebImageDecoder.m in Sources */,
+				265008CF1AD056170033FB64 /* ETSCoursesViewController.m in Sources */,
 				2602450F1ACA53E5001B57C3 /* ETSAboutViewController.m in Sources */,
 				1D50F93D1ACC76FD00B06561 /* ETSSecurityProcedureViewController.m in Sources */,
 				2602454A1ACB9087001B57C3 /* NSURL+Document.m in Sources */,
@@ -1727,10 +1800,12 @@
 				2602453F1ACB8FFE001B57C3 /* ETSNewsSourceViewController.m in Sources */,
 				2602452B1ACB4F25001B57C3 /* MSGridline.m in Sources */,
 				1DF8B0161ACC5E3F00E350BA /* NSData+ImageContentType.m in Sources */,
+				265008DF1AD056490033FB64 /* ETSSessionHeader.m in Sources */,
 				1DF8B01F1ACC5E3F00E350BA /* UIImage+GIF.m in Sources */,
 				264186F61AB779F40027561B /* ETSMobile.xcdatamodeld in Sources */,
 				264187371AB77E770027561B /* ETSEvaluation.m in Sources */,
 				26731FCE1ABA1AD50045EBD2 /* MSCollectionViewCalendarLayout.m in Sources */,
+				265008CE1AD056170033FB64 /* ETSCourseDetailViewController.m in Sources */,
 				260245281ACB4F25001B57C3 /* MSDayColumnHeader.m in Sources */,
 				2602452C1ACB4F25001B57C3 /* MSTimeRowHeader.m in Sources */,
 				260245021ACA524B001B57C3 /* ETSCommentCell.m in Sources */,
@@ -1746,6 +1821,7 @@
 				26A7E1A91ACC429900B83C5F /* ETSUniversityCalendarViewController.m in Sources */,
 				1DF8B0171ACC5E3F00E350BA /* SDImageCache.m in Sources */,
 				2641876A1AB786A80027561B /* ETSAuthenticationViewController.m in Sources */,
+				265008D51AD056260033FB64 /* ETSMoodleCoursesViewController.m in Sources */,
 				260245271ACB4F25001B57C3 /* MSCurrentTimeIndicator.m in Sources */,
 				2602452D1ACB4F25001B57C3 /* MSTimeRowHeaderBackground.m in Sources */,
 				260245031ACA524B001B57C3 /* ETSRateCell.m in Sources */,

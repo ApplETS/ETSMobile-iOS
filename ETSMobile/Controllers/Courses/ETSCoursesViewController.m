@@ -143,7 +143,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    ETSCourseDetailViewController *vc = [segue destinationViewController];
+    ETSCourseDetailViewController *vc = (ETSCourseDetailViewController *)((UINavigationController *)[segue destinationViewController]).topViewController;
     vc.course = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
     vc.managedObjectContext = self.managedObjectContext;
     self.lastSelectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];

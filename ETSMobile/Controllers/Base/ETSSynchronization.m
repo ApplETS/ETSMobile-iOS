@@ -215,6 +215,10 @@
         id rightOperand = [rObject valueForKey:self.compareKey];
         
         NSComparisonResult comparisonResult = NSOrderedDescending;
+<<<<<<< HEAD
+=======
+        
+>>>>>>> Ajout des contrôleurs manquants.
         if ([rightOperand isKindOfClass:[NSNumber class]]) {
             if ([leftOperand isKindOfClass:[NSString class]]) {
                 NSNumberFormatter *f = [NSNumberFormatter new];
