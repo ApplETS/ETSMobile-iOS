@@ -203,7 +203,8 @@
         id leftOperand = lObject[[ETSSynchronization mappings][self.entityName][self.compareKey]];
         id rightOperand = [rObject valueForKey:self.compareKey];
         
-        NSComparisonResult comparisonResult;
+        NSComparisonResult comparisonResult = NSOrderedDescending;
+        
         if ([rightOperand isKindOfClass:[NSNumber class]]) {
             if ([leftOperand isKindOfClass:[NSString class]]) {
                 NSNumberFormatter *f = [NSNumberFormatter new];

@@ -280,6 +280,7 @@
     self.masterPopoverController = nil;
 }
 
+/*
 - (void)coursesViewController:(ETSCoursesViewController_iPad *)controller didSelectCourse:(ETSCourse *)course managedObjectContext:(NSManagedObjectContext *)context
 {
     self.managedObjectContext = context;
@@ -303,6 +304,6 @@
     
     [self.tableView reloadData];
     [self startRefresh:nil];
-}
+}*/
 
 @end
