@@ -12,26 +12,22 @@
 #import "ETSCoreDataHelper.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface ETSBandwidthViewController () <UIPopoverControllerDelegate>
+@interface ETSBandwidthViewController ()
 @property (nonatomic, strong) NSNumberFormatter *formatter;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
-@property (nonatomic, strong) UIPopoverController *popover;
 @property (nonatomic, strong) NSNumber *usedBandwidth;
 @property (nonatomic, strong) NSNumber *limitBandwidth;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *loginButton;
-@property (weak, nonatomic) IBOutlet UILabel *phaseLabel;
-@property (weak, nonatomic) IBOutlet UILabel *apartmentLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *usageLabel;
-@property (weak, nonatomic) IBOutlet UIProgressView *usageProgressView;
-@property (nonatomic, copy)   NSString *apartment;
-@property (nonatomic, strong) NSString *phase;
-@property (nonatomic, copy)   NSString *month;
+@property (nonatomic, weak) IBOutlet UILabel *dateLabel;
+@property (nonatomic, weak) IBOutlet UILabel *usageLabel;
+@property (nonatomic, weak) IBOutlet UIProgressView *usageProgressView;
+@property (nonatomic, copy) NSString *apartment;
+@property (nonatomic, copy) NSString *phase;
+@property (nonatomic, copy) NSString *month;
 @end
 
 @implementation ETSBandwidthViewController
 
-@synthesize fetchedResultsController=_fetchedResultsController;
+@synthesize fetchedResultsController = _fetchedResultsController;
 
 - (void)startRefresh:(id)sender
 {
@@ -41,6 +37,7 @@
 
 - (void)updateBandwidthWithPhase:(NSString *)phase apartment:(NSString *)apartment
 {
+    if ([phase isEqualToString:self.phase] && [apartment isEqualToString:self.apartment]) return;
     
     [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
     self.usageLabel.text = @" ";
@@ -56,9 +53,6 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:apartment forKey:@"apartment"];
     [userDefaults setObject:phase forKey:@"phase"];
-    
-    self.phaseLabel.text = [NSString stringWithFormat:@"Phase %@", phase];
-    self.apartmentLabel.text = [NSString stringWithFormat:@"Appartement %@", apartment];
     
     self.phase = phase;
     self.apartment = apartment;
@@ -109,16 +103,12 @@
     
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
     
-    self.title = @"Bande passante";
-    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.apartment = [userDefaults stringForKey:@"apartment"];
     self.phase = [userDefaults stringForKey:@"phase"];
     
     if ([self.apartment length] > 0 && [self.phase integerValue] > 0) {
         self.synchronization.request = [NSURLRequest requestForBandwidthWithMonth:self.month residence:self.apartment phase:self.phase];
-        self.phaseLabel.text = [NSString stringWithFormat:@"Phase %@", self.phase];
-        self.apartmentLabel.text = [NSString stringWithFormat:@"Appartement %@", self.apartment];
         self.phaseSegmentedControl.selectedSegmentIndex = [self.phase integerValue] - 1;
         self.apartmentTextField.text = self.apartment;
         NSDateFormatter *df = [[NSDateFormatter alloc] init];
@@ -126,15 +116,12 @@
         df.dateFormat = @"LLLL yyyy";
         self.dateLabel.text = [NSString stringWithFormat:@"Consommation, %@ :", [df stringFromDate:[NSDate date]]];
     } else {
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) self.tableView.tableHeaderView.hidden = YES;
         self.dataNeedRefresh = NO;
         [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
     }
     
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
-        [self.tableView addGestureRecognizer:tapGesture];
-    }
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
+    [self.tableView addGestureRecognizer:tapGesture];
 }
 
 -(void)hideKeyBoard {
@@ -197,7 +184,6 @@
 {
     if (!objects || [objects isKindOfClass:[NSNull class]]) {
         [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) self.tableView.tableHeaderView.hidden = YES;
         return nil;
     }
     

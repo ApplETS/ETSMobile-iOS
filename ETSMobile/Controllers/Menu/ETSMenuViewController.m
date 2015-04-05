@@ -208,11 +208,6 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
         UISplitViewController *splitViewController = (UISplitViewController *)paneViewController;
         splitViewController.presentsWithGesture = NO;
         
-        id detailsViewController = nil;
-        if ([splitViewController.viewControllers[1] isKindOfClass:[UINavigationController class]]) {
-            detailsViewController = ((UINavigationController *)splitViewController.viewControllers[1]).topViewController;
-        }
-        
         id masterViewController = nil;
         if ([splitViewController.viewControllers[0] isKindOfClass:[UINavigationController class]]) {
             masterViewController = ((UINavigationController *)splitViewController.viewControllers[0]).topViewController;
@@ -220,6 +215,11 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
                 [masterViewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
         }
         splitViewController.delegate = masterViewController;
+        
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+            splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
+        }
+
     }
     
     paneViewController.navigationItem.title = self.paneViewControllerTitles[@(paneViewControllerType)];
