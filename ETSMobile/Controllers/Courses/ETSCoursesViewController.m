@@ -49,9 +49,18 @@
     self.synchronization.delegate = self;
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
-        ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-        ac.delegate = self;
-        [self.navigationController pushViewController:ac animated:NO];
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+            ac.delegate = self;
+            [self.navigationController pushViewController:ac animated:NO];
+        } else {
+            ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)[self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+        //    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:authenticationController];
+            authenticationController.delegate = self;
+            authenticationController.modalPresentationStyle = UIModalPresentationFormSheet;
+            authenticationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            [self.navigationController presentViewController:authenticationController animated:NO completion:nil];
+        }
     }
 }
 
