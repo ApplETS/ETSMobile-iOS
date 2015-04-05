@@ -98,11 +98,15 @@
         // FIXME: traiter si data est vide ou s'il y a erreur
         if (!data || [data length] == 0 || error) return;
         
+<<<<<<< HEAD
 <<<<<<< HEAD:ETSMobile/ETSSynchronization.m
         //NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
 =======
  //       NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
 >>>>>>> Conversion pour iOS 8 seulement.:ETSMobile/Controllers/Base/ETSSynchronization.m
+=======
+//        NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
+>>>>>>> Correction des problèmes de Moodle et d'authentification.
 
         NSError *jsonError = nil;
         NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];

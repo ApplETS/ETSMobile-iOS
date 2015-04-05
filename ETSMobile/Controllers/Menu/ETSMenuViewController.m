@@ -214,6 +214,13 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
             if ([masterViewController respondsToSelector:@selector(setManagedObjectContext:)])
                 [masterViewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
         }
+
+        id detailsViewController = nil;
+        if ([splitViewController.viewControllers[1] isKindOfClass:[UINavigationController class]]) {
+            detailsViewController = ((UINavigationController *)splitViewController.viewControllers[1]).topViewController;
+            if ([detailsViewController respondsToSelector:@selector(setManagedObjectContext:)])
+                [detailsViewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
+        }
         splitViewController.delegate = masterViewController;
         
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {

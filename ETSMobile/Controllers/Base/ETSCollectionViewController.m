@@ -36,7 +36,9 @@
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];
     
-    [self startRefresh:nil];
+    if ([ETSAuthenticationViewController passwordInKeychain] && [ETSAuthenticationViewController usernameInKeychain]) {
+        [self startRefresh:nil];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -74,7 +76,6 @@
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveResponse:(ETSSynchronizationResponse)response
 {
-
     if (response == ETSSynchronizationResponseAuthenticationError) {
         
     if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]] || self.presentedViewController) {
@@ -83,22 +84,25 @@
     }
     else {
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-            ac.delegate = self;
-            [self.navigationController pushViewController:ac animated:YES];
-        } else {
-            UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-            ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
+            ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
             authenticationController.delegate = self;
-            navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-            navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-            [self.navigationController presentViewController:navigationController animated:YES completion:nil];
+            [self.navigationController pushViewController:authenticationController animated:NO];
+        } else {
+            ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+            authenticationController.delegate = self;
+            authenticationController.modalPresentationStyle = UIModalPresentationFormSheet;
+            authenticationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            [self.navigationController presentViewController:authenticationController animated:NO completion:nil];
         }
     }
     }
     else if (response == ETSSynchronizationResponseValid) {
-        if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
-            [self.navigationController popViewControllerAnimated:YES];
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        } else {
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
     }
 }

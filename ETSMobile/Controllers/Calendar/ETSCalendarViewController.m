@@ -95,16 +95,15 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-            ac.delegate = self;
-            [self.navigationController pushViewController:ac animated:NO];
-        } else {
-            UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-            ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
+            ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
             authenticationController.delegate = self;
-            navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-            navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-            [self.navigationController presentViewController:navigationController animated:NO completion:nil];
+            [self.navigationController pushViewController:authenticationController animated:NO];
+        } else {
+            ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+            authenticationController.delegate = self;
+            authenticationController.modalPresentationStyle = UIModalPresentationFormSheet;
+            authenticationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            [self.navigationController presentViewController:authenticationController animated:NO completion:nil];
         }
     }
 }
@@ -179,7 +178,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveResponse:(ETSSynchronizationResponse)response
 {
-    
     if (response == ETSSynchronizationResponseAuthenticationError) {
         
         if ([[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]] || self.presentedViewController) {
@@ -188,16 +186,15 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         }
         else {
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-                ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-                ac.delegate = self;
-                [self.navigationController pushViewController:ac animated:YES];
-            } else {
-                UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-                ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
+                ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
                 authenticationController.delegate = self;
-                navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-                navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-                [self.navigationController presentViewController:navigationController animated:YES completion:nil];
+                [self.navigationController pushViewController:authenticationController animated:NO];
+            } else {
+                ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+                authenticationController.delegate = self;
+                authenticationController.modalPresentationStyle = UIModalPresentationFormSheet;
+                authenticationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+                [self.navigationController presentViewController:authenticationController animated:NO completion:nil];
             }
         }
     }
@@ -226,7 +223,9 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.synchronizationSession synchronize:nil];
+    if ([ETSAuthenticationViewController passwordInKeychain] && [ETSAuthenticationViewController usernameInKeychain]) {
+        [self.synchronizationSession synchronize:nil];
+    }
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];

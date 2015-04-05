@@ -1358,7 +1358,7 @@ http://www.clubapplets.ca</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AuthenticationBackground" translatesAutoresizingMaskIntoConstraints="NO" id="jtZ-pO-v77">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Authentication" translatesAutoresizingMaskIntoConstraints="NO" id="jtZ-pO-v77">
                                 <rect key="frame" x="-4" y="0.0" width="608" height="600"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mot de passe" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EYr-bP-wiz">
@@ -1366,8 +1366,8 @@ http://www.clubapplets.ca</string>
                                 <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="251" id="UQk-t3-TpG"/>
-                                    <constraint firstAttribute="height" constant="33" id="uBi-tF-Wny"/>
+                                    <constraint firstAttribute="height" constant="33" id="aGi-5h-wXs"/>
+                                    <constraint firstAttribute="width" constant="251" id="eqy-wF-dJn"/>
                                 </constraints>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
@@ -1376,28 +1376,12 @@ http://www.clubapplets.ca</string>
                                     <outlet property="delegate" destination="mmk-Fq-ctw" id="v3q-Nr-4BG"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Code d'usager (AJ0000)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMb-L2-nv1">
-                                <rect key="frame" x="175" y="36" width="251" height="33"/>
-                                <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="251" id="QjX-8r-MPH"/>
-                                    <constraint firstAttribute="height" constant="33" id="skG-Qn-vBl"/>
-                                </constraints>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="mmk-Fq-ctw" id="nWF-U9-HZG"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Na-3B-8gV">
                                 <rect key="frame" x="327" y="118" width="99" height="30"/>
                                 <color key="backgroundColor" red="0.74901962280000001" green="0.0039215688589999999" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <rect key="contentStretch" x="1.3877787807814457e-17" y="0.0" width="1" height="1"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="99" id="j6Z-9k-CAl"/>
-                                    <constraint firstAttribute="height" constant="30" id="wD2-Th-H35"/>
+                                    <constraint firstAttribute="height" constant="30" id="Mks-c4-bRY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
@@ -1411,8 +1395,7 @@ http://www.clubapplets.ca</string>
                             <button opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihO-GZ-gxP">
                                 <rect key="frame" x="175" y="118" width="23" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="23" id="BQG-0b-kpO"/>
-                                    <constraint firstAttribute="height" constant="18" id="YLR-3T-Slm"/>
+                                    <constraint firstAttribute="width" constant="23" id="EGd-Wt-4VE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" image="menu-icon">
@@ -1422,36 +1405,83 @@ http://www.clubapplets.ca</string>
                                     <action selector="panLeftMenu:" destination="mmk-Fq-ctw" eventType="touchUpInside" id="6io-f7-9ac"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb4-ZZ-jKn">
+                                <rect key="frame" x="175" y="118" width="82" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="MmF-Zm-v6c"/>
+                                    <constraint firstAttribute="height" constant="30" id="PxV-LS-g6Z"/>
+                                </constraints>
+                                <state key="normal" title="Annuler">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel:" destination="mmk-Fq-ctw" eventType="touchUpInside" id="Clc-12-XTX"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Code d'usager (AA0000)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMb-L2-nv1">
+                                <rect key="frame" x="175" y="36" width="251" height="33"/>
+                                <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="3eI-Gd-Noa"/>
+                                    <constraint firstAttribute="width" constant="251" id="k8l-r3-nSI"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="mmk-Fq-ctw" id="nWF-U9-HZG"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gMb-L2-nv1" firstAttribute="leading" secondItem="gb4-e5-ZmP" secondAttribute="leadingMargin" priority="750" constant="19" id="0Uh-i8-vnm"/>
-                            <constraint firstItem="jtZ-pO-v77" firstAttribute="leading" secondItem="gb4-e5-ZmP" secondAttribute="leadingMargin" constant="-20" id="4EO-ow-XLG"/>
-                            <constraint firstItem="EYr-bP-wiz" firstAttribute="leading" secondItem="ihO-GZ-gxP" secondAttribute="leading" id="Be2-Kp-odR"/>
-                            <constraint firstItem="jtZ-pO-v77" firstAttribute="top" secondItem="gb4-e5-ZmP" secondAttribute="topMargin" id="Byf-Md-Whb"/>
-                            <constraint firstAttribute="centerX" secondItem="gMb-L2-nv1" secondAttribute="centerX" id="Hcd-x7-EE8"/>
-                            <constraint firstItem="ihO-GZ-gxP" firstAttribute="top" secondItem="6Na-3B-8gV" secondAttribute="top" id="JXp-Mn-OlX"/>
-                            <constraint firstItem="6Na-3B-8gV" firstAttribute="top" secondItem="EYr-bP-wiz" secondAttribute="bottom" constant="8" id="S0r-CK-Em2"/>
-                            <constraint firstItem="EYr-bP-wiz" firstAttribute="trailing" secondItem="6Na-3B-8gV" secondAttribute="trailing" id="TZw-Wv-8zL"/>
-                            <constraint firstItem="EYr-bP-wiz" firstAttribute="top" secondItem="gMb-L2-nv1" secondAttribute="bottom" constant="8" id="VAY-6p-xU8"/>
-                            <constraint firstItem="cLe-qe-OJf" firstAttribute="top" secondItem="jtZ-pO-v77" secondAttribute="bottom" id="WSw-f8-NH0"/>
-                            <constraint firstItem="cLe-qe-OJf" firstAttribute="top" secondItem="jtZ-pO-v77" secondAttribute="bottom" id="lQJ-ZQ-32n"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jtZ-pO-v77" secondAttribute="trailing" constant="-20" id="rWG-i7-tQR"/>
-                            <constraint firstAttribute="centerX" secondItem="EYr-bP-wiz" secondAttribute="centerX" id="snN-OI-pzq"/>
-                            <constraint firstItem="gMb-L2-nv1" firstAttribute="top" secondItem="WGz-dO-gEj" secondAttribute="bottom" constant="16" id="vm6-Og-PIF"/>
-                            <constraint firstItem="jtZ-pO-v77" firstAttribute="top" secondItem="gb4-e5-ZmP" secondAttribute="topMargin" id="y77-7h-jNg"/>
-                            <constraint firstItem="EYr-bP-wiz" firstAttribute="leading" secondItem="gMb-L2-nv1" secondAttribute="leading" id="zxB-vt-6aq"/>
+                            <constraint firstItem="6Na-3B-8gV" firstAttribute="top" secondItem="EYr-bP-wiz" secondAttribute="bottom" constant="8" id="1d9-18-bjq"/>
+                            <constraint firstItem="jtZ-pO-v77" firstAttribute="leading" secondItem="gb4-e5-ZmP" secondAttribute="leadingMargin" constant="-20" id="1oc-p0-ut9"/>
+                            <constraint firstItem="Lb4-ZZ-jKn" firstAttribute="top" secondItem="EYr-bP-wiz" secondAttribute="bottom" constant="8" id="1zt-Mv-6La"/>
+                            <constraint firstItem="EYr-bP-wiz" firstAttribute="leading" secondItem="gMb-L2-nv1" secondAttribute="leading" id="GE7-Ex-MfW"/>
+                            <constraint firstItem="jtZ-pO-v77" firstAttribute="top" secondItem="gb4-e5-ZmP" secondAttribute="top" id="Kuw-W6-a2Q"/>
+                            <constraint firstItem="EYr-bP-wiz" firstAttribute="top" secondItem="gMb-L2-nv1" secondAttribute="bottom" constant="8" symbolic="YES" id="O09-Il-WAC"/>
+                            <constraint firstItem="jtZ-pO-v77" firstAttribute="centerX" secondItem="gMb-L2-nv1" secondAttribute="centerX" id="Pq4-mq-C3N"/>
+                            <constraint firstItem="cLe-qe-OJf" firstAttribute="top" secondItem="Lb4-ZZ-jKn" secondAttribute="bottom" priority="750" constant="452" id="ZUb-jo-pUg"/>
+                            <constraint firstItem="ihO-GZ-gxP" firstAttribute="top" secondItem="EYr-bP-wiz" secondAttribute="bottom" constant="8" id="bPR-T3-pks"/>
+                            <constraint firstItem="6Na-3B-8gV" firstAttribute="leading" secondItem="Lb4-ZZ-jKn" secondAttribute="trailing" constant="70" id="cbv-0K-cUN"/>
+                            <constraint firstItem="jtZ-pO-v77" firstAttribute="bottom" secondItem="cLe-qe-OJf" secondAttribute="top" id="duA-as-Oht"/>
+                            <constraint firstItem="EYr-bP-wiz" firstAttribute="centerX" secondItem="gb4-e5-ZmP" secondAttribute="centerX" id="gd5-cU-1d0"/>
+                            <constraint firstItem="gMb-L2-nv1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WGz-dO-gEj" secondAttribute="bottom" priority="750" constant="16" id="nVy-6k-NaO"/>
+                            <constraint firstItem="EYr-bP-wiz" firstAttribute="trailing" secondItem="6Na-3B-8gV" secondAttribute="trailing" id="oyI-mH-c18"/>
+                            <constraint firstItem="EYr-bP-wiz" firstAttribute="leading" secondItem="ihO-GZ-gxP" secondAttribute="leading" id="pmq-6F-0T5"/>
+                            <constraint firstItem="6Na-3B-8gV" firstAttribute="bottom" secondItem="Lb4-ZZ-jKn" secondAttribute="bottom" id="sKG-Q3-mll"/>
+                            <constraint firstItem="Lb4-ZZ-jKn" firstAttribute="leading" secondItem="ihO-GZ-gxP" secondAttribute="leading" id="uxs-Iy-rcZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="fEF-dL-5Ti">
+                        <barButtonItem key="leftBarButtonItem" title="Annuler" id="aQF-li-5No">
+                            <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancel:" destination="mmk-Fq-ctw" id="58k-MS-MKc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Connexion" id="yrz-Si-kwK">
+                            <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="authenticate:" destination="mmk-Fq-ctw" id="w8Y-n4-thj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="cancelButton" destination="Lb4-ZZ-jKn" id="qtr-X9-9J1"/>
+                        <outlet property="loginButton" destination="6Na-3B-8gV" id="Q8O-Pr-AwB"/>
+                        <outlet property="menuButton" destination="ihO-GZ-gxP" id="xeb-wG-TJr"/>
                         <outlet property="passwordTextField" destination="EYr-bP-wiz" id="wHJ-Dl-L9X"/>
                         <outlet property="usernameTextField" destination="gMb-L2-nv1" id="KWO-fm-j6A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFQ-FV-f2j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816" y="-1152"/>
+            <point key="canvasLocation" x="2584" y="-1108"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="zhF-W5-V7B">
@@ -1788,7 +1818,7 @@ http://www.clubapplets.ca</string>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SessionHeaderIdentifier" id="jNM-xw-lOq" customClass="ETSSessionHeader">
-                            <rect key="frame" x="0.0" y="64" width="320" height="36"/>
+                            <rect key="frame" x="0.0" y="64" width="600" height="36"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="196-Ac-xmv">
@@ -2233,7 +2263,7 @@ http://www.clubapplets.ca</string>
         </scene>
     </scenes>
     <resources>
-        <image name="AuthenticationBackground" width="396" height="735"/>
+        <image name="Authentication" width="695" height="421"/>
         <image name="menu-icon" width="22" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>

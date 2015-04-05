@@ -48,16 +48,15 @@ NSString * const kUnknownSession = @"000000";
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-            ac.delegate = self;
-            [self.navigationController pushViewController:ac animated:NO];
-        } else {
-            UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-            ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
+            ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
             authenticationController.delegate = self;
-            navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-            navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-            [self.navigationController presentViewController:navigationController animated:NO completion:nil];
+            [self.navigationController pushViewController:authenticationController animated:NO];
+        } else {
+            ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+            authenticationController.delegate = self;
+            authenticationController.modalPresentationStyle = UIModalPresentationFormSheet;
+            authenticationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            [self.navigationController presentViewController:authenticationController animated:NO completion:nil];
         }
     } else {
         [self requestTokenAndUserID];
@@ -130,21 +129,19 @@ NSString * const kUnknownSession = @"000000";
                       [av show];
                   });
               }
-              else {
+              else {                  
                   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-                      ETSAuthenticationViewController *ac = [bself.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-                      ac.delegate = bself;
-                      dispatch_sync(dispatch_get_main_queue(), ^{
-                          [bself.navigationController pushViewController:ac animated:YES];
+                      ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+                      authenticationController.delegate = bself;                      dispatch_sync(dispatch_get_main_queue(), ^{
+                          [bself.navigationController pushViewController:authenticationController animated:YES];
                       });
                   } else {
-                      UINavigationController *navigationController = [bself.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-                      ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
+                      ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
                       authenticationController.delegate = bself;
-                      navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-                      navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+                      authenticationController.modalPresentationStyle = UIModalPresentationFormSheet;
+                      authenticationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
                       dispatch_sync(dispatch_get_main_queue(), ^{
-                          [bself.navigationController presentViewController:navigationController animated:NO completion:nil];
+                          [bself.navigationController presentViewController:authenticationController animated:NO completion:nil];
                       });
                   }
                   

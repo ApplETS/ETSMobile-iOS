@@ -53,12 +53,11 @@
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-            ac.delegate = self;
-            [self.navigationController pushViewController:ac animated:NO];
+            ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+            authenticationController.delegate = self;
+            [self.navigationController pushViewController:authenticationController animated:NO];
         } else {
-            ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)[self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-        //    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:authenticationController];
+            ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
             authenticationController.delegate = self;
             authenticationController.modalPresentationStyle = UIModalPresentationFormSheet;
             authenticationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;

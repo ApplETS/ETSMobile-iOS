@@ -28,6 +28,7 @@ NSString * const kKeychainId = @"ApplETS";
 + (ETSSynchronizationResponse) validateJSONResponse:(NSDictionary *)response
 {
     id apiError = [response valueForKeyPath:@"d.erreur"];
+    id requestError = [response valueForKeyPath:@"Message"];
     
     if ([apiError isKindOfClass:[NSString class]] && [apiError isEqualToString:@"Code d'accès ou mot de passe invalide"]) {
         return ETSSynchronizationResponseAuthenticationError;
@@ -35,6 +36,8 @@ NSString * const kKeychainId = @"ApplETS";
         return ETSSynchronizationResponseValid;
     } else if ([apiError isKindOfClass:[NSString class]] && [apiError length] > 0) {
         return ETSSynchronizationResponseUnknownError;
+    } else if ([requestError isKindOfClass:[NSString class]] && [requestError isEqualToString:@"There was an error processing the request."]) {
+        return ETSSynchronizationResponseAuthenticationError;
     }
     
     return ETSSynchronizationResponseValid;
@@ -45,6 +48,13 @@ NSString * const kKeychainId = @"ApplETS";
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:[[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone animated:animated];
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        self.menuButton.hidden = YES;
+        self.cancelButton.hidden = NO;
+    } else {
+        self.cancelButton.hidden = YES;
+    }
     
     MSDynamicsDrawerViewController *dynamicsDrawerViewController = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).dynamicsDrawerViewController;
     [dynamicsDrawerViewController setPaneDragRevealEnabled:YES forDirection:MSDynamicsDrawerDirectionLeft];

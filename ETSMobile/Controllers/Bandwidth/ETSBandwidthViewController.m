@@ -10,7 +10,6 @@
 #import "ETSBandwidth.h"
 #import "ETSBandwidthCell.h"
 #import "ETSCoreDataHelper.h"
-#import <QuartzCore/QuartzCore.h>
 
 @interface ETSBandwidthViewController ()
 @property (nonatomic, strong) NSNumberFormatter *formatter;
