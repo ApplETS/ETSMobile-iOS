@@ -23,6 +23,9 @@
 @property (weak, nonatomic) id<ETSAuthenticationViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *menuButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @end
 

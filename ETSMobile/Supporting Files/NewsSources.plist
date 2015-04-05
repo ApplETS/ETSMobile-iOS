@@ -442,5 +442,15 @@
 		<key>enabled</key>
 		<true/>
 	</dict>
+	<dict>
+		<key>group</key>
+		<integer>0</integer>
+		<key>id</key>
+		<string>aeroets</string>
+		<key>name</key>
+		<string>Aéroéts - Le génie pour l’aérospatiale</string>
+		<key>enabled</key>
+		<true/>
+	</dict>
 </array>
 </plist>

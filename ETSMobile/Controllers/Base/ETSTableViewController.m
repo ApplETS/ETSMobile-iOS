@@ -42,7 +42,9 @@
     [self.navigationController setToolbarHidden:YES animated:animated];
 
     NSError *error;
-    if (self.dataNeedRefresh) [self.synchronization synchronize:&error];
+    if ([ETSAuthenticationViewController passwordInKeychain] && [ETSAuthenticationViewController usernameInKeychain]) {
+        if (self.dataNeedRefresh) [self.synchronization synchronize:&error];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -140,16 +142,15 @@
         }
         else {
             if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-                ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-                ac.delegate = self;
-                [self.navigationController pushViewController:ac animated:YES];
-            } else {
-                UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-                ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
+                ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
                 authenticationController.delegate = self;
-                navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-                navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-                [self.navigationController presentViewController:navigationController animated:YES completion:nil];
+                [self.navigationController pushViewController:authenticationController animated:NO];
+            } else {
+                ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+                authenticationController.delegate = self;
+                authenticationController.modalPresentationStyle = UIModalPresentationFormSheet;
+                authenticationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+                [self.navigationController presentViewController:authenticationController animated:NO completion:nil];
             }
         }
     }
