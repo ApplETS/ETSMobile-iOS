@@ -145,7 +145,12 @@
 		1D50F93C1ACC76FD00B06561 /* ETSSecurityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D50F9371ACC76FD00B06561 /* ETSSecurityDetailViewController.m */; };
 		1D50F93D1ACC76FD00B06561 /* ETSSecurityProcedureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D50F9391ACC76FD00B06561 /* ETSSecurityProcedureViewController.m */; };
 		1D50F93E1ACC76FD00B06561 /* ETSSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D50F93B1ACC76FD00B06561 /* ETSSecurityViewController.m */; };
+<<<<<<< HEAD
 >>>>>>> Avancement de la section sécurité.
+=======
+		1D66B83E1AD479FB002E3478 /* ETSDirectoryResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D66B83D1AD479FB002E3478 /* ETSDirectoryResultsViewController.m */; };
+		1D66B8421AD48824002E3478 /* ETSDirectoryResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D66B8411AD48824002E3478 /* ETSDirectoryResultCell.m */; };
+>>>>>>> Ajout de la recherche dans les contacts. Conversion française du projet.
 		1DF8AFF31ACC5C3200E350BA /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF8AFF21ACC5C3200E350BA /* ImageIO.framework */; };
 		1DF8B0151ACC5E3F00E350BA /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8AFF51ACC5E3F00E350BA /* MKAnnotationView+WebCache.m */; };
 		1DF8B0161ACC5E3F00E350BA /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8AFF71ACC5E3F00E350BA /* NSData+ImageContentType.m */; };
@@ -525,7 +530,14 @@
 		1D50F9391ACC76FD00B06561 /* ETSSecurityProcedureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSSecurityProcedureViewController.m; path = Controllers/Security/ETSSecurityProcedureViewController.m; sourceTree = "<group>"; };
 		1D50F93A1ACC76FD00B06561 /* ETSSecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSSecurityViewController.h; path = Controllers/Security/ETSSecurityViewController.h; sourceTree = "<group>"; };
 		1D50F93B1ACC76FD00B06561 /* ETSSecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSSecurityViewController.m; path = Controllers/Security/ETSSecurityViewController.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 >>>>>>> Avancement de la section sécurité.
+=======
+		1D66B83C1AD479FB002E3478 /* ETSDirectoryResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSDirectoryResultsViewController.h; path = Controllers/Directory/ETSDirectoryResultsViewController.h; sourceTree = "<group>"; };
+		1D66B83D1AD479FB002E3478 /* ETSDirectoryResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSDirectoryResultsViewController.m; path = Controllers/Directory/ETSDirectoryResultsViewController.m; sourceTree = "<group>"; };
+		1D66B8401AD48824002E3478 /* ETSDirectoryResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSDirectoryResultCell.h; path = Views/Directory/ETSDirectoryResultCell.h; sourceTree = "<group>"; };
+		1D66B8411AD48824002E3478 /* ETSDirectoryResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSDirectoryResultCell.m; path = Views/Directory/ETSDirectoryResultCell.m; sourceTree = "<group>"; };
+>>>>>>> Ajout de la recherche dans les contacts. Conversion française du projet.
 		1DF8AFF21ACC5C3200E350BA /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		1DF8AFF41ACC5E3F00E350BA /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MKAnnotationView+WebCache.h"; path = "Vendors/SDWebImage/SDWebImage/MKAnnotationView+WebCache.h"; sourceTree = SOURCE_ROOT; };
 		1DF8AFF51ACC5E3F00E350BA /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MKAnnotationView+WebCache.m"; path = "Vendors/SDWebImage/SDWebImage/MKAnnotationView+WebCache.m"; sourceTree = SOURCE_ROOT; };
@@ -792,6 +804,15 @@
 			name = Security;
 			sourceTree = "<group>";
 		};
+		1D66B83F1AD48805002E3478 /* Directory */ = {
+			isa = PBXGroup;
+			children = (
+				1D66B8401AD48824002E3478 /* ETSDirectoryResultCell.h */,
+				1D66B8411AD48824002E3478 /* ETSDirectoryResultCell.m */,
+			);
+			name = Directory;
+			sourceTree = "<group>";
+		};
 		1DF8AFC01ACC5BC500E350BA /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -986,6 +1007,8 @@
 			children = (
 				260245371ACB543D001B57C3 /* ETSDirectoryViewController.h */,
 				260245381ACB543D001B57C3 /* ETSDirectoryViewController.m */,
+				1D66B83C1AD479FB002E3478 /* ETSDirectoryResultsViewController.h */,
+				1D66B83D1AD479FB002E3478 /* ETSDirectoryResultsViewController.m */,
 			);
 			name = Directory;
 			sourceTree = "<group>";
@@ -1457,6 +1480,7 @@
 				260245111ACB4F04001B57C3 /* Calendar */,
 				265008D61AD0563A0033FB64 /* Courses */,
 				260244FB1ACA51FE001B57C3 /* Comment */,
+				1D66B83F1AD48805002E3478 /* Directory */,
 				26065D7C1ABB8939008955D3 /* Menu */,
 				260244F31ACA136C001B57C3 /* Bandwidth */,
 			);
@@ -1782,6 +1806,7 @@
 				1DF8B0231ACC5E3F00E350BA /* UIImageView+WebCache.m in Sources */,
 				1DF8B0241ACC5E3F00E350BA /* UIView+WebCacheOperation.m in Sources */,
 				26A7E1A21ACC3A1B00B83C5F /* ETSProfileViewController.m in Sources */,
+				1D66B83E1AD479FB002E3478 /* ETSDirectoryResultsViewController.m in Sources */,
 				260245261ACB4F25001B57C3 /* MSCurrentTimeGridline.m in Sources */,
 				264186F01AB779F40027561B /* main.m in Sources */,
 				1DF8B01C1ACC5E3F00E350BA /* SDWebImageManager.m in Sources */,
@@ -1797,6 +1822,7 @@
 				2602454A1ACB9087001B57C3 /* NSURL+Document.m in Sources */,
 				264187491AB77E780027561B /* ETSNews.m in Sources */,
 				2641878D1AB788F10027561B /* NSManagedObject+SetValues.m in Sources */,
+				1D66B8421AD48824002E3478 /* ETSDirectoryResultCell.m in Sources */,
 				2602453F1ACB8FFE001B57C3 /* ETSNewsSourceViewController.m in Sources */,
 				2602452B1ACB4F25001B57C3 /* MSGridline.m in Sources */,
 				1DF8B0161ACC5E3F00E350BA /* NSData+ImageContentType.m in Sources */,

@@ -7,7 +7,7 @@
 	<key>ApplETSUsername</key>
 	<string>${ApplETSUsername}</string>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>fr_CA</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

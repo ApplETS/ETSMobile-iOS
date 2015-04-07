@@ -7,16 +7,18 @@
 //
 
 #import "ETSDirectoryViewController.h"
+#import "ETSDirectoryResultsViewController.h"
 #import "NSURLRequest+API.h"
 #import "ETSContact.h"
+#import "ETSDirectoryResultCell.h"
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
 
-@interface ETSDirectoryViewController ()
-@property (strong, nonatomic) UISearchController *searchController;
-@property (nonatomic, copy) NSString *searchText;
-@property (strong, nonatomic) UIPopoverController *masterPopoverController;
-@property (nonatomic, strong) UIBarButtonItem *directoryBarButtonItem;
+@interface ETSDirectoryViewController () <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
+@property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, strong) ETSDirectoryResultsViewController *resultsTableController;
+@property BOOL searchControllerWasActive;
+@property BOOL searchControllerSearchFieldWasFirstResponder;
 @end
 
 @implementation ETSDirectoryViewController
@@ -40,12 +42,16 @@
     [[Mint sharedInstance] leaveBreadcrumb:@"DIRECTORY_VIEWCONTROLLER"];
     #endif
     
-    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    _resultsTableController = [self.storyboard instantiateViewControllerWithIdentifier:@"DirectoryResultsViewController"];
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsTableController];
     self.searchController.searchResultsUpdater = self;
-    self.searchController.dimsBackgroundDuringPresentation = YES;
-    self.searchController.searchBar.delegate = self;
-    
+    [self.searchController.searchBar sizeToFit];
     self.tableView.tableHeaderView = self.searchController.searchBar;
+    
+    // we want to be the delegate for our filtered table so didSelectRowAtIndexPath is called for both tables
+    self.resultsTableController.tableView.delegate = self;
+    self.searchController.delegate = self;
+    self.searchController.searchBar.delegate = self;
     self.definesPresentationContext = YES;
     
 >>>>>>> Conversion pour iOS 8 seulement.:ETSMobile/Controllers/Directory/ETSDirectoryViewController.m
@@ -64,8 +70,6 @@
     self.tableView.sectionIndexColor = [UIColor blackColor];
     self.tableView.sectionIndexBackgroundColor = [UIColor colorWithRed:247/255.0f green:247/255.0f blue:247/255.0f alpha:1];
     
-    self.searchText = nil;
-    
     NSError *error;
     if (![self.fetchedResultsController performFetch:&error]) {
         // FIXME: Update to handle the error appropriately.
@@ -73,20 +77,20 @@
     }
 }
 
-- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
-{
-    self.searchText = searchController.searchBar.text;
-    [self.tableView reloadData];
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-    //[self.directoryBarButtonItem.target performSelector:self.directoryBarButtonItem.action withObject:self.directoryBarButtonItem];
-#pragma clang diagnostic pop
+    // restore the searchController's active state
+    if (self.searchControllerWasActive) {
+        self.searchController.active = self.searchControllerWasActive;
+        _searchControllerWasActive = NO;
+        
+        if (self.searchControllerSearchFieldWasFirstResponder) {
+            [self.searchController.searchBar becomeFirstResponder];
+            _searchControllerSearchFieldWasFirstResponder = NO;
+        }
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -94,6 +98,13 @@
     self.fetchedResultsController.delegate = nil;
     [self.synchronization saveManagedObjectContext];
     [super viewDidDisappear:animated];
+}
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
@@ -112,24 +123,6 @@
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     NSString *sectionNameKeyPath = @"lastInitial";
-    
-    if ([self.searchText length] > 0) {
-        
-        sectionNameKeyPath = nil;
-        NSPredicate *predicate = nil;
-        
-        NSString *trimmedSearch = [self.searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        NSArray *names = [trimmedSearch componentsSeparatedByString:@" "];
-        NSString *fullNameSearch = [[self.searchText componentsSeparatedByCharactersInSet:[[NSCharacterSet letterCharacterSet] invertedSet]] componentsJoinedByString:@""];
-        
-        if ([names count] == 2) {
-            predicate = [NSPredicate predicateWithFormat:@"((lastName contains[cd] %@) AND (firstName contains[cd] %@)) OR ((lastName contains[cd] %@) AND (firstName contains[cd] %@)) OR (fullName contains[cd] %@)", names[0], names[1], names[1], names[0], fullNameSearch];
-        } else {
-            
-            predicate = [NSPredicate predicateWithFormat:@"(lastName contains[cd] %@) OR (firstName contains[cd] %@) OR (fullName contains[cd] %@)", trimmedSearch, trimmedSearch, fullNameSearch];
-        }
-        [fetchRequest setPredicate:predicate];
-    }
     
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:sectionNameKeyPath cacheName:nil];
     self.fetchedResultsController = aFetchedResultsController;
@@ -171,47 +164,20 @@
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    if (tableView == self.searchDisplayController.searchResultsTableView) return nil;
-    else {
-        NSMutableArray* indexTitles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
-        [indexTitles addObjectsFromArray:[self.fetchedResultsController sectionIndexTitles]];
-        return indexTitles;
-    }
+    NSMutableArray* indexTitles = [NSMutableArray arrayWithObject:UITableViewIndexSearch];
+    [indexTitles addObjectsFromArray:[self.fetchedResultsController sectionIndexTitles]];
+    return indexTitles;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
 {
-    if (title == UITableViewIndexSearch) {
-        [self.tableView scrollRectToVisible:self.searchDisplayController.searchBar.frame animated:NO];
-        return -1;
+    if (index == 0) {
+        [self.tableView scrollRectToVisible:self.searchController.searchBar.frame animated:NO];
+        return NSNotFound;
     }
-    else
-        return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index-1];
-    
+    return [self.fetchedResultsController sectionForSectionIndexTitle:title atIndex:index-1];
 }
 
-
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
-{
-    self.searchText = searchText;
-    self.fetchedResultsController = nil;
-    NSError *error;
-    if (![[self fetchedResultsController] performFetch:&error]) {
-        // FIXME: Update to handle the error appropriately.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-    }
-}
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-    self.searchText = nil;
-    self.fetchedResultsController = nil;
-    NSError *error;
-    if (![[self fetchedResultsController] performFetch:&error]) {
-        // FIXME: Update to handle the error appropriately.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-    }
-}
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
@@ -219,10 +185,16 @@
     return [sectionInfo name];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.tableView != tableView) {
+        [self performSegueWithIdentifier:@"showContactSegue" sender:[self.resultsTableController.tableView cellForRowAtIndexPath:self.resultsTableController.tableView.indexPathForSelectedRow]];
+    }
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-
-    ETSContact *contact = [self.fetchedResultsController objectAtIndexPath:self.tableView.indexPathForSelectedRow];
+    ETSContact *contact = [sender isKindOfClass:[ETSDirectoryResultCell class]] ? self.resultsTableController.filteredProducts[self.resultsTableController.tableView.indexPathForSelectedRow.row] : [self.fetchedResultsController objectAtIndexPath:self.tableView.indexPathForSelectedRow];
 
     UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
     ABUnknownPersonViewController *personController = [ABUnknownPersonViewController new];
@@ -260,52 +232,6 @@
     CFRelease(person);
     navController.viewControllers = @[personController];
 }
-/*
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ETSContact *contact = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
-    ABUnknownPersonViewController *personController = [[ABUnknownPersonViewController alloc] init];
-    
-    ABRecordRef person = ABPersonCreate();
-    CFErrorRef  anError = NULL;
-    
-    ABRecordSetValue(person, kABPersonFirstNameProperty, (__bridge void*)contact.firstName, &anError);
-    ABRecordSetValue(person, kABPersonLastNameProperty, (__bridge void*)contact.lastName, &anError);
-    ABRecordSetValue(person, kABPersonDepartmentProperty, (__bridge void*)contact.service, &anError);
-    ABRecordSetValue(person, kABPersonJobTitleProperty, (__bridge void*)contact.job, &anError);
-    
-    if(contact.office) {
-        ABRecordSetValue(person, kABPersonNoteProperty, (__bridge void*)contact.office, &anError);
-    }
-    
-    if (contact.email) {
-        ABMutableMultiValueRef multiEmail = ABMultiValueCreateMutable(kABMultiStringPropertyType);
-        ABMultiValueAddValueAndLabel(multiEmail,(__bridge void*)contact.email, (__bridge CFStringRef)@"email", nil);
-        ABRecordSetValue(person, kABPersonEmailProperty, multiEmail, &anError);
-        CFRelease(multiEmail);
-    }
-    
-    if (contact.phone) {
-        ABMutableMultiValueRef phone = ABMultiValueCreateMutable(kABMultiStringPropertyType);
-        ABMultiValueAddValueAndLabel(phone, (__bridge void*)contact.phone, kABWorkLabel, nil);
-        ABRecordSetValue(person, kABPersonPhoneProperty, phone, &anError);
-        CFRelease(phone);
-    }
-    
-    personController.allowsAddingToAddressBook = YES;
-    personController.displayedPerson = person;
-    [personController.view setTintColor:[UIColor blackColor]];
-  
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        ((UINavigationController *)self.splitViewController.viewControllers[1]).viewControllers = @[personController];
-        [personController.navigationItem setLeftBarButtonItem:self.directoryBarButtonItem animated:YES];
-    } else {
-        [[self navigationController] pushViewController:personController animated:YES];
-    }
-    
-    CFRelease(person);
-}*/
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
@@ -326,9 +252,159 @@
 
 - (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController
 {
-    
     return ([secondaryViewController isKindOfClass:[UINavigationController class]]
             && ![[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[ABUnknownPersonViewController class]]);
 }
+
+#pragma mark - UISearchResultsUpdating
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
+{
+    NSString *searchText = searchController.searchBar.text;
+    NSMutableArray *searchResults = [self.fetchedResultsController.fetchedObjects mutableCopy];
+    
+    NSString *strippedString = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    NSArray *searchItems = nil;
+    if (strippedString.length > 0) {
+        searchItems = [strippedString componentsSeparatedByString:@" "];
+    }
+    
+    NSMutableArray *andMatchPredicates = [NSMutableArray array];
+    
+    for (NSString *searchString in searchItems) {
+
+        NSMutableArray *searchItemsPredicate = [NSMutableArray array];
+        
+        NSExpression *lhs = [NSExpression expressionForKeyPath:@"firstName"];
+        NSExpression *rhs = [NSExpression expressionForConstantValue:searchString];
+        NSPredicate *finalPredicate = [NSComparisonPredicate
+                                       predicateWithLeftExpression:lhs
+                                       rightExpression:rhs
+                                       modifier:NSDirectPredicateModifier
+                                       type:NSContainsPredicateOperatorType
+                                       options:NSCaseInsensitivePredicateOption];
+        [searchItemsPredicate addObject:finalPredicate];
+        
+        lhs = [NSExpression expressionForKeyPath:@"lastName"];
+        rhs = [NSExpression expressionForConstantValue:searchString];
+        finalPredicate = [NSComparisonPredicate
+                          predicateWithLeftExpression:lhs
+                          rightExpression:rhs
+                          modifier:NSDirectPredicateModifier
+                          type:NSContainsPredicateOperatorType
+                          options:NSCaseInsensitivePredicateOption];
+        [searchItemsPredicate addObject:finalPredicate];
+        
+        lhs = [NSExpression expressionForKeyPath:@"email"];
+        rhs = [NSExpression expressionForConstantValue:searchString];
+        finalPredicate = [NSComparisonPredicate
+                          predicateWithLeftExpression:lhs
+                          rightExpression:rhs
+                          modifier:NSDirectPredicateModifier
+                          type:NSContainsPredicateOperatorType
+                          options:NSCaseInsensitivePredicateOption];
+        [searchItemsPredicate addObject:finalPredicate];
+        
+        lhs = [NSExpression expressionForKeyPath:@"job"];
+        rhs = [NSExpression expressionForConstantValue:searchString];
+        finalPredicate = [NSComparisonPredicate
+                          predicateWithLeftExpression:lhs
+                          rightExpression:rhs
+                          modifier:NSDirectPredicateModifier
+                          type:NSContainsPredicateOperatorType
+                          options:NSCaseInsensitivePredicateOption];
+        [searchItemsPredicate addObject:finalPredicate];
+        
+        lhs = [NSExpression expressionForKeyPath:@"office"];
+        rhs = [NSExpression expressionForConstantValue:searchString];
+        finalPredicate = [NSComparisonPredicate
+                          predicateWithLeftExpression:lhs
+                          rightExpression:rhs
+                          modifier:NSDirectPredicateModifier
+                          type:NSContainsPredicateOperatorType
+                          options:NSCaseInsensitivePredicateOption];
+        [searchItemsPredicate addObject:finalPredicate];
+        
+        lhs = [NSExpression expressionForKeyPath:@"service"];
+        rhs = [NSExpression expressionForConstantValue:searchString];
+        finalPredicate = [NSComparisonPredicate
+                          predicateWithLeftExpression:lhs
+                          rightExpression:rhs
+                          modifier:NSDirectPredicateModifier
+                          type:NSContainsPredicateOperatorType
+                          options:NSCaseInsensitivePredicateOption];
+        [searchItemsPredicate addObject:finalPredicate];
+
+        NSCompoundPredicate *orMatchPredicates = [NSCompoundPredicate orPredicateWithSubpredicates:searchItemsPredicate];
+        [andMatchPredicates addObject:orMatchPredicates];
+    }
+
+    NSCompoundPredicate *finalCompoundPredicate =
+    [NSCompoundPredicate andPredicateWithSubpredicates:andMatchPredicates];
+    searchResults = [[searchResults filteredArrayUsingPredicate:finalCompoundPredicate] mutableCopy];
+    
+    ETSDirectoryResultsViewController *tableController = (ETSDirectoryResultsViewController *)self.searchController.searchResultsController;
+    tableController.filteredProducts = searchResults;
+    [tableController.tableView reloadData];
+}
+
+#pragma mark - UIStateRestoration
+
+// we restore several items for state restoration:
+//  1) Search controller's active state,
+//  2) search text,
+//  3) first responder
+
+NSString *const ViewControllerTitleKey = @"ViewControllerTitleKey";
+NSString *const SearchControllerIsActiveKey = @"SearchControllerIsActiveKey";
+NSString *const SearchBarTextKey = @"SearchBarTextKey";
+NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
+
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
+    [super encodeRestorableStateWithCoder:coder];
+    
+    // encode the view state so it can be restored later
+    
+    // encode the title
+    [coder encodeObject:self.title forKey:ViewControllerTitleKey];
+    
+    UISearchController *searchController = self.searchController;
+    
+    // encode the search controller's active state
+    BOOL searchDisplayControllerIsActive = searchController.isActive;
+    [coder encodeBool:searchDisplayControllerIsActive forKey:SearchControllerIsActiveKey];
+    
+    // encode the first responser status
+    if (searchDisplayControllerIsActive) {
+        [coder encodeBool:[searchController.searchBar isFirstResponder] forKey:SearchBarIsFirstResponderKey];
+    }
+    
+    // encode the search bar text
+    [coder encodeObject:searchController.searchBar.text forKey:SearchBarTextKey];
+}
+
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder {
+    [super decodeRestorableStateWithCoder:coder];
+    
+    // restore the title
+    self.title = [coder decodeObjectForKey:ViewControllerTitleKey];
+    
+    // restore the active state:
+    // we can't make the searchController active here since it's not part of the view
+    // hierarchy yet, instead we do it in viewWillAppear
+    //
+    _searchControllerWasActive = [coder decodeBoolForKey:SearchControllerIsActiveKey];
+    
+    // restore the first responder status:
+    // we can't make the searchController first responder here since it's not part of the view
+    // hierarchy yet, instead we do it in viewWillAppear
+    //
+    _searchControllerSearchFieldWasFirstResponder = [coder decodeBoolForKey:SearchBarIsFirstResponderKey];
+    
+    // restore the text in the search field
+    self.searchController.searchBar.text = [coder decodeObjectForKey:SearchBarTextKey];
+}
+
 
 @end
