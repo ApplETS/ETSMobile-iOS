@@ -1567,6 +1567,7 @@
 		264186E21AB779F40027561B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ETS;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = ApplETS;
 				TargetAttributes = {
