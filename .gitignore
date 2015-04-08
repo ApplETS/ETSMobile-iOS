@@ -16,4 +16,8 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+<<<<<<< HEAD
 Keys.xcconfig
+=======
+EnvConst.h
+>>>>>>> Mise à jour SplunkMint 4.1
