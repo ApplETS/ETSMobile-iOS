@@ -130,20 +130,30 @@
         
         for (NSDictionary *object in objects[key]) {
             NSMutableDictionary *entry = [NSMutableDictionary dictionaryWithDictionary:object];
+<<<<<<< HEAD
             
 <<<<<<< HEAD:ETSMobile/ETSNewsViewController.m
             NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"updated_time"]];
             NSString *dateString = [ymdFormatter stringFromDate:date];
+=======
+            NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"updated_time"]];
+            
+            NSString *dateString = [ymdFormatter stringFromDate:date];
+
+>>>>>>> Bugfixes
             if (dateString) {
                 entry[@"ymdDate"] = dateString;
                 [news addObject:entry];
             }
+<<<<<<< HEAD
         }
 =======
   /*          if ([entry[@"message"] isKindOfClass:[NSString class]] && [entry[@"message"] length] > 0) {
                 entry[@"title"] = entry[@"message"];
             }*/
             [news addObject:entry];
+=======
+>>>>>>> Bugfixes
         }
         
 >>>>>>> Conversion pour iOS 8 seulement.:ETSMobile/Controllers/News/ETSNewsViewController.m
