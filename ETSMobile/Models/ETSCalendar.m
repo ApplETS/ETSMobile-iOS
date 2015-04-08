@@ -20,4 +20,12 @@
 @dynamic summary;
 @dynamic title;
 
+- (NSDate *)day
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:self.start];
+    
+    return [calendar dateFromComponents:components];
+}
+
 @end
