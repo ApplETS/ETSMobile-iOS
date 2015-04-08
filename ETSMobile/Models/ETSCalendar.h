@@ -21,4 +21,6 @@
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * title;
 
+- (NSDate *)day;
+
 @end

@@ -12,6 +12,8 @@
 		1D50F93E1ACC76FD00B06561 /* ETSSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D50F93B1ACC76FD00B06561 /* ETSSecurityViewController.m */; };
 		1D66B83E1AD479FB002E3478 /* ETSDirectoryResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D66B83D1AD479FB002E3478 /* ETSDirectoryResultsViewController.m */; };
 		1D66B8421AD48824002E3478 /* ETSDirectoryResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D66B8411AD48824002E3478 /* ETSDirectoryResultCell.m */; };
+		1DDF270C1AD5AB8600D1A7DA /* ETSMoodleCourseResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDF270B1AD5AB8600D1A7DA /* ETSMoodleCourseResultsViewController.m */; };
+		1DDF27101AD5AF7B00D1A7DA /* ETSMoodleResultViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDF270F1AD5AF7B00D1A7DA /* ETSMoodleResultViewCell.m */; };
 		1DF8AFF31ACC5C3200E350BA /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF8AFF21ACC5C3200E350BA /* ImageIO.framework */; };
 		1DF8B0151ACC5E3F00E350BA /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8AFF51ACC5E3F00E350BA /* MKAnnotationView+WebCache.m */; };
 		1DF8B0161ACC5E3F00E350BA /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8AFF71ACC5E3F00E350BA /* NSData+ImageContentType.m */; };
@@ -145,6 +147,10 @@
 		1D66B83D1AD479FB002E3478 /* ETSDirectoryResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSDirectoryResultsViewController.m; path = Controllers/Directory/ETSDirectoryResultsViewController.m; sourceTree = "<group>"; };
 		1D66B8401AD48824002E3478 /* ETSDirectoryResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSDirectoryResultCell.h; path = Views/Directory/ETSDirectoryResultCell.h; sourceTree = "<group>"; };
 		1D66B8411AD48824002E3478 /* ETSDirectoryResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSDirectoryResultCell.m; path = Views/Directory/ETSDirectoryResultCell.m; sourceTree = "<group>"; };
+		1DDF270A1AD5AB8600D1A7DA /* ETSMoodleCourseResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSMoodleCourseResultsViewController.h; path = Controllers/Moodle/ETSMoodleCourseResultsViewController.h; sourceTree = "<group>"; };
+		1DDF270B1AD5AB8600D1A7DA /* ETSMoodleCourseResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSMoodleCourseResultsViewController.m; path = Controllers/Moodle/ETSMoodleCourseResultsViewController.m; sourceTree = "<group>"; };
+		1DDF270E1AD5AF7B00D1A7DA /* ETSMoodleResultViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSMoodleResultViewCell.h; path = Views/Moodle/ETSMoodleResultViewCell.h; sourceTree = "<group>"; };
+		1DDF270F1AD5AF7B00D1A7DA /* ETSMoodleResultViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSMoodleResultViewCell.m; path = Views/Moodle/ETSMoodleResultViewCell.m; sourceTree = "<group>"; };
 		1DF8AFF21ACC5C3200E350BA /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		1DF8AFF41ACC5E3F00E350BA /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MKAnnotationView+WebCache.h"; path = "Vendors/SDWebImage/SDWebImage/MKAnnotationView+WebCache.h"; sourceTree = SOURCE_ROOT; };
 		1DF8AFF51ACC5E3F00E350BA /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MKAnnotationView+WebCache.m"; path = "Vendors/SDWebImage/SDWebImage/MKAnnotationView+WebCache.m"; sourceTree = SOURCE_ROOT; };
@@ -394,6 +400,15 @@
 				1D66B8411AD48824002E3478 /* ETSDirectoryResultCell.m */,
 			);
 			name = Directory;
+			sourceTree = "<group>";
+		};
+		1DDF270D1AD5AF4300D1A7DA /* Moodle */ = {
+			isa = PBXGroup;
+			children = (
+				1DDF270E1AD5AF7B00D1A7DA /* ETSMoodleResultViewCell.h */,
+				1DDF270F1AD5AF7B00D1A7DA /* ETSMoodleResultViewCell.m */,
+			);
+			name = Moodle;
 			sourceTree = "<group>";
 		};
 		1DF8AFC01ACC5BC500E350BA /* SDWebImage */ = {
@@ -854,6 +869,8 @@
 				265008D11AD056260033FB64 /* ETSMoodleCourseDetailViewController.m */,
 				265008D21AD056260033FB64 /* ETSMoodleCoursesViewController.h */,
 				265008D31AD056260033FB64 /* ETSMoodleCoursesViewController.m */,
+				1DDF270A1AD5AB8600D1A7DA /* ETSMoodleCourseResultsViewController.h */,
+				1DDF270B1AD5AB8600D1A7DA /* ETSMoodleCourseResultsViewController.m */,
 			);
 			name = Moodle;
 			sourceTree = "<group>";
@@ -880,6 +897,7 @@
 				260244FB1ACA51FE001B57C3 /* Comment */,
 				1D66B83F1AD48805002E3478 /* Directory */,
 				26065D7C1ABB8939008955D3 /* Menu */,
+				1DDF270D1AD5AF4300D1A7DA /* Moodle */,
 				260244F31ACA136C001B57C3 /* Bandwidth */,
 			);
 			name = Views;
@@ -1042,6 +1060,7 @@
 				264187461AB77E780027561B /* ETSEvent.m in Sources */,
 				260245151ACB4F19001B57C3 /* ETSRadioCell.m in Sources */,
 				264187941AB7895E0027561B /* NSMutableURLRequest+BasicAuth.m in Sources */,
+				1DDF270C1AD5AB8600D1A7DA /* ETSMoodleCourseResultsViewController.m in Sources */,
 				2641876E1AB786A80027561B /* ETSWebViewViewController.m in Sources */,
 				26065D811ABB896C008955D3 /* ETSMenuCell.m in Sources */,
 				264187581AB77E780027561B /* ETSMoodleCourse.m in Sources */,
@@ -1094,6 +1113,7 @@
 				265008CF1AD056170033FB64 /* ETSCoursesViewController.m in Sources */,
 				2602450F1ACA53E5001B57C3 /* ETSAboutViewController.m in Sources */,
 				1D50F93D1ACC76FD00B06561 /* ETSSecurityProcedureViewController.m in Sources */,
+				1DDF27101AD5AF7B00D1A7DA /* ETSMoodleResultViewCell.m in Sources */,
 				2602454A1ACB9087001B57C3 /* NSURL+Document.m in Sources */,
 				264187491AB77E780027561B /* ETSNews.m in Sources */,
 				2641878D1AB788F10027561B /* NSManagedObject+SetValues.m in Sources */,
