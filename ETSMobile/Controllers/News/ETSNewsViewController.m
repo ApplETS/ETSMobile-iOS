@@ -125,17 +125,16 @@
     
     for (NSString *key in keys) {
         
-      //  [news addObjectsFromArray:objects[key]];
-        
         for (NSDictionary *object in objects[key]) {
             NSMutableDictionary *entry = [NSMutableDictionary dictionaryWithDictionary:object];
             NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"updated_time"]];
-            entry[@"ymdDate"] = [ymdFormatter stringFromDate:date];
             
-  /*          if ([entry[@"message"] isKindOfClass:[NSString class]] && [entry[@"message"] length] > 0) {
-                entry[@"title"] = entry[@"message"];
-            }*/
-            [news addObject:entry];
+            NSString *dateString = [ymdFormatter stringFromDate:date];
+
+            if (dateString) {
+                entry[@"ymdDate"] = dateString;
+                [news addObject:entry];
+            }
         }
         
     }
