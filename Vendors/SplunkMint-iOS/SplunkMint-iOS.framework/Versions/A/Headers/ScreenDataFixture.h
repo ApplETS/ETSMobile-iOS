@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "SPLJSONModel.h"
+#import "DataFixture.h"
 
-@interface ScreenDataFixture : SPLJSONModel
+@interface ScreenDataFixture : DataFixture
 
-@property (nonatomic, strong) NSString* name;
+@property (nonatomic, strong) NSDictionary *screen;
 @property (nonatomic, strong) NSMutableDictionary<SPLOptional>* ExtraData;
 
 @end

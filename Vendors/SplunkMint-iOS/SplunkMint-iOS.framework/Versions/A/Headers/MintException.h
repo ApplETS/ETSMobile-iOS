@@ -11,7 +11,7 @@
 
 @interface MintException : SPLJSONModel
 
-+ (MintException*) getSplunkException:(NSException*)exception handled: (BOOL)isHandled;
++ (MintException*) getSplunkException:(NSException*)exception architecture:(NSString*)architecture handled: (BOOL)isHandled;
 + (MintException*) getSplunkExceptionWithHandled: (BOOL)isHandled;
 
 - (BOOL) isEqualToSplunkException: (MintException*)aSplunkException;

@@ -115,4 +115,9 @@
  */
 @property (nonatomic, strong) NSString* screenOrientation;
 
+/**
+ * Transaction id list
+ */
+@property (nonatomic, strong) NSArray* transactions;
+
 @end

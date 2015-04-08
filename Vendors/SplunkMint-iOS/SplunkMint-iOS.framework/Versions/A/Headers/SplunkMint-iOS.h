@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 SLK. All rights reserved.
 //
 
-#import <SplunkMint-iOS/BugSenseBase.h>
 #import <SplunkMint-iOS/MintBase.h>
 
 #import <SplunkMint-iOS/TypeBlocks.h>
@@ -14,7 +13,6 @@
 #import <SplunkMint-iOS/NSDate+DateExtensions.h>
 #import <SplunkMint-iOS/NSString+Extensions.h>
 
-#import <SplunkMint-iOS/BugSense.h>
 #import <SplunkMint-iOS/Mint.h>
 
 #import <SplunkMint-iOS/EnumStringHelper.h>
@@ -70,7 +68,6 @@
 #import <SplunkMint-iOS/SPLJSONModelArray.h>
 
 #import <SplunkMint-iOS/MintLogger.h>
-
 #import <SplunkMint-iOS/ContentTypeDelegate.h>
 #import <SplunkMint-iOS/DeviceInfoDelegate.h>
 #import <SplunkMint-iOS/ExceptionManagerDelegate.h>
