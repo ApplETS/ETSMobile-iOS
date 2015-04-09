@@ -115,14 +115,6 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     return events;
 }
 
-- (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
-{
-    ETSEvent *event = (ETSEvent *)managedObject;
-    NSDateFormatter *f = [NSDateFormatter new];
-    f.dateFormat = @"yyyy-MM-dd HH:mm";
-    NSLog(@"%@\n%@\n%@\n%@\n%@\n%@\n\n", event.title, object[@"start_date"], object[@"end_date"], [f stringFromDate:event.start], [f stringFromDate:event.end], event.source);
-}
-
 - (NSFetchedResultsController *)fetchedResultsController
 {
     if (_fetchedResultsController != nil) {

@@ -151,6 +151,7 @@
         else if ([json isKindOfClass:[NSDictionary class]]) [bself synchronizeJSONDictionary:json error:&syncError];
 
         if (bself.saveAutomatically) {
+            [bself.managedObjectContext processPendingChanges];
             dispatch_sync(dispatch_get_main_queue(), ^{
                 NSError *error;
                 if (![bself.managedObjectContext save:&error]) {

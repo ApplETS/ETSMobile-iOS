@@ -15,6 +15,7 @@
 #import "ETSNews.h"
 #import "NSString+HTML.h"
 #import "GTMNSString+HTML.h"
+#import "UIImageView+WebCache.h"
 
 @implementation ETSNewsViewController
 
@@ -122,73 +123,15 @@
     
     for (NSString *key in keys) {
         
-      //  [news addObjectsFromArray:objects[key]];
-        
         for (NSDictionary *object in objects[key]) {
             NSMutableDictionary *entry = [NSMutableDictionary dictionaryWithDictionary:object];
             NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"updated_time"]];
-            entry[@"ymdDate"] = [ymdFormatter stringFromDate:date];
-            
-  /*          if ([entry[@"message"] isKindOfClass:[NSString class]] && [entry[@"message"] length] > 0) {
-                entry[@"title"] = entry[@"message"];
-            }*/
-            [news addObject:entry];
-        }
-        
-        
-        
-        /*
-        NSString *strippedContent = [object[@"entries"][@"content"] stringByReplacingOccurrencesOfString:@"<br />" withString:@"\n"];
-        strippedContent = [strippedContent stringByReplacingOccurrencesOfString:@"<br/>" withString:@"\n"];
-        strippedContent = [strippedContent stringByStrippingHTML];
-
-        if ([[object[@"entries"][@"content"] stringByStrippingHTML] length] > 0) {
-            
-            NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"entries"][@"updated"]];
-            
-            NSString *url = nil;
-            
-            NSScanner *scanner = [NSScanner scannerWithString:object[@"entries"][@"content"]];
-
-            [scanner scanUpToString:@"<img" intoString:nil];
-            if (![scanner isAtEnd]) {
-                [scanner scanUpToString:@"src" intoString:nil];
-                NSCharacterSet *charset = [NSCharacterSet characterSetWithCharactersInString:@"\"'"];
-                [scanner scanUpToCharactersFromSet:charset intoString:nil];
-                [scanner scanCharactersFromSet:charset intoString:nil];
-                [scanner scanUpToCharactersFromSet:charset intoString:&url];
-            }
-            
-            if (url && [url rangeOfString:@"/safe_image.php"].location != NSNotFound) {
-                NSRange range = [url rangeOfString:@"&amp;url="];
-                url = [[url substringFromIndex:range.location + range.length] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-            }
-            else if (!url) {
-                url = @"";
-            }
-            
-            if (![url hasSuffix:@".jpg"]) {
-                url = @"";
-            }
-            
-            NSString *unescapedContent = [strippedContent gtm_stringByUnescapingFromHTML];
-            NSString *unescapedAuthor = [object[@"entries"][@"author"][@"name"] gtm_stringByUnescapingFromHTML];
-            
-            BOOL isComplete = object[@"entries"][@"id"] && object[@"entries"][@"title"] && object[@"entries"][@"alternate"] && object[@"entries"][@"updated"] && [ymdFormatter stringFromDate:date] && object[@"entries"][@"content"] && unescapedContent && unescapedAuthor && url;
-            
-            if (isComplete) {
-                [news addObject:@{@"id"                 : object[@"entries"][@"id"],
-                                  @"title"              : object[@"entries"][@"title"],
-                                  @"alternate"          : object[@"entries"][@"alternate"],
-                                  @"updated"            : object[@"entries"][@"updated"],
-                                  @"ymdDate"            : [ymdFormatter stringFromDate:date],
-                                  @"content"            : object[@"entries"][@"content"],
-                                  @"contentStripped"    : unescapedContent,
-                                  @"author"             : unescapedAuthor,
-                                  @"thumbnailURL"       : url}];
+            NSString *dateString = [ymdFormatter stringFromDate:date];
+            if (dateString) {
+                entry[@"ymdDate"] = [ymdFormatter stringFromDate:date];
+                [news addObject:entry];
             }
         }
-         */
     }
     return news;
 }
@@ -229,21 +172,7 @@
         ((ETSNewsCell *)cell).contentLabel.text = news.title;
         ((ETSNewsCell *)cell).authorLabel.text = news.author;
         ((ETSNewsCell *)cell).thumbnailView.image = nil;
-        
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:news.thumbnailURL] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:10];
-        NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-                          {
-                              if (data) {
-                                  UIImage *image = [UIImage imageWithData:data];
-                                  if (image && image.size.height > 0 && image.size.width > 0) {
-                                      dispatch_sync(dispatch_get_main_queue(), ^{
-                                          ((ETSNewsCell *)cell).thumbnailView.image = [UIImage imageWithData:data];
-                                      });
-                                  }
-                              }
-                          }];
-        [task resume];
-        
+        [((ETSNewsCell *)cell).thumbnailView sd_setImageWithURL:[NSURL URLWithString:news.thumbnailURL]];
         ((ETSNewsCell *)cell).thumbnailView.clipsToBounds = YES;
     } else if ([cell isKindOfClass:[ETSNewsEmptyCell class]]) {
         ((ETSNewsEmptyCell *)cell).contentLabel.text = news.content;
