@@ -14,7 +14,7 @@
 
 @interface ExceptionDataFixture : DataFixture
 
-+ (ExceptionDataFixture*) getInstanceWithException: (NSException*)exception appEnvironment: (MintAppEnvironment*)anAppEnvironment performance: (MintPerformance*)aPerformance handled: (BOOL)isHandled extraData: (LimitedExtraDataList*)limitedCrashExtraData;
++ (ExceptionDataFixture*) getInstanceWithException: (id)exception appEnvironment: (MintAppEnvironment*)anAppEnvironment performance: (MintPerformance*)aPerformance handled: (BOOL)isHandled extraData: (LimitedExtraDataList*)limitedCrashExtraData;
 + (ExceptionDataFixture*) getInstanceWithExceptionRequest: (MintExceptionRequest*)exceptionRequest andAppEnvironment: (MintAppEnvironment*)appEnvironment;
 
 @property (nonatomic, strong) NSString* stacktrace;
