@@ -23,6 +23,16 @@ NSString * const ETSUniversityCalendarSource = @"ets";
 {
     [super viewDidLoad];
     
+    if (!self.start) {
+        self.start = [NSDate date];
+    }
+    
+    if (!self.end) {
+        NSDateComponents *monthComponent = [NSDateComponents new];
+        monthComponent.month = 4;
+        self.end = [[NSCalendar currentCalendar] dateByAddingComponents:monthComponent toDate:self.start options:0];
+    }
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
 
