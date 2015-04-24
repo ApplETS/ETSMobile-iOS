@@ -42,7 +42,7 @@
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForCourses];
     synchronization.entityName = @"Course";
-    synchronization.compareKey = @"acronym";
+    synchronization.compareKey = @"id";
     synchronization.objectsKeyPath = @"d.liste";
     synchronization.ignoredAttributes = @[@"results", @"resultOn100", @"mean", @"median", @"std", @"percentile"];
     self.synchronization = synchronization;
@@ -94,6 +94,7 @@
 - (void)configureCell:(UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     ETSCourse *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
     ETSCourseCell *courseCell = (ETSCourseCell *)cell;
 
     if ([course.grade length] > 0) {
@@ -130,13 +131,16 @@
         
         ETSCourse *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
         
-        NSString *session = nil;
-        if ([course.season integerValue] == 1)      session = NSLocalizedString(@"Hiver", nil);
-        else if ([course.season integerValue] == 2) session = NSLocalizedString(@"Été", nil);
-        else if ([course.season integerValue] == 3) session = NSLocalizedString(@"Automne", nil);
-        
-        headerView.sessionLabel.text = [NSString stringWithFormat:@"%@ %@", session, course.year];
-        
+        if (([course.season integerValue] == 0)) {
+            headerView.sessionLabel.text = NSLocalizedString(@"Autres", nil);
+        } else {
+            NSString *session = nil;
+            if ([course.season integerValue] == 1)      session = NSLocalizedString(@"Hiver", nil);
+            else if ([course.season integerValue] == 2) session = NSLocalizedString(@"Été", nil);
+            else if ([course.season integerValue] == 3) session = NSLocalizedString(@"Automne", nil);
+            headerView.sessionLabel.text = [NSString stringWithFormat:@"%@ %@", session, course.year];
+        }
+
         return headerView;
     }
     return nil;
@@ -161,29 +165,21 @@
     if ([seasonString isEqualToString:@"H"])      course.season = @1;
     else if ([seasonString isEqualToString:@"É"]) course.season = @2;
     else if ([seasonString isEqualToString:@"A"]) course.season = @3;
+    else course.season = @0;
     
     if ([seasonString isEqualToString:@"H"])      course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"1"];
     else if ([seasonString isEqualToString:@"É"]) course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"2"];
     else if ([seasonString isEqualToString:@"A"]) course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"3"];
-    /*
-    if ([course.grade length] == 0) {
-        ETSConnection *connection = [[ETSConnection alloc] init];
-        connection.request = [NSURLRequest requestForEvaluationsWithCourse:course];
-        connection.entityName = @"Evaluation";
-        connection.compareKey = @"name";
-        connection.objectsKeyPath = @"d.liste";
-        connection.predicate = [NSPredicate predicateWithFormat:@"course.acronym == %@", course.acronym];
-        connection.delegate = self;
-        [connection loadData];
-        // Aurait besoin d'un block pour mettre a jour les cours...
-    }
-     */
+    else course.order = @"00000";
+    
+    course.id = [NSString stringWithFormat:@"%@%@",course.order, course.acronym];
 }
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
 {
     self.synchronization.request = [NSURLRequest requestForCourses];
     [super controllerDidAuthenticate:controller];
+    [self.collectionView reloadData];
 }
 
 - (ETSSynchronizationResponse)synchronization:(ETSSynchronization *)synchronization validateJSONResponse:(NSDictionary *)response

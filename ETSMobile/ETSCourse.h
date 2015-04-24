@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString * credits;
 @property (nonatomic, retain) NSString * grade;
 @property (nonatomic, retain) NSString * group;
+@property (nonatomic, retain) NSString * id;
 @property (nonatomic, retain) NSNumber * mean;
 @property (nonatomic, retain) NSNumber * median;
 @property (nonatomic, retain) NSString * order;

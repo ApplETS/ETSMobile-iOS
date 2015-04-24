@@ -10,3 +10,6 @@
 [submodule "Vendors/MSDynamicsDrawerViewController"]
 	path = Vendors/MSDynamicsDrawerViewController
 	url = git@github.com:monospacecollective/MSDynamicsDrawerViewController.git
+[submodule "Vendors/SDWebImage"]
+	path = Vendors/SDWebImage
+	url = git@github.com:rs/SDWebImage.git

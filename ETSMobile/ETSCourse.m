@@ -16,6 +16,7 @@
 @dynamic credits;
 @dynamic grade;
 @dynamic group;
+@dynamic id;
 @dynamic mean;
 @dynamic median;
 @dynamic order;

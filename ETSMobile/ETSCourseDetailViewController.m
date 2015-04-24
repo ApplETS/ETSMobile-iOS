@@ -40,13 +40,14 @@
     [[Mint sharedInstance] leaveBreadcrumb:@"COURSE_DETAILS"];
     #endif
     
-    if (self.course) {
+    if (self.course && self.course.acronym.length > 0) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
         synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];
         synchronization.entityName = @"Evaluation";
         synchronization.compareKey = @"name";
         synchronization.objectsKeyPath = @"d.liste";
-        synchronization.predicate = [NSPredicate predicateWithFormat:@"course.acronym == %@", self.course.acronym];
+        synchronization.sortSelector = @selector(localizedCaseInsensitiveCompare:);
+        synchronization.predicate = [NSPredicate predicateWithFormat:@"course.id == %@", self.course.id];
         self.synchronization = synchronization;
         self.synchronization.delegate = self;
     }
@@ -88,7 +89,7 @@
     
     fetchRequest.fetchBatchSize = 10;
     
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"course.acronym == %@", self.course.acronym];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"course == %@", self.course];
     
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -292,7 +293,7 @@
     synchronization.entityName = @"Evaluation";
     synchronization.compareKey = @"name";
     synchronization.objectsKeyPath = @"d.liste";
-    synchronization.predicate = [NSPredicate predicateWithFormat:@"course.acronym == %@", self.course.acronym];
+    synchronization.predicate = [NSPredicate predicateWithFormat:@"course == %@", self.course];
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
     
