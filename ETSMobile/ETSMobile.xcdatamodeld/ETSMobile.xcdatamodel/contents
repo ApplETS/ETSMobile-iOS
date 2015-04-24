@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Bandwidth" representedClassName="ETSBandwidth" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="download" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -37,6 +37,7 @@
         <attribute name="credits" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="grade" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="group" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mean" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="median" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="String" syncable="YES"/>
@@ -146,7 +147,7 @@
         <element name="Bandwidth" positionX="-281" positionY="-27" width="128" height="135"/>
         <element name="Calendar" positionX="79" positionY="45" width="128" height="165"/>
         <element name="Contact" positionX="-452" positionY="-360" width="128" height="225"/>
-        <element name="Course" positionX="243" positionY="-360" width="128" height="300"/>
+        <element name="Course" positionX="243" positionY="-360" width="128" height="315"/>
         <element name="Evaluation" positionX="396" positionY="-360" width="128" height="225"/>
         <element name="Event" positionX="-108" positionY="-54" width="128" height="120"/>
         <element name="MoodleCourse" positionX="79" positionY="-360" width="128" height="163"/>

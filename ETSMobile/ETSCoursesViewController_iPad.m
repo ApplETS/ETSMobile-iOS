@@ -40,7 +40,7 @@
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForCourses];
     synchronization.entityName = @"Course";
-    synchronization.compareKey = @"acronym";
+    synchronization.compareKey = @"id";
     synchronization.objectsKeyPath = @"d.liste";
     synchronization.ignoredAttributes = @[@"results", @"mean", @"median", @"std", @"percentile"];
     self.synchronization = synchronization;
@@ -121,18 +121,22 @@
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     if ([managedObject isKindOfClass:[ETSEvaluation class]]) return;
-    
+
     ETSCourse *course = (ETSCourse *)managedObject;
     course.year = @([[object[@"session"] substringFromIndex:1] integerValue]);
-    
+
     NSString *seasonString = [object[@"session"] substringToIndex:1];
     if ([seasonString isEqualToString:@"H"])      course.season = @1;
     else if ([seasonString isEqualToString:@"É"]) course.season = @2;
     else if ([seasonString isEqualToString:@"A"]) course.season = @3;
-    
+    else course.season = @0;
+
     if ([seasonString isEqualToString:@"H"])      course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"1"];
     else if ([seasonString isEqualToString:@"É"]) course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"2"];
     else if ([seasonString isEqualToString:@"A"]) course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"3"];
+    else course.order = @"00000";
+
+    course.id = [NSString stringWithFormat:@"%@%@",course.order, course.acronym];
 }
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller

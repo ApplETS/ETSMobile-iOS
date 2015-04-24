@@ -30,5 +30,6 @@
 @property (nonatomic, strong) NSString* signalName;
 @property (nonatomic, strong) NSString* timestamp;
 @property (nonatomic, strong) NSString* msFromStart;
+@property (nonatomic, strong) NSString* appRunningState;
 
 @end

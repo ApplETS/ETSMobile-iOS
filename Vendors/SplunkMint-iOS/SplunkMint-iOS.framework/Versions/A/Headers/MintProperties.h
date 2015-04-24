@@ -72,4 +72,5 @@ extern BOOL IsSplunkPlugin;
 @property (nonatomic, strong) NSString* xamarinArchitecture;
 @property (nonatomic, strong) NSString* xamarinVersion;
 @property (nonatomic, assign) BOOL enableFlushOnlyOverWiFi;
+@property (nonatomic, assign) BOOL setUserOptOut;
 @end

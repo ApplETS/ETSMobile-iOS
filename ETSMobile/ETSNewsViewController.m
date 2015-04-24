@@ -90,6 +90,8 @@
     self.cellIdentifier = @"NewsIdentifier";
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
     [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
     
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
@@ -117,18 +119,20 @@
     NSMutableArray *news = [NSMutableArray array];
     
     NSDateFormatter *ymdFormatter = [NSDateFormatter new];
+    [ymdFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
     [ymdFormatter setDateFormat:@"yyyy'-'MM'-'dd"];
-    
+
     NSArray *keys = [((NSDictionary *)objects) allKeys];
     
     for (NSString *key in keys) {
         
         for (NSDictionary *object in objects[key]) {
             NSMutableDictionary *entry = [NSMutableDictionary dictionaryWithDictionary:object];
+            
             NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"updated_time"]];
             NSString *dateString = [ymdFormatter stringFromDate:date];
             if (dateString) {
-                entry[@"ymdDate"] = [ymdFormatter stringFromDate:date];
+                entry[@"ymdDate"] = dateString;
                 [news addObject:entry];
             }
         }

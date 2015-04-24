@@ -11,6 +11,7 @@
 #import "ETSEvent.h"
 #import "ETSRadioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 #import "NSURLRequest+API.h"
 #import "MSCollectionViewCalendarLayout.h"
@@ -67,6 +68,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     self.collectionViewCalendarLayout.hourHeight = 40;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
     [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
     
@@ -162,6 +164,33 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 {
     [super viewDidAppear:animated];
     [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:NO];
+
+    __weak typeof(self) bself = self;
+
+    MPRemoteCommandHandlerStatus (^playPauseBlock)(MPRemoteCommandEvent *) = ^MPRemoteCommandHandlerStatus(MPRemoteCommandEvent *event) {
+        if ([[ETSRadioPlayer sharedInstance] isPlaying]) {
+            [[ETSRadioPlayer sharedInstance] stopRadio];
+            bself.navigationItem.prompt = nil;
+            bself.navigationItem.rightBarButtonItem = bself.playBarButtonItem;
+
+        } else {
+            [[ETSRadioPlayer sharedInstance] startRadio];
+            bself.navigationItem.rightBarButtonItem = bself.pauseBarButtonItem;
+        }
+        return MPRemoteCommandHandlerStatusSuccess;
+    };
+
+
+    MPRemoteCommandCenter *commandCenter = [MPRemoteCommandCenter sharedCommandCenter];
+    MPRemoteCommand *pauseCommand = [commandCenter pauseCommand];
+    [pauseCommand removeTarget:nil];
+    [pauseCommand setEnabled:YES];
+    [pauseCommand addTargetWithHandler:playPauseBlock];
+
+    MPRemoteCommand *playCommand = [commandCenter playCommand];
+    [playCommand removeTarget:nil];
+    [playCommand setEnabled:YES];
+    [playCommand addTargetWithHandler:playPauseBlock];
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration

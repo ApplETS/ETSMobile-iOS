@@ -73,6 +73,7 @@
 		266F0B7218F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6A18F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf */; };
 		266F0B7318F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6B18F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf */; };
 		2670C01018F35EED00A4B0D6 /* SecuritySources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2670C00F18F35EED00A4B0D6 /* SecuritySources.plist */; };
+		2687549E1AEAA0B9004DAC1E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2687549D1AEAA0B9004DAC1E /* WebKit.framework */; };
 		26887B7218F090C500009EBA /* ETSRadioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7118F090C500009EBA /* ETSRadioCell.m */; };
 		26887B7718F1BA5800009EBA /* ETSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7618F1BA5800009EBA /* ETSAboutViewController.m */; };
 		26887B7B18F1D36600009EBA /* ETSSponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7A18F1D36600009EBA /* ETSSponsorsViewController.m */; };
@@ -278,6 +279,7 @@
 		266F0B6A18F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "PERSONNE_ARMEE_2009-04-01.pdf"; sourceTree = "<group>"; };
 		266F0B6B18F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "URGENCE_MEDICALE_2009-04-01.pdf"; sourceTree = "<group>"; };
 		2670C00F18F35EED00A4B0D6 /* SecuritySources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SecuritySources.plist; sourceTree = "<group>"; };
+		2687549D1AEAA0B9004DAC1E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		26887B7018F090C500009EBA /* ETSRadioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRadioCell.h; sourceTree = "<group>"; };
 		26887B7118F090C500009EBA /* ETSRadioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRadioCell.m; sourceTree = "<group>"; };
 		26887B7518F1BA5800009EBA /* ETSAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSAboutViewController.h; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2687549E1AEAA0B9004DAC1E /* WebKit.framework in Frameworks */,
 				26D161001A1E4A5C004A53B1 /* SplunkMint-iOS.framework in Frameworks */,
 				269B46D91A1123300052E4B7 /* CoreTelephony.framework in Frameworks */,
 				261D953319BA287B0007FD28 /* SystemConfiguration.framework in Frameworks */,
@@ -795,6 +798,7 @@
 		26DD92A617EA610D00469FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2687549D1AEAA0B9004DAC1E /* WebKit.framework */,
 				269B46D81A1123300052E4B7 /* CoreTelephony.framework */,
 				269B46D61A1121090052E4B7 /* SplunkMint-iOS.framework */,
 				268AE41119CE151400569123 /* TestFlightSDK3 */,
@@ -1397,10 +1401,7 @@
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Vendors/TestFlightSDK3",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1439,10 +1440,7 @@
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Vendors/TestFlightSDK3",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",

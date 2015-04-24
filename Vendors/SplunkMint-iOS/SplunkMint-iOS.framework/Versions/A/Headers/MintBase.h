@@ -65,6 +65,7 @@
  */
 @property (nonatomic, weak) id<MintNotificationDelegate> notificationDelegate;
 
+
 ///**
 // *  Deprecated for Splunk MINT. This method is used only by the BugSense plugin.
 // */
@@ -340,5 +341,30 @@
  *  @return The ExceptionDataFixture JSON string model.
  */
 - (NSString*) exceptionFixtureFrom:(NSException*)exception;
+
+/**
+ *Sets the GPS coordinates
+ */
+
+//- (void)setGPSCoordinatesWithLatitude:(double)latitude longitude:(double)longitude accuracy:(double)accuracy;
+
+
+- (void)setUserOptOut:(BOOL)setUserOptOut;
+
+/**
+ * @returns UUID
+ */
+- (NSString*)getMintUUID;
+
+/**
+ *@returns session ID
+ */
+- (NSString*)getSessionID;
+
+/**
+ *Log current view with extraData
+ *@param viewName name of the current view
+ */
+- (void)logViewWithCurrentViewName:(NSString*)currentViewName limitedExtraDataList:(LimitedExtraDataList*)extraDataList;
 
 @end

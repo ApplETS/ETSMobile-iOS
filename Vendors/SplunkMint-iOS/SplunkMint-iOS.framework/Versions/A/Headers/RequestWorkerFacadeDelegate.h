@@ -74,4 +74,10 @@
     - (void) transactionCancelWithName: (NSString*)transactionName extraDataKey: (NSString*)key extraDataValue: (NSString*)value reason: (NSString*)reason andResultBlock: (TransactionStopResultBlock)resultBlock;
 
     - (void) transactionCancelWithName: (NSString*)transactionName limitedExtraDataList: (LimitedExtraDataList*)extraDataList reason: (NSString*)reason andResultBlock: (TransactionStopResultBlock)resultBlock;
+
+    - (NSString*)getMintUUID;
+
+    - (NSString*)getSessionID;
+
+- (void)logViewWithCurrentViewName:(NSString*)currentViewName limitedExtraDataList:(LimitedExtraDataList*)extraDataList;
 @end

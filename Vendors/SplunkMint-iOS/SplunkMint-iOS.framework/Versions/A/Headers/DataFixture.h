@@ -120,4 +120,18 @@
  */
 @property (nonatomic, strong) NSArray* transactions;
 
+/**
+ *App running state: Background or Foreground
+ */
+@property (nonatomic, strong) NSString *appRunningState;
+
+/**
+ *Battery level of current device
+ */
+@property (nonatomic, strong) NSString *batteryLevel;
+/**
+ *Current view that the user viewing
+ */
+@property (nonatomic, strong) NSString *currentView;
+
 @end

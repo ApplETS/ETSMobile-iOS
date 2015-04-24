@@ -23,7 +23,6 @@
 @property (nonatomic, strong) NSString* message;
 @property (nonatomic, strong) NSString* errorHash;
 @property (nonatomic, strong) NSString* where;
-
 @property (nonatomic, assign) BOOL rooted;
 @property (nonatomic, strong) NSString* gpsStatus;
 @property (nonatomic, strong) NSString* msFromStart;
