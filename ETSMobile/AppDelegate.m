@@ -19,6 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // White status bar
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 
