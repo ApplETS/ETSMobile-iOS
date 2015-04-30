@@ -53,14 +53,14 @@
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Précédent" id="2N8-8M-naP">
+                        <barButtonItem image="previous" id="2N8-8M-naP">
                             <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="goBack" destination="AvI-aW-UZ5" id="cWV-5M-jIr"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="a6k-7E-zmD"/>
-                        <barButtonItem title="Suivant" id="2ra-Jx-rot">
+                        <barButtonItem image="next" id="2ra-Jx-rot">
                             <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="goForward" destination="AvI-aW-UZ5" id="3na-Qz-7Tr"/>
@@ -2270,14 +2270,14 @@ http://www.clubapplets.ca</string>
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Précédent" id="HcO-UE-nXo">
+                        <barButtonItem image="previous" id="HcO-UE-nXo">
                             <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="goBack" destination="aSO-sU-F21" id="H7u-cy-JsK"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="UF1-Ir-3Ru"/>
-                        <barButtonItem title="Suivant" id="lhm-sA-P6U">
+                        <barButtonItem image="next" id="lhm-sA-P6U">
                             <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
                                 <action selector="goForward" destination="aSO-sU-F21" id="MJu-02-dY0"/>
@@ -2317,6 +2317,8 @@ http://www.clubapplets.ca</string>
     <resources>
         <image name="Authentication" width="695" height="421"/>
         <image name="menu-icon" width="22" height="17"/>
+        <image name="next" width="22" height="22"/>
+        <image name="previous" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aLx-hw-zzG"/>
