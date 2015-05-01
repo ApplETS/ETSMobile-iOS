@@ -32,6 +32,7 @@
 {
     [super viewDidLoad];
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     
     #ifdef __USE_BUGSENSE
@@ -39,6 +40,13 @@
     #endif
 >>>>>>> Retrait de TestFlight.
     
+=======
+
+#ifdef __USE_BUGSENSE
+    [[Mint sharedInstance] leaveBreadcrumb:@"COURSE_DETAILS"];
+#endif
+
+>>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
     if (self.course && self.course.acronym.length > 0) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
         synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];
@@ -50,59 +58,65 @@
         self.synchronization = synchronization;
         self.synchronization.delegate = self;
     }
-    
+
     self.formatter = [[NSNumberFormatter alloc] init];
     self.formatter.decimalSeparator = @",";
     self.formatter.maximumFractionDigits = 1;
     self.formatter.minimumFractionDigits = 1;
     self.formatter.minimumIntegerDigits = 1;
-    
+
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
-    
+
     self.title = self.course.acronym;
-    
+
     self.hadResults = [[self.fetchedResultsController sections][0] numberOfObjects] > 0;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
- 
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-  //  [self.coursesBarButtonItem.target performSelector:self.coursesBarButtonItem.action withObject:self.coursesBarButtonItem];
+    //  [self.coursesBarButtonItem.target performSelector:self.coursesBarButtonItem.action withObject:self.coursesBarButtonItem];
 #pragma clang diagnostic pop
 }
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
     if (!self.course) return nil;
-    
+
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
-    
+
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Evaluation" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
-    
+
     fetchRequest.fetchBatchSize = 10;
+<<<<<<< HEAD
     
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"course == %@", self.course];
     
+=======
+
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"course == %@", self.course];
+
+>>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     [fetchRequest setSortDescriptors:sortDescriptors];
-    
+
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     self.fetchedResultsController = aFetchedResultsController;
     _fetchedResultsController.delegate = self;
-    
+
     NSError *error;
     if (![_fetchedResultsController performFetch:&error]) {
         // FIXME: Update to handle the error appropriately.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     }
-    
+
     return _fetchedResultsController;
 }
 
@@ -121,7 +135,7 @@
         if (self.course.grade && [self.course.grade length] > 0) rows++;
         return rows;
     }
-    
+
     return [[self.fetchedResultsController sections][0] numberOfObjects];
 }
 
@@ -163,8 +177,8 @@
     }
     else {
         if (indexPath.row == 0 && self.hadResults > 0) {
-                cell.textLabel.text = NSLocalizedString(@"Note à ce jour", nil);
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:self.course.resultOn100], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]]];
+            cell.textLabel.text = NSLocalizedString(@"Note à ce jour", nil);
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:self.course.resultOn100], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]]];
         }
         else if (indexPath.row == 0 && self.hadResults == 0) {
             cell.textLabel.text = NSLocalizedString(@"Cote au dossier", nil);
@@ -215,7 +229,7 @@
 - (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
 {
     [super synchronizationDidFinishLoading:synchronization];
-    
+
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         if ([self.tableView numberOfSections] > 0)
             [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -240,7 +254,7 @@
     if (newIndexPath) {
         newIndexPath = [NSIndexPath indexPathForRow:newIndexPath.row inSection:newIndexPath.section + 1];
     }
-    
+
     [super controller:controller didChangeObject:anObject atIndexPath:indexPath forChangeType:type newIndexPath:newIndexPath];
 }
 
@@ -263,6 +277,7 @@
     [super controllerDidChangeContent:controller];
 }
 
+<<<<<<< HEAD
 #pragma mark - Split view
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
@@ -306,4 +321,6 @@
     [self startRefresh:nil];
 }*/
 
+=======
+>>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
 @end

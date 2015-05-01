@@ -640,6 +640,7 @@
 		26065D7E1ABB896C008955D3 /* ETSMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSMenuCell.m; path = Views/Menu/ETSMenuCell.m; sourceTree = "<group>"; };
 		26065D7F1ABB896C008955D3 /* ETSMenuTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSMenuTableViewHeader.h; path = Views/Menu/ETSMenuTableViewHeader.h; sourceTree = "<group>"; };
 		26065D801ABB896C008955D3 /* ETSMenuTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSMenuTableViewHeader.m; path = Views/Menu/ETSMenuTableViewHeader.m; sourceTree = "<group>"; };
+		262B09A01AD62CCF005D2F92 /* EnvConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnvConst.h; path = "Supporting Files/EnvConst.h"; sourceTree = "<group>"; };
 		264186EA1AB779F40027561B /* ETSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		264186EE1AB779F40027561B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		264186EF1AB779F40027561B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -744,7 +745,6 @@
 		26731FD01ABA1B660045EBD2 /* NSDate+Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Day.m"; path = "Categories/NSDate+Day.m"; sourceTree = "<group>"; };
 		26731FD11ABA1B660045EBD2 /* UIColor+Styles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Styles.h"; path = "Categories/UIColor+Styles.h"; sourceTree = "<group>"; };
 		26731FD21ABA1B660045EBD2 /* UIColor+Styles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Styles.m"; path = "Categories/UIColor+Styles.m"; sourceTree = "<group>"; };
-		26A7E19E1ACB943600B83C5F /* EnvConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnvConst.h; path = "Supporting Files/EnvConst.h"; sourceTree = "<group>"; };
 		26A7E1A01ACC3A1B00B83C5F /* ETSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSProfileViewController.h; path = Controllers/Profile/ETSProfileViewController.h; sourceTree = "<group>"; };
 		26A7E1A11ACC3A1B00B83C5F /* ETSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSProfileViewController.m; path = Controllers/Profile/ETSProfileViewController.m; sourceTree = "<group>"; };
 		26A7E1A41ACC429900B83C5F /* ETSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSCalendarViewController.h; path = Controllers/Calendar/ETSCalendarViewController.h; sourceTree = "<group>"; };
@@ -1100,7 +1100,6 @@
 				264187001AB779F40027561B /* Images.xcassets */,
 				264187021AB779F40027561B /* LaunchScreen.xib */,
 				264186F41AB779F40027561B /* ETSMobile.xcdatamodeld */,
-				26A7E19E1ACB943600B83C5F /* EnvConst.h */,
 				264186ED1AB779F40027561B /* Supporting Files */,
 			);
 			path = ETSMobile;
@@ -1110,6 +1109,7 @@
 			isa = PBXGroup;
 			children = (
 				264187731AB7876B0027561B /* Procedures */,
+				262B09A01AD62CCF005D2F92 /* EnvConst.h */,
 				264187841AB787830027561B /* ETSAPICoreDataMapping.plist */,
 				264187851AB787830027561B /* ETSAPIURL.plist */,
 				264187861AB787830027561B /* NewsSources.plist */,

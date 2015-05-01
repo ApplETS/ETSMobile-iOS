@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<<<<<<< HEAD
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+=======
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D131" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+>>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
     <entity name="Bandwidth" representedClassName="ETSBandwidth" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="download" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -37,7 +41,11 @@
         <attribute name="credits" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="grade" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="group" optional="YES" attributeType="String" syncable="YES"/>
+<<<<<<< HEAD
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+=======
+        <attribute name="id" attributeType="String" syncable="YES"/>
+>>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
         <attribute name="mean" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="median" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="String" syncable="YES"/>
