@@ -30,36 +30,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"COURSES_VIEWCONTROLLER"];
-    #endif
-    
+
+#ifdef __USE_TESTFLIGHT
+    [TestFlight passCheckpoint:@"COURSES_VIEWCONTROLLER"];
+#endif
+
     self.title =  NSLocalizedString(@"Notes", nil);
-    
+
     self.cellIdentifier = @"CourseIdentifier";
-    
+
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForCourses];
     synchronization.entityName = @"Course";
-    synchronization.compareKey = @"acronym";
+    synchronization.compareKey = @"id";
     synchronization.objectsKeyPath = @"d.liste";
     synchronization.ignoredAttributes = @[@"results", @"resultOn100", @"mean", @"median", @"std", @"percentile"];
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
-    
+
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-            authenticationController.delegate = self;
-            [self.navigationController pushViewController:authenticationController animated:NO];
-        } else {
-            ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-            authenticationController.delegate = self;
-            authenticationController.modalPresentationStyle = UIModalPresentationFormSheet;
-            authenticationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-            [self.navigationController presentViewController:authenticationController animated:NO completion:nil];
-        }
+        ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+        ac.delegate = self;
+        [self.navigationController pushViewController:ac animated:NO];
     }
 }
 
@@ -76,16 +68,16 @@
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
-    
+
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Course" inManagedObjectContext:self.managedObjectContext];
     [fetchRequest setEntity:entity];
 
     fetchRequest.fetchBatchSize = 24;
-    
+
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"order" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"acronym" ascending:YES]];
     [fetchRequest setSortDescriptors:sortDescriptors];
-    
+
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"order" cacheName:nil];
     self.fetchedResultsController = aFetchedResultsController;
     _fetchedResultsController.delegate = self;
@@ -95,13 +87,14 @@
         // FIXME: Update to handle the error appropriately.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     }
-    
+
     return _fetchedResultsController;
 }
 
 - (void)configureCell:(UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     ETSCourse *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
     ETSCourseCell *courseCell = (ETSCourseCell *)cell;
 
     if ([course.grade length] > 0) {
@@ -113,9 +106,9 @@
     } else {
         courseCell.gradeLabel.text = @"—";
     }
-    
+
     courseCell.acronymLabel.text = course.acronym;
-    
+
     courseCell.layer.cornerRadius = 2.0f;
     courseCell.layer.borderColor = [UIColor colorWithRed:190.0f/255.0f green:0.0f/255.0f blue:10.0f/255.0f alpha:1].CGColor;
     courseCell.layer.borderWidth = 1.0f;
@@ -135,16 +128,19 @@
 {
     if (kind == UICollectionElementKindSectionHeader) {
         ETSSessionHeader *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SessionHeaderIdentifier" forIndexPath:indexPath];
-        
+
         ETSCourse *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        
-        NSString *session = nil;
-        if ([course.season integerValue] == 1)      session = NSLocalizedString(@"Hiver", nil);
-        else if ([course.season integerValue] == 2) session = NSLocalizedString(@"Été", nil);
-        else if ([course.season integerValue] == 3) session = NSLocalizedString(@"Automne", nil);
-        
-        headerView.sessionLabel.text = [NSString stringWithFormat:@"%@ %@", session, course.year];
-        
+
+        if (([course.season integerValue] == 0)) {
+            headerView.sessionLabel.text = NSLocalizedString(@"Autres", nil);
+        } else {
+            NSString *session = nil;
+            if ([course.season integerValue] == 1)      session = NSLocalizedString(@"Hiver", nil);
+            else if ([course.season integerValue] == 2) session = NSLocalizedString(@"Été", nil);
+            else if ([course.season integerValue] == 3) session = NSLocalizedString(@"Automne", nil);
+            headerView.sessionLabel.text = [NSString stringWithFormat:@"%@ %@", session, course.year];
+        }
+
         return headerView;
     }
     return nil;
@@ -152,7 +148,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    ETSCourseDetailViewController *vc = (ETSCourseDetailViewController *)((UINavigationController *)[segue destinationViewController]).topViewController;
+    ETSCourseDetailViewController *vc = [segue destinationViewController];
     vc.course = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
     vc.managedObjectContext = self.managedObjectContext;
     self.lastSelectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
@@ -161,50 +157,34 @@
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     if ([managedObject isKindOfClass:[ETSEvaluation class]]) return;
-    
+
     ETSCourse *course = (ETSCourse *)managedObject;
     course.year = @([[object[@"session"] substringFromIndex:1] integerValue]);
-    
+
     NSString *seasonString = [object[@"session"] substringToIndex:1];
     if ([seasonString isEqualToString:@"H"])      course.season = @1;
     else if ([seasonString isEqualToString:@"É"]) course.season = @2;
     else if ([seasonString isEqualToString:@"A"]) course.season = @3;
-    
+    else course.season = @0;
+
     if ([seasonString isEqualToString:@"H"])      course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"1"];
     else if ([seasonString isEqualToString:@"É"]) course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"2"];
     else if ([seasonString isEqualToString:@"A"]) course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"3"];
-    /*
-    if ([course.grade length] == 0) {
-        ETSConnection *connection = [[ETSConnection alloc] init];
-        connection.request = [NSURLRequest requestForEvaluationsWithCourse:course];
-        connection.entityName = @"Evaluation";
-        connection.compareKey = @"name";
-        connection.objectsKeyPath = @"d.liste";
-        connection.predicate = [NSPredicate predicateWithFormat:@"course.acronym == %@", course.acronym];
-        connection.delegate = self;
-        [connection loadData];
-        // Aurait besoin d'un block pour mettre a jour les cours...
-    }
-     */
+    else course.order = @"00000";
+
+    course.id = [NSString stringWithFormat:@"%@%@",course.order, course.acronym];
 }
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
 {
     self.synchronization.request = [NSURLRequest requestForCourses];
     [super controllerDidAuthenticate:controller];
+    [self.collectionView reloadData];
 }
 
 - (ETSSynchronizationResponse)synchronization:(ETSSynchronization *)synchronization validateJSONResponse:(NSDictionary *)response
 {
     return [ETSAuthenticationViewController validateJSONResponse:response];
-}
-
-- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController
-{
-    
-    return ([secondaryViewController isKindOfClass:[UINavigationController class]]
-        && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[ETSCourseDetailViewController class]]
-        && ([(ETSCourseDetailViewController *)[(UINavigationController *)secondaryViewController topViewController] course] == nil));
 }
 
 @end

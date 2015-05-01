@@ -98,7 +98,7 @@
         // FIXME: traiter si data est vide ou s'il y a erreur
         if (!data || [data length] == 0 || error) return;
         
-//        NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
+        NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
 
         NSError *jsonError = nil;
         NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
@@ -151,6 +151,7 @@
         else if ([json isKindOfClass:[NSDictionary class]]) [bself synchronizeJSONDictionary:json error:&syncError];
 
         if (bself.saveAutomatically) {
+            [bself.managedObjectContext processPendingChanges];
             dispatch_sync(dispatch_get_main_queue(), ^{
                 NSError *error;
                 if (![bself.managedObjectContext save:&error]) {
@@ -178,7 +179,13 @@
     [self deleteExpiredObjects:jsonObjects forEntity:self.entityName key:self.compareKey managedObjectContext:self.managedObjectContext];
     
     // Ajout et mise à jour des autres objets de la réponse de l'API.
-    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:[[ETSSynchronization mappings][self.entityName] valueForKey:self.compareKey] ascending:YES];
+    NSSortDescriptor *descriptor = nil;
+    if (self.sortSelector) {
+        descriptor = [[NSSortDescriptor alloc] initWithKey:[[ETSSynchronization mappings][self.entityName] valueForKey:self.compareKey] ascending:YES selector:self.sortSelector];
+    } else {
+        descriptor = [[NSSortDescriptor alloc] initWithKey:[[ETSSynchronization mappings][self.entityName] valueForKey:self.compareKey] ascending:YES];
+    }
+    
     jsonObjects = [jsonObjects sortedArrayUsingDescriptors:@[descriptor]];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:self.entityName];

@@ -205,6 +205,8 @@
 	<dict>
 		<key>session</key>
 		<string>session</string>
+		<key>id</key>
+		<string>id</string>
 		<key>acronym</key>
 		<string>sigle</string>
 		<key>credits</key>

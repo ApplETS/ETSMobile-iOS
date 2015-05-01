@@ -10,6 +10,7 @@
 #import "ETSEvent.h"
 #import "ETSRadioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 #import "NSURLRequest+API.h"
 #import "NSDate+Day.h"
@@ -44,10 +45,10 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 {
     [super viewDidLoad];
 
-    #ifdef __USE_BUGSENSE
+#ifdef __USE_BUGSENSE
     [[Mint sharedInstance] leaveBreadcrumb:@"RADIO_VIEWCONTROLLER"];
-    #endif
-    
+#endif
+
     self.playBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(playRadio:)];
     self.pauseBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(pauseRadio:)];
 
@@ -55,17 +56,18 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
         self.navigationItem.rightBarButtonItem = self.pauseBarButtonItem;
     else
         self.navigationItem.rightBarButtonItem = self.playBarButtonItem;
-    
+
     self.title = @"Radio Piranha";
-    
+
     self.collectionViewCalendarLayout = (MSCollectionViewCalendarLayout *)self.collectionViewLayout;
     self.collectionViewCalendarLayout.delegate = self;
     self.collectionViewCalendarLayout.hourHeight = 40;
-    
+
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
     [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
-    
+
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForRadio];
     synchronization.entityName = @"Event";
@@ -76,13 +78,13 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     synchronization.dateFormatter = dateFormatter;
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
-    
+
     self.collectionView.backgroundColor = [UIColor whiteColor];
-    
+
     [self.collectionView registerClass:ETSRadioCell.class forCellWithReuseIdentifier:MSRadioEventCellReuseIdentifier];
     [self.collectionView registerClass:MSDayColumnHeader.class forSupplementaryViewOfKind:MSCollectionElementKindDayColumnHeader withReuseIdentifier:MSRadioDayColumnHeaderReuseIdentifier];
     [self.collectionView registerClass:MSTimeRowHeader.class forSupplementaryViewOfKind:MSCollectionElementKindTimeRowHeader withReuseIdentifier:MSRadioTimeRowHeaderReuseIdentifier];
-    
+
     // These are optional. If you don't want any of the decoration views, just don't register a class for them.
     [self.collectionViewCalendarLayout registerClass:MSCurrentTimeIndicator.class forDecorationViewOfKind:MSCollectionElementKindCurrentTimeIndicator];
     [self.collectionViewCalendarLayout registerClass:MSCurrentTimeGridline.class forDecorationViewOfKind:MSCollectionElementKindCurrentTimeHorizontalGridline];
@@ -95,11 +97,11 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 - (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects
 {
     NSArray *channels = @[@"radiopiranha1", @"radiopiranha2", @"programmationradiopiranha", @"radiopiranhacom"];
-    
+
     NSMutableArray *events = [NSMutableArray array];
-    
+
     for (NSString *channel in channels) {
-        
+
         if (!objects[channel]) continue;
 
         for (NSDictionary *e in objects[channel]) {
@@ -116,40 +118,40 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
-    
-    
+
+
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"start" ascending:YES]];
     fetchRequest.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[self.synchronization.predicate, [NSPredicate predicateWithFormat:@"start >= %@", [NSDate date]]]];
-    
+
     fetchRequest.predicate = self.synchronization.predicate;
-    
+
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"day" cacheName:nil];
     self.fetchedResultsController = aFetchedResultsController;
     _fetchedResultsController.delegate = self;
-    
+
     NSError *error;
     if (![_fetchedResultsController performFetch:&error]) {
         // FIXME: Update to handle the error appropriately.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     }
-    
+
     return _fetchedResultsController;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];
-    
+
     if ([[ETSRadioPlayer sharedInstance] currentTitle]) {
         self.navigationItem.prompt = [[ETSRadioPlayer sharedInstance] currentTitle];
     } else {
         self.navigationItem.prompt = nil;
     }
-    
+
     NSError *error;
     [self.synchronization synchronize:&error];
 }
@@ -158,6 +160,34 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 {
     [super viewDidAppear:animated];
     [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:NO];
+
+
+    __weak typeof(self) bself = self;
+
+    MPRemoteCommandHandlerStatus (^playPauseBlock)(MPRemoteCommandEvent *) = ^MPRemoteCommandHandlerStatus(MPRemoteCommandEvent *event) {
+        if ([[ETSRadioPlayer sharedInstance] isPlaying]) {
+            [[ETSRadioPlayer sharedInstance] stopRadio];
+            bself.navigationItem.prompt = nil;
+            bself.navigationItem.rightBarButtonItem = bself.playBarButtonItem;
+
+        } else {
+            [[ETSRadioPlayer sharedInstance] startRadio];
+            bself.navigationItem.rightBarButtonItem = bself.pauseBarButtonItem;
+        }
+        return MPRemoteCommandHandlerStatusSuccess;
+    };
+
+
+    MPRemoteCommandCenter *commandCenter = [MPRemoteCommandCenter sharedCommandCenter];
+    MPRemoteCommand *pauseCommand = [commandCenter pauseCommand];
+    [pauseCommand removeTarget:nil];
+    [pauseCommand setEnabled:YES];
+    [pauseCommand addTargetWithHandler:playPauseBlock];
+
+    MPRemoteCommand *playCommand = [commandCenter playCommand];
+    [playCommand removeTarget:nil];
+    [playCommand setEnabled:YES];
+    [playCommand addTargetWithHandler:playPauseBlock];
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
@@ -245,7 +275,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 - (IBAction)playRadio:(id)sender
 {
     [[ETSRadioPlayer sharedInstance] startRadio];
-    
+
     self.navigationItem.rightBarButtonItem = self.pauseBarButtonItem;
 }
 
@@ -253,7 +283,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 {
     [[ETSRadioPlayer sharedInstance] stopRadio];
     self.navigationItem.prompt = nil;
-    
+
     self.navigationItem.rightBarButtonItem = self.playBarButtonItem;
 }
 

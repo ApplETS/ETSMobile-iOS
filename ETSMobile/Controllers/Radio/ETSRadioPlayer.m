@@ -9,6 +9,7 @@
 #import "ETSRadioPlayer.h"
 #import "ETSRadioViewController.h"
 #import "AppDelegate.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface ETSRadioPlayer ()
 @property (nonatomic, strong)   AVPlayer        *player;
@@ -70,6 +71,11 @@
         if ([controller isKindOfClass:[ETSRadioViewController class]]) {
             ((ETSRadioViewController *)controller).navigationItem.prompt = self.currentTitle;
         }
+
+        MPNowPlayingInfoCenter* info = [MPNowPlayingInfoCenter defaultCenter];
+        NSMutableDictionary* newInfo = [NSMutableDictionary dictionary];
+        newInfo[MPMediaItemPropertyTitle] = self.currentTitle;
+        info.nowPlayingInfo = newInfo;
     }
 }
 
