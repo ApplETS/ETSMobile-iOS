@@ -51,14 +51,6 @@
 {
     [super viewDidLoad];
     
-    #ifdef __USE_TESTFLIGHT
-    [TestFlight passCheckpoint:@"NEWSSOURCE_VIEWCONTROLLER"];
-    #endif
-
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"NEWSSOURCE_VIEWCONTROLLER"];
-    #endif
-    
     self.cellIdentifier = @"SourceIdentifier";
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"NewsSource"];

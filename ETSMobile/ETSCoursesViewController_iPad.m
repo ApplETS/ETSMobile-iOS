@@ -25,14 +25,6 @@
 {
     [super viewDidLoad];
     
-    #ifdef __USE_TESTFLIGHT
-    [TestFlight passCheckpoint:@"COURSES_IPAD_VIEWCONTROLLER"];
-    #endif
-    
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"COURSES_IPAD_VIEWCONTROLLER"];
-    #endif
-    
     self.title =  NSLocalizedString(@"Notes", nil);
     
     self.cellIdentifier = @"CourseIdentifier";

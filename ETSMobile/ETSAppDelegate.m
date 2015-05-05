@@ -22,6 +22,9 @@
 #import "ETSWebViewViewController.h"
 #import "ETSSecurityViewController.h"
 #import "ETSDirectoryViewController.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @implementation ETSAppDelegate
 
@@ -32,16 +35,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    #ifdef __USE_TESTFLIGHT
-    #error TestFlight needs API Key
-    [TestFlight takeOff:@""];
-    #endif
-
-    #ifdef __USE_BUGSENSE
-    #error BugSense needs API Key
-    [[Mint sharedInstance] initAndStartSession:@""];
-    #endif
-    
     [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 
@@ -71,7 +64,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.dynamicsDrawerViewController;
     [self.window makeKeyAndVisible];
-    
+
+
+    [Fabric with:@[CrashlyticsKit]];
     return YES;
 }
 

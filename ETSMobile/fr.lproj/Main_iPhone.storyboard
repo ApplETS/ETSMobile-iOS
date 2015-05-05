@@ -1902,7 +1902,6 @@ http://www.clubapplets.ca</string>
         <!--Root View Controller-->
         <scene sceneID="NyU-3C-VbT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xBL-4G-SHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="eun-xE-Awt" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dfx-Te-uoS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1923,13 +1922,13 @@ http://www.clubapplets.ca</string>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="Y6N-Sh-10T"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xBL-4G-SHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1401" y="1254"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0RK-l9-jfV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="shi-lS-Kn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="T4n-Ml-58o" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a5X-Ln-bUU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1939,6 +1938,7 @@ http://www.clubapplets.ca</string>
                         <segue destination="eun-xE-Awt" kind="relationship" relationship="rootViewController" id="ykj-pN-MBx"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="shi-lS-Kn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="865" y="1254"/>
         </scene>

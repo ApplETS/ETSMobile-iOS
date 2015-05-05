@@ -10,17 +10,18 @@
 #import "NSURL+API.h"
 #import "ETSAuthenticationViewController.h"
 #import "NSMutableURLRequest+BasicAuth.h"
-#if defined(__has_include)
-#if __has_include("EnvConst.h")
-// Ce fichier est disponible sous le Wiki du club. http://wiki.clubapplets.ca:8090/display/ETSM/Configuration+iOS
-#import "EnvConst.h"
-#else
-#define kApplETSUsername @""
-#define kApplETSPassword @""
-#endif
-#endif
 
 @implementation NSURLRequest (API)
+
++ (NSString *)applETSUsername
+{
+    return (NSString *)[[NSBundle mainBundle] objectForInfoDictionaryKey:@"ApplETSUsername"];
+}
+
++ (NSString *)applETSPassword
+{
+    return (NSString *)[[NSBundle mainBundle] objectForInfoDictionaryKey:@"ApplETSPassword"];
+}
 
 + (id)JSONRequestWithURL:(NSURL *)URL
 {
@@ -141,7 +142,7 @@
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    [request basicAuthForRequestWithUsername:kApplETSUsername password:kApplETSPassword];
+    [request basicAuthForRequestWithUsername:[NSURLRequest applETSUsername] password:[NSURLRequest applETSPassword]];
     request.URL = [NSURL URLForNewsWithSources:sources];
 
     return request;
@@ -151,7 +152,7 @@
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    [request basicAuthForRequestWithUsername:kApplETSUsername password:kApplETSPassword];
+    [request basicAuthForRequestWithUsername:[NSURLRequest applETSUsername] password:[NSURLRequest applETSPassword]];
     request.URL = [NSURL URLForComment];
 
     [request setHTTPMethod:@"POST"];
@@ -165,7 +166,7 @@
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    [request basicAuthForRequestWithUsername:kApplETSUsername password:kApplETSPassword];
+    [request basicAuthForRequestWithUsername:[NSURLRequest applETSUsername] password:[NSURLRequest applETSPassword]];
     request.URL = [NSURL URLForRadio];
     return request;
 }
@@ -174,7 +175,7 @@
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    [request basicAuthForRequestWithUsername:kApplETSUsername password:kApplETSPassword];
+    [request basicAuthForRequestWithUsername:[NSURLRequest applETSUsername] password:[NSURLRequest applETSPassword]];
     request.URL = [NSURL URLForUniversityCalendarStart:start end:end];
     return request;
 }

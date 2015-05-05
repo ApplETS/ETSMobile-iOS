@@ -17,7 +17,6 @@
 #import "ETSMenuViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-
 @interface ETSCoursesViewController ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSIndexPath *lastSelectedIndexPath;
@@ -30,11 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    #ifdef __USE_TESTFLIGHT
-    [TestFlight passCheckpoint:@"COURSES_VIEWCONTROLLER"];
-    #endif
-    
+
     self.title =  NSLocalizedString(@"Notes", nil);
     
     self.cellIdentifier = @"CourseIdentifier";
