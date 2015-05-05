@@ -35,12 +35,15 @@ NSString * const kUnknownSession = @"000000";
 {
     [super viewDidLoad];
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
     #ifdef __USE_BUGSENSE
     [[Mint sharedInstance] leaveBreadcrumb:@"MOODLE_VIEWCONTROLLER"];
     #endif
 >>>>>>> Retrait de TestFlight.
+=======
+>>>>>>> Mise à jour de 2.0.3 vers 2.1
     
     self.cellIdentifier = @"MoodleIdentifier";
 

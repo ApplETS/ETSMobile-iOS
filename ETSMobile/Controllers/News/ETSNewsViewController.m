@@ -80,10 +80,6 @@
 {
     [super viewDidLoad];
     
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"NEWS_VIEWCONTROLLER"];
-    #endif
-    
     self.tableView.estimatedRowHeight = 133.0f;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
@@ -175,7 +171,7 @@
                                   }];
     share.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1];
     
-    UITableViewRowAction *open = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Ouvrir" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
+    UITableViewRowAction *open = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Ouvrir\ndans Safari" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
                                      {
                                          [[UIApplication sharedApplication] openURL:[NSURL URLWithString:news.link]];
                                      }];

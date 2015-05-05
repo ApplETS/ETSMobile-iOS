@@ -36,6 +36,7 @@
     [super viewDidLoad];
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     self.acceptedTypes = @[@"url", @"resource", @"forum", @"choicegroup", @"wiki", @"assign", @"page"];
     
 <<<<<<< HEAD
@@ -50,6 +51,8 @@
 >>>>>>> Retrait de TestFlight.
     self.cellIdentifier = @"MoodleIdentifier";
 =======
+=======
+>>>>>>> Mise à jour de 2.0.3 vers 2.1
     _resultsTableController = [self.storyboard instantiateViewControllerWithIdentifier:@"MoodleCourseResultsViewController"];
     _searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsTableController];
     self.searchController.searchResultsUpdater = self;

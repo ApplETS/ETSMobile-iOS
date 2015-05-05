@@ -42,11 +42,14 @@
     
 =======
 
+<<<<<<< HEAD
 #ifdef __USE_BUGSENSE
     [[Mint sharedInstance] leaveBreadcrumb:@"COURSE_DETAILS"];
 #endif
 
 >>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
+=======
+>>>>>>> Mise à jour de 2.0.3 vers 2.1
     if (self.course && self.course.acronym.length > 0) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
         synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];

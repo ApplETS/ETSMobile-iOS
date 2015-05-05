@@ -41,11 +41,14 @@
 >>>>>>> Retrait de TestFlight.
 =======
 
+<<<<<<< HEAD
 #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"COURSES_VIEWCONTROLLER"];
 #endif
 
 >>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
+=======
+>>>>>>> Mise à jour de 2.0.3 vers 2.1
     self.title =  NSLocalizedString(@"Notes", nil);
 
     self.cellIdentifier = @"CourseIdentifier";

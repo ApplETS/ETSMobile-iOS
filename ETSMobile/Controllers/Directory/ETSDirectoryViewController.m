@@ -30,6 +30,7 @@
     [super viewDidLoad];
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:ETSMobile/ETSDirectoryViewController.m
 =======
     #ifdef __USE_TESTFLIGHT
@@ -42,6 +43,8 @@
     [[Mint sharedInstance] leaveBreadcrumb:@"DIRECTORY_VIEWCONTROLLER"];
     #endif
     
+=======
+>>>>>>> Mise à jour de 2.0.3 vers 2.1
     _resultsTableController = [self.storyboard instantiateViewControllerWithIdentifier:@"DirectoryResultsViewController"];
     _searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsTableController];
     self.searchController.searchResultsUpdater = self;

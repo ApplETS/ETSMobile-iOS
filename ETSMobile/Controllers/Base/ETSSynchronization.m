@@ -96,7 +96,7 @@
         });
         
         // FIXME: traiter si data est vide ou s'il y a erreur
-        if (!data || [data length] == 0 || error) return;
+     //   if (!data || [data length] == 0 || error) return;
         
 <<<<<<< HEAD
 <<<<<<< HEAD

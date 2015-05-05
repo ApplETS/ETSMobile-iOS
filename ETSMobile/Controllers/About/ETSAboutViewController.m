@@ -11,6 +11,7 @@
 @implementation ETSAboutViewController
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 - (void)viewDidLoad
 {
@@ -22,6 +23,8 @@
 }
 
 >>>>>>> Retrait de TestFlight.
+=======
+>>>>>>> Mise à jour de 2.0.3 vers 2.1
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

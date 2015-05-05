@@ -47,6 +47,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 #ifdef __USE_BUGSENSE
     [[Mint sharedInstance] leaveBreadcrumb:@"RADIO_VIEWCONTROLLER"];
 <<<<<<< HEAD
@@ -57,6 +58,8 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 #endif
 
 >>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
+=======
+>>>>>>> Mise à jour de 2.0.3 vers 2.1
     self.playBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(playRadio:)];
     self.pauseBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(pauseRadio:)];
 

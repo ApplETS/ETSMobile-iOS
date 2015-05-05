@@ -2,10 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+<<<<<<< HEAD
 	<key>ApplETSPassword</key>
 	<string>${ApplETSPassword}</string>
 	<key>ApplETSUsername</key>
 	<string>${ApplETSUsername}</string>
+=======
+	<key>ApplETSUsername</key>
+	<string>${ApplETSUsername}</string>
+	<key>ApplETSPassword</key>
+	<string>${ApplETSPassword}</string>
+>>>>>>> Mise à jour de 2.0.3 vers 2.1
 	<key>CFBundleDevelopmentRegion</key>
 	<string>fr_CA</string>
 	<key>CFBundleExecutable</key>
@@ -45,7 +52,24 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+<<<<<<< HEAD
 >>>>>>> Conversion pour iOS 8 seulement.:ETSMobile/Info.plist
+=======
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>c0781ea7e44d8e3e63d49409f062972e1302609a</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
+>>>>>>> Mise à jour de 2.0.3 vers 2.1
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIBackgroundModes</key>

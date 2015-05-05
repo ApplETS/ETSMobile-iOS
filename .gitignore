@@ -18,7 +18,11 @@ profile
 DerivedData
 .idea/
 <<<<<<< HEAD
+<<<<<<< HEAD
 Keys.xcconfig
 =======
 EnvConst.h
 >>>>>>> Mise à jour SplunkMint 4.1
+=======
+Keys.xcconfig
+>>>>>>> Mise à jour de 2.0.3 vers 2.1
