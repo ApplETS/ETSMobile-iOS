@@ -37,7 +37,6 @@
 		260874981AD6E0D400D25BD2 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 260874881AD6E0D400D25BD2 /* UIView+WebCacheOperation.m */; };
 		2610879E18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610879D18FDDAF400F84100 /* UIViewController+ScrollingNavbar.m */; };
 		261409E519A686FB00E6CD29 /* ETSNewsEmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 261409E419A686FB00E6CD29 /* ETSNewsEmptyCell.m */; };
-		261D953319BA287B0007FD28 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261D953219BA287B0007FD28 /* SystemConfiguration.framework */; };
 		26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 26274FA818F84D6A00929CE2 /* libz.dylib */; };
 		262A6346182B3DDA00B786A0 /* ETSCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */; };
 		2633EFDD19085419009BC485 /* ETSUniversityCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2633EFDC19085419009BC485 /* ETSUniversityCalendarViewController.m */; };
@@ -73,7 +72,6 @@
 		266F0B7218F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6A18F4EF22000F53C1 /* PERSONNE_ARMEE_2009-04-01.pdf */; };
 		266F0B7318F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 266F0B6B18F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf */; };
 		2670C01018F35EED00A4B0D6 /* SecuritySources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2670C00F18F35EED00A4B0D6 /* SecuritySources.plist */; };
-		2687549E1AEAA0B9004DAC1E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2687549D1AEAA0B9004DAC1E /* WebKit.framework */; };
 		26887B7218F090C500009EBA /* ETSRadioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7118F090C500009EBA /* ETSRadioCell.m */; };
 		26887B7718F1BA5800009EBA /* ETSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7618F1BA5800009EBA /* ETSAboutViewController.m */; };
 		26887B7B18F1D36600009EBA /* ETSSponsorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26887B7A18F1D36600009EBA /* ETSSponsorsViewController.m */; };
@@ -86,7 +84,6 @@
 		2698C6F21827498800F6281F /* ETSAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */; };
 		2698C6F518274F4B00F6281F /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F418274F4B00F6281F /* KeychainItemWrapper.m */; };
 		2698C6FA182834E000F6281F /* ETSCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2698C6F9182834E000F6281F /* ETSCourseCell.m */; };
-		269B46D91A1123300052E4B7 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269B46D81A1123300052E4B7 /* CoreTelephony.framework */; };
 		269BFF561811A41C005D2950 /* NSManagedObject+SetValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BFF551811A41C005D2950 /* NSManagedObject+SetValues.m */; };
 		269BFF581811A640005D2950 /* ETSAPICoreDataMapping.plist in Resources */ = {isa = PBXBuildFile; fileRef = 269BFF571811A640005D2950 /* ETSAPICoreDataMapping.plist */; };
 		269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 269BFF5B1814C649005D2950 /* ETSCoursesViewController.m */; };
@@ -100,7 +97,6 @@
 		26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26BB372B18F59580002CE5DD /* Main_iPad.storyboard */; };
 		26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */; };
 		26C97886183AD1DE005D66EF /* ETSContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C97885183AD1DE005D66EF /* ETSContact.m */; };
-		26D161001A1E4A5C004A53B1 /* SplunkMint-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269B46D61A1121090052E4B7 /* SplunkMint-iOS.framework */; };
 		26D44BA518E49BEF0006F9F0 /* ETSBandwidth.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D44BA418E49BEF0006F9F0 /* ETSBandwidth.m */; };
 		26D6A71B1AB3A005003FA21D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26D6A71A1AB3A005003FA21D /* LaunchScreen.xib */; };
 		26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A717EA610D00469FA8 /* Foundation.framework */; };
@@ -130,6 +126,8 @@
 		26DEB89618EC985600161421 /* NSDate+Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DEB89518EC985600161421 /* NSDate+Day.m */; };
 		26EF269818E612B8001D3454 /* ETSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EF269718E612B8001D3454 /* ETSCollectionViewController.m */; };
 		26EF269B18E70F12001D3454 /* ETSProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EF269A18E70F12001D3454 /* ETSProgram.m */; };
+		26F0C0441AF8538000A7D7A8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262C23351AF7F2A800D28B85 /* Crashlytics.framework */; };
+		26F0C0451AF8538000A7D7A8 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262C23341AF7F2A800D28B85 /* Fabric.framework */; };
 		26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F393221829984F00995E16 /* ETSSessionHeader.m */; };
 		26F46A99183ED03400232B5A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F46A98183ED03400232B5A /* AVFoundation.framework */; };
 		26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */; };
@@ -171,7 +169,6 @@
 		1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsSource.m; sourceTree = "<group>"; };
 		2600DB06190767000039039A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2601088D181596820037E795 /* ETSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCollectionViewController.h; sourceTree = "<group>"; };
-		2604443B1AB13AF7009EE644 /* EnvConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnvConst.h; sourceTree = "<group>"; };
 		26085B3C1829D84300FE35AB /* ETSAPIURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPIURL.plist; sourceTree = "<group>"; };
 		26085B3E1829D8D700FE35AB /* NSURL+API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+API.h"; sourceTree = "<group>"; };
 		26085B3F1829D8D700FE35AB /* NSURL+API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+API.m"; sourceTree = "<group>"; };
@@ -215,13 +212,12 @@
 		261D952F19BA28470007FD28 /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "BugSense-iOS.framework"; sourceTree = "<group>"; };
 		261D953019BA28470007FD28 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		261D953219BA287B0007FD28 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		26274F9F18F84BB200929CE2 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTestFlight.a; path = Vendors/TestFlightSDK3/libTestFlight.a; sourceTree = "<group>"; };
-		26274FA418F84CD800929CE2 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestFlight.h; path = Vendors/TestFlightSDK3/TestFlight.h; sourceTree = "<group>"; };
-		26274FA518F84CD800929CE2 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+AsyncLogging.h"; path = "Vendors/TestFlightSDK3/TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
-		26274FA618F84CD800929CE2 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestFlight+ManualSessions.h"; path = "Vendors/TestFlightSDK3/TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		26274FA818F84D6A00929CE2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		262A6344182B3DDA00B786A0 /* ETSCourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCourseDetailViewController.h; sourceTree = "<group>"; };
 		262A6345182B3DDA00B786A0 /* ETSCourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCourseDetailViewController.m; sourceTree = "<group>"; };
+		262C23341AF7F2A800D28B85 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Vendors/Fabric.framework; sourceTree = "<group>"; };
+		262C23351AF7F2A800D28B85 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Vendors/Crashlytics.framework; sourceTree = "<group>"; };
+		262C233B1AF7FD9E00D28B85 /* ETSMobile-Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "ETSMobile-Config.xcconfig"; sourceTree = "<group>"; };
 		2633EFDB19085419009BC485 /* ETSUniversityCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSUniversityCalendarViewController.h; sourceTree = "<group>"; };
 		2633EFDC19085419009BC485 /* ETSUniversityCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSUniversityCalendarViewController.m; sourceTree = "<group>"; };
 		263770921831AFB200D18F94 /* ETSEvaluation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSEvaluation.h; sourceTree = "<group>"; };
@@ -332,7 +328,6 @@
 		26BB372F18F5E77E002CE5DD /* ETSCoursesViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCoursesViewController_iPad.m; sourceTree = "<group>"; };
 		26C97884183AD1DE005D66EF /* ETSContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSContact.h; sourceTree = "<group>"; };
 		26C97885183AD1DE005D66EF /* ETSContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSContact.m; sourceTree = "<group>"; };
-		26D161021A1E4C94004A53B1 /* SplunkMint-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "SplunkMint-iOS.framework"; sourceTree = "<group>"; };
 		26D44BA318E49BEF0006F9F0 /* ETSBandwidth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSBandwidth.h; sourceTree = "<group>"; };
 		26D44BA418E49BEF0006F9F0 /* ETSBandwidth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSBandwidth.m; sourceTree = "<group>"; };
 		26D6A71A1AB3A005003FA21D /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -400,10 +395,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2687549E1AEAA0B9004DAC1E /* WebKit.framework in Frameworks */,
-				26D161001A1E4A5C004A53B1 /* SplunkMint-iOS.framework in Frameworks */,
-				269B46D91A1123300052E4B7 /* CoreTelephony.framework in Frameworks */,
-				261D953319BA287B0007FD28 /* SystemConfiguration.framework in Frameworks */,
+				26F0C0451AF8538000A7D7A8 /* Fabric.framework in Frameworks */,
+				26F0C0441AF8538000A7D7A8 /* Crashlytics.framework in Frameworks */,
 				2600DB07190767000039039A /* MobileCoreServices.framework in Frameworks */,
 				26274FA918F84D6A00929CE2 /* libz.dylib in Frameworks */,
 				9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */,
@@ -537,17 +530,6 @@
 			);
 			name = "BugSense 3.6";
 			path = "Vendors/BugSense 3.6";
-			sourceTree = "<group>";
-		};
-		26274F9E18F84BA100929CE2 /* TestFlight */ = {
-			isa = PBXGroup;
-			children = (
-				26274FA418F84CD800929CE2 /* TestFlight.h */,
-				26274FA518F84CD800929CE2 /* TestFlight+AsyncLogging.h */,
-				26274FA618F84CD800929CE2 /* TestFlight+ManualSessions.h */,
-				26274F9F18F84BB200929CE2 /* libTestFlight.a */,
-			);
-			name = TestFlight;
 			sourceTree = "<group>";
 		};
 		263A4C43188B088100E38CAC /* News */ = {
@@ -766,18 +748,10 @@
 			name = Bandwidth;
 			sourceTree = "<group>";
 		};
-		26D161011A1E4C94004A53B1 /* SplunkMint-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				26D161021A1E4C94004A53B1 /* SplunkMint-iOS.framework */,
-			);
-			name = "SplunkMint-iOS";
-			path = "Vendors/SplunkMint-iOS";
-			sourceTree = "<group>";
-		};
 		26DD929B17EA610D00469FA8 = {
 			isa = PBXGroup;
 			children = (
+				262C233B1AF7FD9E00D28B85 /* ETSMobile-Config.xcconfig */,
 				26DD92EB17EA615E00469FA8 /* Vendors */,
 				26DD92AF17EA610D00469FA8 /* ETSMobile */,
 				26DD92D817EA610D00469FA8 /* ETSMobileTests */,
@@ -837,7 +811,6 @@
 				26DD92CA17EA610D00469FA8 /* Images.xcassets */,
 				26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */,
 				26DD92B017EA610D00469FA8 /* Supporting Files */,
-				2604443B1AB13AF7009EE644 /* EnvConst.h */,
 			);
 			path = ETSMobile;
 			sourceTree = "<group>";
@@ -944,12 +917,12 @@
 		26DD92EB17EA615E00469FA8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				262C23341AF7F2A800D28B85 /* Fabric.framework */,
+				262C23351AF7F2A800D28B85 /* Crashlytics.framework */,
 				260874671AD6E0B800D25BD2 /* SDWebImage */,
-				26D161011A1E4C94004A53B1 /* SplunkMint-iOS */,
 				1D8B140B19A7B1D90033CBA7 /* GTMNSString+HTML */,
 				2664F1D618FF1D5B0054BF58 /* MSDynamicsDrawerViewController */,
 				2610879A18FDDAE300F84100 /* AMScrollingNavbar */,
-				26274F9E18F84BA100929CE2 /* TestFlight */,
 				26DEB6ED18E9E96800161421 /* MSCollectionViewCalendarLayout */,
 				2698C6F618274F4F00F6281F /* KeychainWrapper */,
 			);
@@ -1053,6 +1026,7 @@
 				26DD92A017EA610D00469FA8 /* Sources */,
 				26DD92A117EA610D00469FA8 /* Frameworks */,
 				26DD92A217EA610D00469FA8 /* Resources */,
+				262C23331AF7F23600D28B85 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -1157,6 +1131,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		262C23331AF7F23600D28B85 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Vendors/Fabric.framework/run ${FABRIC_API_KEY} ${FABRIC_BUILD_SECRET}";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		26DD92A017EA610D00469FA8 /* Sources */ = {
@@ -1302,6 +1293,7 @@
 /* Begin XCBuildConfiguration section */
 		26DD92E017EA610D00469FA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 262C233B1AF7FD9E00D28B85 /* ETSMobile-Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1343,6 +1335,7 @@
 		};
 		26DD92E117EA610D00469FA8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 262C233B1AF7FD9E00D28B85 /* ETSMobile-Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1378,6 +1371,7 @@
 		};
 		26DD92E317EA610D00469FA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 262C233B1AF7FD9E00D28B85 /* ETSMobile-Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1393,6 +1387,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendors/SplunkMint-iOS",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Vendors",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
@@ -1417,6 +1413,7 @@
 		};
 		26DD92E417EA610D00469FA8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 262C233B1AF7FD9E00D28B85 /* ETSMobile-Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1432,6 +1429,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vendors/SplunkMint-iOS",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Vendors",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";

@@ -7,7 +7,7 @@
 #import <Availability.h>
 
 //#define __USE_TESTFLIGHT
-//#define __USE_BUGSENSE
+#define __USE_BUGSENSE
 
 #ifndef __IPHONE_5_0
 #warning "This project uses features only available in iOS SDK 5.0 and later."
@@ -22,6 +22,6 @@
     #import "TestFlight.h"
     #endif
     #ifdef __USE_BUGSENSE
-    #import <SplunkMint-iOS/SplunkMint-iOS.h>
+   // #import <SplunkMint-iOS/SplunkMint-iOS.h>
     #endif
 #endif

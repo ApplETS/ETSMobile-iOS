@@ -16,4 +16,4 @@ profile
 *.moved-aside
 DerivedData
 .idea/
-ETSMobile/EnvConst.h
+Keys.xcconfig
