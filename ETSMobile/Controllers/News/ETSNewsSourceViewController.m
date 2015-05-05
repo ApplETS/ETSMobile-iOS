@@ -50,10 +50,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"NEWSSOURCE_VIEWCONTROLLER"];
-    #endif
     
     self.cellIdentifier = @"SourceIdentifier";
     

@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ApplETSUsername</key>
+	<string>${ApplETSUsername}</string>
+	<key>ApplETSPassword</key>
+	<string>${ApplETSPassword}</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>fr_CA</string>
 	<key>CFBundleExecutable</key>
@@ -20,6 +24,20 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>c0781ea7e44d8e3e63d49409f062972e1302609a</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIBackgroundModes</key>

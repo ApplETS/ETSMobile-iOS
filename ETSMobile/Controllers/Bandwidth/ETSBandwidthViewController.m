@@ -67,10 +67,6 @@
     [self.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
     
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"BANDWIDTH_VIEWCONTROLLER"];
-    #endif
-    
     self.month = [@([[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:[NSDate date]] month]) stringValue];
     
     self.cellIdentifier = @"BandwidthIdentifier";

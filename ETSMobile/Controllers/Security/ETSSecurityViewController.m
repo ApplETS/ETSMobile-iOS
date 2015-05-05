@@ -23,10 +23,6 @@ NSString * const kProcedureFile = @"File";
 {
     [super viewDidLoad];
     
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"SECURITY_VIEWCONTROLLER"];
-    #endif
-    
     CLLocationCoordinate2D etsCoord = {.latitude =  45.494751265838346, .longitude = -73.56256484985352};
     MKCoordinateSpan span = {.latitudeDelta = 0.0017, .longitudeDelta = 0.005};
     MKCoordinateRegion region = {etsCoord, span};

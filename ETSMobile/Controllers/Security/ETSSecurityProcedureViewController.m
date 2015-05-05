@@ -19,10 +19,6 @@
 {
     [super viewDidLoad];
     
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"SECURITY_PROCEDURE_VIEWCONTROLLER"];
-    #endif
-    
     self.webView.scalesPageToFit = YES;
     
     NSString *path = [[NSBundle mainBundle] pathForResource:self.file ofType:@"pdf"];

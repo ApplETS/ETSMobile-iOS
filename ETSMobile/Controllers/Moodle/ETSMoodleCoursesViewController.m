@@ -34,10 +34,6 @@ NSString * const kUnknownSession = @"000000";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"MOODLE_VIEWCONTROLLER"];
-    #endif
     
     self.cellIdentifier = @"MoodleIdentifier";
 

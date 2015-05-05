@@ -35,10 +35,6 @@
 {
     [super viewDidLoad];
     
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"MOODLE_DETAIL_VIEWCONTROLLER"];
-    #endif
-    
     _resultsTableController = [self.storyboard instantiateViewControllerWithIdentifier:@"MoodleCourseResultsViewController"];
     _searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsTableController];
     self.searchController.searchResultsUpdater = self;

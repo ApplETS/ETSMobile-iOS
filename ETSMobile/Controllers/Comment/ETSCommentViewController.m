@@ -18,15 +18,6 @@
 
 @implementation ETSCommentViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"COMMENT_VIEWCONTROLLER"];
-    #endif
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

@@ -1,0 +1,10 @@
+//
+//  ETSMobile-Config.xcconfig
+//  ETSMobile
+//
+//  Created by Jean-Philippe Martin on 2015-05-04.
+//  Copyright (c) 2015 ApplETS. All rights reserved.
+//
+
+#include "Keys.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited)

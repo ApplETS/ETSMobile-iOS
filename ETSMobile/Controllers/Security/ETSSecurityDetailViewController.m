@@ -37,10 +37,6 @@
 {
     [super viewDidLoad];
     
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"SECURITY_DETAILS_VIEWCONTROLLER"];
-    #endif
-    
     [self updateProcedure];
 }
 

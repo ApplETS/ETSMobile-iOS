@@ -40,10 +40,6 @@
 {
 	[super viewDidLoad];
     
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"PROFILE_VIEWCONTROLLER"];
-    #endif
-    
 	self.cellIdentifier = @"ProfileIdentifier";
 	self.synchronizationDone = 0;
     

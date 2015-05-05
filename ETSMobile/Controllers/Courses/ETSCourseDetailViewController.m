@@ -32,10 +32,6 @@
 {
     [super viewDidLoad];
 
-#ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"COURSE_DETAILS"];
-#endif
-
     if (self.course && self.course.acronym.length > 0) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
         synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];

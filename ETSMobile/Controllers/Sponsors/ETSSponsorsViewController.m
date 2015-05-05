@@ -21,39 +21,24 @@
 {
     [super viewDidLoad];
     
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"SPONSORS_VIEWCONTROLLER"];
-    #endif
-
-    
     self.sponsorsImages = @{
                             @(ETSSponsorETS)        : [UIImage imageNamed:@"LogoETS"],
                             @(ETSSponsorBell)       : [UIImage imageNamed:@"logoBell"],
                             @(ETSSponsorAEETS)      : [UIImage imageNamed:@"LogoAEETS"],
                             @(ETSSponsorFDETS)      : [UIImage imageNamed:@"logoFondDevETS"],
-                            @(ETSSponsorGitHub)     : [UIImage imageNamed:@"logoGitHub"],
-                            @(ETSSponsorBugSense)   : [UIImage imageNamed:@"logoBugsense"],
-                            @(ETSSponsorAtlassian)  : [UIImage imageNamed:@"logoAtlassian"],
                             };
     
     self.sponsorsSizes = @{
                             @(ETSSponsorETS)        : [NSValue valueWithCGSize:CGSizeMake(250, 100)],
                             @(ETSSponsorBell)       : [NSValue valueWithCGSize:CGSizeMake(250, 80)],
                             @(ETSSponsorAEETS)      : [NSValue valueWithCGSize:CGSizeMake(150, 70)],
-                            @(ETSSponsorFDETS)      : [NSValue valueWithCGSize:CGSizeMake(150, 70)],
-                            @(ETSSponsorGitHub)     : [NSValue valueWithCGSize:CGSizeMake(150, 85)],
-                            @(ETSSponsorBugSense)   : [NSValue valueWithCGSize:CGSizeMake(150, 70)],
-                            @(ETSSponsorAtlassian)  : [NSValue valueWithCGSize:CGSizeMake(320, 40)],
-                            };
+                            @(ETSSponsorFDETS)      : [NSValue valueWithCGSize:CGSizeMake(150, 70)],                            };
     
     self.sponsorsSizesiPad = @{
                            @(ETSSponsorETS)        : [NSValue valueWithCGSize:CGSizeMake(850, 200)],
                            @(ETSSponsorBell)       : [NSValue valueWithCGSize:CGSizeMake(850, 140)],
                            @(ETSSponsorAEETS)      : [NSValue valueWithCGSize:CGSizeMake(350, 100)],
                            @(ETSSponsorFDETS)      : [NSValue valueWithCGSize:CGSizeMake(350, 100)],
-                           @(ETSSponsorGitHub)     : [NSValue valueWithCGSize:CGSizeMake(350, 120)],
-                           @(ETSSponsorBugSense)   : [NSValue valueWithCGSize:CGSizeMake(350, 90)],
-                           @(ETSSponsorAtlassian)  : [NSValue valueWithCGSize:CGSizeMake(320, 80)],
                            };
     
     self.sponsorsURLs = @{
@@ -61,9 +46,6 @@
                            @(ETSSponsorBell)       : [NSURL URLWithString:@"http://www.bell.ca"],
                            @(ETSSponsorAEETS)      : [NSURL URLWithString:@"http://aeets.com"],
                            @(ETSSponsorFDETS)      : [NSURL URLWithString:@"http://fdets.etsmtl.ca"],
-                           @(ETSSponsorGitHub)     : [NSURL URLWithString:@"https://github.com"],
-                           @(ETSSponsorBugSense)   : [NSURL URLWithString:@"https://www.bugsense.com"],
-                           @(ETSSponsorAtlassian)  : [NSURL URLWithString:@"https://www.atlassian.com"],
                            };
 }
 
