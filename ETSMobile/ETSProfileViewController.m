@@ -228,9 +228,12 @@
 				cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ $", [self.formatter stringFromNumber:profile.balance]];
 			}
 			else {
-				cell.detailTextLabel.text = @"";
+				cell.detailTextLabel.text = @"—";
 			}
-		}
+        } else {
+            cell.textLabel.text = @"";
+            cell.detailTextLabel.text = @"";
+        }
 	}
 	else {
 		ETSProgram *program = nil;
@@ -245,18 +248,26 @@
 			f.maximumFractionDigits = 2;
 			f.decimalSeparator = @",";
 			cell.textLabel.text = NSLocalizedString(@"Moyenne cumulative", nil);
-			cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/4,3", [f stringFromNumber:program.results]];
+            if ([f stringFromNumber:program.results]) {
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/4,3", [f stringFromNumber:program.results]];
+            } else {
+                cell.detailTextLabel.text = @"—";
+            }
 		}
 		else if (indexPath.row == 2) {
-			NSString *year = [program.start substringFromIndex:1];
-			NSString *season = [program.start substringToIndex:1];
-			NSString *name = @"";
-			if ([season isEqualToString:@"H"]) name = @"Hiver";
-			else if ([season isEqualToString:@"É"]) name = @"Été";
-			else if ([season isEqualToString:@"A"]) name = @"Automne";
-            
-			cell.textLabel.text = NSLocalizedString(@"Début", nil);
-			cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", name, year];
+            if (program.start) {
+                NSString *year = [program.start substringFromIndex:1];
+                NSString *season = [program.start substringToIndex:1];
+                NSString *name = @"";
+                if ([season isEqualToString:@"H"]) name = @"Hiver";
+                else if ([season isEqualToString:@"É"]) name = @"Été";
+                else if ([season isEqualToString:@"A"]) name = @"Automne";
+
+                cell.textLabel.text = NSLocalizedString(@"Début", nil);
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", name, year];
+            } else {
+                cell.detailTextLabel.text = @"—";
+            }
 		}
 		else if (indexPath.row == 3) {
 			cell.textLabel.text = NSLocalizedString(@"Fin", nil);
@@ -264,6 +275,9 @@
 			if ([program.status isEqualToString:@"actif"]) {
 				cell.detailTextLabel.text = NSLocalizedString(@"En cours", nil);
 			}
+            else if (!program.end) {
+                cell.detailTextLabel.text = @"—";
+            }
 			else {
 				NSString *year = [program.end substringFromIndex:1];
 				NSString *season = [program.end substringToIndex:1];
@@ -271,21 +285,21 @@
 				if ([season isEqualToString:@"H"]) name = @"Hiver";
 				else if ([season isEqualToString:@"É"]) name = @"Été";
 				else if ([season isEqualToString:@"A"]) name = @"Automne";
-                
-				cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", name, year];
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", name, year];
 			}
 		}
 		else if (indexPath.row == 4) {
 			cell.textLabel.text = NSLocalizedString(@"Crédits réussis", nil);
-			cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", [program.ccompleted intValue]];
+
+			cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld", (long)[program.ccompleted integerValue]];
 		}
 		else if (indexPath.row == 5) {
 			cell.textLabel.text = NSLocalizedString(@"Crédits inscrits", nil);
-			cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", [program.cregistred intValue]];
+			cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld", (long)[program.cregistred integerValue]];
 		}
 		else if (indexPath.row == 6) {
 			cell.textLabel.text = NSLocalizedString(@"Crédits de recherche", nil);
-			cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", [program.cresearch intValue]];
+			cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld", (long)[program.cresearch integerValue]];
 		}
 	}
 }
@@ -325,7 +339,7 @@
 			case NSFetchedResultsChangeInsert: {
 				NSInteger section = [[self.fetchedResultsControllerProgram fetchedObjects] indexOfObject:anObject] + 1;
 				[self.tableView insertSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationAutomatic];
-				NSInteger rows = ([((ETSProgram *)anObject).cresearch intValue] > 0) ? 7 : 6;
+				NSInteger rows = ([((ETSProgram *)anObject).cresearch integerValue] > 0) ? 7 : 6;
 				for (NSInteger i = 0; i < rows; i++) [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:i inSection:section]] withRowAnimation:UITableViewRowAnimationAutomatic];
 				break;
 			}
@@ -340,7 +354,7 @@
                 
 			case NSFetchedResultsChangeUpdate: {
 				NSInteger section = [[self.fetchedResultsControllerProgram fetchedObjects] indexOfObject:anObject] + 1;
-				NSInteger rows = ([((ETSProgram *)anObject).cresearch intValue] > 0) ? 7 : 6;
+				NSInteger rows = ([((ETSProgram *)anObject).cresearch integerValue] > 0) ? 7 : 6;
 				for (NSInteger i = 0; i < rows; i++) [self configureCell:[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:section]] atIndexPath:[NSIndexPath indexPathForRow:i inSection:section]];
 				break;
 			}
