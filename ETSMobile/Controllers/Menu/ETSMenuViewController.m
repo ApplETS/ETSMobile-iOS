@@ -171,6 +171,14 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
 {
     ETSPaneViewControllerType paneViewControllerType = [self paneViewControllerTypeForIndexPath:indexPath];
     [self transitionToViewController:paneViewControllerType];
+    
+    // Prevent visual display bug with cell dividers
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    double delayInSeconds = 0.3;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self.tableView reloadData];
+    });
 }
 
 

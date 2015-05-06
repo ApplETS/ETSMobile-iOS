@@ -44,22 +44,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-<<<<<<< HEAD
-=======
 
-<<<<<<< HEAD
-#ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"RADIO_VIEWCONTROLLER"];
-<<<<<<< HEAD
-    #endif
->>>>>>> Retrait de TestFlight.
-    
-=======
-#endif
-
->>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
-=======
->>>>>>> Mise à jour de 2.0.3 vers 2.1
     self.playBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(playRadio:)];
     self.pauseBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(pauseRadio:)];
 
@@ -75,7 +60,6 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     self.collectionViewCalendarLayout.hourHeight = 40;
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
     [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
     [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
@@ -173,10 +157,7 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     [super viewDidAppear:animated];
     [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:NO];
 
-<<<<<<< HEAD
-=======
 
->>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
     __weak typeof(self) bself = self;
 
     MPRemoteCommandHandlerStatus (^playPauseBlock)(MPRemoteCommandEvent *) = ^MPRemoteCommandHandlerStatus(MPRemoteCommandEvent *event) {

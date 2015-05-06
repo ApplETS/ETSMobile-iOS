@@ -67,16 +67,6 @@
     [self.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"BANDWIDTH_VIEWCONTROLLER"];
-    #endif
-    
->>>>>>> Retrait de TestFlight.
-=======
->>>>>>> Mise à jour de 2.0.3 vers 2.1
     self.month = [@([[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:[NSDate date]] month]) stringValue];
     
     self.cellIdentifier = @"BandwidthIdentifier";

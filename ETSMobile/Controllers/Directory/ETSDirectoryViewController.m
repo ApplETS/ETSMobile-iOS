@@ -29,22 +29,6 @@
 {
     [super viewDidLoad];
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD:ETSMobile/ETSDirectoryViewController.m
-=======
-    #ifdef __USE_TESTFLIGHT
-    [TestFlight passCheckpoint:@"DIRECTORY_VIEWCONTROLLER"];
-    #endif
-    
-=======
->>>>>>> Retrait de TestFlight.
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"DIRECTORY_VIEWCONTROLLER"];
-    #endif
-    
-=======
->>>>>>> Mise à jour de 2.0.3 vers 2.1
     _resultsTableController = [self.storyboard instantiateViewControllerWithIdentifier:@"DirectoryResultsViewController"];
     _searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsTableController];
     self.searchController.searchResultsUpdater = self;
@@ -57,7 +41,6 @@
     self.searchController.searchBar.delegate = self;
     self.definesPresentationContext = YES;
     
->>>>>>> Conversion pour iOS 8 seulement.:ETSMobile/Controllers/Directory/ETSDirectoryViewController.m
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForDirectory];
     synchronization.entityName = @"Contact";

@@ -35,24 +35,6 @@
 {
     [super viewDidLoad];
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-    self.acceptedTypes = @[@"url", @"resource", @"forum", @"choicegroup", @"wiki", @"assign", @"page"];
-    
-<<<<<<< HEAD
-=======
-=======
->>>>>>> Recherche Moodle et bugfixes.
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"MOODLE_DETAIL_VIEWCONTROLLER"];
-    #endif
-    
-<<<<<<< HEAD
->>>>>>> Retrait de TestFlight.
-    self.cellIdentifier = @"MoodleIdentifier";
-=======
-=======
->>>>>>> Mise à jour de 2.0.3 vers 2.1
     _resultsTableController = [self.storyboard instantiateViewControllerWithIdentifier:@"MoodleCourseResultsViewController"];
     _searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsTableController];
     self.searchController.searchResultsUpdater = self;
@@ -66,7 +48,6 @@
     self.definesPresentationContext = YES;
     
     self.acceptedTypes = @[@"url", @"resource", @"forum", @"choicegroup", @"wiki", @"assign", @"page"];
->>>>>>> Recherche Moodle et bugfixes.
     
     self.cellIdentifier = @"MoodleIdentifier";
     

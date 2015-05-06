@@ -17,6 +17,7 @@
 #import "ETSMenuViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
+
 @interface ETSCoursesViewController ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSIndexPath *lastSelectedIndexPath;
@@ -29,26 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-    
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"COURSES_VIEWCONTROLLER"];
-    #endif
-    
->>>>>>> Retrait de TestFlight.
-=======
-
-<<<<<<< HEAD
-#ifdef __USE_TESTFLIGHT
-    [TestFlight passCheckpoint:@"COURSES_VIEWCONTROLLER"];
-#endif
-
->>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
-=======
->>>>>>> Mise à jour de 2.0.3 vers 2.1
     self.title =  NSLocalizedString(@"Notes", nil);
 
     self.cellIdentifier = @"CourseIdentifier";
@@ -144,11 +126,7 @@
         ETSSessionHeader *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SessionHeaderIdentifier" forIndexPath:indexPath];
 
         ETSCourse *course = [self.fetchedResultsController objectAtIndexPath:indexPath];
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
         if (([course.season integerValue] == 0)) {
             headerView.sessionLabel.text = NSLocalizedString(@"Autres", nil);
         } else {
@@ -184,20 +162,12 @@
     else if ([seasonString isEqualToString:@"É"]) course.season = @2;
     else if ([seasonString isEqualToString:@"A"]) course.season = @3;
     else course.season = @0;
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
     if ([seasonString isEqualToString:@"H"])      course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"1"];
     else if ([seasonString isEqualToString:@"É"]) course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"2"];
     else if ([seasonString isEqualToString:@"A"]) course.order = [NSString stringWithFormat:@"%@-%@", course.year, @"3"];
     else course.order = @"00000";
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
     course.id = [NSString stringWithFormat:@"%@%@",course.order, course.acronym];
 }
 

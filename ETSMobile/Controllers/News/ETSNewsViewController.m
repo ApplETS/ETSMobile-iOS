@@ -117,42 +117,24 @@
     NSMutableArray *news = [NSMutableArray array];
     
     NSDateFormatter *ymdFormatter = [NSDateFormatter new];
-    [ymdFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
     [ymdFormatter setDateFormat:@"yyyy'-'MM'-'dd"];
-
+    
     NSArray *keys = [((NSDictionary *)objects) allKeys];
     
     for (NSString *key in keys) {
         
         for (NSDictionary *object in objects[key]) {
             NSMutableDictionary *entry = [NSMutableDictionary dictionaryWithDictionary:object];
-<<<<<<< HEAD
-            
-<<<<<<< HEAD:ETSMobile/ETSNewsViewController.m
-            NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"updated_time"]];
-            NSString *dateString = [ymdFormatter stringFromDate:date];
-=======
             NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"updated_time"]];
             
             NSString *dateString = [ymdFormatter stringFromDate:date];
 
->>>>>>> Bugfixes
             if (dateString) {
                 entry[@"ymdDate"] = dateString;
                 [news addObject:entry];
             }
-<<<<<<< HEAD
-        }
-=======
-  /*          if ([entry[@"message"] isKindOfClass:[NSString class]] && [entry[@"message"] length] > 0) {
-                entry[@"title"] = entry[@"message"];
-            }*/
-            [news addObject:entry];
-=======
->>>>>>> Bugfixes
         }
         
->>>>>>> Conversion pour iOS 8 seulement.:ETSMobile/Controllers/News/ETSNewsViewController.m
     }
     return news;
 }
@@ -222,19 +204,8 @@
         ((ETSNewsCell *)cell).contentTextView.textContainer.exclusionPaths = @[[UIBezierPath bezierPathWithRect:((ETSNewsCell *)cell).thumbnailView.bounds]];
         ((ETSNewsCell *)cell).authorLabel.text = news.author;
         ((ETSNewsCell *)cell).thumbnailView.image = nil;
-<<<<<<< HEAD
-<<<<<<< HEAD
-        [((ETSNewsCell *)cell).thumbnailView sd_setImageWithURL:[NSURL URLWithString:news.thumbnailURL]];
-=======
-        
-        [((ETSNewsCell *)cell).thumbnailView sd_setImageWithURL:[NSURL URLWithString:news.thumbnailURL]];
-        
->>>>>>> Utilisation de la cache pour les images des actualités.
-        ((ETSNewsCell *)cell).thumbnailView.clipsToBounds = YES;
-=======
         [((ETSNewsCell *)cell).thumbnailView sd_setImageWithURL:[NSURL URLWithString:news.thumbnailURL]];
                 ((ETSNewsCell *)cell).thumbnailView.clipsToBounds = YES;
->>>>>>> Nouveau format des nouvelles.
     } else if ([cell isKindOfClass:[ETSNewsEmptyCell class]]) {
         ((ETSNewsEmptyCell *)cell).contentTextView.text = news.content;
         ((ETSNewsCell *)cell).contentTextView.textColor = [UIColor blackColor];

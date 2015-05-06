@@ -19,16 +19,6 @@
 {
     [super viewDidLoad];
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"SECURITY_PROCEDURE_VIEWCONTROLLER"];
-    #endif
-    
->>>>>>> Retrait de TestFlight.
-=======
->>>>>>> Mise à jour de 2.0.3 vers 2.1
     self.webView.scalesPageToFit = YES;
     
     NSString *path = [[NSBundle mainBundle] pathForResource:self.file ofType:@"pdf"];

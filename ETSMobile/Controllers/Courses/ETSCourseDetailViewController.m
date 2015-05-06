@@ -31,25 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"COURSE_DETAILS"];
-    #endif
->>>>>>> Retrait de TestFlight.
-    
-=======
 
-<<<<<<< HEAD
-#ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"COURSE_DETAILS"];
-#endif
-
->>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
-=======
->>>>>>> Mise à jour de 2.0.3 vers 2.1
     if (self.course && self.course.acronym.length > 0) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
         synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];
@@ -98,15 +80,9 @@
     [fetchRequest setEntity:entity];
 
     fetchRequest.fetchBatchSize = 10;
-<<<<<<< HEAD
-    
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"course == %@", self.course];
-    
-=======
 
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"course == %@", self.course];
 
->>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
     NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     [fetchRequest setSortDescriptors:sortDescriptors];
 
@@ -280,50 +256,4 @@
     [super controllerDidChangeContent:controller];
 }
 
-<<<<<<< HEAD
-#pragma mark - Split view
-
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
-{
-    self.coursesBarButtonItem = barButtonItem;
-    barButtonItem.title = NSLocalizedString(@"Cours", nil);
-    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-    self.masterPopoverController = popoverController;
-}
-
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    self.masterPopoverController = nil;
-}
-
-/*
-- (void)coursesViewController:(ETSCoursesViewController_iPad *)controller didSelectCourse:(ETSCourse *)course managedObjectContext:(NSManagedObjectContext *)context
-{
-    self.managedObjectContext = context;
-    self.course = course;
-    
-    self.synchronization.delegate = nil;
-    
-    ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
-    synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];
-    synchronization.entityName = @"Evaluation";
-    synchronization.compareKey = @"name";
-    synchronization.objectsKeyPath = @"d.liste";
-    synchronization.predicate = [NSPredicate predicateWithFormat:@"course == %@", self.course];
-    self.synchronization = synchronization;
-    self.synchronization.delegate = self;
-    
-    self.fetchedResultsController = nil;
-    self.hadResults = [[self.fetchedResultsController sections][0] numberOfObjects] > 0;
-
-    self.title = course.title;
-    
-    [self.tableView reloadData];
-    [self startRefresh:nil];
-}*/
-
-=======
->>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
 @end

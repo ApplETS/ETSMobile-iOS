@@ -22,17 +22,7 @@ NSString * const kProcedureFile = @"File";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-<<<<<<< HEAD
-=======
     
-<<<<<<< HEAD
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"SECURITY_VIEWCONTROLLER"];
-    #endif
->>>>>>> Retrait de TestFlight.
-    
-=======
->>>>>>> Mise à jour de 2.0.3 vers 2.1
     CLLocationCoordinate2D etsCoord = {.latitude =  45.494751265838346, .longitude = -73.56256484985352};
     MKCoordinateSpan span = {.latitudeDelta = 0.0017, .longitudeDelta = 0.005};
     MKCoordinateRegion region = {etsCoord, span};

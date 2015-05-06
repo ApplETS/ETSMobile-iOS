@@ -21,17 +21,6 @@
 {
     [super viewDidLoad];
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    #ifdef __USE_BUGSENSE
-    [[Mint sharedInstance] leaveBreadcrumb:@"SPONSORS_VIEWCONTROLLER"];
-    #endif
-
-    
->>>>>>> Retrait de TestFlight.
-=======
->>>>>>> Mise à jour de 2.0.3 vers 2.1
     self.sponsorsImages = @{
                             @(ETSSponsorETS)        : [UIImage imageNamed:@"LogoETS"],
                             @(ETSSponsorBell)       : [UIImage imageNamed:@"logoBell"],

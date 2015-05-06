@@ -8,16 +8,8 @@
 
 #import "ETSRadioPlayer.h"
 #import "ETSRadioViewController.h"
-<<<<<<< HEAD:ETSMobile/ETSRadioPlayer.m
-#import "ETSAppDelegate.h"
-#import <MediaPlayer/MediaPlayer.h>
-=======
 #import "AppDelegate.h"
-<<<<<<< HEAD
->>>>>>> Conversion pour iOS 8 seulement.:ETSMobile/Controllers/Radio/ETSRadioPlayer.m
-=======
 #import <MediaPlayer/MediaPlayer.h>
->>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
 
 @interface ETSRadioPlayer ()
 @property (nonatomic, strong)   AVPlayer        *player;

@@ -96,21 +96,9 @@
         });
         
         // FIXME: traiter si data est vide ou s'il y a erreur
-     //   if (!data || [data length] == 0 || error) return;
+        if (!data || [data length] == 0 || error) return;
         
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD:ETSMobile/ETSSynchronization.m
-        //NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
-=======
- //       NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
->>>>>>> Conversion pour iOS 8 seulement.:ETSMobile/Controllers/Base/ETSSynchronization.m
-=======
-//        NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
->>>>>>> Correction des problèmes de Moodle et d'authentification.
-=======
-        NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
->>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
+     //   NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
 
         NSError *jsonError = nil;
         NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
@@ -193,19 +181,11 @@
     // Ajout et mise à jour des autres objets de la réponse de l'API.
     NSSortDescriptor *descriptor = nil;
     if (self.sortSelector) {
-<<<<<<< HEAD
-         descriptor = [[NSSortDescriptor alloc] initWithKey:[[ETSSynchronization mappings][self.entityName] valueForKey:self.compareKey] ascending:YES selector:self.sortSelector];
-    } else {
-         descriptor = [[NSSortDescriptor alloc] initWithKey:[[ETSSynchronization mappings][self.entityName] valueForKey:self.compareKey] ascending:YES];
-    }
-
-=======
         descriptor = [[NSSortDescriptor alloc] initWithKey:[[ETSSynchronization mappings][self.entityName] valueForKey:self.compareKey] ascending:YES selector:self.sortSelector];
     } else {
         descriptor = [[NSSortDescriptor alloc] initWithKey:[[ETSSynchronization mappings][self.entityName] valueForKey:self.compareKey] ascending:YES];
     }
     
->>>>>>> Mise à niveau avec 2.0.2 et ajout du controller Profile.
     jsonObjects = [jsonObjects sortedArrayUsingDescriptors:@[descriptor]];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:self.entityName];
@@ -231,10 +211,7 @@
         id rightOperand = [rObject valueForKey:self.compareKey];
         
         NSComparisonResult comparisonResult = NSOrderedDescending;
-<<<<<<< HEAD
-=======
         
->>>>>>> Ajout des contrôleurs manquants.
         if ([rightOperand isKindOfClass:[NSNumber class]]) {
             if ([leftOperand isKindOfClass:[NSString class]]) {
                 NSNumberFormatter *f = [NSNumberFormatter new];

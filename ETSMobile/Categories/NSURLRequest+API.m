@@ -141,11 +141,7 @@
 + (id)requestForNewsWithSources:(NSArray *)sources
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> Mise à jour de 2.0.3 vers 2.1
     [request basicAuthForRequestWithUsername:[NSURLRequest applETSUsername] password:[NSURLRequest applETSPassword]];
     request.URL = [NSURL URLForNewsWithSources:sources];
 
@@ -155,11 +151,7 @@
 + (id)requestForCommentWithName:(NSString *)name email:(NSString *)email title:(NSString *)title rating:(NSString *)rating comment:(NSString *)comment
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> Mise à jour de 2.0.3 vers 2.1
     [request basicAuthForRequestWithUsername:[NSURLRequest applETSUsername] password:[NSURLRequest applETSPassword]];
     request.URL = [NSURL URLForComment];
 
@@ -173,11 +165,7 @@
 + (id)requestForRadio
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> Mise à jour de 2.0.3 vers 2.1
     [request basicAuthForRequestWithUsername:[NSURLRequest applETSUsername] password:[NSURLRequest applETSPassword]];
     request.URL = [NSURL URLForRadio];
     return request;
@@ -186,11 +174,7 @@
 + (id)requestForUniversityCalendarStart:(NSDate *)start end:(NSDate *)end
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> Mise à jour de 2.0.3 vers 2.1
     [request basicAuthForRequestWithUsername:[NSURLRequest applETSUsername] password:[NSURLRequest applETSPassword]];
     request.URL = [NSURL URLForUniversityCalendarStart:start end:end];
     return request;
