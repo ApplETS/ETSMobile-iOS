@@ -16,6 +16,7 @@
 - (void)stopRadio;
 - (void)startRadio;
 - (BOOL)isPlaying;
+- (void)playOrPause;
 
 @property (nonatomic, copy, readonly) NSString *currentTitle;
 

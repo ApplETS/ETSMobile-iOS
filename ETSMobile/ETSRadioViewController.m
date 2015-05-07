@@ -157,32 +157,45 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
     [super viewDidAppear:animated];
     [self.collectionViewCalendarLayout scrollCollectionViewToClosetSectionToCurrentTimeAnimated:NO];
 
-    __weak typeof(self) bself = self;
-
-    MPRemoteCommandHandlerStatus (^playPauseBlock)(MPRemoteCommandEvent *) = ^MPRemoteCommandHandlerStatus(MPRemoteCommandEvent *event) {
-        if ([[ETSRadioPlayer sharedInstance] isPlaying]) {
-            [[ETSRadioPlayer sharedInstance] stopRadio];
-            bself.navigationItem.prompt = nil;
-            bself.navigationItem.rightBarButtonItem = bself.playBarButtonItem;
-
-        } else {
-            [[ETSRadioPlayer sharedInstance] startRadio];
-            bself.navigationItem.rightBarButtonItem = bself.pauseBarButtonItem;
-        }
-        return MPRemoteCommandHandlerStatusSuccess;
-    };
-
-
     MPRemoteCommandCenter *commandCenter = [MPRemoteCommandCenter sharedCommandCenter];
     MPRemoteCommand *pauseCommand = [commandCenter pauseCommand];
     [pauseCommand removeTarget:nil];
     [pauseCommand setEnabled:YES];
-    [pauseCommand addTargetWithHandler:playPauseBlock];
+    [pauseCommand addTarget:self action:@selector(playOrPauseWithUIUpdate)];
 
     MPRemoteCommand *playCommand = [commandCenter playCommand];
     [playCommand removeTarget:nil];
     [playCommand setEnabled:YES];
-    [playCommand addTargetWithHandler:playPauseBlock];
+    [playCommand addTarget:self action:@selector(playOrPauseWithUIUpdate)];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    // Cette portion de code est un hack pour éviter le crash sous iOS 7 qui ne tolère pas d'utiliser les blocks.
+    MPRemoteCommandCenter *commandCenter = [MPRemoteCommandCenter sharedCommandCenter];
+    MPRemoteCommand *pauseCommand = [commandCenter pauseCommand];
+    [pauseCommand removeTarget:nil];
+    [pauseCommand setEnabled:YES];
+    [pauseCommand addTarget:[ETSRadioPlayer sharedInstance] action:@selector(playOrPause)];
+
+    MPRemoteCommand *playCommand = [commandCenter playCommand];
+    [playCommand removeTarget:nil];
+    [playCommand setEnabled:YES];
+    [playCommand addTarget:[ETSRadioPlayer sharedInstance] action:@selector(playOrPause)];
+
+    [super viewDidDisappear:animated];
+}
+
+- (void)playOrPauseWithUIUpdate
+{
+    if ([[ETSRadioPlayer sharedInstance] isPlaying]) {
+        [[ETSRadioPlayer sharedInstance] stopRadio];
+        self.navigationItem.prompt = nil;
+        self.navigationItem.rightBarButtonItem = self.playBarButtonItem;
+    } else {
+        [[ETSRadioPlayer sharedInstance] startRadio];
+        self.navigationItem.rightBarButtonItem = self.pauseBarButtonItem;
+    }
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
