@@ -59,7 +59,7 @@
                                 <action selector="goBack" destination="AvI-aW-UZ5" id="cWV-5M-jIr"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="a6k-7E-zmD"/>
+                        <barButtonItem width="60" style="plain" systemItem="fixedSpace" id="nqd-Oa-xHs"/>
                         <barButtonItem image="next" id="2ra-Jx-rot">
                             <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -73,7 +73,7 @@
                                 <action selector="reload" destination="AvI-aW-UZ5" id="M64-Dg-7sf"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="gGk-or-mZJ"/>
+                        <barButtonItem width="60" style="plain" systemItem="fixedSpace" id="2WT-ET-7ZF"/>
                         <barButtonItem systemItem="stop" id="icZ-qD-1hL">
                             <color key="tintColor" red="0.74509803919999995" green="0.0" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -172,6 +172,12 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="TSn-Ih-sx4"/>
                                     </constraints>
+                                    <variation key="widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="8" y="117" width="384" height="31"/>
+                                    </variation>
+                                    <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="8" y="117" width="384" height="31"/>
+                                    </variation>
                                 </progressView>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="237" text="Consommation :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uh4-xH-uEf">
                                     <rect key="frame" x="8" y="88" width="584" height="20"/>
@@ -210,7 +216,7 @@
                                     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="PlE-hB-Tdg"/>
-                                        <constraint firstAttribute="width" constant="120" id="WsY-oM-pY0"/>
+                                        <constraint firstAttribute="width" priority="750" constant="120" id="WsY-oM-pY0"/>
                                     </constraints>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
@@ -226,6 +232,7 @@
                             <constraints>
                                 <constraint firstItem="lOJ-WU-Ama" firstAttribute="leading" secondItem="ey8-fi-wLv" secondAttribute="leading" constant="8" id="5V6-J5-XZc"/>
                                 <constraint firstItem="AtZ-KQ-NWv" firstAttribute="leading" secondItem="p2i-Tb-IZQ" secondAttribute="trailing" priority="250" constant="264" id="7BD-j5-c8n"/>
+                                <constraint firstItem="AtZ-KQ-NWv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="p2i-Tb-IZQ" secondAttribute="trailing" constant="8" symbolic="YES" id="B6H-gZ-DEO"/>
                                 <constraint firstAttribute="trailing" secondItem="lOJ-WU-Ama" secondAttribute="trailing" constant="8" id="Ecv-BC-yVT"/>
                                 <constraint firstItem="Uh4-xH-uEf" firstAttribute="top" secondItem="AtZ-KQ-NWv" secondAttribute="bottom" constant="22" id="Ga2-va-gbU"/>
                                 <constraint firstAttribute="bottom" secondItem="lOJ-WU-Ama" secondAttribute="bottom" constant="8" id="Gh5-be-SHN"/>
@@ -240,7 +247,7 @@
                                 <constraint firstAttribute="trailing" secondItem="8GO-Za-DjO" secondAttribute="trailing" constant="8" id="i5Z-th-CiJ"/>
                                 <constraint firstItem="p2i-Tb-IZQ" firstAttribute="leading" secondItem="ey8-fi-wLv" secondAttribute="leading" constant="8" id="jKW-E9-dWv"/>
                                 <constraint firstItem="AtZ-KQ-NWv" firstAttribute="top" secondItem="ZpA-dR-ReD" secondAttribute="bottom" constant="7" id="lZ2-FH-efP"/>
-                                <constraint firstItem="AtZ-KQ-NWv" firstAttribute="leading" secondItem="p2i-Tb-IZQ" secondAttribute="trailing" priority="250" constant="215" id="rVJ-Zj-MGT"/>
+                                <constraint firstItem="AtZ-KQ-NWv" firstAttribute="leading" secondItem="p2i-Tb-IZQ" secondAttribute="trailing" priority="250" constant="215" id="rVJ-Zj-MGT" userLabel="Horizontal Space - (215) - Ex. : 40 - 1, 2, 3, 4"/>
                                 <constraint firstItem="8GO-Za-DjO" firstAttribute="leading" secondItem="ey8-fi-wLv" secondAttribute="leading" constant="8" id="shj-SX-VnC"/>
                                 <constraint firstAttribute="trailing" secondItem="AtZ-KQ-NWv" secondAttribute="trailing" constant="8" id="tKf-Xs-7Oj"/>
                                 <constraint firstItem="tQv-mC-XDs" firstAttribute="leading" secondItem="ey8-fi-wLv" secondAttribute="leading" constant="8" id="vb5-bk-Yiq"/>
@@ -248,6 +255,7 @@
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
+                                    <exclude reference="7BD-j5-c8n"/>
                                     <exclude reference="rVJ-Zj-MGT"/>
                                 </mask>
                             </variation>
@@ -1341,7 +1349,7 @@ http://www.clubapplets.ca</string>
                                 <rect key="frame" x="-4" y="0.0" width="608" height="600"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mot de passe" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EYr-bP-wiz">
-                                <rect key="frame" x="175" y="77" width="251" height="33"/>
+                                <rect key="frame" x="175" y="91" width="251" height="33"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1351,12 +1359,15 @@ http://www.clubapplets.ca</string>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="75" y="77" width="251" height="33"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="mmk-Fq-ctw" id="v3q-Nr-4BG"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Na-3B-8gV">
-                                <rect key="frame" x="327" y="118" width="99" height="30"/>
+                                <rect key="frame" x="327" y="132" width="99" height="30"/>
                                 <color key="backgroundColor" red="0.74901962280000001" green="0.0039215688589999999" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                 <rect key="contentStretch" x="1.3877787807814457e-17" y="0.0" width="1" height="1"/>
                                 <constraints>
@@ -1367,12 +1378,15 @@ http://www.clubapplets.ca</string>
                                 <state key="normal" title="Connexion">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="227" y="118" width="99" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="authenticate:" destination="mmk-Fq-ctw" eventType="touchUpInside" id="VMO-j1-wkE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihO-GZ-gxP">
-                                <rect key="frame" x="175" y="118" width="23" height="18"/>
+                                <rect key="frame" x="175" y="132" width="23" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="23" id="EGd-Wt-4VE"/>
                                 </constraints>
@@ -1380,12 +1394,15 @@ http://www.clubapplets.ca</string>
                                 <state key="normal" image="menu-icon">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="75" y="118" width="23" height="18"/>
+                                </variation>
                                 <connections>
                                     <action selector="panLeftMenu:" destination="mmk-Fq-ctw" eventType="touchUpInside" id="6io-f7-9ac"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb4-ZZ-jKn">
-                                <rect key="frame" x="175" y="118" width="82" height="30"/>
+                                <rect key="frame" x="175" y="132" width="82" height="30"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="82" id="MmF-Zm-v6c"/>
@@ -1394,12 +1411,15 @@ http://www.clubapplets.ca</string>
                                 <state key="normal" title="Annuler">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="75" y="118" width="82" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="cancel:" destination="mmk-Fq-ctw" eventType="touchUpInside" id="Clc-12-XTX"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Code d'usager (AA0000)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMb-L2-nv1">
-                                <rect key="frame" x="175" y="36" width="251" height="33"/>
+                                <rect key="frame" x="175" y="50" width="251" height="33"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1409,6 +1429,9 @@ http://www.clubapplets.ca</string>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="75" y="36" width="251" height="33"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="mmk-Fq-ctw" id="nWF-U9-HZG"/>
                                 </connections>
@@ -1423,12 +1446,11 @@ http://www.clubapplets.ca</string>
                             <constraint firstItem="jtZ-pO-v77" firstAttribute="top" secondItem="gb4-e5-ZmP" secondAttribute="top" id="Kuw-W6-a2Q"/>
                             <constraint firstItem="EYr-bP-wiz" firstAttribute="top" secondItem="gMb-L2-nv1" secondAttribute="bottom" constant="8" symbolic="YES" id="O09-Il-WAC"/>
                             <constraint firstItem="jtZ-pO-v77" firstAttribute="centerX" secondItem="gMb-L2-nv1" secondAttribute="centerX" id="Pq4-mq-C3N"/>
-                            <constraint firstItem="cLe-qe-OJf" firstAttribute="top" secondItem="Lb4-ZZ-jKn" secondAttribute="bottom" priority="750" constant="452" id="ZUb-jo-pUg"/>
                             <constraint firstItem="ihO-GZ-gxP" firstAttribute="top" secondItem="EYr-bP-wiz" secondAttribute="bottom" constant="8" id="bPR-T3-pks"/>
+                            <constraint firstItem="gMb-L2-nv1" firstAttribute="top" secondItem="WGz-dO-gEj" secondAttribute="bottom" constant="30" id="bl6-5x-tld"/>
                             <constraint firstItem="6Na-3B-8gV" firstAttribute="leading" secondItem="Lb4-ZZ-jKn" secondAttribute="trailing" constant="70" id="cbv-0K-cUN"/>
                             <constraint firstItem="jtZ-pO-v77" firstAttribute="bottom" secondItem="cLe-qe-OJf" secondAttribute="top" id="duA-as-Oht"/>
                             <constraint firstItem="EYr-bP-wiz" firstAttribute="centerX" secondItem="gb4-e5-ZmP" secondAttribute="centerX" id="gd5-cU-1d0"/>
-                            <constraint firstItem="gMb-L2-nv1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WGz-dO-gEj" secondAttribute="bottom" priority="750" constant="16" id="nVy-6k-NaO"/>
                             <constraint firstItem="EYr-bP-wiz" firstAttribute="trailing" secondItem="6Na-3B-8gV" secondAttribute="trailing" id="oyI-mH-c18"/>
                             <constraint firstItem="EYr-bP-wiz" firstAttribute="leading" secondItem="ihO-GZ-gxP" secondAttribute="leading" id="pmq-6F-0T5"/>
                             <constraint firstItem="6Na-3B-8gV" firstAttribute="bottom" secondItem="Lb4-ZZ-jKn" secondAttribute="bottom" id="sKG-Q3-mll"/>
@@ -2203,7 +2225,7 @@ http://www.clubapplets.ca</string>
                         <viewControllerLayoutGuide type="bottom" id="iNB-YW-wPb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hsr-XK-ROk">
-                        <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSO-sU-F21">
@@ -2229,7 +2251,7 @@ http://www.clubapplets.ca</string>
                                 <action selector="goBack" destination="aSO-sU-F21" id="H7u-cy-JsK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="UF1-Ir-3Ru"/>
+                        <barButtonItem width="60" style="plain" systemItem="fixedSpace" id="Q0m-gV-KDb"/>
                         <barButtonItem image="next" id="lhm-sA-P6U">
                             <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
@@ -2243,7 +2265,7 @@ http://www.clubapplets.ca</string>
                                 <action selector="reload" destination="aSO-sU-F21" id="edm-jS-cmO"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="oeX-Nj-a7f"/>
+                        <barButtonItem width="60" style="plain" systemItem="fixedSpace" id="RWZ-Mx-rEB"/>
                         <barButtonItem systemItem="stop" id="nZR-20-2DE">
                             <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
@@ -2258,7 +2280,6 @@ http://www.clubapplets.ca</string>
                         <outlet property="backBarButtonItem" destination="HcO-UE-nXo" id="t8r-k0-VI7"/>
                         <outlet property="nextBarButtonItem" destination="lhm-sA-P6U" id="ZHk-Td-yAE"/>
                         <outlet property="refreshBarButtonItem" destination="7BE-40-MKA" id="gm8-Eb-q0O"/>
-                        <outlet property="stopBarButtonItem" destination="nZR-20-2DE" id="1a5-Z8-JBl"/>
                         <outlet property="webView" destination="aSO-sU-F21" id="OEb-Nm-sOb"/>
                     </connections>
                 </viewController>
