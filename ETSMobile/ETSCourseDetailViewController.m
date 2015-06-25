@@ -201,13 +201,11 @@
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     ETSEvaluation *evaluation = (ETSEvaluation *)managedObject;
-    NSLog(@"sync Course: %@", self.course.acronym);
-    NSLog(@"MO: %@", managedObject);
     NSError *error;
 //    evaluation.course = (ETSCourse *)[evaluation.managedObjectContext objectWithID:[self.course objectID]];
     evaluation.course = (ETSCourse *)[evaluation.managedObjectContext existingObjectWithID:[self.course objectID] error:&error];
     if (error != nil) {
-        NSLog(@"%@", error);
+        NSLog(@"Unresolved error: %@", error);
     }
     evaluation.ignored = [object[@"ignoreDuCalcul"] isEqualToString:@"Non"] ? @NO : @YES;
 }
