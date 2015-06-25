@@ -144,6 +144,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     ETSCourseDetailViewController *vc = [segue destinationViewController];
+    
+    // Always get a fresh fetchedResultsController before changing context.
+    self.fetchedResultsController = nil;
+    self.fetchedResultsController = [self fetchedResultsController];
+    
     vc.course = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
     vc.managedObjectContext = self.managedObjectContext;
     self.lastSelectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];

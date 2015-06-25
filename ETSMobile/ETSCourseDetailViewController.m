@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    NSLog(@"Course: %@", self.course.acronym);
     if (self.course && self.course.acronym.length > 0) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
         synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];
@@ -201,6 +201,8 @@
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     ETSEvaluation *evaluation = (ETSEvaluation *)managedObject;
+    NSLog(@"sync Course: %@", self.course.acronym);
+    NSLog(@"MO: %@", managedObject);
     NSError *error;
 //    evaluation.course = (ETSCourse *)[evaluation.managedObjectContext objectWithID:[self.course objectID]];
     evaluation.course = (ETSCourse *)[evaluation.managedObjectContext existingObjectWithID:[self.course objectID] error:&error];
