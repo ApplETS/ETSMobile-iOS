@@ -20,7 +20,7 @@
 @interface ETSCoursesViewController ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSIndexPath *lastSelectedIndexPath;
-@property (strong, nonatomic) NSMutableDictionary *courseResults;
+@property (strong, nonatomic) NSMutableDictionary *courseResults; // Temporary results (on 100%) are saved here.
 @end
 
 @implementation ETSCoursesViewController
@@ -99,6 +99,8 @@
     if ([course.grade length] > 0) {
         courseCell.gradeLabel.text = course.grade;
     }
+    // If we comeback from a course detail view, get the result on 100%. Save it in the courseResults dictionnary
+    // and print it in the cell.
     else if (([course.resultOn100 floatValue] > 0 && [[course totalEvaluationWeighting] floatValue])
              || [self.courseResults objectForKey:(NSString *) course.acronym] != nil) {
         NSNumber *percent = @([course.resultOn100 floatValue]/[[course totalEvaluationWeighting] floatValue]*100);
