@@ -194,7 +194,15 @@
     self.course.std         = [self.formatter numberFromString:results[@"ecartTypeClasse"]];
     self.course.median      = [self.formatter numberFromString:results[@"medianeClasse"]];
     self.course.percentile  = [self.formatter numberFromString:results[@"rangCentileClasse"]];
-    [self.course.managedObjectContext save:nil];
+    // NSManagedObjectContext can be nil (Apple Documentation).
+    // Need to check for that before using the object.
+    if (self.course.managedObjectContext != nil) {
+        NSError *error;
+        [self.course.managedObjectContext save:&error];
+        if (error != nil) {
+            NSLog(@"Unresolved error: %@", error);
+        }
+    }
 }
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
