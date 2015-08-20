@@ -227,7 +227,8 @@
         if (!rObject || comparisonResult == NSOrderedAscending) {
             NSManagedObject *managedObject = [NSEntityDescription insertNewObjectForEntityForName:self.entityName inManagedObjectContext:self.managedObjectContext];
             [managedObject safeSetValuesForKeysWithDictionary:lObject dateFormatter:self.dateFormatter mapping:[ETSSynchronization mappings][self.entityName]];
-            if ([self.delegate respondsToSelector:@selector(synchronization:didReceiveObject:forManagedObject:)]) [self.delegate synchronization:self didReceiveObject:lObject forManagedObject:managedObject];
+            if ([self.delegate respondsToSelector:@selector(synchronization:didReceiveObject:forManagedObject:)])
+                [self.delegate synchronization:self didReceiveObject:lObject forManagedObject:managedObject];
         }
         
         else if (comparisonResult == NSOrderedSame) {

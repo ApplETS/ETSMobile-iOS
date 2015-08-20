@@ -51,6 +51,15 @@
     [[AVAudioSession sharedInstance] setActive:NO error: NULL];
 }
 
+- (void)playOrPause
+{
+    if ([[ETSRadioPlayer sharedInstance] isPlaying]) {
+        [[ETSRadioPlayer sharedInstance] stopRadio];
+    } else {
+        [[ETSRadioPlayer sharedInstance] startRadio];
+    }
+}
+
 - (BOOL)isPlaying
 {
     return self.player && self.player.rate;
