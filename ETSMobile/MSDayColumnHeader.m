@@ -95,10 +95,7 @@
     static NSDateFormatter *dateFormatter;
     if (!dateFormatter) {
         dateFormatter = [NSDateFormatter new];
-        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
-        dateFormatter.locale = locale;
-
-        dateFormatter.dateFormat = ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? @"EEE d MMM" : @"EEEE, MMMM d");
+        dateFormatter.dateStyle = NSDateFormatterLongStyle;
     }
     self.title.text = [dateFormatter stringFromDate:day];
     [self setNeedsLayout];

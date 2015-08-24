@@ -54,7 +54,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     self.collectionViewCalendarLayout.hourHeight = 40;
     
     self.dateFormatter = [[NSDateFormatter alloc] init];
-    [self.dateFormatter setDateFormat:@"yyyy-MM-dd' 'HH:mm"];
+    self.dateFormatter.dateStyle = NSDateFormatterLongStyle;
     
     NSDateFormatter *sessionFormatter = [NSDateFormatter new];
     sessionFormatter.dateFormat = @"yyyy-MM-dd";

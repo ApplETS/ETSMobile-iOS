@@ -52,8 +52,7 @@ NSString * const ETSUniversityCalendarSource = @"ets";
     self.cellIdentifier = @"EventIdentifier";
     
     self.dateFormatter = [NSDateFormatter new];
-    self.dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
-    self.dateFormatter.dateFormat = @"EEEE d MMMM";
+    self.dateFormatter.dateStyle = NSDateFormatterMediumStyle;
 }
 
 - (NSFetchedResultsController *)fetchedResultsController

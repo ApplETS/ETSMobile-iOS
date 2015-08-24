@@ -196,9 +196,7 @@
     NSDate *date = [ymdFormatter dateFromString:sectionInfo.name];
     
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
-    dateFormatter.locale = locale;
-    dateFormatter.dateFormat = @"EEEE, d MMMM YYYY";
+    dateFormatter.dateStyle = NSDateFormatterLongStyle;
 
     return [dateFormatter stringFromDate:date];
 }
