@@ -10,3 +10,4 @@ FABRIC_API_KEY = api
 FABRIC_BUILD_SECRET = secret
 ApplETSUsername = username
 ApplETSPassword = password
+SUPPORTKIT_API_KEY = api

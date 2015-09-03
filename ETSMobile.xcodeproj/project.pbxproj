@@ -136,6 +136,15 @@
 		9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC88726189ED56B002A3D04 /* MapKit.framework */; };
 		D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15F4AE3183992D00034605B /* ETSProfileViewController.m */; };
 		D15F4AE71839A80B0034605B /* ETSProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = D15F4AE61839A80B0034605B /* ETSProfile.m */; };
+		E90350EE1B987A670093C8E1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269B46D81A1123300052E4B7 /* CoreTelephony.framework */; };
+		E90350F01B987A670093C8E1 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350EF1B987A670093C8E1 /* CoreText.framework */; };
+		E90350F21B987A7C0093C8E1 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350F11B987A7C0093C8E1 /* libxml2.dylib */; };
+		E90350F41B987A8B0093C8E1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350F31B987A8B0093C8E1 /* OpenGLES.framework */; };
+		E90350F51B987A9E0093C8E1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261D953219BA287B0007FD28 /* SystemConfiguration.framework */; };
+		E90350F71B987AAC0093C8E1 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350F61B987AAC0093C8E1 /* AssetsLibrary.framework */; };
+		E90350F91B987AB40093C8E1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350F81B987AB40093C8E1 /* Photos.framework */; };
+		E90350FC1B987BB90093C8E1 /* SupportKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E90350FA1B987BB90093C8E1 /* SupportKit.bundle */; };
+		E90350FD1B987BB90093C8E1 /* SupportKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350FB1B987BB90093C8E1 /* SupportKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -388,6 +397,13 @@
 		D15F4AE3183992D00034605B /* ETSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSProfileViewController.m; sourceTree = "<group>"; };
 		D15F4AE51839A80B0034605B /* ETSProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProfile.h; sourceTree = "<group>"; };
 		D15F4AE61839A80B0034605B /* ETSProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSProfile.m; sourceTree = "<group>"; };
+		E90350EF1B987A670093C8E1 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		E90350F11B987A7C0093C8E1 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		E90350F31B987A8B0093C8E1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		E90350F61B987AAC0093C8E1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		E90350F81B987AB40093C8E1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		E90350FA1B987BB90093C8E1 /* SupportKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SupportKit.bundle; path = Vendors/SupportKit.bundle; sourceTree = "<group>"; };
+		E90350FB1B987BB90093C8E1 /* SupportKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SupportKit.framework; path = Vendors/SupportKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -395,6 +411,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E90350F91B987AB40093C8E1 /* Photos.framework in Frameworks */,
+				E90350F71B987AAC0093C8E1 /* AssetsLibrary.framework in Frameworks */,
+				E90350F51B987A9E0093C8E1 /* SystemConfiguration.framework in Frameworks */,
+				26DD92AC17EA610D00469FA8 /* UIKit.framework in Frameworks */,
+				E90350F41B987A8B0093C8E1 /* OpenGLES.framework in Frameworks */,
+				E90350F21B987A7C0093C8E1 /* libxml2.dylib in Frameworks */,
+				E90350F01B987A670093C8E1 /* CoreText.framework in Frameworks */,
+				E90350FD1B987BB90093C8E1 /* SupportKit.framework in Frameworks */,
+				E90350EE1B987A670093C8E1 /* CoreTelephony.framework in Frameworks */,
+				26DD92AA17EA610D00469FA8 /* CoreGraphics.framework in Frameworks */,
 				26F0C0451AF8538000A7D7A8 /* Fabric.framework in Frameworks */,
 				26F0C0441AF8538000A7D7A8 /* Crashlytics.framework in Frameworks */,
 				2600DB07190767000039039A /* MobileCoreServices.framework in Frameworks */,
@@ -404,9 +430,7 @@
 				269316961835DA2D00DE95A0 /* AddressBookUI.framework in Frameworks */,
 				269316941835DA2900DE95A0 /* AddressBook.framework in Frameworks */,
 				26AE185D17F296CD00DB1EB4 /* QuartzCore.framework in Frameworks */,
-				26DD92AA17EA610D00469FA8 /* CoreGraphics.framework in Frameworks */,
 				26DD92AE17EA610D00469FA8 /* CoreData.framework in Frameworks */,
-				26DD92AC17EA610D00469FA8 /* UIKit.framework in Frameworks */,
 				26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -772,6 +796,11 @@
 		26DD92A617EA610D00469FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E90350F81B987AB40093C8E1 /* Photos.framework */,
+				E90350F61B987AAC0093C8E1 /* AssetsLibrary.framework */,
+				E90350F31B987A8B0093C8E1 /* OpenGLES.framework */,
+				E90350F11B987A7C0093C8E1 /* libxml2.dylib */,
+				E90350EF1B987A670093C8E1 /* CoreText.framework */,
 				2687549D1AEAA0B9004DAC1E /* WebKit.framework */,
 				269B46D81A1123300052E4B7 /* CoreTelephony.framework */,
 				269B46D61A1121090052E4B7 /* SplunkMint-iOS.framework */,
@@ -917,6 +946,8 @@
 		26DD92EB17EA615E00469FA8 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				E90350FA1B987BB90093C8E1 /* SupportKit.bundle */,
+				E90350FB1B987BB90093C8E1 /* SupportKit.framework */,
 				262C23341AF7F2A800D28B85 /* Fabric.framework */,
 				262C23351AF7F2A800D28B85 /* Crashlytics.framework */,
 				260874671AD6E0B800D25BD2 /* SDWebImage */,
@@ -1113,6 +1144,7 @@
 				266F0B6F18F4EF22000F53C1 /* ODEUR_SUSPECTE_FUITE_DE_GAZ_2009-04-01.pdf in Resources */,
 				266F0B6D18F4EF22000F53C1 /* COLIS_SUSPECT_ET_NRBC_2009-04-01.pdf in Resources */,
 				266F0B7018F4EF22000F53C1 /* PANNE_D_ASCENSEUR_2009-04-01.pdf in Resources */,
+				E90350FC1B987BB90093C8E1 /* SupportKit.bundle in Resources */,
 				26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */,
 				26DD92CB17EA610D00469FA8 /* Images.xcassets in Resources */,
 				266F0B7118F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf in Resources */,

@@ -44,6 +44,8 @@
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>SupportKitApiKey</key>
+	<string>${SupportKitApiKey}</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

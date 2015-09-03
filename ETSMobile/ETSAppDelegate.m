@@ -24,6 +24,7 @@
 #import "ETSDirectoryViewController.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <SupportKit/SupportKit.h>
 
 
 @implementation ETSAppDelegate
@@ -65,8 +66,13 @@
     self.window.rootViewController = self.dynamicsDrawerViewController;
     [self.window makeKeyAndVisible];
 
-
+    // Crashlytics
     [Fabric with:@[CrashlyticsKit]];
+    
+    // SupportKit
+    NSString* apikey = (NSString *)[[NSBundle mainBundle] objectForInfoDictionaryKey:@"SupportKitApiKey"];
+    [SupportKit initWithSettings:[SKTSettings settingsWithAppToken:apikey]];
+    
     return YES;
 }
 
