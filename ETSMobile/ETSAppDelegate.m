@@ -71,7 +71,13 @@
     
     // SupportKit
     NSString* apikey = (NSString *)[[NSBundle mainBundle] objectForInfoDictionaryKey:@"SupportKitApiKey"];
-    [SupportKit initWithSettings:[SKTSettings settingsWithAppToken:apikey]];
+    SKTSettings* settings = [SKTSettings settingsWithAppToken:apikey];
+    settings.conversationStatusBarStyle = UIStatusBarStyleLightContent;
+    settings.conversationAccentColor = [UIColor naviguationBarTintColor];
+    settings.enableGestureHintOnFirstLaunch = NO;
+    settings.enableAppWideGesture = NO;
+    
+    [SupportKit initWithSettings:settings];
     
     return YES;
 }
