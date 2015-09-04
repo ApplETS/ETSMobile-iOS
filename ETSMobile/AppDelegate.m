@@ -11,15 +11,15 @@
 #import "UIColor+Styles.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import "SupportKit/SupportKit.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // White status bar
-    [application setStatusBarStyle:UIStatusBarStyleLightContent];
-    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 
     self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
@@ -46,6 +46,17 @@
     [menuViewController transitionToViewController:ETSPaneViewControllerTypeNews];
 
     [Fabric with:@[CrashlyticsKit]];
+    
+    // SupportKit
+    NSString* apikey = (NSString *)[[NSBundle mainBundle] objectForInfoDictionaryKey:@"SupportKitApiKey"];
+    SKTSettings* settings = [SKTSettings settingsWithAppToken:apikey];
+    settings.conversationStatusBarStyle = UIStatusBarStyleLightContent;
+    settings.conversationAccentColor = [UIColor naviguationBarTintColor];
+    settings.enableGestureHintOnFirstLaunch = NO;
+    settings.enableAppWideGesture = NO;
+    
+    [SupportKit initWithSettings:settings];
+
 
     return YES;
 }

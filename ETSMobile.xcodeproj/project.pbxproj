@@ -122,6 +122,19 @@
 		26B1E7D11AF93A1A00D10273 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1E7CC1AF9397700D10273 /* Crashlytics.framework */; };
 		26B1E7D21AF93A1A00D10273 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1E7CB1AF9397700D10273 /* Fabric.framework */; };
 		26D00E311ACE3BB90062BF6F /* SecuritySources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26D00E301ACE3BB90062BF6F /* SecuritySources.plist */; };
+		E9EE856B1B99EFEE0074FAB3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE856A1B99EFEE0074FAB3 /* CoreGraphics.framework */; };
+		E9EE856C1B99EFF30074FAB3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264187291AB77B9D0027561B /* CoreTelephony.framework */; };
+		E9EE856E1B99EFFC0074FAB3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE856D1B99EFFC0074FAB3 /* CoreText.framework */; };
+		E9EE85721B99F0120074FAB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE85711B99F0120074FAB3 /* Foundation.framework */; };
+		E9EE85741B99F0190074FAB3 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE85731B99F0190074FAB3 /* libxml2.dylib */; };
+		E9EE85761B99F0230074FAB3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE85751B99F0230074FAB3 /* OpenGLES.framework */; };
+		E9EE85781B99F02B0074FAB3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE85771B99F02B0074FAB3 /* QuartzCore.framework */; };
+		E9EE85791B99F0380074FAB3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264187271AB77B960027561B /* SystemConfiguration.framework */; };
+		E9EE857B1B99F03E0074FAB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE857A1B99F03E0074FAB3 /* UIKit.framework */; };
+		E9EE857D1B99F0460074FAB3 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE857C1B99F0460074FAB3 /* AssetsLibrary.framework */; };
+		E9EE857F1B99F04B0074FAB3 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE857E1B99F04B0074FAB3 /* Photos.framework */; };
+		E9EE85821B99F0E80074FAB3 /* SupportKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E9EE85801B99F0E80074FAB3 /* SupportKit.bundle */; };
+		E9EE85831B99F0E80074FAB3 /* SupportKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE85811B99F0E80074FAB3 /* SupportKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -354,6 +367,18 @@
 		26B1E7D51AF93A9E00D10273 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		26B1E7D61AF93A9E00D10273 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26D00E301ACE3BB90062BF6F /* SecuritySources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SecuritySources.plist; path = "Supporting Files/SecuritySources.plist"; sourceTree = "<group>"; };
+		E9EE856A1B99EFEE0074FAB3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E9EE856D1B99EFFC0074FAB3 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		E9EE856F1B99F0030074FAB3 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		E9EE85711B99F0120074FAB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E9EE85731B99F0190074FAB3 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		E9EE85751B99F0230074FAB3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		E9EE85771B99F02B0074FAB3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E9EE857A1B99F03E0074FAB3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E9EE857C1B99F0460074FAB3 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		E9EE857E1B99F04B0074FAB3 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		E9EE85801B99F0E80074FAB3 /* SupportKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SupportKit.bundle; path = Vendors/SupportKit.bundle; sourceTree = SOURCE_ROOT; };
+		E9EE85811B99F0E80074FAB3 /* SupportKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SupportKit.framework; path = Vendors/SupportKit.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,6 +386,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9EE857F1B99F04B0074FAB3 /* Photos.framework in Frameworks */,
+				E9EE857D1B99F0460074FAB3 /* AssetsLibrary.framework in Frameworks */,
+				E9EE857B1B99F03E0074FAB3 /* UIKit.framework in Frameworks */,
+				E9EE85791B99F0380074FAB3 /* SystemConfiguration.framework in Frameworks */,
+				E9EE85781B99F02B0074FAB3 /* QuartzCore.framework in Frameworks */,
+				E9EE85831B99F0E80074FAB3 /* SupportKit.framework in Frameworks */,
+				E9EE85761B99F0230074FAB3 /* OpenGLES.framework in Frameworks */,
+				E9EE85741B99F0190074FAB3 /* libxml2.dylib in Frameworks */,
+				E9EE85721B99F0120074FAB3 /* Foundation.framework in Frameworks */,
+				E9EE856E1B99EFFC0074FAB3 /* CoreText.framework in Frameworks */,
+				E9EE856C1B99EFF30074FAB3 /* CoreTelephony.framework in Frameworks */,
+				E9EE856B1B99EFEE0074FAB3 /* CoreGraphics.framework in Frameworks */,
 				26B1E7D11AF93A1A00D10273 /* Crashlytics.framework in Frameworks */,
 				26B1E7D21AF93A1A00D10273 /* Fabric.framework in Frameworks */,
 				1DF8AFF31ACC5C3200E350BA /* ImageIO.framework in Frameworks */,
@@ -667,6 +704,8 @@
 		264187191AB77A520027561B /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				E9EE85801B99F0E80074FAB3 /* SupportKit.bundle */,
+				E9EE85811B99F0E80074FAB3 /* SupportKit.framework */,
 				26B1E7CB1AF9397700D10273 /* Fabric.framework */,
 				26B1E7CC1AF9397700D10273 /* Crashlytics.framework */,
 				1DF8AFC01ACC5BC500E350BA /* SDWebImage */,
@@ -721,6 +760,16 @@
 		2641872F1AB77BD60027561B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9EE857E1B99F04B0074FAB3 /* Photos.framework */,
+				E9EE857C1B99F0460074FAB3 /* AssetsLibrary.framework */,
+				E9EE857A1B99F03E0074FAB3 /* UIKit.framework */,
+				E9EE85771B99F02B0074FAB3 /* QuartzCore.framework */,
+				E9EE85751B99F0230074FAB3 /* OpenGLES.framework */,
+				E9EE85731B99F0190074FAB3 /* libxml2.dylib */,
+				E9EE85711B99F0120074FAB3 /* Foundation.framework */,
+				E9EE856F1B99F0030074FAB3 /* CoreFoundation.framework */,
+				E9EE856D1B99EFFC0074FAB3 /* CoreText.framework */,
+				E9EE856A1B99EFEE0074FAB3 /* CoreGraphics.framework */,
 				1DF8AFF21ACC5C3200E350BA /* ImageIO.framework */,
 				260245341ACB5314001B57C3 /* AVFoundation.framework */,
 				2641872D1AB77BC80027561B /* SplunkMint-iOS.framework */,
@@ -1000,6 +1049,9 @@
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 264186E11AB779F40027561B;
 			productRefGroup = 264186EB1AB779F40027561B /* Products */;
 			projectDirPath = "";
@@ -1030,6 +1082,7 @@
 				264187831AB787770027561B /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */,
 				2641877E1AB787770027561B /* INCENDIE_EVACUATION_URGENCE.pdf in Resources */,
 				26D00E311ACE3BB90062BF6F /* SecuritySources.plist in Resources */,
+				E9EE85821B99F0E80074FAB3 /* SupportKit.bundle in Resources */,
 				264187011AB779F40027561B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
