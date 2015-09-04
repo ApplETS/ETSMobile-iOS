@@ -24,6 +24,7 @@
 #import "ETSDirectoryViewController.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <SupportKit/SupportKit.h>
 
 
 @implementation ETSAppDelegate
@@ -35,7 +36,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 
     self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
@@ -65,8 +68,19 @@
     self.window.rootViewController = self.dynamicsDrawerViewController;
     [self.window makeKeyAndVisible];
 
-
+    // Crashlytics
     [Fabric with:@[CrashlyticsKit]];
+    
+    // SupportKit
+    NSString* apikey = (NSString *)[[NSBundle mainBundle] objectForInfoDictionaryKey:@"SupportKitApiKey"];
+    SKTSettings* settings = [SKTSettings settingsWithAppToken:apikey];
+    settings.conversationStatusBarStyle = UIStatusBarStyleLightContent;
+    settings.conversationAccentColor = [UIColor naviguationBarTintColor];
+    settings.enableGestureHintOnFirstLaunch = NO;
+    settings.enableAppWideGesture = NO;
+    
+    [SupportKit initWithSettings:settings];
+    
     return YES;
 }
 

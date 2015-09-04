@@ -17,6 +17,7 @@
 #import "ETSSecurityViewController.h"
 #import "ETSDirectoryViewController.h"
 #import "ETSMoodleCoursesViewController.h"
+#import "SupportKit/SupportKit.h"
 
 NSString * const kStoryboardAuthenticationViewController = @"AuthenticationViewController";
 NSString * const ETSMenuCellReuseIdentifier = @"MenuCell";
@@ -151,7 +152,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(ETSMenuTableViewHeader *)view forSection:(NSInteger)section
 {
     // Cette fonction est un petit hack pour iOS 8 qui ne supporte pas la fonction load de ETSMenuTableViewHeader.
-    view.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:12];
+    view.textLabel.font =  [UIFont systemFontOfSize:12];
     view.textLabel.textColor = [UIColor menuLabelColor];
 }
 
@@ -179,6 +180,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ETSPaneViewControllerType paneViewControllerType = [self paneViewControllerTypeForIndexPath:indexPath];
+    
     [self transitionToViewController:paneViewControllerType];
     
     // Prevent visual display bug with cell dividers
@@ -193,8 +195,13 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
 
 - (void)transitionToViewController:(ETSPaneViewControllerType)paneViewControllerType
 {
+    // SupportKit opening
+    if (paneViewControllerType == ETSPaneViewControllerTypeComment) {
+        [SupportKit showConversation];
+    }
+    
     // Close pane if already displaying the pane view controller
-    if (paneViewControllerType == self.paneViewControllerType) {
+    if (paneViewControllerType == self.paneViewControllerType || paneViewControllerType == ETSPaneViewControllerTypeComment) {
         [self.dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateClosed animated:YES allowUserInterruption:YES completion:nil];
         return;
     }
