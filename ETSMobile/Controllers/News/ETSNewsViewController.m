@@ -15,6 +15,9 @@
 #import "NSString+HTML.h"
 #import "GTMNSString+HTML.h"
 #import "UIImageView+WebCache.h"
+#import "STKWebKitViewController.h"
+#import "TUSafariActivity.h"
+#import "UIColor+Styles.h"
 
 @implementation ETSNewsViewController
 
@@ -181,6 +184,25 @@
         UINavigationController *destinationNavController = (UINavigationController *)segue.destinationViewController;
         ETSNewsSourceViewController * destinationController = (ETSNewsSourceViewController *)destinationNavController.visibleViewController;
         destinationController.managedObjectContext = self.managedObjectContext;
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath != nil) {
+        // Getting news for index path
+        ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+        NSURL *url = [NSURL URLWithString:news.link];
+        STKWebKitViewController *webViewController = [[STKWebKitViewController alloc] initWithURL:url];
+        
+        // Customization
+        webViewController.toolbarItemTintColor = [UIColor naviguationBarTintColor];
+        
+        // FIXME Open in safari Activity
+        // TUSafariActivity *activity = [[TUSafariActivity alloc] init];
+        // webViewController.applicationActivities = @[activity];
+        
+        [self.navigationController pushViewController:webViewController animated:YES];
     }
 }
 

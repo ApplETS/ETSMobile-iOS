@@ -62,7 +62,6 @@
 		264186F01AB779F40027561B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 264186EF1AB779F40027561B /* main.m */; };
 		264186F31AB779F40027561B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 264186F21AB779F40027561B /* AppDelegate.m */; };
 		264186F61AB779F40027561B /* ETSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 264186F41AB779F40027561B /* ETSMobile.xcdatamodeld */; };
-		264186FF1AB779F40027561B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264186FD1AB779F40027561B /* Main.storyboard */; };
 		264187011AB779F40027561B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 264187001AB779F40027561B /* Images.xcassets */; };
 		264187041AB779F40027561B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264187021AB779F40027561B /* LaunchScreen.xib */; };
 		264187101AB779F40027561B /* ETSMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2641870F1AB779F40027561B /* ETSMobileTests.m */; };
@@ -135,6 +134,33 @@
 		E9EE857F1B99F04B0074FAB3 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE857E1B99F04B0074FAB3 /* Photos.framework */; };
 		E9EE85821B99F0E80074FAB3 /* SupportKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E9EE85801B99F0E80074FAB3 /* SupportKit.bundle */; };
 		E9EE85831B99F0E80074FAB3 /* SupportKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE85811B99F0E80074FAB3 /* SupportKit.framework */; };
+		E9F292741B9F8FEE000ADE20 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = E9F292651B9F8FEE000ADE20 /* .gitkeep */; };
+		E9F292751B9F8FEE000ADE20 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F292661B9F8FEE000ADE20 /* back.png */; };
+		E9F292761B9F8FEE000ADE20 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F292671B9F8FEE000ADE20 /* back@2x.png */; };
+		E9F292771B9F8FEE000ADE20 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F292681B9F8FEE000ADE20 /* forward.png */; };
+		E9F292781B9F8FEE000ADE20 /* forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F292691B9F8FEE000ADE20 /* forward@2x.png */; };
+		E9F292791B9F8FEE000ADE20 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F2926A1B9F8FEE000ADE20 /* refresh.png */; };
+		E9F2927A1B9F8FEE000ADE20 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F2926B1B9F8FEE000ADE20 /* refresh@2x.png */; };
+		E9F2927B1B9F8FEE000ADE20 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F2926C1B9F8FEE000ADE20 /* stop.png */; };
+		E9F2927C1B9F8FEE000ADE20 /* stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F2926D1B9F8FEE000ADE20 /* stop@2x.png */; };
+		E9F2927D1B9F8FEE000ADE20 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = E9F2926F1B9F8FEE000ADE20 /* .gitkeep */; };
+		E9F2927E1B9F8FEE000ADE20 /* STKWebKitModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F292711B9F8FEE000ADE20 /* STKWebKitModalViewController.m */; };
+		E9F2927F1B9F8FEE000ADE20 /* STKWebKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F292731B9F8FEE000ADE20 /* STKWebKitViewController.m */; };
+		E9F292A51B9F9C44000ADE20 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = E9F292821B9F9C44000ADE20 /* .gitkeep */; };
+		E9F292A61B9F9C44000ADE20 /* TUSafariActivity.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9F292831B9F9C44000ADE20 /* TUSafariActivity.strings */; };
+		E9F292A71B9F9C44000ADE20 /* safari-7.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F292931B9F9C44000ADE20 /* safari-7.png */; };
+		E9F292A81B9F9C44000ADE20 /* safari-7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F292941B9F9C44000ADE20 /* safari-7@2x.png */; };
+		E9F292A91B9F9C44000ADE20 /* safari-7@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F292951B9F9C44000ADE20 /* safari-7@3x.png */; };
+		E9F292AA1B9F9C44000ADE20 /* safari-7~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F292961B9F9C44000ADE20 /* safari-7~iPad.png */; };
+		E9F292AB1B9F9C44000ADE20 /* safari-7~iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F292971B9F9C44000ADE20 /* safari-7~iPad@2x.png */; };
+		E9F292AC1B9F9C44000ADE20 /* safari.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F292981B9F9C44000ADE20 /* safari.png */; };
+		E9F292AD1B9F9C44000ADE20 /* safari@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F292991B9F9C44000ADE20 /* safari@2x.png */; };
+		E9F292AE1B9F9C44000ADE20 /* safari@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F2929A1B9F9C44000ADE20 /* safari@3x.png */; };
+		E9F292AF1B9F9C44000ADE20 /* safari~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F2929B1B9F9C44000ADE20 /* safari~iPad.png */; };
+		E9F292B01B9F9C44000ADE20 /* safari~iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9F2929C1B9F9C44000ADE20 /* safari~iPad@2x.png */; };
+		E9F292B11B9F9C44000ADE20 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = E9F292A21B9F9C44000ADE20 /* .gitkeep */; };
+		E9F292B21B9F9C44000ADE20 /* TUSafariActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F292A41B9F9C44000ADE20 /* TUSafariActivity.m */; };
+		E9F292B51B9F9F8C000ADE20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F292B31B9F9F8C000ADE20 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -379,6 +405,36 @@
 		E9EE857E1B99F04B0074FAB3 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		E9EE85801B99F0E80074FAB3 /* SupportKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SupportKit.bundle; path = Vendors/SupportKit.bundle; sourceTree = SOURCE_ROOT; };
 		E9EE85811B99F0E80074FAB3 /* SupportKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SupportKit.framework; path = Vendors/SupportKit.framework; sourceTree = SOURCE_ROOT; };
+		E9F292651B9F8FEE000ADE20 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E9F292661B9F8FEE000ADE20 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		E9F292671B9F8FEE000ADE20 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		E9F292681B9F8FEE000ADE20 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
+		E9F292691B9F8FEE000ADE20 /* forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward@2x.png"; sourceTree = "<group>"; };
+		E9F2926A1B9F8FEE000ADE20 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		E9F2926B1B9F8FEE000ADE20 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
+		E9F2926C1B9F8FEE000ADE20 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		E9F2926D1B9F8FEE000ADE20 /* stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop@2x.png"; sourceTree = "<group>"; };
+		E9F2926F1B9F8FEE000ADE20 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E9F292701B9F8FEE000ADE20 /* STKWebKitModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKWebKitModalViewController.h; sourceTree = "<group>"; };
+		E9F292711B9F8FEE000ADE20 /* STKWebKitModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKWebKitModalViewController.m; sourceTree = "<group>"; };
+		E9F292721B9F8FEE000ADE20 /* STKWebKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKWebKitViewController.h; sourceTree = "<group>"; };
+		E9F292731B9F8FEE000ADE20 /* STKWebKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKWebKitViewController.m; sourceTree = "<group>"; };
+		E9F292821B9F9C44000ADE20 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E9F2928A1B9F9C44000ADE20 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
+		E9F292931B9F9C44000ADE20 /* safari-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari-7.png"; sourceTree = "<group>"; };
+		E9F292941B9F9C44000ADE20 /* safari-7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari-7@2x.png"; sourceTree = "<group>"; };
+		E9F292951B9F9C44000ADE20 /* safari-7@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari-7@3x.png"; sourceTree = "<group>"; };
+		E9F292961B9F9C44000ADE20 /* safari-7~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari-7~iPad.png"; sourceTree = "<group>"; };
+		E9F292971B9F9C44000ADE20 /* safari-7~iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari-7~iPad@2x.png"; sourceTree = "<group>"; };
+		E9F292981B9F9C44000ADE20 /* safari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = safari.png; sourceTree = "<group>"; };
+		E9F292991B9F9C44000ADE20 /* safari@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari@2x.png"; sourceTree = "<group>"; };
+		E9F2929A1B9F9C44000ADE20 /* safari@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari@3x.png"; sourceTree = "<group>"; };
+		E9F2929B1B9F9C44000ADE20 /* safari~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari~iPad.png"; sourceTree = "<group>"; };
+		E9F2929C1B9F9C44000ADE20 /* safari~iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari~iPad@2x.png"; sourceTree = "<group>"; };
+		E9F292A21B9F9C44000ADE20 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		E9F292A31B9F9C44000ADE20 /* TUSafariActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUSafariActivity.h; sourceTree = "<group>"; };
+		E9F292A41B9F9C44000ADE20 /* TUSafariActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUSafariActivity.m; sourceTree = "<group>"; };
+		E9F292B41B9F9F8C000ADE20 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -660,8 +716,8 @@
 				2641878A1AB788E10027561B /* Categories & Helpers */,
 				264186F11AB779F40027561B /* AppDelegate.h */,
 				264186F21AB779F40027561B /* AppDelegate.m */,
-				264186FD1AB779F40027561B /* Main.storyboard */,
 				264187001AB779F40027561B /* Images.xcassets */,
+				E9F292B31B9F9F8C000ADE20 /* Main.storyboard */,
 				264187021AB779F40027561B /* LaunchScreen.xib */,
 				264186F41AB779F40027561B /* ETSMobile.xcdatamodeld */,
 				264186ED1AB779F40027561B /* Supporting Files */,
@@ -712,6 +768,8 @@
 				2641871D1AB77A810027561B /* MSCollectionViewCalendarLayout */,
 				2641871C1AB77A780027561B /* MSDynamicsDrawerViewController */,
 				2641871B1AB77A6D0027561B /* GTMNSString+HTML */,
+				E9F292801B9F9C32000ADE20 /* TUSafariActivity */,
+				E9F292631B9F8FCE000ADE20 /* STKWebKitViewController */,
 				2641871E1AB77A890027561B /* KeychainWrapper */,
 			);
 			name = Vendors;
@@ -981,6 +1039,85 @@
 			name = ETS;
 			sourceTree = "<group>";
 		};
+		E9F292631B9F8FCE000ADE20 /* STKWebKitViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E9F292641B9F8FEE000ADE20 /* Assets */,
+				E9F2926E1B9F8FEE000ADE20 /* Classes */,
+			);
+			name = STKWebKitViewController;
+			sourceTree = "<group>";
+		};
+		E9F292641B9F8FEE000ADE20 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E9F292651B9F8FEE000ADE20 /* .gitkeep */,
+				E9F292661B9F8FEE000ADE20 /* back.png */,
+				E9F292671B9F8FEE000ADE20 /* back@2x.png */,
+				E9F292681B9F8FEE000ADE20 /* forward.png */,
+				E9F292691B9F8FEE000ADE20 /* forward@2x.png */,
+				E9F2926A1B9F8FEE000ADE20 /* refresh.png */,
+				E9F2926B1B9F8FEE000ADE20 /* refresh@2x.png */,
+				E9F2926C1B9F8FEE000ADE20 /* stop.png */,
+				E9F2926D1B9F8FEE000ADE20 /* stop@2x.png */,
+			);
+			name = Assets;
+			path = Vendors/STKWebKitViewController/Pod/Assets;
+			sourceTree = SOURCE_ROOT;
+		};
+		E9F2926E1B9F8FEE000ADE20 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2926F1B9F8FEE000ADE20 /* .gitkeep */,
+				E9F292701B9F8FEE000ADE20 /* STKWebKitModalViewController.h */,
+				E9F292711B9F8FEE000ADE20 /* STKWebKitModalViewController.m */,
+				E9F292721B9F8FEE000ADE20 /* STKWebKitViewController.h */,
+				E9F292731B9F8FEE000ADE20 /* STKWebKitViewController.m */,
+			);
+			name = Classes;
+			path = Vendors/STKWebKitViewController/Pod/Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+		E9F292801B9F9C32000ADE20 /* TUSafariActivity */ = {
+			isa = PBXGroup;
+			children = (
+				E9F292811B9F9C44000ADE20 /* Assets */,
+				E9F292A11B9F9C44000ADE20 /* Classes */,
+			);
+			name = TUSafariActivity;
+			sourceTree = "<group>";
+		};
+		E9F292811B9F9C44000ADE20 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E9F292821B9F9C44000ADE20 /* .gitkeep */,
+				E9F292831B9F9C44000ADE20 /* TUSafariActivity.strings */,
+				E9F292931B9F9C44000ADE20 /* safari-7.png */,
+				E9F292941B9F9C44000ADE20 /* safari-7@2x.png */,
+				E9F292951B9F9C44000ADE20 /* safari-7@3x.png */,
+				E9F292961B9F9C44000ADE20 /* safari-7~iPad.png */,
+				E9F292971B9F9C44000ADE20 /* safari-7~iPad@2x.png */,
+				E9F292981B9F9C44000ADE20 /* safari.png */,
+				E9F292991B9F9C44000ADE20 /* safari@2x.png */,
+				E9F2929A1B9F9C44000ADE20 /* safari@3x.png */,
+				E9F2929B1B9F9C44000ADE20 /* safari~iPad.png */,
+				E9F2929C1B9F9C44000ADE20 /* safari~iPad@2x.png */,
+			);
+			name = Assets;
+			path = Vendors/TUSafariActivity/Pod/Assets;
+			sourceTree = SOURCE_ROOT;
+		};
+		E9F292A11B9F9C44000ADE20 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E9F292A21B9F9C44000ADE20 /* .gitkeep */,
+				E9F292A31B9F9C44000ADE20 /* TUSafariActivity.h */,
+				E9F292A41B9F9C44000ADE20 /* TUSafariActivity.m */,
+			);
+			name = Classes;
+			path = Vendors/TUSafariActivity/Pod/Classes;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1050,7 +1187,9 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
+				fr,
+				no,
+				zh_CN,
 			);
 			mainGroup = 264186E11AB779F40027561B;
 			productRefGroup = 264186EB1AB779F40027561B /* Products */;
@@ -1068,22 +1207,46 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9F292771B9F8FEE000ADE20 /* forward.png in Resources */,
 				2641877D1AB787770027561B /* COLIS_SUSPECT_ET_NRBC_2009-04-01.pdf in Resources */,
 				2641877F1AB787770027561B /* ODEUR_SUSPECTE_FUITE_DE_GAZ_2009-04-01.pdf in Resources */,
-				264186FF1AB779F40027561B /* Main.storyboard in Resources */,
+				E9F2927D1B9F8FEE000ADE20 /* .gitkeep in Resources */,
+				E9F292AD1B9F9C44000ADE20 /* safari@2x.png in Resources */,
+				E9F292741B9F8FEE000ADE20 /* .gitkeep in Resources */,
+				E9F292B11B9F9C44000ADE20 /* .gitkeep in Resources */,
+				E9F292AA1B9F9C44000ADE20 /* safari-7~iPad.png in Resources */,
 				264187821AB787770027561B /* PERSONNE_ARMEE_2009-04-01.pdf in Resources */,
+				E9F292A91B9F9C44000ADE20 /* safari-7@3x.png in Resources */,
 				264187041AB779F40027561B /* LaunchScreen.xib in Resources */,
+				E9F292B51B9F9F8C000ADE20 /* Main.storyboard in Resources */,
+				E9F292A81B9F9C44000ADE20 /* safari-7@2x.png in Resources */,
+				E9F292AF1B9F9C44000ADE20 /* safari~iPad.png in Resources */,
 				264187801AB787770027561B /* PANNE_D_ASCENSEUR_2009-04-01.pdf in Resources */,
 				264187891AB787830027561B /* NewsSources.plist in Resources */,
 				264187871AB787830027561B /* ETSAPICoreDataMapping.plist in Resources */,
+				E9F2927A1B9F8FEE000ADE20 /* refresh@2x.png in Resources */,
 				264187811AB787770027561B /* PANNE_ELECTRIQUE_2009-04-01.pdf in Resources */,
 				2641877C1AB787770027561B /* APPEL_A_LA_BOMBE_2009-04-01.pdf in Resources */,
 				264187881AB787830027561B /* ETSAPIURL.plist in Resources */,
+				E9F292751B9F8FEE000ADE20 /* back.png in Resources */,
 				264187831AB787770027561B /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */,
 				2641877E1AB787770027561B /* INCENDIE_EVACUATION_URGENCE.pdf in Resources */,
+				E9F292A61B9F9C44000ADE20 /* TUSafariActivity.strings in Resources */,
+				E9F292A71B9F9C44000ADE20 /* safari-7.png in Resources */,
+				E9F292B01B9F9C44000ADE20 /* safari~iPad@2x.png in Resources */,
+				E9F292781B9F8FEE000ADE20 /* forward@2x.png in Resources */,
+				E955337C1B9F76E500248112 /* Keys.xcconfig in Resources */,
+				E9F292AE1B9F9C44000ADE20 /* safari@3x.png in Resources */,
+				E9F292AC1B9F9C44000ADE20 /* safari.png in Resources */,
 				26D00E311ACE3BB90062BF6F /* SecuritySources.plist in Resources */,
+				E9F292761B9F8FEE000ADE20 /* back@2x.png in Resources */,
+				E9F2927B1B9F8FEE000ADE20 /* stop.png in Resources */,
+				E9F2927C1B9F8FEE000ADE20 /* stop@2x.png in Resources */,
 				E9EE85821B99F0E80074FAB3 /* SupportKit.bundle in Resources */,
 				264187011AB779F40027561B /* Images.xcassets in Resources */,
+				E9F292791B9F8FEE000ADE20 /* refresh.png in Resources */,
+				E9F292A51B9F9C44000ADE20 /* .gitkeep in Resources */,
+				E9F292AB1B9F9C44000ADE20 /* safari-7~iPad@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1154,6 +1317,7 @@
 				264187231AB77B1C0027561B /* KeychainItemWrapper.m in Sources */,
 				260245071ACA5257001B57C3 /* ETSCommentViewController.m in Sources */,
 				2641874C1AB77E780027561B /* ETSMoodleElement.m in Sources */,
+				E9F2927F1B9F8FEE000ADE20 /* STKWebKitViewController.m in Sources */,
 				2641875B1AB77E780027561B /* ETSProgram.m in Sources */,
 				264186F31AB779F40027561B /* AppDelegate.m in Sources */,
 				264187951AB7895E0027561B /* NSURL+API.m in Sources */,
@@ -1193,6 +1357,7 @@
 				264187371AB77E770027561B /* ETSEvaluation.m in Sources */,
 				26731FCE1ABA1AD50045EBD2 /* MSCollectionViewCalendarLayout.m in Sources */,
 				265008CE1AD056170033FB64 /* ETSCourseDetailViewController.m in Sources */,
+				E9F292B21B9F9C44000ADE20 /* TUSafariActivity.m in Sources */,
 				260245281ACB4F25001B57C3 /* MSDayColumnHeader.m in Sources */,
 				2602452C1ACB4F25001B57C3 /* MSTimeRowHeader.m in Sources */,
 				260245021ACA524B001B57C3 /* ETSCommentCell.m in Sources */,
@@ -1210,6 +1375,7 @@
 				2641876A1AB786A80027561B /* ETSAuthenticationViewController.m in Sources */,
 				265008D51AD056260033FB64 /* ETSMoodleCoursesViewController.m in Sources */,
 				260245271ACB4F25001B57C3 /* MSCurrentTimeIndicator.m in Sources */,
+				E9F2927E1B9F8FEE000ADE20 /* STKWebKitModalViewController.m in Sources */,
 				2602452D1ACB4F25001B57C3 /* MSTimeRowHeaderBackground.m in Sources */,
 				260245031ACA524B001B57C3 /* ETSRateCell.m in Sources */,
 			);
@@ -1234,20 +1400,28 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		264186FD1AB779F40027561B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				26B1E7D61AF93A9E00D10273 /* fr */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		264187021AB779F40027561B /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				26B1E7D51AF93A9E00D10273 /* fr */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		E9F292831B9F9C44000ADE20 /* TUSafariActivity.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9F2928A1B9F9C44000ADE20 /* fr */,
+			);
+			name = TUSafariActivity.strings;
+			sourceTree = "<group>";
+		};
+		E9F292B31B9F9F8C000ADE20 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9F292B41B9F9F8C000ADE20 /* fr */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

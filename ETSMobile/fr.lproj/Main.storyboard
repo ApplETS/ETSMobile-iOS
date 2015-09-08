@@ -1090,26 +1090,33 @@ http://www.clubapplets.ca</string>
         <scene sceneID="2yK-zO-cQU">
             <objects>
                 <tableViewController id="j4l-hj-soM" customClass="ETSNewsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="108" sectionHeaderHeight="10" sectionFooterHeight="10" id="LjC-l9-d9X">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="108" sectionHeaderHeight="10" sectionFooterHeight="10" id="LjC-l9-d9X">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsIdentifier" rowHeight="167" id="qka-Ud-pJA" customClass="ETSNewsCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsIdentifier" rowHeight="167" id="qka-Ud-pJA" customClass="ETSNewsCell">
                                 <rect key="frame" x="0.0" y="119" width="320" height="108"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qka-Ud-pJA" id="vIo-20-F5M">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="qka-Ud-pJA" id="vIo-20-F5M">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="107"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8q-v1-M5r">
-                                            <rect key="frame" x="8" y="9" width="584" height="20"/>
+                                            <rect key="frame" x="8" y="9" width="551" height="19.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNV-Vy-LXv">
+                                            <rect key="frame" x="8" y="47" width="121" height="90"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="121" id="85l-zF-lcy"/>
+                                                <constraint firstAttribute="height" constant="90" id="VWq-2X-XsL"/>
+                                            </constraints>
+                                        </imageView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCn-SM-oVm">
-                                            <rect key="frame" x="8" y="38" width="584" height="120"/>
+                                            <rect key="frame" x="8" y="37" width="551" height="121"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="tintColor" red="0.74509803921568629" green="0.0" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -1120,13 +1127,6 @@ http://www.clubapplets.ca</string>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                         </textView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNV-Vy-LXv">
-                                            <rect key="frame" x="8" y="48" width="121" height="90"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="121" id="85l-zF-lcy"/>
-                                                <constraint firstAttribute="height" constant="90" id="VWq-2X-XsL"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="y8q-v1-M5r" firstAttribute="top" secondItem="vIo-20-F5M" secondAttribute="topMargin" constant="1" id="5tQ-OJ-B35"/>
@@ -1147,21 +1147,21 @@ http://www.clubapplets.ca</string>
                                     <outlet property="thumbnailView" destination="WNV-Vy-LXv" id="FM4-LG-06h"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsEmptyIdentifier" rowHeight="99" id="7BV-RK-NrQ" customClass="ETSNewsEmptyCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsEmptyIdentifier" rowHeight="99" id="7BV-RK-NrQ" customClass="ETSNewsEmptyCell">
                                 <rect key="frame" x="0.0" y="119" width="320" height="108"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7BV-RK-NrQ" id="NLC-CJ-DEO">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="7BV-RK-NrQ" id="NLC-CJ-DEO">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="107"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ria-Su-bsR">
-                                            <rect key="frame" x="8" y="9" width="584" height="20"/>
+                                            <rect key="frame" x="8" y="9" width="551" height="19.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a21-sh-S0s">
-                                            <rect key="frame" x="8" y="38" width="584" height="52"/>
+                                            <rect key="frame" x="8" y="38" width="551" height="52"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="tintColor" red="0.74509803921568629" green="0.0" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -1252,7 +1252,7 @@ http://www.clubapplets.ca</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfJ-cG-tVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968" y="-1531"/>
+            <point key="canvasLocation" x="945" y="-716"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4TY-8r-mhB">
@@ -2309,7 +2309,7 @@ http://www.clubapplets.ca</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRx-4X-Mm1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="156" y="-1531"/>
+            <point key="canvasLocation" x="133" y="-716"/>
         </scene>
     </scenes>
     <resources>
