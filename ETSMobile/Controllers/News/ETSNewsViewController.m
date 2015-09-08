@@ -151,13 +151,16 @@
                                       
                                       [self presentViewController:activityViewController animated:YES completion:nil];
                                   }];
-    share.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1];
+    // #BDBEC2
+    share.backgroundColor = [UIColor colorWithRed:189.0f/255.0f green:190.0f/255.0f blue:194.0f/255.0f alpha:1.0f];
+    
     
     UITableViewRowAction *open = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Ouvrir\ndans Safari" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
                                      {
                                          [[UIApplication sharedApplication] openURL:[NSURL URLWithString:news.link]];
                                      }];
-    open.backgroundColor = [UIColor colorWithWhite:0.7 alpha:1];
+    // #34AADC
+    open.backgroundColor = [UIColor colorWithRed:52.0f/255.0f green:170.0f/255.0f blue:220.0f/255.0f alpha:1.0f];
     
     return @[open, share];
 }
