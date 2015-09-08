@@ -175,7 +175,8 @@
 {
     self.shouldRemoveFetchedDelegate = NO;
     if ([segue.identifier isEqualToString:@"SourcesSegue"]) {
-        ETSNewsSourceViewController *destinationController = (ETSNewsSourceViewController *)segue.destinationViewController;
+        UINavigationController *destinationNavController = (UINavigationController *)segue.destinationViewController;
+        ETSNewsSourceViewController * destinationController = (ETSNewsSourceViewController *)destinationNavController.visibleViewController;
         destinationController.managedObjectContext = self.managedObjectContext;
     }
 }

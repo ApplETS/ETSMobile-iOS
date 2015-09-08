@@ -1195,7 +1195,7 @@ http://www.clubapplets.ca</string>
                     <navigationItem key="navigationItem" title="Actualités" id="6aU-hL-8HQ">
                         <barButtonItem key="rightBarButtonItem" title="Sources" id="POC-bg-atM">
                             <connections>
-                                <segue destination="YSm-JV-2Nu" kind="show" identifier="SourcesSegue" id="0Vy-Aq-wTy"/>
+                                <segue destination="2Nj-LA-arP" kind="presentation" identifier="SourcesSegue" id="0Vy-Aq-wTy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1242,11 +1242,17 @@ http://www.clubapplets.ca</string>
                             <outlet property="delegate" destination="YSm-JV-2Nu" id="mh8-aK-J6J"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Sources" id="wYD-FK-gzA"/>
+                    <navigationItem key="navigationItem" title="Sources" id="wYD-FK-gzA">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Btn-7n-Kbh">
+                            <connections>
+                                <action selector="DoneButtonPressed:" destination="YSm-JV-2Nu" id="Dpc-5J-Blb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfJ-cG-tVs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="72" y="-712"/>
+            <point key="canvasLocation" x="968" y="-1531"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4TY-8r-mhB">
@@ -1482,7 +1488,7 @@ http://www.clubapplets.ca</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFQ-FV-f2j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2584" y="-1108"/>
+            <point key="canvasLocation" x="3396" y="-1108"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="zhF-W5-V7B">
@@ -2286,6 +2292,24 @@ http://www.clubapplets.ca</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gnR-td-co3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="151" y="7119"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zKg-Xt-loS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Nj-LA-arP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IXJ-Pb-sN3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YSm-JV-2Nu" kind="relationship" relationship="rootViewController" id="UjE-9t-kQf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uRx-4X-Mm1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="-1531"/>
         </scene>
     </scenes>
     <resources>
