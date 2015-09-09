@@ -1418,7 +1418,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Vendors/SplunkMint-iOS",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Vendors",
 				);
@@ -1460,7 +1459,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Vendors/SplunkMint-iOS",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Vendors",
 				);
