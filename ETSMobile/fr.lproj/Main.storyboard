@@ -267,7 +267,20 @@
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5iV-Fz-nNL" secondAttribute="height" multiplier="1:1" id="WXX-HH-b05"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="753" id="boX-7a-nCq">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="500"/>
+                                    </constraint>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="boX-7a-nCq"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="boX-7a-nCq"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <animations/>
@@ -279,7 +292,7 @@
                             <constraint firstItem="f4O-uT-e1P" firstAttribute="top" secondItem="RdZ-wJ-rnh" secondAttribute="bottom" constant="10.5" id="GcQ-TE-e9d"/>
                             <constraint firstItem="z9H-ML-Fo0" firstAttribute="centerY" secondItem="jaC-n7-mVg" secondAttribute="centerY" id="Ikz-Xj-U56"/>
                             <constraint firstItem="f4O-uT-e1P" firstAttribute="top" secondItem="5iV-Fz-nNL" secondAttribute="bottom" constant="40" id="JKO-ED-FfO"/>
-                            <constraint firstItem="5iV-Fz-nNL" firstAttribute="leading" secondItem="jaC-n7-mVg" secondAttribute="leading" constant="24" id="KI0-YQ-Xps"/>
+                            <constraint firstItem="5iV-Fz-nNL" firstAttribute="leading" secondItem="jaC-n7-mVg" secondAttribute="leading" priority="250" constant="24" id="KI0-YQ-Xps"/>
                             <constraint firstAttribute="centerX" secondItem="5iV-Fz-nNL" secondAttribute="centerX" id="KLP-0G-4sz"/>
                             <constraint firstItem="Rz2-Tg-e1O" firstAttribute="trailing" secondItem="jaC-n7-mVg" secondAttribute="trailing" constant="-16" id="MFV-6b-x6K"/>
                             <constraint firstItem="Rz2-Tg-e1O" firstAttribute="top" secondItem="fX1-v8-enb" secondAttribute="bottom" constant="20" id="OZz-e5-gsK"/>
@@ -1221,14 +1234,14 @@ http://www.clubapplets.ca</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8q-v1-M5r">
-                                            <rect key="frame" x="8" y="9" width="584" height="20"/>
+                                            <rect key="frame" x="8" y="9" width="584" height="19.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCn-SM-oVm">
-                                            <rect key="frame" x="8" y="38" width="584" height="120"/>
+                                            <rect key="frame" x="8" y="37" width="584" height="121.5"/>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="tintColor" red="0.74509803921568629" green="0.0" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
@@ -1241,7 +1254,7 @@ http://www.clubapplets.ca</string>
                                             <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                         </textView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNV-Vy-LXv">
-                                            <rect key="frame" x="8" y="48" width="121" height="90"/>
+                                            <rect key="frame" x="8" y="47" width="121" height="90"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="121" id="85l-zF-lcy"/>
@@ -1278,14 +1291,14 @@ http://www.clubapplets.ca</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ria-Su-bsR">
-                                            <rect key="frame" x="8" y="9" width="584" height="20"/>
+                                            <rect key="frame" x="8" y="9" width="584" height="19.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a21-sh-S0s">
-                                            <rect key="frame" x="8" y="38" width="584" height="52"/>
+                                            <rect key="frame" x="8" y="37" width="584" height="53.5"/>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="tintColor" red="0.74509803921568629" green="0.0" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
