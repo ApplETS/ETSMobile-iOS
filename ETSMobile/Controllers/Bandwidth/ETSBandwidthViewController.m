@@ -43,20 +43,26 @@
     self.apartment = [userDefaults stringForKey:@"apartment"];
     self.phase = [userDefaults stringForKey:@"phase"];
     
+    [self resetLabels];
+    
     if ([self.phase length] == 0 || [self.apartment length] == 0) {
-        [self performSegueWithIdentifier:@"SegueToConfig" sender:self];
         return;
     }
     
-    self.percentageLabel.text = @"";
-    self.quotaLabel.text = @"";
-    self.idealQuotaLabel.text = @"";
     [self.activityIndicator startAnimating];
     
     self.synchronization.request = [NSURLRequest requestForBandwidthWithMonth:self.month residence:self.apartment phase:self.phase];
     
     NSError *error;
     [self.synchronization synchronize:&error];
+}
+
+-(void)resetLabels {
+    self.phaseLabel.text = @"";
+    self.apartmentLabel.text = @"";
+    self.percentageLabel.text = @"";
+    self.quotaLabel.text = @"";
+    self.idealQuotaLabel.text = @"";
 }
 
 - (void)viewDidLoad
@@ -82,7 +88,7 @@
     self.synchronization.delegate = self;
     
     // Call Cooptel
-    self.callCooptelUrl = [NSURL URLWithString:@"telprompt://18885322667 "];
+    self.callCooptelUrl = [NSURL URLWithString:@"telprompt:1-888-532-2667"];
     
     self.formatter = [[NSNumberFormatter alloc] init];
     self.formatter.decimalSeparator = @",";
@@ -97,11 +103,7 @@
     self.apartment = [userDefaults stringForKey:@"apartment"];
     self.phase = [userDefaults stringForKey:@"phase"];
     
-    self.phaseLabel.text = @"";
-    self.apartmentLabel.text = @"";
-    self.percentageLabel.text = @"";
-    self.quotaLabel.text = @"";
-    self.idealQuotaLabel.text = @"";
+    [self resetLabels];
     
     if ([self.apartment length] == 0 || [self.phase integerValue] == 0) {
         self.dataNeedRefresh = NO;

@@ -41,17 +41,17 @@
     }
     
     // Drawing ideal quota marker
-    CGPoint beginPoint = CGPointMake(center.x + (radius-width)*cos([self getAngleForRate:self.ideal/self.limit]),
-                                     center.y + (radius-width)*sin([self getAngleForRate:self.ideal/self.limit]));
-    CGPoint endPoint = CGPointMake(center.x + (radius+width)*cos([self getAngleForRate:self.ideal/self.limit]),
-                                   center.y + (radius+width)*sin([self getAngleForRate:self.ideal/self.limit]));
-    
-    UIBezierPath* marker = [UIBezierPath bezierPath];
-    [marker moveToPoint:beginPoint];
-    [marker addLineToPoint:endPoint];
-    
-    marker.lineWidth = 1;
-    [marker stroke];
+    if (self.limit && self.ideal) {
+        CGPoint beginPoint = [self getCoordFromPolarWithRadius:radius-width withAngle:[self getAngleForRate:self.ideal/self.limit] withCenter:center];
+        CGPoint endPoint = [self getCoordFromPolarWithRadius:radius+width withAngle:[self getAngleForRate:self.ideal/self.limit] withCenter:center];
+        
+        UIBezierPath* marker = [UIBezierPath bezierPath];
+        [marker moveToPoint:beginPoint];
+        [marker addLineToPoint:endPoint];
+        
+        marker.lineWidth = 1;
+        [marker stroke];
+    }
 }
 
 -(CGFloat)getAngleForRate:(CGFloat)rate {
@@ -60,6 +60,10 @@
 
 -(CGFloat)getInitialAngle {
     return [self getAngleForRate:0];
+}
+
+-(CGPoint)getCoordFromPolarWithRadius:(CGFloat)radius withAngle:(CGFloat)angle withCenter:(CGPoint)center {
+    return CGPointMake(center.x + radius*cos(angle), center.y + radius*sin(angle));
 }
 
 @end

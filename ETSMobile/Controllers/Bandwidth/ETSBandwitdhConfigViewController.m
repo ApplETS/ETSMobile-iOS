@@ -46,6 +46,7 @@
             [userDefaults setObject:phase forKey:@"phase"];
         }
     }
+    [self.apartmentTextField resignFirstResponder];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
