@@ -49,7 +49,8 @@
         [marker moveToPoint:beginPoint];
         [marker addLineToPoint:endPoint];
         
-        marker.lineWidth = 1;
+        [[self darkerColorForColor:[UIColor naviguationBarTintColor] amplitude:0.2] setStroke];
+        marker.lineWidth = 2;
         [marker stroke];
     }
 }
@@ -64,6 +65,17 @@
 
 -(CGPoint)getCoordFromPolarWithRadius:(CGFloat)radius withAngle:(CGFloat)angle withCenter:(CGPoint)center {
     return CGPointMake(center.x + radius*cos(angle), center.y + radius*sin(angle));
+}
+
+- (UIColor *)darkerColorForColor:(UIColor *)c amplitude:(CGFloat)amp
+{
+    CGFloat r, g, b, a;
+    if ([c getRed:&r green:&g blue:&b alpha:&a])
+        return [UIColor colorWithRed:MAX(r - amp, 0.0)
+                               green:MAX(g - amp, 0.0)
+                                blue:MAX(b - amp, 0.0)
+                               alpha:a];
+    return nil;
 }
 
 @end

@@ -172,6 +172,9 @@
 
 - (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects
 {
+    // Stopping activity indicator
+    [self.activityIndicator stopAnimating];
+    
     if (!objects || [objects isKindOfClass:[NSNull class]]) {
         [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
         return nil;
@@ -246,8 +249,6 @@
     self.circleChart.limit = [self.limitBandwidth floatValue];
     self.circleChart.ideal = idealQuota;
     [self.circleChart setNeedsDisplay];
-    
-    [self.activityIndicator stopAnimating];
     
     return entries;
 }
