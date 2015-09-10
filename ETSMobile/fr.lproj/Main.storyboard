@@ -170,7 +170,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ZJ-Od-JZV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phase 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ZJ-Od-JZV">
                                 <rect key="frame" x="20" y="84" width="102" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="B29-PG-9a2"/>
@@ -180,7 +180,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appartement" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rz2-Tg-e1O">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appartement 123" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rz2-Tg-e1O">
                                 <rect key="frame" x="123" y="84" width="457" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="8Cy-F1-3XD"/>
@@ -189,24 +189,28 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4O-uT-e1P">
-                                <rect key="frame" x="238" y="620" width="124" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4O-uT-e1P">
+                                <rect key="frame" x="237" y="615" width="124" height="30"/>
+                                <color key="tintColor" red="0.75686274509999996" green="0.12941176469999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Consulter le détail">
-                                    <color key="titleColor" red="0.75686274509999996" green="0.12941176469999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="eZn-Ok-vWM" kind="show" identifier="ShowBandwidthDetails" id="E4M-oT-9aW"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5iV-Fz-nNL" customClass="ETSBandwidthCircleChart">
-                                <rect key="frame" x="40" y="39" width="521" height="521"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="5iV-Fz-nNL" secondAttribute="height" multiplier="1:1" id="WXX-HH-b05"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hiP-tM-3Ej">
-                                <rect key="frame" x="180" y="266" width="240" height="68"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3A-b2-ySw">
+                                <rect key="frame" x="243" y="653" width="112" height="30"/>
+                                <color key="tintColor" red="0.75686274509999996" green="0.12941176469999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Appeler Cooptel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="CallCooptelButton:" destination="Yho-hr-rFN" eventType="touchUpInside" id="LfE-Kb-2Ef"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiP-tM-3Ej">
+                                <rect key="frame" x="179" y="265" width="240" height="68"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sur 100.0Go" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXN-b3-f4d">
                                         <rect key="frame" x="74" y="39" width="92.5" height="20.5"/>
@@ -230,28 +234,63 @@
                                     <constraint firstAttribute="width" constant="240" id="slJ-JR-P7K"/>
                                 </constraints>
                             </view>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="z9H-ML-Fo0">
-                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="z9H-ML-Fo0">
+                                <rect key="frame" x="168" y="281" width="37" height="37"/>
                                 <color key="color" red="0.75686274509999996" green="0.12941176469999999" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="109% de la consommation idéale" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdZ-wJ-rnh">
+                                <rect key="frame" x="174" y="584" width="250" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5iV-Fz-nNL" customClass="ETSBandwidthCircleChart">
+                                <rect key="frame" x="28" y="27" width="545" height="545"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5iV-Fz-nNL" secondAttribute="height" multiplier="1:1" id="WXX-HH-b05"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="limit">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="used">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="ideal">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="S3A-b2-ySw" firstAttribute="top" secondItem="f4O-uT-e1P" secondAttribute="bottom" constant="8" id="8EM-1a-4VC"/>
+                            <constraint firstItem="RdZ-wJ-rnh" firstAttribute="top" secondItem="5iV-Fz-nNL" secondAttribute="bottom" constant="20" id="A1B-kk-6dX"/>
                             <constraint firstItem="Rz2-Tg-e1O" firstAttribute="leading" secondItem="9ZJ-Od-JZV" secondAttribute="trailing" constant="1" id="Bff-Wy-dVP"/>
-                            <constraint firstItem="f4O-uT-e1P" firstAttribute="top" secondItem="5iV-Fz-nNL" secondAttribute="bottom" constant="60" id="JKO-ED-FfO"/>
-                            <constraint firstItem="5iV-Fz-nNL" firstAttribute="leading" secondItem="jaC-n7-mVg" secondAttribute="leadingMargin" constant="20" id="KI0-YQ-Xps"/>
+                            <constraint firstItem="f4O-uT-e1P" firstAttribute="top" secondItem="RdZ-wJ-rnh" secondAttribute="bottom" constant="10.5" id="GcQ-TE-e9d"/>
+                            <constraint firstItem="z9H-ML-Fo0" firstAttribute="centerY" secondItem="jaC-n7-mVg" secondAttribute="centerY" id="Ikz-Xj-U56"/>
+                            <constraint firstItem="f4O-uT-e1P" firstAttribute="top" secondItem="5iV-Fz-nNL" secondAttribute="bottom" constant="40" id="JKO-ED-FfO"/>
+                            <constraint firstItem="5iV-Fz-nNL" firstAttribute="leading" secondItem="jaC-n7-mVg" secondAttribute="leadingMargin" constant="8" id="KI0-YQ-Xps"/>
                             <constraint firstAttribute="centerX" secondItem="5iV-Fz-nNL" secondAttribute="centerX" id="KLP-0G-4sz"/>
                             <constraint firstItem="Rz2-Tg-e1O" firstAttribute="trailing" secondItem="jaC-n7-mVg" secondAttribute="trailingMargin" id="MFV-6b-x6K"/>
-                            <constraint firstItem="z9H-ML-Fo0" firstAttribute="centerX" secondItem="jaC-n7-mVg" secondAttribute="centerX" id="OV2-Xq-98d"/>
                             <constraint firstItem="Rz2-Tg-e1O" firstAttribute="top" secondItem="fX1-v8-enb" secondAttribute="bottom" constant="20" id="OZz-e5-gsK"/>
+                            <constraint firstItem="RdZ-wJ-rnh" firstAttribute="centerX" secondItem="jaC-n7-mVg" secondAttribute="centerX" id="Pr2-Wv-WAT"/>
                             <constraint firstAttribute="centerY" secondItem="5iV-Fz-nNL" secondAttribute="centerY" id="dVa-eN-bmD"/>
                             <constraint firstItem="hiP-tM-3Ej" firstAttribute="centerY" secondItem="jaC-n7-mVg" secondAttribute="centerY" id="gLC-Eg-0oo"/>
+                            <constraint firstItem="z9H-ML-Fo0" firstAttribute="centerX" secondItem="jaC-n7-mVg" secondAttribute="centerX" id="iKK-gb-3AQ"/>
                             <constraint firstItem="9ZJ-Od-JZV" firstAttribute="leading" secondItem="jaC-n7-mVg" secondAttribute="leadingMargin" id="jNn-Ud-SOr"/>
                             <constraint firstItem="9ZJ-Od-JZV" firstAttribute="top" secondItem="fX1-v8-enb" secondAttribute="bottom" constant="20" id="lvR-tN-Jac"/>
-                            <constraint firstItem="z9H-ML-Fo0" firstAttribute="centerY" secondItem="jaC-n7-mVg" secondAttribute="centerY" id="ruz-nF-nPT"/>
+                            <constraint firstItem="RdZ-wJ-rnh" firstAttribute="top" secondItem="5iV-Fz-nNL" secondAttribute="bottom" constant="12" id="ngZ-Yb-JYH"/>
                             <constraint firstItem="hiP-tM-3Ej" firstAttribute="centerX" secondItem="jaC-n7-mVg" secondAttribute="centerX" id="vYE-AW-5cn"/>
+                            <constraint firstItem="S3A-b2-ySw" firstAttribute="centerX" secondItem="jaC-n7-mVg" secondAttribute="centerX" id="w2V-O0-tfC"/>
                             <constraint firstAttribute="centerX" secondItem="f4O-uT-e1P" secondAttribute="centerX" id="zrU-U3-PT2"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="A1B-kk-6dX"/>
+                                <exclude reference="JKO-ED-FfO"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Bande Passante" id="SXM-Ix-4Vq">
                         <barButtonItem key="rightBarButtonItem" image="settings" id="PNY-OB-bKX">
@@ -263,8 +302,10 @@
                     <connections>
                         <outlet property="activityIndicator" destination="z9H-ML-Fo0" id="x03-Yy-e2y"/>
                         <outlet property="apartmentLabel" destination="Rz2-Tg-e1O" id="AaN-8R-Q2b"/>
+                        <outlet property="callCooptelButton" destination="S3A-b2-ySw" id="5DD-aQ-2dN"/>
                         <outlet property="circleChart" destination="5iV-Fz-nNL" id="S3K-0B-wGk"/>
                         <outlet property="detailButton" destination="f4O-uT-e1P" id="NvR-Ly-Hgm"/>
+                        <outlet property="idealQuotaLabel" destination="RdZ-wJ-rnh" id="2aC-Po-lE6"/>
                         <outlet property="percentageLabel" destination="vfO-iH-HKV" id="NhD-4S-Bn7"/>
                         <outlet property="phaseLabel" destination="9ZJ-Od-JZV" id="a0f-l6-jfI"/>
                         <outlet property="quotaLabel" destination="QXN-b3-f4d" id="PAJ-5P-cK4"/>

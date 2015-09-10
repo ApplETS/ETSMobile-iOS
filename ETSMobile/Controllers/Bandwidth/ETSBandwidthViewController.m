@@ -21,12 +21,15 @@
     @property (nonatomic, copy) NSString *month;
     @property (nonatomic, strong) NSNumber *usedBandwidth;
     @property (nonatomic, strong) NSNumber *limitBandwidth;
+    @property (nonatomic, strong) NSURL* callCooptelUrl;
     @property (weak, nonatomic) IBOutlet UILabel *phaseLabel;
     @property (weak, nonatomic) IBOutlet UILabel *apartmentLabel;
     @property (weak, nonatomic) IBOutlet UIButton *detailButton;
+    @property (weak, nonatomic) IBOutlet UIButton *callCooptelButton;
     @property (weak, nonatomic) IBOutlet UILabel *percentageLabel;
     @property (weak, nonatomic) IBOutlet UILabel *quotaLabel;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+    @property (weak, nonatomic) IBOutlet UILabel *idealQuotaLabel;
+    @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
     @property (weak, nonatomic) IBOutlet ETSBandwidthCircleChart *circleChart;
 @end
 
@@ -47,6 +50,7 @@
     
     self.percentageLabel.text = @"";
     self.quotaLabel.text = @"";
+    self.idealQuotaLabel.text = @"";
     [self.activityIndicator startAnimating];
     
     self.synchronization.request = [NSURLRequest requestForBandwidthWithMonth:self.month residence:self.apartment phase:self.phase];
@@ -77,6 +81,9 @@
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
     
+    // Call Cooptel
+    self.callCooptelUrl = [NSURL URLWithString:@"telprompt://18885322667 "];
+    
     self.formatter = [[NSNumberFormatter alloc] init];
     self.formatter.decimalSeparator = @",";
     self.formatter.groupingSeparator = @" ";
@@ -94,6 +101,7 @@
     self.apartmentLabel.text = @"";
     self.percentageLabel.text = @"";
     self.quotaLabel.text = @"";
+    self.idealQuotaLabel.text = @"";
     
     if ([self.apartment length] == 0 || [self.phase integerValue] == 0) {
         self.dataNeedRefresh = NO;
@@ -125,6 +133,12 @@
     if ([segue.identifier isEqualToString:@"ShowBandwidthDetails"]) {
         ETSBandwidthDetailViewController *destination = segue.destinationViewController;
         destination.managedObjectContext = self.managedObjectContext;
+    }
+}
+
+- (IBAction)CallCooptelButton:(id)sender {
+    if ([[UIApplication sharedApplication] canOpenURL:self.callCooptelUrl]) {
+        [[UIApplication sharedApplication] openURL:self.callCooptelUrl];
     }
 }
 
@@ -188,22 +202,27 @@
         [entry setValue:date forKey:@"date"];
         [entry setValue:[[[day valueForKey:@"td"]objectAtIndex:2]valueForKey:@"content" ] forKey:@"upload"];
         [entry setValue:[[[day valueForKey:@"td"]objectAtIndex:3]valueForKey:@"content" ] forKey:@"download"];
-        [entry setValue:[@([components month]) stringValue] forKey:@"month"];
+        [entry setValue:[@([components month]) stringValue] forKey:@"month  "];
         [entry setValue:[NSString stringWithFormat:@"%@-%@", [[day valueForKey:@"td"]objectAtIndex:0], date] forKey:@"id"];
         [entries addObject:entry];
     }
     
+    // Appartement and Phase label update
     self.phaseLabel.text = [NSString stringWithFormat:@"Phase %@", self.phase];
     self.apartmentLabel.text = [NSString stringWithFormat:@"Appartement %@", self.apartment];
+    
+    // Enabling buttons
     self.detailButton.enabled = YES;
+    
+    if ([[UIApplication sharedApplication] canOpenURL:self.callCooptelUrl]) {
+        self.callCooptelButton.enabled = YES;
+    }
     
     NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
     f.decimalSeparator = @".";
     self.usedBandwidth = [f numberFromString:[days lastObject][@"td"][1][@"content"]];
     self.limitBandwidth = [f numberFromString:tables[1][@"tbody"][@"tr"][1][@"td"][1][@"content"]];
     
-    self.circleChart.used = [self.usedBandwidth floatValue];
-    self.circleChart.limit = [self.limitBandwidth floatValue];
     
     // Changing center percentage
     float used = [self.usedBandwidth floatValue] / 1024;
@@ -211,7 +230,21 @@
     self.percentageLabel.text = [NSString stringWithFormat:@"%@Go", [self.formatter stringFromNumber:[NSNumber numberWithFloat:used]]];
     self.quotaLabel.text = [NSString stringWithFormat:@"sur %@Go", [self.formatter stringFromNumber:[NSNumber numberWithFloat:limit]]];
     
+    // Calculating Ideal Quota
+    NSDate *today = [NSDate date]; //Get a date object for today's date
+    NSCalendar *c = [NSCalendar currentCalendar];
+    NSRange daysInMonth = [c rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:today];
+    float idealQuota = [self.limitBandwidth floatValue] * 10 / daysInMonth.length;
+    float idealQuotaPercentage = [self.usedBandwidth floatValue]/idealQuota * 100;
+    
+    self.idealQuotaLabel.text = [NSString stringWithFormat:@"%@%% de la consommation idéale", [self.formatter stringFromNumber:[NSNumber numberWithFloat:idealQuotaPercentage]]];
+    
+    // Circle chart parameters
+    self.circleChart.used = [self.usedBandwidth floatValue];
+    self.circleChart.limit = [self.limitBandwidth floatValue];
+    self.circleChart.ideal = idealQuota;
     [self.circleChart setNeedsDisplay];
+    
     [self.activityIndicator stopAnimating];
     
     return entries;

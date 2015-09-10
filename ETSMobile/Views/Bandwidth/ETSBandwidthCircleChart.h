@@ -12,4 +12,5 @@ IB_DESIGNABLE
 @interface ETSBandwidthCircleChart: UIView
 @property (nonatomic) IBInspectable CGFloat used;
 @property (nonatomic) IBInspectable CGFloat limit;
+@property (nonatomic) IBInspectable CGFloat ideal;
 @end
