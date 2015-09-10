@@ -31,7 +31,7 @@
 		1DF8B0221ACC5E3F00E350BA /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8B0101ACC5E3F00E350BA /* UIImageView+HighlightedWebCache.m */; };
 		1DF8B0231ACC5E3F00E350BA /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8B0121ACC5E3F00E350BA /* UIImageView+WebCache.m */; };
 		1DF8B0241ACC5E3F00E350BA /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8B0141ACC5E3F00E350BA /* UIView+WebCacheOperation.m */; };
-		260244F21ACA12D6001B57C3 /* ETSBandwidthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 260244F11ACA12D6001B57C3 /* ETSBandwidthViewController.m */; };
+		260244F21ACA12D6001B57C3 /* ETSBandwidthDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 260244F11ACA12D6001B57C3 /* ETSBandwidthDetailViewController.m */; };
 		260244F61ACA137C001B57C3 /* ETSBandwidthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 260244F51ACA137C001B57C3 /* ETSBandwidthCell.m */; };
 		260244F91ACA140D001B57C3 /* ETSCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 260244F81ACA140D001B57C3 /* ETSCoreDataHelper.m */; };
 		260245021ACA524B001B57C3 /* ETSCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 260244FD1ACA524B001B57C3 /* ETSCommentCell.m */; };
@@ -122,6 +122,9 @@
 		26B1E7D11AF93A1A00D10273 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1E7CC1AF9397700D10273 /* Crashlytics.framework */; };
 		26B1E7D21AF93A1A00D10273 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1E7CB1AF9397700D10273 /* Fabric.framework */; };
 		26D00E311ACE3BB90062BF6F /* SecuritySources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26D00E301ACE3BB90062BF6F /* SecuritySources.plist */; };
+		E9119A881BA0E9EA00ABC2A3 /* ETSBandwidthCircleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = E9119A871BA0E9EA00ABC2A3 /* ETSBandwidthCircleChart.m */; settings = {ASSET_TAGS = (); }; };
+		E9DE4CE11BA0CC6A00BCC3AF /* ETSBandwidthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DE4CE01BA0CC6A00BCC3AF /* ETSBandwidthViewController.m */; };
+		E9DE4CE41BA0CED600BCC3AF /* ETSBandwitdhConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DE4CE31BA0CED600BCC3AF /* ETSBandwitdhConfigViewController.m */; };
 		E9EE856B1B99EFEE0074FAB3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE856A1B99EFEE0074FAB3 /* CoreGraphics.framework */; };
 		E9EE856C1B99EFF30074FAB3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264187291AB77B9D0027561B /* CoreTelephony.framework */; };
 		E9EE856E1B99EFFC0074FAB3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE856D1B99EFFC0074FAB3 /* CoreText.framework */; };
@@ -196,8 +199,8 @@
 		1DF8B0121ACC5E3F00E350BA /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "Vendors/SDWebImage/SDWebImage/UIImageView+WebCache.m"; sourceTree = SOURCE_ROOT; };
 		1DF8B0131ACC5E3F00E350BA /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "Vendors/SDWebImage/SDWebImage/UIView+WebCacheOperation.h"; sourceTree = SOURCE_ROOT; };
 		1DF8B0141ACC5E3F00E350BA /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCacheOperation.m"; path = "Vendors/SDWebImage/SDWebImage/UIView+WebCacheOperation.m"; sourceTree = SOURCE_ROOT; };
-		260244F01ACA12D6001B57C3 /* ETSBandwidthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSBandwidthViewController.h; path = Controllers/Bandwidth/ETSBandwidthViewController.h; sourceTree = "<group>"; };
-		260244F11ACA12D6001B57C3 /* ETSBandwidthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSBandwidthViewController.m; path = Controllers/Bandwidth/ETSBandwidthViewController.m; sourceTree = "<group>"; };
+		260244F01ACA12D6001B57C3 /* ETSBandwidthDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSBandwidthDetailViewController.h; path = Controllers/Bandwidth/ETSBandwidthDetailViewController.h; sourceTree = "<group>"; };
+		260244F11ACA12D6001B57C3 /* ETSBandwidthDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSBandwidthDetailViewController.m; path = Controllers/Bandwidth/ETSBandwidthDetailViewController.m; sourceTree = "<group>"; };
 		260244F41ACA137C001B57C3 /* ETSBandwidthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSBandwidthCell.h; path = Views/Bandwidth/ETSBandwidthCell.h; sourceTree = "<group>"; };
 		260244F51ACA137C001B57C3 /* ETSBandwidthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSBandwidthCell.m; path = Views/Bandwidth/ETSBandwidthCell.m; sourceTree = "<group>"; };
 		260244F71ACA140D001B57C3 /* ETSCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSCoreDataHelper.h; path = Categories/ETSCoreDataHelper.h; sourceTree = "<group>"; };
@@ -367,6 +370,12 @@
 		26B1E7D51AF93A9E00D10273 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		26B1E7D61AF93A9E00D10273 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26D00E301ACE3BB90062BF6F /* SecuritySources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SecuritySources.plist; path = "Supporting Files/SecuritySources.plist"; sourceTree = "<group>"; };
+		E9119A861BA0E9EA00ABC2A3 /* ETSBandwidthCircleChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSBandwidthCircleChart.h; path = Views/Bandwidth/ETSBandwidthCircleChart.h; sourceTree = "<group>"; };
+		E9119A871BA0E9EA00ABC2A3 /* ETSBandwidthCircleChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSBandwidthCircleChart.m; path = Views/Bandwidth/ETSBandwidthCircleChart.m; sourceTree = "<group>"; };
+		E9DE4CDF1BA0CC6A00BCC3AF /* ETSBandwidthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSBandwidthViewController.h; path = Controllers/Bandwidth/ETSBandwidthViewController.h; sourceTree = "<group>"; };
+		E9DE4CE01BA0CC6A00BCC3AF /* ETSBandwidthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSBandwidthViewController.m; path = Controllers/Bandwidth/ETSBandwidthViewController.m; sourceTree = "<group>"; };
+		E9DE4CE21BA0CED600BCC3AF /* ETSBandwitdhConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSBandwitdhConfigViewController.h; path = Controllers/Bandwidth/ETSBandwitdhConfigViewController.h; sourceTree = "<group>"; };
+		E9DE4CE31BA0CED600BCC3AF /* ETSBandwitdhConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSBandwitdhConfigViewController.m; path = Controllers/Bandwidth/ETSBandwitdhConfigViewController.m; sourceTree = "<group>"; };
 		E9EE856A1B99EFEE0074FAB3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E9EE856D1B99EFFC0074FAB3 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		E9EE856F1B99F0030074FAB3 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -489,8 +498,12 @@
 		260244EF1ACA12C8001B57C3 /* Bandwidth */ = {
 			isa = PBXGroup;
 			children = (
-				260244F01ACA12D6001B57C3 /* ETSBandwidthViewController.h */,
-				260244F11ACA12D6001B57C3 /* ETSBandwidthViewController.m */,
+				260244F01ACA12D6001B57C3 /* ETSBandwidthDetailViewController.h */,
+				260244F11ACA12D6001B57C3 /* ETSBandwidthDetailViewController.m */,
+				E9DE4CDF1BA0CC6A00BCC3AF /* ETSBandwidthViewController.h */,
+				E9DE4CE01BA0CC6A00BCC3AF /* ETSBandwidthViewController.m */,
+				E9DE4CE21BA0CED600BCC3AF /* ETSBandwitdhConfigViewController.h */,
+				E9DE4CE31BA0CED600BCC3AF /* ETSBandwitdhConfigViewController.m */,
 			);
 			name = Bandwidth;
 			sourceTree = "<group>";
@@ -500,6 +513,8 @@
 			children = (
 				260244F41ACA137C001B57C3 /* ETSBandwidthCell.h */,
 				260244F51ACA137C001B57C3 /* ETSBandwidthCell.m */,
+				E9119A861BA0E9EA00ABC2A3 /* ETSBandwidthCircleChart.h */,
+				E9119A871BA0E9EA00ABC2A3 /* ETSBandwidthCircleChart.m */,
 			);
 			name = Bandwidth;
 			sourceTree = "<group>";
@@ -1140,12 +1155,13 @@
 				2602450B1ACA5361001B57C3 /* ETSSponsorsViewController.m in Sources */,
 				2641876B1AB786A80027561B /* ETSCollectionViewController.m in Sources */,
 				260245401ACB8FFE001B57C3 /* ETSNewsViewController.m in Sources */,
-				260244F21ACA12D6001B57C3 /* ETSBandwidthViewController.m in Sources */,
+				260244F21ACA12D6001B57C3 /* ETSBandwidthDetailViewController.m in Sources */,
 				26065D821ABB896C008955D3 /* ETSMenuTableViewHeader.m in Sources */,
 				1DF8B0181ACC5E3F00E350BA /* SDWebImageCompat.m in Sources */,
 				260244F61ACA137C001B57C3 /* ETSBandwidthCell.m in Sources */,
 				264187991AB789A70027561B /* NSString+HTML.m in Sources */,
 				1D50F93C1ACC76FD00B06561 /* ETSSecurityDetailViewController.m in Sources */,
+				E9DE4CE41BA0CED600BCC3AF /* ETSBandwitdhConfigViewController.m in Sources */,
 				260245461ACB904F001B57C3 /* ETSNewsCell.m in Sources */,
 				2641873D1AB77E770027561B /* ETSCalendar.m in Sources */,
 				1DF8B0151ACC5E3F00E350BA /* MKAnnotationView+WebCache.m in Sources */,
@@ -1178,6 +1194,7 @@
 				1DF8B0191ACC5E3F00E350BA /* SDWebImageDecoder.m in Sources */,
 				265008CF1AD056170033FB64 /* ETSCoursesViewController.m in Sources */,
 				2602450F1ACA53E5001B57C3 /* ETSAboutViewController.m in Sources */,
+				E9DE4CE11BA0CC6A00BCC3AF /* ETSBandwidthViewController.m in Sources */,
 				1D50F93D1ACC76FD00B06561 /* ETSSecurityProcedureViewController.m in Sources */,
 				1DDF27101AD5AF7B00D1A7DA /* ETSMoodleResultViewCell.m in Sources */,
 				2602454A1ACB9087001B57C3 /* NSURL+Document.m in Sources */,
@@ -1188,6 +1205,7 @@
 				2602452B1ACB4F25001B57C3 /* MSGridline.m in Sources */,
 				1DF8B0161ACC5E3F00E350BA /* NSData+ImageContentType.m in Sources */,
 				265008DF1AD056490033FB64 /* ETSSessionHeader.m in Sources */,
+				E9119A881BA0E9EA00ABC2A3 /* ETSBandwidthCircleChart.m in Sources */,
 				1DF8B01F1ACC5E3F00E350BA /* UIImage+GIF.m in Sources */,
 				264186F61AB779F40027561B /* ETSMobile.xcdatamodeld in Sources */,
 				264187371AB77E770027561B /* ETSEvaluation.m in Sources */,
