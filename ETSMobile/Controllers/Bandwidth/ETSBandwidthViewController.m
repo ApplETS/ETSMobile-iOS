@@ -96,7 +96,7 @@
     self.formatter.groupingSize = 3;
     self.formatter.usesGroupingSeparator = YES;
     self.formatter.maximumFractionDigits = 2;
-    self.formatter.minimumFractionDigits = 2;
+    self.formatter.minimumFractionDigits = 1;
     self.formatter.minimumIntegerDigits = 1;
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -232,8 +232,8 @@
     // Changing center percentage
     float used = [self.usedBandwidth floatValue] / 1024;
     float limit = [self.limitBandwidth floatValue] / 1024;
-    self.percentageLabel.text = [NSString stringWithFormat:@"%@Go", [self.formatter stringFromNumber:[NSNumber numberWithFloat:used]]];
-    self.quotaLabel.text = [NSString stringWithFormat:@"sur %@Go", [self.formatter stringFromNumber:[NSNumber numberWithFloat:limit]]];
+    self.percentageLabel.text = [NSString stringWithFormat:@"%@ Go", [self.formatter stringFromNumber:[NSNumber numberWithFloat:used]]];
+    self.quotaLabel.text = [NSString stringWithFormat:@"sur %@ Go", [self.formatter stringFromNumber:[NSNumber numberWithFloat:limit]]];
     
     // Calculating Ideal Quota
     NSDate *today = [NSDate date]; //Get a date object for today's date
@@ -242,7 +242,14 @@
     float idealQuota = [self.limitBandwidth floatValue] * 10 / daysInMonth.length;
     float idealQuotaPercentage = [self.usedBandwidth floatValue]/idealQuota * 100;
     
-    self.idealQuotaLabel.text = [NSString stringWithFormat:@"%@%% de la consommation idéale", [self.formatter stringFromNumber:[NSNumber numberWithFloat:idealQuotaPercentage]]];
+    // Formatter pour le pourcentage
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.usesGroupingSeparator = NO;
+    formatter.maximumFractionDigits = 0;
+    formatter.minimumFractionDigits = 0;
+    formatter.minimumIntegerDigits = 1;
+    
+    self.idealQuotaLabel.text = [NSString stringWithFormat:@"%@ %% de la consommation idéale", [formatter stringFromNumber:[NSNumber numberWithFloat:idealQuotaPercentage]]];
     
     // Circle chart parameters
     self.circleChart.used = [self.usedBandwidth floatValue];
