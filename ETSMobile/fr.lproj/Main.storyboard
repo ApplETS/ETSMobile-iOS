@@ -229,14 +229,14 @@
                                         <rect key="frame" x="74" y="39" width="92.5" height="20.5"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34.85Go" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfO-iH-HKV">
                                         <rect key="frame" x="70" y="8" width="100" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -259,7 +259,7 @@
                                 <rect key="frame" x="175" y="576" width="250" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5iV-Fz-nNL" customClass="ETSBandwidthCircleChart">
@@ -2638,6 +2638,11 @@ http://www.clubapplets.ca</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Paramètres" prompt="Bande Passante" id="awj-rZ-PLk">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="b1E-IX-QQz">
+                            <connections>
+                                <action selector="didPressCancelButton:" destination="Zho-hU-hhi" id="97v-iW-84p"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="KB4-7F-ZVF">
                             <connections>
                                 <action selector="didPressSaveButton:" destination="Zho-hU-hhi" id="3Tu-4p-GVr"/>

@@ -33,6 +33,13 @@
     [self.apartmentTextField becomeFirstResponder];
 }
 
+- (IBAction)didPressCancelButton:(id)sender {
+    // Removing keyboard
+    [self.apartmentTextField resignFirstResponder];
+    // Closing view
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)didPressSaveButton:(id)sender {
     
     // Save data if there is any changes
@@ -46,9 +53,9 @@
             [userDefaults setObject:phase forKey:@"phase"];
         }
     }
-    [self.apartmentTextField resignFirstResponder];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    // Closing the view
+    [self didPressCancelButton:sender];
 }
 
 @end
