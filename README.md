@@ -18,10 +18,9 @@ Parmi les fonctionnalités offertes :
 
 ## Installation
 1. Téléchargez la dernière version de Xcode.
-2. Assurez-vous d’avoir ajouté votre clé ssh dans [GitHub](https://github.com/settings/ssh)
+2. Assurez-vous d’avoir installé [Cocoapods](https://cocoapods.org/)
 3. Ouvrez le terminal
 4. git clone git@github.com:ApplETS/ETSMobile-iOS.git
 5. cd ETSMobile-iOS/
-6. git submodule init
-7. git submodule update
-8. Vous pouvez ensuite vous créer une nouvelle branche et compiler le projet!
+6. pod intall
+8. Vous pouvez ensuite vous créer une nouvelle branche et/ou compiler le projet!
