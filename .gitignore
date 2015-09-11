@@ -17,3 +17,6 @@ profile
 DerivedData
 .idea/
 Keys.xcconfig
+
+# Cocoapods
+Pods/
