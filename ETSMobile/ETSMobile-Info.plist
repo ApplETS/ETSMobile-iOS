@@ -44,6 +44,11 @@
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>SupportKitApiKey</key>
 	<string>${SUPPORTKIT_API_KEY}</string>
 	<key>UIBackgroundModes</key>
