@@ -1,9 +1,0 @@
-source 'https://github.com/CocoaPods/Specs.git'
-
-target 'STKWebKitViewController', :exclusive => true do
-  pod "STKWebKitViewController", :path => "../"
-end
-
-target 'Tests', :exclusive => true do
-  pod "STKWebKitViewController", :path => "../"
-end
