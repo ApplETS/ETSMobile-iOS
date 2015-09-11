@@ -195,12 +195,13 @@
         NSURL *url = [NSURL URLWithString:news.link];
         STKWebKitViewController *webViewController = [[STKWebKitViewController alloc] initWithURL:url];
         
-        // Customization
-        webViewController.toolbarItemTintColor = [UIColor naviguationBarTintColor];
+        // FIXME this parameter is waiting for a pull-request, using another instead.
+        // webViewController.toolbarItemTintColor = [UIColor naviguationBarTintColor];
+        webViewController.toolbarTintColor = [UIColor naviguationBarTintColor]; // Should be removed as soon as the pull request is granted
         
-        // FIXME Open in safari Activity
-        // TUSafariActivity *activity = [[TUSafariActivity alloc] init];
-        // webViewController.applicationActivities = @[activity];
+        // Open in safari Activity, to add this action in the Share View
+        TUSafariActivity *activity = [[TUSafariActivity alloc] init];
+        webViewController.applicationActivities = @[activity];
         
         [self.navigationController pushViewController:webViewController animated:YES];
     }
