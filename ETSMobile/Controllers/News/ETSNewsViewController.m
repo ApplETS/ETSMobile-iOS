@@ -145,7 +145,7 @@
 -(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
-
+    
     UITableViewRowAction *share = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Partager" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
                                   {
                                       NSArray *activityItems = @[news.title, [NSURL URLWithString:news.link]];
@@ -174,8 +174,16 @@
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return YES;
+    ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    if (news.link) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
+
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -192,18 +200,20 @@
         // Getting news for index path
         ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
         
-        NSURL *url = [NSURL URLWithString:news.link];
-        STKWebKitViewController *webViewController = [[STKWebKitViewController alloc] initWithURL:url];
+        if (news.link) {
+            NSURL *url = [NSURL URLWithString:news.link];
+            STKWebKitViewController *webViewController = [[STKWebKitViewController alloc] initWithURL:url];
         
-        // FIXME this parameter is waiting for a pull-request, using another instead.
-        // webViewController.toolbarItemTintColor = [UIColor naviguationBarTintColor];
-        webViewController.toolbarTintColor = [UIColor naviguationBarTintColor]; // Should be removed as soon as the pull request is granted
+            // FIXME this parameter is waiting for a pull-request, using another instead.
+            // webViewController.toolbarItemTintColor = [UIColor naviguationBarTintColor];
+            webViewController.toolbarTintColor = [UIColor naviguationBarTintColor]; // Should be removed as soon as the pull request is granted
         
-        // Open in safari Activity, to add this action in the Share View
-        TUSafariActivity *activity = [[TUSafariActivity alloc] init];
-        webViewController.applicationActivities = @[activity];
+            // Open in safari Activity, to add this action in the Share View
+            TUSafariActivity *activity = [[TUSafariActivity alloc] init];
+            webViewController.applicationActivities = @[activity];
         
-        [self.navigationController pushViewController:webViewController animated:YES];
+            [self.navigationController pushViewController:webViewController animated:YES];
+        }
     }
 }
 
@@ -237,6 +247,12 @@
         ((ETSNewsEmptyCell *)cell).contentTextView.text = news.content;
         ((ETSNewsCell *)cell).contentTextView.textColor = [UIColor blackColor];
         ((ETSNewsEmptyCell *)cell).authorLabel.text = news.author;
+    }
+    
+    if (news.link) {
+        ((ETSNewsCell *)cell).accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else {
+        ((ETSNewsCell *)cell).accessoryType = UITableViewCellAccessoryNone;
     }
     
     cell.layer.shouldRasterize = YES;
