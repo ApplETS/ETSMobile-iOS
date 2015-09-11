@@ -7,4 +7,5 @@
 //
 
 #include "Keys.xcconfig"
+#include "Pods/Target Support Files/Pods-ETSMobile/Pods-ETSMobile.debug.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited)

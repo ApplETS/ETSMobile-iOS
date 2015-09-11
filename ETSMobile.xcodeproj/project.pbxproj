@@ -15,22 +15,6 @@
 		1DDF270C1AD5AB8600D1A7DA /* ETSMoodleCourseResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDF270B1AD5AB8600D1A7DA /* ETSMoodleCourseResultsViewController.m */; };
 		1DDF27101AD5AF7B00D1A7DA /* ETSMoodleResultViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDF270F1AD5AF7B00D1A7DA /* ETSMoodleResultViewCell.m */; };
 		1DF8AFF31ACC5C3200E350BA /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF8AFF21ACC5C3200E350BA /* ImageIO.framework */; };
-		1DF8B0151ACC5E3F00E350BA /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8AFF51ACC5E3F00E350BA /* MKAnnotationView+WebCache.m */; };
-		1DF8B0161ACC5E3F00E350BA /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8AFF71ACC5E3F00E350BA /* NSData+ImageContentType.m */; };
-		1DF8B0171ACC5E3F00E350BA /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8AFF91ACC5E3F00E350BA /* SDImageCache.m */; };
-		1DF8B0181ACC5E3F00E350BA /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8AFFB1ACC5E3F00E350BA /* SDWebImageCompat.m */; };
-		1DF8B0191ACC5E3F00E350BA /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8AFFD1ACC5E3F00E350BA /* SDWebImageDecoder.m */; };
-		1DF8B01A1ACC5E3F00E350BA /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8AFFF1ACC5E3F00E350BA /* SDWebImageDownloader.m */; };
-		1DF8B01B1ACC5E3F00E350BA /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8B0011ACC5E3F00E350BA /* SDWebImageDownloaderOperation.m */; };
-		1DF8B01C1ACC5E3F00E350BA /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8B0031ACC5E3F00E350BA /* SDWebImageManager.m */; };
-		1DF8B01D1ACC5E3F00E350BA /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8B0061ACC5E3F00E350BA /* SDWebImagePrefetcher.m */; };
-		1DF8B01E1ACC5E3F00E350BA /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8B0081ACC5E3F00E350BA /* UIButton+WebCache.m */; };
-		1DF8B01F1ACC5E3F00E350BA /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8B00A1ACC5E3F00E350BA /* UIImage+GIF.m */; };
-		1DF8B0201ACC5E3F00E350BA /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8B00C1ACC5E3F00E350BA /* UIImage+MultiFormat.m */; };
-		1DF8B0211ACC5E3F00E350BA /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8B00E1ACC5E3F00E350BA /* UIImage+WebP.m */; };
-		1DF8B0221ACC5E3F00E350BA /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8B0101ACC5E3F00E350BA /* UIImageView+HighlightedWebCache.m */; };
-		1DF8B0231ACC5E3F00E350BA /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8B0121ACC5E3F00E350BA /* UIImageView+WebCache.m */; };
-		1DF8B0241ACC5E3F00E350BA /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF8B0141ACC5E3F00E350BA /* UIView+WebCacheOperation.m */; };
 		260244F21ACA12D6001B57C3 /* ETSBandwidthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 260244F11ACA12D6001B57C3 /* ETSBandwidthViewController.m */; };
 		260244F61ACA137C001B57C3 /* ETSBandwidthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 260244F51ACA137C001B57C3 /* ETSBandwidthCell.m */; };
 		260244F91ACA140D001B57C3 /* ETSCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 260244F81ACA140D001B57C3 /* ETSCoreDataHelper.m */; };
@@ -110,18 +94,14 @@
 		265008DD1AD056490033FB64 /* ETSCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 265008D81AD056490033FB64 /* ETSCourseCell.m */; };
 		265008DE1AD056490033FB64 /* ETSEvaluationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 265008DA1AD056490033FB64 /* ETSEvaluationCell.m */; };
 		265008DF1AD056490033FB64 /* ETSSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 265008DC1AD056490033FB64 /* ETSSessionHeader.m */; };
-		26731FCA1ABA1AC50045EBD2 /* MSDynamicsDrawerStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = 26731FC61ABA1AC50045EBD2 /* MSDynamicsDrawerStyler.m */; };
-		26731FCB1ABA1AC50045EBD2 /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26731FC91ABA1AC50045EBD2 /* MSDynamicsDrawerViewController.m */; };
-		26731FCE1ABA1AD50045EBD2 /* MSCollectionViewCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 26731FCD1ABA1AD50045EBD2 /* MSCollectionViewCalendarLayout.m */; };
 		26731FD31ABA1B660045EBD2 /* NSDate+Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 26731FD01ABA1B660045EBD2 /* NSDate+Day.m */; };
 		26731FD41ABA1B660045EBD2 /* UIColor+Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = 26731FD21ABA1B660045EBD2 /* UIColor+Styles.m */; };
 		26A7E1A21ACC3A1B00B83C5F /* ETSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7E1A11ACC3A1B00B83C5F /* ETSProfileViewController.m */; };
 		26A7E1A81ACC429900B83C5F /* ETSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7E1A51ACC429900B83C5F /* ETSCalendarViewController.m */; };
 		26A7E1A91ACC429900B83C5F /* ETSUniversityCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7E1A71ACC429900B83C5F /* ETSUniversityCalendarViewController.m */; };
 		26A7E1AD1ACC42B300B83C5F /* MSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7E1AC1ACC42B300B83C5F /* MSEventCell.m */; };
-		26B1E7D11AF93A1A00D10273 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1E7CC1AF9397700D10273 /* Crashlytics.framework */; };
-		26B1E7D21AF93A1A00D10273 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1E7CB1AF9397700D10273 /* Fabric.framework */; };
 		26D00E311ACE3BB90062BF6F /* SecuritySources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26D00E301ACE3BB90062BF6F /* SecuritySources.plist */; };
+		D4EEFDACFB7EACE2E48997F8 /* libPods-ETSMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5DC930BC66734E6D25C2AEF /* libPods-ETSMobile.a */; };
 		E9EE856B1B99EFEE0074FAB3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE856A1B99EFEE0074FAB3 /* CoreGraphics.framework */; };
 		E9EE856C1B99EFF30074FAB3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264187291AB77B9D0027561B /* CoreTelephony.framework */; };
 		E9EE856E1B99EFFC0074FAB3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE856D1B99EFFC0074FAB3 /* CoreText.framework */; };
@@ -133,8 +113,6 @@
 		E9EE857B1B99F03E0074FAB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE857A1B99F03E0074FAB3 /* UIKit.framework */; };
 		E9EE857D1B99F0460074FAB3 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE857C1B99F0460074FAB3 /* AssetsLibrary.framework */; };
 		E9EE857F1B99F04B0074FAB3 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE857E1B99F04B0074FAB3 /* Photos.framework */; };
-		E9EE85821B99F0E80074FAB3 /* SupportKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E9EE85801B99F0E80074FAB3 /* SupportKit.bundle */; };
-		E9EE85831B99F0E80074FAB3 /* SupportKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE85811B99F0E80074FAB3 /* SupportKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,39 +141,6 @@
 		1DDF270E1AD5AF7B00D1A7DA /* ETSMoodleResultViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSMoodleResultViewCell.h; path = Views/Moodle/ETSMoodleResultViewCell.h; sourceTree = "<group>"; };
 		1DDF270F1AD5AF7B00D1A7DA /* ETSMoodleResultViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSMoodleResultViewCell.m; path = Views/Moodle/ETSMoodleResultViewCell.m; sourceTree = "<group>"; };
 		1DF8AFF21ACC5C3200E350BA /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		1DF8AFF41ACC5E3F00E350BA /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MKAnnotationView+WebCache.h"; path = "Vendors/SDWebImage/SDWebImage/MKAnnotationView+WebCache.h"; sourceTree = SOURCE_ROOT; };
-		1DF8AFF51ACC5E3F00E350BA /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MKAnnotationView+WebCache.m"; path = "Vendors/SDWebImage/SDWebImage/MKAnnotationView+WebCache.m"; sourceTree = SOURCE_ROOT; };
-		1DF8AFF61ACC5E3F00E350BA /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "Vendors/SDWebImage/SDWebImage/NSData+ImageContentType.h"; sourceTree = SOURCE_ROOT; };
-		1DF8AFF71ACC5E3F00E350BA /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+ImageContentType.m"; path = "Vendors/SDWebImage/SDWebImage/NSData+ImageContentType.m"; sourceTree = SOURCE_ROOT; };
-		1DF8AFF81ACC5E3F00E350BA /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = Vendors/SDWebImage/SDWebImage/SDImageCache.h; sourceTree = SOURCE_ROOT; };
-		1DF8AFF91ACC5E3F00E350BA /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = Vendors/SDWebImage/SDWebImage/SDImageCache.m; sourceTree = SOURCE_ROOT; };
-		1DF8AFFA1ACC5E3F00E350BA /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDWebImageCompat.h; path = Vendors/SDWebImage/SDWebImage/SDWebImageCompat.h; sourceTree = SOURCE_ROOT; };
-		1DF8AFFB1ACC5E3F00E350BA /* SDWebImageCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCompat.m; path = Vendors/SDWebImage/SDWebImage/SDWebImageCompat.m; sourceTree = SOURCE_ROOT; };
-		1DF8AFFC1ACC5E3F00E350BA /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDWebImageDecoder.h; path = Vendors/SDWebImage/SDWebImage/SDWebImageDecoder.h; sourceTree = SOURCE_ROOT; };
-		1DF8AFFD1ACC5E3F00E350BA /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDecoder.m; path = Vendors/SDWebImage/SDWebImage/SDWebImageDecoder.m; sourceTree = SOURCE_ROOT; };
-		1DF8AFFE1ACC5E3F00E350BA /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloader.h; path = Vendors/SDWebImage/SDWebImage/SDWebImageDownloader.h; sourceTree = SOURCE_ROOT; };
-		1DF8AFFF1ACC5E3F00E350BA /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloader.m; path = Vendors/SDWebImage/SDWebImage/SDWebImageDownloader.m; sourceTree = SOURCE_ROOT; };
-		1DF8B0001ACC5E3F00E350BA /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderOperation.h; path = Vendors/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.h; sourceTree = SOURCE_ROOT; };
-		1DF8B0011ACC5E3F00E350BA /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderOperation.m; path = Vendors/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.m; sourceTree = SOURCE_ROOT; };
-		1DF8B0021ACC5E3F00E350BA /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = Vendors/SDWebImage/SDWebImage/SDWebImageManager.h; sourceTree = SOURCE_ROOT; };
-		1DF8B0031ACC5E3F00E350BA /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = Vendors/SDWebImage/SDWebImage/SDWebImageManager.m; sourceTree = SOURCE_ROOT; };
-		1DF8B0041ACC5E3F00E350BA /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = Vendors/SDWebImage/SDWebImage/SDWebImageOperation.h; sourceTree = SOURCE_ROOT; };
-		1DF8B0051ACC5E3F00E350BA /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDWebImagePrefetcher.h; path = Vendors/SDWebImage/SDWebImage/SDWebImagePrefetcher.h; sourceTree = SOURCE_ROOT; };
-		1DF8B0061ACC5E3F00E350BA /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = Vendors/SDWebImage/SDWebImage/SDWebImagePrefetcher.m; sourceTree = SOURCE_ROOT; };
-		1DF8B0071ACC5E3F00E350BA /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "Vendors/SDWebImage/SDWebImage/UIButton+WebCache.h"; sourceTree = SOURCE_ROOT; };
-		1DF8B0081ACC5E3F00E350BA /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+WebCache.m"; path = "Vendors/SDWebImage/SDWebImage/UIButton+WebCache.m"; sourceTree = SOURCE_ROOT; };
-		1DF8B0091ACC5E3F00E350BA /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+GIF.h"; path = "Vendors/SDWebImage/SDWebImage/UIImage+GIF.h"; sourceTree = SOURCE_ROOT; };
-		1DF8B00A1ACC5E3F00E350BA /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+GIF.m"; path = "Vendors/SDWebImage/SDWebImage/UIImage+GIF.m"; sourceTree = SOURCE_ROOT; };
-		1DF8B00B1ACC5E3F00E350BA /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "Vendors/SDWebImage/SDWebImage/UIImage+MultiFormat.h"; sourceTree = SOURCE_ROOT; };
-		1DF8B00C1ACC5E3F00E350BA /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "Vendors/SDWebImage/SDWebImage/UIImage+MultiFormat.m"; sourceTree = SOURCE_ROOT; };
-		1DF8B00D1ACC5E3F00E350BA /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+WebP.h"; path = "Vendors/SDWebImage/SDWebImage/UIImage+WebP.h"; sourceTree = SOURCE_ROOT; };
-		1DF8B00E1ACC5E3F00E350BA /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+WebP.m"; path = "Vendors/SDWebImage/SDWebImage/UIImage+WebP.m"; sourceTree = SOURCE_ROOT; };
-		1DF8B00F1ACC5E3F00E350BA /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+HighlightedWebCache.h"; path = "Vendors/SDWebImage/SDWebImage/UIImageView+HighlightedWebCache.h"; sourceTree = SOURCE_ROOT; };
-		1DF8B0101ACC5E3F00E350BA /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "Vendors/SDWebImage/SDWebImage/UIImageView+HighlightedWebCache.m"; sourceTree = SOURCE_ROOT; };
-		1DF8B0111ACC5E3F00E350BA /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+WebCache.h"; path = "Vendors/SDWebImage/SDWebImage/UIImageView+WebCache.h"; sourceTree = SOURCE_ROOT; };
-		1DF8B0121ACC5E3F00E350BA /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "Vendors/SDWebImage/SDWebImage/UIImageView+WebCache.m"; sourceTree = SOURCE_ROOT; };
-		1DF8B0131ACC5E3F00E350BA /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "Vendors/SDWebImage/SDWebImage/UIView+WebCacheOperation.h"; sourceTree = SOURCE_ROOT; };
-		1DF8B0141ACC5E3F00E350BA /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCacheOperation.m"; path = "Vendors/SDWebImage/SDWebImage/UIView+WebCacheOperation.m"; sourceTree = SOURCE_ROOT; };
 		260244F01ACA12D6001B57C3 /* ETSBandwidthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSBandwidthViewController.h; path = Controllers/Bandwidth/ETSBandwidthViewController.h; sourceTree = "<group>"; };
 		260244F11ACA12D6001B57C3 /* ETSBandwidthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSBandwidthViewController.m; path = Controllers/Bandwidth/ETSBandwidthViewController.m; sourceTree = "<group>"; };
 		260244F41ACA137C001B57C3 /* ETSBandwidthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSBandwidthCell.h; path = Views/Bandwidth/ETSBandwidthCell.h; sourceTree = "<group>"; };
@@ -342,13 +287,6 @@
 		265008DA1AD056490033FB64 /* ETSEvaluationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSEvaluationCell.m; path = Views/Courses/ETSEvaluationCell.m; sourceTree = "<group>"; };
 		265008DB1AD056490033FB64 /* ETSSessionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSSessionHeader.h; path = Views/Courses/ETSSessionHeader.h; sourceTree = "<group>"; };
 		265008DC1AD056490033FB64 /* ETSSessionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSSessionHeader.m; path = Views/Courses/ETSSessionHeader.m; sourceTree = "<group>"; };
-		26731FC51ABA1AC50045EBD2 /* MSDynamicsDrawerStyler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSDynamicsDrawerStyler.h; path = Vendors/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController/MSDynamicsDrawerStyler.h; sourceTree = SOURCE_ROOT; };
-		26731FC61ABA1AC50045EBD2 /* MSDynamicsDrawerStyler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSDynamicsDrawerStyler.m; path = Vendors/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController/MSDynamicsDrawerStyler.m; sourceTree = SOURCE_ROOT; };
-		26731FC71ABA1AC50045EBD2 /* MSDynamicsDrawerViewController-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MSDynamicsDrawerViewController-Prefix.pch"; path = "Vendors/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		26731FC81ABA1AC50045EBD2 /* MSDynamicsDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSDynamicsDrawerViewController.h; path = Vendors/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController.h; sourceTree = SOURCE_ROOT; };
-		26731FC91ABA1AC50045EBD2 /* MSDynamicsDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSDynamicsDrawerViewController.m; path = Vendors/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController.m; sourceTree = SOURCE_ROOT; };
-		26731FCC1ABA1AD50045EBD2 /* MSCollectionViewCalendarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCollectionViewCalendarLayout.h; path = Vendors/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.h; sourceTree = SOURCE_ROOT; };
-		26731FCD1ABA1AD50045EBD2 /* MSCollectionViewCalendarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCollectionViewCalendarLayout.m; path = Vendors/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.m; sourceTree = SOURCE_ROOT; };
 		26731FCF1ABA1B660045EBD2 /* NSDate+Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+Day.h"; path = "Categories/NSDate+Day.h"; sourceTree = "<group>"; };
 		26731FD01ABA1B660045EBD2 /* NSDate+Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Day.m"; path = "Categories/NSDate+Day.m"; sourceTree = "<group>"; };
 		26731FD11ABA1B660045EBD2 /* UIColor+Styles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Styles.h"; path = "Categories/UIColor+Styles.h"; sourceTree = "<group>"; };
@@ -361,8 +299,6 @@
 		26A7E1A71ACC429900B83C5F /* ETSUniversityCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSUniversityCalendarViewController.m; path = Controllers/Calendar/ETSUniversityCalendarViewController.m; sourceTree = "<group>"; };
 		26A7E1AB1ACC42B300B83C5F /* MSEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSEventCell.h; path = Views/Calendar/ETS/MSEventCell.h; sourceTree = "<group>"; };
 		26A7E1AC1ACC42B300B83C5F /* MSEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSEventCell.m; path = Views/Calendar/ETS/MSEventCell.m; sourceTree = "<group>"; };
-		26B1E7CB1AF9397700D10273 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Vendors/Fabric.framework; sourceTree = SOURCE_ROOT; };
-		26B1E7CC1AF9397700D10273 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Vendors/Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		26B1E7CF1AF939E600D10273 /* ETSMobile-Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "ETSMobile-Config.xcconfig"; sourceTree = SOURCE_ROOT; };
 		26B1E7D51AF93A9E00D10273 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		26B1E7D61AF93A9E00D10273 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -377,8 +313,7 @@
 		E9EE857A1B99F03E0074FAB3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E9EE857C1B99F0460074FAB3 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		E9EE857E1B99F04B0074FAB3 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
-		E9EE85801B99F0E80074FAB3 /* SupportKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SupportKit.bundle; path = Vendors/SupportKit.bundle; sourceTree = SOURCE_ROOT; };
-		E9EE85811B99F0E80074FAB3 /* SupportKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SupportKit.framework; path = Vendors/SupportKit.framework; sourceTree = SOURCE_ROOT; };
+		F5DC930BC66734E6D25C2AEF /* libPods-ETSMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ETSMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -391,17 +326,15 @@
 				E9EE857B1B99F03E0074FAB3 /* UIKit.framework in Frameworks */,
 				E9EE85791B99F0380074FAB3 /* SystemConfiguration.framework in Frameworks */,
 				E9EE85781B99F02B0074FAB3 /* QuartzCore.framework in Frameworks */,
-				E9EE85831B99F0E80074FAB3 /* SupportKit.framework in Frameworks */,
 				E9EE85761B99F0230074FAB3 /* OpenGLES.framework in Frameworks */,
 				E9EE85741B99F0190074FAB3 /* libxml2.dylib in Frameworks */,
 				E9EE85721B99F0120074FAB3 /* Foundation.framework in Frameworks */,
 				E9EE856E1B99EFFC0074FAB3 /* CoreText.framework in Frameworks */,
 				E9EE856C1B99EFF30074FAB3 /* CoreTelephony.framework in Frameworks */,
 				E9EE856B1B99EFEE0074FAB3 /* CoreGraphics.framework in Frameworks */,
-				26B1E7D11AF93A1A00D10273 /* Crashlytics.framework in Frameworks */,
-				26B1E7D21AF93A1A00D10273 /* Fabric.framework in Frameworks */,
 				1DF8AFF31ACC5C3200E350BA /* ImageIO.framework in Frameworks */,
 				260245351ACB5314001B57C3 /* AVFoundation.framework in Frameworks */,
+				D4EEFDACFB7EACE2E48997F8 /* libPods-ETSMobile.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,46 +377,6 @@
 				1DDF270F1AD5AF7B00D1A7DA /* ETSMoodleResultViewCell.m */,
 			);
 			name = Moodle;
-			sourceTree = "<group>";
-		};
-		1DF8AFC01ACC5BC500E350BA /* SDWebImage */ = {
-			isa = PBXGroup;
-			children = (
-				1DF8AFF41ACC5E3F00E350BA /* MKAnnotationView+WebCache.h */,
-				1DF8AFF51ACC5E3F00E350BA /* MKAnnotationView+WebCache.m */,
-				1DF8AFF61ACC5E3F00E350BA /* NSData+ImageContentType.h */,
-				1DF8AFF71ACC5E3F00E350BA /* NSData+ImageContentType.m */,
-				1DF8AFF81ACC5E3F00E350BA /* SDImageCache.h */,
-				1DF8AFF91ACC5E3F00E350BA /* SDImageCache.m */,
-				1DF8AFFA1ACC5E3F00E350BA /* SDWebImageCompat.h */,
-				1DF8AFFB1ACC5E3F00E350BA /* SDWebImageCompat.m */,
-				1DF8AFFC1ACC5E3F00E350BA /* SDWebImageDecoder.h */,
-				1DF8AFFD1ACC5E3F00E350BA /* SDWebImageDecoder.m */,
-				1DF8AFFE1ACC5E3F00E350BA /* SDWebImageDownloader.h */,
-				1DF8AFFF1ACC5E3F00E350BA /* SDWebImageDownloader.m */,
-				1DF8B0001ACC5E3F00E350BA /* SDWebImageDownloaderOperation.h */,
-				1DF8B0011ACC5E3F00E350BA /* SDWebImageDownloaderOperation.m */,
-				1DF8B0021ACC5E3F00E350BA /* SDWebImageManager.h */,
-				1DF8B0031ACC5E3F00E350BA /* SDWebImageManager.m */,
-				1DF8B0041ACC5E3F00E350BA /* SDWebImageOperation.h */,
-				1DF8B0051ACC5E3F00E350BA /* SDWebImagePrefetcher.h */,
-				1DF8B0061ACC5E3F00E350BA /* SDWebImagePrefetcher.m */,
-				1DF8B0071ACC5E3F00E350BA /* UIButton+WebCache.h */,
-				1DF8B0081ACC5E3F00E350BA /* UIButton+WebCache.m */,
-				1DF8B0091ACC5E3F00E350BA /* UIImage+GIF.h */,
-				1DF8B00A1ACC5E3F00E350BA /* UIImage+GIF.m */,
-				1DF8B00B1ACC5E3F00E350BA /* UIImage+MultiFormat.h */,
-				1DF8B00C1ACC5E3F00E350BA /* UIImage+MultiFormat.m */,
-				1DF8B00D1ACC5E3F00E350BA /* UIImage+WebP.h */,
-				1DF8B00E1ACC5E3F00E350BA /* UIImage+WebP.m */,
-				1DF8B00F1ACC5E3F00E350BA /* UIImageView+HighlightedWebCache.h */,
-				1DF8B0101ACC5E3F00E350BA /* UIImageView+HighlightedWebCache.m */,
-				1DF8B0111ACC5E3F00E350BA /* UIImageView+WebCache.h */,
-				1DF8B0121ACC5E3F00E350BA /* UIImageView+WebCache.m */,
-				1DF8B0131ACC5E3F00E350BA /* UIView+WebCacheOperation.h */,
-				1DF8B0141ACC5E3F00E350BA /* UIView+WebCacheOperation.m */,
-			);
-			name = SDWebImage;
 			sourceTree = "<group>";
 		};
 		260244EF1ACA12C8001B57C3 /* Bandwidth */ = {
@@ -639,6 +532,7 @@
 				264187191AB77A520027561B /* Vendors */,
 				2641872F1AB77BD60027561B /* Frameworks */,
 				264186EB1AB779F40027561B /* Products */,
+				C93C907CEDB1064B1F8E2F9F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -704,13 +598,6 @@
 		264187191AB77A520027561B /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				E9EE85801B99F0E80074FAB3 /* SupportKit.bundle */,
-				E9EE85811B99F0E80074FAB3 /* SupportKit.framework */,
-				26B1E7CB1AF9397700D10273 /* Fabric.framework */,
-				26B1E7CC1AF9397700D10273 /* Crashlytics.framework */,
-				1DF8AFC01ACC5BC500E350BA /* SDWebImage */,
-				2641871D1AB77A810027561B /* MSCollectionViewCalendarLayout */,
-				2641871C1AB77A780027561B /* MSDynamicsDrawerViewController */,
 				2641871B1AB77A6D0027561B /* GTMNSString+HTML */,
 				2641871E1AB77A890027561B /* KeychainWrapper */,
 			);
@@ -725,27 +612,6 @@
 				264187251AB77B2C0027561B /* GTMNSString+HTML.m */,
 			);
 			name = "GTMNSString+HTML";
-			sourceTree = "<group>";
-		};
-		2641871C1AB77A780027561B /* MSDynamicsDrawerViewController */ = {
-			isa = PBXGroup;
-			children = (
-				26731FC51ABA1AC50045EBD2 /* MSDynamicsDrawerStyler.h */,
-				26731FC61ABA1AC50045EBD2 /* MSDynamicsDrawerStyler.m */,
-				26731FC71ABA1AC50045EBD2 /* MSDynamicsDrawerViewController-Prefix.pch */,
-				26731FC81ABA1AC50045EBD2 /* MSDynamicsDrawerViewController.h */,
-				26731FC91ABA1AC50045EBD2 /* MSDynamicsDrawerViewController.m */,
-			);
-			name = MSDynamicsDrawerViewController;
-			sourceTree = "<group>";
-		};
-		2641871D1AB77A810027561B /* MSCollectionViewCalendarLayout */ = {
-			isa = PBXGroup;
-			children = (
-				26731FCC1ABA1AD50045EBD2 /* MSCollectionViewCalendarLayout.h */,
-				26731FCD1ABA1AD50045EBD2 /* MSCollectionViewCalendarLayout.m */,
-			);
-			name = MSCollectionViewCalendarLayout;
 			sourceTree = "<group>";
 		};
 		2641871E1AB77A890027561B /* KeychainWrapper */ = {
@@ -776,6 +642,7 @@
 				264187291AB77B9D0027561B /* CoreTelephony.framework */,
 				264187271AB77B960027561B /* SystemConfiguration.framework */,
 				2641872B1AB77BA60027561B /* libz.dylib */,
+				F5DC930BC66734E6D25C2AEF /* libPods-ETSMobile.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -981,6 +848,13 @@
 			name = ETS;
 			sourceTree = "<group>";
 		};
+		C93C907CEDB1064B1F8E2F9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -988,10 +862,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 264187131AB779F40027561B /* Build configuration list for PBXNativeTarget "ETSMobile" */;
 			buildPhases = (
+				228449ED0EFA2E413F1FDAD1 /* Check Pods Manifest.lock */,
 				264186E61AB779F40027561B /* Sources */,
 				264186E71AB779F40027561B /* Frameworks */,
 				264186E81AB779F40027561B /* Resources */,
-				26B1E7CA1AF9396300D10273 /* ShellScript */,
+				26B1E7CA1AF9396300D10273 /* Run Script */,
+				EC50FC6E704F6F147A6CD80A /* Embed Pods Frameworks */,
+				B542399D797AE4EC8DA7AD9B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1082,7 +959,6 @@
 				264187831AB787770027561B /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */,
 				2641877E1AB787770027561B /* INCENDIE_EVACUATION_URGENCE.pdf in Resources */,
 				26D00E311ACE3BB90062BF6F /* SecuritySources.plist in Resources */,
-				E9EE85821B99F0E80074FAB3 /* SupportKit.bundle in Resources */,
 				264187011AB779F40027561B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1097,18 +973,64 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		26B1E7CA1AF9396300D10273 /* ShellScript */ = {
+		228449ED0EFA2E413F1FDAD1 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Vendors/Fabric.framework/run ${FABRIC_API_KEY} ${FABRIC_BUILD_SECRET}";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		26B1E7CA1AF9396300D10273 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" ${FABRIC_API_KEY} ${FABRIC_BUILD_SECRET}";
+		};
+		B542399D797AE4EC8DA7AD9B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobile/Pods-ETSMobile-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC50FC6E704F6F147A6CD80A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobile/Pods-ETSMobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1117,9 +1039,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DF8B01A1ACC5E3F00E350BA /* SDWebImageDownloader.m in Sources */,
 				1D50F93E1ACC76FD00B06561 /* ETSSecurityViewController.m in Sources */,
-				1DF8B0211ACC5E3F00E350BA /* UIImage+WebP.m in Sources */,
 				264187431AB77E770027561B /* ETSNewsSource.m in Sources */,
 				26A7E1A81ACC429900B83C5F /* ETSCalendarViewController.m in Sources */,
 				264187551AB77E780027561B /* ETSCourse.m in Sources */,
@@ -1130,9 +1050,7 @@
 				2641876E1AB786A80027561B /* ETSWebViewViewController.m in Sources */,
 				26065D811ABB896C008955D3 /* ETSMenuCell.m in Sources */,
 				264187581AB77E780027561B /* ETSMoodleCourse.m in Sources */,
-				1DF8B0201ACC5E3F00E350BA /* UIImage+MultiFormat.m in Sources */,
 				260245291ACB4F25001B57C3 /* MSDayColumnHeaderBackground.m in Sources */,
-				1DF8B01D1ACC5E3F00E350BA /* SDWebImagePrefetcher.m in Sources */,
 				264187961AB7895E0027561B /* NSURLRequest+API.m in Sources */,
 				2641873A1AB77E770027561B /* ETSBandwidth.m in Sources */,
 				264187521AB77E780027561B /* ETSProfile.m in Sources */,
@@ -1142,14 +1060,11 @@
 				260245401ACB8FFE001B57C3 /* ETSNewsViewController.m in Sources */,
 				260244F21ACA12D6001B57C3 /* ETSBandwidthViewController.m in Sources */,
 				26065D821ABB896C008955D3 /* ETSMenuTableViewHeader.m in Sources */,
-				1DF8B0181ACC5E3F00E350BA /* SDWebImageCompat.m in Sources */,
 				260244F61ACA137C001B57C3 /* ETSBandwidthCell.m in Sources */,
 				264187991AB789A70027561B /* NSString+HTML.m in Sources */,
 				1D50F93C1ACC76FD00B06561 /* ETSSecurityDetailViewController.m in Sources */,
 				260245461ACB904F001B57C3 /* ETSNewsCell.m in Sources */,
 				2641873D1AB77E770027561B /* ETSCalendar.m in Sources */,
-				1DF8B0151ACC5E3F00E350BA /* MKAnnotationView+WebCache.m in Sources */,
-				1DF8B0221ACC5E3F00E350BA /* UIImageView+HighlightedWebCache.m in Sources */,
 				260245321ACB4F3A001B57C3 /* ETSRadioPlayer.m in Sources */,
 				264187231AB77B1C0027561B /* KeychainItemWrapper.m in Sources */,
 				260245071ACA5257001B57C3 /* ETSCommentViewController.m in Sources */,
@@ -1157,25 +1072,18 @@
 				2641875B1AB77E780027561B /* ETSProgram.m in Sources */,
 				264186F31AB779F40027561B /* AppDelegate.m in Sources */,
 				264187951AB7895E0027561B /* NSURL+API.m in Sources */,
-				26731FCB1ABA1AC50045EBD2 /* MSDynamicsDrawerViewController.m in Sources */,
 				260245331ACB4F3A001B57C3 /* ETSRadioViewController.m in Sources */,
-				26731FCA1ABA1AC50045EBD2 /* MSDynamicsDrawerStyler.m in Sources */,
 				265008D41AD056260033FB64 /* ETSMoodleCourseDetailViewController.m in Sources */,
 				2641876D1AB786A80027561B /* ETSTableViewController.m in Sources */,
 				264187721AB786DF0027561B /* ETSMenuViewController.m in Sources */,
-				1DF8B0231ACC5E3F00E350BA /* UIImageView+WebCache.m in Sources */,
-				1DF8B0241ACC5E3F00E350BA /* UIView+WebCacheOperation.m in Sources */,
 				26A7E1A21ACC3A1B00B83C5F /* ETSProfileViewController.m in Sources */,
 				1D66B83E1AD479FB002E3478 /* ETSDirectoryResultsViewController.m in Sources */,
 				260245261ACB4F25001B57C3 /* MSCurrentTimeGridline.m in Sources */,
 				264186F01AB779F40027561B /* main.m in Sources */,
-				1DF8B01C1ACC5E3F00E350BA /* SDWebImageManager.m in Sources */,
 				260245041ACA524B001B57C3 /* ETSTextCell.m in Sources */,
 				265008DE1AD056490033FB64 /* ETSEvaluationCell.m in Sources */,
 				265008DD1AD056490033FB64 /* ETSCourseCell.m in Sources */,
-				1DF8B01B1ACC5E3F00E350BA /* SDWebImageDownloaderOperation.m in Sources */,
 				26A7E1AD1ACC42B300B83C5F /* MSEventCell.m in Sources */,
-				1DF8B0191ACC5E3F00E350BA /* SDWebImageDecoder.m in Sources */,
 				265008CF1AD056170033FB64 /* ETSCoursesViewController.m in Sources */,
 				2602450F1ACA53E5001B57C3 /* ETSAboutViewController.m in Sources */,
 				1D50F93D1ACC76FD00B06561 /* ETSSecurityProcedureViewController.m in Sources */,
@@ -1186,12 +1094,9 @@
 				1D66B8421AD48824002E3478 /* ETSDirectoryResultCell.m in Sources */,
 				2602453F1ACB8FFE001B57C3 /* ETSNewsSourceViewController.m in Sources */,
 				2602452B1ACB4F25001B57C3 /* MSGridline.m in Sources */,
-				1DF8B0161ACC5E3F00E350BA /* NSData+ImageContentType.m in Sources */,
 				265008DF1AD056490033FB64 /* ETSSessionHeader.m in Sources */,
-				1DF8B01F1ACC5E3F00E350BA /* UIImage+GIF.m in Sources */,
 				264186F61AB779F40027561B /* ETSMobile.xcdatamodeld in Sources */,
 				264187371AB77E770027561B /* ETSEvaluation.m in Sources */,
-				26731FCE1ABA1AD50045EBD2 /* MSCollectionViewCalendarLayout.m in Sources */,
 				265008CE1AD056170033FB64 /* ETSCourseDetailViewController.m in Sources */,
 				260245281ACB4F25001B57C3 /* MSDayColumnHeader.m in Sources */,
 				2602452C1ACB4F25001B57C3 /* MSTimeRowHeader.m in Sources */,
@@ -1203,10 +1108,8 @@
 				264187401AB77E770027561B /* ETSSession.m in Sources */,
 				26731FD31ABA1B660045EBD2 /* NSDate+Day.m in Sources */,
 				2641874F1AB77E780027561B /* ETSContact.m in Sources */,
-				1DF8B01E1ACC5E3F00E350BA /* UIButton+WebCache.m in Sources */,
 				260245391ACB543D001B57C3 /* ETSDirectoryViewController.m in Sources */,
 				26A7E1A91ACC429900B83C5F /* ETSUniversityCalendarViewController.m in Sources */,
-				1DF8B0171ACC5E3F00E350BA /* SDImageCache.m in Sources */,
 				2641876A1AB786A80027561B /* ETSAuthenticationViewController.m in Sources */,
 				265008D51AD056260033FB64 /* ETSMoodleCoursesViewController.m in Sources */,
 				260245271ACB4F25001B57C3 /* MSCurrentTimeIndicator.m in Sources */,
@@ -1347,7 +1250,10 @@
 				INFOPLIST_FILE = ETSMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1366,7 +1272,10 @@
 				INFOPLIST_FILE = ETSMobile/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
