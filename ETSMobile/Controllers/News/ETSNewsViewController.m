@@ -18,6 +18,7 @@
 #import "STKWebKitViewController.h"
 #import "TUSafariActivity.h"
 #import "UIColor+Styles.h"
+@import SafariServices;
 
 @implementation ETSNewsViewController
 
@@ -202,17 +203,23 @@
         
         if (news.link) {
             NSURL *url = [NSURL URLWithString:news.link];
-            STKWebKitViewController *webViewController = [[STKWebKitViewController alloc] initWithURL:url];
-        
-            // FIXME this parameter is waiting for a pull-request, using another instead.
-            // webViewController.toolbarItemTintColor = [UIColor naviguationBarTintColor];
-            webViewController.toolbarTintColor = [UIColor naviguationBarTintColor]; // Should be removed as soon as the pull request is granted
-        
-            // Open in safari Activity, to add this action in the Share View
-            TUSafariActivity *activity = [[TUSafariActivity alloc] init];
-            webViewController.applicationActivities = @[activity];
-        
-            [self.navigationController pushViewController:webViewController animated:YES];
+            
+            if(NSClassFromString(@"SFSafariViewController")) {
+                SFSafariViewController *webViewController = [[SFSafariViewController alloc] initWithURL:url];
+                [self presentViewController:webViewController animated:YES completion:nil];
+            } else {
+                STKWebKitViewController *webViewController = [[STKWebKitViewController alloc] initWithURL:url];
+                
+                // FIXME this parameter is waiting for a pull-request, using another instead.
+                // webViewController.toolbarItemTintColor = [UIColor naviguationBarTintColor];
+                webViewController.toolbarTintColor = [UIColor naviguationBarTintColor]; // Should be removed as soon as the pull request is granted
+                
+                // Open in safari Activity, to add this action in the Share View
+                TUSafariActivity *activity = [[TUSafariActivity alloc] init];
+                webViewController.applicationActivities = @[activity];
+                
+                [self.navigationController pushViewController:webViewController animated:YES];
+            }
         }
     }
 }
