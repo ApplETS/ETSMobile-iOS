@@ -237,9 +237,10 @@
     
     // Calculating Ideal Quota
     NSDate *today = [NSDate date]; //Get a date object for today's date
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:today];
     NSCalendar *c = [NSCalendar currentCalendar];
     NSRange daysInMonth = [c rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:today];
-    float idealQuota = [self.limitBandwidth floatValue] * 10 / daysInMonth.length;
+    float idealQuota = [self.limitBandwidth floatValue] * [components day] / daysInMonth.length;
     float idealQuotaPercentage = [self.usedBandwidth floatValue]/idealQuota * 100;
     
     // Formatter pour le pourcentage
