@@ -2,62 +2,67 @@
 //  ETSBandwidthViewController.m
 //  ETSMobile
 //
-//  Created by Jean-Philippe Martin on 2013-12-31.
-//  Copyright (c) 2013 ApplETS. All rights reserved.
+//  Created by Thomas Durand on 09/09/2015.
+//  Copyright (c) 2015 ApplETS. All rights reserved.
 //
 
 #import "ETSBandwidthViewController.h"
+#import "ETSBandwidthDetailViewController.h"
+#import "ETSSynchronization.h"
 #import "ETSBandwidth.h"
-#import "ETSBandwidthCell.h"
 #import "ETSCoreDataHelper.h"
+#import "ETSBandwidthCircleChart.h"
 
 @interface ETSBandwidthViewController ()
-@property (nonatomic, strong) NSNumberFormatter *formatter;
-@property (nonatomic, strong) NSDateFormatter *dateFormatter;
-@property (nonatomic, strong) NSNumber *usedBandwidth;
-@property (nonatomic, strong) NSNumber *limitBandwidth;
-@property (nonatomic, weak) IBOutlet UILabel *dateLabel;
-@property (nonatomic, weak) IBOutlet UILabel *usageLabel;
-@property (nonatomic, weak) IBOutlet UIProgressView *usageProgressView;
-@property (nonatomic, copy) NSString *apartment;
-@property (nonatomic, copy) NSString *phase;
-@property (nonatomic, copy) NSString *month;
+    @property (nonatomic, strong) NSNumberFormatter *formatter;
+    @property (nonatomic, strong) NSDateFormatter *dateFormatter;
+    @property (nonatomic, copy) NSString *apartment;
+    @property (nonatomic, copy) NSString *phase;
+    @property (nonatomic, copy) NSString *month;
+    @property (nonatomic, strong) NSNumber *usedBandwidth;
+    @property (nonatomic, strong) NSNumber *limitBandwidth;
+    @property (nonatomic, strong) NSURL* callCooptelUrl;
+    @property (weak, nonatomic) IBOutlet UILabel *phaseLabel;
+    @property (weak, nonatomic) IBOutlet UILabel *apartmentLabel;
+    @property (weak, nonatomic) IBOutlet UIButton *detailButton;
+    @property (weak, nonatomic) IBOutlet UIButton *callCooptelButton;
+    @property (weak, nonatomic) IBOutlet UILabel *percentageLabel;
+    @property (weak, nonatomic) IBOutlet UILabel *quotaLabel;
+    @property (weak, nonatomic) IBOutlet UILabel *idealQuotaLabel;
+    @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+    @property (weak, nonatomic) IBOutlet ETSBandwidthCircleChart *circleChart;
 @end
 
 @implementation ETSBandwidthViewController
 
-@synthesize fetchedResultsController = _fetchedResultsController;
-
-- (void)startRefresh:(id)sender
+- (void)updateBandwidth:(id)sender
 {
+    [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.apartment = [userDefaults stringForKey:@"apartment"];
+    self.phase = [userDefaults stringForKey:@"phase"];
+    
+    [self resetLabels];
+    
+    if ([self.phase length] == 0 || [self.apartment length] == 0) {
+        return;
+    }
+    
+    [self.activityIndicator startAnimating];
+    
+    self.synchronization.request = [NSURLRequest requestForBandwidthWithMonth:self.month residence:self.apartment phase:self.phase];
+    
     NSError *error;
     [self.synchronization synchronize:&error];
 }
 
-- (void)updateBandwidthWithPhase:(NSString *)phase apartment:(NSString *)apartment
-{
-    if ([phase isEqualToString:self.phase] && [apartment isEqualToString:self.apartment]) return;
-    
-    [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
-    self.usageLabel.text = @" ";
-    self.usageProgressView.progress = 0;
-    self.dateLabel.text = @"Consommation :";
-    
-    if ([phase length] == 0 || [apartment length] == 0) {
-        return;
-    }
-    
-    self.synchronization.request = [NSURLRequest requestForBandwidthWithMonth:self.month residence:apartment phase:phase];
-    
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:apartment forKey:@"apartment"];
-    [userDefaults setObject:phase forKey:@"phase"];
-    
-    self.phase = phase;
-    self.apartment = apartment;
-    
-    NSError *error;
-    [self.synchronization synchronize:&error];
+-(void)resetLabels {
+    self.phaseLabel.text = @"";
+    self.apartmentLabel.text = @"";
+    self.percentageLabel.text = @"";
+    self.quotaLabel.text = @"";
+    self.idealQuotaLabel.text = @"";
 }
 
 - (void)viewDidLoad
@@ -68,8 +73,6 @@
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
     
     self.month = [@([[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:[NSDate date]] month]) stringValue];
-    
-    self.cellIdentifier = @"BandwidthIdentifier";
     
     self.dateFormatter = [[NSDateFormatter alloc] init];
     [self.dateFormatter setDateFormat:@"yyyy-MM-dd"];
@@ -84,96 +87,68 @@
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
     
+    // Call Cooptel
+    self.callCooptelUrl = [NSURL URLWithString:@"telprompt:1-888-532-2667"];
+    
     self.formatter = [[NSNumberFormatter alloc] init];
     self.formatter.decimalSeparator = @",";
     self.formatter.groupingSeparator = @" ";
     self.formatter.groupingSize = 3;
     self.formatter.usesGroupingSeparator = YES;
     self.formatter.maximumFractionDigits = 2;
-    self.formatter.minimumFractionDigits = 2;
+    self.formatter.minimumFractionDigits = 1;
     self.formatter.minimumIntegerDigits = 1;
-    
-    [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.apartment = [userDefaults stringForKey:@"apartment"];
     self.phase = [userDefaults stringForKey:@"phase"];
     
-    if ([self.apartment length] > 0 && [self.phase integerValue] > 0) {
-        self.synchronization.request = [NSURLRequest requestForBandwidthWithMonth:self.month residence:self.apartment phase:self.phase];
-        self.phaseSegmentedControl.selectedSegmentIndex = [self.phase integerValue] - 1;
-        self.apartmentTextField.text = self.apartment;
-        NSDateFormatter *df = [[NSDateFormatter alloc] init];
-        df.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
-        df.dateFormat = @"LLLL yyyy";
-        self.dateLabel.text = [NSString stringWithFormat:@"Consommation, %@ :", [df stringFromDate:[NSDate date]]];
-    } else {
+    [self resetLabels];
+    
+    if ([self.apartment length] == 0 || [self.phase integerValue] == 0) {
         self.dataNeedRefresh = NO;
         [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
+        [self performSegueWithIdentifier:@"SegueToConfig" sender:self];
+    } else {
+        self.phaseLabel.text = [NSString stringWithFormat:@"Phase %@", self.phase];
+        self.apartmentLabel.text = [NSString stringWithFormat:@"Appartement %@", self.apartment];
+        [self updateBandwidth:self];
     }
-    
-    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
-    [self.tableView addGestureRecognizer:tapGesture];
 }
 
--(void)hideKeyBoard {
-    [self.apartmentTextField resignFirstResponder];
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    NSString *phase = [@(self.phaseSegmentedControl.selectedSegmentIndex+1) stringValue];
-    [self updateBandwidthWithPhase:phase apartment:self.apartmentTextField.text];
-}
-
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (!([self.apartment isEqualToString: [userDefaults stringForKey:@"apartment"]]) || !([self.phase isEqualToString: [userDefaults stringForKey:@"phase"]])) {
+        self.apartment = [userDefaults stringForKey:@"apartment"];
+        self.phase = [userDefaults stringForKey:@"phase"];
+        
+        self.phaseLabel.text = [NSString stringWithFormat:@"Phase %@", self.phase];
+        self.apartmentLabel.text = [NSString stringWithFormat:@"Appartement %@", self.apartment];
+        
+        [self updateBandwidth:self];
     }
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
-    
-    fetchRequest.entity = entity;
-    fetchRequest.fetchBatchSize = 10;
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"port" ascending:YES]];
-    
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"date" cacheName:nil];
-    self.fetchedResultsController = aFetchedResultsController;
-    _fetchedResultsController.delegate = self;
-    
-    NSError *error;
-    if (![_fetchedResultsController performFetch:&error]) {
-        // FIXME: Update to handle the error appropriately.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"ShowBandwidthDetails"]) {
+        ETSBandwidthDetailViewController *destination = segue.destinationViewController;
+        destination.managedObjectContext = self.managedObjectContext;
     }
-    
-    return _fetchedResultsController;
 }
 
-- (IBAction)phaseDidChange:(id)sender
-{
-    [self updateBandwidthWithPhase:[@(self.phaseSegmentedControl.selectedSegmentIndex+1) stringValue] apartment:self.apartmentTextField.text];
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    ETSBandwidth *bandwidth = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
-    NSDateFormatter *titleFormatter = [[NSDateFormatter alloc] init];
-    titleFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
-    titleFormatter.dateFormat = @"cccc, d LLLL yyyy";
-    return [titleFormatter stringFromDate:bandwidth.date];
-}
-
-- (void)configureCell:(ETSBandwidthCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    ETSBandwidth *bandiwdth = [self.fetchedResultsController objectAtIndexPath:indexPath];
-
-    cell.portLabel.text = bandiwdth.port;
-    cell.uploadLabel.text = [NSString stringWithFormat:@"%@ Mo (⬆︎)", [self.formatter stringFromNumber:bandiwdth.upload]];
-    cell.downloadLabel.text = [NSString stringWithFormat:@"%@ Mo (⬇︎)", [self.formatter stringFromNumber:bandiwdth.download]];
+- (IBAction)CallCooptelButton:(id)sender {
+    if ([[UIApplication sharedApplication] canOpenURL:self.callCooptelUrl]) {
+        [[UIApplication sharedApplication] openURL:self.callCooptelUrl];
+    }
 }
 
 - (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects
 {
+    // Stopping activity indicator
+    [self.activityIndicator stopAnimating];
+    
     if (!objects || [objects isKindOfClass:[NSNull class]]) {
         [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
         return nil;
@@ -182,15 +157,15 @@
     NSMutableArray *entries = [NSMutableArray array];
     
     NSArray *tables = (NSArray *)objects;
-
+    
     if ([tables count] < 2) {
         [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
-        self.tableView.tableHeaderView.hidden = YES;
+        [self performSegueWithIdentifier:@"SegueToConfig" sender:self];
         return nil;
     }
     
     NSArray *days = [[[tables objectAtIndex:0] valueForKey:@"tbody"] valueForKey:@"tr"];
-
+    
     NSInteger i = 0;
     for (NSDictionary * day in days) {
         if (i++ == 0) continue;
@@ -206,27 +181,56 @@
         [entry setValue:date forKey:@"date"];
         [entry setValue:[[[day valueForKey:@"td"]objectAtIndex:2]valueForKey:@"content" ] forKey:@"upload"];
         [entry setValue:[[[day valueForKey:@"td"]objectAtIndex:3]valueForKey:@"content" ] forKey:@"download"];
-        [entry setValue:[@([components month]) stringValue] forKey:@"month"];
+        [entry setValue:[@([components month]) stringValue] forKey:@"month  "];
         [entry setValue:[NSString stringWithFormat:@"%@-%@", [[day valueForKey:@"td"]objectAtIndex:0], date] forKey:@"id"];
         [entries addObject:entry];
+    }
+    
+    // Appartement and Phase label update
+    self.phaseLabel.text = [NSString stringWithFormat:@"Phase %@", self.phase];
+    self.apartmentLabel.text = [NSString stringWithFormat:@"Appartement %@", self.apartment];
+    
+    // Enabling buttons
+    self.detailButton.enabled = YES;
+    
+    if ([[UIApplication sharedApplication] canOpenURL:self.callCooptelUrl]) {
+        self.callCooptelButton.enabled = YES;
     }
     
     NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
     f.decimalSeparator = @".";
     self.usedBandwidth = [f numberFromString:[days lastObject][@"td"][1][@"content"]];
     self.limitBandwidth = [f numberFromString:tables[1][@"tbody"][@"tr"][1][@"td"][1][@"content"]];
-
-    NSNumber *used = @([self.usedBandwidth floatValue]/1024);
-    NSNumber *limit = @([self.limitBandwidth floatValue]/1024);
-    self.usageLabel.text = [NSString stringWithFormat:@"%@ Go sur %@ Go", [self.formatter stringFromNumber:used], [self.formatter stringFromNumber:limit]];
-    self.usageProgressView.progress = [self.usedBandwidth floatValue] / [self.limitBandwidth floatValue];
     
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    df.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
-    df.dateFormat = @"LLLL yyyy";
-    self.dateLabel.text = [NSString stringWithFormat:@"Consommation, %@ :", [df stringFromDate:[NSDate date]]];
     
-    self.tableView.tableHeaderView.hidden = NO;
+    // Changing center percentage
+    float used = [self.usedBandwidth floatValue] / 1024;
+    float limit = [self.limitBandwidth floatValue] / 1024;
+    self.percentageLabel.text = [NSString stringWithFormat:@"%@ Go", [self.formatter stringFromNumber:[NSNumber numberWithFloat:used]]];
+    self.quotaLabel.text = [NSString stringWithFormat:@"sur %@ Go", [self.formatter stringFromNumber:[NSNumber numberWithFloat:limit]]];
+    
+    // Calculating Ideal Quota
+    NSDate *today = [NSDate date]; //Get a date object for today's date
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:today];
+    NSCalendar *c = [NSCalendar currentCalendar];
+    NSRange daysInMonth = [c rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:today];
+    float idealQuota = [self.limitBandwidth floatValue] * [components day] / daysInMonth.length;
+    float idealQuotaPercentage = [self.usedBandwidth floatValue]/idealQuota * 100;
+    
+    // Formatter pour le pourcentage
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.usesGroupingSeparator = NO;
+    formatter.maximumFractionDigits = 0;
+    formatter.minimumFractionDigits = 0;
+    formatter.minimumIntegerDigits = 1;
+    
+    self.idealQuotaLabel.text = [NSString stringWithFormat:@"%@ %% de la consommation idéale", [formatter stringFromNumber:[NSNumber numberWithFloat:idealQuotaPercentage]]];
+    
+    // Circle chart parameters
+    self.circleChart.used = [self.usedBandwidth floatValue];
+    self.circleChart.limit = [self.limitBandwidth floatValue];
+    self.circleChart.ideal = idealQuota;
+    [self.circleChart setNeedsDisplay];
     
     return entries;
 }
