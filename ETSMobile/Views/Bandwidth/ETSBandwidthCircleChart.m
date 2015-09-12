@@ -17,22 +17,22 @@
     [super layoutSubviews];
     
     self.backgroundColor = [UIColor clearColor];
+    [self setNeedsDisplay];
 }
 
 -(void)drawRect:(CGRect)rect {
     CGPoint center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     CGFloat width = 30.0;
-    CGFloat radius = (center.x-width);
+    CGFloat radius = MIN(center.x, center.y)-width;
     
-    // Drawing background
-    UIBezierPath *background = [UIBezierPath bezierPathWithArcCenter:center radius: radius startAngle:0 endAngle:2*M_PI clockwise:YES];
-    
-    [[UIColor grayColor] setStroke];
-    background.lineWidth = width;
-    [background stroke];
-    
-    // Drawing used
     if (self.used && self.limit) {
+        // Drawing background
+        UIBezierPath *background = [UIBezierPath bezierPathWithArcCenter:center radius: radius startAngle:0 endAngle:2*M_PI clockwise:YES];
+        [[UIColor grayColor] setStroke];
+        background.lineWidth = width;
+        [background stroke];
+        
+        // Drawing used
         CGFloat max = (self.used/self.limit);
         UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius: radius startAngle: [self getInitialAngle] endAngle:[self getAngleForRate:max] clockwise:YES];
         [[UIColor naviguationBarTintColor] setStroke];
