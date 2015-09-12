@@ -144,32 +144,6 @@
     }
 }
 
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
-    }
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Bandwidth" inManagedObjectContext:self.managedObjectContext];
-    
-    fetchRequest.entity = entity;
-    fetchRequest.fetchBatchSize = 10;
-    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"port" ascending:YES]];
-    
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"date" cacheName:nil];
-    self.fetchedResultsController = aFetchedResultsController;
-    _fetchedResultsController.delegate = self;
-    
-    NSError *error;
-    if (![_fetchedResultsController performFetch:&error]) {
-        // FIXME: Update to handle the error appropriately.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-    }
-    
-    return _fetchedResultsController;
-}
-
 - (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects
 {
     // Stopping activity indicator
