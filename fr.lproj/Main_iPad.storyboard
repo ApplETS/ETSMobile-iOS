@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="7DH-VJ-xqe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="7DH-VJ-xqe">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </mutableArray>
+        <mutableArray key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-LightItalic</string>
+            <string>HelveticaNeue-LightItalic</string>
+            <string>HelveticaNeue-LightItalic</string>
+            <string>HelveticaNeue-LightItalic</string>
+            <string>HelveticaNeue-Light</string>
+            <string>HelveticaNeue-Light</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Horaire-->
         <scene sceneID="27l-nM-qjS">
