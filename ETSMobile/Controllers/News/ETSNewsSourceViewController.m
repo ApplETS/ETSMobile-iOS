@@ -68,6 +68,10 @@
     [super viewWillDisappear:animated];
 }
 
+- (IBAction)DoneButtonPressed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Table view data source
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath

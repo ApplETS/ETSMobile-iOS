@@ -9,7 +9,9 @@ PODS:
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
+  - STKWebKitViewController (0.3.0)
   - SupportKit (2.10.0)
+  - TUSafariActivity (1.0.4)
 
 DEPENDENCIES:
   - AMScrollingNavbar
@@ -18,7 +20,9 @@ DEPENDENCIES:
   - MSCollectionViewCalendarLayout
   - MSDynamicsDrawerViewController
   - SDWebImage (~> 3.7)
+  - STKWebKitViewController
   - SupportKit
+  - TUSafariActivity
 
 SPEC CHECKSUMS:
   AMScrollingNavbar: 767ed2db60d927a809bddff5d01b739b7020b12b
@@ -27,6 +31,8 @@ SPEC CHECKSUMS:
   MSCollectionViewCalendarLayout: 9c52894930d6b712951f18873618fc32c00cd4fa
   MSDynamicsDrawerViewController: 2874df90f5e9453dc7d4e32f8038b50615d4baa7
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  STKWebKitViewController: 5350cde22f2298d098717516cad408eb57014613
   SupportKit: 23ce231929d1a136b3fbdc6f185a0d1fbfa44f68
+  TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
 
 COCOAPODS: 0.39.0.beta.4

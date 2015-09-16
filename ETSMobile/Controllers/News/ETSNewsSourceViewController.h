@@ -9,5 +9,5 @@
 #import "ETSTableViewController.h"
 
 @interface ETSNewsSourceViewController : ETSTableViewController
-
+- (IBAction)DoneButtonPressed:(id)sender;
 @end

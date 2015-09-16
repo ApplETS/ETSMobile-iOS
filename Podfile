@@ -8,7 +8,9 @@ target 'ETSMobile' do
     pod 'MSDynamicsDrawerViewController'
     pod 'MSCollectionViewCalendarLayout'
     pod 'SDWebImage', '~>3.7'
+    pod 'STKWebKitViewController'
     pod 'SupportKit'
+    pod 'TUSafariActivity'
 end
 
 target 'ETSMobileTests' do
