@@ -1,0 +1,1 @@
+STKWEBKITVIEWCONTROLLER_OTHER_LDFLAGS = -framework "UIKit" -weak_framework "WebKit"
