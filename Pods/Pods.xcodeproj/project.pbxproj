@@ -7,300 +7,186 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		079A38716FDB7B60361AF3DC18286F60 /* UIViewController+ScrollingNavbar.h in Headers */ = {isa = PBXBuildFile; fileRef = F2AD73D0C20F78A0ED375256826DDC32 /* UIViewController+ScrollingNavbar.h */; };
 		0943A4196177D34CF59C88E4AA77B576 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F6810D818545BACFD21ACAB72D23DC72 /* SDWebImageDecoder.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		0CAD1501B45F8E65D4C5479E6F39177F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D695E705EE91C91807A84FDE29F89FA /* Foundation.framework */; };
 		0CBFA0FDE2C98DEB97B2B0DC291F6F3F /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E1EFD1D330A4BC70F1C4C2ED395E2258 /* UIImageView+WebCache.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		1426916AC588B5FE2BDA5DD9564906DE /* vi.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 317B69C1A94EF8A3DD04C4FB9AC87E33 /* vi.lproj */; };
-		17C6FD4E5531A209C70A256175E7DEA2 /* safari~iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B40B0208A1D16EA436C900B5E6834C9B /* safari~iPad@2x.png */; };
-		186B8774D2A3487CE34587182E894A84 /* safari-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 0514209F70FDB845FFBBB2BA42AB1B75 /* safari-7.png */; };
 		18894FC9A166263E6CB1FC6EE6AD8EFF /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F8CEA8D6C3D34590016ED7FF78B90C /* SDWebImageDownloader.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		1B08554A0597395801CFF875A6220CC5 /* STKWebKitModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C246F771630D27844315C587D2B60198 /* STKWebKitModalViewController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		1D936598226DDE5B8AD9FF29DEAADCC9 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 917C79F249E898193708DA61EFABDF27 /* it.lproj */; };
-		20900178031ADE3AE10D3A5B4ADEAD4C /* STKWebKitViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F1B22A109226030C8ACE8E2F4FDA2C7E /* STKWebKitViewController.h */; };
+		1BFF3A43266F174BEE8B69E0E9FF775A /* MSCollectionViewCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CF87442F5F4D7C0A10E8ED40F7C95A64 /* MSCollectionViewCalendarLayout.m */; };
+		1C4189DE6F245103A1865C3FDFC62CF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8E9476ED04F42C4A300AC441C4BA61 /* Foundation.framework */; };
+		226A22917C3DADD8875C6C3C2B669FA4 /* MSCollectionViewCalendarLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FDC21535FA925E37421EC33096FE0 /* MSCollectionViewCalendarLayout-dummy.m */; };
 		2358EE556EF067512DADC50B59A15D25 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4C8A6792D4A925F9D3ABA38CB9537E /* SDWebImageManager.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		26B21B244340BA5A2F45F3B43F1D4926 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5099BC8D81DEDA973F9FF97BE55354BB /* UIButton+WebCache.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		27F7DF084F86D1FA892C253F869E4DB0 /* safari-7~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 86645EB49F8FB75B21E8306B02878A72 /* safari-7~iPad.png */; };
 		2C6AEC70A3E09CC7BD16C30B5B941981 /* SDWebImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ECFB2161C220584CD4F649E8EAE3896 /* SDWebImageManager.h */; };
-		2DC97FBB131A1BB341BCC5E6ADE269A6 /* TUSafariActivity-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F1B9802B73E4DA17207F8CD37A39FE5 /* TUSafariActivity-dummy.m */; };
-		31776600E1AF84911E105433370B75A3 /* safari@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81259BB9DD6807FF7905E6C94FC4D0C6 /* safari@2x.png */; };
-		34945D1FEF5070C73A22949F31AA93AB /* UIViewController+ScrollingNavbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDBC718CB0F3A45D2C30B2406198586 /* UIViewController+ScrollingNavbar.m */; };
 		37A315C532DA1A156F9676951702EFB9 /* SDWebImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 565D0DE3F083F3D803EE8CA97CDAECC5 /* SDWebImageDownloader.h */; };
-		3EAC3FC2559E7E7974E9E1E5C1CE1FE5 /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 2B3A51FA14C49CBAE314B9D403F44B23 /* nl.lproj */; };
-		3F06862E017A7ACD357E9215D38975CA /* STKWebKitViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B045CCAAC279B92F65E7F6CBF8ADB9 /* STKWebKitViewController-dummy.m */; };
-		4517FDB1EFD1AA7935156F45B31EE0C5 /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 53E2B0BCDB0E396BF7DDA641486794BB /* pt.lproj */; };
+		3AA56F6B16C1804A2436ECD0B3E1EB9B /* MSDynamicsDrawerStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5012BF4D104E3F79EE57E768997CC12A /* MSDynamicsDrawerStyler.m */; };
 		46C6D0143AB94CDD866FB320B9DB3C14 /* NSData+ImageContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = 76C518201A486FCF7036C9F9DDBD593D /* NSData+ImageContentType.h */; };
-		4902440FD5CAF8EBD7547540ACAD12A9 /* STKWebKitModalViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 106F3FB4453475433B33747760E5DEFD /* STKWebKitModalViewController.h */; };
+		4B7010A1827FEA5E6E12B6C986978CC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8E9476ED04F42C4A300AC441C4BA61 /* Foundation.framework */; };
 		50151E9ABC4AC6EFCD9764698E392A3D /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B5566E66AC64253CA228C460AE2931 /* UIImageView+HighlightedWebCache.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		505651BE6DF50CBA5C6BE87452D20BCF /* UIImageView+HighlightedWebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = D8DD99E890B5B9C7A22168DCDFF7F2F2 /* UIImageView+HighlightedWebCache.h */; };
-		56EBDBBDD76E1547C7BECC8029AD67EB /* MSDynamicsDrawerViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9630F4171066777359BEC66F6CA062F1 /* MSDynamicsDrawerViewController-dummy.m */; };
-		570B30CE959CE2799C7DCF08B10367D2 /* MSDynamicsDrawerStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = 043238D27CD0C0F3FB1EF60F9AFC6B36 /* MSDynamicsDrawerStyler.m */; };
 		57FDB0D84B88BA790448FB0099B256FB /* UIImage+MultiFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 6437C050025F1A8C69647B6744A18170 /* UIImage+MultiFormat.h */; };
-		597E71425BC827A6F0AD81A6EE700652 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D695E705EE91C91807A84FDE29F89FA /* Foundation.framework */; };
-		5B226AE321F1481E9CE4E7C45521FC39 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 2EE58839D3A596AA8AD1E3C331D506F6 /* de.lproj */; };
-		5CD3096D1DF6D120BB125BF32FBA8F58 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9A4A12E2A1421C55F3B07EC82AE175 /* UIKit.framework */; };
-		5D83F45559C228157451C39BF69D69EF /* MSCollectionViewCalendarLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C9148E66742FF2BD868E360CEA01B747 /* MSCollectionViewCalendarLayout-dummy.m */; };
-		5F55A260E7BE6B6D9D706ED1A7B6C3EB /* cs.lproj in Resources */ = {isa = PBXBuildFile; fileRef = F4ACFFD726DE98F952D2715A8FE904C3 /* cs.lproj */; };
-		60F9CC451FEFF92ADCC768799C0EDFC9 /* Pods-ETSMobile-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7903A6D0562BC4FAD2E3D89312CB0CE3 /* Pods-ETSMobile-dummy.m */; };
+		5ACFC61FF5828AAA75CFADC2223F195F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8694438C05313DDFE76D9C851BDF05F /* QuartzCore.framework */; };
 		646A6FC808A0B280B80AD4949D8357F8 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 44E19C4AEA9338236A9FD2DDA753E214 /* UIView+WebCacheOperation.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		683D4409569BB94EA3E3CA4B20630763 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD298F4EF2F68C4B172982286D20D49 /* ImageIO.framework */; };
-		6949F58AC8D3A616B14B2320185BEE23 /* eu.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 20A5943D7F6A92BA8A48314327AB2516 /* eu.lproj */; };
-		6C6F9D2ACF5BA753183CB71133558343 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 2CC01C0141A3E749870A67763348DF74 /* en.lproj */; };
+		6B4665D2B624B900B8CB0DC3906612BB /* AMScrollingNavbar.h in Headers */ = {isa = PBXBuildFile; fileRef = B9615B61FAA540B3F9B07E426F948249 /* AMScrollingNavbar.h */; };
 		751C7CA61D9FD97DF80431FC9050736F /* UIButton+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 442BD5A86D7383D426EA6C87AB86FA93 /* UIButton+WebCache.h */; };
 		75D7CEA58A5F72C5F13499A11A573EEA /* SDWebImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 36868875BC2FD7CD9ACA53E772A68147 /* SDWebImage-dummy.m */; };
-		779B513D27D81B6D3EA9558055FC9F8E /* AMScrollingNavbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 205EE08C1128D39F0333F03A42E792F7 /* AMScrollingNavbar.h */; };
-		7D5416D5067D90AA4C47BFE1CF31D40B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D695E705EE91C91807A84FDE29F89FA /* Foundation.framework */; };
+		7A535AE4B5A9D0C65A49E08B3A16D9F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8E9476ED04F42C4A300AC441C4BA61 /* Foundation.framework */; };
+		7EEAF9A3A4C651CE50D0C88C7D5A3D1E /* MSDynamicsDrawerViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C3D63DD2E81234F1991631A00542B8 /* MSDynamicsDrawerViewController-dummy.m */; };
 		7F47EBDA28826BDBD28A502091E9D9FD /* SDWebImagePrefetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D283561CA0E408531C1CA0651571381 /* SDWebImagePrefetcher.h */; };
-		86B8F575CDDE4A082BA338C4391E5F92 /* zh_CN.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E098CE032BC1EAF0A0AB6A2E19EDE2D7 /* zh_CN.lproj */; };
-		87E21073ED0BB4578EE1388EB54C9187 /* fi.lproj in Resources */ = {isa = PBXBuildFile; fileRef = F23AAEFCF552C6430E5A77A17BF89206 /* fi.lproj */; };
-		8819594680C6EC439F9F988CC8BC31C6 /* safari-7~iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66766A6D1C81A945DAB83EFFA4EFCA16 /* safari-7~iPad@2x.png */; };
+		7F6E9914D72D5B0B00418758821E20E5 /* UIViewController+ScrollingNavbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 557686869480B0393F1CD984D7437953 /* UIViewController+ScrollingNavbar.m */; };
+		8053FC72BB4AD086274BDCE8F7330823 /* MSDynamicsDrawerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E9FBFDF6E1AD9FCCDFA94DD358911063 /* MSDynamicsDrawerViewController.h */; };
 		88E73B996D8355E9622B66AD1BCCB168 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 085ECBDDE362422A1BFD1DBE30FDB4F4 /* NSData+ImageContentType.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		898D8603930620AE3DE89A892967A505 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 663FC8B8350D10A667A2FAF5EF29708C /* SDImageCache.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		90144EA34E633F7A8746D9C8BF0FF942 /* SDWebImageDownloaderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 15D66C1B89B8779333C904B6E1F0FE50 /* SDWebImageDownloaderOperation.h */; };
-		9019E7B277D7B81603056B6222AFE103 /* safari-7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E73BADC9E8D63779CB79360C0F84B89 /* safari-7@2x.png */; };
-		93CD855CE7D02D5E4D5BFF990EB7AD39 /* MSCollectionViewCalendarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = D624CEA80EB29C9026DD0F0609C1C010 /* MSCollectionViewCalendarLayout.m */; };
-		97960449617CE1E817CD64C5A5BB5347 /* ja.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C8B4E1B576455BF39FE0A5053F83000C /* ja.lproj */; };
-		97E13D8C628AAD4923C9790A2C0263E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D695E705EE91C91807A84FDE29F89FA /* Foundation.framework */; };
-		9961258485F2D24F3E8DA554DDF384AD /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3A4D7C9EB8D4831E04CA4DDE10229 /* MSDynamicsDrawerViewController.m */; };
-		9EBF6A835072B8C0FDB0F9BD05CB8FD5 /* sv.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 142369E5E72C70E19E4EB45CE716AA80 /* sv.lproj */; };
+		93F66F5F59785DE35A1105B231BA2F86 /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718CB5504FE0A1D3ACF7F98367CAD195 /* MSDynamicsDrawerViewController.m */; };
+		96C432C272C5A81B794B2A17103939DE /* AMScrollingNavbar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F53F841C5AB62D7880A259ADB1F8C1 /* AMScrollingNavbar-dummy.m */; };
 		A2222CEDD905A2D387F4A9C3895A093B /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C8BE0864137B3554F8C368D6F6EA646 /* UIImage+GIF.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A3CB732301F1FF93F429489A41AB29EC /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FE850AFB1F3120138D61FDBE9B17A05E /* ru.lproj */; };
-		A424FE27BE99ED6DC8BC0EF8227BC638 /* MSDynamicsDrawerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8580BE06409DF836DAF37D94937DC4CD /* MSDynamicsDrawerViewController.h */; };
-		A495A3E5143EC1C2B9FC7B31B2B3CE1D /* MSDynamicsDrawerStyler.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE165EA0119A5D4DEFE5025D800B202 /* MSDynamicsDrawerStyler.h */; };
-		A520EC6CD4D05B61422686C5D025E5DD /* TUSafariActivity.h in Headers */ = {isa = PBXBuildFile; fileRef = 78E363F84E058AE357AA0EDAA2EEB566 /* TUSafariActivity.h */; };
 		A6EC3E1CCB6DC24720F3D5902677421E /* SDWebImageCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CC3A4489FFEE078645C51D22848F697 /* SDWebImageCompat.h */; };
 		A773D58B6468B559F2DAB70F8C57F985 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 21426DB0E26F4458B2B8E531ED929344 /* SDWebImagePrefetcher.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A7E31453E0EC344BA0C1F1C63654C195 /* AMScrollingNavbar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CF524A3A8EE3DBFBFAAFB08235AF2A61 /* AMScrollingNavbar-dummy.m */; };
-		AA777800400A699CFDEBE81DF3C2B766 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3910DE66F0AE53A724C860354453F9C9 /* QuartzCore.framework */; };
-		AC3A81758AD13F228E89005AA13DFEAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D695E705EE91C91807A84FDE29F89FA /* Foundation.framework */; };
 		AD22FBED3B2F3B5E300F4631FF325B0D /* SDImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 20C7708C9D92468D5D2DD3A56794B5F4 /* SDImageCache.h */; };
-		B0A940A7EDC52584C172A2B132E6905B /* UIViewController+ScrollingNavbar.h in Headers */ = {isa = PBXBuildFile; fileRef = EEA3AEFA42BCC4008B54F70008DDCC94 /* UIViewController+ScrollingNavbar.h */; };
-		B108EF8640D45C3EC1F32CD7AC6DE75E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D695E705EE91C91807A84FDE29F89FA /* Foundation.framework */; };
-		B305A27EC919C81E6A226F1417DDEB5A /* safari@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AA16D46D4D749459B908DA762C0E8D1 /* safari@3x.png */; };
-		B4BFCF617407BFFDEED4DF0425FF1265 /* safari.png in Resources */ = {isa = PBXBuildFile; fileRef = 138A1DABBD9576D0FDB48C429147149D /* safari.png */; };
+		AEC197FEC49442DD446F95051E0F668A /* MSDynamicsDrawerStyler.h in Headers */ = {isa = PBXBuildFile; fileRef = F2BD75A36414BFE501BC72BD89A7B46B /* MSDynamicsDrawerStyler.h */; };
+		B108EF8640D45C3EC1F32CD7AC6DE75E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8E9476ED04F42C4A300AC441C4BA61 /* Foundation.framework */; };
 		B9B24F1882156B9384823BC873391481 /* UIView+WebCacheOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 605FCA5E9AB5C444FED020AAB684D140 /* UIView+WebCacheOperation.h */; };
 		C1185E296305793C5FC452BA59752A99 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D5ADC47369DCB41D20305EB6B00EFA /* SDWebImageDownloaderOperation.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		C19B9324E6BAADA953F7CC5D1B902476 /* pl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 2638C213F8CF918A737ABC1649BAAAD4 /* pl.lproj */; };
 		C32516863188EAD0CB8D27A796372599 /* UIImage+GIF.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E1763D689FFF87A52680D3FDBBCCA2F /* UIImage+GIF.h */; };
-		C32705A6FF471E130AD9747DA6E666E6 /* no.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 8971DC9D6EAB1D6AAAE39C537BC0AC23 /* no.lproj */; };
-		C51BCB8F275C6618F0707A703DC91EF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D695E705EE91C91807A84FDE29F89FA /* Foundation.framework */; };
-		C5B8654296CE5155598AC8EBA0ECC98A /* ko.lproj in Resources */ = {isa = PBXBuildFile; fileRef = F37E0664305307657AFE92692D44B60E /* ko.lproj */; };
-		C785C1665E7C61D86C2B000F05729FEF /* safari-7@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD5382D0ACA18ABC23819294F2F32123 /* safari-7@3x.png */; };
-		CC9A3BBA5E5A08F8AC0E336668F43467 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 0DC326BC82862EFA1620E6C3A7E35213 /* es.lproj */; };
 		CF8333B5FEC0C76FD7155FE88D951248 /* SDWebImageDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = FF3208FF08E5445EB9E5049F4C5D94F3 /* SDWebImageDecoder.h */; };
-		E006465E24C7D37A06DD18D3A1A2E908 /* TUSafariActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 477DFED5355D2A19F8C1D874513C0734 /* TUSafariActivity.m */; };
+		D042066037F6E2A769CB9106AC431C52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8E9476ED04F42C4A300AC441C4BA61 /* Foundation.framework */; };
 		E042F3EE15E5D06B958372257805F086 /* SDWebImageOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1693790C9228360FA63950C2D796CFA5 /* SDWebImageOperation.h */; };
-		E475C8D94A6C5C07FB212A8741666DB3 /* MSCollectionViewCalendarLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = D854EDB54CADF006A8F2DEB1F7D79833 /* MSCollectionViewCalendarLayout.h */; };
-		E795D5CF2F8EE77627C7BFE4AD545E46 /* safari~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = D2F35B878B8E6E79BED2280C1749AEBB /* safari~iPad.png */; };
-		E7DE07D4798D08611ADE1EF1A4047EBB /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 7EADC9D8C9636E0994AB340660AF1CAF /* fr.lproj */; };
+		E8D913C9BCB29B939BDE17130AA168BF /* Pods-ETSMobile-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 19619F74B539AA21017206F4914DB975 /* Pods-ETSMobile-dummy.m */; };
 		EEC70F07E66D6E0AB32E3E8337165EFD /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEE3E0C36A901C0D63CDBB8F8D490A /* UIImage+MultiFormat.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		EF2E5E9490743E84AEAD0DDCD300CF54 /* UIImageView+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 572E9757319756864DBF2880DCA92575 /* UIImageView+WebCache.h */; };
-		F09B1D17E2693D8CC36351A5B5AEC66B /* sk.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 49492D834246297A7CF98C30CEA2A556 /* sk.lproj */; };
 		F4FDFA5A83BE4F0B473F228F6AC2C726 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = FE98519651ECB3ECA5C602AD82864FE1 /* SDWebImageCompat.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FF53A033C129764F07AF01203681622D /* STKWebKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C6A7C2473231D2764981B4132645AB /* STKWebKitViewController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FB4C5D90BF77625C50CA9ED395A58071 /* MSCollectionViewCalendarLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = F42480A20498233717B34C745DA912F3 /* MSCollectionViewCalendarLayout.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1AC2B2789970951E7101FB1570999D56 /* PBXContainerItemProxy */ = {
+		306961A7B31EFEF4404DF47D9993EB3C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3CD5817966B101AF32B59B7FB7B2F8C1;
+			remoteGlobalIDString = 5D397D0CFB0EC8F8DFCA88A1CA6B8946;
 			remoteInfo = MSDynamicsDrawerViewController;
 		};
-		456E77E017556B202432C4ACAECB2BCA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2A93CAC23E3586C8969478F60534A26E;
-			remoteInfo = MSCollectionViewCalendarLayout;
-		};
-		5EF884511CF45F599CB332C308F27DBE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1CBAE1D2F2A5C12C0997DEC34CD1DA08;
-			remoteInfo = "TUSafariActivity-TUSafariActivity";
-		};
-		69C147E421E30B526B6837F6E36C8507 /* PBXContainerItemProxy */ = {
+		C8F12B94F4672D48E5130C1523C3D71D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5352D432641F0656C90741034E32F31E;
 			remoteInfo = SDWebImage;
 		};
-		72632E15B43CA97B0FC9AA55E7D1D076 /* PBXContainerItemProxy */ = {
+		E04398863432FEB531C952614AF57BB2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DA5581B68ABA7A3ED27041C353DB919B;
+			remoteGlobalIDString = 966D8B3079B16B66D5AFDAFD3314995D;
 			remoteInfo = AMScrollingNavbar;
 		};
-		E2EDADB7B00533CEDB09607993A2B855 /* PBXContainerItemProxy */ = {
+		E12754FDE9B4268D457CE0EE0D4C6D1D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AB01AC1E73965EF7EE34F8FE343665F7;
-			remoteInfo = TUSafariActivity;
-		};
-		E4A40131E0FE0BFCA639D583DEC6FC5C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 46DB6C99BD4D932E4CD4C0888352D5DD;
-			remoteInfo = STKWebKitViewController;
+			remoteGlobalIDString = 81B31A16D0BE14750CEFF7FAEF596BB4;
+			remoteInfo = MSCollectionViewCalendarLayout;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		043238D27CD0C0F3FB1EF60F9AFC6B36 /* MSDynamicsDrawerStyler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDynamicsDrawerStyler.m; path = MSDynamicsDrawerViewController/MSDynamicsDrawerStyler.m; sourceTree = "<group>"; };
-		04B7C65471DF31341929734B32BEB7B7 /* libAMScrollingNavbar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAMScrollingNavbar.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0514209F70FDB845FFBBB2BA42AB1B75 /* safari-7.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "safari-7.png"; path = "Pod/Assets/safari-7.png"; sourceTree = "<group>"; };
+		04F687CBBC739A1B0CF8FCC78A8207DE /* MSDynamicsDrawerViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MSDynamicsDrawerViewController-prefix.pch"; sourceTree = "<group>"; };
+		055E4EF19DB8C1A51E2ED831DD9BA606 /* MSDynamicsDrawerViewController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MSDynamicsDrawerViewController-Private.xcconfig"; sourceTree = "<group>"; };
 		085ECBDDE362422A1BFD1DBE30FDB4F4 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+ImageContentType.m"; path = "SDWebImage/NSData+ImageContentType.m"; sourceTree = "<group>"; };
-		08DB1AEEEE0AC65EE57A1251629A3987 /* back.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = back.png; path = Pod/Assets/back.png; sourceTree = "<group>"; };
 		0C8BE0864137B3554F8C368D6F6EA646 /* UIImage+GIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+GIF.m"; path = "SDWebImage/UIImage+GIF.m"; sourceTree = "<group>"; };
-		0CE8A4A1B2AA5A072FFF58D6FA5B8C81 /* forward.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = forward.png; path = Pod/Assets/forward.png; sourceTree = "<group>"; };
-		0DA06B3BB10FF0C073023B152EA2ED40 /* MSCollectionViewCalendarLayout-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MSCollectionViewCalendarLayout-Private.xcconfig"; sourceTree = "<group>"; };
-		0DC326BC82862EFA1620E6C3A7E35213 /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = es.lproj; path = Pod/Assets/es.lproj; sourceTree = "<group>"; };
-		106F3FB4453475433B33747760E5DEFD /* STKWebKitModalViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STKWebKitModalViewController.h; path = Pod/Classes/STKWebKitModalViewController.h; sourceTree = "<group>"; };
-		138A1DABBD9576D0FDB48C429147149D /* safari.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = safari.png; path = Pod/Assets/safari.png; sourceTree = "<group>"; };
-		142369E5E72C70E19E4EB45CE716AA80 /* sv.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = sv.lproj; path = Pod/Assets/sv.lproj; sourceTree = "<group>"; };
+		0FD556B2394EAC9EA8DC0946D648CBC9 /* SKTMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKTMessage.h; path = SupportKit.framework/Versions/A/Headers/SKTMessage.h; sourceTree = "<group>"; };
 		15D66C1B89B8779333C904B6E1F0FE50 /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderOperation.h; path = SDWebImage/SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
 		1693790C9228360FA63950C2D796CFA5 /* SDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = SDWebImage/SDWebImageOperation.h; sourceTree = "<group>"; };
-		1823D6EE64011F61CA5BB169B426AFF9 /* STKWebKitViewController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "STKWebKitViewController-Private.xcconfig"; sourceTree = "<group>"; };
-		1917F8E4794A19C77F9F3CA084846A74 /* MSCollectionViewCalendarLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MSCollectionViewCalendarLayout-prefix.pch"; sourceTree = "<group>"; };
-		1AF57A0B006BB2BA25688F11798B1516 /* refresh@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "refresh@2x.png"; path = "Pod/Assets/refresh@2x.png"; sourceTree = "<group>"; };
-		1B3F115D8943EBFD68B14FF2DFC32422 /* libSTKWebKitViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSTKWebKitViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C22F0194F9B6B21822630928D87E308 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		205EE08C1128D39F0333F03A42E792F7 /* AMScrollingNavbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMScrollingNavbar.h; path = AMScrollingNavbar/AMScrollingNavbar.h; sourceTree = "<group>"; };
-		20A5943D7F6A92BA8A48314327AB2516 /* eu.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = eu.lproj; path = Pod/Assets/eu.lproj; sourceTree = "<group>"; };
+		19619F74B539AA21017206F4914DB975 /* Pods-ETSMobile-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ETSMobile-dummy.m"; sourceTree = "<group>"; };
+		1ADE52D2C3A366461C2275DBE2B2AFF7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		1F8E9476ED04F42C4A300AC441C4BA61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		20C7708C9D92468D5D2DD3A56794B5F4 /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/SDImageCache.h; sourceTree = "<group>"; };
 		21426DB0E26F4458B2B8E531ED929344 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = SDWebImage/SDWebImagePrefetcher.m; sourceTree = "<group>"; };
-		2638C213F8CF918A737ABC1649BAAAD4 /* pl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = pl.lproj; path = Pod/Assets/pl.lproj; sourceTree = "<group>"; };
-		2952610A23A039435596FA707B1D6C4F /* STKWebKitViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "STKWebKitViewController-prefix.pch"; sourceTree = "<group>"; };
-		2AA16D46D4D749459B908DA762C0E8D1 /* safari@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "safari@3x.png"; path = "Pod/Assets/safari@3x.png"; sourceTree = "<group>"; };
-		2B3A51FA14C49CBAE314B9D403F44B23 /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = nl.lproj; path = Pod/Assets/nl.lproj; sourceTree = "<group>"; };
-		2BF111C5C39165931D1FA243C76809D3 /* MSDynamicsDrawerViewController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MSDynamicsDrawerViewController-Private.xcconfig"; sourceTree = "<group>"; };
-		2CC01C0141A3E749870A67763348DF74 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = en.lproj; path = Pod/Assets/en.lproj; sourceTree = "<group>"; };
+		26C3D63DD2E81234F1991631A00542B8 /* MSDynamicsDrawerViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MSDynamicsDrawerViewController-dummy.m"; sourceTree = "<group>"; };
 		2D283561CA0E408531C1CA0651571381 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImagePrefetcher.h; path = SDWebImage/SDWebImagePrefetcher.h; sourceTree = "<group>"; };
-		2EE58839D3A596AA8AD1E3C331D506F6 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = de.lproj; path = Pod/Assets/de.lproj; sourceTree = "<group>"; };
-		2F1B9802B73E4DA17207F8CD37A39FE5 /* TUSafariActivity-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TUSafariActivity-dummy.m"; sourceTree = "<group>"; };
-		317B69C1A94EF8A3DD04C4FB9AC87E33 /* vi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = vi.lproj; path = Pod/Assets/vi.lproj; sourceTree = "<group>"; };
-		33791A1B84BC4601D84FC0694EC66933 /* MSDynamicsDrawerViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MSDynamicsDrawerViewController-prefix.pch"; sourceTree = "<group>"; };
 		36868875BC2FD7CD9ACA53E772A68147 /* SDWebImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDWebImage-dummy.m"; sourceTree = "<group>"; };
-		3910DE66F0AE53A724C860354453F9C9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		3CC3A4489FFEE078645C51D22848F697 /* SDWebImageCompat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCompat.h; path = SDWebImage/SDWebImageCompat.h; sourceTree = "<group>"; };
 		3D5ADFD09F12636304E612C7CC4C21BC /* Pods-ETSMobile-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ETSMobile-acknowledgements.plist"; sourceTree = "<group>"; };
-		3E73BADC9E8D63779CB79360C0F84B89 /* safari-7@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "safari-7@2x.png"; path = "Pod/Assets/safari-7@2x.png"; sourceTree = "<group>"; };
 		442BD5A86D7383D426EA6C87AB86FA93 /* UIButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "SDWebImage/UIButton+WebCache.h"; sourceTree = "<group>"; };
 		44E19C4AEA9338236A9FD2DDA753E214 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCacheOperation.m"; path = "SDWebImage/UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		477DFED5355D2A19F8C1D874513C0734 /* TUSafariActivity.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TUSafariActivity.m; path = Pod/Classes/TUSafariActivity.m; sourceTree = "<group>"; };
-		49492D834246297A7CF98C30CEA2A556 /* sk.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = sk.lproj; path = Pod/Assets/sk.lproj; sourceTree = "<group>"; };
-		49AE88572D658E9E98BC9BC3E4DC15FA /* libMSCollectionViewCalendarLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMSCollectionViewCalendarLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4AB3A4D7C9EB8D4831E04CA4DDE10229 /* MSDynamicsDrawerViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDynamicsDrawerViewController.m; path = MSDynamicsDrawerViewController/MSDynamicsDrawerViewController.m; sourceTree = "<group>"; };
+		48137F5E134C2404DA3C051320126955 /* AMScrollingNavbar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AMScrollingNavbar.xcconfig; sourceTree = "<group>"; };
 		4C4C8A6792D4A925F9D3ABA38CB9537E /* SDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = SDWebImage/SDWebImageManager.m; sourceTree = "<group>"; };
-		4D695E705EE91C91807A84FDE29F89FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		501BBDA091A14B11B8DC1C306AFD1896 /* AMScrollingNavbar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AMScrollingNavbar.xcconfig; sourceTree = "<group>"; };
+		4D93C5E68DC3372BB67571CCD42BE0D9 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		4E54C495E62271EE42F3D036D26D9CC2 /* SKTUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKTUser.h; path = SupportKit.framework/Versions/A/Headers/SKTUser.h; sourceTree = "<group>"; };
+		5012BF4D104E3F79EE57E768997CC12A /* MSDynamicsDrawerStyler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDynamicsDrawerStyler.m; path = MSDynamicsDrawerViewController/MSDynamicsDrawerStyler.m; sourceTree = "<group>"; };
 		5099BC8D81DEDA973F9FF97BE55354BB /* UIButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+WebCache.m"; path = "SDWebImage/UIButton+WebCache.m"; sourceTree = "<group>"; };
-		51654112C24EE914F5B19AFDB3671DD7 /* SKTSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKTSettings.h; path = SupportKit.framework/Versions/A/Headers/SKTSettings.h; sourceTree = "<group>"; };
-		53E2B0BCDB0E396BF7DDA641486794BB /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = pt.lproj; path = Pod/Assets/pt.lproj; sourceTree = "<group>"; };
+		54695849C14FE7B25E3F5472D3BF5570 /* SupportKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SupportKit.framework; sourceTree = "<group>"; };
+		557686869480B0393F1CD984D7437953 /* UIViewController+ScrollingNavbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+ScrollingNavbar.m"; path = "AMScrollingNavbar/UIViewController+ScrollingNavbar.m"; sourceTree = "<group>"; };
 		565D0DE3F083F3D803EE8CA97CDAECC5 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloader.h; path = SDWebImage/SDWebImageDownloader.h; sourceTree = "<group>"; };
 		572E9757319756864DBF2880DCA92575 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+WebCache.h"; path = "SDWebImage/UIImageView+WebCache.h"; sourceTree = "<group>"; };
-		59AD76EA84AF034D023D333F0CCCE0FE /* Pods-ETSMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ETSMobile.release.xcconfig"; sourceTree = "<group>"; };
-		5AC54F503BAFAE36F032D4A927FDA326 /* TUSafariActivity-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "TUSafariActivity-Private.xcconfig"; sourceTree = "<group>"; };
+		59F53F841C5AB62D7880A259ADB1F8C1 /* AMScrollingNavbar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AMScrollingNavbar-dummy.m"; sourceTree = "<group>"; };
+		5C5FDC21535FA925E37421EC33096FE0 /* MSCollectionViewCalendarLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MSCollectionViewCalendarLayout-dummy.m"; sourceTree = "<group>"; };
 		5ECFB2161C220584CD4F649E8EAE3896 /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/SDWebImageManager.h; sourceTree = "<group>"; };
-		5F9A4A12E2A1421C55F3B07EC82AE175 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		605FCA5E9AB5C444FED020AAB684D140 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "SDWebImage/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
+		64244856E0B58A3E046083E28F95C388 /* SDWebImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-prefix.pch"; sourceTree = "<group>"; };
 		6437C050025F1A8C69647B6744A18170 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
 		663FC8B8350D10A667A2FAF5EF29708C /* SDImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = SDWebImage/SDImageCache.m; sourceTree = "<group>"; };
-		66766A6D1C81A945DAB83EFFA4EFCA16 /* safari-7~iPad@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "safari-7~iPad@2x.png"; path = "Pod/Assets/safari-7~iPad@2x.png"; sourceTree = "<group>"; };
-		6B0849E0C215D290BDC0EE05125DA282 /* back@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "back@2x.png"; path = "Pod/Assets/back@2x.png"; sourceTree = "<group>"; };
-		6D68A3B9DF84183B55C86A0DE4CF257D /* SKTMessageAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKTMessageAction.h; path = SupportKit.framework/Versions/A/Headers/SKTMessageAction.h; sourceTree = "<group>"; };
 		6DD298F4EF2F68C4B172982286D20D49 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		6EE679CF28C5402193351DEB1F5A4F7D /* Pods-ETSMobile-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ETSMobile-acknowledgements.markdown"; sourceTree = "<group>"; };
-		72C15AAFDDD04CBB9701E368D51A8B86 /* refresh.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = refresh.png; path = Pod/Assets/refresh.png; sourceTree = "<group>"; };
+		718CB5504FE0A1D3ACF7F98367CAD195 /* MSDynamicsDrawerViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDynamicsDrawerViewController.m; path = MSDynamicsDrawerViewController/MSDynamicsDrawerViewController.m; sourceTree = "<group>"; };
+		72A669BCB9A5DBF066912B7DC92A9504 /* MSCollectionViewCalendarLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MSCollectionViewCalendarLayout-prefix.pch"; sourceTree = "<group>"; };
+		73CB430CCEF48444A69BCDE6879CCFE3 /* SKTSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKTSettings.h; path = SupportKit.framework/Versions/A/Headers/SKTSettings.h; sourceTree = "<group>"; };
 		76C518201A486FCF7036C9F9DDBD593D /* NSData+ImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/NSData+ImageContentType.h"; sourceTree = "<group>"; };
-		7799992DE1488C26FC529093DA64D055 /* AMScrollingNavbar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "AMScrollingNavbar-Private.xcconfig"; sourceTree = "<group>"; };
-		78E363F84E058AE357AA0EDAA2EEB566 /* TUSafariActivity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TUSafariActivity.h; path = Pod/Classes/TUSafariActivity.h; sourceTree = "<group>"; };
-		7903A6D0562BC4FAD2E3D89312CB0CE3 /* Pods-ETSMobile-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ETSMobile-dummy.m"; sourceTree = "<group>"; };
+		76F3532681FCB35B41D14E9F1CD834B0 /* AMScrollingNavbar-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "AMScrollingNavbar-Private.xcconfig"; sourceTree = "<group>"; };
 		7BFEE3E0C36A901C0D63CDBB8F8D490A /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "SDWebImage/UIImage+MultiFormat.m"; sourceTree = "<group>"; };
+		7D0F49E0BD1F582F030B457BCAE54C3B /* SDWebImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.xcconfig; sourceTree = "<group>"; };
 		7E1763D689FFF87A52680D3FDBBCCA2F /* UIImage+GIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+GIF.h"; path = "SDWebImage/UIImage+GIF.h"; sourceTree = "<group>"; };
-		7EADC9D8C9636E0994AB340660AF1CAF /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = fr.lproj; path = Pod/Assets/fr.lproj; sourceTree = "<group>"; };
-		81259BB9DD6807FF7905E6C94FC4D0C6 /* safari@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "safari@2x.png"; path = "Pod/Assets/safari@2x.png"; sourceTree = "<group>"; };
+		8304E9D33E96649D2D03A7E8922FBB23 /* MSCollectionViewCalendarLayout-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MSCollectionViewCalendarLayout-Private.xcconfig"; sourceTree = "<group>"; };
 		83F8CEA8D6C3D34590016ED7FF78B90C /* SDWebImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloader.m; path = SDWebImage/SDWebImageDownloader.m; sourceTree = "<group>"; };
-		8580BE06409DF836DAF37D94937DC4CD /* MSDynamicsDrawerViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDynamicsDrawerViewController.h; path = MSDynamicsDrawerViewController/MSDynamicsDrawerViewController.h; sourceTree = "<group>"; };
-		86645EB49F8FB75B21E8306B02878A72 /* safari-7~iPad.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "safari-7~iPad.png"; path = "Pod/Assets/safari-7~iPad.png"; sourceTree = "<group>"; };
-		87C815B2E39196F6E018E8507DD8D2F0 /* libPods-ETSMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ETSMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8944ADAB85E2071CF24A0D17DDB65F49 /* TUSafariActivity-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TUSafariActivity-prefix.pch"; sourceTree = "<group>"; };
-		8971DC9D6EAB1D6AAAE39C537BC0AC23 /* no.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = no.lproj; path = Pod/Assets/no.lproj; sourceTree = "<group>"; };
-		8A2D24A912EE81984ABBED20A624E555 /* MSCollectionViewCalendarLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MSCollectionViewCalendarLayout.xcconfig; sourceTree = "<group>"; };
-		8A9F3C89A7C03046A12D235871D2CB43 /* STKWebKitViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = STKWebKitViewController.xcconfig; sourceTree = "<group>"; };
-		8B2553A25DF2990D9191A125D6D6C3D2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		8C13468A383F7C766E4E0976C5DE143B /* forward@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "forward@2x.png"; path = "Pod/Assets/forward@2x.png"; sourceTree = "<group>"; };
-		8CDBC718CB0F3A45D2C30B2406198586 /* UIViewController+ScrollingNavbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+ScrollingNavbar.m"; path = "AMScrollingNavbar/UIViewController+ScrollingNavbar.m"; sourceTree = "<group>"; };
-		900E97D25F29744CD8A66EDF3F6C7678 /* stop@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "stop@2x.png"; path = "Pod/Assets/stop@2x.png"; sourceTree = "<group>"; };
-		917C79F249E898193708DA61EFABDF27 /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = it.lproj; path = Pod/Assets/it.lproj; sourceTree = "<group>"; };
-		93057AEA93B1224B91FBD2C80A23C09C /* SKTConversation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKTConversation.h; path = SupportKit.framework/Versions/A/Headers/SKTConversation.h; sourceTree = "<group>"; };
-		9630F4171066777359BEC66F6CA062F1 /* MSDynamicsDrawerViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MSDynamicsDrawerViewController-dummy.m"; sourceTree = "<group>"; };
+		86923C424464A1D09D0CCBBFC1C5DF4C /* libPods-ETSMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ETSMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		91B176D9BC83EC639D523B249B14F27C /* SKTMessageAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKTMessageAction.h; path = SupportKit.framework/Versions/A/Headers/SKTMessageAction.h; sourceTree = "<group>"; };
+		91E313CDB0B29686E67FC8AF0F50E68B /* MSCollectionViewCalendarLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MSCollectionViewCalendarLayout.xcconfig; sourceTree = "<group>"; };
+		9757253D0B8CF5BAFE418D4779A72265 /* SupportKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SupportKit.h; path = SupportKit.framework/Versions/A/Headers/SupportKit.h; sourceTree = "<group>"; };
+		9DB80E83482CE5E287ECFAC06E50BA8B /* SupportKit.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = SupportKit.bundle; sourceTree = "<group>"; };
 		A4E3C75131DB73B535BA7338F6201845 /* libSDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSDWebImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A87BCEDBB62A7D2A1CD06A7303A6942F /* SupportKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SupportKit.h; path = SupportKit.framework/Versions/A/Headers/SupportKit.h; sourceTree = "<group>"; };
-		A89F2DDCF320E4E7CC648C15B654C87E /* SDWebImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-prefix.pch"; sourceTree = "<group>"; };
 		A977A2F15CAF37AE1AE048FE75B49750 /* Pods-ETSMobile-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ETSMobile-resources.sh"; sourceTree = "<group>"; };
-		AC664ADD5C5A714FD7E917FCAE830CAC /* SupportKit.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = SupportKit.bundle; sourceTree = "<group>"; };
 		B3D5ADC47369DCB41D20305EB6B00EFA /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderOperation.m; path = SDWebImage/SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
-		B40B0208A1D16EA436C900B5E6834C9B /* safari~iPad@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "safari~iPad@2x.png"; path = "Pod/Assets/safari~iPad@2x.png"; sourceTree = "<group>"; };
-		B58D15CAB889DBC3B72F02D779EA2A20 /* SupportKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SupportKit.framework; sourceTree = "<group>"; };
-		B6135EE7F46CFC129E4802887775DE00 /* SKTMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKTMessage.h; path = SupportKit.framework/Versions/A/Headers/SKTMessage.h; sourceTree = "<group>"; };
-		B8E67C1FF30D2C87F4C2D9B94BC0D91F /* SKTUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKTUser.h; path = SupportKit.framework/Versions/A/Headers/SKTUser.h; sourceTree = "<group>"; };
-		B99FD257E3984B895A80262D85173949 /* libTUSafariActivity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTUSafariActivity.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8694438C05313DDFE76D9C851BDF05F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		B9615B61FAA540B3F9B07E426F948249 /* AMScrollingNavbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AMScrollingNavbar.h; path = AMScrollingNavbar/AMScrollingNavbar.h; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C246F771630D27844315C587D2B60198 /* STKWebKitModalViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STKWebKitModalViewController.m; path = Pod/Classes/STKWebKitModalViewController.m; sourceTree = "<group>"; };
-		C331B958093AD503702EC2206EF90E48 /* AMScrollingNavbar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AMScrollingNavbar-prefix.pch"; sourceTree = "<group>"; };
-		C61AD1861254292E5CF7CEEEAC28055E /* TUSafariActivity.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TUSafariActivity.xcconfig; sourceTree = "<group>"; };
-		C6B2E712F9E7F85E28D44E4709306232 /* stop.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = stop.png; path = Pod/Assets/stop.png; sourceTree = "<group>"; };
+		C69536F8EE42F7F237C7BCB33CE61073 /* Pods-ETSMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ETSMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		C73ABD370A23628E2A310A3BCBC0A5A3 /* SDWebImage-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SDWebImage-Private.xcconfig"; sourceTree = "<group>"; };
-		C8B4E1B576455BF39FE0A5053F83000C /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = ja.lproj; path = Pod/Assets/ja.lproj; sourceTree = "<group>"; };
-		C9148E66742FF2BD868E360CEA01B747 /* MSCollectionViewCalendarLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MSCollectionViewCalendarLayout-dummy.m"; sourceTree = "<group>"; };
-		CD5382D0ACA18ABC23819294F2F32123 /* safari-7@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "safari-7@3x.png"; path = "Pod/Assets/safari-7@3x.png"; sourceTree = "<group>"; };
-		CEB8BB6FAD5BE92FB5730259EB2E0175 /* Pods-ETSMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ETSMobile.debug.xcconfig"; sourceTree = "<group>"; };
-		CF524A3A8EE3DBFBFAAFB08235AF2A61 /* AMScrollingNavbar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AMScrollingNavbar-dummy.m"; sourceTree = "<group>"; };
-		D2F35B878B8E6E79BED2280C1749AEBB /* safari~iPad.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "safari~iPad.png"; path = "Pod/Assets/safari~iPad.png"; sourceTree = "<group>"; };
-		D624CEA80EB29C9026DD0F0609C1C010 /* MSCollectionViewCalendarLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSCollectionViewCalendarLayout.m; path = MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.m; sourceTree = "<group>"; };
-		D854EDB54CADF006A8F2DEB1F7D79833 /* MSCollectionViewCalendarLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSCollectionViewCalendarLayout.h; path = MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.h; sourceTree = "<group>"; };
+		CF87442F5F4D7C0A10E8ED40F7C95A64 /* MSCollectionViewCalendarLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSCollectionViewCalendarLayout.m; path = MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.m; sourceTree = "<group>"; };
+		D3A9C1E9EDF77A8D94611A1C4409BD21 /* MSDynamicsDrawerViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MSDynamicsDrawerViewController.xcconfig; sourceTree = "<group>"; };
+		D4C49D1405CA45A18DE6316079E568E7 /* Pods-ETSMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ETSMobile.release.xcconfig"; sourceTree = "<group>"; };
+		D65EFADF77C61CE4381497E287D08DF2 /* libMSDynamicsDrawerViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMSDynamicsDrawerViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8DD99E890B5B9C7A22168DCDFF7F2F2 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+HighlightedWebCache.h"; path = "SDWebImage/UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
-		DAE165EA0119A5D4DEFE5025D800B202 /* MSDynamicsDrawerStyler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDynamicsDrawerStyler.h; path = MSDynamicsDrawerViewController/MSDynamicsDrawerStyler.h; sourceTree = "<group>"; };
-		E098CE032BC1EAF0A0AB6A2E19EDE2D7 /* zh_CN.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = zh_CN.lproj; path = Pod/Assets/zh_CN.lproj; sourceTree = "<group>"; };
 		E1EFD1D330A4BC70F1C4C2ED395E2258 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "SDWebImage/UIImageView+WebCache.m"; sourceTree = "<group>"; };
-		E3B045CCAAC279B92F65E7F6CBF8ADB9 /* STKWebKitViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "STKWebKitViewController-dummy.m"; sourceTree = "<group>"; };
-		E3F12E9B62DAABC3F443098D9589A616 /* SDWebImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.xcconfig; sourceTree = "<group>"; };
-		E5C6A7C2473231D2764981B4132645AB /* STKWebKitViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = STKWebKitViewController.m; path = Pod/Classes/STKWebKitViewController.m; sourceTree = "<group>"; };
+		E29D1EDF2BD833144B427C9F8A285E28 /* SKTConversation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SKTConversation.h; path = SupportKit.framework/Versions/A/Headers/SKTConversation.h; sourceTree = "<group>"; };
 		E7B5566E66AC64253CA228C460AE2931 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
-		EA09EACCF899F972EB000C11A60CA173 /* libMSDynamicsDrawerViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMSDynamicsDrawerViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEA3AEFA42BCC4008B54F70008DDCC94 /* UIViewController+ScrollingNavbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+ScrollingNavbar.h"; path = "AMScrollingNavbar/UIViewController+ScrollingNavbar.h"; sourceTree = "<group>"; };
-		EFE98429C566A71E4DB17F35835FBDC4 /* MSDynamicsDrawerViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MSDynamicsDrawerViewController.xcconfig; sourceTree = "<group>"; };
-		F1B22A109226030C8ACE8E2F4FDA2C7E /* STKWebKitViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = STKWebKitViewController.h; path = Pod/Classes/STKWebKitViewController.h; sourceTree = "<group>"; };
-		F23AAEFCF552C6430E5A77A17BF89206 /* fi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = fi.lproj; path = Pod/Assets/fi.lproj; sourceTree = "<group>"; };
-		F37E0664305307657AFE92692D44B60E /* ko.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = ko.lproj; path = Pod/Assets/ko.lproj; sourceTree = "<group>"; };
-		F4ACFFD726DE98F952D2715A8FE904C3 /* cs.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = cs.lproj; path = Pod/Assets/cs.lproj; sourceTree = "<group>"; };
+		E9FBFDF6E1AD9FCCDFA94DD358911063 /* MSDynamicsDrawerViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDynamicsDrawerViewController.h; path = MSDynamicsDrawerViewController/MSDynamicsDrawerViewController.h; sourceTree = "<group>"; };
+		ED27DA5728345CFCEA70DAA0D668316A /* libAMScrollingNavbar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAMScrollingNavbar.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF45872C851B3A6E0AC00EC0AD180515 /* AMScrollingNavbar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AMScrollingNavbar-prefix.pch"; sourceTree = "<group>"; };
+		F2AD73D0C20F78A0ED375256826DDC32 /* UIViewController+ScrollingNavbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+ScrollingNavbar.h"; path = "AMScrollingNavbar/UIViewController+ScrollingNavbar.h"; sourceTree = "<group>"; };
+		F2BD75A36414BFE501BC72BD89A7B46B /* MSDynamicsDrawerStyler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDynamicsDrawerStyler.h; path = MSDynamicsDrawerViewController/MSDynamicsDrawerStyler.h; sourceTree = "<group>"; };
+		F42480A20498233717B34C745DA912F3 /* MSCollectionViewCalendarLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSCollectionViewCalendarLayout.h; path = MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout.h; sourceTree = "<group>"; };
 		F6810D818545BACFD21ACAB72D23DC72 /* SDWebImageDecoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDecoder.m; path = SDWebImage/SDWebImageDecoder.m; sourceTree = "<group>"; };
-		F9B82514055D19AB45D98F525AD88BC1 /* TUSafariActivity.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TUSafariActivity.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE850AFB1F3120138D61FDBE9B17A05E /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; name = ru.lproj; path = Pod/Assets/ru.lproj; sourceTree = "<group>"; };
 		FE98519651ECB3ECA5C602AD82864FE1 /* SDWebImageCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCompat.m; path = SDWebImage/SDWebImageCompat.m; sourceTree = "<group>"; };
 		FF3208FF08E5445EB9E5049F4C5D94F3 /* SDWebImageDecoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDecoder.h; path = SDWebImage/SDWebImageDecoder.h; sourceTree = "<group>"; };
+		FF4FB0BF3F1645D2128F68653FF07A4E /* libMSCollectionViewCalendarLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMSCollectionViewCalendarLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		148128752A6D969AC4528621224B497C /* Frameworks */ = {
+		1456E847DF589410DCF04D9A426D581F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				597E71425BC827A6F0AD81A6EE700652 /* Foundation.framework in Frameworks */,
+				4B7010A1827FEA5E6E12B6C986978CC9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		36C58AFDD241229AB571D0A66B6D4FB4 /* Frameworks */ = {
+		54FBC8CE63171EC73EFDB30585800A15 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A535AE4B5A9D0C65A49E08B3A16D9F0 /* Foundation.framework in Frameworks */,
+				5ACFC61FF5828AAA75CFADC2223F195F /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,45 +199,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8127D68E8ED614D22F09E4DCE7BC0EDE /* Frameworks */ = {
+		C2837F292A12BA6F75E3AADC69DBC799 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D5416D5067D90AA4C47BFE1CF31D40B /* Foundation.framework in Frameworks */,
-				AA777800400A699CFDEBE81DF3C2B766 /* QuartzCore.framework in Frameworks */,
+				D042066037F6E2A769CB9106AC431C52 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		835EF9D738E1733753ECB87F9946581C /* Frameworks */ = {
+		FF5DC7E8CD2EAD1C88CB6475B28ECDD7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CAD1501B45F8E65D4C5479E6F39177F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B8E4290A8EBB6D8C32DDF4FE7491BBBF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				97E13D8C628AAD4923C9790A2C0263E5 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D5CCA8A803E14E39050704DDA0479A1F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C51BCB8F275C6618F0707A703DC91EF7 /* Foundation.framework in Frameworks */,
-				5CD3096D1DF6D120BB125BF32FBA8F58 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FE7459548B223C8E621DB4D59FC50492 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AC3A81758AD13F228E89005AA13DFEAE /* Foundation.framework in Frameworks */,
+				1C4189DE6F245103A1865C3FDFC62CF7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,92 +223,208 @@
 			children = (
 				6EE679CF28C5402193351DEB1F5A4F7D /* Pods-ETSMobile-acknowledgements.markdown */,
 				3D5ADFD09F12636304E612C7CC4C21BC /* Pods-ETSMobile-acknowledgements.plist */,
-				7903A6D0562BC4FAD2E3D89312CB0CE3 /* Pods-ETSMobile-dummy.m */,
+				19619F74B539AA21017206F4914DB975 /* Pods-ETSMobile-dummy.m */,
 				A977A2F15CAF37AE1AE048FE75B49750 /* Pods-ETSMobile-resources.sh */,
-				CEB8BB6FAD5BE92FB5730259EB2E0175 /* Pods-ETSMobile.debug.xcconfig */,
-				59AD76EA84AF034D023D333F0CCCE0FE /* Pods-ETSMobile.release.xcconfig */,
+				C69536F8EE42F7F237C7BCB33CE61073 /* Pods-ETSMobile.debug.xcconfig */,
+				D4C49D1405CA45A18DE6316079E568E7 /* Pods-ETSMobile.release.xcconfig */,
 			);
 			name = "Pods-ETSMobile";
 			path = "Target Support Files/Pods-ETSMobile";
 			sourceTree = "<group>";
 		};
-		0F66B011AD363D9F5049CB3C7B7E9CA9 /* Resources */ = {
+		0BDD9BEDFF03A5693A96EAD5C8CC25E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AC664ADD5C5A714FD7E917FCAE830CAC /* SupportKit.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				45465E02985ECEA561E9BF50F478C9AE /* iOS */,
+				4D93C5E68DC3372BB67571CCD42BE0D9 /* Fabric.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		17A4FE719E736ABB6D716ACE3FDB9180 /* Frameworks */ = {
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8B2553A25DF2990D9191A125D6D6C3D2 /* Fabric.framework */,
+				CD982E6C1E2B7BE2CAF7E6442ABBEC29 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2CA0B4A831857AD0F8ED1BBE04D7F8FB /* Resources */ = {
+		1C2DD0803E788755286EAF5408AC6CF9 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				F4ACFFD726DE98F952D2715A8FE904C3 /* cs.lproj */,
-				2EE58839D3A596AA8AD1E3C331D506F6 /* de.lproj */,
-				2CC01C0141A3E749870A67763348DF74 /* en.lproj */,
-				0DC326BC82862EFA1620E6C3A7E35213 /* es.lproj */,
-				20A5943D7F6A92BA8A48314327AB2516 /* eu.lproj */,
-				F23AAEFCF552C6430E5A77A17BF89206 /* fi.lproj */,
-				7EADC9D8C9636E0994AB340660AF1CAF /* fr.lproj */,
-				917C79F249E898193708DA61EFABDF27 /* it.lproj */,
-				C8B4E1B576455BF39FE0A5053F83000C /* ja.lproj */,
-				F37E0664305307657AFE92692D44B60E /* ko.lproj */,
-				2B3A51FA14C49CBAE314B9D403F44B23 /* nl.lproj */,
-				8971DC9D6EAB1D6AAAE39C537BC0AC23 /* no.lproj */,
-				2638C213F8CF918A737ABC1649BAAAD4 /* pl.lproj */,
-				53E2B0BCDB0E396BF7DDA641486794BB /* pt.lproj */,
-				FE850AFB1F3120138D61FDBE9B17A05E /* ru.lproj */,
-				138A1DABBD9576D0FDB48C429147149D /* safari.png */,
-				0514209F70FDB845FFBBB2BA42AB1B75 /* safari-7.png */,
-				3E73BADC9E8D63779CB79360C0F84B89 /* safari-7@2x.png */,
-				CD5382D0ACA18ABC23819294F2F32123 /* safari-7@3x.png */,
-				86645EB49F8FB75B21E8306B02878A72 /* safari-7~iPad.png */,
-				66766A6D1C81A945DAB83EFFA4EFCA16 /* safari-7~iPad@2x.png */,
-				81259BB9DD6807FF7905E6C94FC4D0C6 /* safari@2x.png */,
-				2AA16D46D4D749459B908DA762C0E8D1 /* safari@3x.png */,
-				D2F35B878B8E6E79BED2280C1749AEBB /* safari~iPad.png */,
-				B40B0208A1D16EA436C900B5E6834C9B /* safari~iPad@2x.png */,
-				49492D834246297A7CF98C30CEA2A556 /* sk.lproj */,
-				142369E5E72C70E19E4EB45CE716AA80 /* sv.lproj */,
-				317B69C1A94EF8A3DD04C4FB9AC87E33 /* vi.lproj */,
-				E098CE032BC1EAF0A0AB6A2E19EDE2D7 /* zh_CN.lproj */,
+				0BDD9BEDFF03A5693A96EAD5C8CC25E2 /* Frameworks */,
 			);
-			name = Resources;
+			name = Base;
 			sourceTree = "<group>";
 		};
-		3443DE4ABD2DCCB62F4FCB86178232F0 /* Pods */ = {
+		260E0216CE403BDEC0E11B4C7D102288 /* Fabric */ = {
 			isa = PBXGroup;
 			children = (
-				87A9E7D6A402727745F6303FFE8D16BA /* AMScrollingNavbar */,
-				425411F37AEE079931710E3966223B9B /* Crashlytics */,
-				77F3C66AA7A99E2F90D2BEAC1A6B8E53 /* Fabric */,
-				95DD534682A10AD896ED32EE9E07E20A /* MSCollectionViewCalendarLayout */,
-				D7F09C0B94D034756A632A9B9CF829A5 /* MSDynamicsDrawerViewController */,
-				77267483BAE08EB33984878E6AFB2B86 /* SDWebImage */,
-				87FA41D660A009DD775511B18084D680 /* STKWebKitViewController */,
-				6578752FEC337DE17F01395252EFA3E3 /* SupportKit */,
-				50B827CA46D8F7DCD429BE580D07E22C /* TUSafariActivity */,
+				1C2DD0803E788755286EAF5408AC6CF9 /* Base */,
+			);
+			path = Fabric;
+			sourceTree = "<group>";
+		};
+		3BD68286CFA547B4D03B5D375914D3FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54695849C14FE7B25E3F5472D3BF5570 /* SupportKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63D705B052925201216A92D0E7A0BCC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4EA8D0D0DC1F47E284E43CE93089409 /* AMScrollingNavbar */,
+				9C4451FFB27C25356583754E49AF7A40 /* Crashlytics */,
+				260E0216CE403BDEC0E11B4C7D102288 /* Fabric */,
+				DCA3282A2F3EA7A8870F093003FA15BA /* MSCollectionViewCalendarLayout */,
+				CAA1A08DFC3AE0936B6F052C9EA12AD8 /* MSDynamicsDrawerViewController */,
+				6AA2B15DCB9D8B4E1BBE4FA8145AD7B6 /* SDWebImage */,
+				A1183600D53F9CB861E9BC2DA35A5027 /* SupportKit */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		378AB00BBBF92C8A443D4C6851959700 /* Core */ = {
+		6769F035CEB9CDCFF2BE84ADC864FC31 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				04D19E971427D3B0F83E71F4BF43069C /* Pods-ETSMobile */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6AA2B15DCB9D8B4E1BBE4FA8145AD7B6 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				CB95BA65ACCE3F0D89B665AB47786EA3 /* Core */,
+				AC49648B422984C1CC0AA0FF9F9C0B71 /* Support Files */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				63D705B052925201216A92D0E7A0BCC5 /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				6769F035CEB9CDCFF2BE84ADC864FC31 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8E1400ACDE4E254B72263F06B35F0316 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				48137F5E134C2404DA3C051320126955 /* AMScrollingNavbar.xcconfig */,
+				76F3532681FCB35B41D14E9F1CD834B0 /* AMScrollingNavbar-Private.xcconfig */,
+				59F53F841C5AB62D7880A259ADB1F8C1 /* AMScrollingNavbar-dummy.m */,
+				EF45872C851B3A6E0AC00EC0AD180515 /* AMScrollingNavbar-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AMScrollingNavbar";
+			sourceTree = "<group>";
+		};
+		96F91601BA0EECB501B0E824BFA156C2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9DB80E83482CE5E287ECFAC06E50BA8B /* SupportKit.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		98EE21D0DEAB6F3001D11F059119AB5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1ADE52D2C3A366461C2275DBE2B2AFF7 /* Crashlytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C4451FFB27C25356583754E49AF7A40 /* Crashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				98EE21D0DEAB6F3001D11F059119AB5F /* Frameworks */,
+			);
+			path = Crashlytics;
+			sourceTree = "<group>";
+		};
+		A1183600D53F9CB861E9BC2DA35A5027 /* SupportKit */ = {
+			isa = PBXGroup;
+			children = (
+				E29D1EDF2BD833144B427C9F8A285E28 /* SKTConversation.h */,
+				0FD556B2394EAC9EA8DC0946D648CBC9 /* SKTMessage.h */,
+				91B176D9BC83EC639D523B249B14F27C /* SKTMessageAction.h */,
+				73CB430CCEF48444A69BCDE6879CCFE3 /* SKTSettings.h */,
+				4E54C495E62271EE42F3D036D26D9CC2 /* SKTUser.h */,
+				9757253D0B8CF5BAFE418D4779A72265 /* SupportKit.h */,
+				3BD68286CFA547B4D03B5D375914D3FB /* Frameworks */,
+				96F91601BA0EECB501B0E824BFA156C2 /* Resources */,
+			);
+			path = SupportKit;
+			sourceTree = "<group>";
+		};
+		A727BF7A98E5026FADAE08FE8D5095C4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3A9C1E9EDF77A8D94611A1C4409BD21 /* MSDynamicsDrawerViewController.xcconfig */,
+				055E4EF19DB8C1A51E2ED831DD9BA606 /* MSDynamicsDrawerViewController-Private.xcconfig */,
+				26C3D63DD2E81234F1991631A00542B8 /* MSDynamicsDrawerViewController-dummy.m */,
+				04F687CBBC739A1B0CF8FCC78A8207DE /* MSDynamicsDrawerViewController-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MSDynamicsDrawerViewController";
+			sourceTree = "<group>";
+		};
+		A9D588B11CEC768BFA8DB0A3F637DB38 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				91E313CDB0B29686E67FC8AF0F50E68B /* MSCollectionViewCalendarLayout.xcconfig */,
+				8304E9D33E96649D2D03A7E8922FBB23 /* MSCollectionViewCalendarLayout-Private.xcconfig */,
+				5C5FDC21535FA925E37421EC33096FE0 /* MSCollectionViewCalendarLayout-dummy.m */,
+				72A669BCB9A5DBF066912B7DC92A9504 /* MSCollectionViewCalendarLayout-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MSCollectionViewCalendarLayout";
+			sourceTree = "<group>";
+		};
+		AC49648B422984C1CC0AA0FF9F9C0B71 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D0F49E0BD1F582F030B457BCAE54C3B /* SDWebImage.xcconfig */,
+				C73ABD370A23628E2A310A3BCBC0A5A3 /* SDWebImage-Private.xcconfig */,
+				36868875BC2FD7CD9ACA53E772A68147 /* SDWebImage-dummy.m */,
+				64244856E0B58A3E046083E28F95C388 /* SDWebImage-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SDWebImage";
+			sourceTree = "<group>";
+		};
+		C4EA8D0D0DC1F47E284E43CE93089409 /* AMScrollingNavbar */ = {
+			isa = PBXGroup;
+			children = (
+				B9615B61FAA540B3F9B07E426F948249 /* AMScrollingNavbar.h */,
+				F2AD73D0C20F78A0ED375256826DDC32 /* UIViewController+ScrollingNavbar.h */,
+				557686869480B0393F1CD984D7437953 /* UIViewController+ScrollingNavbar.m */,
+				8E1400ACDE4E254B72263F06B35F0316 /* Support Files */,
+			);
+			path = AMScrollingNavbar;
+			sourceTree = "<group>";
+		};
+		CAA1A08DFC3AE0936B6F052C9EA12AD8 /* MSDynamicsDrawerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F2BD75A36414BFE501BC72BD89A7B46B /* MSDynamicsDrawerStyler.h */,
+				5012BF4D104E3F79EE57E768997CC12A /* MSDynamicsDrawerStyler.m */,
+				E9FBFDF6E1AD9FCCDFA94DD358911063 /* MSDynamicsDrawerViewController.h */,
+				718CB5504FE0A1D3ACF7F98367CAD195 /* MSDynamicsDrawerViewController.m */,
+				A727BF7A98E5026FADAE08FE8D5095C4 /* Support Files */,
+			);
+			path = MSDynamicsDrawerViewController;
+			sourceTree = "<group>";
+		};
+		CB95BA65ACCE3F0D89B665AB47786EA3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				76C518201A486FCF7036C9F9DDBD593D /* NSData+ImageContentType.h */,
@@ -484,262 +460,49 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
-		425411F37AEE079931710E3966223B9B /* Crashlytics */ = {
-			isa = PBXGroup;
-			children = (
-				68E6402B36F8F39857D84C16D4CE4C52 /* Frameworks */,
-			);
-			path = Crashlytics;
-			sourceTree = "<group>";
-		};
-		45465E02985ECEA561E9BF50F478C9AE /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				4D695E705EE91C91807A84FDE29F89FA /* Foundation.framework */,
-				6DD298F4EF2F68C4B172982286D20D49 /* ImageIO.framework */,
-				3910DE66F0AE53A724C860354453F9C9 /* QuartzCore.framework */,
-				5F9A4A12E2A1421C55F3B07EC82AE175 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		4D8D99F4B494E4456DBA54D26A00879E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				08DB1AEEEE0AC65EE57A1251629A3987 /* back.png */,
-				6B0849E0C215D290BDC0EE05125DA282 /* back@2x.png */,
-				0CE8A4A1B2AA5A072FFF58D6FA5B8C81 /* forward.png */,
-				8C13468A383F7C766E4E0976C5DE143B /* forward@2x.png */,
-				72C15AAFDDD04CBB9701E368D51A8B86 /* refresh.png */,
-				1AF57A0B006BB2BA25688F11798B1516 /* refresh@2x.png */,
-				C6B2E712F9E7F85E28D44E4709306232 /* stop.png */,
-				900E97D25F29744CD8A66EDF3F6C7678 /* stop@2x.png */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		50B827CA46D8F7DCD429BE580D07E22C /* TUSafariActivity */ = {
-			isa = PBXGroup;
-			children = (
-				78E363F84E058AE357AA0EDAA2EEB566 /* TUSafariActivity.h */,
-				477DFED5355D2A19F8C1D874513C0734 /* TUSafariActivity.m */,
-				2CA0B4A831857AD0F8ED1BBE04D7F8FB /* Resources */,
-				EA580BD2C5ED7FF38168D6923C13B0A0 /* Support Files */,
-			);
-			path = TUSafariActivity;
-			sourceTree = "<group>";
-		};
-		51CA6545904369515131E726B932A4A2 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				501BBDA091A14B11B8DC1C306AFD1896 /* AMScrollingNavbar.xcconfig */,
-				7799992DE1488C26FC529093DA64D055 /* AMScrollingNavbar-Private.xcconfig */,
-				CF524A3A8EE3DBFBFAAFB08235AF2A61 /* AMScrollingNavbar-dummy.m */,
-				C331B958093AD503702EC2206EF90E48 /* AMScrollingNavbar-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/AMScrollingNavbar";
-			sourceTree = "<group>";
-		};
-		6578752FEC337DE17F01395252EFA3E3 /* SupportKit */ = {
-			isa = PBXGroup;
-			children = (
-				93057AEA93B1224B91FBD2C80A23C09C /* SKTConversation.h */,
-				B6135EE7F46CFC129E4802887775DE00 /* SKTMessage.h */,
-				6D68A3B9DF84183B55C86A0DE4CF257D /* SKTMessageAction.h */,
-				51654112C24EE914F5B19AFDB3671DD7 /* SKTSettings.h */,
-				B8E67C1FF30D2C87F4C2D9B94BC0D91F /* SKTUser.h */,
-				A87BCEDBB62A7D2A1CD06A7303A6942F /* SupportKit.h */,
-				739C8B649207EAEBCE616CDE17BB1497 /* Frameworks */,
-				0F66B011AD363D9F5049CB3C7B7E9CA9 /* Resources */,
-			);
-			path = SupportKit;
-			sourceTree = "<group>";
-		};
-		6769F035CEB9CDCFF2BE84ADC864FC31 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				04D19E971427D3B0F83E71F4BF43069C /* Pods-ETSMobile */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		68E6402B36F8F39857D84C16D4CE4C52 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1C22F0194F9B6B21822630928D87E308 /* Crashlytics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		731B5F64E5D79A22020396BD07510D37 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E3F12E9B62DAABC3F443098D9589A616 /* SDWebImage.xcconfig */,
-				C73ABD370A23628E2A310A3BCBC0A5A3 /* SDWebImage-Private.xcconfig */,
-				36868875BC2FD7CD9ACA53E772A68147 /* SDWebImage-dummy.m */,
-				A89F2DDCF320E4E7CC648C15B654C87E /* SDWebImage-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SDWebImage";
-			sourceTree = "<group>";
-		};
-		739C8B649207EAEBCE616CDE17BB1497 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B58D15CAB889DBC3B72F02D779EA2A20 /* SupportKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		77267483BAE08EB33984878E6AFB2B86 /* SDWebImage */ = {
-			isa = PBXGroup;
-			children = (
-				378AB00BBBF92C8A443D4C6851959700 /* Core */,
-				731B5F64E5D79A22020396BD07510D37 /* Support Files */,
-			);
-			path = SDWebImage;
-			sourceTree = "<group>";
-		};
-		77F3C66AA7A99E2F90D2BEAC1A6B8E53 /* Fabric */ = {
-			isa = PBXGroup;
-			children = (
-				D882F6B664EE590EF36F6E50FFFC9BCF /* Base */,
-			);
-			path = Fabric;
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
-				3443DE4ABD2DCCB62F4FCB86178232F0 /* Pods */,
-				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
-				6769F035CEB9CDCFF2BE84ADC864FC31 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		87A9E7D6A402727745F6303FFE8D16BA /* AMScrollingNavbar */ = {
-			isa = PBXGroup;
-			children = (
-				205EE08C1128D39F0333F03A42E792F7 /* AMScrollingNavbar.h */,
-				EEA3AEFA42BCC4008B54F70008DDCC94 /* UIViewController+ScrollingNavbar.h */,
-				8CDBC718CB0F3A45D2C30B2406198586 /* UIViewController+ScrollingNavbar.m */,
-				51CA6545904369515131E726B932A4A2 /* Support Files */,
-			);
-			path = AMScrollingNavbar;
-			sourceTree = "<group>";
-		};
-		87FA41D660A009DD775511B18084D680 /* STKWebKitViewController */ = {
-			isa = PBXGroup;
-			children = (
-				106F3FB4453475433B33747760E5DEFD /* STKWebKitModalViewController.h */,
-				C246F771630D27844315C587D2B60198 /* STKWebKitModalViewController.m */,
-				F1B22A109226030C8ACE8E2F4FDA2C7E /* STKWebKitViewController.h */,
-				E5C6A7C2473231D2764981B4132645AB /* STKWebKitViewController.m */,
-				4D8D99F4B494E4456DBA54D26A00879E /* Resources */,
-				89B045292C84D9CAAB670C44F268A239 /* Support Files */,
-			);
-			path = STKWebKitViewController;
-			sourceTree = "<group>";
-		};
-		89B045292C84D9CAAB670C44F268A239 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8A9F3C89A7C03046A12D235871D2CB43 /* STKWebKitViewController.xcconfig */,
-				1823D6EE64011F61CA5BB169B426AFF9 /* STKWebKitViewController-Private.xcconfig */,
-				E3B045CCAAC279B92F65E7F6CBF8ADB9 /* STKWebKitViewController-dummy.m */,
-				2952610A23A039435596FA707B1D6C4F /* STKWebKitViewController-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/STKWebKitViewController";
-			sourceTree = "<group>";
-		};
-		95DD534682A10AD896ED32EE9E07E20A /* MSCollectionViewCalendarLayout */ = {
-			isa = PBXGroup;
-			children = (
-				D854EDB54CADF006A8F2DEB1F7D79833 /* MSCollectionViewCalendarLayout.h */,
-				D624CEA80EB29C9026DD0F0609C1C010 /* MSCollectionViewCalendarLayout.m */,
-				E707FE938B835BD0D3F46A1943C9BAD8 /* Support Files */,
-			);
-			path = MSCollectionViewCalendarLayout;
-			sourceTree = "<group>";
-		};
-		BF74FECDE65F3D77FC4BC44E148D1926 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EFE98429C566A71E4DB17F35835FBDC4 /* MSDynamicsDrawerViewController.xcconfig */,
-				2BF111C5C39165931D1FA243C76809D3 /* MSDynamicsDrawerViewController-Private.xcconfig */,
-				9630F4171066777359BEC66F6CA062F1 /* MSDynamicsDrawerViewController-dummy.m */,
-				33791A1B84BC4601D84FC0694EC66933 /* MSDynamicsDrawerViewController-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MSDynamicsDrawerViewController";
-			sourceTree = "<group>";
-		};
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F9B82514055D19AB45D98F525AD88BC1 /* TUSafariActivity.bundle */,
-				04B7C65471DF31341929734B32BEB7B7 /* libAMScrollingNavbar.a */,
-				49AE88572D658E9E98BC9BC3E4DC15FA /* libMSCollectionViewCalendarLayout.a */,
-				EA09EACCF899F972EB000C11A60CA173 /* libMSDynamicsDrawerViewController.a */,
-				87C815B2E39196F6E018E8507DD8D2F0 /* libPods-ETSMobile.a */,
+				ED27DA5728345CFCEA70DAA0D668316A /* libAMScrollingNavbar.a */,
+				FF4FB0BF3F1645D2128F68653FF07A4E /* libMSCollectionViewCalendarLayout.a */,
+				D65EFADF77C61CE4381497E287D08DF2 /* libMSDynamicsDrawerViewController.a */,
+				86923C424464A1D09D0CCBBFC1C5DF4C /* libPods-ETSMobile.a */,
 				A4E3C75131DB73B535BA7338F6201845 /* libSDWebImage.a */,
-				1B3F115D8943EBFD68B14FF2DFC32422 /* libSTKWebKitViewController.a */,
-				B99FD257E3984B895A80262D85173949 /* libTUSafariActivity.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D7F09C0B94D034756A632A9B9CF829A5 /* MSDynamicsDrawerViewController */ = {
+		CD982E6C1E2B7BE2CAF7E6442ABBEC29 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				DAE165EA0119A5D4DEFE5025D800B202 /* MSDynamicsDrawerStyler.h */,
-				043238D27CD0C0F3FB1EF60F9AFC6B36 /* MSDynamicsDrawerStyler.m */,
-				8580BE06409DF836DAF37D94937DC4CD /* MSDynamicsDrawerViewController.h */,
-				4AB3A4D7C9EB8D4831E04CA4DDE10229 /* MSDynamicsDrawerViewController.m */,
-				BF74FECDE65F3D77FC4BC44E148D1926 /* Support Files */,
+				1F8E9476ED04F42C4A300AC441C4BA61 /* Foundation.framework */,
+				6DD298F4EF2F68C4B172982286D20D49 /* ImageIO.framework */,
+				B8694438C05313DDFE76D9C851BDF05F /* QuartzCore.framework */,
 			);
-			path = MSDynamicsDrawerViewController;
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		D882F6B664EE590EF36F6E50FFFC9BCF /* Base */ = {
+		DCA3282A2F3EA7A8870F093003FA15BA /* MSCollectionViewCalendarLayout */ = {
 			isa = PBXGroup;
 			children = (
-				17A4FE719E736ABB6D716ACE3FDB9180 /* Frameworks */,
+				F42480A20498233717B34C745DA912F3 /* MSCollectionViewCalendarLayout.h */,
+				CF87442F5F4D7C0A10E8ED40F7C95A64 /* MSCollectionViewCalendarLayout.m */,
+				A9D588B11CEC768BFA8DB0A3F637DB38 /* Support Files */,
 			);
-			name = Base;
-			sourceTree = "<group>";
-		};
-		E707FE938B835BD0D3F46A1943C9BAD8 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8A2D24A912EE81984ABBED20A624E555 /* MSCollectionViewCalendarLayout.xcconfig */,
-				0DA06B3BB10FF0C073023B152EA2ED40 /* MSCollectionViewCalendarLayout-Private.xcconfig */,
-				C9148E66742FF2BD868E360CEA01B747 /* MSCollectionViewCalendarLayout-dummy.m */,
-				1917F8E4794A19C77F9F3CA084846A74 /* MSCollectionViewCalendarLayout-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MSCollectionViewCalendarLayout";
-			sourceTree = "<group>";
-		};
-		EA580BD2C5ED7FF38168D6923C13B0A0 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C61AD1861254292E5CF7CEEEAC28055E /* TUSafariActivity.xcconfig */,
-				5AC54F503BAFAE36F032D4A927FDA326 /* TUSafariActivity-Private.xcconfig */,
-				2F1B9802B73E4DA17207F8CD37A39FE5 /* TUSafariActivity-dummy.m */,
-				8944ADAB85E2071CF24A0D17DDB65F49 /* TUSafariActivity-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/TUSafariActivity";
+			path = MSCollectionViewCalendarLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		1AA1C2EF90EB6DA7EE3D3EFBFB5A2292 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4C5D90BF77625C50CA9ED395A58071 /* MSCollectionViewCalendarLayout.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70E692A35509AA009F46AAA3DCB430E9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -762,118 +525,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		762288C3E0EFF91479A15BD04EE6E745 /* Headers */ = {
+		A266325E5CDDEDDC712AF4A2041C974E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A495A3E5143EC1C2B9FC7B31B2B3CE1D /* MSDynamicsDrawerStyler.h in Headers */,
-				A424FE27BE99ED6DC8BC0EF8227BC638 /* MSDynamicsDrawerViewController.h in Headers */,
+				AEC197FEC49442DD446F95051E0F668A /* MSDynamicsDrawerStyler.h in Headers */,
+				8053FC72BB4AD086274BDCE8F7330823 /* MSDynamicsDrawerViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7A021C7594E363F83BC4F78EBA95F9BF /* Headers */ = {
+		D895F16165C0FDF966BB321EF66F690A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				779B513D27D81B6D3EA9558055FC9F8E /* AMScrollingNavbar.h in Headers */,
-				B0A940A7EDC52584C172A2B132E6905B /* UIViewController+ScrollingNavbar.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		901CCA365859B75E71C0767BC5E1EDBE /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E475C8D94A6C5C07FB212A8741666DB3 /* MSCollectionViewCalendarLayout.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D48A1F1AF0A492D170BDBAE85EC69977 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4902440FD5CAF8EBD7547540ACAD12A9 /* STKWebKitModalViewController.h in Headers */,
-				20900178031ADE3AE10D3A5B4ADEAD4C /* STKWebKitViewController.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E17381197F2F2A2BE6FE6CB2545EDC7E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A520EC6CD4D05B61422686C5D025E5DD /* TUSafariActivity.h in Headers */,
+				6B4665D2B624B900B8CB0DC3906612BB /* AMScrollingNavbar.h in Headers */,
+				079A38716FDB7B60361AF3DC18286F60 /* UIViewController+ScrollingNavbar.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1CBAE1D2F2A5C12C0997DEC34CD1DA08 /* TUSafariActivity-TUSafariActivity */ = {
+		1B3C526AEA1B046206936D08F298576A /* Pods-ETSMobile */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DC4459C6E7D097C196B4E8E8AD6DEC8D /* Build configuration list for PBXNativeTarget "TUSafariActivity-TUSafariActivity" */;
+			buildConfigurationList = 19425FC8709E5AC590CD0459BC34020F /* Build configuration list for PBXNativeTarget "Pods-ETSMobile" */;
 			buildPhases = (
-				A6E9F20D97D717A488CD34DB8F9036E0 /* Sources */,
-				36C58AFDD241229AB571D0A66B6D4FB4 /* Frameworks */,
-				CE3EA1FC7B8CD0173B37699E2B8562D4 /* Resources */,
+				F12A38FCF884F5520297ED2E09E27CCF /* Sources */,
+				1456E847DF589410DCF04D9A426D581F /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6E26446646E873FA4349A6D46B0CA6EB /* PBXTargetDependency */,
+				A1504C2DBFCAF1F911115E01F66BC97F /* PBXTargetDependency */,
+				A73561CA6A496E353EBD7BEEECDB0CC6 /* PBXTargetDependency */,
+				0AD43321B6A81F4EF041F013DBD7FC2D /* PBXTargetDependency */,
 			);
-			name = "TUSafariActivity-TUSafariActivity";
-			productName = "TUSafariActivity-TUSafariActivity";
-			productReference = F9B82514055D19AB45D98F525AD88BC1 /* TUSafariActivity.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		2A93CAC23E3586C8969478F60534A26E /* MSCollectionViewCalendarLayout */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1733A1C4BF54021E60ED7AE299D8FEC2 /* Build configuration list for PBXNativeTarget "MSCollectionViewCalendarLayout" */;
-			buildPhases = (
-				83162149FD9FB2C3E96D61C17F6BDFB2 /* Sources */,
-				148128752A6D969AC4528621224B497C /* Frameworks */,
-				901CCA365859B75E71C0767BC5E1EDBE /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MSCollectionViewCalendarLayout;
-			productName = MSCollectionViewCalendarLayout;
-			productReference = 49AE88572D658E9E98BC9BC3E4DC15FA /* libMSCollectionViewCalendarLayout.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		3CD5817966B101AF32B59B7FB7B2F8C1 /* MSDynamicsDrawerViewController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 95B56B0C7679EF5EB516DCAB92C5A646 /* Build configuration list for PBXNativeTarget "MSDynamicsDrawerViewController" */;
-			buildPhases = (
-				6B4773D50BE18C9E7ABC4AEAEB45102F /* Sources */,
-				8127D68E8ED614D22F09E4DCE7BC0EDE /* Frameworks */,
-				762288C3E0EFF91479A15BD04EE6E745 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MSDynamicsDrawerViewController;
-			productName = MSDynamicsDrawerViewController;
-			productReference = EA09EACCF899F972EB000C11A60CA173 /* libMSDynamicsDrawerViewController.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		46DB6C99BD4D932E4CD4C0888352D5DD /* STKWebKitViewController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8BA0EE66A36F7AF19DD41E8762CFDB81 /* Build configuration list for PBXNativeTarget "STKWebKitViewController" */;
-			buildPhases = (
-				98ED061E002D0C74E765A61D66FD5107 /* Sources */,
-				D5CCA8A803E14E39050704DDA0479A1F /* Frameworks */,
-				D48A1F1AF0A492D170BDBAE85EC69977 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = STKWebKitViewController;
-			productName = STKWebKitViewController;
-			productReference = 1B3F115D8943EBFD68B14FF2DFC32422 /* libSTKWebKitViewController.a */;
+			name = "Pods-ETSMobile";
+			productName = "Pods-ETSMobile";
+			productReference = 86923C424464A1D09D0CCBBFC1C5DF4C /* libPods-ETSMobile.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		5352D432641F0656C90741034E32F31E /* SDWebImage */ = {
@@ -893,31 +583,47 @@
 			productReference = A4E3C75131DB73B535BA7338F6201845 /* libSDWebImage.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		AB01AC1E73965EF7EE34F8FE343665F7 /* TUSafariActivity */ = {
+		5D397D0CFB0EC8F8DFCA88A1CA6B8946 /* MSDynamicsDrawerViewController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63606FD5D8D96F1CA0C3213D349D5B17 /* Build configuration list for PBXNativeTarget "TUSafariActivity" */;
+			buildConfigurationList = B83F011AC979B3DE33C22CEB51726086 /* Build configuration list for PBXNativeTarget "MSDynamicsDrawerViewController" */;
 			buildPhases = (
-				FFCB11E08EBA4CF3D7FBA4F4B491357A /* Sources */,
-				B8E4290A8EBB6D8C32DDF4FE7491BBBF /* Frameworks */,
-				E17381197F2F2A2BE6FE6CB2545EDC7E /* Headers */,
+				34CC310FF3A39FD54DDF4B3970637816 /* Sources */,
+				54FBC8CE63171EC73EFDB30585800A15 /* Frameworks */,
+				A266325E5CDDEDDC712AF4A2041C974E /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CBD5E67F3758DC0904E5EE89D330684B /* PBXTargetDependency */,
 			);
-			name = TUSafariActivity;
-			productName = TUSafariActivity;
-			productReference = B99FD257E3984B895A80262D85173949 /* libTUSafariActivity.a */;
+			name = MSDynamicsDrawerViewController;
+			productName = MSDynamicsDrawerViewController;
+			productReference = D65EFADF77C61CE4381497E287D08DF2 /* libMSDynamicsDrawerViewController.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		DA5581B68ABA7A3ED27041C353DB919B /* AMScrollingNavbar */ = {
+		81B31A16D0BE14750CEFF7FAEF596BB4 /* MSCollectionViewCalendarLayout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F5431285C9F1F3BA04E10774CDC938B /* Build configuration list for PBXNativeTarget "AMScrollingNavbar" */;
+			buildConfigurationList = A841E67CCB3F972EF62EDFE46D94360D /* Build configuration list for PBXNativeTarget "MSCollectionViewCalendarLayout" */;
 			buildPhases = (
-				CB1D9FFFCFDB1F4970B5C6E3921FDE68 /* Sources */,
-				835EF9D738E1733753ECB87F9946581C /* Frameworks */,
-				7A021C7594E363F83BC4F78EBA95F9BF /* Headers */,
+				B53CB595CE4798CC43293C3AD9190103 /* Sources */,
+				C2837F292A12BA6F75E3AADC69DBC799 /* Frameworks */,
+				1AA1C2EF90EB6DA7EE3D3EFBFB5A2292 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MSCollectionViewCalendarLayout;
+			productName = MSCollectionViewCalendarLayout;
+			productReference = FF4FB0BF3F1645D2128F68653FF07A4E /* libMSCollectionViewCalendarLayout.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		966D8B3079B16B66D5AFDAFD3314995D /* AMScrollingNavbar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB6F6E47F627B88E7513CF7DCC048032 /* Build configuration list for PBXNativeTarget "AMScrollingNavbar" */;
+			buildPhases = (
+				CFAF20322705ADF552957B1A73A27CF3 /* Sources */,
+				FF5DC7E8CD2EAD1C88CB6475B28ECDD7 /* Frameworks */,
+				D895F16165C0FDF966BB321EF66F690A /* Headers */,
 			);
 			buildRules = (
 			);
@@ -925,29 +631,7 @@
 			);
 			name = AMScrollingNavbar;
 			productName = AMScrollingNavbar;
-			productReference = 04B7C65471DF31341929734B32BEB7B7 /* libAMScrollingNavbar.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		EC836B33CDF445569E54EB062267CA2C /* Pods-ETSMobile */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 29F6F71B5B8ED6CBDBB544B331E899FC /* Build configuration list for PBXNativeTarget "Pods-ETSMobile" */;
-			buildPhases = (
-				4C79746D97120218518BA50A54E60872 /* Sources */,
-				FE7459548B223C8E621DB4D59FC50492 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				209985FD594B830AAA9CA5A23206DB67 /* PBXTargetDependency */,
-				296DB3F19D708D168744B3E0EA45D29F /* PBXTargetDependency */,
-				7032E2FA2886676ABD0F8A6814047819 /* PBXTargetDependency */,
-				6EA6D67949C54188742FE44CEE6DBD3A /* PBXTargetDependency */,
-				B4C5E00AA6608B64DC439A8040AA284D /* PBXTargetDependency */,
-				4E5BC5DF5A1841E0CB14BBBB36C4F193 /* PBXTargetDependency */,
-			);
-			name = "Pods-ETSMobile";
-			productName = "Pods-ETSMobile";
-			productReference = 87C815B2E39196F6E018E8507DD8D2F0 /* libPods-ETSMobile.a */;
+			productReference = ED27DA5728345CFCEA70DAA0D668316A /* libAMScrollingNavbar.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -971,108 +655,41 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DA5581B68ABA7A3ED27041C353DB919B /* AMScrollingNavbar */,
-				2A93CAC23E3586C8969478F60534A26E /* MSCollectionViewCalendarLayout */,
-				3CD5817966B101AF32B59B7FB7B2F8C1 /* MSDynamicsDrawerViewController */,
-				EC836B33CDF445569E54EB062267CA2C /* Pods-ETSMobile */,
+				966D8B3079B16B66D5AFDAFD3314995D /* AMScrollingNavbar */,
+				81B31A16D0BE14750CEFF7FAEF596BB4 /* MSCollectionViewCalendarLayout */,
+				5D397D0CFB0EC8F8DFCA88A1CA6B8946 /* MSDynamicsDrawerViewController */,
+				1B3C526AEA1B046206936D08F298576A /* Pods-ETSMobile */,
 				5352D432641F0656C90741034E32F31E /* SDWebImage */,
-				46DB6C99BD4D932E4CD4C0888352D5DD /* STKWebKitViewController */,
-				AB01AC1E73965EF7EE34F8FE343665F7 /* TUSafariActivity */,
-				1CBAE1D2F2A5C12C0997DEC34CD1DA08 /* TUSafariActivity-TUSafariActivity */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		CE3EA1FC7B8CD0173B37699E2B8562D4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5F55A260E7BE6B6D9D706ED1A7B6C3EB /* cs.lproj in Resources */,
-				5B226AE321F1481E9CE4E7C45521FC39 /* de.lproj in Resources */,
-				6C6F9D2ACF5BA753183CB71133558343 /* en.lproj in Resources */,
-				CC9A3BBA5E5A08F8AC0E336668F43467 /* es.lproj in Resources */,
-				6949F58AC8D3A616B14B2320185BEE23 /* eu.lproj in Resources */,
-				87E21073ED0BB4578EE1388EB54C9187 /* fi.lproj in Resources */,
-				E7DE07D4798D08611ADE1EF1A4047EBB /* fr.lproj in Resources */,
-				1D936598226DDE5B8AD9FF29DEAADCC9 /* it.lproj in Resources */,
-				97960449617CE1E817CD64C5A5BB5347 /* ja.lproj in Resources */,
-				C5B8654296CE5155598AC8EBA0ECC98A /* ko.lproj in Resources */,
-				3EAC3FC2559E7E7974E9E1E5C1CE1FE5 /* nl.lproj in Resources */,
-				C32705A6FF471E130AD9747DA6E666E6 /* no.lproj in Resources */,
-				C19B9324E6BAADA953F7CC5D1B902476 /* pl.lproj in Resources */,
-				4517FDB1EFD1AA7935156F45B31EE0C5 /* pt.lproj in Resources */,
-				A3CB732301F1FF93F429489A41AB29EC /* ru.lproj in Resources */,
-				186B8774D2A3487CE34587182E894A84 /* safari-7.png in Resources */,
-				9019E7B277D7B81603056B6222AFE103 /* safari-7@2x.png in Resources */,
-				C785C1665E7C61D86C2B000F05729FEF /* safari-7@3x.png in Resources */,
-				27F7DF084F86D1FA892C253F869E4DB0 /* safari-7~iPad.png in Resources */,
-				8819594680C6EC439F9F988CC8BC31C6 /* safari-7~iPad@2x.png in Resources */,
-				B4BFCF617407BFFDEED4DF0425FF1265 /* safari.png in Resources */,
-				31776600E1AF84911E105433370B75A3 /* safari@2x.png in Resources */,
-				B305A27EC919C81E6A226F1417DDEB5A /* safari@3x.png in Resources */,
-				E795D5CF2F8EE77627C7BFE4AD545E46 /* safari~iPad.png in Resources */,
-				17C6FD4E5531A209C70A256175E7DEA2 /* safari~iPad@2x.png in Resources */,
-				F09B1D17E2693D8CC36351A5B5AEC66B /* sk.lproj in Resources */,
-				9EBF6A835072B8C0FDB0F9BD05CB8FD5 /* sv.lproj in Resources */,
-				1426916AC588B5FE2BDA5DD9564906DE /* vi.lproj in Resources */,
-				86B8F575CDDE4A082BA338C4391E5F92 /* zh_CN.lproj in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		4C79746D97120218518BA50A54E60872 /* Sources */ = {
+		34CC310FF3A39FD54DDF4B3970637816 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60F9CC451FEFF92ADCC768799C0EDFC9 /* Pods-ETSMobile-dummy.m in Sources */,
+				3AA56F6B16C1804A2436ECD0B3E1EB9B /* MSDynamicsDrawerStyler.m in Sources */,
+				7EEAF9A3A4C651CE50D0C88C7D5A3D1E /* MSDynamicsDrawerViewController-dummy.m in Sources */,
+				93F66F5F59785DE35A1105B231BA2F86 /* MSDynamicsDrawerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6B4773D50BE18C9E7ABC4AEAEB45102F /* Sources */ = {
+		B53CB595CE4798CC43293C3AD9190103 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				570B30CE959CE2799C7DCF08B10367D2 /* MSDynamicsDrawerStyler.m in Sources */,
-				56EBDBBDD76E1547C7BECC8029AD67EB /* MSDynamicsDrawerViewController-dummy.m in Sources */,
-				9961258485F2D24F3E8DA554DDF384AD /* MSDynamicsDrawerViewController.m in Sources */,
+				226A22917C3DADD8875C6C3C2B669FA4 /* MSCollectionViewCalendarLayout-dummy.m in Sources */,
+				1BFF3A43266F174BEE8B69E0E9FF775A /* MSCollectionViewCalendarLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83162149FD9FB2C3E96D61C17F6BDFB2 /* Sources */ = {
+		CFAF20322705ADF552957B1A73A27CF3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D83F45559C228157451C39BF69D69EF /* MSCollectionViewCalendarLayout-dummy.m in Sources */,
-				93CD855CE7D02D5E4D5BFF990EB7AD39 /* MSCollectionViewCalendarLayout.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		98ED061E002D0C74E765A61D66FD5107 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B08554A0597395801CFF875A6220CC5 /* STKWebKitModalViewController.m in Sources */,
-				3F06862E017A7ACD357E9215D38975CA /* STKWebKitViewController-dummy.m in Sources */,
-				FF53A033C129764F07AF01203681622D /* STKWebKitViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A6E9F20D97D717A488CD34DB8F9036E0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB1D9FFFCFDB1F4970B5C6E3921FDE68 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A7E31453E0EC344BA0C1F1C63654C195 /* AMScrollingNavbar-dummy.m in Sources */,
-				34945D1FEF5070C73A22949F31AA93AB /* UIViewController+ScrollingNavbar.m in Sources */,
+				96C432C272C5A81B794B2A17103939DE /* AMScrollingNavbar-dummy.m in Sources */,
+				7F6E9914D72D5B0B00418758821E20E5 /* UIViewController+ScrollingNavbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1098,122 +715,63 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FFCB11E08EBA4CF3D7FBA4F4B491357A /* Sources */ = {
+		F12A38FCF884F5520297ED2E09E27CCF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DC97FBB131A1BB341BCC5E6ADE269A6 /* TUSafariActivity-dummy.m in Sources */,
-				E006465E24C7D37A06DD18D3A1A2E908 /* TUSafariActivity.m in Sources */,
+				E8D913C9BCB29B939BDE17130AA168BF /* Pods-ETSMobile-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		209985FD594B830AAA9CA5A23206DB67 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AMScrollingNavbar;
-			target = DA5581B68ABA7A3ED27041C353DB919B /* AMScrollingNavbar */;
-			targetProxy = 72632E15B43CA97B0FC9AA55E7D1D076 /* PBXContainerItemProxy */;
-		};
-		296DB3F19D708D168744B3E0EA45D29F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MSCollectionViewCalendarLayout;
-			target = 2A93CAC23E3586C8969478F60534A26E /* MSCollectionViewCalendarLayout */;
-			targetProxy = 456E77E017556B202432C4ACAECB2BCA /* PBXContainerItemProxy */;
-		};
-		4E5BC5DF5A1841E0CB14BBBB36C4F193 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TUSafariActivity;
-			target = AB01AC1E73965EF7EE34F8FE343665F7 /* TUSafariActivity */;
-			targetProxy = E2EDADB7B00533CEDB09607993A2B855 /* PBXContainerItemProxy */;
-		};
-		6EA6D67949C54188742FE44CEE6DBD3A /* PBXTargetDependency */ = {
+		0AD43321B6A81F4EF041F013DBD7FC2D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SDWebImage;
 			target = 5352D432641F0656C90741034E32F31E /* SDWebImage */;
-			targetProxy = 69C147E421E30B526B6837F6E36C8507 /* PBXContainerItemProxy */;
+			targetProxy = C8F12B94F4672D48E5130C1523C3D71D /* PBXContainerItemProxy */;
 		};
-		7032E2FA2886676ABD0F8A6814047819 /* PBXTargetDependency */ = {
+		6E26446646E873FA4349A6D46B0CA6EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AMScrollingNavbar;
+			target = 966D8B3079B16B66D5AFDAFD3314995D /* AMScrollingNavbar */;
+			targetProxy = E04398863432FEB531C952614AF57BB2 /* PBXContainerItemProxy */;
+		};
+		A1504C2DBFCAF1F911115E01F66BC97F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MSCollectionViewCalendarLayout;
+			target = 81B31A16D0BE14750CEFF7FAEF596BB4 /* MSCollectionViewCalendarLayout */;
+			targetProxy = E12754FDE9B4268D457CE0EE0D4C6D1D /* PBXContainerItemProxy */;
+		};
+		A73561CA6A496E353EBD7BEEECDB0CC6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MSDynamicsDrawerViewController;
-			target = 3CD5817966B101AF32B59B7FB7B2F8C1 /* MSDynamicsDrawerViewController */;
-			targetProxy = 1AC2B2789970951E7101FB1570999D56 /* PBXContainerItemProxy */;
-		};
-		B4C5E00AA6608B64DC439A8040AA284D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = STKWebKitViewController;
-			target = 46DB6C99BD4D932E4CD4C0888352D5DD /* STKWebKitViewController */;
-			targetProxy = E4A40131E0FE0BFCA639D583DEC6FC5C /* PBXContainerItemProxy */;
-		};
-		CBD5E67F3758DC0904E5EE89D330684B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "TUSafariActivity-TUSafariActivity";
-			target = 1CBAE1D2F2A5C12C0997DEC34CD1DA08 /* TUSafariActivity-TUSafariActivity */;
-			targetProxy = 5EF884511CF45F599CB332C308F27DBE /* PBXContainerItemProxy */;
+			target = 5D397D0CFB0EC8F8DFCA88A1CA6B8946 /* MSDynamicsDrawerViewController */;
+			targetProxy = 306961A7B31EFEF4404DF47D9993EB3C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0265EE300D28AA2442F5169E265BDE39 /* Release */ = {
+		0D3F9A7BB0DB694B06A50D26D4D46148 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0DA06B3BB10FF0C073023B152EA2ED40 /* MSCollectionViewCalendarLayout-Private.xcconfig */;
+			baseConfigurationReference = 8304E9D33E96649D2D03A7E8922FBB23 /* MSCollectionViewCalendarLayout-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		053E9FEA5BE7C34A830338AE0DA3CDE1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5AC54F503BAFAE36F032D4A927FDA326 /* TUSafariActivity-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = TUSafariActivity;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		069F65576B61101224EE6B13320C93F2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5AC54F503BAFAE36F032D4A927FDA326 /* TUSafariActivity-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = TUSafariActivity;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
-		2A3D7F0F4A42FF43A92D0E8A0DC9B0C6 /* Release */ = {
+		34ABDD28029D28D097DFC1DA56D25454 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BF111C5C39165931D1FA243C76809D3 /* MSDynamicsDrawerViewController-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		300A1440260CCF5EDBCAF99509E65807 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CEB8BB6FAD5BE92FB5730259EB2E0175 /* Pods-ETSMobile.debug.xcconfig */;
+			baseConfigurationReference = C69536F8EE42F7F237C7BCB33CE61073 /* Pods-ETSMobile.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1227,9 +785,9 @@
 			};
 			name = Debug;
 		};
-		4261F50A08319553031ABB4A27884488 /* Release */ = {
+		38CA09E74B11578A5588D932D176BE1C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7799992DE1488C26FC529093DA64D055 /* AMScrollingNavbar-Private.xcconfig */;
+			baseConfigurationReference = 76F3532681FCB35B41D14E9F1CD834B0 /* AMScrollingNavbar-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/AMScrollingNavbar/AMScrollingNavbar-prefix.pch";
@@ -1242,70 +800,6 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
-		};
-		4D29F67FDC028DB369B6B0DE5CE3DD55 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0DA06B3BB10FF0C073023B152EA2ED40 /* MSCollectionViewCalendarLayout-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		52E46D8D2EB14D09B63FAA4C9DB8A1DE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5AC54F503BAFAE36F032D4A927FDA326 /* TUSafariActivity-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TUSafariActivity/TUSafariActivity-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		5C06AF3483E643D54DB6FC461EBD22FF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1823D6EE64011F61CA5BB169B426AFF9 /* STKWebKitViewController-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/STKWebKitViewController/STKWebKitViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		6C3EF6808D3C43E44DDA31F1E9C1CC14 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BF111C5C39165931D1FA243C76809D3 /* MSDynamicsDrawerViewController-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
 		};
 		6E2EF2F9F32604F5DFCC9A401D70ABD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1362,12 +856,28 @@
 			};
 			name = Debug;
 		};
-		CD8143A1AFEA065288316B4A18069603 /* Release */ = {
+		B6DE2C09AACDA9C0A6A67A613D2421FC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5AC54F503BAFAE36F032D4A927FDA326 /* TUSafariActivity-Private.xcconfig */;
+			baseConfigurationReference = 055E4EF19DB8C1A51E2ED831DD9BA606 /* MSDynamicsDrawerViewController-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/TUSafariActivity/TUSafariActivity-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BA7DBE15823DA302F71873324B9A02AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 055E4EF19DB8C1A51E2ED831DD9BA606 /* MSDynamicsDrawerViewController-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MSDynamicsDrawerViewController/MSDynamicsDrawerViewController-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -1378,41 +888,9 @@
 			};
 			name = Release;
 		};
-		D3B7169A730F648E97E58C9EDFB437E9 /* Debug */ = {
+		DC442AD73A7DA3DEEFBDAEA658036066 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7799992DE1488C26FC529093DA64D055 /* AMScrollingNavbar-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AMScrollingNavbar/AMScrollingNavbar-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		D4487A69EBD5720413604D213E2DD256 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1823D6EE64011F61CA5BB169B426AFF9 /* STKWebKitViewController-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/STKWebKitViewController/STKWebKitViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		D8506073EAF0E7868A581647E479C414 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59AD76EA84AF034D023D333F0CCCE0FE /* Pods-ETSMobile.release.xcconfig */;
+			baseConfigurationReference = D4C49D1405CA45A18DE6316079E568E7 /* Pods-ETSMobile.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1425,6 +903,38 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
+		};
+		E0610A6F0FC1C4993DA661A45B718A8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8304E9D33E96649D2D03A7E8922FBB23 /* MSCollectionViewCalendarLayout-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MSCollectionViewCalendarLayout/MSCollectionViewCalendarLayout-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E746DDB52ED9FD79D700E6CF2FFBC86F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76F3532681FCB35B41D14E9F1CD834B0 /* AMScrollingNavbar-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AMScrollingNavbar/AMScrollingNavbar-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
 		};
 		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1479,11 +989,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1733A1C4BF54021E60ED7AE299D8FEC2 /* Build configuration list for PBXNativeTarget "MSCollectionViewCalendarLayout" */ = {
+		19425FC8709E5AC590CD0459BC34020F /* Build configuration list for PBXNativeTarget "Pods-ETSMobile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4D29F67FDC028DB369B6B0DE5CE3DD55 /* Debug */,
-				0265EE300D28AA2442F5169E265BDE39 /* Release */,
+				34ABDD28029D28D097DFC1DA56D25454 /* Debug */,
+				DC442AD73A7DA3DEEFBDAEA658036066 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1497,15 +1007,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29F6F71B5B8ED6CBDBB544B331E899FC /* Build configuration list for PBXNativeTarget "Pods-ETSMobile" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				300A1440260CCF5EDBCAF99509E65807 /* Debug */,
-				D8506073EAF0E7868A581647E479C414 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1515,47 +1016,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F5431285C9F1F3BA04E10774CDC938B /* Build configuration list for PBXNativeTarget "AMScrollingNavbar" */ = {
+		A841E67CCB3F972EF62EDFE46D94360D /* Build configuration list for PBXNativeTarget "MSCollectionViewCalendarLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D3B7169A730F648E97E58C9EDFB437E9 /* Debug */,
-				4261F50A08319553031ABB4A27884488 /* Release */,
+				0D3F9A7BB0DB694B06A50D26D4D46148 /* Debug */,
+				E0610A6F0FC1C4993DA661A45B718A8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63606FD5D8D96F1CA0C3213D349D5B17 /* Build configuration list for PBXNativeTarget "TUSafariActivity" */ = {
+		B83F011AC979B3DE33C22CEB51726086 /* Build configuration list for PBXNativeTarget "MSDynamicsDrawerViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				52E46D8D2EB14D09B63FAA4C9DB8A1DE /* Debug */,
-				CD8143A1AFEA065288316B4A18069603 /* Release */,
+				B6DE2C09AACDA9C0A6A67A613D2421FC /* Debug */,
+				BA7DBE15823DA302F71873324B9A02AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8BA0EE66A36F7AF19DD41E8762CFDB81 /* Build configuration list for PBXNativeTarget "STKWebKitViewController" */ = {
+		DB6F6E47F627B88E7513CF7DCC048032 /* Build configuration list for PBXNativeTarget "AMScrollingNavbar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D4487A69EBD5720413604D213E2DD256 /* Debug */,
-				5C06AF3483E643D54DB6FC461EBD22FF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		95B56B0C7679EF5EB516DCAB92C5A646 /* Build configuration list for PBXNativeTarget "MSDynamicsDrawerViewController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6C3EF6808D3C43E44DDA31F1E9C1CC14 /* Debug */,
-				2A3D7F0F4A42FF43A92D0E8A0DC9B0C6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DC4459C6E7D097C196B4E8E8AD6DEC8D /* Build configuration list for PBXNativeTarget "TUSafariActivity-TUSafariActivity" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				069F65576B61101224EE6B13320C93F2 /* Debug */,
-				053E9FEA5BE7C34A830338AE0DA3CDE1 /* Release */,
+				E746DDB52ED9FD79D700E6CF2FFBC86F /* Debug */,
+				38CA09E74B11578A5588D932D176BE1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

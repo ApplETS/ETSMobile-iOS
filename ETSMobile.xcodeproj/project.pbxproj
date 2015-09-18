@@ -109,6 +109,7 @@
 		26F46A99183ED03400232B5A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F46A98183ED03400232B5A /* AVFoundation.framework */; };
 		26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */; };
 		291BCD0F1BA339C50029EC8F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 291BCD0E1BA339C50029EC8F /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		296086E91BAB8367001755C6 /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 296086E81BAB8367001755C6 /* Keys.xcconfig */; settings = {ASSET_TAGS = (); }; };
 		9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */; };
 		9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */; };
 		9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC88726189ED56B002A3D04 /* MapKit.framework */; };
@@ -322,6 +323,7 @@
 		26F46A9A183ED0E200232B5A /* ETSRadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRadioViewController.h; sourceTree = "<group>"; };
 		26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRadioViewController.m; sourceTree = "<group>"; };
 		291BCD0E1BA339C50029EC8F /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		296086E81BAB8367001755C6 /* Keys.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
 		2DE67BBDCCED00037D3BB48E /* libPods-ETSMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ETSMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5799CF18EC7F2D00AD8838 /* ETSSecurityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityDetailViewController.h; sourceTree = "<group>"; };
 		9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSecurityDetailViewController.m; sourceTree = "<group>"; };
@@ -646,6 +648,7 @@
 		26DD929B17EA610D00469FA8 = {
 			isa = PBXGroup;
 			children = (
+				296086E81BAB8367001755C6 /* Keys.xcconfig */,
 				262C233B1AF7FD9E00D28B85 /* ETSMobile-Config.xcconfig */,
 				26DD92EB17EA615E00469FA8 /* Vendors */,
 				26DD92AF17EA610D00469FA8 /* ETSMobile */,
@@ -1013,6 +1016,7 @@
 				291BCD0F1BA339C50029EC8F /* Launch Screen.storyboard in Resources */,
 				26DD92CB17EA610D00469FA8 /* Images.xcassets in Resources */,
 				266F0B7118F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf in Resources */,
+				296086E91BAB8367001755C6 /* Keys.xcconfig in Resources */,
 				266F0B7318F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */,
 				26DD92BD17EA610D00469FA8 /* Main_iPhone.storyboard in Resources */,
 				264E86CA1884E7E7005F1820 /* NewsSources.plist in Resources */,

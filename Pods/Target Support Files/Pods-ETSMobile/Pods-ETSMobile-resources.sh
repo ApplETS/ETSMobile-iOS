@@ -58,28 +58,10 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "STKWebKitViewController/Pod/Assets/back.png"
-  install_resource "STKWebKitViewController/Pod/Assets/back@2x.png"
-  install_resource "STKWebKitViewController/Pod/Assets/forward.png"
-  install_resource "STKWebKitViewController/Pod/Assets/forward@2x.png"
-  install_resource "STKWebKitViewController/Pod/Assets/refresh.png"
-  install_resource "STKWebKitViewController/Pod/Assets/refresh@2x.png"
-  install_resource "STKWebKitViewController/Pod/Assets/stop.png"
-  install_resource "STKWebKitViewController/Pod/Assets/stop@2x.png"
   install_resource "SupportKit/SupportKit.bundle"
-  install_resource "${BUILT_PRODUCTS_DIR}/TUSafariActivity.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "STKWebKitViewController/Pod/Assets/back.png"
-  install_resource "STKWebKitViewController/Pod/Assets/back@2x.png"
-  install_resource "STKWebKitViewController/Pod/Assets/forward.png"
-  install_resource "STKWebKitViewController/Pod/Assets/forward@2x.png"
-  install_resource "STKWebKitViewController/Pod/Assets/refresh.png"
-  install_resource "STKWebKitViewController/Pod/Assets/refresh@2x.png"
-  install_resource "STKWebKitViewController/Pod/Assets/stop.png"
-  install_resource "STKWebKitViewController/Pod/Assets/stop@2x.png"
   install_resource "SupportKit/SupportKit.bundle"
-  install_resource "${BUILT_PRODUCTS_DIR}/TUSafariActivity.bundle"
 fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

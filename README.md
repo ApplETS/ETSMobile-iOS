@@ -22,6 +22,7 @@ Parmi les fonctionnalités offertes :
 3. Ouvrez le terminal
 4. git clone git@github.com:ApplETS/ETSMobile-iOS.git
 5. cd ETSMobile-iOS/
-6. git submodule init
-7. git submodule update
+6. Assurez-vous d'avoir [Cocoapods] d'installé.(https://guides.cocoapods.org/using/getting-started.html)(gestionnaire de librairies pour iOS)
+7. pod install
+8. Ouvrez par la suite le fichier généré par Cocoapods nommé ETSMobile.xcworkspace
 8. Vous pouvez ensuite vous créer une nouvelle branche et compiler le projet!
