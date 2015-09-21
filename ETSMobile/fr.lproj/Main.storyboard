@@ -702,6 +702,19 @@
             </objects>
             <point key="canvasLocation" x="-1438" y="4719"/>
         </scene>
+        <!--Split View Controller-->
+        <scene sceneID="TBV-1E-zMS">
+            <objects>
+                <splitViewController storyboardIdentifier="CoursesViewController" id="xLK-Cj-irx" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="gqG-Lg-Gon" kind="relationship" relationship="masterViewController" id="kLN-yh-chk"/>
+                        <segue destination="yex-wP-cWO" kind="relationship" relationship="detailViewController" id="zoo-Qv-CKI"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FWe-ok-3SP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2285" y="5108"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="AfG-0H-TxJ">
             <objects>
@@ -764,20 +777,7 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BmV-oc-1bn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2271" y="6655"/>
-        </scene>
-        <!--Split View Controller-->
-        <scene sceneID="n5y-uN-YOz">
-            <objects>
-                <splitViewController storyboardIdentifier="CoursesViewController" id="ykf-DZ-ijg" sceneMemberID="viewController">
-                    <connections>
-                        <segue destination="gqG-Lg-Gon" kind="relationship" relationship="masterViewController" id="pv3-hQ-5Pm"/>
-                        <segue destination="yex-wP-cWO" kind="relationship" relationship="detailViewController" id="iQl-a7-9O4"/>
-                    </connections>
-                </splitViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ofg-fa-LIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2262" y="5047"/>
+            <point key="canvasLocation" x="-2285" y="6711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vFD-Vn-6FO">
@@ -2497,10 +2497,10 @@ http://www.clubapplets.ca</string>
         <image name="previous" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="DZg-Ea-Jjq"/>
+        <segue reference="OC4-PW-vfK"/>
+        <segue reference="7AD-97-YvP"/>
         <segue reference="FhA-3B-LhA"/>
-        <segue reference="lOy-zL-CqT"/>
-        <segue reference="nOM-IS-xlO"/>
-        <segue reference="aLx-hw-zzG"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
