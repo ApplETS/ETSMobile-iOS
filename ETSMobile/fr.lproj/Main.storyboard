@@ -702,10 +702,10 @@
             </objects>
             <point key="canvasLocation" x="-1438" y="4719"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Course Split View-->
         <scene sceneID="TBV-1E-zMS">
             <objects>
-                <splitViewController storyboardIdentifier="CoursesViewController" id="xLK-Cj-irx" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="CoursesViewController" id="xLK-Cj-irx" customClass="ETSCourseSplitView" sceneMemberID="viewController">
                     <connections>
                         <segue destination="gqG-Lg-Gon" kind="relationship" relationship="masterViewController" id="kLN-yh-chk"/>
                         <segue destination="yex-wP-cWO" kind="relationship" relationship="detailViewController" id="zoo-Qv-CKI"/>
@@ -2497,10 +2497,10 @@ http://www.clubapplets.ca</string>
         <image name="previous" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DZg-Ea-Jjq"/>
+        <segue reference="nOM-IS-xlO"/>
         <segue reference="OC4-PW-vfK"/>
         <segue reference="7AD-97-YvP"/>
-        <segue reference="FhA-3B-LhA"/>
+        <segue reference="zoo-Qv-CKI"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
