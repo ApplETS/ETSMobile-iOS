@@ -49,9 +49,21 @@
     self.synchronization.delegate = self;
 
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
+        [self showAuthentificationForm];
+    }
+}
+
+-(void) showAuthentificationForm {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
         ac.delegate = self;
         [self.navigationController pushViewController:ac animated:NO];
+    } else {
+        ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+        authenticationController.delegate = self;
+        authenticationController.modalPresentationStyle = UIModalPresentationFormSheet;
+        authenticationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self.navigationController presentViewController:authenticationController animated:NO completion:nil];
     }
 }
 
