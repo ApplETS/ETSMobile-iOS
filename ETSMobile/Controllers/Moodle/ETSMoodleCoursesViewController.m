@@ -40,26 +40,31 @@ NSString * const kUnknownSession = @"000000";
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
     
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-            authenticationController.delegate = self;
-            [self.navigationController pushViewController:authenticationController animated:NO];
-        } else {
-            ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-            authenticationController.delegate = self;
-            authenticationController.modalPresentationStyle = UIModalPresentationFormSheet;
-            authenticationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-            [self.navigationController presentViewController:authenticationController animated:NO completion:nil];
-        }
+        [self showAuthentificationForm];
     } else {
         [self requestTokenAndUserID];
+    }
+}
+
+-(void) showAuthentificationForm {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+        ac.delegate = self;
+        [self.navigationController pushViewController:ac animated:NO];
+    } else {
+        ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+        authenticationController.delegate = self;
+        authenticationController.modalPresentationStyle = UIModalPresentationFormSheet;
+        authenticationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self.navigationController presentViewController:authenticationController animated:NO completion:nil];
     }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (!self.token && ![[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
+    
+    if (!self.token && ![self.presentedViewController isKindOfClass:[ETSAuthenticationViewController class]]) {
         [self requestTokenAndUserID];
     }
 }

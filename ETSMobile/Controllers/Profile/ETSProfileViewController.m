@@ -81,21 +81,24 @@
     self.title = @"Profil";
 
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-            ac.delegate = self;
-            [self.navigationController pushViewController:ac animated:NO];
-        } else {
-            UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-            ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
-            authenticationController.delegate = self;
-            navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-            navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-            [self.navigationController presentViewController:navigationController animated:NO completion:nil];
-        }
+        [self showAuthentificationForm];
     }
 
     self.isCleaning = NO;
+}
+
+-(void) showAuthentificationForm {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+        ac.delegate = self;
+        [self.navigationController pushViewController:ac animated:NO];
+    } else {
+        ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+        authenticationController.delegate = self;
+        authenticationController.modalPresentationStyle = UIModalPresentationFormSheet;
+        authenticationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self.navigationController presentViewController:authenticationController animated:NO completion:nil];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -416,20 +419,9 @@
     self.synchronizationProgram.request = nil;
     self.synchronization.request = nil;
     
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-        ac.delegate = self;
-        [self.navigationController pushViewController:ac animated:YES];
-    } else {
-        [self.tableView reloadData];
-        self.navigationItem.rightBarButtonItem.title = @"Connexion";
-        UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
-        ETSAuthenticationViewController *authenticationController = (ETSAuthenticationViewController *)navigationController.topViewController;
-        authenticationController.delegate = self;
-        navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
-        navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [self.navigationController presentViewController:navigationController animated:YES completion:nil];
-    }
+    [self.tableView reloadData];
+    
+    [self showAuthentificationForm];
 }
 
 @end

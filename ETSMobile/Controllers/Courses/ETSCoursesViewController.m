@@ -49,9 +49,21 @@
     self.synchronization.delegate = self;
 
     if (![ETSAuthenticationViewController passwordInKeychain] || ![ETSAuthenticationViewController usernameInKeychain]) {
+        [self showAuthentificationForm];
+    }
+}
+
+-(void) showAuthentificationForm {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         ETSAuthenticationViewController *ac = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
         ac.delegate = self;
         [self.navigationController pushViewController:ac animated:NO];
+    } else {
+        ETSAuthenticationViewController *authenticationController = [self.storyboard instantiateViewControllerWithIdentifier:kStoryboardAuthenticationViewController];
+        authenticationController.delegate = self;
+        authenticationController.modalPresentationStyle = UIModalPresentationFormSheet;
+        authenticationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        [self.navigationController presentViewController:authenticationController animated:NO completion:nil];
     }
 }
 
@@ -155,7 +167,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    ETSCourseDetailViewController *vc = [segue destinationViewController];
+    UINavigationController *navCont = [segue destinationViewController];
+    ETSCourseDetailViewController *vc = [[navCont viewControllers] lastObject];
+    
+    if (vc == nil) return;
     
     // Always get a fresh fetchedResultsController before changing context.
     self.fetchedResultsController = nil;
@@ -163,7 +178,7 @@
     
     vc.course = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
     vc.managedObjectContext = self.managedObjectContext;
-    self.lastSelectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
+    self.lastSelectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
 }
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject

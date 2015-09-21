@@ -102,6 +102,7 @@
 		26A7E1AD1ACC42B300B83C5F /* MSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7E1AC1ACC42B300B83C5F /* MSEventCell.m */; };
 		26D00E311ACE3BB90062BF6F /* SecuritySources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26D00E301ACE3BB90062BF6F /* SecuritySources.plist */; };
 		D4EEFDACFB7EACE2E48997F8 /* libPods-ETSMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5DC930BC66734E6D25C2AEF /* libPods-ETSMobile.a */; };
+		E999AB511BB0820A00762D1E /* ETSCourseSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = E999AB501BB0820A00762D1E /* ETSCourseSplitView.m */; settings = {ASSET_TAGS = (); }; };
 		E9EE856B1B99EFEE0074FAB3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE856A1B99EFEE0074FAB3 /* CoreGraphics.framework */; };
 		E9EE856C1B99EFF30074FAB3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264187291AB77B9D0027561B /* CoreTelephony.framework */; };
 		E9EE856E1B99EFFC0074FAB3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE856D1B99EFFC0074FAB3 /* CoreText.framework */; };
@@ -303,6 +304,8 @@
 		26B1E7D51AF93A9E00D10273 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		26B1E7D61AF93A9E00D10273 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = fr; path = fr.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26D00E301ACE3BB90062BF6F /* SecuritySources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SecuritySources.plist; path = "Supporting Files/SecuritySources.plist"; sourceTree = "<group>"; };
+		E999AB4F1BB0820A00762D1E /* ETSCourseSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETSCourseSplitView.h; path = Controllers/Courses/ETSCourseSplitView.h; sourceTree = "<group>"; };
+		E999AB501BB0820A00762D1E /* ETSCourseSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETSCourseSplitView.m; path = Controllers/Courses/ETSCourseSplitView.m; sourceTree = "<group>"; };
 		E9EE856A1B99EFEE0074FAB3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E9EE856D1B99EFFC0074FAB3 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		E9EE856F1B99F0030074FAB3 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -774,6 +777,8 @@
 				265008CB1AD056170033FB64 /* ETSCourseDetailViewController.m */,
 				265008CC1AD056170033FB64 /* ETSCoursesViewController.h */,
 				265008CD1AD056170033FB64 /* ETSCoursesViewController.m */,
+				E999AB4F1BB0820A00762D1E /* ETSCourseSplitView.h */,
+				E999AB501BB0820A00762D1E /* ETSCourseSplitView.m */,
 			);
 			name = Courses;
 			sourceTree = "<group>";
@@ -1099,6 +1104,7 @@
 				264187371AB77E770027561B /* ETSEvaluation.m in Sources */,
 				265008CE1AD056170033FB64 /* ETSCourseDetailViewController.m in Sources */,
 				260245281ACB4F25001B57C3 /* MSDayColumnHeader.m in Sources */,
+				E999AB511BB0820A00762D1E /* ETSCourseSplitView.m in Sources */,
 				2602452C1ACB4F25001B57C3 /* MSTimeRowHeader.m in Sources */,
 				260245021ACA524B001B57C3 /* ETSCommentCell.m in Sources */,
 				260245471ACB904F001B57C3 /* ETSNewsEmptyCell.m in Sources */,
