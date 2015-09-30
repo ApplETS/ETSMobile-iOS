@@ -1,0 +1,32 @@
+PODS:
+  - AMScrollingNavbar (1.5.1)
+  - Crashlytics (3.3.0)
+  - Fabric (1.5.0):
+    - Fabric/Base (= 1.5.0)
+  - Fabric/Base (1.5.0)
+  - MSCollectionViewCalendarLayout (0.1.5)
+  - MSDynamicsDrawerViewController (1.5.1)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - SupportKit (2.10.0)
+
+DEPENDENCIES:
+  - AMScrollingNavbar
+  - Crashlytics
+  - Fabric
+  - MSCollectionViewCalendarLayout
+  - MSDynamicsDrawerViewController
+  - SDWebImage (~> 3.7)
+  - SupportKit
+
+SPEC CHECKSUMS:
+  AMScrollingNavbar: 767ed2db60d927a809bddff5d01b739b7020b12b
+  Crashlytics: 6524671d48a4c3f4100b8c56ee8dd7e34aac820a
+  Fabric: 374a4a0bbefa219ed201cbc84f2f42e4029302a6
+  MSCollectionViewCalendarLayout: 9c52894930d6b712951f18873618fc32c00cd4fa
+  MSDynamicsDrawerViewController: 2874df90f5e9453dc7d4e32f8038b50615d4baa7
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  SupportKit: 23ce231929d1a136b3fbdc6f185a0d1fbfa44f68
+
+COCOAPODS: 0.38.2
