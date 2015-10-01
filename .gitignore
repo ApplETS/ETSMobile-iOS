@@ -16,4 +16,6 @@ profile
 *.moved-aside
 DerivedData
 .idea/
-Keys.xcconfig
+Keys*
+# Cocoapods
+Pods/
