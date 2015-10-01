@@ -31,7 +31,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     if (self.course && self.course.acronym.length > 0) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
         synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];
@@ -195,13 +194,26 @@
     self.course.std         = [self.formatter numberFromString:results[@"ecartTypeClasse"]];
     self.course.median      = [self.formatter numberFromString:results[@"medianeClasse"]];
     self.course.percentile  = [self.formatter numberFromString:results[@"rangCentileClasse"]];
-    [self.course.managedObjectContext save:nil];
+    // NSManagedObjectContext can be nil (Apple Documentation).
+    // Need to check for that before using the object.
+    if (self.course.managedObjectContext != nil) {
+        NSError *error;
+        [self.course.managedObjectContext save:&error];
+        if (error != nil) {
+            NSLog(@"Unresolved error: %@", error);
+        }
+    }
 }
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     ETSEvaluation *evaluation = (ETSEvaluation *)managedObject;
-    evaluation.course = (ETSCourse *)[evaluation.managedObjectContext objectWithID:[self.course objectID]];
+    NSError *error;
+//    evaluation.course = (ETSCourse *)[evaluation.managedObjectContext objectWithID:[self.course objectID]];
+    evaluation.course = (ETSCourse *)[evaluation.managedObjectContext existingObjectWithID:[self.course objectID] error:&error];
+    if (error != nil) {
+        NSLog(@"Unresolved error: %@", error);
+    }
     evaluation.ignored = [object[@"ignoreDuCalcul"] isEqualToString:@"Non"] ? @NO : @YES;
 }
 

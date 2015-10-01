@@ -244,9 +244,8 @@
         self.tableView.tableHeaderView.hidden = YES;
         return nil;
     }
+    NSArray *days = [[[tables objectAtIndex:0] valueForKey:@"tbody"] valueForKey:@"tr"];
     
-    NSArray *days = (tables[0])[@"tbody"][@"tr"];
-
     NSInteger i = 0;
     for (NSDictionary * day in days) {
         if (i++ == 0) continue;
@@ -257,13 +256,12 @@
         
         NSMutableDictionary *entry = [NSMutableDictionary dictionary];
         NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[self.dateFormatter dateFromString:date]];
-        
-        entry[@"port"] = day[@"td"][0];
-        entry[@"date"] = date;
-        entry[@"upload"] = day[@"td"][2][@"content"];
-        entry[@"download"] = day[@"td"][3][@"content"];
-        entry[@"month"] = [@([components month]) stringValue];
-        entry[@"id"] = [NSString stringWithFormat:@"%@-%@", day[@"td"][0], date];
+        [entry setValue:[[day valueForKey:@"td"]objectAtIndex:0] forKey:@"port"];
+        [entry setValue:date forKey:@"date"];
+        [entry setValue:[[[day valueForKey:@"td"]objectAtIndex:2]valueForKey:@"content" ] forKey:@"upload"];
+        [entry setValue:[[[day valueForKey:@"td"]objectAtIndex:3]valueForKey:@"content" ] forKey:@"download"];
+        [entry setValue:[@([components month]) stringValue] forKey:@"month"];
+        [entry setValue:[NSString stringWithFormat:@"%@-%@", [[day valueForKey:@"td"]objectAtIndex:0], date] forKey:@"id"];
         [entries addObject:entry];
     }
     

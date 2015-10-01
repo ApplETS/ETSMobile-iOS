@@ -20,6 +20,7 @@
 @interface ETSCoursesViewController ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSIndexPath *lastSelectedIndexPath;
+@property (strong, nonatomic) NSMutableDictionary *courseResults; // Temporary results (on 100%) are saved here.
 @end
 
 @implementation ETSCoursesViewController
@@ -29,7 +30,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    if (self.courseResults == nil) {
+        self.courseResults = [[NSMutableDictionary alloc] initWithCapacity:4];
+    }
     self.title =  NSLocalizedString(@"Notes", nil);
     
     self.cellIdentifier = @"CourseIdentifier";
@@ -95,9 +99,16 @@
     if ([course.grade length] > 0) {
         courseCell.gradeLabel.text = course.grade;
     }
-    else if ([course.resultOn100 floatValue] > 0 && [[course totalEvaluationWeighting] floatValue]) {
+    // If we comeback from a course detail view, get the result on 100%. Save it in the courseResults dictionnary
+    // and print it in the cell.
+    else if (([course.resultOn100 floatValue] > 0 && [[course totalEvaluationWeighting] floatValue])
+             || [self.courseResults objectForKey:(NSString *) course.acronym] != nil) {
         NSNumber *percent = @([course.resultOn100 floatValue]/[[course totalEvaluationWeighting] floatValue]*100);
-        courseCell.gradeLabel.text = [NSString stringWithFormat:@"%lu %%", (long)[percent integerValue]];
+        if ([percent integerValue] > 0) {
+            [self.courseResults setValue:(NSNumber *)percent forKey:(NSString *) course.acronym];
+        }
+        courseCell.gradeLabel.text = [NSString stringWithFormat:@"%lu %%",
+                                      (long)[[self.courseResults valueForKey:(NSString *)course.acronym] integerValue]];
     } else {
         courseCell.gradeLabel.text = @"—";
     }
@@ -144,6 +155,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     ETSCourseDetailViewController *vc = [segue destinationViewController];
+    
+    // Always get a fresh fetchedResultsController before changing context.
+    self.fetchedResultsController = nil;
+    self.fetchedResultsController = [self fetchedResultsController];
+    
     vc.course = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
     vc.managedObjectContext = self.managedObjectContext;
     self.lastSelectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
