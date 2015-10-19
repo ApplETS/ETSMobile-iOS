@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ETS-logo-blanc" translatesAutoresizingMaskIntoConstraints="NO" id="M4w-F5-6rK">
+                    <rect key="frame" x="139" y="181" width="203" height="118"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="203" id="HxO-f9-l3Y"/>
+                        <constraint firstAttribute="height" constant="118" id="deS-bf-0bN"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" red="0.71764705882352942" green="0.062745098039215685" blue="0.12941176470588237" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="M4w-F5-6rK" secondAttribute="centerY" id="Wrk-fE-Vf9"/>
+                <constraint firstAttribute="centerX" secondItem="M4w-F5-6rK" secondAttribute="centerX" id="Z1h-yy-ajD"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="404" y="445"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ETS-logo-blanc" width="500" height="291"/>
+    </resources>
+</document>

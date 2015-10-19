@@ -19,7 +19,7 @@
 
 @implementation ETSNewsViewController
 
-@synthesize fetchedResultsController = _fetchedResultsController;
+@synthesize fetchedResultsController = _fetchedResultsController;   
 
 - (void)updateDefaultNewsSource
 {
@@ -80,6 +80,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+
     
     #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"NEWS_VIEWCONTROLLER"];
