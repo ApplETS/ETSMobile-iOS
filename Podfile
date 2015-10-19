@@ -8,7 +8,8 @@ target 'ETSMobile' do
     pod 'MSDynamicsDrawerViewController'
     pod 'MSCollectionViewCalendarLayout'
     pod 'SDWebImage', '~>3.7'
-    pod 'SupportKit'
+    pod 'SupportKit', '2.10.0'
+    pod 'DZNEmptyDataSet'
 end
 
 target 'ETSMobileTests' do

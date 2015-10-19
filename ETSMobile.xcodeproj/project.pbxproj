@@ -108,9 +108,9 @@
 		26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F393221829984F00995E16 /* ETSSessionHeader.m */; };
 		26F46A99183ED03400232B5A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F46A98183ED03400232B5A /* AVFoundation.framework */; };
 		26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */; };
-		291BCD0F1BA339C50029EC8F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 291BCD0E1BA339C50029EC8F /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
-		2939AE271BBCFBC500B08631 /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2939AE261BBCFBC500B08631 /* Keys.xcconfig */; settings = {ASSET_TAGS = (); }; };
-		29CFAC4D1BBD09590027CC2E /* ETS-logo-blanc.png in Resources */ = {isa = PBXBuildFile; fileRef = 29CFAC4C1BBD09590027CC2E /* ETS-logo-blanc.png */; settings = {ASSET_TAGS = (); }; };
+		2939AE271BBCFBC500B08631 /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2939AE261BBCFBC500B08631 /* Keys.xcconfig */; };
+		296B68421BD52C11003A8E62 /* Launch_Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296B68411BD52C11003A8E62 /* Launch_Screen.xib */; };
+		29CFAC4D1BBD09590027CC2E /* ETS-logo-blanc.png in Resources */ = {isa = PBXBuildFile; fileRef = 29CFAC4C1BBD09590027CC2E /* ETS-logo-blanc.png */; };
 		9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */; };
 		9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */; };
 		9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC88726189ED56B002A3D04 /* MapKit.framework */; };
@@ -323,8 +323,8 @@
 		26F46A98183ED03400232B5A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		26F46A9A183ED0E200232B5A /* ETSRadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRadioViewController.h; sourceTree = "<group>"; };
 		26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRadioViewController.m; sourceTree = "<group>"; };
-		291BCD0E1BA339C50029EC8F /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2939AE261BBCFBC500B08631 /* Keys.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
+		296B68411BD52C11003A8E62 /* Launch_Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch_Screen.xib; sourceTree = "<group>"; };
 		29CFAC4C1BBD09590027CC2E /* ETS-logo-blanc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ETS-logo-blanc.png"; path = "Images.xcassets/ETS-logo-blanc.imageset/ETS-logo-blanc.png"; sourceTree = "<group>"; };
 		2DE67BBDCCED00037D3BB48E /* libPods-ETSMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ETSMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5799CF18EC7F2D00AD8838 /* ETSSecurityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityDetailViewController.h; sourceTree = "<group>"; };
@@ -704,6 +704,7 @@
 		26DD92AF17EA610D00469FA8 /* ETSMobile */ = {
 			isa = PBXGroup;
 			children = (
+				291803881BC33F9200FD84CD /* Images */,
 				26F3CD3E184FCF5100536ADB /* ETSMobile.entitlements */,
 				26DD92E817EA612800469FA8 /* Models */,
 				26DD92E917EA613400469FA8 /* Controllers */,
@@ -713,12 +714,11 @@
 				26DD92B817EA610D00469FA8 /* ETSAppDelegate.h */,
 				26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */,
 				26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */,
-				291BCD0E1BA339C50029EC8F /* Launch Screen.storyboard */,
-				29CFAC4C1BBD09590027CC2E /* ETS-logo-blanc.png */,
 				26BB372B18F59580002CE5DD /* Main_iPad.storyboard */,
 				26DD92CA17EA610D00469FA8 /* Images.xcassets */,
 				26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */,
 				26DD92B017EA610D00469FA8 /* Supporting Files */,
+				296B68411BD52C11003A8E62 /* Launch_Screen.xib */,
 			);
 			path = ETSMobile;
 			sourceTree = "<group>";
@@ -887,6 +887,14 @@
 			name = Radio;
 			sourceTree = "<group>";
 		};
+		291803881BC33F9200FD84CD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				29CFAC4C1BBD09590027CC2E /* ETS-logo-blanc.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		9C5071E6189AF5D8000CB45E /* Security */ = {
 			isa = PBXGroup;
 			children = (
@@ -1006,6 +1014,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296B68421BD52C11003A8E62 /* Launch_Screen.xib in Resources */,
 				266F0B6E18F4EF22000F53C1 /* INCENDIE_EVACUATION_URGENCE.pdf in Resources */,
 				26085B3D1829D84300FE35AB /* ETSAPIURL.plist in Resources */,
 				266F0B6C18F4EF22000F53C1 /* APPEL_A_LA_BOMBE_2009-04-01.pdf in Resources */,
@@ -1017,7 +1026,6 @@
 				29CFAC4D1BBD09590027CC2E /* ETS-logo-blanc.png in Resources */,
 				266F0B7018F4EF22000F53C1 /* PANNE_D_ASCENSEUR_2009-04-01.pdf in Resources */,
 				26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */,
-				291BCD0F1BA339C50029EC8F /* Launch Screen.storyboard in Resources */,
 				26DD92CB17EA610D00469FA8 /* Images.xcassets in Resources */,
 				266F0B7118F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf in Resources */,
 				2939AE271BBCFBC500B08631 /* Keys.xcconfig in Resources */,
@@ -1241,6 +1249,31 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AMScrollingNavbar\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics/Crashlytics\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Fabric/Fabric\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MSCollectionViewCalendarLayout\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MSDynamicsDrawerViewController\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/SupportKit\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/SupportKit/SupportKit\"",
+				);
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1276,6 +1309,31 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AMScrollingNavbar\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics/Crashlytics\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Fabric/Fabric\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MSCollectionViewCalendarLayout\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MSDynamicsDrawerViewController\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/SupportKit\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/SupportKit/SupportKit\"",
+				);
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
