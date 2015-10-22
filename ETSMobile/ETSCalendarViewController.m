@@ -140,6 +140,11 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     return [[NSAttributedString alloc] initWithString:text attributes:attributes];
 }
 
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return [UIImage imageNamed:@"Calendar"];
+}
+
 - (NSArray *)activeSessions
 {
     NSMutableArray *sessions = [NSMutableArray array];
