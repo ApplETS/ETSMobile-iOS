@@ -124,6 +124,7 @@
 		E90350F71B987AAC0093C8E1 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350F61B987AAC0093C8E1 /* AssetsLibrary.framework */; };
 		E90350F91B987AB40093C8E1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350F81B987AB40093C8E1 /* Photos.framework */; };
 		FB20EEFE1BD9AC30004961E3 /* ETSMobile-Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 262C233B1AF7FD9E00D28B85 /* ETSMobile-Config.xcconfig */; };
+		FB20EF041BD9C3F1004961E3 /* NSDate+Timezone.m in Sources */ = {isa = PBXBuildFile; fileRef = FB20EF031BD9C3F1004961E3 /* NSDate+Timezone.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -341,6 +342,8 @@
 		E90350F31B987A8B0093C8E1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		E90350F61B987AAC0093C8E1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		E90350F81B987AB40093C8E1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		FB20EF021BD9C3F1004961E3 /* NSDate+Timezone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Timezone.h"; sourceTree = "<group>"; };
+		FB20EF031BD9C3F1004961E3 /* NSDate+Timezone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Timezone.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -622,6 +625,8 @@
 				1D7F20151A71738200527ACB /* NSMutableURLRequest+BasicAuth.m */,
 				26DEB89418EC985600161421 /* NSDate+Day.h */,
 				26DEB89518EC985600161421 /* NSDate+Day.m */,
+				FB20EF021BD9C3F1004961E3 /* NSDate+Timezone.h */,
+				FB20EF031BD9C3F1004961E3 /* NSDate+Timezone.m */,
 				269BFF541811A41C005D2950 /* NSManagedObject+SetValues.h */,
 				269BFF551811A41C005D2950 /* NSManagedObject+SetValues.m */,
 				26085B3E1829D8D700FE35AB /* NSURL+API.h */,
@@ -1169,6 +1174,7 @@
 				26EF269B18E70F12001D3454 /* ETSProgram.m in Sources */,
 				26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */,
 				1D25DD8919A3E63B00C71387 /* ETSNews.m in Sources */,
+				FB20EF041BD9C3F1004961E3 /* NSDate+Timezone.m in Sources */,
 				26DEB88B18EC97EC00161421 /* MSDayColumnHeader.m in Sources */,
 				1DBF6C6919A507EA00761C44 /* ETSNewsSource.m in Sources */,
 				2664F1E318FF2FCC0054BF58 /* ETSMenuCell.m in Sources */,
