@@ -8,7 +8,7 @@ target 'ETSMobile' do
     pod 'MSDynamicsDrawerViewController'
     pod 'MSCollectionViewCalendarLayout'
     pod 'SDWebImage', '~>3.7'
-    pod 'SupportKit', '2.10.0'
+    pod 'SupportKit', '2.11.0'
     pod 'DZNEmptyDataSet'
 end
 
