@@ -108,7 +108,6 @@
 		26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F393221829984F00995E16 /* ETSSessionHeader.m */; };
 		26F46A99183ED03400232B5A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F46A98183ED03400232B5A /* AVFoundation.framework */; };
 		26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */; };
-		2939AE271BBCFBC500B08631 /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 2939AE261BBCFBC500B08631 /* Keys.xcconfig */; };
 		296B68421BD52C11003A8E62 /* Launch_Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296B68411BD52C11003A8E62 /* Launch_Screen.xib */; };
 		29CFAC4D1BBD09590027CC2E /* ETS-logo-blanc.png in Resources */ = {isa = PBXBuildFile; fileRef = 29CFAC4C1BBD09590027CC2E /* ETS-logo-blanc.png */; };
 		9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */; };
@@ -124,6 +123,8 @@
 		E90350F51B987A9E0093C8E1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 261D953219BA287B0007FD28 /* SystemConfiguration.framework */; };
 		E90350F71B987AAC0093C8E1 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350F61B987AAC0093C8E1 /* AssetsLibrary.framework */; };
 		E90350F91B987AB40093C8E1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350F81B987AB40093C8E1 /* Photos.framework */; };
+		FB20EEFE1BD9AC30004961E3 /* ETSMobile-Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 262C233B1AF7FD9E00D28B85 /* ETSMobile-Config.xcconfig */; };
+		FB20EF041BD9C3F1004961E3 /* NSDate+Timezone.m in Sources */ = {isa = PBXBuildFile; fileRef = FB20EF031BD9C3F1004961E3 /* NSDate+Timezone.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -341,6 +342,8 @@
 		E90350F31B987A8B0093C8E1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		E90350F61B987AAC0093C8E1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		E90350F81B987AB40093C8E1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		FB20EF021BD9C3F1004961E3 /* NSDate+Timezone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Timezone.h"; sourceTree = "<group>"; };
+		FB20EF031BD9C3F1004961E3 /* NSDate+Timezone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Timezone.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -622,6 +625,8 @@
 				1D7F20151A71738200527ACB /* NSMutableURLRequest+BasicAuth.m */,
 				26DEB89418EC985600161421 /* NSDate+Day.h */,
 				26DEB89518EC985600161421 /* NSDate+Day.m */,
+				FB20EF021BD9C3F1004961E3 /* NSDate+Timezone.h */,
+				FB20EF031BD9C3F1004961E3 /* NSDate+Timezone.m */,
 				269BFF541811A41C005D2950 /* NSManagedObject+SetValues.h */,
 				269BFF551811A41C005D2950 /* NSManagedObject+SetValues.m */,
 				26085B3E1829D8D700FE35AB /* NSURL+API.h */,
@@ -937,6 +942,7 @@
 				26DD92A217EA610D00469FA8 /* Resources */,
 				262C23331AF7F23600D28B85 /* Run Script */,
 				31E251A031C034C9B1616A8E /* Copy Pods Resources */,
+				B6F6C5059214E1A723A2C71E /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -976,7 +982,7 @@
 				ORGANIZATIONNAME = ApplETS;
 				TargetAttributes = {
 					26DD92A317EA610D00469FA8 = {
-						DevelopmentTeam = N742HF354K;
+						DevelopmentTeam = HZ746827JY;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1026,9 +1032,9 @@
 				29CFAC4D1BBD09590027CC2E /* ETS-logo-blanc.png in Resources */,
 				266F0B7018F4EF22000F53C1 /* PANNE_D_ASCENSEUR_2009-04-01.pdf in Resources */,
 				26BB372D18F59580002CE5DD /* Main_iPad.storyboard in Resources */,
+				FB20EEFE1BD9AC30004961E3 /* ETSMobile-Config.xcconfig in Resources */,
 				26DD92CB17EA610D00469FA8 /* Images.xcassets in Resources */,
 				266F0B7118F4EF22000F53C1 /* PANNE_ELECTRIQUE_2009-04-01.pdf in Resources */,
-				2939AE271BBCFBC500B08631 /* Keys.xcconfig in Resources */,
 				266F0B7318F4EF22000F53C1 /* URGENCE_MEDICALE_2009-04-01.pdf in Resources */,
 				26DD92BD17EA610D00469FA8 /* Main_iPhone.storyboard in Resources */,
 				264E86CA1884E7E7005F1820 /* NewsSources.plist in Resources */,
@@ -1072,6 +1078,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobile/Pods-ETSMobile-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6F6C5059214E1A723A2C71E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobile/Pods-ETSMobile-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD57D8A424CF0F8F9564B78B /* Check Pods Manifest.lock */ = {
@@ -1153,6 +1174,7 @@
 				26EF269B18E70F12001D3454 /* ETSProgram.m in Sources */,
 				26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */,
 				1D25DD8919A3E63B00C71387 /* ETSNews.m in Sources */,
+				FB20EF041BD9C3F1004961E3 /* NSDate+Timezone.m in Sources */,
 				26DEB88B18EC97EC00161421 /* MSDayColumnHeader.m in Sources */,
 				1DBF6C6919A507EA00761C44 /* ETSNewsSource.m in Sources */,
 				2664F1E318FF2FCC0054BF58 /* ETSMenuCell.m in Sources */,

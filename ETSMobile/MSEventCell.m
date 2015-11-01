@@ -8,6 +8,7 @@
 
 #import "MSEventCell.h"
 #import "ETSCalendar.h"
+#import "NSDate+Timezone.h"
 
 @interface MSEventCell ()
 
@@ -44,6 +45,8 @@
         self.location.numberOfLines = 0;
         self.location.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:self.location];
+        
+        
         
         [self updateColors];
         
@@ -166,11 +169,16 @@
 - (void)setEvent:(ETSCalendar *)event
 {
     _event = event;
-    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm"];
+    NSDate *utcStartDate = [event.start toUTCTime];
+    NSDate *utcEndDate = [event.end toUTCTime];
+    NSString *timeStart = [dateFormatter stringFromDate:utcStartDate];
+    NSString *timeEnd = [dateFormatter stringFromDate:utcEndDate];
     NSString *title = [NSString stringWithFormat:@"%@\n%@", event.title, event.course];
     self.title.attributedText = [[NSAttributedString alloc] initWithString:title attributes:[self titleAttributesHighlighted:self.selected]];
 
-    NSString *details = [NSString stringWithFormat:@"%@\n%@", event.summary, event.room];
+    NSString *details = [NSString stringWithFormat:@"%@\n%@\n%@ - %@", event.summary, event.room, timeStart, timeEnd];
     self.location.attributedText = [[NSAttributedString alloc] initWithString:details attributes:[self subtitleAttributesHighlighted:self.selected]];;
 }
 
