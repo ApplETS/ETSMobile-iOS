@@ -942,7 +942,7 @@
 				26DD92A217EA610D00469FA8 /* Resources */,
 				262C23331AF7F23600D28B85 /* Run Script */,
 				31E251A031C034C9B1616A8E /* Copy Pods Resources */,
-				B6F6C5059214E1A723A2C71E /* Embed Pods Frameworks */,
+				B3D19DCDC801E2C33522E6E0 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -982,7 +982,7 @@
 				ORGANIZATIONNAME = ApplETS;
 				TargetAttributes = {
 					26DD92A317EA610D00469FA8 = {
-						DevelopmentTeam = HZ746827JY;
+						DevelopmentTeam = N742HF354K;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1080,7 +1080,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobile/Pods-ETSMobile-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B6F6C5059214E1A723A2C71E /* Embed Pods Frameworks */ = {
+		B3D19DCDC801E2C33522E6E0 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
