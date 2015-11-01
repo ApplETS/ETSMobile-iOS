@@ -36,6 +36,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    UIApplicationShortcutItem *shortcutItem = [launchOptions objectForKey:UIApplicationLaunchOptionsShortcutItemKey];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
@@ -58,8 +59,17 @@
     ETSMenuViewController *menuViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
     menuViewController.managedObjectContext = self.managedObjectContext;
     
-    menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
-    [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
+    if (shortcutItem == nil) {
+        menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
+        [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
+    }
+    else {
+        if ([shortcutItem.localizedTitle isEqual: @"Horaire"]) {
+            [menuViewController transitionToViewController:ETSPaneViewControllerTypeCalendar];
+        } else if ([shortcutItem.localizedTitle isEqualToString:@"Notes"]) {
+            [menuViewController transitionToViewController:ETSPaneViewControllerTypeCourses];
+        }
+    }
     
     // Transition to the first view controller
     [menuViewController transitionToViewController:ETSPaneViewControllerTypeNews];
@@ -124,6 +134,24 @@
             abort();
         } 
     }
+}
+
+#pragma mark - Quick Actions
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    
+    ETSMenuViewController *menuViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
+    menuViewController.managedObjectContext = self.managedObjectContext;
+    
+    menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
+    [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
+    
+    if ([shortcutItem.localizedTitle isEqual: @"Horaire"]) {
+        [menuViewController transitionToViewController:ETSPaneViewControllerTypeCalendar];
+    } else if ([shortcutItem.localizedTitle isEqualToString:@"Notes"]) {
+        [menuViewController transitionToViewController:ETSPaneViewControllerTypeCourses];
+    }
+    
 }
 
 #pragma mark - Core Data stack

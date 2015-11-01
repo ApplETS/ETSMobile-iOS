@@ -895,9 +895,17 @@
 		291803881BC33F9200FD84CD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				291C6E061BE6821B003F3B63 /* 3D Touch icons */,
 				29CFAC4C1BBD09590027CC2E /* ETS-logo-blanc.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		291C6E061BE6821B003F3B63 /* 3D Touch icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "3D Touch icons";
 			sourceTree = "<group>";
 		};
 		9C5071E6189AF5D8000CB45E /* Security */ = {

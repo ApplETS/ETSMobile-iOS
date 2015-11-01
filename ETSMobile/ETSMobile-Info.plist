@@ -94,5 +94,24 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>ico_notes</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Notes</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.etsmobile.opennotes</string>
+		</dict>
+		<dict>
+            <key>UIApplicationShortcutItemIconFile</key>
+            <string>Calendar</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Horaire</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.etsmobile.opencalendar</string>
+		</dict>
+	</array>
 </dict>
 </plist>
