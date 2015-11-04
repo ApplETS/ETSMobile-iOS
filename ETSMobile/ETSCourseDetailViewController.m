@@ -11,6 +11,8 @@
 #import "ETSEvaluation.h"
 #import "ETSEvaluationCell.h"
 
+#import "Crashlytics.h"
+
 @interface ETSCourseDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (nonatomic, strong) NSNumberFormatter *formatter;
@@ -31,6 +33,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"Courses notes details"
+                        contentType:@"Courses"
+                          contentId:@"ETS-Courses-Details"
+                   customAttributes:@{}];
+    
     if (self.course && self.course.acronym.length > 0) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
         synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];

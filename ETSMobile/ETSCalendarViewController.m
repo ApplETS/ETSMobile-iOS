@@ -27,6 +27,8 @@
 #import "ETSMenuViewController.h"
 #import "ETSUniversityCalendarViewController.h"
 
+#import "Crashlytics.h"
+
 NSString * const MSEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
 NSString * const MSDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";
 NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifier";
@@ -43,6 +45,11 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"Calendar"
+                        contentType:@"Calendar"
+                          contentId:@"ETS-Calendar"
+                   customAttributes:@{}];
     
     #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"CALENDAR_VIEWCONTROLLER"];

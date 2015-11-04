@@ -9,6 +9,8 @@
 #import "ETSUniversityCalendarViewController.h"
 #import "ETSEvent.h"
 
+#import "Crashlytics.h"
+
 @interface ETSUniversityCalendarViewController ()
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @end
@@ -22,6 +24,11 @@ NSString * const ETSUniversityCalendarSource = @"ets";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"University calendar"
+                        contentType:@"Calendar"
+                          contentId:@"ETS-University-Calendar"
+                   customAttributes:@{}];
     
     if (!self.start) {
         self.start = [NSDate date];

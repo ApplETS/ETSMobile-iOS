@@ -13,6 +13,8 @@
 #import "ETSProgram.h"
 #import "ETSCoreDataHelper.h"
 
+#import "Crashlytics.h"
+
 @interface ETSProfileViewController ()
 @property (nonatomic, strong) NSNumberFormatter *formatter;
 @property (nonatomic, assign) BOOL hadResults;
@@ -39,6 +41,11 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"Profile"
+                        contentType:@"Profile"
+                          contentId:@"ETS-Profile"
+                   customAttributes:@{}];
     
     #ifdef __USE_TESTFLIGHT
 	[TestFlight passCheckpoint:@"PROFILE_VIEWCONTROLLER"];

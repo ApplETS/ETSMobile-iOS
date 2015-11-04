@@ -8,6 +8,8 @@
 
 #import "ETSSponsorsViewController.h"
 
+#import "Crashlytics.h"
+
 @interface ETSSponsorsViewController ()
 @property (nonatomic, strong) NSDictionary *sponsorsImages;
 @property (nonatomic, strong) NSDictionary *sponsorsSizes;
@@ -20,6 +22,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"Sponsors"
+                        contentType:@"Sponsors"
+                          contentId:@"ETS-Sponsors"
+                   customAttributes:@{}];
     
     self.sponsorsImages = @{
                             @(ETSSponsorETS)        : [UIImage imageNamed:@"LogoETS"],

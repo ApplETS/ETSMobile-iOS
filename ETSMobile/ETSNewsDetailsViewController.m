@@ -8,6 +8,8 @@
 
 #import "ETSNewsDetailsViewController.h"
 
+#import "Crashlytics.h"
+
 @interface ETSNewsDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 - (IBAction)shareNews:(id)sender;
@@ -19,6 +21,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"News Details"
+                        contentType:@"News"
+                          contentId:@"ETS-News-Details"
+                   customAttributes:@{}];
     
     #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"STORY_VIEWCONTROLLER"];

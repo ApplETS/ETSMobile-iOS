@@ -12,6 +12,8 @@
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
 
+#import "Crashlytics.h"
+
 @interface ETSDirectoryViewController ()
 @property (nonatomic, copy) NSString *searchText;
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -25,6 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"Directory"
+                        contentType:@"Directory"
+                          contentId:@"ETS-Directory"
+                   customAttributes:@{}];
     
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForDirectory];

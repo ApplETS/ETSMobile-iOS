@@ -17,6 +17,8 @@
 #import "ETSMenuViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
+#import "Crashlytics.h"
+
 @interface ETSCoursesViewController ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSIndexPath *lastSelectedIndexPath;
@@ -30,6 +32,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"Courses notes"
+                        contentType:@"Courses"
+                          contentId:@"ETS-Courses"
+                   customAttributes:@{}];
     
     if (self.courseResults == nil) {
         self.courseResults = [[NSMutableDictionary alloc] initWithCapacity:4];

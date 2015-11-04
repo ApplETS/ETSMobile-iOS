@@ -9,6 +9,8 @@
 #import "ETSSecurityViewController.h"
 #import "ETSSecurityDetailViewController.h"
 
+#import "Crashlytics.h"
+
 NSString * const kProcedureTitle = @"Title";
 NSString * const kProcedureSummary = @"Summary";
 NSString * const kProcedureFile = @"File";
@@ -22,6 +24,11 @@ NSString * const kProcedureFile = @"File";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"Security"
+                        contentType:@"Security"
+                          contentId:@"ETS-Security"
+                   customAttributes:@{}];
     
     CLLocationCoordinate2D etsCoord = {.latitude =  45.494751265838346, .longitude = -73.56256484985352};
     MKCoordinateSpan span = {.latitudeDelta = 0.0017, .longitudeDelta = 0.005};

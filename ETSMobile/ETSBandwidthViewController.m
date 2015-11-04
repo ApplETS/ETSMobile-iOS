@@ -13,6 +13,8 @@
 #import "ETSCoreDataHelper.h"
 #import <QuartzCore/QuartzCore.h>
 
+#import "Crashlytics.h"
+
 @interface ETSBandwidthViewController () <UIPopoverControllerDelegate>
 @property (nonatomic, strong) NSNumberFormatter *formatter;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
@@ -102,6 +104,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"Bandwidth"
+                        contentType:@"Bandwidth"
+                          contentId:@"ETS-Bandwidth"
+                   customAttributes:@{}];
     
     [self.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];

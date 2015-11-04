@@ -9,6 +9,8 @@
 #import "ETSNewsSourceViewController.h"
 #import "ETSNewsSource.h"
 
+#import "Crashlytics.h"
+
 @interface ETSNewsSourceViewController()
 @property (nonatomic, strong) NSArray *sources;
 @end
@@ -50,6 +52,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"News Sources"
+                        contentType:@"News"
+                          contentId:@"ETS-News-Sources"
+                   customAttributes:@{}];
     
     self.cellIdentifier = @"SourceIdentifier";
     

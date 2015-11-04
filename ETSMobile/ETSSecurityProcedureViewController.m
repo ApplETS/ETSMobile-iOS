@@ -8,6 +8,8 @@
 
 #import "ETSSecurityProcedureViewController.h"
 
+#import "Crashlytics.h"
+
 @interface ETSSecurityProcedureViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
@@ -18,6 +20,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"Security Procedure"
+                        contentType:@"Security"
+                          contentId:@"ETS-Security-Procedure"
+                   customAttributes:@{}];
     
     self.webView.scalesPageToFit = YES;
     

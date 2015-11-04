@@ -12,6 +12,8 @@
 #import "ETSAppDelegate.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
+#import "Crashlytics.h"
+
 @interface ETSMoodleCourseDetailViewController ()
 @property (nonatomic, copy) NSString *searchText;
 @property (nonatomic, strong) NSArray *acceptedTypes;
@@ -29,6 +31,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"Moodle courses detail"
+                        contentType:@"Moodle"
+                          contentId:@"ETS-Moodle-Detail"
+                   customAttributes:@{}];
     
     self.acceptedTypes = @[@"url", @"resource", @"forum", @"choicegroup", @"wiki", @"assign", @"page"];
     

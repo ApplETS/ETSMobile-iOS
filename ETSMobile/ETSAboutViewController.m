@@ -8,7 +8,18 @@
 
 #import "ETSAboutViewController.h"
 
+#import "Crashlytics.h"
+
 @implementation ETSAboutViewController
+
+-(void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"About ETSMobile"
+                        contentType:@"About"
+                          contentId:@"ETS-About"
+                   customAttributes:@{}];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {

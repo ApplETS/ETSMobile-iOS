@@ -12,6 +12,8 @@
 #import "ETSEvaluation.h"
 #import "ETSMenuViewController.h"
 
+#import "Crashlytics.h"
+
 @interface ETSCoursesViewController_iPad ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @end
@@ -24,6 +26,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"Courses notes"
+                        contentType:@"Courses"
+                          contentId:@"ETS-Courses"
+                   customAttributes:@{}];
     
     self.title =  NSLocalizedString(@"Notes", nil);
     

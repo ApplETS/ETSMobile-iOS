@@ -17,6 +17,8 @@
 #import "GTMNSString+HTML.h"
 #import "UIImageView+WebCache.h"
 
+#import "Crashlytics.h"
+
 @implementation ETSNewsViewController
 
 @synthesize fetchedResultsController = _fetchedResultsController;   
@@ -81,7 +83,10 @@
 {
     [super viewDidLoad];
 
-
+    [Answers logContentViewWithName:@"News"
+                        contentType:@"News"
+                          contentId:@"ETS-News"
+                   customAttributes:@{}];
     
     #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"NEWS_VIEWCONTROLLER"];

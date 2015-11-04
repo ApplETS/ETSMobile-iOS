@@ -9,6 +9,8 @@
 #import "ETSSecurityDetailViewController.h"
 #import "ETSSecurityProcedureViewController.h"
 
+#import "Crashlytics.h"
+
 @interface ETSSecurityDetailViewController ()
 @property (nonatomic, weak) IBOutlet UITextView *textView;
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -36,6 +38,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [Answers logContentViewWithName:@"Security Details"
+                        contentType:@"Security"
+                          contentId:@"ETS-Security-Details"
+                   customAttributes:@{}];
     
     [self updateProcedure];
 }
