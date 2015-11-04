@@ -34,11 +34,6 @@
 {
     [super viewDidLoad];
     
-    [Answers logContentViewWithName:@"Courses notes details"
-                        contentType:@"Courses"
-                          contentId:@"ETS-Courses-Details"
-                   customAttributes:@{}];
-    
     if (self.course && self.course.acronym.length > 0) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
         synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];
@@ -62,6 +57,15 @@
     self.title = self.course.acronym;
     
     self.hadResults = [[self.fetchedResultsController sections][0] numberOfObjects] > 0;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Courses notes details"
+                        contentType:@"Courses"
+                          contentId:@"ETS-Courses-Details"
+                   customAttributes:@{}];
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -47,11 +47,6 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 {
     [super viewDidLoad];
     
-    [Answers logContentViewWithName:@"Radio Piranha"
-                        contentType:@"Radio"
-                          contentId:@"ETS-Radio"
-                   customAttributes:@{}];
-    
     self.playBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(playRadio:)];
     self.pauseBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(pauseRadio:)];
 
@@ -145,6 +140,11 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Radio Piranha"
+                        contentType:@"Radio"
+                          contentId:@"ETS-Radio"
+                   customAttributes:@{}];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];

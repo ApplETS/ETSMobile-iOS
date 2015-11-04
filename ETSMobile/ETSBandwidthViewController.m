@@ -105,11 +105,6 @@
 {
     [super viewDidLoad];
     
-    [Answers logContentViewWithName:@"Bandwidth"
-                        contentType:@"Bandwidth"
-                          contentId:@"ETS-Bandwidth"
-                   customAttributes:@{}];
-    
     [self.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
     
@@ -174,6 +169,15 @@
     
     NSString *phase = [@(self.phaseSegmentedControl.selectedSegmentIndex+1) stringValue];
     [self updateBandwidthWithPhase:phase apartment:self.apartmentTextField.text];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Bandwidth"
+                        contentType:@"Bandwidth"
+                          contentId:@"ETS-Bandwidth"
+                   customAttributes:@{}];
 }
 
 - (void)viewDidAppear:(BOOL)animated

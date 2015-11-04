@@ -25,11 +25,6 @@ NSString * const ETSUniversityCalendarSource = @"ets";
 {
     [super viewDidLoad];
     
-    [Answers logContentViewWithName:@"University calendar"
-                        contentType:@"Calendar"
-                          contentId:@"ETS-University-Calendar"
-                   customAttributes:@{}];
-    
     if (!self.start) {
         self.start = [NSDate date];
     }
@@ -61,6 +56,15 @@ NSString * const ETSUniversityCalendarSource = @"ets";
     self.dateFormatter = [NSDateFormatter new];
     self.dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
     self.dateFormatter.dateFormat = @"EEEE d MMMM";
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"University calendar"
+                        contentType:@"Calendar"
+                          contentId:@"ETS-University-Calendar"
+                   customAttributes:@{}];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController

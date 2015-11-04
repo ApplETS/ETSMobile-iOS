@@ -82,11 +82,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [Answers logContentViewWithName:@"News"
-                        contentType:@"News"
-                          contentId:@"ETS-News"
-                   customAttributes:@{}];
     
     #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"NEWS_VIEWCONTROLLER"];
@@ -119,6 +114,11 @@
 {
     self.synchronization.request = [NSURLRequest requestForNewsWithSources:[self enabledSources]];
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"News"
+                        contentType:@"News"
+                          contentId:@"ETS-News"
+                   customAttributes:@{}];
 }
 
 - (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects

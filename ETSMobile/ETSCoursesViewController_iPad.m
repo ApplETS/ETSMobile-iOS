@@ -27,11 +27,6 @@
 {
     [super viewDidLoad];
     
-    [Answers logContentViewWithName:@"Courses notes"
-                        contentType:@"Courses"
-                          contentId:@"ETS-Courses"
-                   customAttributes:@{}];
-    
     self.title =  NSLocalizedString(@"Notes", nil);
     
     self.cellIdentifier = @"CourseIdentifier";
@@ -53,6 +48,15 @@
         navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self.navigationController presentViewController:navigationController animated:NO completion:nil];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Courses notes"
+                        contentType:@"Courses"
+                          contentId:@"ETS-Courses"
+                   customAttributes:@{}];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController

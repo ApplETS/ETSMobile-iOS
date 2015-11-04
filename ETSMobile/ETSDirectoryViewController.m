@@ -28,11 +28,6 @@
 {
     [super viewDidLoad];
     
-    [Answers logContentViewWithName:@"Directory"
-                        contentType:@"Directory"
-                          contentId:@"ETS-Directory"
-                   customAttributes:@{}];
-    
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForDirectory];
     synchronization.entityName = @"Contact";
@@ -56,6 +51,15 @@
         // FIXME: Update to handle the error appropriately.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Directory"
+                        contentType:@"Directory"
+                          contentId:@"ETS-Directory"
+                   customAttributes:@{}];
 }
 
 - (void)viewDidAppear:(BOOL)animated

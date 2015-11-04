@@ -39,17 +39,17 @@
 {
     [super viewDidLoad];
     
-    [Answers logContentViewWithName:@"Security Details"
-                        contentType:@"Security"
-                          contentId:@"ETS-Security-Details"
-                   customAttributes:@{}];
-    
     [self updateProcedure];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Security Details"
+                        contentType:@"Security"
+                          contentId:@"ETS-Security-Details"
+                   customAttributes:@{}];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:NO animated:animated];

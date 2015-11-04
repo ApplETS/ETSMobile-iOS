@@ -22,11 +22,6 @@
 {
     [super viewDidLoad];
     
-    [Answers logContentViewWithName:@"News Details"
-                        contentType:@"News"
-                          contentId:@"ETS-News-Details"
-                   customAttributes:@{}];
-    
     #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"STORY_VIEWCONTROLLER"];
     #endif
@@ -57,6 +52,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"News Details"
+                        contentType:@"News"
+                          contentId:@"ETS-News-Details"
+                   customAttributes:@{}];
+    
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:NO animated:animated];
 }

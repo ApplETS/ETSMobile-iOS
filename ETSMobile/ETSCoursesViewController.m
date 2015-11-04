@@ -33,11 +33,6 @@
 {
     [super viewDidLoad];
     
-    [Answers logContentViewWithName:@"Courses notes"
-                        contentType:@"Courses"
-                          contentId:@"ETS-Courses"
-                   customAttributes:@{}];
-    
     if (self.courseResults == nil) {
         self.courseResults = [[NSMutableDictionary alloc] initWithCapacity:4];
     }
@@ -64,6 +59,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Courses notes"
+                        contentType:@"Courses"
+                          contentId:@"ETS-Courses"
+                   customAttributes:@{}];
+    
     if (self.lastSelectedIndexPath) {
         [self configureCell:[self.collectionView cellForItemAtIndexPath:self.lastSelectedIndexPath] atIndexPath:self.lastSelectedIndexPath];
     }

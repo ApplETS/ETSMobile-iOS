@@ -37,11 +37,6 @@ NSString * const kUnknownSession = @"000000";
 {
     [super viewDidLoad];
     
-    [Answers logContentViewWithName:@"Moodle courses"
-                        contentType:@"Moodle"
-                          contentId:@"ETS-Moodle"
-                   customAttributes:@{}];
-    
     self.cellIdentifier = @"MoodleIdentifier";
 
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
@@ -67,6 +62,12 @@ NSString * const kUnknownSession = @"000000";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Moodle courses"
+                        contentType:@"Moodle"
+                          contentId:@"ETS-Moodle"
+                   customAttributes:@{}];
+    
     if (!self.token && ![[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
         [self requestTokenAndUserID];
     }

@@ -25,11 +25,6 @@ NSString * const kProcedureFile = @"File";
 {
     [super viewDidLoad];
     
-    [Answers logContentViewWithName:@"Security"
-                        contentType:@"Security"
-                          contentId:@"ETS-Security"
-                   customAttributes:@{}];
-    
     CLLocationCoordinate2D etsCoord = {.latitude =  45.494751265838346, .longitude = -73.56256484985352};
     MKCoordinateSpan span = {.latitudeDelta = 0.0017, .longitudeDelta = 0.005};
     MKCoordinateRegion region = {etsCoord, span};
@@ -52,6 +47,11 @@ NSString * const kProcedureFile = @"File";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Security"
+                        contentType:@"Security"
+                          contentId:@"ETS-Security"
+                   customAttributes:@{}];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];

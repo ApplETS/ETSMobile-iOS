@@ -46,11 +46,6 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 {
     [super viewDidLoad];
     
-    [Answers logContentViewWithName:@"Calendar"
-                        contentType:@"Calendar"
-                          contentId:@"ETS-Calendar"
-                   customAttributes:@{}];
-    
     #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"CALENDAR_VIEWCONTROLLER"];
     #endif
@@ -269,6 +264,12 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Calendar"
+                        contentType:@"Calendar"
+                          contentId:@"ETS-Calendar"
+                   customAttributes:@{}];
+    
     [self.synchronizationSession synchronize:nil];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];

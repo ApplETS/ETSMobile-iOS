@@ -42,11 +42,6 @@
 {
 	[super viewDidLoad];
     
-    [Answers logContentViewWithName:@"Profile"
-                        contentType:@"Profile"
-                          contentId:@"ETS-Profile"
-                   customAttributes:@{}];
-    
     #ifdef __USE_TESTFLIGHT
 	[TestFlight passCheckpoint:@"PROFILE_VIEWCONTROLLER"];
     #endif
@@ -119,6 +114,11 @@
 	}
     
 	[super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Profile"
+                        contentType:@"Profile"
+                          contentId:@"ETS-Profile"
+                   customAttributes:@{}];
     
 	NSError *error;
 	[self.synchronizationProgram synchronize:&error];

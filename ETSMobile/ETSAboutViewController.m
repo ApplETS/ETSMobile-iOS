@@ -12,18 +12,14 @@
 
 @implementation ETSAboutViewController
 
--(void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
     [Answers logContentViewWithName:@"About ETSMobile"
                         contentType:@"About"
                           contentId:@"ETS-About"
                    customAttributes:@{}];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];

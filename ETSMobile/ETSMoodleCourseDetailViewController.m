@@ -32,11 +32,6 @@
 {
     [super viewDidLoad];
     
-    [Answers logContentViewWithName:@"Moodle courses detail"
-                        contentType:@"Moodle"
-                          contentId:@"ETS-Moodle-Detail"
-                   customAttributes:@{}];
-    
     self.acceptedTypes = @[@"url", @"resource", @"forum", @"choicegroup", @"wiki", @"assign", @"page"];
     
     self.cellIdentifier = @"MoodleIdentifier";
@@ -48,6 +43,15 @@
     if (self.token && [self.token length] > 0) {
         [self initializeSynchronization];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Moodle courses detail"
+                        contentType:@"Moodle"
+                          contentId:@"ETS-Moodle-Detail"
+                   customAttributes:@{}];
 }
 
 - (void)initializeSynchronization

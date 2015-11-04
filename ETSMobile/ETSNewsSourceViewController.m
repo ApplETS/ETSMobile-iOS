@@ -53,16 +53,20 @@
 {
     [super viewDidLoad];
     
-    [Answers logContentViewWithName:@"News Sources"
-                        contentType:@"News"
-                          contentId:@"ETS-News-Sources"
-                   customAttributes:@{}];
-    
     self.cellIdentifier = @"SourceIdentifier";
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"NewsSource"];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"group" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     self.sources = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"News Sources"
+                        contentType:@"News"
+                          contentId:@"ETS-News-Sources"
+                   customAttributes:@{}];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
