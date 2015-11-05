@@ -12,6 +12,8 @@
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
 
+#import "Crashlytics.h"
+
 @interface ETSDirectoryViewController ()
 @property (nonatomic, copy) NSString *searchText;
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -49,6 +51,15 @@
         // FIXME: Update to handle the error appropriately.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Directory"
+                        contentType:@"Directory"
+                          contentId:@"ETS-Directory"
+                   customAttributes:@{}];
 }
 
 - (void)viewDidAppear:(BOOL)animated

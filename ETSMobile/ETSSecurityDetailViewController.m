@@ -9,6 +9,8 @@
 #import "ETSSecurityDetailViewController.h"
 #import "ETSSecurityProcedureViewController.h"
 
+#import "Crashlytics.h"
+
 @interface ETSSecurityDetailViewController ()
 @property (nonatomic, weak) IBOutlet UITextView *textView;
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -43,6 +45,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Security Details"
+                        contentType:@"Security"
+                          contentId:@"ETS-Security-Details"
+                   customAttributes:@{}];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:NO animated:animated];

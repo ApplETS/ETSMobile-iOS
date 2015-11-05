@@ -8,11 +8,18 @@
 
 #import "ETSAboutViewController.h"
 
+#import "Crashlytics.h"
+
 @implementation ETSAboutViewController
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"About ETSMobile"
+                        contentType:@"About"
+                          contentId:@"ETS-About"
+                   customAttributes:@{}];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];
