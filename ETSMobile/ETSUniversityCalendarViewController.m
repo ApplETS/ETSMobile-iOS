@@ -9,6 +9,8 @@
 #import "ETSUniversityCalendarViewController.h"
 #import "ETSEvent.h"
 
+#import "Crashlytics.h"
+
 @interface ETSUniversityCalendarViewController ()
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @end
@@ -54,6 +56,15 @@ NSString * const ETSUniversityCalendarSource = @"ets";
     self.dateFormatter = [NSDateFormatter new];
     self.dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
     self.dateFormatter.dateFormat = @"EEEE d MMMM";
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"University calendar"
+                        contentType:@"Calendar"
+                          contentId:@"ETS-University-Calendar"
+                   customAttributes:@{}];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController

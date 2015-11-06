@@ -9,6 +9,8 @@
 #import "ETSSecurityViewController.h"
 #import "ETSSecurityDetailViewController.h"
 
+#import "Crashlytics.h"
+
 NSString * const kProcedureTitle = @"Title";
 NSString * const kProcedureSummary = @"Summary";
 NSString * const kProcedureFile = @"File";
@@ -45,6 +47,11 @@ NSString * const kProcedureFile = @"File";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Security"
+                        contentType:@"Security"
+                          contentId:@"ETS-Security"
+                   customAttributes:@{}];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];

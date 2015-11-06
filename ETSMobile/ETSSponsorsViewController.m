@@ -8,6 +8,8 @@
 
 #import "ETSSponsorsViewController.h"
 
+#import "Crashlytics.h"
+
 @interface ETSSponsorsViewController ()
 @property (nonatomic, strong) NSDictionary *sponsorsImages;
 @property (nonatomic, strong) NSDictionary *sponsorsSizes;
@@ -65,6 +67,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Sponsors"
+                        contentType:@"Sponsors"
+                          contentId:@"ETS-Sponsors"
+                   customAttributes:@{}];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];

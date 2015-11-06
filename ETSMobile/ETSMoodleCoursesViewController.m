@@ -11,6 +11,8 @@
 #import "ETSMoodleCourse.h"
 #import "ETSMenuViewController.h"
 
+#import "Crashlytics.h"
+
 NSString * const kUnknownSession = @"000000";
 
 @interface ETSMoodleCoursesViewController ()
@@ -60,6 +62,12 @@ NSString * const kUnknownSession = @"000000";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Moodle courses"
+                        contentType:@"Moodle"
+                          contentId:@"ETS-Moodle"
+                   customAttributes:@{}];
+    
     if (!self.token && ![[self.navigationController topViewController] isKindOfClass:[ETSAuthenticationViewController class]]) {
         [self requestTokenAndUserID];
     }

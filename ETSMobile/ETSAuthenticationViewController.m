@@ -11,6 +11,8 @@
 #import "ETSAppDelegate.h"
 #import "MSDynamicsDrawerViewController.h"
 
+#import "Crashlytics.h"
+
 NSString * const kKeychainId = @"ApplETS";
 
 @interface ETSAuthenticationViewController ()
@@ -30,13 +32,17 @@ NSString * const kKeychainId = @"ApplETS";
     id apiError = [response valueForKeyPath:@"d.erreur"];
     
     if ([apiError isKindOfClass:[NSString class]] && [apiError isEqualToString:@"Code d'accès ou mot de passe invalide"]) {
+        [Answers logSignUpWithMethod:@"ETSAuth" success:@NO customAttributes:@{}];
         return ETSSynchronizationResponseAuthenticationError;
     } else if ([apiError isKindOfClass:[NSString class]] && [apiError length] == 0) {
+        [Answers logSignUpWithMethod:@"ETSAuth" success:@NO customAttributes:@{}];
         return ETSSynchronizationResponseValid;
     } else if ([apiError isKindOfClass:[NSString class]] && [apiError length] > 0) {
+        [Answers logSignUpWithMethod:@"ETSAuth" success:@NO customAttributes:@{}];
         return ETSSynchronizationResponseUnknownError;
     }
     
+    [Answers logSignUpWithMethod:@"ETSAuth" success:@YES customAttributes:@{}];
     return ETSSynchronizationResponseValid;
 }
 

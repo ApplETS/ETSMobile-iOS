@@ -13,6 +13,8 @@
 #import "ETSProgram.h"
 #import "ETSCoreDataHelper.h"
 
+#import "Crashlytics.h"
+
 @interface ETSProfileViewController ()
 @property (nonatomic, strong) NSNumberFormatter *formatter;
 @property (nonatomic, assign) BOOL hadResults;
@@ -112,6 +114,11 @@
 	}
     
 	[super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Profile"
+                        contentType:@"Profile"
+                          contentId:@"ETS-Profile"
+                   customAttributes:@{}];
     
 	NSError *error;
 	[self.synchronizationProgram synchronize:&error];
