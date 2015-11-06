@@ -6,7 +6,7 @@ target 'ETSMobile' do
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'MSDynamicsDrawerViewController'
-    pod 'MSCollectionViewCalendarLayout'
+    pod 'MSCollectionViewCalendarLayout', '0.1.3'
     pod 'SDWebImage', '~>3.7'
     pod 'SupportKit', '2.11.0'
     pod 'DZNEmptyDataSet'
