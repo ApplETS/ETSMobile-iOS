@@ -10,6 +10,7 @@ target 'ETSMobile' do
     pod 'SDWebImage', '~>3.7'
     pod 'SupportKit', '2.11.0'
     pod 'DZNEmptyDataSet'
+   	pod 'RKDropdownAlert'
 end
 
 target 'ETSMobileTests' do

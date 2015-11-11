@@ -978,7 +978,7 @@
         <!--À propos d'ÉTSMobile-->
         <scene sceneID="g96-oI-9kJ">
             <objects>
-                <viewController title="À propos d'ÉTSMobile" id="dr6-SO-0j9" customClass="ETSAboutViewController" sceneMemberID="viewController">
+                <viewController title="À propos d'ÉTSMobile" id="dr6-SO-0j9" customClass="ETSAboutViewController" customModule="ETSMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TCN-9Z-PgL"/>
                         <viewControllerLayoutGuide type="bottom" id="UiM-nn-iT8"/>
@@ -991,7 +991,7 @@
                                 <rect key="frame" x="16" y="24" width="288" height="534"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Réalisation — Équipe iOS
+                                <string key="text">Réalisation — Équipe iOS
 Jean-Philippe Martin
 Maxime Mongeau Samuel Bellerose Thomas Durand
 Maxime Lapointe
@@ -1020,7 +1020,7 @@ MSDynamicsDrawerViewController
 AMScrollingNavbar
 GTMNSString+HTML SDWebImage DZNEmptyDataSet
 
-http://www.clubapplets.ca</mutableString>
+http://www.clubapplets.ca</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1037,6 +1037,9 @@ http://www.clubapplets.ca</mutableString>
                     <navigationItem key="navigationItem" title="À propos d'ÉTSMobile" id="2a9-Gu-sRt"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="aboutTextLabel" destination="Zmh-se-YlL" id="rHg-kJ-Xf4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aec-6s-Dny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

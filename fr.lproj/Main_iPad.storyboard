@@ -1161,7 +1161,7 @@
         <!--À propos d'ÉTSMobile-->
         <scene sceneID="g96-oI-9kJ">
             <objects>
-                <viewController title="À propos d'ÉTSMobile" id="dr6-SO-0j9" customClass="ETSAboutViewController" sceneMemberID="viewController">
+                <viewController title="À propos d'ÉTSMobile" id="dr6-SO-0j9" customClass="ETSAboutViewController" customModule="ETSMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TCN-9Z-PgL"/>
                         <viewControllerLayoutGuide type="bottom" id="UiM-nn-iT8"/>

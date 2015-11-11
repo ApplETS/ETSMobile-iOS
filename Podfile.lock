@@ -9,6 +9,7 @@ PODS:
   - MSCollectionViewCalendarLayout (0.1.3):
     - CupertinoYankee (~> 0.1)
   - MSDynamicsDrawerViewController (1.5.1)
+  - RKDropdownAlert (0.3.0)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - Fabric
   - MSCollectionViewCalendarLayout (= 0.1.3)
   - MSDynamicsDrawerViewController
+  - RKDropdownAlert
   - SDWebImage (~> 3.7)
   - SupportKit (= 2.11.0)
 
@@ -32,6 +34,7 @@ SPEC CHECKSUMS:
   Fabric: 03c3b3fe77e11a2bc31421b989a9c7adaa4779a5
   MSCollectionViewCalendarLayout: fba6fefdb3a340cb3e4f10725c6b3a530e6f6817
   MSDynamicsDrawerViewController: 2874df90f5e9453dc7d4e32f8038b50615d4baa7
+  RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SupportKit: 07e72f5e93c1055adcc810dd715aefc34e0ab279
 
