@@ -942,7 +942,6 @@
 				26DD92A217EA610D00469FA8 /* Resources */,
 				262C23331AF7F23600D28B85 /* Run Script */,
 				31E251A031C034C9B1616A8E /* Copy Pods Resources */,
-				B6F6C5059214E1A723A2C71E /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1078,21 +1077,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobile/Pods-ETSMobile-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B6F6C5059214E1A723A2C71E /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobile/Pods-ETSMobile-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD57D8A424CF0F8F9564B78B /* Check Pods Manifest.lock */ = {

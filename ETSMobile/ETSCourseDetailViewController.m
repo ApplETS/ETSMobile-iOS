@@ -10,8 +10,11 @@
 #import "NSURLRequest+API.h"
 #import "ETSEvaluation.h"
 #import "ETSEvaluationCell.h"
+#import "UIScrollView+EmptyDataSet.h"
 
-@interface ETSCourseDetailViewController ()
+#import "ETSSession.h"
+
+@interface ETSCourseDetailViewController () <DZNEmptyDataSetDelegate, DZNEmptyDataSetSource>
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (nonatomic, strong) NSNumberFormatter *formatter;
 @property (nonatomic, strong) UIBarButtonItem *coursesBarButtonItem;
@@ -53,8 +56,45 @@
     
     self.title = self.course.acronym;
     
+    self.tableView.emptyDataSetDelegate = self;
+    self.tableView.emptyDataSetSource = self;
+    
     self.hadResults = [[self.fetchedResultsController sections][0] numberOfObjects] > 0;
 }
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
+{
+    NSString *text = @"Aucune note disponible pour le moment.";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
+                                 NSForegroundColorAttributeName: [UIColor blackColor]};
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
+{
+    return [UIImage imageNamed:@"ico_notes"];
+}
+
+- (NSArray *)activeSessions
+{
+    NSMutableArray *sessions = [NSMutableArray array];
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Session"];
+    NSDate *now = [NSDate date];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"end >= %@", now];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"start" ascending:YES]];
+    fetchRequest.returnsDistinctResults = YES;
+    fetchRequest.propertiesToFetch = @[@"acronym"];
+    
+    NSArray *results = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
+    for (ETSSession *session in results) {
+        [sessions addObject:session.acronym];
+    }
+    return sessions;
+}
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
