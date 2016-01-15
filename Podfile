@@ -2,7 +2,7 @@
 platform :ios, '8.0'
 
 target 'ETSMobile' do
-    pod 'AMScrollingNavbar'
+    pod 'AMScrollingNavbar', '~>1.0'
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'MSDynamicsDrawerViewController'

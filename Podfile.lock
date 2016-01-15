@@ -1,20 +1,19 @@
 PODS:
   - AMScrollingNavbar (1.5.1)
-  - Crashlytics (3.3.0)
-  - Fabric (1.5.0):
-    - Fabric/Base (= 1.5.0)
-  - Fabric/Base (1.5.0)
+  - Crashlytics (3.6.0):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.3)
   - MSCollectionViewCalendarLayout (0.1.5)
   - MSDynamicsDrawerViewController (1.5.1)
-  - SDWebImage (3.7.3):
-    - SDWebImage/Core (= 3.7.3)
-  - SDWebImage/Core (3.7.3)
-  - STKWebKitViewController (0.3.0)
-  - SupportKit (2.10.0)
+  - SDWebImage (3.7.4):
+    - SDWebImage/Core (= 3.7.4)
+  - SDWebImage/Core (3.7.4)
+  - STKWebKitViewController (0.5.0)
+  - SupportKit (2.11.1)
   - TUSafariActivity (1.0.4)
 
 DEPENDENCIES:
-  - AMScrollingNavbar
+  - AMScrollingNavbar (~> 1.0)
   - Crashlytics
   - Fabric
   - MSCollectionViewCalendarLayout
@@ -26,13 +25,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AMScrollingNavbar: 767ed2db60d927a809bddff5d01b739b7020b12b
-  Crashlytics: 6524671d48a4c3f4100b8c56ee8dd7e34aac820a
-  Fabric: 374a4a0bbefa219ed201cbc84f2f42e4029302a6
+  Crashlytics: e4e8d02914f2608fbc7bf42b1a7af838b0db67a2
+  Fabric: cbe0ca6c9531bba17910052f6f105fcbc5fa7f67
   MSCollectionViewCalendarLayout: 9c52894930d6b712951f18873618fc32c00cd4fa
   MSDynamicsDrawerViewController: 2874df90f5e9453dc7d4e32f8038b50615d4baa7
-  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
-  STKWebKitViewController: 5350cde22f2298d098717516cad408eb57014613
-  SupportKit: 23ce231929d1a136b3fbdc6f185a0d1fbfa44f68
+  SDWebImage: 247edd7dd80dd6124197b0d6a17846fe9d1df968
+  STKWebKitViewController: 1371f39e5f697de11aa091064eeed6eb515a2511
+  SupportKit: 3372cf5d6090de7bd035bee21589b0efb9016fd6
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
 
-COCOAPODS: 0.39.0.beta.4
+COCOAPODS: 0.39.0
