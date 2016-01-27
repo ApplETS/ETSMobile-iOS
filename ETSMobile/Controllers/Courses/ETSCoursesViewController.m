@@ -202,4 +202,8 @@
     return [ETSAuthenticationViewController validateJSONResponse:response];
 }
 
+- (BOOL) splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
+    return YES;
+}
+
 @end

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ETSCollectionViewController.h"
 
-@interface ETSCoursesViewController : ETSCollectionViewController <ETSSynchronizationDelegate>
+@interface ETSCoursesViewController : ETSCollectionViewController <ETSSynchronizationDelegate, UISplitViewControllerDelegate>
 
 @end
