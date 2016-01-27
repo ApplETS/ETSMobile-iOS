@@ -156,20 +156,23 @@
     }
     else {
         if (indexPath.row == 0 && self.hadResults > 0) {
+            NSNumber *resultOn100 = self.course.resultOn100 ? self.course.resultOn100 : @0.0;
             cell.textLabel.text = NSLocalizedString(@"Note à ce jour", nil);
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:self.course.resultOn100], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:resultOn100], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]]];
         }
         else if (indexPath.row == 0 && self.hadResults == 0) {
             cell.textLabel.text = NSLocalizedString(@"Cote au dossier", nil);
             cell.detailTextLabel.text = self.course.grade;
         }
         else if (indexPath.row == 1) {
+            NSNumber *mean = self.course.mean ? self.course.mean : @0.0;
             cell.textLabel.text = NSLocalizedString(@"Moyenne du groupe", nil);
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:self.course.mean], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:mean], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]]];
         }
         else if (indexPath.row == 2) {
+            NSNumber *median = self.course.median ? self.course.median : @0.0;
             cell.textLabel.text = NSLocalizedString(@"Médiane", nil);
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:self.course.median], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:median], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]]];
         }
         else if (indexPath.row == 3) {
             cell.textLabel.text = NSLocalizedString(@"Écart-type", nil);
@@ -197,7 +200,7 @@
     self.course.percentile  = [self.formatter numberFromString:results[@"rangCentileClasse"]];
     // NSManagedObjectContext can be nil (Apple Documentation).
     // Need to check for that before using the object.
-    if (self.course.managedObjectContext != nil) {
+    if (self.course.managedObjectContext) {
         NSError *error;
         [self.course.managedObjectContext save:&error];
         if (error != nil) {
@@ -210,12 +213,14 @@
 {
     ETSEvaluation *evaluation = (ETSEvaluation *)managedObject;
     NSError *error;
-    evaluation.course = (ETSCourse *)[evaluation.managedObjectContext existingObjectWithID:[self.course objectID] error:&error];
-    if (error != nil) {
-        NSLog(@"Unresolved error: %@", error);
-    }
+    if (evaluation.managedObjectContext) {
+        evaluation.course = (ETSCourse *)[evaluation.managedObjectContext existingObjectWithID:[self.course objectID] error:&error];
+        if (error != nil) {
+            NSLog(@"Unresolved error: %@", error);
+        }
 
-    evaluation.ignored = [object[@"ignoreDuCalcul"] isEqualToString:@"Non"] ? @NO : @YES;
+        evaluation.ignored = [object[@"ignoreDuCalcul"] isEqualToString:@"Non"] ? @NO : @YES;
+    }
 }
 
 - (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
