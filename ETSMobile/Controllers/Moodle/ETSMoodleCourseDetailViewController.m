@@ -165,7 +165,9 @@
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
 {
     ETSMoodleElement *element = (ETSMoodleElement *)managedObject;
-    element.course = (ETSMoodleCourse *)[element.managedObjectContext objectWithID:[self.course objectID]];
+    if ([element managedObjectContext]) {
+        element.course = (ETSMoodleCourse *)[element.managedObjectContext objectWithID:[self.course objectID]];
+    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
