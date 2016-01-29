@@ -184,7 +184,6 @@
 
     UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
     ABUnknownPersonViewController *personController = [ABUnknownPersonViewController new];
-    
     ABRecordRef person = ABPersonCreate();
     CFErrorRef  anError = NULL;
     
@@ -214,6 +213,9 @@
     personController.allowsAddingToAddressBook = YES;
     personController.displayedPerson = person;
     [personController.view setTintColor:[UIColor blackColor]];
+    
+    // Prevent personController to appear under the navbar.
+    personController.edgesForExtendedLayout = UIRectEdgeNone;
     
     CFRelease(person);
     navController.viewControllers = @[personController];
