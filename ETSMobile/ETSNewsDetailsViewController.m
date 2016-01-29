@@ -8,6 +8,8 @@
 
 #import "ETSNewsDetailsViewController.h"
 
+#import "Crashlytics.h"
+
 @interface ETSNewsDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 - (IBAction)shareNews:(id)sender;
@@ -50,6 +52,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"News Details"
+                        contentType:@"News"
+                          contentId:@"ETS-News-Details"
+                   customAttributes:@{}];
+    
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:NO animated:animated];
 }

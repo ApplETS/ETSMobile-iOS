@@ -11,6 +11,8 @@
 #import "ETSAppDelegate.h"
 #import <MediaPlayer/MediaPlayer.h>
 
+#import "Crashlytics.h"
+
 @interface ETSRadioPlayer ()
 @property (nonatomic, strong)   AVPlayer        *player;
 @property (nonatomic, strong)   AVPlayerItem    *playerItem;
@@ -39,6 +41,8 @@
 
     _player = [AVPlayer playerWithPlayerItem:self.playerItem];
     [_player play];
+    
+    [Answers logCustomEventWithName:@"Radio started" customAttributes:@{}];
 }
 
 - (void)stopRadio
@@ -49,6 +53,8 @@
     _player = nil;
     
     [[AVAudioSession sharedInstance] setActive:NO error: NULL];
+    
+    [Answers logCustomEventWithName:@"Radio stopped" customAttributes:@{}];
 }
 
 - (void)playOrPause

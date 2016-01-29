@@ -11,10 +11,11 @@
 #import "ETSEvaluation.h"
 #import "ETSEvaluationCell.h"
 #import "UIScrollView+EmptyDataSet.h"
-
 #import "ETSSession.h"
+#import "Crashlytics.h"
 
 @interface ETSCourseDetailViewController () <DZNEmptyDataSetDelegate, DZNEmptyDataSetSource>
+
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (nonatomic, strong) NSNumberFormatter *formatter;
 @property (nonatomic, strong) UIBarButtonItem *coursesBarButtonItem;
@@ -34,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     if (self.course && self.course.acronym.length > 0) {
         ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
         synchronization.request = [NSURLRequest requestForEvaluationsWithCourse:self.course];
@@ -95,6 +97,14 @@
     return sessions;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Courses notes details"
+                        contentType:@"Courses"
+                          contentId:@"ETS-Courses-Details"
+                   customAttributes:@{}];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {

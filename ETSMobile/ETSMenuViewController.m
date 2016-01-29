@@ -201,7 +201,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
     }
     
     // Close pane if already displaying the pane view controller
-    if (paneViewControllerType == self.paneViewControllerType || paneViewControllerType == ETSPaneViewControllerTypeComment) {
+    if (paneViewControllerType == ETSPaneViewControllerTypeComment) {
         [self.dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateClosed animated:YES allowUserInterruption:YES completion:nil];
         return;
     }

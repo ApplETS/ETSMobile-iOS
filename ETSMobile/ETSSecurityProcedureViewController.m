@@ -8,6 +8,8 @@
 
 #import "ETSSecurityProcedureViewController.h"
 
+#import "Crashlytics.h"
+
 @interface ETSSecurityProcedureViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
@@ -25,6 +27,15 @@
     NSURL *targetURL = [NSURL fileURLWithPath:path];
     NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
     [self.webView loadRequest:request];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Security Procedure"
+                        contentType:@"Security"
+                          contentId:@"ETS-Security-Procedure"
+                   customAttributes:@{}];
 }
 
 

@@ -13,6 +13,8 @@
 #import "ETSCoreDataHelper.h"
 #import <QuartzCore/QuartzCore.h>
 
+#import "Crashlytics.h"
+
 @interface ETSBandwidthViewController () <UIPopoverControllerDelegate>
 @property (nonatomic, strong) NSNumberFormatter *formatter;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
@@ -167,6 +169,15 @@
     
     NSString *phase = [@(self.phaseSegmentedControl.selectedSegmentIndex+1) stringValue];
     [self updateBandwidthWithPhase:phase apartment:self.apartmentTextField.text];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Bandwidth"
+                        contentType:@"Bandwidth"
+                          contentId:@"ETS-Bandwidth"
+                   customAttributes:@{}];
 }
 
 - (void)viewDidAppear:(BOOL)animated
