@@ -372,7 +372,7 @@
 	}
 }
 
-- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
+- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization withResponse:(NSURLResponse *)response error:(NSError *)error
 {
 	if (self.synchronizationDone >= 1) {
 		[self.synchronization saveManagedObjectContext];

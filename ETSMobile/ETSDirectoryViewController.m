@@ -263,7 +263,7 @@
     contact.fullName = [NSString stringWithFormat:@"%@ %@", contact.firstName, contact.lastName];
 }
 
-- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
+- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization withResponse:(NSURLResponse *)response error:(NSError *)error
 {
     self.dataNeedRefresh = NO;
     if ([[self.fetchedResultsController sections] count] == 0) {
