@@ -155,8 +155,8 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
         self.navigationItem.prompt = nil;
     }
     
-    NSError *error;
-    [self.synchronization synchronize:&error];
+    [self.synchronization synchronize:^(NSError *error) {
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated

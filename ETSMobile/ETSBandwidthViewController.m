@@ -38,8 +38,8 @@
 
 - (void)startRefresh:(id)sender
 {
-    NSError *error;
-    [self.synchronization synchronize:&error];
+    [self.synchronization synchronize:^(NSError *error) {
+    }];
 }
 
 - (IBAction)viewApartmentAlert:(id)sender
@@ -97,8 +97,8 @@
     self.phase = phase;
     self.apartment = apartment;
     
-    NSError *error;
-    [self.synchronization synchronize:&error];
+    [self.synchronization synchronize:^(NSError *error) {
+    }];
 }
 
 - (void)viewDidLoad

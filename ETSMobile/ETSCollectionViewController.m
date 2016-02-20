@@ -17,8 +17,8 @@
 
 - (void)startRefresh:(id)sender
 {
-    NSError *error;
-    [self.synchronization synchronize:&error];
+    [self.synchronization synchronize:^(NSError *error) {
+    }];
 }
 
 - (void)viewDidLoad
@@ -105,11 +105,11 @@
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
 {
-    NSError *error;
-    [self.synchronization synchronize:&error];
+    [self.synchronization synchronize:^(NSError *error) {
+    }];
 }
 
-- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
+- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization withResponse:(NSURLResponse *)response error:(NSError *)error
 {
     [self.refreshControl endRefreshing];
 }

@@ -51,7 +51,8 @@
 - (void)startRefresh:(id)sender
 {
     NSError *error;
-    [self.synchronization synchronize:&error];
+    [self.synchronization synchronize:^(NSError *error) {
+    }];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController

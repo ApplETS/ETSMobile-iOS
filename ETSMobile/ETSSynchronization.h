@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+FOUNDATION_EXPORT NSString * const ETSSynchronizationErrorDomain;
+
+typedef NS_ENUM(NSInteger, ETSSynchronizationErrorCode) {
+    ETSSynchronizationErrorCodeNoData = 0,
+};
+
 typedef NS_ENUM(NSInteger, ETSSynchronizationResponse) {
     ETSSynchronizationResponseAuthenticationError,
     ETSSynchronizationResponseUnknownError,
@@ -18,7 +24,7 @@ typedef NS_ENUM(NSInteger, ETSSynchronizationResponse) {
 
 @interface ETSSynchronization : NSObject <NSURLSessionDataDelegate>
 
-- (BOOL)synchronize:(NSError * __autoreleasing *)error;
+- (BOOL)synchronize:(void (^)(NSError *error))callback;
 - (BOOL)synchronizeJSONArray:(NSArray *)jsonObjects error:(NSError * __autoreleasing *)error;
 - (BOOL)synchronizeJSONDictionary:(NSDictionary *)jsonDictionary error:(NSError * __autoreleasing *)error;
 
@@ -45,7 +51,7 @@ typedef NS_ENUM(NSInteger, ETSSynchronizationResponse) {
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveDictionary:(NSDictionary *)dictionary;
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject;
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveResponse:(ETSSynchronizationResponse)response;
-- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization;
+- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization withResponse:(NSURLResponse*)response error:(NSError*)error;
 - (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects;
 - (ETSSynchronizationResponse)synchronization:(ETSSynchronization *)synchronization validateJSONResponse:(NSDictionary *)response;
 @end

@@ -175,7 +175,7 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
     controller.managedObjectContext = self.managedObjectContext;
 }
 
-- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
+- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization withResponse:(NSURLResponse *)response error:(NSError *)error
 {
     if (synchronization != self.synchronizationSession) return;
     
