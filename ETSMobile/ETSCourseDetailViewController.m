@@ -28,8 +28,8 @@
 
 - (void)startRefresh:(id)sender
 {
-    NSError *error;
-    [self.synchronization synchronize:&error];
+    [self.synchronization synchronize:^(NSError *error) {
+    }];
 }
 
 - (void)viewDidLoad
@@ -267,9 +267,9 @@
     evaluation.ignored = [object[@"ignoreDuCalcul"] isEqualToString:@"Non"] ? @NO : @YES;
 }
 
-- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
+- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization withResponse:(NSURLResponse *)response error:(NSError *)error
 {
-    [super synchronizationDidFinishLoading:synchronization];
+    [super synchronizationDidFinishLoading:synchronization withResponse:response error:error];
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         if ([self.tableView numberOfSections] > 0)

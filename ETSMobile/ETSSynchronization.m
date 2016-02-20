@@ -74,7 +74,14 @@
     }
 }
 
-- (BOOL)synchronize:(NSError * __autoreleasing *)error
+/**
+ *
+ *  @brief Synchronize the data.
+ *
+ *  @param callback Error callback for any kind of error which can occur during the synchronization.
+ *
+ */
+- (BOOL)synchronize:(void (^)(NSError* error))callback
 {
     if (!self.request) return NO;
     
@@ -88,18 +95,27 @@
     } else {
         session = [NSURLSession sharedSession];
     }
- //   NSLog(@"%@", [self.request URL]);
+    
     NSURLSessionDataTask *task = [session dataTaskWithRequest:self.request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
     {
         dispatch_sync(dispatch_get_main_queue(), ^{
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         });
         
-        // FIXME: traiter si data est vide ou s'il y a erreur
-        if (!data || [data length] == 0 || error) return;
+        // Treatment of data or random error
+        if (!data || [data length] == 0) {
+            if (callback) {
+                NSError *dataError = [NSError errorWithDomain:ETSSynchronizationErrorDomain code:ETSSynchronizationErrorCodeNoData userInfo:nil];
+                callback(dataError);
+            }
+            return;
+        } else if (error) {
+            if (callback) {
+                callback(error);
+            }
+            return;
+        }
         
-        //NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
-
         NSError *jsonError = nil;
         NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
         
@@ -115,9 +131,8 @@
                     if ([bself.delegate respondsToSelector:@selector(synchronization:didReceiveResponse:)])
                         [bself.delegate synchronization:bself didReceiveResponse:validationResponse];
                     
-                    if ([bself.delegate respondsToSelector:@selector(synchronizationDidFinishLoading:)])
-                        [bself.delegate synchronizationDidFinishLoading:bself];
-                    
+                    if ([bself.delegate respondsToSelector:@selector(synchronizationDidFinishLoading:withResponse:error:)])
+                        [bself.delegate synchronizationDidFinishLoading:bself withResponse:response error:error];
                     return;
                 }
                 else if (validationResponse == ETSSynchronizationResponseValid)
@@ -155,18 +170,18 @@
             dispatch_sync(dispatch_get_main_queue(), ^{
                 NSError *error;
                 if (![bself.managedObjectContext save:&error]) {
-                    // FIXME: Update to handle the error appropriately.
-                    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                    if (callback) {
+                        callback(error);
+                    }
                 }
                 [[NSNotificationCenter defaultCenter] removeObserver:bself name:NSManagedObjectContextDidSaveNotification object:bself.managedObjectContext];
             });
         }
-        if ([bself.delegate respondsToSelector:@selector(synchronizationDidFinishLoading:)]) {
+        if ([bself.delegate respondsToSelector:@selector(synchronizationDidFinishLoading:withResponse:error:)]) {
             dispatch_sync(dispatch_get_main_queue(), ^{
-                [bself.delegate synchronizationDidFinishLoading:bself];
+                [bself.delegate synchronizationDidFinishLoading:bself withResponse:response error:error];
             });
         }
-
     }];
     
     [task resume];
@@ -304,3 +319,5 @@
 }
 
 @end
+
+NSString *const ETSSynchronizationErrorDomain = @"ETSSynchronizationErrorDomain";

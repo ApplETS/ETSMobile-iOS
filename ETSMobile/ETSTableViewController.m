@@ -17,8 +17,8 @@
 
 - (void)startRefresh:(id)sender
 {
-    NSError *error;
-    [self.synchronization synchronize:&error];
+    [self.synchronization synchronize:^(NSError *error) {
+    }];
 }
 
 - (void)viewDidLoad
@@ -41,8 +41,10 @@
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];
 
-    NSError *error;
-    if (self.dataNeedRefresh) [self.synchronization synchronize:&error];
+    if (self.dataNeedRefresh) {
+        [self.synchronization synchronize:^(NSError *error) {
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -164,15 +166,15 @@
     }
 }
 
-- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
+- (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization withResponse:(NSURLResponse *)response error:(NSError *)error
 {
     [self.refreshControl endRefreshing];
 }
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller
 {
-    NSError *error;
-    [self.synchronization synchronize:&error];
+    [self.synchronization synchronize:^(NSError *error) {
+    }];
 }
 
 @end

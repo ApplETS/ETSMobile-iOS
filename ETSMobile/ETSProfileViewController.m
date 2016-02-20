@@ -32,10 +32,10 @@
 - (void)startRefresh:(id)sender
 {
 	self.synchronizationDone = 0;
-	NSError *errorProfile;
-	[self.synchronization synchronize:&errorProfile];
-	NSError *errorProgram;
-	[self.synchronizationProgram synchronize:&errorProgram];
+	[self.synchronization synchronize:^(NSError *error) {
+    }];
+	[self.synchronizationProgram synchronize:^(NSError *error) {
+    }];
 }
 
 - (void)viewDidLoad
@@ -120,8 +120,8 @@
                           contentId:@"ETS-Profile"
                    customAttributes:@{}];
     
-	NSError *error;
-	[self.synchronizationProgram synchronize:&error];
+	[self.synchronizationProgram synchronize:^(NSError *error) {
+    }];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -395,7 +395,8 @@
 	[super controllerDidAuthenticate:controller];
     
 	NSError *error;
-	[self.synchronizationProgram synchronize:&error];
+	[self.synchronizationProgram synchronize:^(NSError *error) {
+    }];
 }
 
 - (ETSSynchronizationResponse)synchronization:(ETSSynchronization *)synchronization validateJSONResponse:(NSDictionary *)response
