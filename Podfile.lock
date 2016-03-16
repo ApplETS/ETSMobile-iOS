@@ -1,12 +1,15 @@
 PODS:
   - AMScrollingNavbar (1.5.1)
   - Crashlytics (3.3.4)
+  - CupertinoYankee (0.1.1)
   - DZNEmptyDataSet (1.7.2)
   - Fabric (1.5.1):
     - Fabric/Base (= 1.5.1)
   - Fabric/Base (1.5.1)
-  - MSCollectionViewCalendarLayout (0.1.5)
+  - MSCollectionViewCalendarLayout (0.1.3):
+    - CupertinoYankee (~> 0.1)
   - MSDynamicsDrawerViewController (1.5.1)
+  - RKDropdownAlert (0.3.0)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -17,19 +20,22 @@ DEPENDENCIES:
   - Crashlytics
   - DZNEmptyDataSet
   - Fabric
-  - MSCollectionViewCalendarLayout
+  - MSCollectionViewCalendarLayout (= 0.1.3)
   - MSDynamicsDrawerViewController
+  - RKDropdownAlert
   - SDWebImage (~> 3.7)
   - SupportKit (= 2.11.0)
 
 SPEC CHECKSUMS:
   AMScrollingNavbar: 767ed2db60d927a809bddff5d01b739b7020b12b
   Crashlytics: 41c082440d2e14da444186fff65e79c0b4b35d4c
+  CupertinoYankee: 742ab22e47518167d0c78d2eaa5aed5b6e26af3b
   DZNEmptyDataSet: 0ec00bfc230d7450997b60c127afdd0b9f24f3b6
   Fabric: 03c3b3fe77e11a2bc31421b989a9c7adaa4779a5
-  MSCollectionViewCalendarLayout: 9c52894930d6b712951f18873618fc32c00cd4fa
+  MSCollectionViewCalendarLayout: fba6fefdb3a340cb3e4f10725c6b3a530e6f6817
   MSDynamicsDrawerViewController: 2874df90f5e9453dc7d4e32f8038b50615d4baa7
+  RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SupportKit: 07e72f5e93c1055adcc810dd715aefc34e0ab279
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

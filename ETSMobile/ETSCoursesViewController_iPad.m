@@ -12,6 +12,8 @@
 #import "ETSEvaluation.h"
 #import "ETSMenuViewController.h"
 
+#import "Crashlytics.h"
+
 @interface ETSCoursesViewController_iPad ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @end
@@ -46,6 +48,15 @@
         navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [self.navigationController presentViewController:navigationController animated:NO completion:nil];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Courses notes"
+                        contentType:@"Courses"
+                          contentId:@"ETS-Courses"
+                   customAttributes:@{}];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController

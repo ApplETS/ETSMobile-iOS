@@ -32,10 +32,12 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
@@ -58,9 +60,21 @@
     ETSMenuViewController *menuViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
     menuViewController.managedObjectContext = self.managedObjectContext;
     
-    menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
-    [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
-    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"9.0")) {
+        UIApplicationShortcutItem *shortcutItem = [launchOptions objectForKey:UIApplicationLaunchOptionsShortcutItemKey];
+        if (shortcutItem == nil) {
+            menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
+        [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
+        }
+        else {
+            [self openViewController:menuViewController withString:shortcutItem.localizedTitle];
+        }
+    }
+    else {
+        menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
+        [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
+    }
+
     // Transition to the first view controller
     [menuViewController transitionToViewController:ETSPaneViewControllerTypeNews];
     
@@ -124,6 +138,32 @@
             abort();
         } 
     }
+}
+
+#pragma mark - Quick Actions
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    
+    ETSMenuViewController *menuViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
+    menuViewController.managedObjectContext = self.managedObjectContext;
+    
+    menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
+    [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
+    
+    [self openViewController:menuViewController withString:shortcutItem.localizedTitle];
+    
+}
+
+- (void)openViewController:(ETSMenuViewController *)menuViewController withString:(NSString *)shortcutTitle {
+    
+    if ([shortcutTitle isEqualToString: @"Horaire"]) {
+        [menuViewController transitionToViewController:ETSPaneViewControllerTypeCalendar];
+    } else if ([shortcutTitle isEqualToString:@"Notes"]) {
+        [menuViewController transitionToViewController:ETSPaneViewControllerTypeCourses];
+    } else if ([shortcutTitle isEqualToString:@"Moodle"]) {
+        [menuViewController transitionToViewController:ETSPaneViewControllerTypeMoodle];
+    }
+    
 }
 
 #pragma mark - Core Data stack

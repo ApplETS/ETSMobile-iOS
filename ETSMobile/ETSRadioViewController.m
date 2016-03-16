@@ -25,6 +25,8 @@
 #import "MSCurrentTimeIndicator.h"
 #import "MSCurrentTimeGridline.h"
 
+#import "Crashlytics.h"
+
 NSString * const MSRadioEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
 NSString * const MSRadioDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";
 NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifier";
@@ -138,6 +140,11 @@ NSString * const MSRadioTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIde
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Radio Piranha"
+                        contentType:@"Radio"
+                          contentId:@"ETS-Radio"
+                   customAttributes:@{}];
     
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.navigationController setToolbarHidden:YES animated:animated];
