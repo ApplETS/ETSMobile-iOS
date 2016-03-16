@@ -12,6 +12,8 @@
 #import "ETSAppDelegate.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
+#import "Crashlytics.h"
+
 @interface ETSMoodleCourseDetailViewController ()
 @property (nonatomic, copy) NSString *searchText;
 @property (nonatomic, strong) NSArray *acceptedTypes;
@@ -41,6 +43,15 @@
     if (self.token && [self.token length] > 0) {
         [self initializeSynchronization];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Moodle courses detail"
+                        contentType:@"Moodle"
+                          contentId:@"ETS-Moodle-Detail"
+                   customAttributes:@{}];
 }
 
 - (void)initializeSynchronization

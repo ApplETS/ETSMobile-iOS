@@ -19,10 +19,11 @@ Parmi les fonctionnalités offertes :
 ## Installation
 1. Téléchargez la dernière version de Xcode.
 2. Assurez-vous d’avoir ajouté votre clé ssh dans [GitHub](https://github.com/settings/ssh)
-3. Ouvrez le terminal
-4. git clone git@github.com:ApplETS/ETSMobile-iOS.git
-5. cd ETSMobile-iOS/
-6. Assurez-vous d'avoir [Cocoapods](https://guides.cocoapods.org/using/getting-started.html) d'installé.(gestionnaire de librairies pour iOS)
-7. pod install
-8. Ouvrez par la suite le fichier généré par Cocoapods nommé ETSMobile.xcworkspace
-8. Vous pouvez ensuite vous créer une nouvelle branche et compiler le projet!
+3. Téléchargez et installez le plugin de [Fabric](https://fabric.io/downloads). Vous devez être dans le groupe du Club ApplETS et avoir été invité par un administrateur.
+4. Ouvrez le terminal
+5. git clone git@github.com:ApplETS/ETSMobile-iOS.git
+6. cd ETSMobile-iOS/
+7. Assurez-vous d'avoir [Cocoapods](https://guides.cocoapods.org/using/getting-started.html) d'installé.(gestionnaire de librairies pour iOS)
+8. pod install
+9. Ouvrez par la suite le fichier généré par Cocoapods nommé ETSMobile.xcworkspace
+10. Vous pouvez ensuite vous créer une nouvelle branche et compiler le projet!

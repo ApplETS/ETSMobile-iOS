@@ -17,6 +17,8 @@
 #import "ETSMenuViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
+#import "Crashlytics.h"
+
 @interface ETSCoursesViewController ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSIndexPath *lastSelectedIndexPath;
@@ -57,6 +59,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [Answers logContentViewWithName:@"Courses notes"
+                        contentType:@"Courses"
+                          contentId:@"ETS-Courses"
+                   customAttributes:@{}];
+    
     if (self.lastSelectedIndexPath) {
         [self configureCell:[self.collectionView cellForItemAtIndexPath:self.lastSelectedIndexPath] atIndexPath:self.lastSelectedIndexPath];
     }
