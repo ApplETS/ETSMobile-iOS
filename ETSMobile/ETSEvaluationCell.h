@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *stdLabel;
 @property (weak, nonatomic) IBOutlet UILabel *percentileLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *weightingLabel;
 
 @end

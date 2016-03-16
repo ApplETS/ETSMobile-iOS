@@ -18,6 +18,7 @@
 
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 @property (nonatomic, strong) NSNumberFormatter *formatter;
+@property (nonatomic, strong) NSNumberFormatter *formatterPourcent;
 @property (nonatomic, strong) UIBarButtonItem *coursesBarButtonItem;
 @property (nonatomic, assign) BOOL hadResults;
 @end
@@ -53,6 +54,13 @@
     self.formatter.maximumFractionDigits = 1;
     self.formatter.minimumFractionDigits = 1;
     self.formatter.minimumIntegerDigits = 1;
+    
+    _formatterPourcent = [[NSNumberFormatter alloc] init];
+    [_formatterPourcent setNumberStyle:NSNumberFormatterPercentStyle];
+    [_formatterPourcent setMaximumFractionDigits:0];
+    [_formatterPourcent setMultiplier:@1];
+    
+    self.formatterPourcent.formatterBehavior = NSNumberFormatterPercentStyle;
     
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
     
@@ -197,16 +205,21 @@
     if (indexPath.section == 1) {
         ETSEvaluation *evaluation = [self.fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
         ((ETSEvaluationCell *)cell).nameLabel.text = evaluation.name;
-        ((ETSEvaluationCell *)cell).resultLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:evaluation.result], [self.formatter stringFromNumber:evaluation.total]];
-        ((ETSEvaluationCell *)cell).meanLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:evaluation.mean], [self.formatter stringFromNumber:evaluation.total]];
-        ((ETSEvaluationCell *)cell).medianLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:evaluation.median], [self.formatter stringFromNumber:evaluation.total]];
+        NSNumber *percentResult = @([evaluation.result floatValue]/[evaluation.total floatValue]*100);
+        ((ETSEvaluationCell *)cell).resultLabel.text = [NSString stringWithFormat:@"%@/%@ (%@)", [self.formatter stringFromNumber:evaluation.result], [self.formatter stringFromNumber:evaluation.total], [self.formatterPourcent stringFromNumber:percentResult]];
+        NSNumber *percentMean = @([evaluation.mean floatValue]/[evaluation.total floatValue]*100);
+        ((ETSEvaluationCell *)cell).meanLabel.text = [NSString stringWithFormat:@"%@", [self.formatterPourcent stringFromNumber:percentMean]];
+        NSNumber *percentMedian = @([evaluation.median floatValue]/[evaluation.total floatValue]*100);
+        ((ETSEvaluationCell *)cell).medianLabel.text = [NSString stringWithFormat:@"%@", [self.formatterPourcent stringFromNumber:percentMedian]];
         ((ETSEvaluationCell *)cell).stdLabel.text = [self.formatter stringFromNumber:evaluation.std];
         ((ETSEvaluationCell *)cell).percentileLabel.text = [self.formatter stringFromNumber:evaluation.percentile];
+        ((ETSEvaluationCell *)cell).weightingLabel.text = [NSString stringWithFormat:@"%@", [self.formatterPourcent stringFromNumber:evaluation.weighting]];
     }
     else {
         if (indexPath.row == 0 && self.hadResults > 0) {
                 cell.textLabel.text = NSLocalizedString(@"Note à ce jour", nil);
-                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:self.course.resultOn100], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]]];
+                NSNumber *percentNote = @([self.course.resultOn100 floatValue]/[self.course.totalEvaluationWeighting floatValue]*100);
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@ (%@)", [self.formatter stringFromNumber:self.course.resultOn100], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]], [self.formatterPourcent stringFromNumber:percentNote]];
         }
         else if (indexPath.row == 0 && self.hadResults == 0) {
             cell.textLabel.text = NSLocalizedString(@"Cote au dossier", nil);
@@ -214,7 +227,8 @@
         }
         else if (indexPath.row == 1) {
             cell.textLabel.text = NSLocalizedString(@"Moyenne du groupe", nil);
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@", [self.formatter stringFromNumber:self.course.mean], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]]];
+            NSNumber *percentMoyenne = @([self.course.mean floatValue]/[self.course.totalEvaluationWeighting floatValue]*100);
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@/%@ (%@)", [self.formatter stringFromNumber:self.course.mean], [self.formatter stringFromNumber:[self.course totalEvaluationWeighting]], [self.formatterPourcent stringFromNumber:percentMoyenne]];
         }
         else if (indexPath.row == 2) {
             cell.textLabel.text = NSLocalizedString(@"Médiane", nil);
