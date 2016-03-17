@@ -956,7 +956,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zmh-se-YlL">
                                 <rect key="frame" x="16" y="24" width="288" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Réalisation — Équipe iOS
+                                <string key="text">Réalisation — Équipe iOS
 Jean-Philippe Martin
 Maxime Mongeau Samuel Bellerose Thomas Durand
 Maxime Lapointe
@@ -985,7 +985,7 @@ MSDynamicsDrawerViewController
 AMScrollingNavbar
 GTMNSString+HTML SDWebImage DZNEmptyDataSet
 
-http://www.clubapplets.ca</mutableString>
+http://www.clubapplets.ca</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
