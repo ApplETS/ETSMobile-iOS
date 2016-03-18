@@ -210,6 +210,7 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         ETSWebViewViewController *controller = (ETSWebViewViewController *)((UINavigationController *)self.splitViewController.viewControllers[1]).topViewController;
         controller.title = element.name;
+
         if ([element.type isEqualToString:@"resource"]) {
             [controller setRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@&token=%@", element.url, self.token]]]];
         } else if ([element.type isEqualToString:@"page"]) {
