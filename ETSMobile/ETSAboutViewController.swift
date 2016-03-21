@@ -21,11 +21,4 @@ class ETSAboutViewController: UIViewController{
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationController?.setToolbarHidden(true, animated: animated)
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        UIView.animateWithDuration(0.8, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {self.aboutTextLabel.alpha = 1}, completion: nil)
-        
-    }
 }
