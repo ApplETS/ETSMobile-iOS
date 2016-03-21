@@ -956,7 +956,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zmh-se-YlL">
                                 <rect key="frame" x="16" y="24" width="288" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Réalisation — Équipe iOS
+                                <mutableString key="text">Réalisation — Équipe iOS
 Jean-Philippe Martin
 Maxime Mongeau Samuel Bellerose Thomas Durand
 Maxime Lapointe
@@ -979,13 +979,11 @@ Olivier Lacasse
 Robert Gervais
 Pierre-Luc Bolduc
 
-ÉTSMobile utilise les codes sources ouverts suivants :
-MSCollectionViewCalendarLayout
-MSDynamicsDrawerViewController
-AMScrollingNavbar
-GTMNSString+HTML SDWebImage DZNEmptyDataSet
+ÉTSMobile utilise les codes sources ouverts suivants : AMScrollingNavbar Fabric Crashlytics
+MSDynamicsDrawerViewController MSCollectionViewCalendarLayout
+GTMNSString+HTML SDWebImage DZNEmptyDataSet RKDropdownAlert
 
-http://www.clubapplets.ca</string>
+http://www.clubapplets.ca</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
