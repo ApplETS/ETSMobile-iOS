@@ -84,7 +84,6 @@
 		26DD92B617EA610D00469FA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92B517EA610D00469FA8 /* main.m */; };
 		26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */; };
 		26DD92BD17EA610D00469FA8 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */; };
-		26DD92C317EA610D00469FA8 /* ETSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */; };
 		26DD92CB17EA610D00469FA8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92CA17EA610D00469FA8 /* Images.xcassets */; };
 		26DD92D217EA610D00469FA8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92D117EA610D00469FA8 /* XCTest.framework */; };
 		26DD92D317EA610D00469FA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DD92A717EA610D00469FA8 /* Foundation.framework */; };
@@ -106,6 +105,8 @@
 		26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F393221829984F00995E16 /* ETSSessionHeader.m */; };
 		26F46A99183ED03400232B5A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F46A98183ED03400232B5A /* AVFoundation.framework */; };
 		26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */; };
+		291267BD1CBCA3500010A740 /* ETSMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 291267BA1CBCA3500010A740 /* ETSMobile.xcdatamodeld */; };
+		291267C01CBCA3800010A740 /* ETSConsommation.m in Sources */ = {isa = PBXBuildFile; fileRef = 291267BF1CBCA3800010A740 /* ETSConsommation.m */; };
 		2942BF001BF3B43C0032C79A /* ETSAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942BEFF1BF3B43C0032C79A /* ETSAboutViewController.swift */; };
 		296B68421BD52C11003A8E62 /* Launch_Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296B68411BD52C11003A8E62 /* Launch_Screen.xib */; };
 		29CFAC4D1BBD09590027CC2E /* ETS-logo-blanc.png in Resources */ = {isa = PBXBuildFile; fileRef = 29CFAC4C1BBD09590027CC2E /* ETS-logo-blanc.png */; };
@@ -282,7 +283,6 @@
 		26DD92B717EA610D00469FA8 /* ETSMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ETSMobile-Prefix.pch"; sourceTree = "<group>"; };
 		26DD92B817EA610D00469FA8 /* ETSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETSAppDelegate.h; sourceTree = "<group>"; };
 		26DD92B917EA610D00469FA8 /* ETSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETSAppDelegate.m; sourceTree = "<group>"; };
-		26DD92C217EA610D00469FA8 /* ETSMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ETSMobile.xcdatamodel; sourceTree = "<group>"; };
 		26DD92CA17EA610D00469FA8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		26DD92D017EA610D00469FA8 /* ETSMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ETSMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26DD92D117EA610D00469FA8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -318,6 +318,10 @@
 		26F46A98183ED03400232B5A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		26F46A9A183ED0E200232B5A /* ETSRadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSRadioViewController.h; sourceTree = "<group>"; };
 		26F46A9B183ED0E200232B5A /* ETSRadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSRadioViewController.m; sourceTree = "<group>"; };
+		291267BB1CBCA3500010A740 /* ETSMobile 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ETSMobile 2.xcdatamodel"; sourceTree = "<group>"; };
+		291267BC1CBCA3500010A740 /* ETSMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ETSMobile.xcdatamodel; sourceTree = "<group>"; };
+		291267BE1CBCA3800010A740 /* ETSConsommation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSConsommation.h; sourceTree = "<group>"; };
+		291267BF1CBCA3800010A740 /* ETSConsommation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSConsommation.m; sourceTree = "<group>"; };
 		2939AE261BBCFBC500B08631 /* Keys.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
 		2942BEFC1BF3AF000032C79A /* ETSMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ETSMobile-Bridging-Header.h"; sourceTree = "<group>"; };
 		2942BEFF1BF3B43C0032C79A /* ETSAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETSAboutViewController.swift; sourceTree = "<group>"; };
@@ -695,6 +699,7 @@
 		26DD92AF17EA610D00469FA8 /* ETSMobile */ = {
 			isa = PBXGroup;
 			children = (
+				291267BA1CBCA3500010A740 /* ETSMobile.xcdatamodeld */,
 				291803881BC33F9200FD84CD /* Images */,
 				26F3CD3E184FCF5100536ADB /* ETSMobile.entitlements */,
 				26DD92E817EA612800469FA8 /* Models */,
@@ -708,7 +713,6 @@
 				26DD92BB17EA610D00469FA8 /* Main_iPhone.storyboard */,
 				26BB372B18F59580002CE5DD /* Main_iPad.storyboard */,
 				26DD92CA17EA610D00469FA8 /* Images.xcassets */,
-				26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */,
 				26DD92B017EA610D00469FA8 /* Supporting Files */,
 				296B68411BD52C11003A8E62 /* Launch_Screen.xib */,
 			);
@@ -750,6 +754,8 @@
 		26DD92E817EA612800469FA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				291267BE1CBCA3800010A740 /* ETSConsommation.h */,
+				291267BF1CBCA3800010A740 /* ETSConsommation.m */,
 				1DBF6C6719A507EA00761C44 /* ETSNewsSource.h */,
 				1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */,
 				1D25DD8719A3E63B00C71387 /* ETSNews.h */,
@@ -1129,7 +1135,9 @@
 				1D7F20161A71738200527ACB /* NSMutableURLRequest+BasicAuth.m in Sources */,
 				2633EFDD19085419009BC485 /* ETSUniversityCalendarViewController.m in Sources */,
 				26DEB89018EC97EC00161421 /* MSTimeRowHeaderBackground.m in Sources */,
+				291267C01CBCA3800010A740 /* ETSConsommation.m in Sources */,
 				26634D8A1881D91900644FFB /* ETSBandwidthCell.m in Sources */,
+				291267BD1CBCA3500010A740 /* ETSMobile.xcdatamodeld in Sources */,
 				26F393231829984F00995E16 /* ETSSessionHeader.m in Sources */,
 				1D33BA24188F064600A5F1C8 /* ETSRateCell.m in Sources */,
 				26DEB89618EC985600161421 /* NSDate+Day.m in Sources */,
@@ -1146,7 +1154,6 @@
 				26DEB74C18E9F2C000161421 /* ETSCalendar.m in Sources */,
 				26DEB88C18EC97EC00161421 /* MSDayColumnHeaderBackground.m in Sources */,
 				26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */,
-				26DD92C317EA610D00469FA8 /* ETSMobile.xcdatamodeld in Sources */,
 				264E86D0188796A7005F1820 /* NSURL+Document.m in Sources */,
 				263A4C4C188B14A800E38CAC /* NSString+HTML.m in Sources */,
 				26634D8D1881F2FF00644FFB /* ETSLoginView.m in Sources */,
@@ -1518,12 +1525,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		26DD92C117EA610D00469FA8 /* ETSMobile.xcdatamodeld */ = {
+		291267BA1CBCA3500010A740 /* ETSMobile.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				26DD92C217EA610D00469FA8 /* ETSMobile.xcdatamodel */,
+				291267BB1CBCA3500010A740 /* ETSMobile 2.xcdatamodel */,
+				291267BC1CBCA3500010A740 /* ETSMobile.xcdatamodel */,
 			);
-			currentVersion = 26DD92C217EA610D00469FA8 /* ETSMobile.xcdatamodel */;
+			currentVersion = 291267BB1CBCA3500010A740 /* ETSMobile 2.xcdatamodel */;
 			path = ETSMobile.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

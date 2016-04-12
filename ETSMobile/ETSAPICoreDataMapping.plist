@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>Consommation</key>
+    <dict>
+        <key>id</key>
+        <string>id</string>
+        <key>date</key>
+        <string>date</string>
+        <key>download</key>
+        <string>download</string>
+        <key>idChambre</key>
+        <string>idChambre</string>
+        <key>upload</key>
+        <string>upload</string>
+    </dict>
 	<key>NewsSource</key>
 	<dict>
 		<key>enabled</key>

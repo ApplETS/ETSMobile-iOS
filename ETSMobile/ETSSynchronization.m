@@ -103,7 +103,8 @@
         NSError *jsonError = nil;
         NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
         
-        if ([bself.delegate respondsToSelector:@selector(synchronization:didReceiveDictionary:)]) [bself.delegate synchronization:bself didReceiveDictionary:jsonObjects];
+        if ([bself.delegate respondsToSelector:@selector(synchronization:didReceiveDictionary:)])
+            [bself.delegate synchronization:bself didReceiveDictionary:jsonObjects];
 
         if ([bself.delegate respondsToSelector:@selector(synchronization:validateJSONResponse:)]) {
             

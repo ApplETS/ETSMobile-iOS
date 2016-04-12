@@ -88,9 +88,9 @@
     return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Comment"]];
 }
 
-+ (id)URLForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase
++ (id)URLForBandwidthWithResidence:(NSString *)residence phase:(NSString *)phase
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"Bandwidth"], phase, residence, residence, month]];
+    return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"Cooptel_API_V3"], phase, residence]];
 }
 
 + (id)URLForRadio

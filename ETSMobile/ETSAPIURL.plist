@@ -28,5 +28,7 @@
 	<string>https://signets-ens.etsmtl.ca/Secure/WebServices/SignetsMobile.asmx/listeCours</string>
 	<key>Profile</key>
 	<string>https://signets-ens.etsmtl.ca/Secure/WebServices/SignetsMobile.asmx/infoEtudiant</string>
+    <key>Cooptel_API_V3</key>
+    <string>https://api3.clubapplets.ca/cooptel?phase=%@&amp;appt=%@</string>
 </dict>
 </plist>

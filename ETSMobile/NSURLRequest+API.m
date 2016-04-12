@@ -182,9 +182,9 @@
     return request;
 }
 
-+ (id)requestForBandwidthWithMonth:(NSString *)month residence:(NSString *)residence phase:(NSString *)phase
++ (id)requestForBandwidthWithResidence:(NSString *)residence phase:(NSString *)phase
 {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForBandwidthWithMonth:month residence:residence phase:phase]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForBandwidthWithResidence:residence phase:phase]];
     
     [request setHTTPMethod: @"GET"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
