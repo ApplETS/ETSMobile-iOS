@@ -11,7 +11,6 @@ target 'ETSMobile' do
     pod 'SupportKit', '2.11.0'
     pod 'DZNEmptyDataSet'
    	pod 'RKDropdownAlert'
-   	pod 'Google/Analytics'
 end
 
 target 'ETSMobileTests' do

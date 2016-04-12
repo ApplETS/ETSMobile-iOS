@@ -25,7 +25,6 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <SupportKit/SupportKit.h>
-#import <Google/Analytics.h>
 
 
 @implementation ETSAppDelegate
@@ -162,6 +161,8 @@
         [menuViewController transitionToViewController:ETSPaneViewControllerTypeCourses];
     } else if ([shortcutTitle isEqualToString:@"Moodle"]) {
         [menuViewController transitionToViewController:ETSPaneViewControllerTypeMoodle];
+    } else if ([shortcutTitle isEqualToString:@"Bande Passante"]) {
+        [menuViewController transitionToViewController:ETSPaneViewControllerTypeBandwidth];
     }
     
 }

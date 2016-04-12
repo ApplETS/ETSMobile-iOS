@@ -69,6 +69,14 @@
 			<key>UIApplicationShortcutItemType</key>
 			<string>com.etsmobile.opencalendar</string>
 		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>ico_internet</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Bande Passante</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.etsmobile.openbandwidth</string>
+		</dict>
 	</array>
 	<key>UIBackgroundModes</key>
 	<array>
