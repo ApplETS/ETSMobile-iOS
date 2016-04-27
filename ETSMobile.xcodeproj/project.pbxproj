@@ -113,9 +113,9 @@
 		9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */; };
 		9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */; };
 		9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC88726189ED56B002A3D04 /* MapKit.framework */; };
-		C1E8B04E276C9543B0B92EF4 /* libPods-ETSMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DE67BBDCCED00037D3BB48E /* libPods-ETSMobile.a */; };
 		D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D15F4AE3183992D00034605B /* ETSProfileViewController.m */; };
 		D15F4AE71839A80B0034605B /* ETSProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = D15F4AE61839A80B0034605B /* ETSProfile.m */; };
+		D7E5B876F1B85E3746567E44 /* Pods_ETSMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C3A12838884264666B3170 /* Pods_ETSMobile.framework */; };
 		E90350EE1B987A670093C8E1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 269B46D81A1123300052E4B7 /* CoreTelephony.framework */; };
 		E90350F01B987A670093C8E1 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350EF1B987A670093C8E1 /* CoreText.framework */; };
 		E90350F21B987A7C0093C8E1 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E90350F11B987A7C0093C8E1 /* libxml2.dylib */; };
@@ -153,6 +153,7 @@
 		1D8B140D19A7B1E80033CBA7 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GTMNSString+HTML.m"; path = "Vendors/GTMNSString+HTML/GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		1DBF6C6719A507EA00761C44 /* ETSNewsSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsSource.h; sourceTree = "<group>"; };
 		1DBF6C6819A507EA00761C44 /* ETSNewsSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsSource.m; sourceTree = "<group>"; };
+		21C3A12838884264666B3170 /* Pods_ETSMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ETSMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2600DB06190767000039039A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2601088D181596820037E795 /* ETSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCollectionViewController.h; sourceTree = "<group>"; };
 		26085B3C1829D84300FE35AB /* ETSAPIURL.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ETSAPIURL.plist; sourceTree = "<group>"; };
@@ -327,7 +328,6 @@
 		2942BEFF1BF3B43C0032C79A /* ETSAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETSAboutViewController.swift; sourceTree = "<group>"; };
 		296B68411BD52C11003A8E62 /* Launch_Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch_Screen.xib; sourceTree = "<group>"; };
 		29CFAC4C1BBD09590027CC2E /* ETS-logo-blanc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ETS-logo-blanc.png"; path = "Images.xcassets/ETS-logo-blanc.imageset/ETS-logo-blanc.png"; sourceTree = "<group>"; };
-		2DE67BBDCCED00037D3BB48E /* libPods-ETSMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ETSMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5799CF18EC7F2D00AD8838 /* ETSSecurityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityDetailViewController.h; sourceTree = "<group>"; };
 		9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSecurityDetailViewController.m; sourceTree = "<group>"; };
 		9CC88722189ECF43002A3D04 /* ETSSecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityViewController.h; sourceTree = "<group>"; };
@@ -369,7 +369,7 @@
 				26AE185D17F296CD00DB1EB4 /* QuartzCore.framework in Frameworks */,
 				26DD92AE17EA610D00469FA8 /* CoreData.framework in Frameworks */,
 				26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */,
-				C1E8B04E276C9543B0B92EF4 /* libPods-ETSMobile.a in Frameworks */,
+				D7E5B876F1B85E3746567E44 /* Pods_ETSMobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,7 +691,7 @@
 				26DD92AB17EA610D00469FA8 /* UIKit.framework */,
 				26DD92AD17EA610D00469FA8 /* CoreData.framework */,
 				26DD92D117EA610D00469FA8 /* XCTest.framework */,
-				2DE67BBDCCED00037D3BB48E /* libPods-ETSMobile.a */,
+				21C3A12838884264666B3170 /* Pods_ETSMobile.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
