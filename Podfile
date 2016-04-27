@@ -1,9 +1,9 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '8.0'
+platform :ios, '7.0'
 use_frameworks!
 
 target 'ETSMobile' do
-    pod 'AMScrollingNavbar’, '1.5'
+    pod 'AMScrollingNavbar'
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'MSDynamicsDrawerViewController'

@@ -15,7 +15,7 @@ PODS:
   - SupportKit (2.11.0)
 
 DEPENDENCIES:
-  - AMScrollingNavbar (= 1.5)
+  - AMScrollingNavbar
   - Crashlytics
   - DZNEmptyDataSet
   - Fabric
