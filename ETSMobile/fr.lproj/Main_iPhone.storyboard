@@ -1016,7 +1016,10 @@ http://www.clubapplets.ca</string>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZy-Wq-8fh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zEf-CV-G3e" id="wyJ-yY-jaN"/>
+                                </connections>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1030,6 +1033,9 @@ http://www.clubapplets.ca</string>
                     <navigationItem key="navigationItem" title="Mon ÉTS" id="F3Y-OP-qri"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <connections>
+                        <outlet property="webView" destination="zZy-Wq-8fh" id="aqS-sd-IJv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iK7-et-x7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
