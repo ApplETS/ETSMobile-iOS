@@ -1030,10 +1030,43 @@ http://www.clubapplets.ca</string>
                             <constraint firstItem="F2Y-Ig-Otd" firstAttribute="top" secondItem="zZy-Wq-8fh" secondAttribute="bottom" id="spd-hx-gPy"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Précédent" id="acC-LX-v1W">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="goBack" destination="SDN-1O-yxz" id="xp6-4c-zAO"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="NwY-Pc-pyN"/>
+                        <barButtonItem title="Suivant" id="G2V-EP-BMh">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="goForward" destination="SDN-1O-yxz" id="QmH-fz-GZI"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="TmJ-Cm-ygd"/>
+                        <barButtonItem systemItem="refresh" id="YSG-V7-z23">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="reload" destination="SDN-1O-yxz" id="Bd9-Wx-Aj1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="RiI-Vz-7qL"/>
+                        <barButtonItem systemItem="stop" id="ZvA-Kw-gcM">
+                            <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="stopLoading" destination="SDN-1O-yxz" id="RXM-AG-pJG"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Mon ÉTS" id="F3Y-OP-qri"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
+                        <outlet property="backBarButtonItem" destination="acC-LX-v1W" id="73z-Ww-t7c"/>
+                        <outlet property="nextBarButtonItem" destination="G2V-EP-BMh" id="FXY-dv-EX2"/>
+                        <outlet property="refreshBarButtonItem" destination="YSG-V7-z23" id="AF3-oq-XId"/>
+                        <outlet property="stopBarButtonItem" destination="ZvA-Kw-gcM" id="bJ8-BM-8CC"/>
                         <outlet property="webView" destination="zZy-Wq-8fh" id="aqS-sd-IJv"/>
                     </connections>
                 </viewController>
