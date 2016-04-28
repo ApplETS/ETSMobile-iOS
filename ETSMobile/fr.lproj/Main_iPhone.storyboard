@@ -813,10 +813,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="SDN-1O-yxz" firstAttribute="top" secondItem="aVZ-qP-MLq" secondAttribute="bottom" id="3uH-Wu-Db5"/>
                             <constraint firstItem="SDN-1O-yxz" firstAttribute="leading" secondItem="A4g-pk-g6V" secondAttribute="leading" id="8OJ-R5-BSp"/>
                             <constraint firstAttribute="trailing" secondItem="SDN-1O-yxz" secondAttribute="trailing" id="OHa-GE-mcf"/>
-                            <constraint firstItem="al1-LZ-Wr7" firstAttribute="top" secondItem="SDN-1O-yxz" secondAttribute="bottom" id="YYI-Cj-RDm"/>
-                            <constraint firstItem="SDN-1O-yxz" firstAttribute="top" secondItem="aVZ-qP-MLq" secondAttribute="bottom" id="alS-CS-7qq"/>
+                            <constraint firstItem="al1-LZ-Wr7" firstAttribute="top" secondItem="SDN-1O-yxz" secondAttribute="bottom" id="nDb-mI-rNk"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -1013,9 +1013,21 @@ http://www.clubapplets.ca</string>
                     <view key="view" contentMode="scaleToFill" id="ffx-Ar-Dk6">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZy-Wq-8fh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zZy-Wq-8fh" firstAttribute="leading" secondItem="ffx-Ar-Dk6" secondAttribute="leading" id="SeT-DA-bq1"/>
+                            <constraint firstItem="zZy-Wq-8fh" firstAttribute="top" secondItem="Stt-dg-IaK" secondAttribute="bottom" id="cQX-OO-QVk"/>
+                            <constraint firstAttribute="trailing" secondItem="zZy-Wq-8fh" secondAttribute="trailing" id="siq-Zk-Ulu"/>
+                            <constraint firstItem="F2Y-Ig-Otd" firstAttribute="top" secondItem="zZy-Wq-8fh" secondAttribute="bottom" id="spd-hx-gPy"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="F3Y-OP-qri"/>
+                    <navigationItem key="navigationItem" title="Mon ÉTS" id="F3Y-OP-qri"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </viewController>
