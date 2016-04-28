@@ -1002,6 +1002,27 @@ http://www.clubapplets.ca</string>
             </objects>
             <point key="canvasLocation" x="-868" y="53"/>
         </scene>
+        <!--Mon ÉTS-->
+        <scene sceneID="pZq-fq-9vL">
+            <objects>
+                <viewController title="Mon ÉTS" id="zEf-CV-G3e" customClass="ETSWebViewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Stt-dg-IaK"/>
+                        <viewControllerLayoutGuide type="bottom" id="F2Y-Ig-Otd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ffx-Ar-Dk6">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="F3Y-OP-qri"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iK7-et-x7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="163" y="-2897"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="mNU-d6-EVk">
             <objects>
@@ -1015,7 +1036,7 @@ http://www.clubapplets.ca</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CyT-00-7SR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="806" y="-3057"/>
+            <point key="canvasLocation" x="1338" y="-3057"/>
         </scene>
         <!--Bande passante-->
         <scene sceneID="Zcj-oU-pyc">
@@ -1182,7 +1203,7 @@ http://www.clubapplets.ca</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Meb-Bp-PZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1327" y="-3057"/>
+            <point key="canvasLocation" x="1859" y="-3057"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JAj-IS-AJk">
@@ -1874,6 +1895,24 @@ http://www.clubapplets.ca</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KKB-c7-eJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6" y="-4388"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7Tw-Lm-6Iw">
+            <objects>
+                <navigationController storyboardIdentifier="MonetsWebViewController" definesPresentationContext="YES" id="KKp-h2-TIL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zv0-r3-pzz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zEf-CV-G3e" kind="relationship" relationship="rootViewController" id="x6c-bB-kfQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vfq-fS-PRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-369" y="-2897"/>
         </scene>
     </scenes>
     <resources>
