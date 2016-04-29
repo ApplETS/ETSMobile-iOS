@@ -1034,28 +1034,28 @@ http://www.clubapplets.ca</string>
                         <barButtonItem title="Précédent" id="acC-LX-v1W">
                             <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
-                                <action selector="goBack" destination="SDN-1O-yxz" id="xp6-4c-zAO"/>
+                                <action selector="goBack" destination="zZy-Wq-8fh" id="fhV-gL-VLJ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="NwY-Pc-pyN"/>
                         <barButtonItem title="Suivant" id="G2V-EP-BMh">
                             <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
-                                <action selector="goForward" destination="SDN-1O-yxz" id="QmH-fz-GZI"/>
+                                <action selector="goForward" destination="zZy-Wq-8fh" id="GVA-v5-6VY"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="TmJ-Cm-ygd"/>
                         <barButtonItem systemItem="refresh" id="YSG-V7-z23">
                             <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
-                                <action selector="reload" destination="SDN-1O-yxz" id="Bd9-Wx-Aj1"/>
+                                <action selector="reload" destination="zZy-Wq-8fh" id="HQm-Cg-Cn7"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="RiI-Vz-7qL"/>
                         <barButtonItem systemItem="stop" id="ZvA-Kw-gcM">
                             <color key="tintColor" red="0.79215693470000004" green="0.1215686351" blue="0.090196080509999998" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
-                                <action selector="stopLoading" destination="SDN-1O-yxz" id="RXM-AG-pJG"/>
+                                <action selector="stopLoading" destination="zZy-Wq-8fh" id="anU-tf-SVA"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
