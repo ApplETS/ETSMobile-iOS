@@ -1072,7 +1072,7 @@ http://www.clubapplets.ca</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iK7-et-x7A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="163" y="-2897"/>
+            <point key="canvasLocation" x="-868" y="-5153"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mNU-d6-EVk">
@@ -1963,7 +1963,7 @@ http://www.clubapplets.ca</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfq-fS-PRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-369" y="-2897"/>
+            <point key="canvasLocation" x="-1400" y="-5153"/>
         </scene>
     </scenes>
     <resources>
