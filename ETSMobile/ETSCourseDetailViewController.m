@@ -72,6 +72,15 @@
     self.hadResults = [[self.fetchedResultsController sections][0] numberOfObjects] > 0;
 }
 
+- (NSAttributedString *)titleforEvaluationNotCompleted: (UIScrollView *)scrollView
+{
+    NSString *text = @"Il y a au moins un cours dont vous devez évaluer l'enseignement avant de pouvoir consulter vos notes.";
+    
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
+                                 NSForegroundColorAttributeName: [UIColor blackColor]};
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
 {
     NSString *text = @"Aucune note disponible pour le moment.";
