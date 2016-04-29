@@ -20,6 +20,7 @@ typedef NS_ENUM(NSUInteger, ETSPaneViewControllerType) {
     ETSPaneViewControllerTypeNews,
     ETSPaneViewControllerTypeDirectory,
     ETSPaneViewControllerTypeLibrary,
+    ETSPaneViewControllerTypeMonets,
     ETSPaneViewControllerTypeRadio,
     ETSPaneViewControllerTypeSecurity,
     ETSPaneViewControllerTypeComment,

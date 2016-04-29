@@ -67,6 +67,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
                                            @(ETSPaneViewControllerTypeCourses)      : NSLocalizedString(@"Notes", nil),
                                            @(ETSPaneViewControllerTypeDirectory)    : NSLocalizedString(@"Bottin", nil),
                                            @(ETSPaneViewControllerTypeLibrary)      : NSLocalizedString(@"Bibliothèque", nil),
+                                           @(ETSPaneViewControllerTypeMonets)       : NSLocalizedString(@"Mon ÉTS", nil),
                                            @(ETSPaneViewControllerTypeMoodle)       : NSLocalizedString(@"Moodle", nil),
                                            @(ETSPaneViewControllerTypeNews)         : NSLocalizedString(@"Actualités", nil),
                                            @(ETSPaneViewControllerTypeProfile)      : NSLocalizedString(@"Profil", nil),
@@ -83,6 +84,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
                                            @(ETSPaneViewControllerTypeCourses)      : [UIImage imageNamed:@"ico_notes"],
                                            @(ETSPaneViewControllerTypeDirectory)    : [UIImage imageNamed:@"ico_bottin"],
                                            @(ETSPaneViewControllerTypeLibrary)      : [UIImage imageNamed:@"ico_library"],
+                                           @(ETSPaneViewControllerTypeMonets)       : [UIImage imageNamed:@"ico_monets"],
                                            @(ETSPaneViewControllerTypeMoodle)       : [UIImage imageNamed:@"ico_moodle"],
                                            @(ETSPaneViewControllerTypeNews)         : [UIImage imageNamed:@"ico_news"],
                                            @(ETSPaneViewControllerTypeProfile)      : [UIImage imageNamed:@"ico_profil"],
@@ -99,6 +101,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
                                            @(ETSPaneViewControllerTypeCourses)      : @"CoursesViewController",
                                            @(ETSPaneViewControllerTypeDirectory)    : @"DirectoryViewController",
                                            @(ETSPaneViewControllerTypeLibrary)      : @"WebViewController",
+                                           @(ETSPaneViewControllerTypeMonets)       : @"MonetsWebViewController",
                                            @(ETSPaneViewControllerTypeMoodle)       : @"MoodleViewController",
                                            @(ETSPaneViewControllerTypeNews)         : @"NewsViewController",
                                            @(ETSPaneViewControllerTypeProfile)      : @"ProfileViewController",
@@ -119,7 +122,7 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
 {
     switch (section) {
         case 0: return 5;
-        case 1: return 5;
+        case 1: return 6;
         case 2: return 3;
         default: return 0;
     }
@@ -214,6 +217,9 @@ NSString * const ETSDrawerHeaderReuseIdentifier = @"HeaderCell";
     
     if (paneViewControllerType == ETSPaneViewControllerTypeLibrary)
         ((ETSWebViewViewController *)((UINavigationController *)paneViewController).topViewController).request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://ets.mbiblio.ca"]];
+    
+    if (paneViewControllerType == ETSPaneViewControllerTypeMonets)
+        ((ETSWebViewViewController *)((UINavigationController *)paneViewController).topViewController).request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://portail.etsmtl.ca"]];
     
     if ([paneViewController respondsToSelector:@selector(setManagedObjectContext:)])
         [paneViewController performSelector:@selector(setManagedObjectContext:) withObject:self.managedObjectContext];
