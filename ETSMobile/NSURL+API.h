@@ -16,6 +16,7 @@
 + (id)URLForCalendar;
 + (id)URLForSession;
 + (id)URLForEvaluations;
++ (id)URLForEvalEnseignement;
 + (id)URLForDirectory;
 + (id)URLForRadio;
 + (id)URLForUniversityCalendarStart:(NSDate *)start end:(NSDate *)end;

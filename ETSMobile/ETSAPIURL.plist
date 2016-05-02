@@ -24,6 +24,8 @@
 	<string>http://etsmtl.ca/cmspages/webservice.asmx/Recherche</string>
 	<key>Evaluations</key>
 	<string>https://signets-ens.etsmtl.ca/Secure/WebServices/SignetsMobile.asmx/listeElementsEvaluation</string>
+    <key>EvalEnseignement</key>
+    <string>https://signets-ens.etsmtl.ca/Secure/WebServices/SignetsMobile.asmx/lireEvaluationCours</string>
 	<key>Courses</key>
 	<string>https://signets-ens.etsmtl.ca/Secure/WebServices/SignetsMobile.asmx/listeCours</string>
 	<key>Profile</key>

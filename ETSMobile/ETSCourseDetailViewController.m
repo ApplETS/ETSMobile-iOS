@@ -74,7 +74,7 @@
 
 - (NSAttributedString *)titleforEvaluationNotCompleted: (UIScrollView *)scrollView
 {
-    NSString *text = @"Il y a au moins un cours dont vous devez évaluer l'enseignement avant de pouvoir consulter vos notes.";
+    NSString *text = @"Veuillez compléter l'évaluation de ce cours avant de pouvoir accéder à vos notes";
     
     NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
                                  NSForegroundColorAttributeName: [UIColor blackColor]};
