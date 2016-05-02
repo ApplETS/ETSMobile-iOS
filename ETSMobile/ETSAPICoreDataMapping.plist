@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
+	<dict>
+	<key>Sponsors</key>
+	<dict>
+		<key>image_url</key>
+		<string>image_url</string>
+		<key>name</key>
+		<string>name</string>
+		<key>url</key>
+		<string>url</string>
+	</dict>
 	<key>Consommation</key>
 	<dict>
 		<key>id</key>
