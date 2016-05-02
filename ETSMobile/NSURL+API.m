@@ -23,6 +23,7 @@
 
 @implementation NSURL (API)
 
+
 + (id)URLForCourses
 {
     return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Courses"]];
@@ -121,6 +122,11 @@
     [formatter setDateFormat:@"yyyy-MM-dd"];
     return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"UniversityCalendar"], [formatter stringFromDate:start], [formatter stringFromDate:end]]];
 //        return [NSURL URLWithString:[NSString stringWithFormat:[NSURL dictionaryFromPlist][@"UniversityCalendar"], [formatter stringFromDate:start]]];
+}
+
++ (id)URLForSponsors
+{
+    return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Sponsors"]];
 }
 
 @end
