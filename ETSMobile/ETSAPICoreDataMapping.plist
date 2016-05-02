@@ -6,8 +6,6 @@
 	<dict>
 		<key>image_url</key>
 		<string>image_url</string>
-		<key>index</key>
-		<string>index</string>
 		<key>name</key>
 		<string>name</string>
 		<key>url</key>
