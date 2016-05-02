@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
+	<dict>
 	<key>Sponsors</key>
 	<dict>
 		<key>image_url</key>
@@ -222,6 +222,15 @@
 		<string>corrigeSur</string>
 		<key>weighting</key>
 		<string>ponderation</string>
+	</dict>
+	<key>EvalEnseignement</key>
+	<dict>
+		<key>startDate</key>
+		<string>DateDebutEvaluation</string>
+		<key>endDate</key>
+		<string>DateFinEvaluation</string>
+		<key>hasBeenCompleted</key>
+		<string>EstComplete</string>
 	</dict>
 	<key>Course</key>
 	<dict>

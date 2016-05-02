@@ -34,6 +34,11 @@
     return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Evaluations"]];
 }
 
++ (id)URLForEvalEnseignement
+{
+    return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"EvalEnseignement"]];
+}
+
 + (id)URLForDirectory
 {
     return [NSURL URLWithString:[NSURL dictionaryFromPlist][@"Directory"]];

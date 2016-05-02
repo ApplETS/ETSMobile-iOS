@@ -126,6 +126,11 @@
     return request;
 }
 
++ (id)requestForEvalEnseignement
+{
+    return [self requestWithUsernameAndPassword:[NSURL URLForEvalEnseignement]];
+}
+
 + (id)requestForDirectory
 {
     NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL:[NSURL URLForDirectory]];
