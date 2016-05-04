@@ -67,7 +67,8 @@
 
 - (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler{
     if([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]){
-        if([challenge.protectionSpace.host isEqualToString:@"api.clubapplets.ca"]){
+        //if([challenge.protectionSpace.host isEqualToString:@"api.clubapplets.ca"]){
+        if(self.appletsServer){
             NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
             completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
         }
@@ -96,7 +97,9 @@
         });
         
         // FIXME: traiter si data est vide ou s'il y a erreur
-        if (!data || [data length] == 0 || error) return;
+        if (!data || [data length] == 0 || error){
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        }
         
         NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
 

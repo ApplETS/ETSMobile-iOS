@@ -266,8 +266,8 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="249" text="Rang centile :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCJ-Am-oXE">
-                                            <rect key="frame" x="15" y="136" width="252.5" height="20"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="249" misplaced="YES" text="Rang centile :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCJ-Am-oXE">
+                                            <rect key="frame" x="15" y="136" width="253" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="PHV-Tq-ZSd"/>
                                             </constraints>
@@ -870,29 +870,31 @@
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="oXD-JB-OCg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.45406567239608575" green="0.79852513172073847" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tax-tz-2pd">
-                            <size key="itemSize" width="187" height="71"/>
+                            <size key="itemSize" width="115" height="66"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SponsorIdentifier" id="JBy-DE-oUC">
-                                <rect key="frame" x="66.5" y="64" width="187" height="71"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SponsorCell" id="JBy-DE-oUC" customClass="ETSCollectionViewCell">
+                                <rect key="frame" x="10" y="74" width="115" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="187" height="71"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="115" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzI-Ic-LWX">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nxv-Ve-5sR">
+                                            <rect key="frame" x="0.0" y="0.0" width="115" height="66"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" red="1" green="0.977224167725258" blue="0.025725759434285012" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="sponsorImageView" destination="Nxv-Ve-5sR" id="ghm-cM-Ihh"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -1556,7 +1558,7 @@ http://www.clubapplets.ca</string>
         <!--Partenaires-->
         <scene sceneID="pZG-rN-EJ1">
             <objects>
-                <navigationController storyboardIdentifier="SponsorsViewController" title="Partenaires" definesPresentationContext="YES" id="1UK-Fi-Rsd" sceneMemberID="viewController">
+                <navigationController title="Partenaires" definesPresentationContext="YES" id="1UK-Fi-Rsd" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xKt-ea-qtv">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1964,6 +1966,21 @@ http://www.clubapplets.ca</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfq-fS-PRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1400" y="-5153"/>
+        </scene>
+        <!--Partenaires-->
+        <scene sceneID="BsO-Xz-RML">
+            <objects>
+                <navigationController storyboardIdentifier="SponsorsViewController" title="Partenaires" definesPresentationContext="YES" id="rrX-Qb-sxI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="U0q-Pp-Owe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GEH-WZ-eqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2233" y="-2273"/>
         </scene>
     </scenes>
     <resources>

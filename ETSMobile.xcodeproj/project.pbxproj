@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1472C95F1CD7E082004D9A9C /* ETSEvalEnseignement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1472C95E1CD7E082004D9A9C /* ETSEvalEnseignement.m */; };
 		1472C9621CD7E3FD004D9A9C /* ETSSponsors.m in Sources */ = {isa = PBXBuildFile; fileRef = 1472C9611CD7E3FD004D9A9C /* ETSSponsors.m */; };
+		1472C9681CDA2F94004D9A9C /* ETSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1472C9671CDA2F94004D9A9C /* ETSCollectionViewCell.m */; };
 		1D25DD8319A3C95900C71387 /* ETSNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D25DD8219A3C95900C71387 /* ETSNewsViewController.m */; };
 		1D25DD8919A3E63B00C71387 /* ETSNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D25DD8819A3E63B00C71387 /* ETSNews.m */; };
 		1D29A464188DB9E500CF02EB /* ETSCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D29A463188DB9E500CF02EB /* ETSCommentCell.m */; };
@@ -144,6 +145,8 @@
 		1472C95E1CD7E082004D9A9C /* ETSEvalEnseignement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSEvalEnseignement.m; sourceTree = "<group>"; };
 		1472C9601CD7E3FD004D9A9C /* ETSSponsors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSponsors.h; sourceTree = "<group>"; };
 		1472C9611CD7E3FD004D9A9C /* ETSSponsors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSponsors.m; sourceTree = "<group>"; };
+		1472C9661CDA2F94004D9A9C /* ETSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSCollectionViewCell.h; sourceTree = "<group>"; };
+		1472C9671CDA2F94004D9A9C /* ETSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCollectionViewCell.m; sourceTree = "<group>"; };
 		1D25DD8119A3C95900C71387 /* ETSNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsViewController.h; sourceTree = "<group>"; };
 		1D25DD8219A3C95900C71387 /* ETSNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsViewController.m; sourceTree = "<group>"; };
 		1D25DD8719A3E63B00C71387 /* ETSNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNews.h; sourceTree = "<group>"; };
@@ -429,6 +432,8 @@
 				2698C6F11827498800F6281F /* ETSAuthenticationViewController.m */,
 				2690F602183D088700FAD05A /* ETSWebViewViewController.h */,
 				2690F603183D088700FAD05A /* ETSWebViewViewController.m */,
+				1472C9661CDA2F94004D9A9C /* ETSCollectionViewCell.h */,
+				1472C9671CDA2F94004D9A9C /* ETSCollectionViewCell.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -1199,6 +1204,7 @@
 				266ED35018300D2900DC1280 /* ETSCourse.m in Sources */,
 				265FDFBF18E0C50400371078 /* ETSCalendarViewController.m in Sources */,
 				269BFF5C1814C649005D2950 /* ETSCoursesViewController.m in Sources */,
+				1472C9681CDA2F94004D9A9C /* ETSCollectionViewCell.m in Sources */,
 				26AF7CF618FB499200BD3982 /* ETSMoodleCourse.m in Sources */,
 				26AF7CFF18FB8A0000BD3982 /* ETSMoodleElement.m in Sources */,
 				263A4C421889D83000E38CAC /* ETSNewsDetailsViewController.m in Sources */,

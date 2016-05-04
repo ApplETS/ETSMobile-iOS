@@ -7,17 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ETSSynchronization.h"
+#import "ETSCollectionViewController.h"
 
-typedef NS_ENUM(NSUInteger, ETSSponsor) {
-    ETSSponsorETS,
-    ETSSponsorBell,
-    ETSSponsorAEETS,
-    ETSSponsorFDETS,
-    ETSSponsorGitHub,
-    ETSSponsorBugSense,
-    ETSSponsorAtlassian
-};
+@interface ETSSponsorsViewController : ETSCollectionViewController
 
-@interface ETSSponsorsViewController : UICollectionViewController
+@property NSArray * sponsorsArray;
 
 @end
+     
