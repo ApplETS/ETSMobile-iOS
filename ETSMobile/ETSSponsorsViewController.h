@@ -13,6 +13,7 @@
 @interface ETSSponsorsViewController : ETSCollectionViewController
 
 @property NSArray * sponsorsArray;
+@property NSDictionary * sponsorDictionary;
 
 @end
      

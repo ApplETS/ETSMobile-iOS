@@ -209,7 +209,27 @@
     [request setValue:@"UTF-8" forHTTPHeaderField:@"Accept-Charset"];
     [request setCachePolicy: NSURLRequestReloadIgnoringCacheData];
     
+   /* NSData * data = [NSURLConnection sendSynchronousRequest:request
+                                          returningResponse:nil
+                                                      error:nil];
+    
+    if (data != nil)
+    {
+        NSDictionary * sponsorDictionary = [NSJSONSerialization JSONObjectWithData:data
+                                                                           options:NSJSONReadingMutableContainers
+                                                                             error:nil];
+        if (sponsorDictionary != nil)
+        {
+            NSLog(@"%@", [sponsorDictionary description]);
+        }
+    }*/
+    
     return request;
 }
+
+
+
+
+
 
 @end

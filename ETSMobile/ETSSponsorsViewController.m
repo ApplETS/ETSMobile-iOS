@@ -58,6 +58,16 @@
     
     self.synchronization.request = [NSURLRequest requestForSponsors];
     
+    NSData * data = [NSURLConnection sendSynchronousRequest:self.synchronization.request
+                                          returningResponse:nil
+                                                      error:nil];
+    
+    if (data != nil)
+    {
+        _sponsorDictionary = [NSJSONSerialization JSONObjectWithData:data
+                                                             options:NSJSONReadingMutableContainers
+                                                               error:nil];
+    }
     
     //self.sponsorsArray = _fetchedResultsController.fetchedObjects;
     
@@ -183,8 +193,27 @@
     
     ETSCollectionViewCell * sponsorCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SponsorCell" forIndexPath:indexPath];
     
-  
-    //sponsorCell.sponsorImageView.image = [UIImage imageNamed:@"ico_partners"];
+    if (_sponsorDictionary != nil)
+    {
+        _sponsorsArray = _sponsorDictionary[@"partner"];
+        
+        if ([_sponsorDictionary count] > 0)
+        {
+            NSDictionary * sponsorDescriptionDictionnary = _sponsorsArray[indexPath.row];
+            
+            NSString * imageDescription = sponsorDescriptionDictionnary[@"image_url"];
+            
+            NSURL * image_url = [NSURL URLWithString:imageDescription];
+            
+            [sponsorCell.sponsorImageView sd_setImageWithURL:image_url];
+        }
+    }
+    
+    else
+    {
+        sponsorCell.sponsorImageView.image = [UIImage imageNamed:@"ico_partners"];
+    }
+    
     
     return sponsorCell;
     
