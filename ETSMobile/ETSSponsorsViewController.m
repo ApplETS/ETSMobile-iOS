@@ -116,13 +116,15 @@
     return _fetchedResultsController;
 }
 
-- (ETSSynchronizationResponse)synchronization:(ETSSynchronization *)synchronization validateJSONResponse:(NSDictionary *)response
+- (ETSSynchronizationResponse)synchronization:(ETSSynchronization *)synchronization
+                         validateJSONResponse:(NSDictionary *)response
 {
     return ETSSynchronizationResponseValid;
 }
 
 
-- (void)synchronization:(ETSSynchronization *)synchronization didReceiveResponse:(ETSSynchronizationResponse)response
+- (void)synchronization:(ETSSynchronization *)synchronization
+     didReceiveResponse:(ETSSynchronizationResponse)response
 {
     NSLog(@"TODO: VALIDATION");
 }
@@ -145,7 +147,9 @@
     
 }*/
 
-- (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject
+- (void)synchronization:(ETSSynchronization *)synchronization
+       didReceiveObject:(NSDictionary *)object
+       forManagedObject:(NSManagedObject *)managedObject
 {
     if (![managedObject isKindOfClass:[ETSSponsors class]])
         return;
@@ -156,7 +160,8 @@
     ETSSponsors * sponsors = [self.fetchedResultsController objectAtIndexPath:indexPath];
 }*/
 
-- (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects
+- (id)synchronization:(ETSSynchronization *)synchronization
+    updateJSONObjects:(id)objects
 {
     if (!objects || [objects isKindOfClass:[NSNull class]]) {
         [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Sponsors" inManagedObjectContext:self.managedObjectContext];
@@ -183,12 +188,14 @@
     return 1;
 }
 
--(NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+-(NSInteger) collectionView:(UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section
 {
     return self.fetchedResultsController.fetchedObjects.count;
 }
 
--(ETSCollectionViewCell*) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+-(ETSCollectionViewCell*) collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
     ETSCollectionViewCell * sponsorCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SponsorCell" forIndexPath:indexPath];
@@ -216,6 +223,17 @@
     
     
     return sponsorCell;
+    
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat cellWidth = (self.collectionView.bounds.size.width - 30)/2;
+    CGFloat cellHeight = cellWidth/1.618 ;
+    
+    return CGSizeMake(cellWidth, cellHeight);
     
 }
 

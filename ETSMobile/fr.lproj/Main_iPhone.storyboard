@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -875,23 +876,30 @@
                             <size key="itemSize" width="145" height="66"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="10" minY="15" maxX="10" maxY="15"/>
+                            <inset key="sectionInset" minX="8" minY="15" maxX="10" maxY="15"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SponsorCell" id="JBy-DE-oUC" customClass="ETSCollectionViewCell">
-                                <rect key="frame" x="10" y="15" width="145" height="66"/>
+                                <rect key="frame" x="8" y="15" width="145" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="145" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nxv-Ve-5sR">
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nxv-Ve-5sR">
                                             <rect key="frame" x="0.0" y="0.0" width="145" height="66"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Nxv-Ve-5sR" firstAttribute="height" secondItem="JBy-DE-oUC" secondAttribute="height" id="6PZ-6d-bRQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nxv-Ve-5sR" secondAttribute="bottom" id="WL9-E8-b7g"/>
+                                    <constraint firstItem="Nxv-Ve-5sR" firstAttribute="leading" secondItem="JBy-DE-oUC" secondAttribute="leading" id="ZXY-9a-adN"/>
+                                    <constraint firstItem="Nxv-Ve-5sR" firstAttribute="width" secondItem="JBy-DE-oUC" secondAttribute="height" multiplier="145:66" id="dG3-ay-7Vb"/>
+                                    <constraint firstItem="Nxv-Ve-5sR" firstAttribute="top" secondItem="JBy-DE-oUC" secondAttribute="top" id="dVh-fK-eV3"/>
+                                    <constraint firstItem="Nxv-Ve-5sR" firstAttribute="width" secondItem="JBy-DE-oUC" secondAttribute="width" id="tw2-PV-8Pc"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="sponsorImageView" destination="Nxv-Ve-5sR" id="ghm-cM-Ihh"/>
                                 </connections>
