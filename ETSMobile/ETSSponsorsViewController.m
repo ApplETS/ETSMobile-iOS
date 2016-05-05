@@ -141,13 +141,10 @@
         return;
 }
 
-- (void)configureCell:(ETSCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+/*- (void)configureCell:(ETSCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     ETSSponsors * sponsors = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
-    
-    cell.sponsorImageView.image = [UIImage imageNamed:@"ico_partners"];
-}
+}*/
 
 - (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects
 {
@@ -186,8 +183,8 @@
     
     ETSCollectionViewCell * sponsorCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SponsorCell" forIndexPath:indexPath];
     
-    //sponsorCell.sponsorImageView.image = self.sponsorsArray[indexPath.row];
-    sponsorCell.sponsorImageView.image = [UIImage imageNamed:@"ico_partners"];
+  
+    //sponsorCell.sponsorImageView.image = [UIImage imageNamed:@"ico_partners"];
     
     return sponsorCell;
     
