@@ -237,4 +237,22 @@
     
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (_sponsorDictionary != nil)
+    {
+        _sponsorsArray = _sponsorDictionary[@"partner"];
+        
+        if ([_sponsorDictionary count] > 0)
+        {
+            NSDictionary * sponsorDescriptionDictionnary = _sponsorsArray[indexPath.row];
+            
+            NSString * urlDescription = sponsorDescriptionDictionnary[@"url"];
+            
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlDescription]];
+
+        }
+    }
+}
+
 @end
