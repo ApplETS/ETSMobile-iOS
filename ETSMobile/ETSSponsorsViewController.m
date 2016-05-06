@@ -7,112 +7,252 @@
 //
 
 #import "ETSSponsorsViewController.h"
+#import "ETSSynchronization.h"
+#import "NSURLRequest+API.h"
+#import "ETSSponsors.h"
+#import "ETSCoreDataHelper.h"
+#import "UIImageView+WebCache.h"
+#import "ETSCollectionViewCell.h"
+#import "ETSCoreDataHelper.h"
 
 #import "Crashlytics.h"
 
 @interface ETSSponsorsViewController ()
-@property (nonatomic, strong) NSDictionary *sponsorsImages;
-@property (nonatomic, strong) NSDictionary *sponsorsSizes;
-@property (nonatomic, strong) NSDictionary *sponsorsSizesiPad;
-@property (nonatomic, strong) NSDictionary *sponsorsURLs;
+
+@property (strong, nonatomic) NSFetchedResultsController* fetchedResultsController;
+
 @end
 
 @implementation ETSSponsorsViewController
+
+@synthesize fetchedResultsController = _fetchedResultsController;
+
+
+- (void)updateSponsors
+{
+    [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Sponsors" inManagedObjectContext:self.managedObjectContext];
+    
+    self.synchronization.request = [NSURLRequest requestForSponsors];
+    
+    NSError *error;
+    [self.synchronization synchronize:&error];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.sponsorsImages = @{
-                            @(ETSSponsorETS)        : [UIImage imageNamed:@"LogoETS"],
-                            @(ETSSponsorBell)       : [UIImage imageNamed:@"logoBell"],
-                            @(ETSSponsorAEETS)      : [UIImage imageNamed:@"LogoAEETS"],
-                            @(ETSSponsorFDETS)      : [UIImage imageNamed:@"logoFondDevETS"],
-                            @(ETSSponsorGitHub)     : [UIImage imageNamed:@"logoGitHub"],
-                            @(ETSSponsorBugSense)   : [UIImage imageNamed:@"logoBugsense"],
-                            @(ETSSponsorAtlassian)  : [UIImage imageNamed:@"logoAtlassian"],
-                            };
+    self.cellIdentifier = @"SponsorCell";
     
-    self.sponsorsSizes = @{
-                            @(ETSSponsorETS)        : [NSValue valueWithCGSize:CGSizeMake(250, 100)],
-                            @(ETSSponsorBell)       : [NSValue valueWithCGSize:CGSizeMake(250, 80)],
-                            @(ETSSponsorAEETS)      : [NSValue valueWithCGSize:CGSizeMake(150, 70)],
-                            @(ETSSponsorFDETS)      : [NSValue valueWithCGSize:CGSizeMake(150, 70)],
-                            @(ETSSponsorGitHub)     : [NSValue valueWithCGSize:CGSizeMake(150, 85)],
-                            @(ETSSponsorBugSense)   : [NSValue valueWithCGSize:CGSizeMake(150, 70)],
-                            @(ETSSponsorAtlassian)  : [NSValue valueWithCGSize:CGSizeMake(320, 40)],
-                            };
+    ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     
-    self.sponsorsSizesiPad = @{
-                           @(ETSSponsorETS)        : [NSValue valueWithCGSize:CGSizeMake(850, 200)],
-                           @(ETSSponsorBell)       : [NSValue valueWithCGSize:CGSizeMake(850, 140)],
-                           @(ETSSponsorAEETS)      : [NSValue valueWithCGSize:CGSizeMake(350, 100)],
-                           @(ETSSponsorFDETS)      : [NSValue valueWithCGSize:CGSizeMake(350, 100)],
-                           @(ETSSponsorGitHub)     : [NSValue valueWithCGSize:CGSizeMake(350, 120)],
-                           @(ETSSponsorBugSense)   : [NSValue valueWithCGSize:CGSizeMake(350, 90)],
-                           @(ETSSponsorAtlassian)  : [NSValue valueWithCGSize:CGSizeMake(320, 80)],
-                           };
+    synchronization.entityName = @"Sponsors";
+    synchronization.compareKey = @"name";
+    synchronization.objectsKeyPath = @"partner";
+    synchronization.appletsServer = YES;
+    self.synchronization = synchronization;
+    self.synchronization.delegate = self;
     
-    self.sponsorsURLs = @{
-                           @(ETSSponsorETS)        : [NSURL URLWithString:@"http://m.etsmtl.ca"],
-                           @(ETSSponsorBell)       : [NSURL URLWithString:@"http://www.bell.ca"],
-                           @(ETSSponsorAEETS)      : [NSURL URLWithString:@"http://aeets.com"],
-                           @(ETSSponsorFDETS)      : [NSURL URLWithString:@"http://fdets.etsmtl.ca"],
-                           @(ETSSponsorGitHub)     : [NSURL URLWithString:@"https://github.com"],
-                           @(ETSSponsorBugSense)   : [NSURL URLWithString:@"https://www.bugsense.com"],
-                           @(ETSSponsorAtlassian)  : [NSURL URLWithString:@"https://www.atlassian.com"],
-                           };
+    self.title = @"Nos partenaires";
+    
+    
+    self.synchronization.request = [NSURLRequest requestForSponsors];
+    
+    NSData * data = [NSURLConnection sendSynchronousRequest:self.synchronization.request
+                                          returningResponse:nil
+                                                      error:nil];
+    
+    if (data != nil)
+    {
+        _sponsorDictionary = [NSJSONSerialization JSONObjectWithData:data
+                                                             options:NSJSONReadingMutableContainers
+                                                               error:nil];
+    }
+    
+    //self.sponsorsArray = _fetchedResultsController.fetchedObjects;
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    [Answers logContentViewWithName:@"Sponsors"
+    /*[Answers logContentViewWithName:@"Sponsors"
                         contentType:@"Sponsors"
                           contentId:@"ETS-Sponsors"
                    customAttributes:@{}];
     
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [self.navigationController setToolbarHidden:YES animated:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];*/
+    [self.navigationController setToolbarHidden:NO animated:animated];
+    
+    
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+- (NSFetchedResultsController *)fetchedResultsController
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return [self.sponsorsSizes[@(indexPath.row)] CGSizeValue];
-    } else {
-        return [self.sponsorsSizesiPad[@(indexPath.row)] CGSizeValue];
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
     }
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Sponsors" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    fetchRequest.fetchBatchSize = 24;
+    
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    self.fetchedResultsController = aFetchedResultsController;
+    _fetchedResultsController.delegate = self;
+    
+    NSError *error;
+    if (![_fetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+    
+    return _fetchedResultsController;
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+- (ETSSynchronizationResponse)synchronization:(ETSSynchronization *)synchronization
+                         validateJSONResponse:(NSDictionary *)response
+{
+    return ETSSynchronizationResponseValid;
+}
+
+
+- (void)synchronization:(ETSSynchronization *)synchronization
+     didReceiveResponse:(ETSSynchronizationResponse)response
+{
+    NSLog(@"TODO: VALIDATION");
+}
+/*- (void)configureCell:(UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    ETSSponsors *sponsor = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    [[cell subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    UIImageView *imageView = (UIImageView *) [cell viewWithTag:100];
+    
+    //[imageView sd_setImageWithURL:[NSURL URLWithString:sponsor.image_url]];
+
+    NSLog(sponsor.image_url);
+    
+    
+    [imageView setImage:[UIImage imageNamed:@"ico_partners"]];
+    
+    [cell addSubview:imageView];
+    
+}*/
+
+- (void)synchronization:(ETSSynchronization *)synchronization
+       didReceiveObject:(NSDictionary *)object
+       forManagedObject:(NSManagedObject *)managedObject
+{
+    if (![managedObject isKindOfClass:[ETSSponsors class]])
+        return;
+}
+
+/*- (void)configureCell:(ETSCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    ETSSponsors * sponsors = [self.fetchedResultsController objectAtIndexPath:indexPath];
+}*/
+
+- (id)synchronization:(ETSSynchronization *)synchronization
+    updateJSONObjects:(id)objects
+{
+    if (!objects || [objects isKindOfClass:[NSNull class]]) {
+        [ETSCoreDataHelper deleteAllObjectsWithEntityName:@"Sponsors" inManagedObjectContext:self.managedObjectContext];
+        return nil;
+    }
+    
+    NSMutableArray *entries = [NSMutableArray array];
+    
+    NSArray *sponsors = (NSArray *)objects;
+    
+    for (NSDictionary * sponsor in sponsors) {
+        NSMutableDictionary *entry = [NSMutableDictionary dictionary];
+        
+        [entry setValue:[sponsor valueForKey:@"image_url"] forKey:@"image_url"];
+        
+        [entries addObject:entry];
+    }
+    
+    return entries;
+}
+
+-(NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+-(NSInteger) collectionView:(UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section
 {
-    return 7;
+    return self.fetchedResultsController.fetchedObjects.count;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+-(ETSCollectionViewCell*) collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SponsorIdentifier" forIndexPath:indexPath];
+    
+    ETSCollectionViewCell * sponsorCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SponsorCell" forIndexPath:indexPath];
+    
+    if (_sponsorDictionary != nil)
+    {
+        _sponsorsArray = _sponsorDictionary[@"partner"];
+        
+        if ([_sponsorDictionary count] > 0)
+        {
+            NSDictionary * sponsorDescriptionDictionnary = _sponsorsArray[indexPath.row];
+            
+            NSString * imageDescription = sponsorDescriptionDictionnary[@"image_url"];
+            
+            NSURL * image_url = [NSURL URLWithString:imageDescription];
+            
+            [sponsorCell.sponsorImageView sd_setImageWithURL:image_url];
+        }
+    }
+    
+    else
+    {
+        sponsorCell.sponsorImageView.image = [UIImage imageNamed:@"ico_partners"];
+    }
+    
+    
+    return sponsorCell;
+    
+}
 
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:self.sponsorsImages[@(indexPath.row)]];
-    imageView.frame = CGRectIntegral(CGRectMake(0, 0, cell.bounds.size.width-5, cell.bounds.size.height-5));
-    imageView.center = CGPointMake(cell.bounds.size.width/2, cell.bounds.size.height/2);
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat cellWidth = (self.collectionView.bounds.size.width - 30)/2;
+    CGFloat cellHeight = cellWidth/1.618 ;
     
-    [cell addSubview:imageView];
+    return CGSizeMake(cellWidth, cellHeight);
     
-    return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [[UIApplication sharedApplication] openURL:self.sponsorsURLs[@(indexPath.row)]];
+    if (_sponsorDictionary != nil)
+    {
+        _sponsorsArray = _sponsorDictionary[@"partner"];
+        
+        if ([_sponsorDictionary count] > 0)
+        {
+            NSDictionary * sponsorDescriptionDictionnary = _sponsorsArray[indexPath.row];
+            
+            NSString * urlDescription = sponsorDescriptionDictionnary[@"url"];
+            
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlDescription]];
+
+        }
+    }
 }
 
 @end

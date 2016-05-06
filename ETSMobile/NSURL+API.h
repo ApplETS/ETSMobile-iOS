@@ -16,10 +16,12 @@
 + (id)URLForCalendar;
 + (id)URLForSession;
 + (id)URLForEvaluations;
++ (id)URLForEvalEnseignement;
 + (id)URLForDirectory;
 + (id)URLForRadio;
 + (id)URLForUniversityCalendarStart:(NSDate *)start end:(NSDate *)end;
 + (id)URLForNewsWithSources:(NSArray *)sources;
 + (id)URLForComment;
 + (id)URLForBandwidthWithResidence:(NSString *)residence phase:(NSString *)phase;
++ (id)URLForSponsors;
 @end

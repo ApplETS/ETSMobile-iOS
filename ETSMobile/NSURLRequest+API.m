@@ -126,6 +126,11 @@
     return request;
 }
 
++ (id)requestForEvalEnseignement
+{
+    return [self requestWithUsernameAndPassword:[NSURL URLForEvalEnseignement]];
+}
+
 + (id)requestForDirectory
 {
     NSMutableURLRequest *request = [NSURLRequest JSONRequestWithURL:[NSURL URLForDirectory]];
@@ -193,5 +198,38 @@
     [request setCachePolicy: NSURLRequestReloadIgnoringCacheData];
     return request;
 }
+
++ (id)requestForSponsors
+{
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLForSponsors]];
+    
+    [request setHTTPMethod: @"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"UTF-8" forHTTPHeaderField:@"Accept-Charset"];
+    [request setCachePolicy: NSURLRequestReloadIgnoringCacheData];
+    
+   /* NSData * data = [NSURLConnection sendSynchronousRequest:request
+                                          returningResponse:nil
+                                                      error:nil];
+    
+    if (data != nil)
+    {
+        NSDictionary * sponsorDictionary = [NSJSONSerialization JSONObjectWithData:data
+                                                                           options:NSJSONReadingMutableContainers
+                                                                             error:nil];
+        if (sponsorDictionary != nil)
+        {
+            NSLog(@"%@", [sponsorDictionary description]);
+        }
+    }*/
+    
+    return request;
+}
+
+
+
+
+
 
 @end

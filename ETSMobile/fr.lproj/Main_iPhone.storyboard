@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -266,8 +267,8 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="249" text="Rang centile :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCJ-Am-oXE">
-                                            <rect key="frame" x="15" y="136" width="252.5" height="20"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="249" misplaced="YES" text="Rang centile :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCJ-Am-oXE">
+                                            <rect key="frame" x="15" y="136" width="253" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="PHV-Tq-ZSd"/>
                                             </constraints>
@@ -868,31 +869,40 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" title="Partenaires" id="Ebg-4B-1Og" customClass="ETSSponsorsViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="oXD-JB-OCg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tax-tz-2pd">
-                            <size key="itemSize" width="187" height="71"/>
+                            <size key="itemSize" width="145" height="66"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="15" maxX="10" maxY="15"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SponsorIdentifier" id="JBy-DE-oUC">
-                                <rect key="frame" x="66.5" y="64" width="187" height="71"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SponsorCell" id="JBy-DE-oUC" customClass="ETSCollectionViewCell">
+                                <rect key="frame" x="10" y="15" width="145" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="187" height="71"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="145" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzI-Ic-LWX">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nxv-Ve-5sR">
+                                            <rect key="frame" x="0.0" y="0.0" width="145" height="66"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="Nxv-Ve-5sR" firstAttribute="height" secondItem="JBy-DE-oUC" secondAttribute="height" id="6PZ-6d-bRQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nxv-Ve-5sR" secondAttribute="bottom" id="WL9-E8-b7g"/>
+                                    <constraint firstItem="Nxv-Ve-5sR" firstAttribute="leading" secondItem="JBy-DE-oUC" secondAttribute="leading" id="ZXY-9a-adN"/>
+                                    <constraint firstItem="Nxv-Ve-5sR" firstAttribute="width" secondItem="JBy-DE-oUC" secondAttribute="height" multiplier="145:66" id="dG3-ay-7Vb"/>
+                                    <constraint firstItem="Nxv-Ve-5sR" firstAttribute="top" secondItem="JBy-DE-oUC" secondAttribute="top" id="dVh-fK-eV3"/>
+                                    <constraint firstItem="Nxv-Ve-5sR" firstAttribute="width" secondItem="JBy-DE-oUC" secondAttribute="width" id="tw2-PV-8Pc"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="sponsorImageView" destination="Nxv-Ve-5sR" id="ghm-cM-Ihh"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -901,6 +911,8 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Partenaires" id="Deh-No-qFe"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzO-cd-zby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -953,9 +965,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Réalisation — Équipe iOS
 Jean-Philippe Martin
-Maxime Mongeau Samuel Bellerose Thomas Durand
+Maxime Mongeau
+Samuel Bellerose
+Thomas Durand
 Maxime Lapointe
-Annie Caron Alyssa Bouchenak
+Annie Caron
+Alyssa Bouchenak
 
 Réalisation — API/Serveur
 Charles Lévesque
@@ -974,9 +989,16 @@ Olivier Lacasse
 Robert Gervais
 Pierre-Luc Bolduc
 
-ÉTSMobile utilise les codes sources ouverts suivants : AMScrollingNavbar Fabric Crashlytics
-MSDynamicsDrawerViewController MSCollectionViewCalendarLayout
-GTMNSString+HTML SDWebImage DZNEmptyDataSet RKDropdownAlert
+ÉTSMobile utilise les codes sources ouverts suivants :
+AMScrollingNavbar
+Fabric
+Crashlytics
+MSDynamicsDrawerViewController
+MSCollectionViewCalendarLayout
+GTMNSString+HTML
+SDWebImage
+DZNEmptyDataSet
+RKDropdownAlert
 
 http://www.clubapplets.ca</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

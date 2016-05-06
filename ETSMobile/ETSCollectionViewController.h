@@ -10,7 +10,7 @@
 #import "ETSSynchronization.h"
 #import "ETSAuthenticationViewController.h"
 
-@interface ETSCollectionViewController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate, ETSSynchronizationDelegate, ETSAuthenticationViewControllerDelegate>
+@interface ETSCollectionViewController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, NSFetchedResultsControllerDelegate, ETSSynchronizationDelegate, ETSAuthenticationViewControllerDelegate>
 
 @property (strong, nonatomic) ETSSynchronization *synchronization;
 @property (copy,   nonatomic) NSString *cellIdentifier;

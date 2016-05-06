@@ -1153,24 +1153,39 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" title="Partenaires" id="6dD-44-xaw" customClass="ETSSponsorsViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="RCL-bH-c2i">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Rv-D4-Nqm">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="300" height="144"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="15" maxX="10" maxY="15"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SponsorIdentifier" id="vZY-eL-6cn">
-                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SponsorCell" id="vZY-eL-6cn" customClass="ETSCollectionViewCell">
+                                <rect key="frame" x="10" y="15" width="300" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="144"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="99C-Rj-O2C">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="144"/>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="99C-Rj-O2C" secondAttribute="bottom" id="5Wi-zO-U7H"/>
+                                    <constraint firstAttribute="trailing" secondItem="99C-Rj-O2C" secondAttribute="trailing" id="JRt-Kn-cE4"/>
+                                    <constraint firstItem="99C-Rj-O2C" firstAttribute="top" secondItem="vZY-eL-6cn" secondAttribute="top" id="MY3-Ak-7Ld"/>
+                                    <constraint firstItem="99C-Rj-O2C" firstAttribute="height" secondItem="vZY-eL-6cn" secondAttribute="height" id="UZ3-gj-wgT"/>
+                                    <constraint firstItem="99C-Rj-O2C" firstAttribute="leading" secondItem="vZY-eL-6cn" secondAttribute="leading" id="vJo-Le-9hx"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="sponsorImageView" destination="99C-Rj-O2C" id="8jQ-iZ-Pgt"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -1179,6 +1194,8 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Partenaires" id="obS-3h-c5y"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgl-aC-PGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
