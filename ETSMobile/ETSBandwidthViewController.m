@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usageLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *usageProgressView;
+@property (weak, nonatomic) IBOutlet UILabel *leftBandwidthLabel;
 @property (nonatomic, copy)   NSString *apartment;
 @property (nonatomic, strong) NSString *phase;
 @end
@@ -217,6 +218,18 @@
 
 - (ETSSynchronizationResponse)synchronization:(ETSSynchronization *)synchronization validateJSONResponse:(NSDictionary *)response
 {
+    NSDictionary *consommations = [response valueForKey:@"consommations"];
+    NSNumber *usedBandWidth = [NSNumber numberWithFloat:0.0];
+    
+    for(NSDictionary * consommation in consommations) {
+        NSNumber *download = [consommation valueForKey:@"download"];
+        NSNumber *upload = [consommation valueForKey:@"upload"];
+        usedBandWidth = [NSNumber numberWithFloat:([download floatValue] + [upload floatValue] + [usedBandWidth floatValue])];
+    
+    }
+    
+    self.usedBandwidth =  usedBandWidth;
+    self.limitBandwidth = [response valueForKey:@"restant"];
     return ETSSynchronizationResponseValid;
     //    return [ETSAuthenticationViewController validateJSONResponse:response];
 }
@@ -277,6 +290,13 @@
         [entry setValue:[consommation valueForKey:@"upload"]forKey:@"upload"];
         [entries addObject:entry];
     }
+    
+    
+    
+    self.usageProgressView.progress = [self.usedBandwidth floatValue] / [self.limitBandwidth floatValue];
+    NSNumber *leftBandWidth = [NSNumber numberWithFloat:([self.limitBandwidth floatValue] - [self.usedBandwidth floatValue])];
+    self.leftBandwidthLabel.text = [NSString stringWithFormat:@"%d Mo",
+                                    [leftBandWidth intValue]];
     
 //    NSArray *days = [[[tables objectAtIndex:0] valueForKey:@"tbody"] valueForKey:@"tr"];
 //    
