@@ -75,7 +75,7 @@
     }
 
     // Transition to the first view controller
-    [menuViewController transitionToViewController:ETSPaneViewControllerTypeNews];
+    [menuViewController transitionToViewController:ETSPaneViewControllerTypeCalendar];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.dynamicsDrawerViewController;
