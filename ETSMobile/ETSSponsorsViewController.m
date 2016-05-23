@@ -15,7 +15,7 @@
 #import "ETSCollectionViewCell.h"
 #import "ETSCoreDataHelper.h"
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface ETSSponsorsViewController ()
 

@@ -9,7 +9,7 @@
 #import "ETSSecurityDetailViewController.h"
 #import "ETSSecurityProcedureViewController.h"
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface ETSSecurityDetailViewController ()
 @property (nonatomic, weak) IBOutlet UITextView *textView;

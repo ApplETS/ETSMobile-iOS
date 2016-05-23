@@ -12,7 +12,7 @@
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface ETSDirectoryViewController ()
 @property (nonatomic, copy) NSString *searchText;
