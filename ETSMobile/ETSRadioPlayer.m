@@ -36,7 +36,7 @@
     [[AVAudioSession sharedInstance] setActive:YES error: NULL];
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     
-    self.playerItem = [AVPlayerItem playerItemWithURL:[NSURL  URLWithString:@"http://radiopiranha.com:8000/radiopiranha.mp3"]];
+    self.playerItem = [AVPlayerItem playerItemWithURL:[NSURL  URLWithString:@"http://live.radiopiranha.com:8000/radiopiranha.mp3"]];
     [self.playerItem addObserver:self forKeyPath:@"timedMetadata" options:NSKeyValueObservingOptionNew context:nil];
 
     _player = [AVPlayer playerWithPlayerItem:self.playerItem];
