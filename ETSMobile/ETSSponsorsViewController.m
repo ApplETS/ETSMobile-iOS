@@ -11,10 +11,9 @@
 #import "NSURLRequest+API.h"
 #import "ETSSponsors.h"
 #import "ETSCoreDataHelper.h"
-#import "UIImageView+WebCache.h"
 #import "ETSCollectionViewCell.h"
 #import "ETSCoreDataHelper.h"
-
+#import "UIImageView+WebCache.h"
 #import "Crashlytics.h"
 
 @interface ETSSponsorsViewController ()

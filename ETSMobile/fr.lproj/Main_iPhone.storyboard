@@ -910,6 +910,7 @@
                             <outlet property="delegate" destination="Ebg-4B-1Og" id="eo0-dP-f0U"/>
                         </connections>
                     </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Partenaires" id="Deh-No-qFe"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
