@@ -25,7 +25,7 @@
 #import "MSCurrentTimeIndicator.h"
 #import "MSCurrentTimeGridline.h"
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 NSString * const MSRadioEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
 NSString * const MSRadioDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";

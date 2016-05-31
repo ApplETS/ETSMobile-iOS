@@ -20,18 +20,18 @@
 
 @implementation ETSNewsViewController
 
-@synthesize fetchedResultsController = _fetchedResultsController;   
+@synthesize fetchedResultsController = _fetchedResultsController;
 
 - (void)updateDefaultNewsSource
 {
     NSArray *sources = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"NewsSources" ofType:@"plist"]];
-    
+
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.entityName = @"NewsSource";
     synchronization.compareKey = @"id";
     synchronization.ignoredAttributes = @[@"enabled"];
     synchronization.managedObjectContext = self.managedObjectContext;
-    
+
     NSError *error = nil;
     [synchronization synchronizeJSONArray:sources error:&error];
     if (![self.managedObjectContext save:&error]) {
@@ -58,43 +58,43 @@
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
-    
+
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"News"];
-    
+
     fetchRequest.fetchBatchSize = 5;
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"ymdDate" ascending:NO], [NSSortDescriptor sortDescriptorWithKey:@"updatedDate" ascending:NO]];
-    
+
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"ymdDate" cacheName:nil];
-    
+
     self.fetchedResultsController = aFetchedResultsController;
     _fetchedResultsController.delegate = self;
-    
+
     NSError *error;
     if (![_fetchedResultsController performFetch:&error]) {
         // FIXME: Update to handle the error appropriately.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     }
-    
+
     return _fetchedResultsController;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     #ifdef __USE_TESTFLIGHT
     [TestFlight passCheckpoint:@"NEWS_VIEWCONTROLLER"];
     #endif
-    
+
     [self updateDefaultNewsSource];
-    
+
     self.cellIdentifier = @"NewsIdentifier";
-    
+
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
     [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
-    
+
     ETSSynchronization *synchronization = [[ETSSynchronization alloc] init];
     synchronization.request = [NSURLRequest requestForNewsWithSources:[self enabledSources]];
     synchronization.entityName = @"News";
@@ -104,7 +104,7 @@
     synchronization.appletsServer = YES;
     self.synchronization = synchronization;
     self.synchronization.delegate = self;
-    
+
     [self.refreshControl addTarget:self action:@selector(startRefresh:) forControlEvents:UIControlEventValueChanged];
     self.refreshControl.tintColor = [UIColor lightGrayColor];
 }
@@ -113,7 +113,7 @@
 {
     self.synchronization.request = [NSURLRequest requestForNewsWithSources:[self enabledSources]];
     [super viewWillAppear:animated];
-    
+
     [Answers logContentViewWithName:@"News"
                         contentType:@"News"
                           contentId:@"ETS-News"
@@ -123,18 +123,18 @@
 - (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects
 {
     NSMutableArray *news = [NSMutableArray array];
-    
+
     NSDateFormatter *ymdFormatter = [NSDateFormatter new];
     [ymdFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
     [ymdFormatter setDateFormat:@"yyyy'-'MM'-'dd"];
 
     NSArray *keys = [((NSDictionary *)objects) allKeys];
-    
+
     for (NSString *key in keys) {
-        
+
         for (NSDictionary *object in objects[key]) {
             NSMutableDictionary *entry = [NSMutableDictionary dictionaryWithDictionary:object];
-            
+
             NSDate *date = [self.synchronization.dateFormatter dateFromString:object[@"updated_time"]];
             NSString *dateString = [ymdFormatter stringFromDate:date];
             if (dateString) {
@@ -177,7 +177,7 @@
 - (void)configureCell:(UITableView *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     ETSNews *news = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    
+
     if ([cell isKindOfClass:[ETSNewsCell class]]) {
         ((ETSNewsCell *)cell).contentLabel.text = news.title;
         ((ETSNewsCell *)cell).authorLabel.text = news.author;
@@ -188,7 +188,7 @@
         ((ETSNewsEmptyCell *)cell).contentLabel.text = news.content;
         ((ETSNewsEmptyCell *)cell).authorLabel.text = news.author;
     }
-    
+
     cell.layer.shouldRasterize = YES;
     cell.layer.rasterizationScale = [[UIScreen mainScreen] scale];
 }
@@ -200,7 +200,7 @@
     NSDateFormatter *ymdFormatter = [NSDateFormatter new];
     ymdFormatter.dateFormat = @"yyyy-MM-dd";
     NSDate *date = [ymdFormatter dateFromString:sectionInfo.name];
-    
+
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
     NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"fr_CA"];
     dateFormatter.locale = locale;

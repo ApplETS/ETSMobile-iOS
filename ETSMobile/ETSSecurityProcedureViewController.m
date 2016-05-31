@@ -8,7 +8,7 @@
 
 #import "ETSSecurityProcedureViewController.h"
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface ETSSecurityProcedureViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;

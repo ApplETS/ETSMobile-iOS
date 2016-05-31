@@ -11,7 +11,7 @@
 #import "ETSMoodleCourse.h"
 #import "ETSMenuViewController.h"
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 NSString * const kUnknownSession = @"000000";
 

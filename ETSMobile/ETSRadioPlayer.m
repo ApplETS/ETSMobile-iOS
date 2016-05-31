@@ -11,7 +11,7 @@
 #import "ETSAppDelegate.h"
 #import <MediaPlayer/MediaPlayer.h>
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface ETSRadioPlayer ()
 @property (nonatomic, strong)   AVPlayer        *player;

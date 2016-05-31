@@ -11,7 +11,7 @@
 #import "ETSAppDelegate.h"
 #import "MSDynamicsDrawerViewController.h"
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 NSString * const kKeychainId = @"ApplETS";
 

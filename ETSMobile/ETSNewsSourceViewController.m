@@ -9,7 +9,7 @@
 #import "ETSNewsSourceViewController.h"
 #import "ETSNewsSource.h"
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface ETSNewsSourceViewController()
 @property (nonatomic, strong) NSArray *sources;

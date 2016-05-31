@@ -12,7 +12,7 @@
 #import "ETSEvaluation.h"
 #import "ETSMenuViewController.h"
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface ETSCoursesViewController_iPad ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
