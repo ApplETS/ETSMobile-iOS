@@ -17,7 +17,7 @@
 #import "ETSMenuViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface ETSCoursesViewController ()
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;

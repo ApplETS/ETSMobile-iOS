@@ -12,7 +12,7 @@
 #import "ETSAppDelegate.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface ETSMoodleCourseDetailViewController ()
 @property (nonatomic, copy) NSString *searchText;

@@ -13,7 +13,7 @@
 #import "ETSProgram.h"
 #import "ETSCoreDataHelper.h"
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface ETSProfileViewController ()
 @property (nonatomic, strong) NSNumberFormatter *formatter;

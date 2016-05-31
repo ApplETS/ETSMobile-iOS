@@ -12,7 +12,7 @@
 #import "ETSEvaluationCell.h"
 #import "UIScrollView+EmptyDataSet.h"
 #import "ETSSession.h"
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface ETSCourseDetailViewController () <DZNEmptyDataSetDelegate, DZNEmptyDataSetSource>
 

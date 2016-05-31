@@ -13,7 +13,7 @@
 #import "ETSCoreDataHelper.h"
 #import <QuartzCore/QuartzCore.h>
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface ETSBandwidthViewController () <UIPopoverControllerDelegate>
 @property (nonatomic, strong) NSNumberFormatter *formatter;

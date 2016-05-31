@@ -9,7 +9,7 @@
 #import "ETSUniversityCalendarViewController.h"
 #import "ETSEvent.h"
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface ETSUniversityCalendarViewController ()
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;

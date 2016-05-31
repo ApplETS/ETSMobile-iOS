@@ -9,7 +9,7 @@
 #import "ETSSecurityViewController.h"
 #import "ETSSecurityDetailViewController.h"
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 NSString * const kProcedureTitle = @"Title";
 NSString * const kProcedureSummary = @"Summary";

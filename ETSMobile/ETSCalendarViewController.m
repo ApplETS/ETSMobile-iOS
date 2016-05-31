@@ -27,7 +27,7 @@
 #import "ETSMenuViewController.h"
 #import "ETSUniversityCalendarViewController.h"
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 NSString * const MSEventCellReuseIdentifier = @"MSEventCellReuseIdentifier";
 NSString * const MSDayColumnHeaderReuseIdentifier = @"MSDayColumnHeaderReuseIdentifier";

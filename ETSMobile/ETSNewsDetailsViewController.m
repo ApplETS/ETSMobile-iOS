@@ -8,7 +8,7 @@
 
 #import "ETSNewsDetailsViewController.h"
 
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface ETSNewsDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *textView;
