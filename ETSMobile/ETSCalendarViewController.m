@@ -9,6 +9,8 @@
 #import "ETSCalendarViewController.h"
 #import "NSURLRequest+API.h"
 #import "MSCollectionViewCalendarLayout.h"
+#import "RKDropdownAlert.h"
+#import "UIColor+Styles.h"
 
 #import "MSGridline.h"
 #import "MSTimeRowHeaderBackground.h"
@@ -197,6 +199,11 @@ NSString * const MSTimeRowHeaderReuseIdentifier = @"MSTimeRowHeaderReuseIdentifi
         [synchronization synchronize:nil];
     }
     self.synchronizations = synchronizations;
+}
+
+- (void)synchronizationDidFinishLoadingWithErrors:(NSString *)error {
+    
+    [RKDropdownAlert title:@"Erreur" message:error backgroundColor:[UIColor naviguationBarTintColor] textColor:[UIColor whiteColor] time:3];
 }
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveResponse:(ETSSynchronizationResponse)response

@@ -8,6 +8,8 @@
 
 #import "ETSCollectionViewController.h"
 #import "ETSMenuViewController.h"
+#import "RKDropdownAlert.h"
+#import "UIColor+Styles.h"
 
 @interface ETSCollectionViewController ()
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -112,6 +114,12 @@
 - (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
 {
     [self.refreshControl endRefreshing];
+}
+
+- (void)synchronizationDidFinishLoadingWithErrors:(NSString *)error
+{
+    [self.refreshControl endRefreshing];
+    [RKDropdownAlert title:@"Erreur" message:error backgroundColor:[UIColor naviguationBarTintColor] textColor:[UIColor whiteColor] time:3];
 }
 
 @end

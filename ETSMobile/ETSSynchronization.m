@@ -96,81 +96,93 @@
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         });
         
-        // FIXME: traiter si data est vide ou s'il y a erreur
-        if (!data || [data length] == 0 || error){
+        //Uncomment the following line to test the alert when the request crash and show the popup
+//        data = NULL;
+        if(data && [data length] > 0 && error == NULL) {
+            NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
+            
+            NSError *jsonError = nil;
+            NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+            
+            if ([bself.delegate respondsToSelector:@selector(synchronization:didReceiveDictionary:)])
+                [bself.delegate synchronization:bself didReceiveDictionary:jsonObjects];
+            
+            if ([bself.delegate respondsToSelector:@selector(synchronization:validateJSONResponse:)]) {
+                
+                ETSSynchronizationResponse validationResponse = [bself.delegate synchronization:bself validateJSONResponse:jsonObjects];
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    if (validationResponse == ETSSynchronizationResponseAuthenticationError || validationResponse == ETSSynchronizationResponseUnknownError)
+                    {
+                        if ([bself.delegate respondsToSelector:@selector(synchronization:didReceiveResponse:)])
+                            [bself.delegate synchronization:bself didReceiveResponse:validationResponse];
+                        
+                        if ([bself.delegate respondsToSelector:@selector(synchronizationDidFinishLoading:)])
+                            [bself.delegate synchronizationDidFinishLoading:bself];
+                        
+                        return;
+                    }
+                    else if (validationResponse == ETSSynchronizationResponseValid)
+                    {
+                        if ([bself.delegate respondsToSelector:@selector(synchronization:didReceiveResponse:)])
+                            [bself.delegate synchronization:bself didReceiveResponse:ETSSynchronizationResponseValid];
+                    }
+                });
+            }
+            
+            bself.managedObjectContext = [[NSManagedObjectContext alloc] init];
+            bself.managedObjectContext.undoManager = nil;
+            bself.managedObjectContext.persistentStoreCoordinator = [[ETSSynchronization mainManagedObjectContext] persistentStoreCoordinator];
+            [[NSNotificationCenter defaultCenter] addObserver:bself selector:@selector(addControllerContextDidSave:) name:NSManagedObjectContextDidSaveNotification object:bself.managedObjectContext];
+            
+            if (!bself.dateFormatter) bself.dateFormatter = [[NSDateFormatter alloc] init];
+            
+            
+            __block id json = jsonObjects;
+            if (bself.objectsKeyPath && [bself.objectsKeyPath length] > 0) json = [jsonObjects valueForKeyPath:bself.objectsKeyPath];
+            
+            if (json != (id)[NSNull null] && [bself.delegate respondsToSelector:@selector(synchronization:updateJSONObjects:)]) {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    json = [bself.delegate synchronization:bself updateJSONObjects:json];
+                });
+            }
+            
+            NSError *syncError;
+            
+            if ([json isKindOfClass:[NSArray class]])           [bself synchronizeJSONArray:json error:&syncError];
+            else if ([json isKindOfClass:[NSDictionary class]]) [bself synchronizeJSONDictionary:json error:&syncError];
+            
+            if (bself.saveAutomatically) {
+                [bself.managedObjectContext processPendingChanges];
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    NSError *error;
+                    if (![bself.managedObjectContext save:&error]) {
+                        // FIXME: Update to handle the error appropriately.
+                        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                    }
+                    [[NSNotificationCenter defaultCenter] removeObserver:bself name:NSManagedObjectContextDidSaveNotification object:bself.managedObjectContext];
+                });
+            }
+            if ([bself.delegate respondsToSelector:@selector(synchronizationDidFinishLoading:)]) {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [bself.delegate synchronizationDidFinishLoading:bself];
+                });
+            }
+        }
+        else {
+            
+            // FIXME: traiter si data est vide ou s'il y a erreur
+            // TODO: On doit afficher l'erreur qui provient du serveur
+            [bself.delegate synchronizationDidFinishLoadingWithErrors:@"Impossible de synchroniser les données avec le serveur"];
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         }
         
-        NSLog(@"%@", [NSString stringWithUTF8String:[data bytes]]);
-
-        NSError *jsonError = nil;
-        NSDictionary *jsonObjects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+        // FIXME: traiter si data est vide ou s'il y a erreur
+        //        if (!data || [data length] == 0 || error){
+        //            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        //        }
         
-        if ([bself.delegate respondsToSelector:@selector(synchronization:didReceiveDictionary:)])
-            [bself.delegate synchronization:bself didReceiveDictionary:jsonObjects];
-
-        if ([bself.delegate respondsToSelector:@selector(synchronization:validateJSONResponse:)]) {
-            
-            ETSSynchronizationResponse validationResponse = [bself.delegate synchronization:bself validateJSONResponse:jsonObjects];
-            
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                if (validationResponse == ETSSynchronizationResponseAuthenticationError || validationResponse == ETSSynchronizationResponseUnknownError)
-                {
-                    if ([bself.delegate respondsToSelector:@selector(synchronization:didReceiveResponse:)])
-                        [bself.delegate synchronization:bself didReceiveResponse:validationResponse];
-                    
-                    if ([bself.delegate respondsToSelector:@selector(synchronizationDidFinishLoading:)])
-                        [bself.delegate synchronizationDidFinishLoading:bself];
-                    
-                    return;
-                }
-                else if (validationResponse == ETSSynchronizationResponseValid)
-                {
-                    if ([bself.delegate respondsToSelector:@selector(synchronization:didReceiveResponse:)])
-                        [bself.delegate synchronization:bself didReceiveResponse:ETSSynchronizationResponseValid];
-                }
-            });
-        }
         
-        bself.managedObjectContext = [[NSManagedObjectContext alloc] init];
-        bself.managedObjectContext.undoManager = nil;
-        bself.managedObjectContext.persistentStoreCoordinator = [[ETSSynchronization mainManagedObjectContext] persistentStoreCoordinator];
-        [[NSNotificationCenter defaultCenter] addObserver:bself selector:@selector(addControllerContextDidSave:) name:NSManagedObjectContextDidSaveNotification object:bself.managedObjectContext];
-        
-        if (!bself.dateFormatter) bself.dateFormatter = [[NSDateFormatter alloc] init];
-
-
-        __block id json = jsonObjects;
-        if (bself.objectsKeyPath && [bself.objectsKeyPath length] > 0) json = [jsonObjects valueForKeyPath:bself.objectsKeyPath];
-        
-        if (json != (id)[NSNull null] && [bself.delegate respondsToSelector:@selector(synchronization:updateJSONObjects:)]) {
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                json = [bself.delegate synchronization:bself updateJSONObjects:json];
-            });
-        }
-        
-        NSError *syncError;
-
-        if ([json isKindOfClass:[NSArray class]])           [bself synchronizeJSONArray:json error:&syncError];
-        else if ([json isKindOfClass:[NSDictionary class]]) [bself synchronizeJSONDictionary:json error:&syncError];
-
-        if (bself.saveAutomatically) {
-            [bself.managedObjectContext processPendingChanges];
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                NSError *error;
-                if (![bself.managedObjectContext save:&error]) {
-                    // FIXME: Update to handle the error appropriately.
-                    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-                }
-                [[NSNotificationCenter defaultCenter] removeObserver:bself name:NSManagedObjectContextDidSaveNotification object:bself.managedObjectContext];
-            });
-        }
-        if ([bself.delegate respondsToSelector:@selector(synchronizationDidFinishLoading:)]) {
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                [bself.delegate synchronizationDidFinishLoading:bself];
-            });
-        }
-
     }];
     
     [task resume];

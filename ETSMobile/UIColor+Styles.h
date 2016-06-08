@@ -15,6 +15,5 @@
 + (UIColor *)menuLabelColor;
 + (UIColor *)menuHighlightedLabelColor;
 + (UIColor *)menuSectionBackgroundColor;
-
 + (UIColor *)naviguationBarTintColor;
 @end

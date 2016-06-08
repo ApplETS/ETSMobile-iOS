@@ -8,6 +8,8 @@
 
 #import "ETSTableViewController.h"
 #import "ETSMenuViewController.h"
+#import "RKDropdownAlert.h"
+#import "UIColor+Styles.h"
 
 @interface ETSTableViewController ()
 
@@ -167,6 +169,11 @@
 - (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization
 {
     [self.refreshControl endRefreshing];
+}
+
+- (void)synchronizationDidFinishLoadingWithErrors:(NSString *)error {
+    [self.refreshControl endRefreshing];
+    [RKDropdownAlert title:@"Erreur" message:error backgroundColor:[UIColor naviguationBarTintColor] textColor:[UIColor whiteColor] time:3];
 }
 
 - (void)controllerDidAuthenticate:(ETSAuthenticationViewController *)controller

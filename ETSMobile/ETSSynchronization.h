@@ -46,6 +46,7 @@ typedef NS_ENUM(NSInteger, ETSSynchronizationResponse) {
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject;
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveResponse:(ETSSynchronizationResponse)response;
 - (void)synchronizationDidFinishLoading:(ETSSynchronization *)synchronization;
+- (void)synchronizationDidFinishLoadingWithErrors:(NSString *)error;
 - (id)synchronization:(ETSSynchronization *)synchronization updateJSONObjects:(id)objects;
 - (ETSSynchronizationResponse)synchronization:(ETSSynchronization *)synchronization validateJSONResponse:(NSDictionary *)response;
 @end
