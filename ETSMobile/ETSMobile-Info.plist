@@ -30,7 +30,7 @@
 	<string>22</string>
 	<key>Fabric</key>
 	<dict>
-		<key>APIKey</key>
+        <key>APIKey</key>
 		<string>c0781ea7e44d8e3e63d49409f062972e1302609a</string>
 		<key>Kits</key>
 		<array>
@@ -48,6 +48,27 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>amazonaws.com</key>
+            <dict>
+                <key>NSThirdPartyExceptionMinimumTLSVersion</key>
+                <string>TLSv1.0</string>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                <false/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+            <key>amazonaws.com.cn</key>
+            <dict>
+                <key>NSThirdPartyExceptionMinimumTLSVersion</key>
+                <string>TLSv1.0</string>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                <false/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+        </dict>
 	</dict>
 	<key>SupportKitApiKey</key>
 	<string>${SUPPORTKIT_API_KEY}</string>
@@ -121,5 +142,32 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    
+    <key>AWS</key>
+    <dict>
+        <key>CredentialsProvider</key>
+        <dict>
+            <key>CognitoIdentity</key>
+            <dict>
+                <key>Default</key>
+                <dict>
+                    <key>PoolId</key>
+                    <string>YourCognitoIdentityPoolId</string>
+                    <key>Region</key>
+                    <string>USEast1</string>
+                </dict>
+            </dict>
+        </dict>
+        <key>SNS</key>
+        <dict>
+            <key>Default</key>
+            <dict>
+                <key>Region</key>
+                <string>USEast1</string>
+            </dict>
+        </dict>
+    </dict>
+    
+    
 </dict>
 </plist>

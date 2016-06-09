@@ -26,6 +26,11 @@
 #import <Crashlytics/Crashlytics.h>
 #import <SupportKit/SupportKit.h>
 
+#import <AWSCore/AWSCore.h>
+#import <AWSSNS/AWSSNS.h>
+
+static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:834885693643:app/APNS_SANDBOX/Applets-ETSMobile-iOS-dev";
+
 
 @implementation ETSAppDelegate
 
@@ -36,7 +41,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
@@ -94,7 +99,84 @@
     
     [SupportKit initWithSettings:settings];
     
+    // Sets up Mobile Push Notification
+    UIMutableUserNotificationAction *readAction = [UIMutableUserNotificationAction new];
+    readAction.identifier = @"READ_IDENTIFIER";
+    readAction.title = @"Read";
+    readAction.activationMode = UIUserNotificationActivationModeForeground;
+    readAction.destructive = NO;
+    readAction.authenticationRequired = YES;
+    
+    UIMutableUserNotificationAction *deleteAction = [UIMutableUserNotificationAction new];
+    deleteAction.identifier = @"DELETE_IDENTIFIER";
+    deleteAction.title = @"Delete";
+    deleteAction.activationMode = UIUserNotificationActivationModeForeground;
+    deleteAction.destructive = YES;
+    deleteAction.authenticationRequired = YES;
+    
+    UIMutableUserNotificationAction *ignoreAction = [UIMutableUserNotificationAction new];
+    ignoreAction.identifier = @"IGNORE_IDENTIFIER";
+    ignoreAction.title = @"Ignore";
+    ignoreAction.activationMode = UIUserNotificationActivationModeForeground;
+    ignoreAction.destructive = NO;
+    ignoreAction.authenticationRequired = NO;
+    
+    UIMutableUserNotificationCategory *messageCategory = [UIMutableUserNotificationCategory new];
+    messageCategory.identifier = @"MESSAGE_CATEGORY";
+    [messageCategory setActions:@[readAction, deleteAction] forContext:UIUserNotificationActionContextMinimal];
+    [messageCategory setActions:@[readAction, deleteAction, ignoreAction] forContext:UIUserNotificationActionContextDefault];
+    
+    UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:[NSSet setWithArray:@[messageCategory]]];
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+    
     return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    NSString *deviceTokenString = [[[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    NSString *userDataString = [NSString stringWithFormat:@"ENS/%@",[ETSAuthenticationViewController usernameInKeychain]];
+    
+    NSLog(@"deviceTokenString: %@", deviceTokenString);
+    [[NSUserDefaults standardUserDefaults] setObject:deviceTokenString forKey:@"deviceToken"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self.window.rootViewController.childViewControllers.firstObject performSelectorOnMainThread:@selector(displayDeviceInfo) withObject:nil waitUntilDone:nil];
+    
+    
+    AWSSNS *sns = [AWSSNS defaultSNS];
+    AWSSNSCreatePlatformEndpointInput *request = [AWSSNSCreatePlatformEndpointInput new];
+    request.token = deviceTokenString;
+    request.customUserData = userDataString;
+    NSLog(@"ENS/%@", [ETSAuthenticationViewController usernameInKeychain]);
+    request.platformApplicationArn = SNSPlatformApplicationArn;
+    [[sns createPlatformEndpoint:request] continueWithBlock:^id(AWSTask *task) {
+        if (task.error != nil) {
+            NSLog(@"Error: %@",task.error);
+        } else {
+            AWSSNSCreateEndpointResponse *createEndPointResponse = task.result;
+            NSLog(@"endpointArn: %@",createEndPointResponse);
+            [[NSUserDefaults standardUserDefaults] setObject:createEndPointResponse.endpointArn forKey:@"endpointArn"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            [self.window.rootViewController.childViewControllers.firstObject performSelectorOnMainThread:@selector(displayDeviceInfo) withObject:nil waitUntilDone:NO];
+            
+        }
+        
+        return nil;
+    }];
+    
+    
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"Failed to register with error: %@",error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    NSLog(@"userInfo: %@",userInfo);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
