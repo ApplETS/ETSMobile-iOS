@@ -152,7 +152,7 @@
                 <key>Default</key>
                 <dict>
                     <key>PoolId</key>
-                    <string>YourCognitoIdentityPoolId</string>
+                    <string>us-east-1:f7b54ec0-4106-47dd-b6e8-ecd60aac78eb</string>
                     <key>Region</key>
                     <string>USEast1</string>
                 </dict>

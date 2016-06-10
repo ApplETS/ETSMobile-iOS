@@ -139,12 +139,11 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
     
     NSString *deviceTokenString = [[[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    NSString *userDataString = [NSString stringWithFormat:@"ENS/%@",[ETSAuthenticationViewController usernameInKeychain]];
+    NSString *userDataString = [NSString stringWithFormat:@"ENS\%@",[ETSAuthenticationViewController usernameInKeychain]];
     
     NSLog(@"deviceTokenString: %@", deviceTokenString);
     [[NSUserDefaults standardUserDefaults] setObject:deviceTokenString forKey:@"deviceToken"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    [self.window.rootViewController.childViewControllers.firstObject performSelectorOnMainThread:@selector(displayDeviceInfo) withObject:nil waitUntilDone:nil];
     
     
     AWSSNS *sns = [AWSSNS defaultSNS];
@@ -161,7 +160,6 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
             NSLog(@"endpointArn: %@",createEndPointResponse);
             [[NSUserDefaults standardUserDefaults] setObject:createEndPointResponse.endpointArn forKey:@"endpointArn"];
             [[NSUserDefaults standardUserDefaults] synchronize];
-            [self.window.rootViewController.childViewControllers.firstObject performSelectorOnMainThread:@selector(displayDeviceInfo) withObject:nil waitUntilDone:NO];
             
         }
         
