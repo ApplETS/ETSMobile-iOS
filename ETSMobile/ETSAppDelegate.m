@@ -139,7 +139,7 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
     
     NSString *deviceTokenString = [[[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    NSString *userDataString = [NSString stringWithFormat:@"ENS\%@",[ETSAuthenticationViewController usernameInKeychain]];
+    NSString *userDataString = [NSString stringWithFormat:@"ENS\\%@",[ETSAuthenticationViewController usernameInKeychain]];
     
     NSLog(@"deviceTokenString: %@", deviceTokenString);
     [[NSUserDefaults standardUserDefaults] setObject:deviceTokenString forKey:@"deviceToken"];
@@ -150,7 +150,7 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
     AWSSNSCreatePlatformEndpointInput *request = [AWSSNSCreatePlatformEndpointInput new];
     request.token = deviceTokenString;
     request.customUserData = userDataString;
-    NSLog(@"ENS/%@", [ETSAuthenticationViewController usernameInKeychain]);
+    NSLog(@"%@", userDataString);
     request.platformApplicationArn = SNSPlatformApplicationArn;
     [[sns createPlatformEndpoint:request] continueWithBlock:^id(AWSTask *task) {
         if (task.error != nil) {
