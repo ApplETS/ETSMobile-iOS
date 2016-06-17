@@ -214,9 +214,12 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
     [[NSNotificationCenter defaultCenter] postNotificationName:@"HAS_PUSH_NOTIFICATION" object:nil];
     
     NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
+    NSString *applicationName = [userInfo objectForKey:@"NotificationApplicationNom"];
     NSString *alertMessage = [apsInfo objectForKey:@"alert"];
+    NSString *notificationTitle = [NSString stringWithFormat:@"Notification de %@",
+                                   applicationName];
     
-    [RKDropdownAlert title:@"Notification" message:alertMessage backgroundColor:[UIColor naviguationBarTintColor] textColor:[UIColor whiteColor] time:3];
+    [RKDropdownAlert title:notificationTitle message:alertMessage backgroundColor:[UIColor naviguationBarTintColor] textColor:[UIColor whiteColor] time:3];
 }
 
 -(void)didOpenAppFromNotificationsWithUserInfo:(NSDictionary *)userInfo {
