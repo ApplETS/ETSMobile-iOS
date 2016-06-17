@@ -29,6 +29,9 @@
 #import <AWSCore/AWSCore.h>
 #import <AWSSNS/AWSSNS.h>
 
+#import "RKDropdownAlert.h"
+#import "UIColor+Styles.h"
+
 static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:834885693643:app/APNS_SANDBOX/Applets-ETSMobile-iOS-dev";
 
 
@@ -135,11 +138,23 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
     return YES;
 }
 
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    if (notificationSettings.types != UIUserNotificationTypeNone) {
+        //register to receive notifications
+        [application registerForRemoteNotifications];
+    } else {
+        // same as response to didFailToRegisterForRemoteNotificationsWithError
+        NSDictionary* data = [NSDictionary dictionaryWithObject:@"" forKey:@"deviceToken"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"notificationsRegistered" object:self userInfo:data];
+    }
+}
+
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
     NSString *deviceTokenString = [[[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
     
-    NSString *userDataString = [NSString stringWithFormat:@"ENS\%@",[ETSAuthenticationViewController usernameInKeychain]];
+    NSString *userDataString = [NSString stringWithFormat:@"ENS\\%@",[ETSAuthenticationViewController usernameInKeychain]];
     
     NSLog(@"deviceTokenString: %@", deviceTokenString);
     [[NSUserDefaults standardUserDefaults] setObject:deviceTokenString forKey:@"deviceToken"];
@@ -174,7 +189,16 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    NSLog(@"userInfo: %@",userInfo);
+    
+    if ( application.applicationState == UIApplicationStateInactive || application.applicationState == UIApplicationStateBackground  )
+    {
+        //opened from a push notification when the app was on background
+        //here we need to redirect to user based on the kind of notifications he has received
+        [self didOpenAppFromNotificationsWithUserInfo:userInfo];
+    }
+    else {
+        [self showPushNotificationMessageReceivedWithUserInfo:userInfo];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -219,6 +243,27 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
     }
 }
 
+-(void)showPushNotificationMessageReceivedWithUserInfo:(NSDictionary *)userInfo {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"HAS_PUSH_NOTIFICATION" object:nil];
+    
+    NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
+    NSString *alertMessage = [apsInfo objectForKey:@"alert"];
+    
+    [RKDropdownAlert title:@"Notification" message:alertMessage backgroundColor:[UIColor naviguationBarTintColor] textColor:[UIColor whiteColor] time:3];
+}
+
+-(void)didOpenAppFromNotificationsWithUserInfo:(NSDictionary *)userInfo {
+    
+    //This was a test to open the notes viewController.
+    //This function needs to be changed to handle all kind of notifications received.
+    ETSMenuViewController *menuViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
+    menuViewController.managedObjectContext = self.managedObjectContext;
+    
+    menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
+    [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
+    [self openViewController:menuViewController withString:@"Notes"];
+}
+
 #pragma mark - Quick Actions
 
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
@@ -230,7 +275,6 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
     [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
     
     [self openViewController:menuViewController withString:shortcutItem.localizedTitle];
-    
 }
 
 - (void)openViewController:(ETSMenuViewController *)menuViewController withString:(NSString *)shortcutTitle {
