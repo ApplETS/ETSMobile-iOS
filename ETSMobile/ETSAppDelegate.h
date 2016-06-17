@@ -21,4 +21,6 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
++ (void)setUpPushNotifications;
+
 @end

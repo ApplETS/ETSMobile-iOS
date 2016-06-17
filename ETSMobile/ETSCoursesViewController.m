@@ -15,6 +15,7 @@
 #import "NSURLRequest+API.h"
 #import "ETSCourseDetailViewController.h"
 #import "ETSMenuViewController.h"
+#import "ETSAppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
 
 #import <Crashlytics/Crashlytics.h>
@@ -54,6 +55,8 @@
         ac.delegate = self;
         [self.navigationController pushViewController:ac animated:NO];
     }
+    
+    [ETSAppDelegate setUpPushNotifications];
 }
 
 - (void)viewWillAppear:(BOOL)animated
