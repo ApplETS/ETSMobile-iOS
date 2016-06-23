@@ -162,6 +162,8 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
         //opened from a push notification when the app was on background
         //here we need to redirect to user based on the kind of notifications he has received
         [self didOpenAppFromNotificationsWithUserInfo:userInfo];
+        
+        
     }
     else {
         [self showPushNotificationMessageReceivedWithUserInfo:userInfo];
@@ -231,6 +233,24 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
     
     menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
     [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
+    
+    
+    NSString *sigleName = [userInfo objectForKey:@"NotificationData_Sigle"];
+    
+    NSString *seasonString = @"H";  //[userInfo objectForKey:@"NotificationData_Session??"];
+    NSString *year = @"2016";       //[userInfo objectForKey:@"NotificationData_Annee??"];
+    
+    NSString *order = @"";
+    
+    NSString *courseId = @"";
+    
+    if ([seasonString isEqualToString:@"H"])      order = [NSString stringWithFormat:@"%@-%@", year, @"1"];
+    else if ([seasonString isEqualToString:@"É"]) order = [NSString stringWithFormat:@"%@-%@", year, @"2"];
+    else if ([seasonString isEqualToString:@"A"]) order = [NSString stringWithFormat:@"%@-%@", year, @"3"];
+    else order = @"00000";
+    
+    courseId = [NSString stringWithFormat:@"%@%@", order, sigleName];
+    
     [self openViewController:menuViewController withString:@"Notes"];
 }
 
