@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Cj2-BH-2uQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Cj2-BH-2uQ">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -322,7 +322,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdD-2X-tQZ">
-                                            <rect key="frame" x="15" y="27" width="34" height="20.5"/>
+                                            <rect key="frame" x="15" y="27" width="34" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1359,7 +1359,7 @@ http://www.clubapplets.ca</string>
                                 <connections>
                                     <outlet property="acronymLabel" destination="ZAT-u0-Rhd" id="xUG-Q6-plO"/>
                                     <outlet property="gradeLabel" destination="ODu-IV-TpL" id="HPs-ui-fe8"/>
-                                    <segue destination="oaE-Om-YDD" kind="push" id="JFF-fF-Skx"/>
+                                    <segue destination="oaE-Om-YDD" kind="push" identifier="showDetailViewSegue" id="JFF-fF-Skx"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

@@ -17,6 +17,7 @@
 
 #import "ETSNewsViewController.h"
 #import "ETSCoursesViewController_iPad.h"
+#import "ETSCoursesViewController.h"
 #import "ETSCourseDetailViewController.h"
 #import "ETSRadioViewController.h"
 #import "ETSWebViewViewController.h"
@@ -222,40 +223,53 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
     NSString *notificationTitle = [NSString stringWithFormat:@"Notification de %@",
                                    applicationName];
     
-    [RKDropdownAlert title:notificationTitle message:alertMessage backgroundColor:[UIColor naviguationBarTintColor] textColor:[UIColor whiteColor] time:3];
+    [RKDropdownAlert title:notificationTitle message:alertMessage backgroundColor:[UIColor naviguationBarTintColor] textColor:[UIColor whiteColor] time:5];
 }
 
 -(void)didOpenAppFromNotificationsWithUserInfo:(NSDictionary *)userInfo {
     
-    //This was a test to open the notes viewController.
-    //This function needs to be changed to handle all kind of notifications received.
-    ETSMenuViewController *menuViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
-    menuViewController.managedObjectContext = self.managedObjectContext;
+    NSString *typeNotification = [userInfo objectForKey:@"NotificationData_TypeNotification"];
     
-    menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
-    [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
+    if ([typeNotification isEqualToString:@"SignetsLotsNouvellesNotes"] ||
+        [typeNotification isEqualToString:@"SignetsLotsModificationNotes"] ||
+        [typeNotification isEqualToString:@"SignetsModificationNote"] ||
+        [typeNotification isEqualToString:@"SignetsCoteFinale"] ||
+        [typeNotification isEqualToString:@"SignetsNouvelleNote"])
     
-    
-    NSString *sigleName = [userInfo objectForKey:@"NotificationData_Sigle"];
-    
-    NSString *seasonString = @"H";  //[userInfo objectForKey:@"NotificationData_Session??"];
-    NSString *year = @"2016";       //[userInfo objectForKey:@"NotificationData_Annee??"];
-    
-    NSString *order = @"";
-    
-    NSString *courseId = @"";
-    
-    if ([seasonString isEqualToString:@"H"])      order = [NSString stringWithFormat:@"%@-%@", year, @"1"];
-    else if ([seasonString isEqualToString:@"É"]) order = [NSString stringWithFormat:@"%@-%@", year, @"2"];
-    else if ([seasonString isEqualToString:@"A"]) order = [NSString stringWithFormat:@"%@-%@", year, @"3"];
-    else order = @"00000";
-    
-    courseId = [NSString stringWithFormat:@"%@%@", order, sigleName];
-    
-    NotificationHelper *myNotificationHelper = [NotificationHelper sharedInstance];
-    myNotificationHelper.courseId = courseId;
-    
-    [self openViewController:menuViewController withString:@"Notes"];
+    {
+        
+        NSString *sigleName = [userInfo objectForKey:@"NotificationData_Sigle"];
+        
+        NSString *seasonString = @"H";  //[userInfo objectForKey:@"NotificationData_Session??"];
+        NSString *year = @"2016";       //[userInfo objectForKey:@"NotificationData_Annee??"];
+        
+        NSString *order = @"";
+        
+        NSString *courseId = @"";
+        
+        if ([seasonString isEqualToString:@"H"])      order = [NSString stringWithFormat:@"%@-%@", year, @"1"];
+        else if ([seasonString isEqualToString:@"É"]) order = [NSString stringWithFormat:@"%@-%@", year, @"2"];
+        else if ([seasonString isEqualToString:@"A"]) order = [NSString stringWithFormat:@"%@-%@", year, @"3"];
+        else order = @"00000";
+        
+        courseId = [NSString stringWithFormat:@"%@%@", order, sigleName];
+        
+        NotificationHelper *myNotificationHelper = [NotificationHelper sharedInstance];
+        myNotificationHelper.courseId = courseId;
+        
+        
+        //This was a test to open the notes viewController.
+        //This function needs to be changed to handle all kind of notifications received.
+        
+        ETSMenuViewController *menuViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
+        menuViewController.managedObjectContext = self.managedObjectContext;
+        
+        menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
+        [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
+        
+        [self openViewController:menuViewController withString:@"Notes"];
+        
+    }
 
 }
 
