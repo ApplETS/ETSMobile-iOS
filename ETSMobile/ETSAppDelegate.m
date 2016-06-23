@@ -22,6 +22,7 @@
 #import "ETSWebViewViewController.h"
 #import "ETSSecurityViewController.h"
 #import "ETSDirectoryViewController.h"
+#import "NotificationHelper.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <SupportKit/SupportKit.h>
@@ -251,7 +252,11 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
     
     courseId = [NSString stringWithFormat:@"%@%@", order, sigleName];
     
+    NotificationHelper *myNotificationHelper = [NotificationHelper sharedInstance];
+    myNotificationHelper.courseId = courseId;
+    
     [self openViewController:menuViewController withString:@"Notes"];
+
 }
 
 #pragma mark - Quick Actions
