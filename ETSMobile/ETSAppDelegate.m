@@ -240,16 +240,20 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
         
         NSString *sigleName = [userInfo objectForKey:@"NotificationData_Sigle"];
         
-        NSString *seasonString = @"H";  //[userInfo objectForKey:@"NotificationData_Session??"];
-        NSString *year = @"2016";       //[userInfo objectForKey:@"NotificationData_Annee??"];
+        NSString *sessionDataString = [userInfo objectForKey:@"NotificationData_Session"];
+        
+        //NSMutableString *year = [sessionDataString substringWithRange:NSMakeRange(0, 4)];
+        NSString *year = [sessionDataString substringToIndex:4];
+        
+        NSString *seasonString = [sessionDataString substringFromIndex:4];
         
         NSString *order = @"";
         
         NSString *courseId = @"";
         
-        if ([seasonString isEqualToString:@"H"])      order = [NSString stringWithFormat:@"%@-%@", year, @"1"];
-        else if ([seasonString isEqualToString:@"É"]) order = [NSString stringWithFormat:@"%@-%@", year, @"2"];
-        else if ([seasonString isEqualToString:@"A"]) order = [NSString stringWithFormat:@"%@-%@", year, @"3"];
+        if ([seasonString isEqualToString:@"1"])      order = [NSString stringWithFormat:@"%@-%@", year, @"1"];
+        else if ([seasonString isEqualToString:@"2"]) order = [NSString stringWithFormat:@"%@-%@", year, @"2"];
+        else if ([seasonString isEqualToString:@"3"]) order = [NSString stringWithFormat:@"%@-%@", year, @"3"];
         else order = @"00000";
         
         courseId = [NSString stringWithFormat:@"%@%@", order, sigleName];
