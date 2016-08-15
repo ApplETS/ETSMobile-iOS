@@ -34,7 +34,7 @@
 #import "RKDropdownAlert.h"
 #import "UIColor+Styles.h"
 
-static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:834885693643:app/APNS_SANDBOX/Applets-ETSMobile-iOS-dev";
+static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:834885693643:app/APNS/Applets-EtsMobile-iOS";
 
 
 @implementation ETSAppDelegate
