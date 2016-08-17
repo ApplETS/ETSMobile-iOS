@@ -15,6 +15,8 @@
 #import "NSURLRequest+API.h"
 #import "ETSCourseDetailViewController.h"
 #import "ETSMenuViewController.h"
+#import "ETSAppDelegate.h"
+#import "NotificationHelper.h"
 #import <QuartzCore/QuartzCore.h>
 
 #import <Crashlytics/Crashlytics.h>
@@ -32,6 +34,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NotificationHelper *myNotificationHelper = [NotificationHelper sharedInstance];
+    if (myNotificationHelper.courseId != nil) {
+        [self performSegueWithIdentifier:@"showDetailViewSegue" sender:self];
+    }
     
     if (self.courseResults == nil) {
         self.courseResults = [[NSMutableDictionary alloc] initWithCapacity:4];
@@ -54,6 +61,8 @@
         ac.delegate = self;
         [self.navigationController pushViewController:ac animated:NO];
     }
+    
+    [ETSAppDelegate setUpPushNotifications];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -168,9 +177,31 @@
     self.fetchedResultsController = nil;
     self.fetchedResultsController = [self fetchedResultsController];
     
-    vc.course = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
+    NotificationHelper *myNotificationHelper = [NotificationHelper sharedInstance];
+    if (myNotificationHelper.courseId != nil) {
+        NSArray *fetchedData = [self.fetchedResultsController fetchedObjects];
+        
+        for (ETSCourse *course in fetchedData) {
+            if ([course.id isEqualToString:myNotificationHelper.courseId]) {
+                vc.course = course;
+                break;
+            }
+        }
+    }
+    
+    else {
+        vc.course = [self.fetchedResultsController objectAtIndexPath:[self.collectionView indexPathsForSelectedItems][0]];
+    }
+    
     vc.managedObjectContext = self.managedObjectContext;
-    self.lastSelectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
+    
+    if (myNotificationHelper.courseId != nil) {
+        myNotificationHelper.courseId = nil;
+    }
+    else {
+        self.lastSelectedIndexPath = [self.collectionView indexPathsForSelectedItems][0];
+    }
+    
 }
 
 - (void)synchronization:(ETSSynchronization *)synchronization didReceiveObject:(NSDictionary *)object forManagedObject:(NSManagedObject *)managedObject

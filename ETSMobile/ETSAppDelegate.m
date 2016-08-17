@@ -17,14 +17,24 @@
 
 #import "ETSNewsViewController.h"
 #import "ETSCoursesViewController_iPad.h"
+#import "ETSCoursesViewController.h"
 #import "ETSCourseDetailViewController.h"
 #import "ETSRadioViewController.h"
 #import "ETSWebViewViewController.h"
 #import "ETSSecurityViewController.h"
 #import "ETSDirectoryViewController.h"
+#import "NotificationHelper.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <SupportKit/SupportKit.h>
+
+#import <AWSCore/AWSCore.h>
+#import <AWSSNS/AWSSNS.h>
+
+#import "RKDropdownAlert.h"
+#import "UIColor+Styles.h"
+
+static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:834885693643:app/APNS/Applets-EtsMobile-iOS";
 
 
 @implementation ETSAppDelegate
@@ -36,7 +46,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UINavigationBar appearance] setBarTintColor:[UIColor naviguationBarTintColor]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
@@ -97,6 +107,71 @@
     return YES;
 }
 
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    if (notificationSettings.types != UIUserNotificationTypeNone) {
+        //register to receive notifications
+        [application registerForRemoteNotifications];
+    } else {
+        // same as response to didFailToRegisterForRemoteNotificationsWithError
+        NSDictionary* data = [NSDictionary dictionaryWithObject:@"" forKey:@"deviceToken"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"notificationsRegistered" object:self userInfo:data];
+    }
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    NSString *deviceTokenString = [[[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    NSString *userDataString = [NSString stringWithFormat:@"ENS\\%@",[ETSAuthenticationViewController usernameInKeychain]];
+    
+    NSLog(@"deviceTokenString: %@", deviceTokenString);
+    [[NSUserDefaults standardUserDefaults] setObject:deviceTokenString forKey:@"deviceToken"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    
+    AWSSNS *sns = [AWSSNS defaultSNS];
+    AWSSNSCreatePlatformEndpointInput *request = [AWSSNSCreatePlatformEndpointInput new];
+    request.token = deviceTokenString;
+    request.customUserData = userDataString;
+    NSLog(@"%@", userDataString);
+    request.platformApplicationArn = SNSPlatformApplicationArn;
+    [[sns createPlatformEndpoint:request] continueWithBlock:^id(AWSTask *task) {
+        if (task.error != nil) {
+            NSLog(@"Error: %@",task.error);
+        } else {
+            AWSSNSCreateEndpointResponse *createEndPointResponse = task.result;
+            NSLog(@"endpointArn: %@",createEndPointResponse);
+            [[NSUserDefaults standardUserDefaults] setObject:createEndPointResponse.endpointArn forKey:@"endpointArn"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+        }
+        
+        return nil;
+    }];
+    
+    
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"Failed to register with error: %@",error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    
+    if ( application.applicationState == UIApplicationStateInactive || application.applicationState == UIApplicationStateBackground  )
+    {
+        //opened from a push notification when the app was on background
+        //here we need to redirect to user based on the kind of notifications he has received
+        [self didOpenAppFromNotificationsWithUserInfo:userInfo];
+        
+        
+    }
+    else {
+        [self showPushNotificationMessageReceivedWithUserInfo:userInfo];
+    }
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -139,6 +214,69 @@
     }
 }
 
+-(void)showPushNotificationMessageReceivedWithUserInfo:(NSDictionary *)userInfo {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"HAS_PUSH_NOTIFICATION" object:nil];
+    
+    NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
+    NSString *applicationName = [userInfo objectForKey:@"NotificationApplicationNom"];
+    NSString *alertMessage = [apsInfo objectForKey:@"alert"];
+    NSString *notificationTitle = [NSString stringWithFormat:@"Notification de %@",
+                                   applicationName];
+    
+    [RKDropdownAlert title:notificationTitle message:alertMessage backgroundColor:[UIColor naviguationBarTintColor] textColor:[UIColor whiteColor] time:5];
+}
+
+-(void)didOpenAppFromNotificationsWithUserInfo:(NSDictionary *)userInfo {
+    
+    NSString *typeNotification = [userInfo objectForKey:@"NotificationData_TypeNotification"];
+    
+    if ([typeNotification isEqualToString:@"SignetsLotsNouvellesNotes"] ||
+        [typeNotification isEqualToString:@"SignetsLotsModificationNotes"] ||
+        [typeNotification isEqualToString:@"SignetsModificationNote"] ||
+        [typeNotification isEqualToString:@"SignetsCoteFinale"] ||
+        [typeNotification isEqualToString:@"SignetsNouvelleNote"])
+    
+    {
+        
+        NSString *sigleName = [userInfo objectForKey:@"NotificationData_Sigle"];
+        
+        NSString *sessionDataString = [userInfo objectForKey:@"NotificationData_Session"];
+        
+        //NSMutableString *year = [sessionDataString substringWithRange:NSMakeRange(0, 4)];
+        NSString *year = [sessionDataString substringToIndex:4];
+        
+        NSString *seasonString = [sessionDataString substringFromIndex:4];
+        
+        NSString *order = @"";
+        
+        NSString *courseId = @"";
+        
+        if ([seasonString isEqualToString:@"1"])      order = [NSString stringWithFormat:@"%@-%@", year, @"1"];
+        else if ([seasonString isEqualToString:@"2"]) order = [NSString stringWithFormat:@"%@-%@", year, @"2"];
+        else if ([seasonString isEqualToString:@"3"]) order = [NSString stringWithFormat:@"%@-%@", year, @"3"];
+        else order = @"00000";
+        
+        courseId = [NSString stringWithFormat:@"%@%@", order, sigleName];
+        
+        NotificationHelper *myNotificationHelper = [NotificationHelper sharedInstance];
+        myNotificationHelper.courseId = courseId;
+        
+        
+        //This was a test to open the notes viewController.
+        //This function needs to be changed to handle all kind of notifications received.
+        
+        ETSMenuViewController *menuViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"leftSideMenuViewController"];
+        menuViewController.managedObjectContext = self.managedObjectContext;
+        
+        menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
+        [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
+        
+        [self openViewController:menuViewController withString:@"Notes"];
+        
+    }
+
+}
+
 #pragma mark - Quick Actions
 
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
@@ -150,7 +288,6 @@
     [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
     
     [self openViewController:menuViewController withString:shortcutItem.localizedTitle];
-    
 }
 
 - (void)openViewController:(ETSMenuViewController *)menuViewController withString:(NSString *)shortcutTitle {
@@ -249,6 +386,42 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
++ (void)setUpPushNotifications
+{
+    // Sets up Mobile Push Notification
+    UIMutableUserNotificationAction *readAction = [UIMutableUserNotificationAction new];
+    readAction.identifier = @"READ_IDENTIFIER";
+    readAction.title = @"Read";
+    readAction.activationMode = UIUserNotificationActivationModeForeground;
+    readAction.destructive = NO;
+    readAction.authenticationRequired = YES;
+    
+    UIMutableUserNotificationAction *deleteAction = [UIMutableUserNotificationAction new];
+    deleteAction.identifier = @"DELETE_IDENTIFIER";
+    deleteAction.title = @"Delete";
+    deleteAction.activationMode = UIUserNotificationActivationModeForeground;
+    deleteAction.destructive = YES;
+    deleteAction.authenticationRequired = YES;
+    
+    UIMutableUserNotificationAction *ignoreAction = [UIMutableUserNotificationAction new];
+    ignoreAction.identifier = @"IGNORE_IDENTIFIER";
+    ignoreAction.title = @"Ignore";
+    ignoreAction.activationMode = UIUserNotificationActivationModeForeground;
+    ignoreAction.destructive = NO;
+    ignoreAction.authenticationRequired = NO;
+    
+    UIMutableUserNotificationCategory *messageCategory = [UIMutableUserNotificationCategory new];
+    messageCategory.identifier = @"MESSAGE_CATEGORY";
+    [messageCategory setActions:@[readAction, deleteAction] forContext:UIUserNotificationActionContextMinimal];
+    [messageCategory setActions:@[readAction, deleteAction, ignoreAction] forContext:UIUserNotificationActionContextDefault];
+    
+    UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+    UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:[NSSet setWithArray:@[messageCategory]]];
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
 @end
