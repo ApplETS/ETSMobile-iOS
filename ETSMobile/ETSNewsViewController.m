@@ -16,7 +16,7 @@
 #import "NSString+HTML.h"
 #import "GTMNSString+HTML.h"
 #import "UIImageView+WebCache.h"
-#import "Crashlytics.h"
+#import <Crashlytics/Crashlytics.h>
 
 @implementation ETSNewsViewController
 
