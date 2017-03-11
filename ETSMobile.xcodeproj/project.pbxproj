@@ -1015,6 +1015,7 @@
 				TargetAttributes = {
 					26DD92A317EA610D00469FA8 = {
 						DevelopmentTeam = 5K68926M9Q;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1486,6 +1487,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ETSMobile/ETSMobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Vendors/SplunkMint-iOS";
 				WRAPPER_EXTENSION = app;
@@ -1530,6 +1532,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ETSMobile/ETSMobile-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Vendors/SplunkMint-iOS";
 				WRAPPER_EXTENSION = app;

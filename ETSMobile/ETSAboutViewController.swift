@@ -13,10 +13,10 @@ class ETSAboutViewController: UIViewController{
     
     @IBOutlet weak var aboutTextLabel: UITextView!
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        Answers.logContentViewWithName("About ETSMobile", contentType: "About", contentId: "ETS-About", customAttributes: nil)
+        Answers.logContentView(withName: "About ETSMobile", contentType: "About", contentId: "ETS-About", customAttributes: nil)
         
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         self.navigationController?.setToolbarHidden(true, animated: animated)
