@@ -1,16 +1,64 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--ÉTS Mobile-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller title="ÉTS Mobile" id="AgC-eL-Hgc" customClass="MenuController" customModule="ETSMobileWatch_Extension">
+                    <items>
+                        <group width="1" height="149" alignment="center" layout="vertical" id="wQu-Uw-JBw">
+                            <items>
+                                <group width="1" height="68" alignment="left" id="0S5-Xz-jbg">
+                                    <items>
+                                        <button width="57" height="72" alignment="left" title="cours" id="5VM-ZG-XhL">
+                                            <connections>
+                                                <segue destination="rip-nD-ama" kind="push" id="2UF-do-cJX"/>
+                                            </connections>
+                                        </button>
+                                        <button width="57" height="72" alignment="left" title="notes" id="ckY-Bz-82O">
+                                            <accessibilityTraits key="accessibilityTraits" button="YES" image="YES"/>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="1" alignment="left" id="ByM-qd-zLQ">
+                                    <items>
+                                        <button width="57" height="72" alignment="left" title="profil" id="eG3-lr-a5D"/>
+                                        <button width="57" height="72" alignment="left" title="dates" id="K8T-OG-bM8">
+                                            <accessibilityTraits key="accessibilityTraits" button="YES" image="YES"/>
+                                        </button>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <imageView alignment="center" alpha="0.75" image="ETS-logo-blanc" id="iHh-zm-LMp"/>
+                    </items>
+                    <connections>
+                        <outlet property="coursesButton" destination="5VM-ZG-XhL" id="Tbq-LD-rWT"/>
+                        <outlet property="firstGroup" destination="0S5-Xz-jbg" id="fiW-U7-aNs"/>
+                        <outlet property="importantDatesButton" destination="K8T-OG-bM8" id="Zve-GH-KDM"/>
+                        <outlet property="mainGroup" destination="wQu-Uw-JBw" id="nlf-vt-O9N"/>
+                        <outlet property="notesButton" destination="ckY-Bz-82O" id="TYK-px-3iY"/>
+                        <outlet property="profileButton" destination="eG3-lr-a5D" id="T9d-IH-NPW"/>
+                        <outlet property="secondGroup" destination="ByM-qd-zLQ" id="XlG-1C-u0d"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="220" y="285"/>
+        </scene>
+        <!--Cours-->
+        <scene sceneID="2ld-6J-Zrd">
+            <objects>
+                <controller title="Cours" id="rip-nD-ama"/>
+            </objects>
+            <point key="canvasLocation" x="740" y="-98"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -31,9 +79,10 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="ETSMobileWatch" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.90980392156862744" green="0.14509803921568626" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

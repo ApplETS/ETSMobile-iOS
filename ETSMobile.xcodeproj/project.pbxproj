@@ -117,10 +117,12 @@
 		43FCA45CF5C355A18C8134F7 /* Pods_ETSMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D8D55273EE1CBC4F779657 /* Pods_ETSMobile.framework */; };
 		73CE0D23ECEE8FEC87603260 /* Pods_ETSMobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A7C9764E80BF0E734B5696 /* Pods_ETSMobileTests.framework */; };
 		7D149EDACCA5C9E8B0DE1997 /* Pods_ETSMobileWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0ECDBE0F9D02F867FAD658 /* Pods_ETSMobileWatch_Extension.framework */; };
+		8163A4751E7758370065749C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A4741E7758370065749C /* Colors.swift */; };
+		8163A4761E775A260065749C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92CA17EA610D00469FA8 /* Images.xcassets */; };
+		8163A4771E775A280065749C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92CA17EA610D00469FA8 /* Images.xcassets */; };
 		81F1C9D71E7725CF006233E2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81F1C9D51E7725CF006233E2 /* Interface.storyboard */; };
-		81F1C9D91E7725CF006233E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81F1C9D81E7725CF006233E2 /* Assets.xcassets */; };
 		81F1C9E01E7725CF006233E2 /* ETSMobileWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 81F1C9DF1E7725CF006233E2 /* ETSMobileWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		81F1C9E71E7725CF006233E2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C9E61E7725CF006233E2 /* InterfaceController.swift */; };
+		81F1C9E71E7725CF006233E2 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C9E61E7725CF006233E2 /* MenuController.swift */; };
 		81F1C9E91E7725CF006233E2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C9E81E7725CF006233E2 /* ExtensionDelegate.swift */; };
 		81F1C9EB1E7725CF006233E2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C9EA1E7725CF006233E2 /* NotificationController.swift */; };
 		81F1C9ED1E7725CF006233E2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C9EC1E7725CF006233E2 /* ComplicationController.swift */; };
@@ -394,13 +396,13 @@
 		3829D97E13DE61612BA9661B /* Pods-ETSMobileWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETSMobileWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ETSMobileWatch Extension/Pods-ETSMobileWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		51D8D55273EE1CBC4F779657 /* Pods_ETSMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ETSMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6582B10721AAAB3C5F36CCA2 /* Pods-ETSMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETSMobileTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ETSMobileTests/Pods-ETSMobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		8163A4741E7758370065749C /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		81F1C9D31E7725CF006233E2 /* ETSMobileWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobileWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F1C9D61E7725CF006233E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		81F1C9D81E7725CF006233E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81F1C9DA1E7725CF006233E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81F1C9DF1E7725CF006233E2 /* ETSMobileWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ETSMobileWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F1C9E51E7725CF006233E2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		81F1C9E61E7725CF006233E2 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		81F1C9E61E7725CF006233E2 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		81F1C9E81E7725CF006233E2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		81F1C9EA1E7725CF006233E2 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		81F1C9EC1E7725CF006233E2 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
@@ -1015,7 +1017,6 @@
 			isa = PBXGroup;
 			children = (
 				81F1C9D51E7725CF006233E2 /* Interface.storyboard */,
-				81F1C9D81E7725CF006233E2 /* Assets.xcassets */,
 				81F1C9DA1E7725CF006233E2 /* Info.plist */,
 			);
 			path = ETSMobileWatch;
@@ -1024,13 +1025,14 @@
 		81F1C9E31E7725CF006233E2 /* ETSMobileWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				81F1C9E61E7725CF006233E2 /* InterfaceController.swift */,
+				81F1C9E61E7725CF006233E2 /* MenuController.swift */,
 				81F1C9E81E7725CF006233E2 /* ExtensionDelegate.swift */,
 				81F1C9EA1E7725CF006233E2 /* NotificationController.swift */,
 				81F1C9EC1E7725CF006233E2 /* ComplicationController.swift */,
 				81F1C9EE1E7725CF006233E2 /* Assets.xcassets */,
 				81F1C9F01E7725CF006233E2 /* Info.plist */,
 				81F1C9E41E7725CF006233E2 /* Supporting Files */,
+				8163A4741E7758370065749C /* Colors.swift */,
 			);
 			path = "ETSMobileWatch Extension";
 			sourceTree = "<group>";
@@ -1258,7 +1260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81F1C9D91E7725CF006233E2 /* Assets.xcassets in Resources */,
+				8163A4771E775A280065749C /* Images.xcassets in Resources */,
 				81F1C9D71E7725CF006233E2 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1268,6 +1270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81F1C9EF1E7725CF006233E2 /* Assets.xcassets in Resources */,
+				8163A4761E775A260065749C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1526,9 +1529,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				81F1C9EB1E7725CF006233E2 /* NotificationController.swift in Sources */,
+				8163A4751E7758370065749C /* Colors.swift in Sources */,
 				81F1C9ED1E7725CF006233E2 /* ComplicationController.swift in Sources */,
 				81F1C9E91E7725CF006233E2 /* ExtensionDelegate.swift in Sources */,
-				81F1C9E71E7725CF006233E2 /* InterfaceController.swift in Sources */,
+				81F1C9E71E7725CF006233E2 /* MenuController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1880,7 +1884,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
 		};
@@ -1919,7 +1923,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
