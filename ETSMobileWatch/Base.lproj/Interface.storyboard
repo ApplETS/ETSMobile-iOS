@@ -56,7 +56,101 @@
         <!--Cours-->
         <scene sceneID="2ld-6J-Zrd">
             <objects>
-                <controller title="Cours" id="rip-nD-ama"/>
+                <controller title="Cours" id="rip-nD-ama" customClass="CoursesController" customModule="ETSMobileWatch_Extension">
+                    <items>
+                        <label alignment="left" text="Aujourd'hui" id="dNG-Qg-2C4"/>
+                        <table alignment="left" id="avw-c2-REA">
+                            <items>
+                                <tableRow identifier="CourseTableRow" id="k9z-vn-UlD" customClass="CourseTableRowController" customModule="ETSMobileWatch_Extension">
+                                    <group key="rootItem" width="1" height="60" alignment="left" id="N0R-Te-Vsj">
+                                        <items>
+                                            <group width="44" alignment="left" verticalAlignment="center" layout="vertical" id="8CY-j0-Fnr">
+                                                <items>
+                                                    <label alignment="center" verticalAlignment="center" text="MEC325" id="weV-ge-TWJ">
+                                                        <color key="textColor" red="1" green="0.082419828919999993" blue="0.059384261479999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="font" type="system" pointSize="11"/>
+                                                    </label>
+                                                    <label alignment="center" verticalAlignment="center" text="27/10/91" id="wVh-e5-r5c">
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <group width="77" height="55" alignment="left" verticalAlignment="center" layout="vertical" id="k8L-jN-aop">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="Travaux Pratiques" id="h5i-in-0eH">
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                    <label alignment="left" verticalAlignment="center" text="B2620" id="PsV-jw-MD1">
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                    <label height="12" alignment="left" verticalAlignment="center" text="22h00 à 22h00" id="qEV-1E-NPG">
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="acronymLabel" destination="weV-ge-TWJ" id="wYp-20-QM7"/>
+                                        <outlet property="courseDateLabel" destination="wVh-e5-r5c" id="S7w-y1-taa"/>
+                                        <outlet property="courseTypeLabel" destination="h5i-in-0eH" id="WhF-Qa-u5b"/>
+                                        <outlet property="locationLabel" destination="PsV-jw-MD1" id="0rv-Gp-DZp"/>
+                                        <outlet property="periodLabel" destination="qEV-1E-NPG" id="ksO-ws-d9D"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <separator alignment="left" id="WyX-Ew-Ea3">
+                            <color key="color" red="1" green="0.082419828919999993" blue="0.059384261479999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <label alignment="left" text="Plus tard" id="gS3-PG-dBm"/>
+                        <table alignment="left" id="0bH-4y-Ezu">
+                            <items>
+                                <tableRow identifier="CourseTableRow" id="faw-hd-88c" customClass="CourseTableRowController" customModule="ETSMobileWatch_Extension">
+                                    <group key="rootItem" width="1" height="60" alignment="left" id="Qzv-jp-nzZ">
+                                        <items>
+                                            <group width="44" alignment="left" verticalAlignment="center" layout="vertical" id="lzI-8N-BTb">
+                                                <items>
+                                                    <label alignment="center" verticalAlignment="center" text="MEC325" id="NrT-d2-t02">
+                                                        <color key="textColor" red="0.45829322916564896" green="0.27842088731691694" blue="0.82861328125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="font" type="system" pointSize="11"/>
+                                                    </label>
+                                                    <label alignment="center" verticalAlignment="center" text="27/10/91" id="8E7-LM-1jR">
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <group width="76" height="55" alignment="left" verticalAlignment="center" layout="vertical" id="9nE-zv-Ql1">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="Travaux Pratiques" id="S4d-vv-ETy">
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                    <label alignment="left" verticalAlignment="center" text="B2620" id="yfy-44-2Wi">
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                    <label alignment="left" verticalAlignment="center" text="11h00 à 12h00" id="JT0-Bd-Jy3">
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="acronymLabel" destination="NrT-d2-t02" id="SVb-8r-2cV"/>
+                                        <outlet property="courseDateLabel" destination="8E7-LM-1jR" id="bRC-OC-RMC"/>
+                                        <outlet property="courseTypeLabel" destination="S4d-vv-ETy" id="vtm-n0-2TZ"/>
+                                        <outlet property="locationLabel" destination="yfy-44-2Wi" id="X06-9C-BEg"/>
+                                        <outlet property="periodLabel" destination="JT0-Bd-Jy3" id="wcs-g6-crR"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="laterCourseTable" destination="0bH-4y-Ezu" id="97X-au-TmS"/>
+                        <outlet property="todayCourseTable" destination="avw-c2-REA" id="uF5-4m-Tda"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="740" y="-98"/>
         </scene>
