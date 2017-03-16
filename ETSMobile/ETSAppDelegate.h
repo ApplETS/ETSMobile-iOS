@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WatchConnectivity/WatchConnectivity.h>
 #import "MSDynamicsDrawerViewController.h"
 
-@interface ETSAppDelegate : UIResponder <UIApplicationDelegate>
+@interface ETSAppDelegate : UIResponder <UIApplicationDelegate, WCSessionDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

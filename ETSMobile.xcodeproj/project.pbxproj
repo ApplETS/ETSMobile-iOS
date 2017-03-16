@@ -123,6 +123,7 @@
 		8163A4791E775E0F0065749C /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A4781E775E0F0065749C /* CoursesController.swift */; };
 		8163A47B1E77A7DF0065749C /* CourseTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A47A1E77A7DF0065749C /* CourseTableRowController.swift */; };
 		8163A47D1E77A9B10065749C /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A47C1E77A9B10065749C /* Course.swift */; };
+		8163A47F1E7A113B0065749C /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8163A47E1E7A113B0065749C /* WatchConnectivity.framework */; };
 		81F1C9D71E7725CF006233E2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81F1C9D51E7725CF006233E2 /* Interface.storyboard */; };
 		81F1C9E01E7725CF006233E2 /* ETSMobileWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 81F1C9DF1E7725CF006233E2 /* ETSMobileWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		81F1C9E71E7725CF006233E2 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C9E61E7725CF006233E2 /* MenuController.swift */; };
@@ -403,6 +404,7 @@
 		8163A4781E775E0F0065749C /* CoursesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesController.swift; sourceTree = "<group>"; };
 		8163A47A1E77A7DF0065749C /* CourseTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableRowController.swift; sourceTree = "<group>"; };
 		8163A47C1E77A9B10065749C /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		8163A47E1E7A113B0065749C /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		81F1C9D31E7725CF006233E2 /* ETSMobileWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobileWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F1C9D61E7725CF006233E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		81F1C9DA1E7725CF006233E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8163A47F1E7A113B0065749C /* WatchConnectivity.framework in Frameworks */,
 				E90350F91B987AB40093C8E1 /* Photos.framework in Frameworks */,
 				E90350F71B987AAC0093C8E1 /* AssetsLibrary.framework in Frameworks */,
 				E90350F51B987A9E0093C8E1 /* SystemConfiguration.framework in Frameworks */,
@@ -781,6 +784,7 @@
 		26DD92A617EA610D00469FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8163A47E1E7A113B0065749C /* WatchConnectivity.framework */,
 				E90350F81B987AB40093C8E1 /* Photos.framework */,
 				E90350F61B987AAC0093C8E1 /* AssetsLibrary.framework */,
 				E90350F31B987A8B0093C8E1 /* OpenGLES.framework */,
