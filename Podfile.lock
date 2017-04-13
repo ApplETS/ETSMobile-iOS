@@ -1,8 +1,8 @@
 PODS:
   - AMScrollingNavbar (1.3.8)
-  - AWSCore (2.5.2)
-  - AWSSNS (2.5.2):
-    - AWSCore (= 2.5.2)
+  - AWSCore (2.5.3)
+  - AWSSNS (2.5.3):
+    - AWSCore (= 2.5.3)
   - Crashlytics (3.8.4):
     - Fabric (~> 1.6.3)
   - CupertinoYankee (0.1.1)
@@ -12,6 +12,7 @@ PODS:
     - CupertinoYankee (~> 0.1)
   - MSDynamicsDrawerViewController (1.5.1)
   - RKDropdownAlert (0.3.0)
+  - RxSwift (3.4.0)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -26,13 +27,14 @@ DEPENDENCIES:
   - MSCollectionViewCalendarLayout (= 0.1.3)
   - MSDynamicsDrawerViewController
   - RKDropdownAlert
+  - RxSwift (~> 3.4)
   - SDWebImage (~> 3.7)
   - SupportKit (= 2.11.0)
 
 SPEC CHECKSUMS:
   AMScrollingNavbar: 8573197b7077cb10ac548fd64f81d938bf8e9ff0
-  AWSCore: b2fe455c2c7d6653521238c5b0b0ddb67ec4f063
-  AWSSNS: 3437c505bfb8d5eda6bfc497368462ae31423324
+  AWSCore: 344e21892790650cf902246d436402257a545bde
+  AWSSNS: 7ce904133daad7ea47378c2b8018db9dc2cef275
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   CupertinoYankee: 742ab22e47518167d0c78d2eaa5aed5b6e26af3b
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
@@ -40,9 +42,10 @@ SPEC CHECKSUMS:
   MSCollectionViewCalendarLayout: fba6fefdb3a340cb3e4f10725c6b3a530e6f6817
   MSDynamicsDrawerViewController: 2874df90f5e9453dc7d4e32f8038b50615d4baa7
   RKDropdownAlert: f4b3364c251829ad439dc666836a1f2dad26f4c7
+  RxSwift: 3789a1af753002a14edecdb698a2424624296a9c
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SupportKit: 07e72f5e93c1055adcc810dd715aefc34e0ab279
 
-PODFILE CHECKSUM: d3db7e3f26f2cda5f8bb7c57d15366ec417b82ea
+PODFILE CHECKSUM: d5c4823f6455381938a28995f3cdf97b2e30f2fb
 
 COCOAPODS: 1.2.0

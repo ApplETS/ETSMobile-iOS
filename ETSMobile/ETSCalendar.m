@@ -28,4 +28,18 @@
     return [calendar dateFromComponents:components];
 }
 
+- (NSDictionary *)toDictionary
+{
+    return @{
+        @"course": self.course,
+        @"end": self.end,
+        @"id": self.id,
+        @"room": self.room,
+        @"start": self.start,
+        @"summary": self.summary,
+        @"title": self.title,
+        @"session": self.session
+    };
+}
+
 @end

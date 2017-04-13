@@ -437,7 +437,7 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
     [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
-#pragma mark -- WatchConnectivity framework
+#pragma mark - WatchConnectivity framework
 
 -(void)session:(WCSession*)session didReceiveMessage:(nonnull NSDictionary<NSString *,id> *)message replyHandler:(nonnull void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler
 {

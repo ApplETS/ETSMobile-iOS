@@ -21,4 +21,5 @@ end
 
 target 'ETSMobileWatch Extension' do
     platform :watchos, '3.0'
+    pod 'RxSwift', '~> 3.4'
 end

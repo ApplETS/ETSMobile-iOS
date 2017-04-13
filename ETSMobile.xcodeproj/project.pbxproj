@@ -122,8 +122,11 @@
 		8163A4771E775A280065749C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92CA17EA610D00469FA8 /* Images.xcassets */; };
 		8163A4791E775E0F0065749C /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A4781E775E0F0065749C /* CoursesController.swift */; };
 		8163A47B1E77A7DF0065749C /* CourseTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A47A1E77A7DF0065749C /* CourseTableRowController.swift */; };
-		8163A47D1E77A9B10065749C /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A47C1E77A9B10065749C /* Course.swift */; };
+		8163A47D1E77A9B10065749C /* CourseCalendarElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A47C1E77A9B10065749C /* CourseCalendarElement.swift */; };
 		8163A47F1E7A113B0065749C /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8163A47E1E7A113B0065749C /* WatchConnectivity.framework */; };
+		819551B61E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */ = {isa = PBXBuildFile; fileRef = 819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */; };
+		819551B71E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */ = {isa = PBXBuildFile; fileRef = 819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */; };
+		81C66E651E9EBF2400CA9CB1 /* AppRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C66E641E9EBF2400CA9CB1 /* AppRequest.swift */; };
 		81F1C9D71E7725CF006233E2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81F1C9D51E7725CF006233E2 /* Interface.storyboard */; };
 		81F1C9E01E7725CF006233E2 /* ETSMobileWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 81F1C9DF1E7725CF006233E2 /* ETSMobileWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		81F1C9E71E7725CF006233E2 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C9E61E7725CF006233E2 /* MenuController.swift */; };
@@ -403,8 +406,14 @@
 		8163A4741E7758370065749C /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8163A4781E775E0F0065749C /* CoursesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesController.swift; sourceTree = "<group>"; };
 		8163A47A1E77A7DF0065749C /* CourseTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableRowController.swift; sourceTree = "<group>"; };
-		8163A47C1E77A9B10065749C /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		8163A47C1E77A9B10065749C /* CourseCalendarElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCalendarElement.swift; sourceTree = "<group>"; };
 		8163A47E1E7A113B0065749C /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		8163A4801E7AFF930065749C /* ETSMobileWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ETSMobileWatch Extension.entitlements"; sourceTree = "<group>"; };
+		8163A4811E7AFFB10065749C /* ETSMobileWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ETSMobileWatch.entitlements; sourceTree = "<group>"; };
+		819551B31E80B1EF0091329E /* ETSMobileWatch Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ETSMobileWatch Extension-Bridging-Header.h"; path = "../ETSMobile/ETSMobileWatch Extension-Bridging-Header.h"; sourceTree = "<group>"; };
+		819551B41E80B1EF0091329E /* UIColor+UIColor_ETSMobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColor_ETSMobile.h"; sourceTree = "<group>"; };
+		819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIColor_ETSMobile.m"; sourceTree = "<group>"; };
+		81C66E641E9EBF2400CA9CB1 /* AppRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRequest.swift; sourceTree = "<group>"; };
 		81F1C9D31E7725CF006233E2 /* ETSMobileWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobileWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F1C9D61E7725CF006233E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		81F1C9DA1E7725CF006233E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -741,6 +750,8 @@
 				263A4C4B188B14A800E38CAC /* NSString+HTML.m */,
 				14E987951D1C76D40087D6A5 /* NotificationHelper.h */,
 				14E987961D1C76D40087D6A5 /* NotificationHelper.m */,
+				819551B41E80B1EF0091329E /* UIColor+UIColor_ETSMobile.h */,
+				819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */,
 			);
 			name = "Categories & Helpers";
 			sourceTree = "<group>";
@@ -1023,9 +1034,38 @@
 			name = "3D Touch icons";
 			sourceTree = "<group>";
 		};
+		819551B11E80A3AC0091329E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8163A47C1E77A9B10065749C /* CourseCalendarElement.swift */,
+				81C66E641E9EBF2400CA9CB1 /* AppRequest.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		819551B21E80B1500091329E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				81F1C9E61E7725CF006233E2 /* MenuController.swift */,
+				8163A4781E775E0F0065749C /* CoursesController.swift */,
+				8163A47A1E77A7DF0065749C /* CourseTableRowController.swift */,
+				81F1C9EA1E7725CF006233E2 /* NotificationController.swift */,
+				81F1C9EC1E7725CF006233E2 /* ComplicationController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		819551B81E80BEA10091329E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		81F1C9D41E7725CF006233E2 /* ETSMobileWatch */ = {
 			isa = PBXGroup;
 			children = (
+				8163A4811E7AFFB10065749C /* ETSMobileWatch.entitlements */,
 				81F1C9D51E7725CF006233E2 /* Interface.storyboard */,
 				81F1C9DA1E7725CF006233E2 /* Info.plist */,
 			);
@@ -1035,17 +1075,16 @@
 		81F1C9E31E7725CF006233E2 /* ETSMobileWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				81F1C9E61E7725CF006233E2 /* MenuController.swift */,
+				819551B21E80B1500091329E /* Controllers */,
+				819551B11E80A3AC0091329E /* Models */,
+				819551B81E80BEA10091329E /* Services */,
+				8163A4801E7AFF930065749C /* ETSMobileWatch Extension.entitlements */,
 				81F1C9E81E7725CF006233E2 /* ExtensionDelegate.swift */,
-				81F1C9EA1E7725CF006233E2 /* NotificationController.swift */,
-				81F1C9EC1E7725CF006233E2 /* ComplicationController.swift */,
+				819551B31E80B1EF0091329E /* ETSMobileWatch Extension-Bridging-Header.h */,
 				81F1C9EE1E7725CF006233E2 /* Assets.xcassets */,
 				81F1C9F01E7725CF006233E2 /* Info.plist */,
 				81F1C9E41E7725CF006233E2 /* Supporting Files */,
 				8163A4741E7758370065749C /* Colors.swift */,
-				8163A4781E775E0F0065749C /* CoursesController.swift */,
-				8163A47A1E77A7DF0065749C /* CourseTableRowController.swift */,
-				8163A47C1E77A9B10065749C /* Course.swift */,
 			);
 			path = "ETSMobileWatch Extension";
 			sourceTree = "<group>";
@@ -1190,7 +1229,11 @@
 					26DD92A317EA610D00469FA8 = {
 						DevelopmentTeam = 5K68926M9Q;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -1207,12 +1250,24 @@
 					};
 					81F1C9D21E7725CF006233E2 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 5K68926M9Q;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					81F1C9DE1E7725CF006233E2 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 5K68926M9Q;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -1495,6 +1550,7 @@
 				2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */,
 				263FBD9918E4A0D0002E033E /* ETSEvaluationCell.m in Sources */,
 				268E8DEC18FB03F900D501E9 /* ETSMoodleCoursesViewController.m in Sources */,
+				819551B61E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */,
 				26AF7CF918FB641700BD3982 /* ETSMoodleCourseDetailViewController.m in Sources */,
 				9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */,
 				9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */,
@@ -1541,12 +1597,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8163A47D1E77A9B10065749C /* Course.swift in Sources */,
+				8163A47D1E77A9B10065749C /* CourseCalendarElement.swift in Sources */,
 				8163A47B1E77A7DF0065749C /* CourseTableRowController.swift in Sources */,
 				8163A4791E775E0F0065749C /* CoursesController.swift in Sources */,
 				81F1C9EB1E7725CF006233E2 /* NotificationController.swift in Sources */,
+				819551B71E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */,
 				8163A4751E7758370065749C /* Colors.swift in Sources */,
 				81F1C9ED1E7725CF006233E2 /* ComplicationController.swift in Sources */,
+				81C66E651E9EBF2400CA9CB1 /* AppRequest.swift in Sources */,
 				81F1C9E91E7725CF006233E2 /* ExtensionDelegate.swift in Sources */,
 				81F1C9E71E7725CF006233E2 /* MenuController.swift in Sources */,
 			);
@@ -1743,8 +1801,10 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_RECEIVER_WEAK = NO;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = ETSMobile/ETSMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5K68926M9Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1756,7 +1816,7 @@
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
@@ -1789,8 +1849,10 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_RECEIVER_WEAK = NO;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = ETSMobile/ETSMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5K68926M9Q;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1802,7 +1864,7 @@
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
@@ -1878,6 +1940,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5K68926M9Q;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -1918,6 +1981,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5K68926M9Q;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -1949,6 +2013,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1974,10 +2039,11 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "ETSMobile/ETSMobileWatch Extension-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Debug;
 		};
@@ -1987,6 +2053,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -2012,10 +2079,11 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ETSMobile/ETSMobileWatch Extension-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
