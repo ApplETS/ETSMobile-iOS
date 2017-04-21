@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
         <!--ÉTS Mobile-->
@@ -64,9 +63,9 @@
                                 <tableRow identifier="CourseTableRow" id="k9z-vn-UlD" customClass="CourseTableRowController" customModule="ETSMobileWatch_Extension">
                                     <group key="rootItem" width="1" height="60" alignment="left" id="N0R-Te-Vsj">
                                         <items>
-                                            <group width="44" alignment="left" verticalAlignment="center" layout="vertical" id="8CY-j0-Fnr">
+                                            <group width="45" alignment="left" verticalAlignment="center" layout="vertical" id="8CY-j0-Fnr">
                                                 <items>
-                                                    <label alignment="center" verticalAlignment="center" text="MEC325" id="weV-ge-TWJ">
+                                                    <label width="100" alignment="center" verticalAlignment="center" text="MEC325" textAlignment="center" id="weV-ge-TWJ">
                                                         <color key="textColor" red="1" green="0.082419828919999993" blue="0.059384261479999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="font" type="system" pointSize="11"/>
                                                     </label>
@@ -109,9 +108,9 @@
                                 <tableRow identifier="CourseTableRow" id="faw-hd-88c" customClass="CourseTableRowController" customModule="ETSMobileWatch_Extension">
                                     <group key="rootItem" width="1" height="60" alignment="left" id="Qzv-jp-nzZ">
                                         <items>
-                                            <group width="44" alignment="left" verticalAlignment="center" layout="vertical" id="lzI-8N-BTb">
+                                            <group width="45" alignment="left" verticalAlignment="center" layout="vertical" id="lzI-8N-BTb">
                                                 <items>
-                                                    <label alignment="center" verticalAlignment="center" text="MEC325" id="NrT-d2-t02">
+                                                    <label width="100" alignment="center" verticalAlignment="center" text="MEC325" textAlignment="center" id="NrT-d2-t02">
                                                         <color key="textColor" red="0.45829322916564896" green="0.27842088731691694" blue="0.82861328125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="font" type="system" pointSize="11"/>
                                                     </label>
