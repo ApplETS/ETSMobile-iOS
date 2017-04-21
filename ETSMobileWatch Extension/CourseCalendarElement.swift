@@ -23,7 +23,12 @@ class CourseCalendarElement {
         self.room = room
     }
     
-    class func fromDictionary(_ dictionary: [String: Any]) -> CourseCalendarElement? {
+    
+    /// Instanciates a CourseCalendarElement from a dictionary.
+    ///
+    /// - Parameter dictionary: The dictionary from which to build.
+    /// - Returns: The course element or nil if there's some mandatory information missing.
+    class func from(dictionary: [String: Any]) -> CourseCalendarElement? {
         guard let course = dictionary["course"] as? String,
             let start = dictionary["start"] as? Date,
             let end = dictionary["end"] as? Date,
@@ -34,7 +39,7 @@ class CourseCalendarElement {
         }
         
         return CourseCalendarElement(
-            course: course,
+            course: course.characters.split(separator: "-").map(String.init).first!,  // Removes the group from the course abbreviation. Ex: LOG550-01 to LOG550
             start: start,
             end: end,
             summary: summary,

@@ -8,16 +8,18 @@
 
 import Foundation
 import WatchConnectivity
+import RxSwift
+
+typealias ActivationCompletedCallback = (Error?) -> Void
+
+private let NEXT_COURSES_IN_SESSION = "CurrentCourses"
+private let TYPE = "type"
 
 /// Represents a request made to the iOS application via Watch Connectivity Framework
 class AppRequest : NSObject, WCSessionDelegate {
-    static let NEXT_COURSE_SESSIONS = "CurrentCourses"
-    
     private let session: WCSession?
     private let supported: Bool
-    
-    private var onActivatedClosure: (_ error: Error?) -> Void = {_ in }
-    
+    private var activationCompletedCallback: ActivationCompletedCallback?
     
     /// Possible errors for `AppRequest`.
     ///
@@ -45,75 +47,60 @@ class AppRequest : NSObject, WCSessionDelegate {
         self.session?.delegate = self
     }
     
-    
     /// Activates the WCSession.
     ///
     /// - Parameters:
-    ///   - onActivatedClosure: Closure called when the session has been activated.
-    func activateSession(_ onActivatedClosure: @escaping ((_ error: Error?) -> Void) = {_ in }) {
+    ///     - callback: Callback clojure when activation is completed.
+    func activateSession(_ callback: ActivationCompletedCallback? = {_ in}) {
         guard self.supported else {
-            onActivatedClosure(Errors.NotActivatedError)
+            callback?(Errors.NotActivatedError)
             return
         }
         
         guard self.session?.activationState != .activated else {
-            onActivatedClosure(nil)
+            callback?(nil)
             return
         }
         
-        self.onActivatedClosure = onActivatedClosure
+        self.activationCompletedCallback = callback
         self.session?.activate()
     }
     
     
     /// Get the next course sessions in the current calendar. If there's no current semester, sessions for next semesters are returned.
     ///
-    /// - Parameters:
-    ///   - onReceiveMessageClosure: Closure called when a response comes in.
-    func nextCourseSessionsInCalendar(_ onReceiveMessageClosure: @escaping (((today: [CourseCalendarElement], later: [CourseCalendarElement])?, _ error: Error?) -> Void) = { _, _ in }) {
-        guard self.supported else {
-            onReceiveMessageClosure(nil, Errors.NotSupportedError)
-            return
-        }
-        
-        let requestObject = [
-            "type": AppRequest.NEXT_COURSE_SESSIONS
-        ]
-        
-        self.session?.sendMessage(requestObject, replyHandler: { (responseObject: [String : Any]) in
-            let calendar = Calendar.current
-            let startOfToday = calendar.startOfDay(for: Date())
-            var endOfTodayComponents = DateComponents()
-            
-            endOfTodayComponents.day = 1
-            endOfTodayComponents.second = -1
-            
-            let endOfToday = calendar.date(byAdding: endOfTodayComponents, to: startOfToday)!
-            let courses: [CourseCalendarElement] = (responseObject["courses"] as! [Any]).map { object -> CourseCalendarElement in
-                CourseCalendarElement.fromDictionary(object as! [String : Any])!
+    /// - returns: An observable of the list of CourseCalendarElement elements.
+    func nextCourseSessionsInCalendar() -> Observable<[CourseCalendarElement]> {
+        return Observable.create { observer in
+            if !self.supported {
+                observer.on(.error(Errors.NotSupportedError))
+            } else {
+                let requestObject = [TYPE: NEXT_COURSES_IN_SESSION]
+                
+                self.session?.sendMessage(requestObject, replyHandler: { (responseObject: [String : Any]) in
+                    observer.on(.next(
+                        (responseObject["courses"] as! [Any]).map({ object -> CourseCalendarElement in
+                            CourseCalendarElement.from(dictionary: object as! [String : Any])!
+                        })
+                    ))
+                    observer.on(.completed)
+                }, errorHandler: { _ in
+                    observer.on(.error(Errors.RequestError))
+                })
             }
             
-            onReceiveMessageClosure((
-                today: courses.filter({ course -> Bool in
-                    return startOfToday <= course.start && course.start <= endOfToday
-                }),
-                later: courses.filter({ course -> Bool in
-                    return endOfToday < course.start
-                })
-            ), nil)
-        }, errorHandler: { _ in
-            onReceiveMessageClosure(nil, Errors.RequestError)
-        })
+            return Disposables.create()
+        }
     }
     
     // MARK: Watch Connectivity
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         guard activationState == .activated else {
-            self.onActivatedClosure(Errors.NotActivatedError)
+            self.activationCompletedCallback?(Errors.NotActivatedError)
             return
         }
         
-        self.onActivatedClosure(nil)
+        self.activationCompletedCallback?(nil)
     }
 }
