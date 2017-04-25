@@ -39,7 +39,7 @@ class CoursesController : WKInterfaceController {
                 .nextCourseSessionsInCalendar()
                 .timeout(5, scheduler: MainScheduler.instance)
                 .retry(5)
-                .map { elements -> (today: [CourseCalendarElement], later: [CourseCalendarElement]) in
+                .map { elements -> (today: [CourseCalendarSession], later: [CourseCalendarSession]) in
                     let calendar = Calendar.current
                     let startOfToday = calendar.startOfDay(for: Date())
                     var endOfTodayComponents = DateComponents()

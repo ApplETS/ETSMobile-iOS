@@ -70,7 +70,7 @@ class AppRequest : NSObject, WCSessionDelegate {
     /// Get the next course sessions in the current calendar. If there's no current semester, sessions for next semesters are returned.
     ///
     /// - returns: An observable of the list of CourseCalendarElement elements.
-    func nextCourseSessionsInCalendar() -> Observable<[CourseCalendarElement]> {
+    func nextCourseSessionsInCalendar() -> Observable<[CourseCalendarSession]> {
         return Observable.create { observer in
             if !self.supported {
                 observer.on(.error(Errors.NotSupportedError))
@@ -79,8 +79,8 @@ class AppRequest : NSObject, WCSessionDelegate {
                 
                 self.session?.sendMessage(requestObject, replyHandler: { (responseObject: [String : Any]) in
                     observer.on(.next(
-                        (responseObject["courses"] as! [Any]).map({ object -> CourseCalendarElement in
-                            CourseCalendarElement.from(dictionary: object as! [String : Any])!
+                        (responseObject["courses"] as! [Any]).map({ object -> CourseCalendarSession in
+                            CourseCalendarSession(dictionary: object as! [String : Any])!
                         })
                     ))
                     observer.on(.completed)

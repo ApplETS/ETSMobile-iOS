@@ -16,7 +16,7 @@ class CourseTableRowController : NSObject {
     @IBOutlet var locationLabel: WKInterfaceLabel!
     @IBOutlet var periodLabel: WKInterfaceLabel!
     
-    var course: CourseCalendarElement? {
+    var course: CourseCalendarSession? {
         didSet {
             if let course = course {
                 let formatter = DateFormatter()
