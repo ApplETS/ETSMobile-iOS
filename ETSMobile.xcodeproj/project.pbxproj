@@ -117,12 +117,15 @@
 		43FCA45CF5C355A18C8134F7 /* Pods_ETSMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D8D55273EE1CBC4F779657 /* Pods_ETSMobile.framework */; };
 		73CE0D23ECEE8FEC87603260 /* Pods_ETSMobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A7C9764E80BF0E734B5696 /* Pods_ETSMobileTests.framework */; };
 		7D149EDACCA5C9E8B0DE1997 /* Pods_ETSMobileWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0ECDBE0F9D02F867FAD658 /* Pods_ETSMobileWatch_Extension.framework */; };
+		81522AB91EB1216200DD2061 /* WatchResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522AB81EB1216200DD2061 /* WatchResponder.swift */; };
+		81522ABB1EB128F400DD2061 /* WatchResponderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522ABA1EB128F400DD2061 /* WatchResponderFactory.swift */; };
+		81522ABD1EB1295300DD2061 /* CourseCalendarResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522ABC1EB1295300DD2061 /* CourseCalendarResponder.swift */; };
 		8163A4751E7758370065749C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A4741E7758370065749C /* Colors.swift */; };
 		8163A4761E775A260065749C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92CA17EA610D00469FA8 /* Images.xcassets */; };
 		8163A4771E775A280065749C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92CA17EA610D00469FA8 /* Images.xcassets */; };
 		8163A4791E775E0F0065749C /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A4781E775E0F0065749C /* CoursesController.swift */; };
 		8163A47B1E77A7DF0065749C /* CourseTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A47A1E77A7DF0065749C /* CourseTableRowController.swift */; };
-		8163A47D1E77A9B10065749C /* CourseCalendarElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A47C1E77A9B10065749C /* CourseCalendarElement.swift */; };
+		8163A47D1E77A9B10065749C /* CourseCalendarSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A47C1E77A9B10065749C /* CourseCalendarSession.swift */; };
 		8163A47F1E7A113B0065749C /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8163A47E1E7A113B0065749C /* WatchConnectivity.framework */; };
 		819551B61E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */ = {isa = PBXBuildFile; fileRef = 819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */; };
 		819551B71E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */ = {isa = PBXBuildFile; fileRef = 819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */; };
@@ -403,10 +406,13 @@
 		3829D97E13DE61612BA9661B /* Pods-ETSMobileWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETSMobileWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ETSMobileWatch Extension/Pods-ETSMobileWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		51D8D55273EE1CBC4F779657 /* Pods_ETSMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ETSMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6582B10721AAAB3C5F36CCA2 /* Pods-ETSMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETSMobileTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ETSMobileTests/Pods-ETSMobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		81522AB81EB1216200DD2061 /* WatchResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchResponder.swift; sourceTree = "<group>"; };
+		81522ABA1EB128F400DD2061 /* WatchResponderFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchResponderFactory.swift; sourceTree = "<group>"; };
+		81522ABC1EB1295300DD2061 /* CourseCalendarResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCalendarResponder.swift; sourceTree = "<group>"; };
 		8163A4741E7758370065749C /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8163A4781E775E0F0065749C /* CoursesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesController.swift; sourceTree = "<group>"; };
 		8163A47A1E77A7DF0065749C /* CourseTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableRowController.swift; sourceTree = "<group>"; };
-		8163A47C1E77A9B10065749C /* CourseCalendarElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCalendarElement.swift; sourceTree = "<group>"; };
+		8163A47C1E77A9B10065749C /* CourseCalendarSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCalendarSession.swift; sourceTree = "<group>"; };
 		8163A47E1E7A113B0065749C /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		8163A4801E7AFF930065749C /* ETSMobileWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ETSMobileWatch Extension.entitlements"; sourceTree = "<group>"; };
 		8163A4811E7AFFB10065749C /* ETSMobileWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ETSMobileWatch.entitlements; sourceTree = "<group>"; };
@@ -884,6 +890,7 @@
 		26DD92E817EA612800469FA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				81522AB71EAFE44900DD2061 /* Watch */,
 				291267BE1CBCA3800010A740 /* ETSConsommation.h */,
 				291267BF1CBCA3800010A740 /* ETSConsommation.m */,
 				1DBF6C6719A507EA00761C44 /* ETSNewsSource.h */,
@@ -1034,10 +1041,20 @@
 			name = "3D Touch icons";
 			sourceTree = "<group>";
 		};
+		81522AB71EAFE44900DD2061 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				81522AB81EB1216200DD2061 /* WatchResponder.swift */,
+				81522ABA1EB128F400DD2061 /* WatchResponderFactory.swift */,
+				81522ABC1EB1295300DD2061 /* CourseCalendarResponder.swift */,
+			);
+			name = Watch;
+			sourceTree = "<group>";
+		};
 		819551B11E80A3AC0091329E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8163A47C1E77A9B10065749C /* CourseCalendarElement.swift */,
+				8163A47C1E77A9B10065749C /* CourseCalendarSession.swift */,
 				81C66E641E9EBF2400CA9CB1 /* AppRequest.swift */,
 			);
 			name = Models;
@@ -1506,6 +1523,7 @@
 				1D8B140E19A7B1E80033CBA7 /* GTMNSString+HTML.m in Sources */,
 				26DEB88A18EC97EC00161421 /* MSCurrentTimeIndicator.m in Sources */,
 				261409E519A686FB00E6CD29 /* ETSNewsEmptyCell.m in Sources */,
+				81522ABD1EB1295300DD2061 /* CourseCalendarResponder.swift in Sources */,
 				2661098218FD95EC00D817DA /* ETSRadioPlayer.m in Sources */,
 				264E86CD18874E99005F1820 /* ETSNewsSourceViewController.m in Sources */,
 				26887B7218F090C500009EBA /* ETSRadioCell.m in Sources */,
@@ -1558,6 +1576,7 @@
 				D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */,
 				1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */,
 				26EF269B18E70F12001D3454 /* ETSProgram.m in Sources */,
+				81522AB91EB1216200DD2061 /* WatchResponder.swift in Sources */,
 				26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */,
 				1D25DD8919A3E63B00C71387 /* ETSNews.m in Sources */,
 				FB20EF041BD9C3F1004961E3 /* NSDate+Timezone.m in Sources */,
@@ -1582,6 +1601,7 @@
 				26DEB88F18EC97EC00161421 /* MSTimeRowHeader.m in Sources */,
 				26DEB88E18EC97EC00161421 /* MSGridline.m in Sources */,
 				2698C6F518274F4B00F6281F /* KeychainItemWrapper.m in Sources */,
+				81522ABB1EB128F400DD2061 /* WatchResponderFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1597,7 +1617,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8163A47D1E77A9B10065749C /* CourseCalendarElement.swift in Sources */,
+				8163A47D1E77A9B10065749C /* CourseCalendarSession.swift in Sources */,
 				8163A47B1E77A7DF0065749C /* CourseTableRowController.swift in Sources */,
 				8163A4791E775E0F0065749C /* CoursesController.swift in Sources */,
 				81F1C9EB1E7725CF006233E2 /* NotificationController.swift in Sources */,
@@ -1815,6 +1835,13 @@
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Headers/Public/SupportKit\"",
+				);
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1863,6 +1890,13 @@
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Headers/Public/SupportKit\"",
+				);
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -35,6 +35,7 @@
 #import "UIColor+Styles.h"
 #import "ETSSession.h"
 #import "ETSCalendar.h"
+#import "ETSMobile-Swift.h"
 
 static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:834885693643:app/APNS/Applets-EtsMobile-iOS";
 
@@ -441,54 +442,16 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
 
 -(void)session:(WCSession*)session didReceiveMessage:(nonnull NSDictionary<NSString *,id> *)message replyHandler:(nonnull void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler
 {
-    NSString *messageType = message[@"type"];
-    NSMutableDictionary<NSString*, id> *response = [NSMutableDictionary<NSString*, id> new];
+    NSDictionary<NSString*, id> *errorResponse = @{@"type": @"error"};
+    WatchResponderFactory *factory = [[WatchResponderFactory alloc] initWithManagedObjectContext:self.managedObjectContext];
+    WatchResponder *defaultResponder = [factory defaultResponder];
+    NSDictionary<NSString*, id> *response = [defaultResponder processRequest:message];
     
-    if ([messageType isEqual: @"CurrentCourses"]) {
-        NSDate *now = [NSDate date];
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Session"];
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"start <= %@ AND %@ <= end", now, now];
-        NSError *error;
-        
-        request.predicate = predicate;
-        NSArray* sessions = [self.managedObjectContext executeFetchRequest:request error:&error];
-        
-        if (sessions) {
-            NSDate *startOfToday = [[NSCalendar currentCalendar] startOfDayForDate:now];
-            ETSSession *currentSession = sessions.firstObject;
-            NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Calendar"];
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"session == %@ AND start >= %@", currentSession.acronym, startOfToday];
-            NSError *error;
-            
-            request.predicate = predicate;
-            request.fetchLimit = 10;
-            request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"start" ascending:YES]];
-            NSArray *coursesInCalendar = [self.managedObjectContext executeFetchRequest:request error:&error];
-            
-            if (coursesInCalendar) {
-                NSMutableArray *courses = [NSMutableArray new];
-                
-                for (ETSCalendar *course in coursesInCalendar) {
-                    [courses addObject:@{
-                        @"course": course.course,
-                        @"start": course.start,
-                        @"end": course.end,
-                        @"summary": course.summary,
-                        @"room": course.room
-                    }];
-                }
-                
-                response[@"type"] = @"OK";
-                response[@"courses"] = courses;
-            } else {
-                response[@"type"] = @"error";
-            }
-        } else {
-            response[@"type"] = @"error";
-        }
+    if (response == nil) {
+        replyHandler(errorResponse);
+    } else {
+        replyHandler(response);
     }
-    
-    replyHandler(response);
 }
 
 @end

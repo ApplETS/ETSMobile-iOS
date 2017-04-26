@@ -28,7 +28,7 @@
     return [calendar dateFromComponents:components];
 }
 
-- (NSDictionary *)toDictionary
+- (nonnull NSDictionary<NSString*, id> *)dictionary
 {
     return @{
         @"course": self.course,

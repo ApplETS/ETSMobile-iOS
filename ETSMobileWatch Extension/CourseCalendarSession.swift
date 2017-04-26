@@ -8,9 +8,19 @@
 
 import Foundation
 
+private enum DictionaryElements : String {
+    case COURSE = "course"
+    case START = "start"
+    case END = "end"
+    case SUMMARY = "summary"
+    case ROOM = "room"
+}
 
-/// Represents a course session in a calendar.
-class CourseCalendarSession {
+/// Represents a course session in a calendar. Its compiled into Objective-C to
+/// reuse it in the iOS application.
+///
+/// Adding new models with same logic should imply using a protocol and prossibly KVO.
+@objc class CourseCalendarSession : NSObject {
     let course: String
     let start: Date
     let end: Date
@@ -40,11 +50,11 @@ class CourseCalendarSession {
     ///
     /// - Parameter dictionary: The dictionary from which to get the information of the object.
     convenience init?(dictionary: [String: Any]) {
-        guard let course = dictionary["course"] as? String,
-            let start = dictionary["start"] as? Date,
-            let end = dictionary["end"] as? Date,
-            let summary = dictionary["summary"] as? String,
-            let room = dictionary["room"] as? String else
+        guard let course = dictionary[DictionaryElements.COURSE.rawValue] as? String,
+            let start = dictionary[DictionaryElements.START.rawValue] as? Date,
+            let end = dictionary[DictionaryElements.END.rawValue] as? Date,
+            let summary = dictionary[DictionaryElements.SUMMARY.rawValue] as? String,
+            let room = dictionary[DictionaryElements.ROOM.rawValue] as? String else
         {
             return nil
         }
