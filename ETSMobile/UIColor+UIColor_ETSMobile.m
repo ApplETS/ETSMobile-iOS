@@ -12,7 +12,7 @@
 
 + (UIColor *)colorETS
 {
-    return [UIColor colorWithRed:232.0 / 255.0 green:37.0 / 255.0 blue:51.0 / 255.0 alpha:1.0];
+    return [UIColor colorWithRed:255.0 / 255.0 green:21.0 / 255.0 blue:15.0 / 255.0 alpha:1.0];
 }
 
 @end

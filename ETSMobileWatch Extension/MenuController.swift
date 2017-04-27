@@ -29,7 +29,7 @@ class MenuController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         
         let deviceBounds = WKInterfaceDevice.current().screenBounds
-        let buttonsSize = CGSize(width: deviceBounds.width / 2, height: 55)
+        let buttonsSize = CGSize(width: deviceBounds.width / 2, height: 70)
         
         self.firstGroup.setHeight(buttonsSize.height)
         self.secondGroup.setHeight(buttonsSize.height)

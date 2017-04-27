@@ -15,6 +15,8 @@ private let TABLE_ROW_TYPE = "CourseTableRow"
 class CoursesController : WKInterfaceController {
     @IBOutlet var todayCourseTable: WKInterfaceTable!
     @IBOutlet var laterCourseTable: WKInterfaceTable!
+    @IBOutlet var todayNoCourseLabel: WKInterfaceLabel!
+    @IBOutlet var laterNoCourseLabel: WKInterfaceLabel!
     
     private let disposeBag = DisposeBag()
     
@@ -54,6 +56,10 @@ class CoursesController : WKInterfaceController {
                         later: elements.filter { course in endOfToday < course.start }
                     )
                 }
+                .do(onNext: {[weak self] (courses: (today: [CourseCalendarSession], later: [CourseCalendarSession])) in
+                    self?.todayNoCourseLabel.setHidden(courses.today.count > 0)
+                    self?.laterNoCourseLabel.setHidden(courses.later.count > 0)
+                })
                 .subscribe(onNext: {[weak self] courses in
                     self?.todayCourseTable.setNumberOfRows(courses.today.count, withRowType: TABLE_ROW_TYPE)
                     self?.laterCourseTable.setNumberOfRows(courses.later.count, withRowType: TABLE_ROW_TYPE)

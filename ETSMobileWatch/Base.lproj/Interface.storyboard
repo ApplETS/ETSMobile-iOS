@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
@@ -17,20 +17,45 @@
                             <items>
                                 <group width="1" height="68" alignment="left" id="0S5-Xz-jbg">
                                     <items>
-                                        <button width="57" height="72" alignment="left" title="cours" id="5VM-ZG-XhL">
+                                        <button alignment="left" id="5VM-ZG-XhL">
+                                            <group key="contentGroup" width="57" height="72" alignment="left" radius="10" id="N7X-NV-R7a">
+                                                <items>
+                                                    <imageView width="0.80000000000000004" height="0.80000000000000004" alignment="center" verticalAlignment="center" image="ico_schedule_24x24" id="tMI-rv-ioM"/>
+                                                </items>
+                                                <color key="backgroundColor" red="1" green="0.082352941176470587" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
+                                            </group>
                                             <connections>
                                                 <segue destination="rip-nD-ama" kind="push" id="2UF-do-cJX"/>
                                             </connections>
                                         </button>
-                                        <button width="57" height="72" alignment="left" title="notes" id="ckY-Bz-82O">
+                                        <button alignment="left" id="ckY-Bz-82O">
+                                            <group key="contentGroup" width="57" height="72" alignment="left" radius="10" id="I7u-6R-19C">
+                                                <items>
+                                                    <imageView width="0.69999999999999996" height="0.69999999999999996" alignment="center" verticalAlignment="center" image="ico_notes" id="epd-BR-Oll"/>
+                                                </items>
+                                                <color key="backgroundColor" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </group>
                                             <accessibilityTraits key="accessibilityTraits" button="YES" image="YES"/>
                                         </button>
                                     </items>
                                 </group>
                                 <group width="1" alignment="left" id="ByM-qd-zLQ">
                                     <items>
-                                        <button width="57" height="72" alignment="left" title="profil" id="eG3-lr-a5D"/>
-                                        <button width="57" height="72" alignment="left" title="dates" id="K8T-OG-bM8">
+                                        <button alignment="left" id="eG3-lr-a5D">
+                                            <group key="contentGroup" width="57" height="72" alignment="left" radius="10" id="yUS-6p-cHw">
+                                                <items>
+                                                    <imageView width="0.80000000000000004" height="0.80000000000000004" alignment="center" verticalAlignment="center" image="ico_profil" id="Ftf-Mp-qMU"/>
+                                                </items>
+                                                <color key="backgroundColor" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </group>
+                                        </button>
+                                        <button alignment="left" id="K8T-OG-bM8">
+                                            <group key="contentGroup" width="57" height="72" alignment="left" radius="10" id="r4c-qZ-IPU">
+                                                <items>
+                                                    <imageView width="0.80000000000000004" height="0.80000000000000004" alignment="center" verticalAlignment="center" image="ico_news" id="bag-B2-izA"/>
+                                                </items>
+                                                <color key="backgroundColor" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </group>
                                             <accessibilityTraits key="accessibilityTraits" button="YES" image="YES"/>
                                         </button>
                                     </items>
@@ -58,6 +83,10 @@
                 <controller title="Cours" id="rip-nD-ama" customClass="CoursesController" customModule="ETSMobileWatch_Extension">
                     <items>
                         <label alignment="left" text="Aujourd'hui" id="dNG-Qg-2C4"/>
+                        <label alignment="center" hidden="YES" text="Pas de cours! :)" textAlignment="center" id="opC-oI-X0b">
+                            <color key="textColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="system" pointSize="12"/>
+                        </label>
                         <table alignment="left" id="avw-c2-REA">
                             <items>
                                 <tableRow identifier="CourseTableRow" id="k9z-vn-UlD" customClass="CourseTableRowController" customModule="ETSMobileWatch_Extension">
@@ -103,6 +132,10 @@
                             <color key="color" red="1" green="0.082419828919999993" blue="0.059384261479999999" alpha="1" colorSpace="calibratedRGB"/>
                         </separator>
                         <label alignment="left" text="Plus tard" id="gS3-PG-dBm"/>
+                        <label alignment="center" hidden="YES" text="Aucun cours à venir" textAlignment="center" id="5DK-Pv-3Hz">
+                            <color key="textColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="system" pointSize="12"/>
+                        </label>
                         <table alignment="left" id="0bH-4y-Ezu">
                             <items>
                                 <tableRow identifier="CourseTableRow" id="faw-hd-88c" customClass="CourseTableRowController" customModule="ETSMobileWatch_Extension">
@@ -147,7 +180,9 @@
                     </items>
                     <connections>
                         <outlet property="laterCourseTable" destination="0bH-4y-Ezu" id="97X-au-TmS"/>
+                        <outlet property="laterNoCourseLabel" destination="5DK-Pv-3Hz" id="8ca-OT-hoR"/>
                         <outlet property="todayCourseTable" destination="avw-c2-REA" id="uF5-4m-Tda"/>
+                        <outlet property="todayNoCourseLabel" destination="opC-oI-X0b" id="zf1-tW-4Hy"/>
                     </connections>
                 </controller>
             </objects>
