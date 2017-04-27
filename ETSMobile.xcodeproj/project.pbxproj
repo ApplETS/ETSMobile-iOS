@@ -120,6 +120,8 @@
 		81522AB91EB1216200DD2061 /* WatchResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522AB81EB1216200DD2061 /* WatchResponder.swift */; };
 		81522ABB1EB128F400DD2061 /* WatchResponderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522ABA1EB128F400DD2061 /* WatchResponderFactory.swift */; };
 		81522ABD1EB1295300DD2061 /* CourseCalendarResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522ABC1EB1295300DD2061 /* CourseCalendarResponder.swift */; };
+		81522ABF1EB19E1500DD2061 /* NotesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522ABE1EB19E1500DD2061 /* NotesController.swift */; };
+		81522AC11EB23B5C00DD2061 /* NotesTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522AC01EB23B5C00DD2061 /* NotesTableRowController.swift */; };
 		8163A4751E7758370065749C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A4741E7758370065749C /* Colors.swift */; };
 		8163A4761E775A260065749C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92CA17EA610D00469FA8 /* Images.xcassets */; };
 		8163A4771E775A280065749C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92CA17EA610D00469FA8 /* Images.xcassets */; };
@@ -134,7 +136,6 @@
 		81F1C9E01E7725CF006233E2 /* ETSMobileWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 81F1C9DF1E7725CF006233E2 /* ETSMobileWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		81F1C9E71E7725CF006233E2 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C9E61E7725CF006233E2 /* MenuController.swift */; };
 		81F1C9E91E7725CF006233E2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C9E81E7725CF006233E2 /* ExtensionDelegate.swift */; };
-		81F1C9EB1E7725CF006233E2 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C9EA1E7725CF006233E2 /* NotificationController.swift */; };
 		81F1C9ED1E7725CF006233E2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C9EC1E7725CF006233E2 /* ComplicationController.swift */; };
 		81F1C9EF1E7725CF006233E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81F1C9EE1E7725CF006233E2 /* Assets.xcassets */; };
 		81F1C9F41E7725CF006233E2 /* ETSMobileWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 81F1C9D31E7725CF006233E2 /* ETSMobileWatch.app */; };
@@ -409,6 +410,8 @@
 		81522AB81EB1216200DD2061 /* WatchResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchResponder.swift; sourceTree = "<group>"; };
 		81522ABA1EB128F400DD2061 /* WatchResponderFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchResponderFactory.swift; sourceTree = "<group>"; };
 		81522ABC1EB1295300DD2061 /* CourseCalendarResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCalendarResponder.swift; sourceTree = "<group>"; };
+		81522ABE1EB19E1500DD2061 /* NotesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesController.swift; sourceTree = "<group>"; };
+		81522AC01EB23B5C00DD2061 /* NotesTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableRowController.swift; sourceTree = "<group>"; };
 		8163A4741E7758370065749C /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8163A4781E775E0F0065749C /* CoursesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesController.swift; sourceTree = "<group>"; };
 		8163A47A1E77A7DF0065749C /* CourseTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableRowController.swift; sourceTree = "<group>"; };
@@ -427,7 +430,6 @@
 		81F1C9E51E7725CF006233E2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		81F1C9E61E7725CF006233E2 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		81F1C9E81E7725CF006233E2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		81F1C9EA1E7725CF006233E2 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		81F1C9EC1E7725CF006233E2 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		81F1C9EE1E7725CF006233E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81F1C9F01E7725CF006233E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1066,8 +1068,9 @@
 				81F1C9E61E7725CF006233E2 /* MenuController.swift */,
 				8163A4781E775E0F0065749C /* CoursesController.swift */,
 				8163A47A1E77A7DF0065749C /* CourseTableRowController.swift */,
-				81F1C9EA1E7725CF006233E2 /* NotificationController.swift */,
 				81F1C9EC1E7725CF006233E2 /* ComplicationController.swift */,
+				81522ABE1EB19E1500DD2061 /* NotesController.swift */,
+				81522AC01EB23B5C00DD2061 /* NotesTableRowController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1620,10 +1623,11 @@
 				8163A47D1E77A9B10065749C /* CourseCalendarSession.swift in Sources */,
 				8163A47B1E77A7DF0065749C /* CourseTableRowController.swift in Sources */,
 				8163A4791E775E0F0065749C /* CoursesController.swift in Sources */,
-				81F1C9EB1E7725CF006233E2 /* NotificationController.swift in Sources */,
+				81522ABF1EB19E1500DD2061 /* NotesController.swift in Sources */,
 				819551B71E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */,
 				8163A4751E7758370065749C /* Colors.swift in Sources */,
 				81F1C9ED1E7725CF006233E2 /* ComplicationController.swift in Sources */,
+				81522AC11EB23B5C00DD2061 /* NotesTableRowController.swift in Sources */,
 				81C66E651E9EBF2400CA9CB1 /* AppRequest.swift in Sources */,
 				81F1C9E91E7725CF006233E2 /* ExtensionDelegate.swift in Sources */,
 				81F1C9E71E7725CF006233E2 /* MenuController.swift in Sources */,

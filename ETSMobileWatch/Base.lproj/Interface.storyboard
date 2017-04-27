@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch42" orientation="portrait">
+    <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,43 +18,62 @@
                                 <group width="1" height="68" alignment="left" id="0S5-Xz-jbg">
                                     <items>
                                         <button alignment="left" id="5VM-ZG-XhL">
-                                            <group key="contentGroup" width="57" height="72" alignment="left" radius="10" id="N7X-NV-R7a">
+                                            <group key="contentGroup" width="57" height="72" alignment="left" layout="vertical" radius="10" id="N7X-NV-R7a">
                                                 <items>
-                                                    <imageView width="0.80000000000000004" height="0.80000000000000004" alignment="center" verticalAlignment="center" image="ico_schedule_24x24" id="tMI-rv-ioM"/>
+                                                    <imageView width="0.5" height="0.59999999999999998" alignment="center" verticalAlignment="center" image="ico_schedule_24x24" id="tMI-rv-ioM"/>
+                                                    <label alignment="center" verticalAlignment="bottom" text="Calendrier" textAlignment="center" id="KgD-BA-SpI">
+                                                        <fontDescription key="font" type="system" pointSize="11"/>
+                                                    </label>
                                                 </items>
-                                                <color key="backgroundColor" red="1" green="0.082352941176470587" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.68627450980392157" green="0.082352941176470587" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
+                                                <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="7"/>
                                             </group>
                                             <connections>
                                                 <segue destination="rip-nD-ama" kind="push" id="2UF-do-cJX"/>
                                             </connections>
                                         </button>
                                         <button alignment="left" id="ckY-Bz-82O">
-                                            <group key="contentGroup" width="57" height="72" alignment="left" radius="10" id="I7u-6R-19C">
+                                            <group key="contentGroup" width="57" height="72" alignment="left" layout="vertical" radius="10" id="I7u-6R-19C">
                                                 <items>
-                                                    <imageView width="0.69999999999999996" height="0.69999999999999996" alignment="center" verticalAlignment="center" image="ico_notes" id="epd-BR-Oll"/>
+                                                    <imageView width="0.5" height="0.59999999999999998" alignment="center" verticalAlignment="center" image="ico_notes" id="epd-BR-Oll"/>
+                                                    <label alignment="center" verticalAlignment="bottom" text="Notes" textAlignment="center" id="rkC-T3-nJB">
+                                                        <fontDescription key="font" type="system" pointSize="11"/>
+                                                    </label>
                                                 </items>
-                                                <color key="backgroundColor" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.68627450980392157" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="7"/>
                                             </group>
                                             <accessibilityTraits key="accessibilityTraits" button="YES" image="YES"/>
+                                            <connections>
+                                                <segue destination="BNC-2w-6k7" kind="push" identifier="" id="WNr-e2-Xpz"/>
+                                            </connections>
                                         </button>
                                     </items>
                                 </group>
                                 <group width="1" alignment="left" id="ByM-qd-zLQ">
                                     <items>
                                         <button alignment="left" id="eG3-lr-a5D">
-                                            <group key="contentGroup" width="57" height="72" alignment="left" radius="10" id="yUS-6p-cHw">
+                                            <group key="contentGroup" width="57" height="72" alignment="left" layout="vertical" radius="10" id="yUS-6p-cHw">
                                                 <items>
-                                                    <imageView width="0.80000000000000004" height="0.80000000000000004" alignment="center" verticalAlignment="center" image="ico_profil" id="Ftf-Mp-qMU"/>
+                                                    <imageView width="0.5" height="0.59999999999999998" alignment="center" verticalAlignment="center" image="ico_profil" id="Ftf-Mp-qMU"/>
+                                                    <label alignment="center" verticalAlignment="bottom" text="Profil" textAlignment="center" id="et0-Jd-ycL">
+                                                        <fontDescription key="font" type="system" pointSize="11"/>
+                                                    </label>
                                                 </items>
-                                                <color key="backgroundColor" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.68627450980392157" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="7"/>
                                             </group>
                                         </button>
                                         <button alignment="left" id="K8T-OG-bM8">
-                                            <group key="contentGroup" width="57" height="72" alignment="left" radius="10" id="r4c-qZ-IPU">
+                                            <group key="contentGroup" width="57" height="72" alignment="left" layout="vertical" radius="10" id="r4c-qZ-IPU">
                                                 <items>
-                                                    <imageView width="0.80000000000000004" height="0.80000000000000004" alignment="center" verticalAlignment="center" image="ico_news" id="bag-B2-izA"/>
+                                                    <imageView width="0.5" height="0.59999999999999998" alignment="center" verticalAlignment="center" image="ico_news" id="bag-B2-izA"/>
+                                                    <label alignment="center" verticalAlignment="bottom" text="Dates" textAlignment="center" id="xqr-1y-zYV">
+                                                        <fontDescription key="font" type="system" pointSize="11"/>
+                                                    </label>
                                                 </items>
-                                                <color key="backgroundColor" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.68627450980392157" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="7"/>
                                             </group>
                                             <accessibilityTraits key="accessibilityTraits" button="YES" image="YES"/>
                                         </button>
@@ -89,7 +108,7 @@
                         </label>
                         <table alignment="left" id="avw-c2-REA">
                             <items>
-                                <tableRow identifier="CourseTableRow" id="k9z-vn-UlD" customClass="CourseTableRowController" customModule="ETSMobileWatch_Extension">
+                                <tableRow identifier="CourseTableRow" selectable="NO" id="k9z-vn-UlD" customClass="CourseTableRowController" customModule="ETSMobileWatch_Extension">
                                     <group key="rootItem" width="1" height="60" alignment="left" id="N0R-Te-Vsj">
                                         <items>
                                             <group width="45" alignment="left" verticalAlignment="center" layout="vertical" id="8CY-j0-Fnr">
@@ -138,7 +157,7 @@
                         </label>
                         <table alignment="left" id="0bH-4y-Ezu">
                             <items>
-                                <tableRow identifier="CourseTableRow" id="faw-hd-88c" customClass="CourseTableRowController" customModule="ETSMobileWatch_Extension">
+                                <tableRow identifier="CourseTableRow" selectable="NO" id="faw-hd-88c" customClass="CourseTableRowController" customModule="ETSMobileWatch_Extension">
                                     <group key="rootItem" width="1" height="60" alignment="left" id="Qzv-jp-nzZ">
                                         <items>
                                             <group width="45" alignment="left" verticalAlignment="center" layout="vertical" id="lzI-8N-BTb">
@@ -188,28 +207,51 @@
             </objects>
             <point key="canvasLocation" x="740" y="-98"/>
         </scene>
-        <!--Static Notification Interface Controller-->
-        <scene sceneID="AEw-b0-oYE">
+        <!--Notes-->
+        <scene sceneID="LKT-xy-sLg">
             <objects>
-                <notificationController id="YCC-NB-fut">
+                <controller title="Notes" id="BNC-2w-6k7" customClass="NotesController" customModule="ETSMobileWatch_Extension">
                     <items>
-                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                        <label alignment="center" hidden="YES" text="Aucune note à afficher" textAlignment="center" id="Djr-nn-Mx7">
+                            <color key="textColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="system" pointSize="12"/>
+                        </label>
+                        <table alignment="center" spacing="2" id="Kb3-Xh-iTj">
+                            <items>
+                                <tableRow identifier="NotesTableRow" id="cFk-9Y-Jqk" customClass="NotesTableRowController" customModule="ETSMobileWatch_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="Vm1-oD-4Me">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="LOG550" textAlignment="center" id="esv-T1-hLH">
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="font" type="system" pointSize="14"/>
+                                            </label>
+                                            <group width="39" height="0.69999999999999996" alignment="right" verticalAlignment="center" radius="6" id="Omn-Jk-czR">
+                                                <items>
+                                                    <label alignment="center" verticalAlignment="center" text="97 %" id="lcC-kj-DPj">
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                </items>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </group>
+                                        </items>
+                                        <color key="backgroundColor" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="courseLabel" destination="esv-T1-hLH" id="hKr-lK-qfP"/>
+                                        <outlet property="noteGroup" destination="Vm1-oD-4Me" id="2dN-3W-7jh"/>
+                                        <outlet property="noteLabel" destination="lcC-kj-DPj" id="9Gt-MI-uEs"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
                     <connections>
-                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
-                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <outlet property="noNotesLabel" destination="Djr-nn-Mx7" id="MHI-OZ-VGr"/>
+                        <outlet property="notesTable" destination="Kb3-Xh-iTj" id="T84-Ad-yjI"/>
                     </connections>
-                </notificationController>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
-        </scene>
-        <!--Notification Controller-->
-        <scene sceneID="ZPc-GJ-vnh">
-            <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="ETSMobileWatch" customModuleProvider="target"/>
-            </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="739" y="285"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.90980392156862744" green="0.14509803921568626" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>

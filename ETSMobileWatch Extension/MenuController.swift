@@ -21,15 +21,11 @@ class MenuController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        // Configure interface objects here.
     }
     
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        
         let deviceBounds = WKInterfaceDevice.current().screenBounds
-        let buttonsSize = CGSize(width: deviceBounds.width / 2, height: 70)
+        let buttonsSize = CGSize(width: (deviceBounds.width / 2) - 2, height: 70)
         
         self.firstGroup.setHeight(buttonsSize.height)
         self.secondGroup.setHeight(buttonsSize.height)
@@ -47,8 +43,14 @@ class MenuController: WKInterfaceController {
     }
     
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
+    
+    override func contextsForSegue(withIdentifier segueIdentifier: String) -> [Any]? {
+        if segueIdentifier == "ToNotesSegue" {
+            return [["test": "lol"]]
+        }
+        
+        return nil
+    }
 }

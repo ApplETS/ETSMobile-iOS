@@ -11,5 +11,8 @@
 @interface UIColor (UIColor_ETSMobile)
 
 + (UIColor *)colorETS;
++ (UIColor *)success;
++ (UIColor *)warning;
++ (UIColor *)error;
 
 @end
