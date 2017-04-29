@@ -12,9 +12,6 @@ import RxSwift
 
 typealias ActivationCompletedCallback = (Error?) -> Void
 
-private let NEXT_COURSES_IN_SESSION = "CurrentCourses"
-private let TYPE = "type"
-
 /// Represents a request made to the iOS application via Watch Connectivity Framework
 class AppRequest : NSObject, WCSessionDelegate {
     private let session: WCSession?
@@ -72,22 +69,60 @@ class AppRequest : NSObject, WCSessionDelegate {
     /// - returns: An observable of the list of CourseCalendarElement elements.
     func nextCourseSessionsInCalendar() -> Observable<[CourseCalendarSession]> {
         return Observable.create { observer in
-            if !self.supported {
+            guard self.supported else {
                 observer.on(.error(Errors.NotSupportedError))
-            } else {
-                let requestObject = [TYPE: NEXT_COURSES_IN_SESSION]
-                
-                self.session?.sendMessage(requestObject, replyHandler: { (responseObject: [String : Any]) in
-                    observer.on(.next(
-                        (responseObject["courses"] as! [Any]).map({ object -> CourseCalendarSession in
-                            CourseCalendarSession(dictionary: object as! [String : Any])!
-                        })
-                    ))
-                    observer.on(.completed)
-                }, errorHandler: { _ in
-                    observer.on(.error(Errors.RequestError))
-                })
+                return Disposables.create()
             }
+            
+            let requestObject = ["type": RequestTypes.CURRENT_COURSES.rawValue]
+            
+            self.session?.sendMessage(requestObject, replyHandler: { (responseObject: [String : Any]) in
+                guard responseObject["type"] as? String == RequestTypes.OK.rawValue else {
+                    observer.on(.error(Errors.RequestError))
+                    return
+                }
+                
+                observer.on(.next(
+                    (responseObject["courses"] as! [Any]).map({ object -> CourseCalendarSession in
+                        CourseCalendarSession(dictionary: object as! [String : Any?])!
+                    })
+                ))
+                observer.on(.completed)
+            }, errorHandler: { _ in
+                observer.on(.error(Errors.RequestError))
+            })
+            
+            return Disposables.create()
+        }
+    }
+    
+    
+    /// Get the notes of the user for the current session. If the user is in between semesters, an empty array will be received.
+    ///
+    /// - Returns: An observable of an array of Course elements.
+    func notesForCurrentSemester() -> Observable<[ETSCourse]> {
+        return Observable.create { observer in
+            guard self.supported else {
+                observer.on(.error(Errors.NotSupportedError))
+                return Disposables.create()
+            }
+            
+            let requestObject = ["type": RequestTypes.CURRENT_NOTES.rawValue]
+            
+            self.session?.sendMessage(requestObject, replyHandler: { responseObject in
+                guard responseObject["type"] as? String == RequestTypes.OK.rawValue else {
+                    observer.on(.error(Errors.RequestError))
+                    return
+                }
+                let courses = responseObject["notes"] as! [Dictionary<String, Any>]
+                
+                observer.on(.next(
+                    courses.map { course in ETSCourse(dictionary: course) }
+                ))
+                observer.on(.completed)
+            }, errorHandler: { _ in
+                observer.on(.error(Errors.RequestError))
+            })
             
             return Disposables.create()
         }

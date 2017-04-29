@@ -4,3 +4,5 @@
 
 #import "ETSSession.h"
 #import "ETSCalendar.h"
+#import "ETSCourse.h"
+#import "ETSEvaluation.h"

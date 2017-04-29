@@ -25,7 +25,7 @@
                                                         <fontDescription key="font" type="system" pointSize="11"/>
                                                     </label>
                                                 </items>
-                                                <color key="backgroundColor" red="0.68627450980392157" green="0.082352941176470587" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="7"/>
                                             </group>
                                             <connections>
@@ -40,7 +40,7 @@
                                                         <fontDescription key="font" type="system" pointSize="11"/>
                                                     </label>
                                                 </items>
-                                                <color key="backgroundColor" red="0.68627450980392157" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="7"/>
                                             </group>
                                             <accessibilityTraits key="accessibilityTraits" button="YES" image="YES"/>
@@ -60,7 +60,7 @@
                                                         <fontDescription key="font" type="system" pointSize="11"/>
                                                     </label>
                                                 </items>
-                                                <color key="backgroundColor" red="0.68627450980392157" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="7"/>
                                             </group>
                                         </button>
@@ -72,7 +72,7 @@
                                                         <fontDescription key="font" type="system" pointSize="11"/>
                                                     </label>
                                                 </items>
-                                                <color key="backgroundColor" red="0.68627450980392157" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="7"/>
                                             </group>
                                             <accessibilityTraits key="accessibilityTraits" button="YES" image="YES"/>
@@ -219,16 +219,17 @@
                         <table alignment="center" spacing="2" id="Kb3-Xh-iTj">
                             <items>
                                 <tableRow identifier="NotesTableRow" id="cFk-9Y-Jqk" customClass="NotesTableRowController" customModule="ETSMobileWatch_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="Vm1-oD-4Me">
+                                    <group key="rootItem" width="1" height="45" alignment="left" id="Vm1-oD-4Me">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" text="LOG550" textAlignment="center" id="esv-T1-hLH">
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="font" type="system" pointSize="14"/>
+                                                <fontDescription key="font" type="system" weight="semibold" pointSize="15"/>
                                             </label>
-                                            <group width="39" height="0.69999999999999996" alignment="right" verticalAlignment="center" radius="6" id="Omn-Jk-czR">
+                                            <group width="47" height="0.69999999999999996" alignment="right" verticalAlignment="center" radius="6" id="Omn-Jk-czR">
                                                 <items>
-                                                    <label alignment="center" verticalAlignment="center" text="97 %" id="lcC-kj-DPj">
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <label alignment="center" verticalAlignment="center" text="97.0%" id="lcC-kj-DPj">
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="font" type="system" pointSize="15"/>
                                                     </label>
                                                 </items>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

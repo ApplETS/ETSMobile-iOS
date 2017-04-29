@@ -122,6 +122,9 @@
 		81522ABD1EB1295300DD2061 /* CourseCalendarResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522ABC1EB1295300DD2061 /* CourseCalendarResponder.swift */; };
 		81522ABF1EB19E1500DD2061 /* NotesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522ABE1EB19E1500DD2061 /* NotesController.swift */; };
 		81522AC11EB23B5C00DD2061 /* NotesTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522AC01EB23B5C00DD2061 /* NotesTableRowController.swift */; };
+		81522AC31EB2493400DD2061 /* RequestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522AC21EB2493400DD2061 /* RequestTypes.swift */; };
+		81522AC41EB2493400DD2061 /* RequestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522AC21EB2493400DD2061 /* RequestTypes.swift */; };
+		81522AC61EB24A7600DD2061 /* NotesResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522AC51EB24A7600DD2061 /* NotesResponder.swift */; };
 		8163A4751E7758370065749C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A4741E7758370065749C /* Colors.swift */; };
 		8163A4761E775A260065749C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92CA17EA610D00469FA8 /* Images.xcassets */; };
 		8163A4771E775A280065749C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92CA17EA610D00469FA8 /* Images.xcassets */; };
@@ -131,6 +134,10 @@
 		8163A47F1E7A113B0065749C /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8163A47E1E7A113B0065749C /* WatchConnectivity.framework */; };
 		819551B61E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */ = {isa = PBXBuildFile; fileRef = 819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */; };
 		819551B71E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */ = {isa = PBXBuildFile; fileRef = 819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */; };
+		81B448491EB3E3F5003E1BE9 /* ETSEvaluation.m in Sources */ = {isa = PBXBuildFile; fileRef = 263770931831AFB200D18F94 /* ETSEvaluation.m */; };
+		81B4484A1EB3E4F2003E1BE9 /* ETSCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 266ED34F18300D2900DC1280 /* ETSCourse.m */; };
+		81B4484C1EB3F676003E1BE9 /* ETSDictionaryConvertible.h in Sources */ = {isa = PBXBuildFile; fileRef = 81B4484B1EB3F572003E1BE9 /* ETSDictionaryConvertible.h */; };
+		81B4484D1EB3F67A003E1BE9 /* ETSDictionaryConvertible.h in Sources */ = {isa = PBXBuildFile; fileRef = 81B4484B1EB3F572003E1BE9 /* ETSDictionaryConvertible.h */; };
 		81C66E651E9EBF2400CA9CB1 /* AppRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C66E641E9EBF2400CA9CB1 /* AppRequest.swift */; };
 		81F1C9D71E7725CF006233E2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81F1C9D51E7725CF006233E2 /* Interface.storyboard */; };
 		81F1C9E01E7725CF006233E2 /* ETSMobileWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 81F1C9DF1E7725CF006233E2 /* ETSMobileWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -412,6 +419,8 @@
 		81522ABC1EB1295300DD2061 /* CourseCalendarResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCalendarResponder.swift; sourceTree = "<group>"; };
 		81522ABE1EB19E1500DD2061 /* NotesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesController.swift; sourceTree = "<group>"; };
 		81522AC01EB23B5C00DD2061 /* NotesTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableRowController.swift; sourceTree = "<group>"; };
+		81522AC21EB2493400DD2061 /* RequestTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTypes.swift; sourceTree = "<group>"; };
+		81522AC51EB24A7600DD2061 /* NotesResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesResponder.swift; sourceTree = "<group>"; };
 		8163A4741E7758370065749C /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8163A4781E775E0F0065749C /* CoursesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesController.swift; sourceTree = "<group>"; };
 		8163A47A1E77A7DF0065749C /* CourseTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableRowController.swift; sourceTree = "<group>"; };
@@ -422,6 +431,7 @@
 		819551B31E80B1EF0091329E /* ETSMobileWatch Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ETSMobileWatch Extension-Bridging-Header.h"; path = "../ETSMobile/ETSMobileWatch Extension-Bridging-Header.h"; sourceTree = "<group>"; };
 		819551B41E80B1EF0091329E /* UIColor+UIColor_ETSMobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColor_ETSMobile.h"; sourceTree = "<group>"; };
 		819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIColor_ETSMobile.m"; sourceTree = "<group>"; };
+		81B4484B1EB3F572003E1BE9 /* ETSDictionaryConvertible.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc.preprocessed; fileEncoding = 4; path = ETSDictionaryConvertible.h; sourceTree = "<group>"; };
 		81C66E641E9EBF2400CA9CB1 /* AppRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRequest.swift; sourceTree = "<group>"; };
 		81F1C9D31E7725CF006233E2 /* ETSMobileWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobileWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81F1C9D61E7725CF006233E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -925,6 +935,7 @@
 				1472C95E1CD7E082004D9A9C /* ETSEvalEnseignement.m */,
 				1472C9601CD7E3FD004D9A9C /* ETSSponsors.h */,
 				1472C9611CD7E3FD004D9A9C /* ETSSponsors.m */,
+				81B4484B1EB3F572003E1BE9 /* ETSDictionaryConvertible.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1049,6 +1060,8 @@
 				81522AB81EB1216200DD2061 /* WatchResponder.swift */,
 				81522ABA1EB128F400DD2061 /* WatchResponderFactory.swift */,
 				81522ABC1EB1295300DD2061 /* CourseCalendarResponder.swift */,
+				81522AC21EB2493400DD2061 /* RequestTypes.swift */,
+				81522AC51EB24A7600DD2061 /* NotesResponder.swift */,
 			);
 			name = Watch;
 			sourceTree = "<group>";
@@ -1557,13 +1570,16 @@
 				26DD92B617EA610D00469FA8 /* main.m in Sources */,
 				26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */,
 				26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */,
+				81522AC61EB24A7600DD2061 /* NotesResponder.swift in Sources */,
 				26DEB74C18E9F2C000161421 /* ETSCalendar.m in Sources */,
 				26DEB88C18EC97EC00161421 /* MSDayColumnHeaderBackground.m in Sources */,
 				26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */,
 				264E86D0188796A7005F1820 /* NSURL+Document.m in Sources */,
 				263A4C4C188B14A800E38CAC /* NSString+HTML.m in Sources */,
+				81B4484C1EB3F676003E1BE9 /* ETSDictionaryConvertible.h in Sources */,
 				26634D8D1881F2FF00644FFB /* ETSLoginView.m in Sources */,
 				263770941831AFB200D18F94 /* ETSEvaluation.m in Sources */,
+				81522AC31EB2493400DD2061 /* RequestTypes.swift in Sources */,
 				26A65542182ABE6E00DEE9B7 /* NSURLRequest+API.m in Sources */,
 				266F0B6218F4ED6B000F53C1 /* ETSSecurityProcedureViewController.m in Sources */,
 				26634D951881F6C100644FFB /* ETSCoreDataHelper.m in Sources */,
@@ -1620,8 +1636,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81B448491EB3E3F5003E1BE9 /* ETSEvaluation.m in Sources */,
 				8163A47D1E77A9B10065749C /* CourseCalendarSession.swift in Sources */,
 				8163A47B1E77A7DF0065749C /* CourseTableRowController.swift in Sources */,
+				81B4484D1EB3F67A003E1BE9 /* ETSDictionaryConvertible.h in Sources */,
 				8163A4791E775E0F0065749C /* CoursesController.swift in Sources */,
 				81522ABF1EB19E1500DD2061 /* NotesController.swift in Sources */,
 				819551B71E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */,
@@ -1631,6 +1649,8 @@
 				81C66E651E9EBF2400CA9CB1 /* AppRequest.swift in Sources */,
 				81F1C9E91E7725CF006233E2 /* ExtensionDelegate.swift in Sources */,
 				81F1C9E71E7725CF006233E2 /* MenuController.swift in Sources */,
+				81B4484A1EB3E4F2003E1BE9 /* ETSCourse.m in Sources */,
+				81522AC41EB2493400DD2061 /* RequestTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2060,6 +2080,11 @@
 				DEVELOPMENT_TEAM = 5K68926M9Q;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"TARGET_WATCH_EXTENSION=1",
+				);
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "ETSMobileWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -2101,6 +2126,11 @@
 				DEVELOPMENT_TEAM = 5K68926M9Q;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"TARGET_WATCH_EXTENSION=1",
+				);
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "ETSMobileWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

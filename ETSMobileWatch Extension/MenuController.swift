@@ -45,12 +45,4 @@ class MenuController: WKInterfaceController {
     override func didDeactivate() {
         super.didDeactivate()
     }
-    
-    override func contextsForSegue(withIdentifier segueIdentifier: String) -> [Any]? {
-        if segueIdentifier == "ToNotesSegue" {
-            return [["test": "lol"]]
-        }
-        
-        return nil
-    }
 }

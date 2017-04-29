@@ -3,3 +3,5 @@
 //
 
 #import "UIColor+UIColor_ETSMobile.h"
+#import "ETSEvaluation.h"
+#import "ETSCourse.h"

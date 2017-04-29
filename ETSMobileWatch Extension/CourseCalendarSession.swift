@@ -20,7 +20,7 @@ private enum DictionaryElements : String {
 /// reuse it in the iOS application.
 ///
 /// Adding new models with same logic should imply using a protocol and prossibly KVO.
-@objc class CourseCalendarSession : NSObject {
+class CourseCalendarSession {
     let course: String
     let start: Date
     let end: Date
@@ -49,7 +49,7 @@ private enum DictionaryElements : String {
     /// or JSON response from an API.
     ///
     /// - Parameter dictionary: The dictionary from which to get the information of the object.
-    convenience init?(dictionary: [String: Any]) {
+    convenience init?(dictionary: [String: Any?]) {
         guard let course = dictionary[DictionaryElements.COURSE.rawValue] as? String,
             let start = dictionary[DictionaryElements.START.rawValue] as? Date,
             let end = dictionary[DictionaryElements.END.rawValue] as? Date,

@@ -7,13 +7,13 @@
 //
 
 import Foundation
-import UIKit
 import CoreData
 
+/// Responds to a request for the calendar
 @objc class CourseCalendarResponder : WatchResponder {
     private let managedObjectContext: NSManagedObjectContext
     
-    override var type: String { return "CurrentCourses" }
+    override var type: String { return RequestTypes.CURRENT_COURSES.rawValue }
     
     /// Initializer of a CourseCalendarResponder. It needs to access the Core Date context.
     ///
@@ -23,10 +23,10 @@ import CoreData
     }
     
     override func handleRequest(_ request: [String : Any]) -> [String : Any] {
-        let errorResponse = ["type": "error"]
+        let errorResponse = ["type": RequestTypes.ERROR.rawValue]
         guard request["type"] as! String == self.type else { return errorResponse }
         
-        var response: [String: Any] = ["type": "OK"]
+        var response: [String: Any] = ["type": RequestTypes.OK.rawValue]
         
         let calendar = Calendar.current
         let now = Date()
