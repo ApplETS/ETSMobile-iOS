@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
+    <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -241,6 +241,7 @@
                                         <outlet property="courseLabel" destination="esv-T1-hLH" id="hKr-lK-qfP"/>
                                         <outlet property="noteGroup" destination="Vm1-oD-4Me" id="2dN-3W-7jh"/>
                                         <outlet property="noteLabel" destination="lcC-kj-DPj" id="9Gt-MI-uEs"/>
+                                        <segue destination="d5T-M4-knk" kind="push" identifier="NotesTableRowPush" id="HaP-a8-BGV"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -254,6 +255,35 @@
             </objects>
             <point key="canvasLocation" x="739" y="285"/>
         </scene>
+        <!--Notes Details Controller-->
+        <scene sceneID="fvz-Wf-Xcw">
+            <objects>
+                <controller id="d5T-M4-knk" customClass="NotesDetailsController" customModule="ETSMobileWatch_Extension">
+                    <items>
+                        <group width="1" height="15" alignment="center" id="bjh-gK-hnK">
+                            <items>
+                                <group width="2" height="2" alignment="center" verticalAlignment="center" id="Ajv-i3-ny0">
+                                    <items>
+                                        <label alignment="center" verticalAlignment="center" id="iVd-r8-EiT">
+                                            <fontDescription key="font" type="system" pointSize="11"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </group>
+                        <imageView alignment="center" id="zN8-by-iuu"/>
+                    </items>
+                    <connections>
+                        <outlet property="noteImage" destination="zN8-by-iuu" id="ZEE-nQ-brr"/>
+                        <outlet property="statusGroup" destination="Ajv-i3-ny0" id="8mV-wc-tJQ"/>
+                        <outlet property="statusGroupContainer" destination="bjh-gK-hnK" id="fF7-cm-qMg"/>
+                        <outlet property="statusLabel" destination="iVd-r8-EiT" id="Wax-Qu-srq"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1130.7179487179487" y="283.76923076923077"/>
+        </scene>
     </scenes>
-    <color key="tintColor" red="0.90980392156862744" green="0.14509803921568626" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

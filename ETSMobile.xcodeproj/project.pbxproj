@@ -134,6 +134,8 @@
 		8163A47F1E7A113B0065749C /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8163A47E1E7A113B0065749C /* WatchConnectivity.framework */; };
 		819551B61E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */ = {isa = PBXBuildFile; fileRef = 819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */; };
 		819551B71E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */ = {isa = PBXBuildFile; fileRef = 819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */; };
+		81B0D8091EB657EF00178172 /* NotesDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0D8081EB657EF00178172 /* NotesDetailsController.swift */; };
+		81B0D80B1EB7CE5000178172 /* Watch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B0D80A1EB7CE5000178172 /* Watch.xcassets */; };
 		81B448491EB3E3F5003E1BE9 /* ETSEvaluation.m in Sources */ = {isa = PBXBuildFile; fileRef = 263770931831AFB200D18F94 /* ETSEvaluation.m */; };
 		81B4484A1EB3E4F2003E1BE9 /* ETSCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 266ED34F18300D2900DC1280 /* ETSCourse.m */; };
 		81B4484C1EB3F676003E1BE9 /* ETSDictionaryConvertible.h in Sources */ = {isa = PBXBuildFile; fileRef = 81B4484B1EB3F572003E1BE9 /* ETSDictionaryConvertible.h */; };
@@ -431,6 +433,8 @@
 		819551B31E80B1EF0091329E /* ETSMobileWatch Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ETSMobileWatch Extension-Bridging-Header.h"; path = "../ETSMobile/ETSMobileWatch Extension-Bridging-Header.h"; sourceTree = "<group>"; };
 		819551B41E80B1EF0091329E /* UIColor+UIColor_ETSMobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColor_ETSMobile.h"; sourceTree = "<group>"; };
 		819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIColor_ETSMobile.m"; sourceTree = "<group>"; };
+		81B0D8081EB657EF00178172 /* NotesDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesDetailsController.swift; sourceTree = "<group>"; };
+		81B0D80A1EB7CE5000178172 /* Watch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Watch.xcassets; sourceTree = "<group>"; };
 		81B4484B1EB3F572003E1BE9 /* ETSDictionaryConvertible.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc.preprocessed; fileEncoding = 4; path = ETSDictionaryConvertible.h; sourceTree = "<group>"; };
 		81C66E641E9EBF2400CA9CB1 /* AppRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRequest.swift; sourceTree = "<group>"; };
 		81F1C9D31E7725CF006233E2 /* ETSMobileWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobileWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1084,6 +1088,7 @@
 				81F1C9EC1E7725CF006233E2 /* ComplicationController.swift */,
 				81522ABE1EB19E1500DD2061 /* NotesController.swift */,
 				81522AC01EB23B5C00DD2061 /* NotesTableRowController.swift */,
+				81B0D8081EB657EF00178172 /* NotesDetailsController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1101,6 +1106,7 @@
 				8163A4811E7AFFB10065749C /* ETSMobileWatch.entitlements */,
 				81F1C9D51E7725CF006233E2 /* Interface.storyboard */,
 				81F1C9DA1E7725CF006233E2 /* Info.plist */,
+				81B0D80A1EB7CE5000178172 /* Watch.xcassets */,
 			);
 			path = ETSMobileWatch;
 			sourceTree = "<group>";
@@ -1362,6 +1368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8163A4771E775A280065749C /* Images.xcassets in Resources */,
+				81B0D80B1EB7CE5000178172 /* Watch.xcassets in Resources */,
 				81F1C9D71E7725CF006233E2 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1646,6 +1653,7 @@
 				8163A4751E7758370065749C /* Colors.swift in Sources */,
 				81F1C9ED1E7725CF006233E2 /* ComplicationController.swift in Sources */,
 				81522AC11EB23B5C00DD2061 /* NotesTableRowController.swift in Sources */,
+				81B0D8091EB657EF00178172 /* NotesDetailsController.swift in Sources */,
 				81C66E651E9EBF2400CA9CB1 /* AppRequest.swift in Sources */,
 				81F1C9E91E7725CF006233E2 /* ExtensionDelegate.swift in Sources */,
 				81F1C9E71E7725CF006233E2 /* MenuController.swift in Sources */,

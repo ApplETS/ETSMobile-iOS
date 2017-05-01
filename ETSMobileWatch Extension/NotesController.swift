@@ -11,12 +11,14 @@ import WatchKit
 import RxSwift
 
 private let TABLE_ROW_TYPE = "NotesTableRow"
+private let NOTES_TABLE_ROW_PUSH_SEGUE = "NotesTableRowPush"
 
 class NotesController : WKInterfaceController {
     @IBOutlet var noNotesLabel: WKInterfaceLabel!
     @IBOutlet var notesTable: WKInterfaceTable!
     
     private let disposeBag = DisposeBag()
+    private var coursesList = [ETSCourse]()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -31,6 +33,21 @@ class NotesController : WKInterfaceController {
         super.didDeactivate()
     }
     
+    // MARK: Table row push segue
+    
+    override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
+        switch segueIdentifier {
+        case NOTES_TABLE_ROW_PUSH_SEGUE:
+            return self.coursesList[rowIndex]
+            
+        default:
+            return nil
+        }
+    }
+    
+    // MARK: Private methods
+    
+    /// Updates the list of courses.
     private func updateCourseNotesList() {
         let request = AppRequest()
         
@@ -43,6 +60,7 @@ class NotesController : WKInterfaceController {
                     self?.noNotesLabel.setHidden(courses.count > 0)
                 })
                 .subscribe(onNext: {[weak self] courses in
+                    self?.coursesList = courses
                     self?.notesTable.setNumberOfRows(courses.count, withRowType: TABLE_ROW_TYPE)
                     
                     for index in 0..<courses.count {
