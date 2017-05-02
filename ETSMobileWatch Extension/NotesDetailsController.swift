@@ -10,12 +10,21 @@ import Foundation
 import WatchKit
 
 fileprivate let STATUS_GROUP_CONTAINER_SIZE = CGSize(width: 150, height: 15)
+fileprivate let EVALUATIONS_TABLE_ROW_ID = "EvaluationsTableRow"
 
 class NotesDetailsController : WKInterfaceController {
     @IBOutlet var statusGroupContainer: WKInterfaceGroup!
     @IBOutlet var statusGroup: WKInterfaceGroup!
     @IBOutlet var statusLabel: WKInterfaceLabel!
     @IBOutlet var noteImage: WKInterfaceImage!
+    
+    // MARK: Detailed notes elements
+    @IBOutlet var gradeLabel: WKInterfaceLabel!
+    @IBOutlet var averageLabel: WKInterfaceLabel!
+    @IBOutlet var medianLabel: WKInterfaceLabel!
+    @IBOutlet var stdDeviationLabel: WKInterfaceLabel!
+    @IBOutlet var percentileLabel: WKInterfaceLabel!
+    @IBOutlet var evaluationsTable: WKInterfaceTable!
     
     private var course: ETSCourse!
     
@@ -26,6 +35,21 @@ class NotesDetailsController : WKInterfaceController {
         
         self.course = course
         self.setTitle(self.course.acronym)
+        self.gradeLabel.setText(self.course.grade ?? "-")
+        self.averageLabel.setText(self.course.mean == nil ? "-" : String(format: "%0.1f%%", arguments: [self.course.mean!.floatValue]))
+        self.medianLabel.setText(self.course.median == nil ? "-" : String(format: "%0.1f", arguments: [self.course.median!.floatValue]))
+        self.stdDeviationLabel.setText(self.course.std == nil ? "-" : String(format: "%0.1f", arguments: [self.course.std!.floatValue]))
+        self.percentileLabel.setText(self.course.percentile == nil ? "-" : String(format: "%0.f", arguments: [self.course.percentile!.floatValue]))
+        
+        if let evaluations = self.course.evaluations {
+            self.evaluationsTable.setNumberOfRows(evaluations.count, withRowType: EVALUATIONS_TABLE_ROW_ID)
+            
+            for (index, evaluation) in evaluations.enumerated() {
+                if let controller = self.evaluationsTable.rowController(at: index) as? EvaluationsTableRowController {
+                    controller.evaluation = evaluation
+                }
+            }
+        }
     }
     
     override func willActivate() {

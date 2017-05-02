@@ -37,7 +37,7 @@
 @property (nonatomic, retain) NSString *_Nonnull title;
 @property (nonatomic, retain) NSNumber *_Nonnull year;
 @property (nonatomic, retain) NSNumber *_Nullable resultOn100;
-@property (nonatomic, retain) NSSet *_Nullable evaluations;
+@property (nonatomic, retain) NSSet<ETSEvaluation *> *_Nullable evaluations;
 
 - (NSNumber *_Nonnull)totalEvaluationWeighting;
 

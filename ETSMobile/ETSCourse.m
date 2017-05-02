@@ -58,7 +58,7 @@
         NSArray<NSDictionary<NSString *, id> *> *evaluationDictionaries = dictionary[@"evaluations"];
         
         if (evaluationDictionaries != nil) {
-            NSMutableSet *evaluations = [NSMutableSet new];
+            NSMutableSet<ETSEvaluation *> *evaluations = [NSMutableSet<ETSEvaluation *> new];
             
             for (NSDictionary<NSString *, id> *evalDict in evaluationDictionaries) {
                 [evaluations addObject:[[ETSEvaluation alloc] initWithDictionary:evalDict]];

@@ -272,13 +272,134 @@
                             </items>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </group>
-                        <imageView alignment="center" id="zN8-by-iuu"/>
+                        <imageView alignment="center" image="progressArc0" id="zN8-by-iuu"/>
+                        <separator alignment="left" id="yxM-FG-Bic">
+                            <color key="color" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <group width="1" alignment="left" id="1k9-oi-YWI">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="Cote" textAlignment="center" id="bkk-HU-68X"/>
+                                <label alignment="right" text="B+" id="vDj-vU-Z1K"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="XGe-kM-0AZ">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="Moyenne" textAlignment="center" id="LWN-Gt-8GJ"/>
+                                <label alignment="right" text="73.1" id="ca3-qC-FIE"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="CcU-fR-UVo">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="Médiane" textAlignment="center" id="Bzr-db-bTN"/>
+                                <label alignment="right" text="75.5" id="ugU-Ni-cwg"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="8IB-nB-Efq">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="Écart-type" textAlignment="center" id="UcO-an-DYI"/>
+                                <label alignment="right" text="16.1" id="AXh-JO-noL"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="SKi-3E-Tth">
+                            <items>
+                                <label alignment="left" verticalAlignment="center" text="Rang centile" textAlignment="center" id="CuO-9E-g5V"/>
+                                <label alignment="right" text="44" id="sDc-Cz-gUu"/>
+                            </items>
+                        </group>
+                        <separator alignment="left" id="zGP-Yo-G6V">
+                            <color key="color" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <label alignment="left" text="Évaluations" id="bvP-sE-SLl">
+                            <fontDescription key="font" type="boldSystem" pointSize="16"/>
+                        </label>
+                        <table alignment="left" id="WTl-JR-tuI">
+                            <items>
+                                <tableRow identifier="EvaluationsTableRow" selectable="NO" id="ynS-3h-1iY" customClass="EvaluationsTableRowController" customModule="ETSMobileWatch_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="Rpm-ze-rt1">
+                                        <items>
+                                            <group width="1" alignment="left" id="U0A-gg-9fl">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="Final" id="EeM-Ga-kGJ"/>
+                                                    <label alignment="right" verticalAlignment="center" text="87.5%" id="i4c-4I-dxE"/>
+                                                </items>
+                                            </group>
+                                            <separator alignment="left" id="z62-OU-whZ"/>
+                                            <group width="1" alignment="left" id="ixJ-Ph-5uO">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="Moyenne" id="Ncw-W6-DRj">
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                    <label alignment="right" verticalAlignment="center" text="77%" id="hTj-As-BVL">
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <group width="1" alignment="left" id="wuu-j9-Hbj">
+                                                <items>
+                                                    <label height="16" alignment="left" verticalAlignment="center" text="Médiane" id="M3F-tM-r24">
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                    <label alignment="right" verticalAlignment="center" text="81%" id="Z4j-pL-oNM">
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <group width="1" alignment="left" id="K1X-SZ-5HI">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="Écart-type" id="uCY-N1-ah4">
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                    <label alignment="right" verticalAlignment="center" text="15.1" id="PkC-5Y-Jqg">
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <group width="1" alignment="left" id="8vr-BZ-ZSY">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="Rang centile" id="os5-Gz-Ovz">
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                    <label alignment="right" verticalAlignment="center" text="67.0" id="5rn-AR-WhQ">
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <group width="1" alignment="left" id="44v-ft-igL">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="Pondération" id="sBG-Fb-PAh">
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                    <label alignment="right" verticalAlignment="center" text="35%" id="dwd-tj-Kx1">
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="evaluationAverageLabel" destination="hTj-As-BVL" id="buE-de-nba"/>
+                                        <outlet property="evaluationMedianLabel" destination="Z4j-pL-oNM" id="yHo-lJ-cQW"/>
+                                        <outlet property="evaluationNoteLabel" destination="i4c-4I-dxE" id="ZQw-hV-xQR"/>
+                                        <outlet property="evaluationPercentileLabel" destination="5rn-AR-WhQ" id="Wd1-5x-MqK"/>
+                                        <outlet property="evaluationStdDeviationLabel" destination="PkC-5Y-Jqg" id="6K1-qs-vAs"/>
+                                        <outlet property="evaluationTitleLabel" destination="EeM-Ga-kGJ" id="mmm-Dx-ib7"/>
+                                        <outlet property="evaluationWeightingLabel" destination="dwd-tj-Kx1" id="i9p-Cm-wpX"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
                     <connections>
+                        <outlet property="averageLabel" destination="ca3-qC-FIE" id="Tzk-Aj-ULY"/>
+                        <outlet property="evaluationsTable" destination="WTl-JR-tuI" id="HIR-xN-vW2"/>
+                        <outlet property="gradeLabel" destination="vDj-vU-Z1K" id="WfC-Oe-IFw"/>
+                        <outlet property="medianLabel" destination="ugU-Ni-cwg" id="Mbw-HN-0uO"/>
                         <outlet property="noteImage" destination="zN8-by-iuu" id="ZEE-nQ-brr"/>
+                        <outlet property="percentileLabel" destination="sDc-Cz-gUu" id="DWq-ub-FPn"/>
                         <outlet property="statusGroup" destination="Ajv-i3-ny0" id="8mV-wc-tJQ"/>
                         <outlet property="statusGroupContainer" destination="bjh-gK-hnK" id="fF7-cm-qMg"/>
                         <outlet property="statusLabel" destination="iVd-r8-EiT" id="Wax-Qu-srq"/>
+                        <outlet property="stdDeviationLabel" destination="AXh-JO-noL" id="gjp-9t-nC0"/>
                     </connections>
                 </controller>
             </objects>
