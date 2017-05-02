@@ -28,14 +28,8 @@ import CoreData
         
         var response: [String: Any] = ["type": RequestTypes.OK.rawValue]
         let now = Date()
-        let calendar = Calendar.current
-        var threeMonthsEarlierComponents = DateComponents()
-        
-        threeMonthsEarlierComponents.month = -3
-        
-        let threeMonthsEarlier = calendar.date(byAdding: threeMonthsEarlierComponents, to: now)!
         var request = NSFetchRequest<NSFetchRequestResult>(entityName: "Session")
-        var predicate = NSPredicate(format: "start <= %@", argumentArray: [threeMonthsEarlier])
+        var predicate = NSPredicate(format: "start <= %@ AND %@ <= end", argumentArray: [now, now])
         let currentSession: ETSSession
         
         request.predicate = predicate
@@ -53,7 +47,7 @@ import CoreData
         }
         
         request = NSFetchRequest<NSFetchRequestResult>(entityName: "Course")
-        predicate = NSPredicate(format: "session == %@", argumentArray: ["H2017"])
+        predicate = NSPredicate(format: "session == %@", argumentArray: [currentSession.acronym])
         let currentCoursesNotes: [ETSCourse]
         
         request.predicate = predicate

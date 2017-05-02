@@ -12,11 +12,8 @@ import Foundation
 
 class MenuController: WKInterfaceController {
     @IBOutlet var firstGroup: WKInterfaceGroup!
-    @IBOutlet var secondGroup: WKInterfaceGroup!
     @IBOutlet var coursesButton: WKInterfaceImage!
     @IBOutlet var notesButton: WKInterfaceButton!
-    @IBOutlet var profileButton: WKInterfaceButton!
-    @IBOutlet var importantDatesButton: WKInterfaceButton!
     @IBOutlet var mainGroup: WKInterfaceGroup!
 
     override func awake(withContext context: Any?) {
@@ -28,16 +25,10 @@ class MenuController: WKInterfaceController {
         let buttonsSize = CGSize(width: (deviceBounds.width / 2) - 2, height: 70)
         
         self.firstGroup.setHeight(buttonsSize.height)
-        self.secondGroup.setHeight(buttonsSize.height)
         self.coursesButton.setWidth(buttonsSize.width)
         self.notesButton.setWidth(buttonsSize.width)
-        self.profileButton.setWidth(buttonsSize.width)
-        self.importantDatesButton.setWidth(buttonsSize.width)
         self.coursesButton.setHeight(buttonsSize.height)
         self.notesButton.setHeight(buttonsSize.height)
-        self.profileButton.setHeight(buttonsSize.height)
-        self.importantDatesButton.setHeight(buttonsSize.height)
-        self.mainGroup.sizeToFitHeight()
         
         super.willActivate()
     }

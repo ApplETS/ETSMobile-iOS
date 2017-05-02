@@ -13,7 +13,7 @@
             <objects>
                 <controller title="ÉTS Mobile" id="AgC-eL-Hgc" customClass="MenuController" customModule="ETSMobileWatch_Extension">
                     <items>
-                        <group width="1" height="149" alignment="center" layout="vertical" id="wQu-Uw-JBw">
+                        <group width="1" alignment="center" layout="vertical" id="wQu-Uw-JBw">
                             <items>
                                 <group width="1" height="68" alignment="left" id="0S5-Xz-jbg">
                                     <items>
@@ -50,35 +50,6 @@
                                         </button>
                                     </items>
                                 </group>
-                                <group width="1" alignment="left" id="ByM-qd-zLQ">
-                                    <items>
-                                        <button alignment="left" id="eG3-lr-a5D">
-                                            <group key="contentGroup" width="57" height="72" alignment="left" layout="vertical" radius="10" id="yUS-6p-cHw">
-                                                <items>
-                                                    <imageView width="0.5" height="0.59999999999999998" alignment="center" verticalAlignment="center" image="ico_profil" id="Ftf-Mp-qMU"/>
-                                                    <label alignment="center" verticalAlignment="bottom" text="Profil" textAlignment="center" id="et0-Jd-ycL">
-                                                        <fontDescription key="font" type="system" pointSize="11"/>
-                                                    </label>
-                                                </items>
-                                                <color key="backgroundColor" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="7"/>
-                                            </group>
-                                        </button>
-                                        <button alignment="left" id="K8T-OG-bM8">
-                                            <group key="contentGroup" width="57" height="72" alignment="left" layout="vertical" radius="10" id="r4c-qZ-IPU">
-                                                <items>
-                                                    <imageView width="0.5" height="0.59999999999999998" alignment="center" verticalAlignment="center" image="ico_news" id="bag-B2-izA"/>
-                                                    <label alignment="center" verticalAlignment="bottom" text="Dates" textAlignment="center" id="xqr-1y-zYV">
-                                                        <fontDescription key="font" type="system" pointSize="11"/>
-                                                    </label>
-                                                </items>
-                                                <color key="backgroundColor" red="1" green="0.08235294118" blue="0.058823529409999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="7"/>
-                                            </group>
-                                            <accessibilityTraits key="accessibilityTraits" button="YES" image="YES"/>
-                                        </button>
-                                    </items>
-                                </group>
                             </items>
                         </group>
                         <imageView alignment="center" alpha="0.75" image="ETS-logo-blanc" id="iHh-zm-LMp"/>
@@ -86,11 +57,8 @@
                     <connections>
                         <outlet property="coursesButton" destination="5VM-ZG-XhL" id="Tbq-LD-rWT"/>
                         <outlet property="firstGroup" destination="0S5-Xz-jbg" id="fiW-U7-aNs"/>
-                        <outlet property="importantDatesButton" destination="K8T-OG-bM8" id="Zve-GH-KDM"/>
                         <outlet property="mainGroup" destination="wQu-Uw-JBw" id="nlf-vt-O9N"/>
                         <outlet property="notesButton" destination="ckY-Bz-82O" id="TYK-px-3iY"/>
-                        <outlet property="profileButton" destination="eG3-lr-a5D" id="T9d-IH-NPW"/>
-                        <outlet property="secondGroup" destination="ByM-qd-zLQ" id="XlG-1C-u0d"/>
                     </connections>
                 </controller>
             </objects>
