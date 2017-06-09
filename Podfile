@@ -1,8 +1,8 @@
-# Uncomment this line to define a global platform for your project
-platform :ios, '8.0'
+source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target 'ETSMobile' do
+    platform :ios, '8.0'
     pod 'AMScrollingNavbar', '1.3.8'
     pod 'Fabric'
     pod 'Crashlytics'
@@ -13,10 +13,13 @@ target 'ETSMobile' do
     pod 'DZNEmptyDataSet'
     pod 'RKDropdownAlert'
     pod 'AWSSNS'
-
 end
 
 target 'ETSMobileTests' do
 
 end
 
+target 'ETSMobileWatch Extension' do
+    platform :watchos, '3.0'
+    pod 'RxSwift', '~> 3.4'
+end

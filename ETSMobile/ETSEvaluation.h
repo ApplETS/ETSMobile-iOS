@@ -8,22 +8,29 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <objc/runtime.h>
+
+#import "ETSDictionaryConvertible.h"
 
 @class ETSCourse;
 
-@interface ETSEvaluation : NSManagedObject
+#if TARGET_WATCH_EXTENSION
+@interface ETSEvaluation : NSObject<ETSDictionaryConvertible>
+#else
+@interface ETSEvaluation : NSManagedObject<ETSDictionaryConvertible>
+#endif
 
-@property (nonatomic, retain) NSDate * date;
-@property (nonatomic, retain) NSNumber * mean;
-@property (nonatomic, retain) NSNumber * median;
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * percentile;
-@property (nonatomic, retain) NSNumber * result;
-@property (nonatomic, retain) NSNumber * std;
-@property (nonatomic, retain) NSString * team;
-@property (nonatomic, retain) NSNumber * total;
-@property (nonatomic, retain) NSNumber * weighting;
-@property (nonatomic, retain) NSNumber * ignored;
-@property (nonatomic, retain) ETSCourse *course;
+@property (nonatomic, retain) NSDate *_Nullable date;
+@property (nonatomic, retain) NSNumber *_Nullable mean;
+@property (nonatomic, retain) NSNumber *_Nullable median;
+@property (nonatomic, retain) NSString *_Nonnull name;
+@property (nonatomic, retain) NSNumber *_Nullable percentile;
+@property (nonatomic, retain) NSNumber *_Nullable result;
+@property (nonatomic, retain) NSNumber *_Nullable std;
+@property (nonatomic, retain) NSString *_Nullable team;
+@property (nonatomic, retain) NSNumber *_Nullable total;
+@property (nonatomic, retain) NSNumber *_Nullable weighting;
+@property (nonatomic, retain) NSNumber *_Nonnull ignored;
+@property (nonatomic, retain) ETSCourse *_Nonnull course;
 
 @end

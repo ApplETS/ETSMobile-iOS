@@ -22,5 +22,6 @@
 @property (nonatomic, retain) NSString * session;
 
 - (NSDate *)day;
+- (nonnull NSDictionary<NSString*, id> *)dictionary;
 
 @end

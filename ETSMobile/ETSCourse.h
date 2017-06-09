@@ -8,31 +8,39 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <objc/runtime.h>
+
+#import "ETSDictionaryConvertible.h"
 
 @class ETSEvaluation;
 
-@interface ETSCourse : NSManagedObject
+#if TARGET_WATCH_EXTENSION
+@interface ETSCourse : NSObject<ETSDictionaryConvertible>
+#else
+@interface ETSCourse : NSManagedObject<ETSDictionaryConvertible>
+#endif
 
-@property (nonatomic, retain) NSString * acronym;
-@property (nonatomic, retain) NSString * credits;
-@property (nonatomic, retain) NSString * grade;
-@property (nonatomic, retain) NSString * group;
-@property (nonatomic, retain) NSString * id;
-@property (nonatomic, retain) NSNumber * mean;
-@property (nonatomic, retain) NSNumber * median;
-@property (nonatomic, retain) NSString * order;
-@property (nonatomic, retain) NSNumber * percentile;
-@property (nonatomic, retain) NSString * program;
-@property (nonatomic, retain) NSNumber * results;
-@property (nonatomic, retain) NSNumber * season;
-@property (nonatomic, retain) NSString * session;
-@property (nonatomic, retain) NSNumber * std;
-@property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSNumber * year;
-@property (nonatomic, retain) NSNumber * resultOn100;
-@property (nonatomic, retain) NSSet *evaluations;
+@property (nonatomic, retain) NSString *_Nonnull acronym;
+@property (nonatomic, retain) NSString *_Nonnull credits;
+@property (nonatomic, retain) NSString *_Nullable grade;
+@property (nonatomic, retain) NSString *_Nonnull group;
+@property (nonatomic, retain) NSString *_Nonnull id;
+@property (nonatomic, retain) NSNumber *_Nullable mean;
+@property (nonatomic, retain) NSNumber *_Nullable median;
+@property (nonatomic, retain) NSString *_Nullable order;
+@property (nonatomic, retain) NSNumber *_Nullable percentile;
+@property (nonatomic, retain) NSString *_Nonnull program;
+@property (nonatomic, retain) NSNumber *_Nullable results;
+@property (nonatomic, retain) NSNumber *_Nonnull season;
+@property (nonatomic, retain) NSString *_Nonnull session;
+@property (nonatomic, retain) NSNumber *_Nullable std;
+@property (nonatomic, retain) NSString *_Nonnull title;
+@property (nonatomic, retain) NSNumber *_Nonnull year;
+@property (nonatomic, retain) NSNumber *_Nullable resultOn100;
+@property (nonatomic, retain) NSSet<ETSEvaluation *> *_Nullable evaluations;
 
-- (NSNumber *)totalEvaluationWeighting;
+- (NSNumber *_Nonnull)totalEvaluationWeighting;
+
 @end
 
 @interface ETSCourse (CoreDataGeneratedAccessors)

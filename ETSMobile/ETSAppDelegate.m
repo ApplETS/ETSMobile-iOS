@@ -33,9 +33,17 @@
 
 #import "RKDropdownAlert.h"
 #import "UIColor+Styles.h"
+#import "ETSSession.h"
+#import "ETSCalendar.h"
+#import "ETSMobile-Swift.h"
 
 static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:834885693643:app/APNS/Applets-EtsMobile-iOS";
 
+@interface ETSAppDelegate ()
+
+@property (strong, nonatomic) WCSession* session;
+
+@end
 
 @implementation ETSAppDelegate
 
@@ -103,6 +111,12 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
     settings.enableAppWideGesture = NO;
     
     [SupportKit initWithSettings:settings];
+    
+    if ([WCSession isSupported]) {
+        self.session = [WCSession defaultSession];
+        self.session.delegate = self;
+        [self.session activateSession];
+    }
     
     return YES;
 }
@@ -422,6 +436,22 @@ static NSString *const SNSPlatformApplicationArn = @"arn:aws:sns:us-east-1:83488
     
     [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
+}
+
+#pragma mark - WatchConnectivity framework
+
+-(void)session:(WCSession*)session didReceiveMessage:(nonnull NSDictionary<NSString *,id> *)message replyHandler:(nonnull void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler
+{
+    NSDictionary<NSString*, id> *errorResponse = @{@"type": @"error"};
+    WatchResponderFactory *factory = [[WatchResponderFactory alloc] initWithManagedObjectContext:self.managedObjectContext];
+    WatchResponder *defaultResponder = [factory defaultResponder];
+    NSDictionary<NSString*, id> *response = [defaultResponder processRequest:message];
+    
+    if (response == nil) {
+        replyHandler(errorResponse);
+    } else {
+        replyHandler(response);
+    }
 }
 
 @end

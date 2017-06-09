@@ -114,8 +114,41 @@
 		2942BF001BF3B43C0032C79A /* ETSAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2942BEFF1BF3B43C0032C79A /* ETSAboutViewController.swift */; };
 		296B68421BD52C11003A8E62 /* Launch_Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 296B68411BD52C11003A8E62 /* Launch_Screen.xib */; };
 		29CFAC4D1BBD09590027CC2E /* ETS-logo-blanc.png in Resources */ = {isa = PBXBuildFile; fileRef = 29CFAC4C1BBD09590027CC2E /* ETS-logo-blanc.png */; };
-		3BD008C1748D077811BA0D67 /* Pods_ETSMobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187D5DECBE6CA971A7220BB8 /* Pods_ETSMobileTests.framework */; };
-		6C5877F4ED87966BBA964642 /* Pods_ETSMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A14B24C634B9E9D659FC119 /* Pods_ETSMobile.framework */; };
+		43FCA45CF5C355A18C8134F7 /* Pods_ETSMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D8D55273EE1CBC4F779657 /* Pods_ETSMobile.framework */; };
+		73CE0D23ECEE8FEC87603260 /* Pods_ETSMobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A7C9764E80BF0E734B5696 /* Pods_ETSMobileTests.framework */; };
+		7D149EDACCA5C9E8B0DE1997 /* Pods_ETSMobileWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0ECDBE0F9D02F867FAD658 /* Pods_ETSMobileWatch_Extension.framework */; };
+		81522AB91EB1216200DD2061 /* WatchResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522AB81EB1216200DD2061 /* WatchResponder.swift */; };
+		81522ABB1EB128F400DD2061 /* WatchResponderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522ABA1EB128F400DD2061 /* WatchResponderFactory.swift */; };
+		81522ABD1EB1295300DD2061 /* CourseCalendarResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522ABC1EB1295300DD2061 /* CourseCalendarResponder.swift */; };
+		81522ABF1EB19E1500DD2061 /* NotesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522ABE1EB19E1500DD2061 /* NotesController.swift */; };
+		81522AC11EB23B5C00DD2061 /* NotesTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522AC01EB23B5C00DD2061 /* NotesTableRowController.swift */; };
+		81522AC31EB2493400DD2061 /* RequestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522AC21EB2493400DD2061 /* RequestTypes.swift */; };
+		81522AC41EB2493400DD2061 /* RequestTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522AC21EB2493400DD2061 /* RequestTypes.swift */; };
+		81522AC61EB24A7600DD2061 /* NotesResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81522AC51EB24A7600DD2061 /* NotesResponder.swift */; };
+		8163A4751E7758370065749C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A4741E7758370065749C /* Colors.swift */; };
+		8163A4761E775A260065749C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92CA17EA610D00469FA8 /* Images.xcassets */; };
+		8163A4771E775A280065749C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DD92CA17EA610D00469FA8 /* Images.xcassets */; };
+		8163A4791E775E0F0065749C /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A4781E775E0F0065749C /* CoursesController.swift */; };
+		8163A47B1E77A7DF0065749C /* CourseTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A47A1E77A7DF0065749C /* CourseTableRowController.swift */; };
+		8163A47D1E77A9B10065749C /* CourseCalendarSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8163A47C1E77A9B10065749C /* CourseCalendarSession.swift */; };
+		8163A47F1E7A113B0065749C /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8163A47E1E7A113B0065749C /* WatchConnectivity.framework */; };
+		819551B61E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */ = {isa = PBXBuildFile; fileRef = 819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */; };
+		819551B71E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */ = {isa = PBXBuildFile; fileRef = 819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */; };
+		81B0D8091EB657EF00178172 /* NotesDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0D8081EB657EF00178172 /* NotesDetailsController.swift */; };
+		81B0D80B1EB7CE5000178172 /* Watch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B0D80A1EB7CE5000178172 /* Watch.xcassets */; };
+		81B0D80D1EB8334300178172 /* EvaluationsTableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0D80C1EB8334300178172 /* EvaluationsTableRowController.swift */; };
+		81B448491EB3E3F5003E1BE9 /* ETSEvaluation.m in Sources */ = {isa = PBXBuildFile; fileRef = 263770931831AFB200D18F94 /* ETSEvaluation.m */; };
+		81B4484A1EB3E4F2003E1BE9 /* ETSCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 266ED34F18300D2900DC1280 /* ETSCourse.m */; };
+		81B4484C1EB3F676003E1BE9 /* ETSDictionaryConvertible.h in Sources */ = {isa = PBXBuildFile; fileRef = 81B4484B1EB3F572003E1BE9 /* ETSDictionaryConvertible.h */; };
+		81B4484D1EB3F67A003E1BE9 /* ETSDictionaryConvertible.h in Sources */ = {isa = PBXBuildFile; fileRef = 81B4484B1EB3F572003E1BE9 /* ETSDictionaryConvertible.h */; };
+		81C66E651E9EBF2400CA9CB1 /* AppRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C66E641E9EBF2400CA9CB1 /* AppRequest.swift */; };
+		81F1C9D71E7725CF006233E2 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81F1C9D51E7725CF006233E2 /* Interface.storyboard */; };
+		81F1C9E01E7725CF006233E2 /* ETSMobileWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 81F1C9DF1E7725CF006233E2 /* ETSMobileWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		81F1C9E71E7725CF006233E2 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C9E61E7725CF006233E2 /* MenuController.swift */; };
+		81F1C9E91E7725CF006233E2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C9E81E7725CF006233E2 /* ExtensionDelegate.swift */; };
+		81F1C9ED1E7725CF006233E2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1C9EC1E7725CF006233E2 /* ComplicationController.swift */; };
+		81F1C9EF1E7725CF006233E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81F1C9EE1E7725CF006233E2 /* Assets.xcassets */; };
+		81F1C9F41E7725CF006233E2 /* ETSMobileWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 81F1C9D31E7725CF006233E2 /* ETSMobileWatch.app */; };
 		9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */; };
 		9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */; };
 		9CC88727189ED56B002A3D04 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC88726189ED56B002A3D04 /* MapKit.framework */; };
@@ -139,7 +172,46 @@
 			remoteGlobalIDString = 26DD92A317EA610D00469FA8;
 			remoteInfo = ETSMobile;
 		};
+		81F1C9E11E7725CF006233E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26DD929C17EA610D00469FA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81F1C9DE1E7725CF006233E2;
+			remoteInfo = "ETSMobileWatch Extension";
+		};
+		81F1C9F11E7725CF006233E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26DD929C17EA610D00469FA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81F1C9D21E7725CF006233E2;
+			remoteInfo = ETSMobileWatch;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		81F1C9F31E7725CF006233E2 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				81F1C9F41E7725CF006233E2 /* ETSMobileWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81F1C9FA1E7725CF006233E2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				81F1C9E01E7725CF006233E2 /* ETSMobileWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1472C95C1CD7DDD6004D9A9C /* ETSMobile 2.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ETSMobile 2.1.xcdatamodel"; sourceTree = "<group>"; };
@@ -151,7 +223,6 @@
 		1472C9671CDA2F94004D9A9C /* ETSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSCollectionViewCell.m; sourceTree = "<group>"; };
 		14E987951D1C76D40087D6A5 /* NotificationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationHelper.h; sourceTree = "<group>"; };
 		14E987961D1C76D40087D6A5 /* NotificationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationHelper.m; sourceTree = "<group>"; };
-		187D5DECBE6CA971A7220BB8 /* Pods_ETSMobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ETSMobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D25DD8119A3C95900C71387 /* ETSNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNewsViewController.h; sourceTree = "<group>"; };
 		1D25DD8219A3C95900C71387 /* ETSNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSNewsViewController.m; sourceTree = "<group>"; };
 		1D25DD8719A3E63B00C71387 /* ETSNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSNews.h; sourceTree = "<group>"; };
@@ -342,23 +413,59 @@
 		2942BEFF1BF3B43C0032C79A /* ETSAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETSAboutViewController.swift; sourceTree = "<group>"; };
 		296B68411BD52C11003A8E62 /* Launch_Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch_Screen.xib; sourceTree = "<group>"; };
 		29CFAC4C1BBD09590027CC2E /* ETS-logo-blanc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ETS-logo-blanc.png"; path = "Images.xcassets/ETS-logo-blanc.imageset/ETS-logo-blanc.png"; sourceTree = "<group>"; };
-		7A14B24C634B9E9D659FC119 /* Pods_ETSMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ETSMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C0ECDBE0F9D02F867FAD658 /* Pods_ETSMobileWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ETSMobileWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3829D97E13DE61612BA9661B /* Pods-ETSMobileWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETSMobileWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-ETSMobileWatch Extension/Pods-ETSMobileWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		51D8D55273EE1CBC4F779657 /* Pods_ETSMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ETSMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6582B10721AAAB3C5F36CCA2 /* Pods-ETSMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETSMobileTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ETSMobileTests/Pods-ETSMobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		81522AB81EB1216200DD2061 /* WatchResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchResponder.swift; sourceTree = "<group>"; };
+		81522ABA1EB128F400DD2061 /* WatchResponderFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchResponderFactory.swift; sourceTree = "<group>"; };
+		81522ABC1EB1295300DD2061 /* CourseCalendarResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCalendarResponder.swift; sourceTree = "<group>"; };
+		81522ABE1EB19E1500DD2061 /* NotesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesController.swift; sourceTree = "<group>"; };
+		81522AC01EB23B5C00DD2061 /* NotesTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesTableRowController.swift; sourceTree = "<group>"; };
+		81522AC21EB2493400DD2061 /* RequestTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTypes.swift; sourceTree = "<group>"; };
+		81522AC51EB24A7600DD2061 /* NotesResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesResponder.swift; sourceTree = "<group>"; };
+		8163A4741E7758370065749C /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		8163A4781E775E0F0065749C /* CoursesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesController.swift; sourceTree = "<group>"; };
+		8163A47A1E77A7DF0065749C /* CourseTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableRowController.swift; sourceTree = "<group>"; };
+		8163A47C1E77A9B10065749C /* CourseCalendarSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCalendarSession.swift; sourceTree = "<group>"; };
+		8163A47E1E7A113B0065749C /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		8163A4801E7AFF930065749C /* ETSMobileWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ETSMobileWatch Extension.entitlements"; sourceTree = "<group>"; };
+		8163A4811E7AFFB10065749C /* ETSMobileWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ETSMobileWatch.entitlements; sourceTree = "<group>"; };
+		819551B31E80B1EF0091329E /* ETSMobileWatch Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ETSMobileWatch Extension-Bridging-Header.h"; path = "../ETSMobile/ETSMobileWatch Extension-Bridging-Header.h"; sourceTree = "<group>"; };
+		819551B41E80B1EF0091329E /* UIColor+UIColor_ETSMobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+UIColor_ETSMobile.h"; sourceTree = "<group>"; };
+		819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+UIColor_ETSMobile.m"; sourceTree = "<group>"; };
+		81B0D8081EB657EF00178172 /* NotesDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesDetailsController.swift; sourceTree = "<group>"; };
+		81B0D80A1EB7CE5000178172 /* Watch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Watch.xcassets; sourceTree = "<group>"; };
+		81B0D80C1EB8334300178172 /* EvaluationsTableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvaluationsTableRowController.swift; sourceTree = "<group>"; };
+		81B4484B1EB3F572003E1BE9 /* ETSDictionaryConvertible.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc.preprocessed; fileEncoding = 4; path = ETSDictionaryConvertible.h; sourceTree = "<group>"; };
+		81C66E641E9EBF2400CA9CB1 /* AppRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRequest.swift; sourceTree = "<group>"; };
+		81F1C9D31E7725CF006233E2 /* ETSMobileWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSMobileWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		81F1C9D61E7725CF006233E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		81F1C9DA1E7725CF006233E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81F1C9DF1E7725CF006233E2 /* ETSMobileWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ETSMobileWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81F1C9E51E7725CF006233E2 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		81F1C9E61E7725CF006233E2 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		81F1C9E81E7725CF006233E2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		81F1C9EC1E7725CF006233E2 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		81F1C9EE1E7725CF006233E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81F1C9F01E7725CF006233E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82A7C9764E80BF0E734B5696 /* Pods_ETSMobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ETSMobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C5799CF18EC7F2D00AD8838 /* ETSSecurityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityDetailViewController.h; sourceTree = "<group>"; };
 		9C5799D018EC7F2D00AD8838 /* ETSSecurityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSecurityDetailViewController.m; sourceTree = "<group>"; };
 		9CC88722189ECF43002A3D04 /* ETSSecurityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSSecurityViewController.h; sourceTree = "<group>"; };
 		9CC88723189ECF43002A3D04 /* ETSSecurityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSSecurityViewController.m; sourceTree = "<group>"; };
 		9CC88726189ED56B002A3D04 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A67AD528936CA73107054905 /* Pods-ETSMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETSMobileTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ETSMobileTests/Pods-ETSMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D15F4AE2183992D00034605B /* ETSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProfileViewController.h; sourceTree = "<group>"; };
 		D15F4AE3183992D00034605B /* ETSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSProfileViewController.m; sourceTree = "<group>"; };
 		D15F4AE51839A80B0034605B /* ETSProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETSProfile.h; sourceTree = "<group>"; };
 		D15F4AE61839A80B0034605B /* ETSProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETSProfile.m; sourceTree = "<group>"; };
-		D1C0A25DE46B374AEF3D9260 /* Pods-ETSMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETSMobileTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ETSMobileTests/Pods-ETSMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DF3FD572B9499D93F6042761 /* Pods-ETSMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETSMobileTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ETSMobileTests/Pods-ETSMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		E90350EF1B987A670093C8E1 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		E90350F11B987A7C0093C8E1 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		E90350F31B987A8B0093C8E1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		E90350F61B987AAC0093C8E1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		E90350F81B987AB40093C8E1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		F63652CC46306588653300E0 /* Pods-ETSMobileWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETSMobileWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ETSMobileWatch Extension/Pods-ETSMobileWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		FB20EF021BD9C3F1004961E3 /* NSDate+Timezone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Timezone.h"; sourceTree = "<group>"; };
 		FB20EF031BD9C3F1004961E3 /* NSDate+Timezone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Timezone.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -368,6 +475,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8163A47F1E7A113B0065749C /* WatchConnectivity.framework in Frameworks */,
 				E90350F91B987AB40093C8E1 /* Photos.framework in Frameworks */,
 				E90350F71B987AAC0093C8E1 /* AssetsLibrary.framework in Frameworks */,
 				E90350F51B987A9E0093C8E1 /* SystemConfiguration.framework in Frameworks */,
@@ -386,7 +494,7 @@
 				26AE185D17F296CD00DB1EB4 /* QuartzCore.framework in Frameworks */,
 				26DD92AE17EA610D00469FA8 /* CoreData.framework in Frameworks */,
 				26DD92A817EA610D00469FA8 /* Foundation.framework in Frameworks */,
-				6C5877F4ED87966BBA964642 /* Pods_ETSMobile.framework in Frameworks */,
+				43FCA45CF5C355A18C8134F7 /* Pods_ETSMobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +506,22 @@
 				26DD92D517EA610D00469FA8 /* CoreData.framework in Frameworks */,
 				26DD92D417EA610D00469FA8 /* UIKit.framework in Frameworks */,
 				26DD92D317EA610D00469FA8 /* Foundation.framework in Frameworks */,
-				3BD008C1748D077811BA0D67 /* Pods_ETSMobileTests.framework in Frameworks */,
+				73CE0D23ECEE8FEC87603260 /* Pods_ETSMobileTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81F1C9DC1E7725CF006233E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D149EDACCA5C9E8B0DE1997 /* Pods_ETSMobileWatch_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB22AB68C807B4EE8ADFBC5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +774,8 @@
 				263A4C4B188B14A800E38CAC /* NSString+HTML.m */,
 				14E987951D1C76D40087D6A5 /* NotificationHelper.h */,
 				14E987961D1C76D40087D6A5 /* NotificationHelper.m */,
+				819551B41E80B1EF0091329E /* UIColor+UIColor_ETSMobile.h */,
+				819551B51E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m */,
 			);
 			name = "Categories & Helpers";
 			sourceTree = "<group>";
@@ -672,9 +797,11 @@
 				26DD92EB17EA615E00469FA8 /* Vendors */,
 				26DD92AF17EA610D00469FA8 /* ETSMobile */,
 				26DD92D817EA610D00469FA8 /* ETSMobileTests */,
+				81F1C9D41E7725CF006233E2 /* ETSMobileWatch */,
+				81F1C9E31E7725CF006233E2 /* ETSMobileWatch Extension */,
 				26DD92A617EA610D00469FA8 /* Frameworks */,
 				26DD92A517EA610D00469FA8 /* Products */,
-				9493088408D9CC02E072107B /* Pods */,
+				DA7FBEA86EBA4D473DCC90A2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -683,6 +810,8 @@
 			children = (
 				26DD92A417EA610D00469FA8 /* ETSMobile.app */,
 				26DD92D017EA610D00469FA8 /* ETSMobileTests.xctest */,
+				81F1C9D31E7725CF006233E2 /* ETSMobileWatch.app */,
+				81F1C9DF1E7725CF006233E2 /* ETSMobileWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -690,6 +819,7 @@
 		26DD92A617EA610D00469FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8163A47E1E7A113B0065749C /* WatchConnectivity.framework */,
 				E90350F81B987AB40093C8E1 /* Photos.framework */,
 				E90350F61B987AAC0093C8E1 /* AssetsLibrary.framework */,
 				E90350F31B987A8B0093C8E1 /* OpenGLES.framework */,
@@ -713,8 +843,9 @@
 				26DD92AB17EA610D00469FA8 /* UIKit.framework */,
 				26DD92AD17EA610D00469FA8 /* CoreData.framework */,
 				26DD92D117EA610D00469FA8 /* XCTest.framework */,
-				7A14B24C634B9E9D659FC119 /* Pods_ETSMobile.framework */,
-				187D5DECBE6CA971A7220BB8 /* Pods_ETSMobileTests.framework */,
+				51D8D55273EE1CBC4F779657 /* Pods_ETSMobile.framework */,
+				82A7C9764E80BF0E734B5696 /* Pods_ETSMobileTests.framework */,
+				2C0ECDBE0F9D02F867FAD658 /* Pods_ETSMobileWatch_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -777,6 +908,7 @@
 		26DD92E817EA612800469FA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				81522AB71EAFE44900DD2061 /* Watch */,
 				291267BE1CBCA3800010A740 /* ETSConsommation.h */,
 				291267BF1CBCA3800010A740 /* ETSConsommation.m */,
 				1DBF6C6719A507EA00761C44 /* ETSNewsSource.h */,
@@ -809,6 +941,7 @@
 				1472C95E1CD7E082004D9A9C /* ETSEvalEnseignement.m */,
 				1472C9601CD7E3FD004D9A9C /* ETSSponsors.h */,
 				1472C9611CD7E3FD004D9A9C /* ETSSponsors.m */,
+				81B4484B1EB3F572003E1BE9 /* ETSDictionaryConvertible.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -927,13 +1060,83 @@
 			name = "3D Touch icons";
 			sourceTree = "<group>";
 		};
-		9493088408D9CC02E072107B /* Pods */ = {
+		81522AB71EAFE44900DD2061 /* Watch */ = {
 			isa = PBXGroup;
 			children = (
-				D1C0A25DE46B374AEF3D9260 /* Pods-ETSMobileTests.debug.xcconfig */,
-				DF3FD572B9499D93F6042761 /* Pods-ETSMobileTests.release.xcconfig */,
+				81522AB81EB1216200DD2061 /* WatchResponder.swift */,
+				81522ABA1EB128F400DD2061 /* WatchResponderFactory.swift */,
+				81522ABC1EB1295300DD2061 /* CourseCalendarResponder.swift */,
+				81522AC21EB2493400DD2061 /* RequestTypes.swift */,
+				81522AC51EB24A7600DD2061 /* NotesResponder.swift */,
 			);
-			name = Pods;
+			name = Watch;
+			sourceTree = "<group>";
+		};
+		819551B11E80A3AC0091329E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8163A47C1E77A9B10065749C /* CourseCalendarSession.swift */,
+				81C66E641E9EBF2400CA9CB1 /* AppRequest.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		819551B21E80B1500091329E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				81F1C9E61E7725CF006233E2 /* MenuController.swift */,
+				8163A4781E775E0F0065749C /* CoursesController.swift */,
+				8163A47A1E77A7DF0065749C /* CourseTableRowController.swift */,
+				81F1C9EC1E7725CF006233E2 /* ComplicationController.swift */,
+				81522ABE1EB19E1500DD2061 /* NotesController.swift */,
+				81522AC01EB23B5C00DD2061 /* NotesTableRowController.swift */,
+				81B0D8081EB657EF00178172 /* NotesDetailsController.swift */,
+				81B0D80C1EB8334300178172 /* EvaluationsTableRowController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		819551B81E80BEA10091329E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		81F1C9D41E7725CF006233E2 /* ETSMobileWatch */ = {
+			isa = PBXGroup;
+			children = (
+				8163A4811E7AFFB10065749C /* ETSMobileWatch.entitlements */,
+				81F1C9D51E7725CF006233E2 /* Interface.storyboard */,
+				81F1C9DA1E7725CF006233E2 /* Info.plist */,
+				81B0D80A1EB7CE5000178172 /* Watch.xcassets */,
+			);
+			path = ETSMobileWatch;
+			sourceTree = "<group>";
+		};
+		81F1C9E31E7725CF006233E2 /* ETSMobileWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				819551B21E80B1500091329E /* Controllers */,
+				819551B11E80A3AC0091329E /* Models */,
+				819551B81E80BEA10091329E /* Services */,
+				8163A4801E7AFF930065749C /* ETSMobileWatch Extension.entitlements */,
+				81F1C9E81E7725CF006233E2 /* ExtensionDelegate.swift */,
+				819551B31E80B1EF0091329E /* ETSMobileWatch Extension-Bridging-Header.h */,
+				81F1C9EE1E7725CF006233E2 /* Assets.xcassets */,
+				81F1C9F01E7725CF006233E2 /* Info.plist */,
+				81F1C9E41E7725CF006233E2 /* Supporting Files */,
+				8163A4741E7758370065749C /* Colors.swift */,
+			);
+			path = "ETSMobileWatch Extension";
+			sourceTree = "<group>";
+		};
+		81F1C9E41E7725CF006233E2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				81F1C9E51E7725CF006233E2 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		9C5071E6189AF5D8000CB45E /* Security */ = {
@@ -958,6 +1161,17 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
+		DA7FBEA86EBA4D473DCC90A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A67AD528936CA73107054905 /* Pods-ETSMobileTests.debug.xcconfig */,
+				6582B10721AAAB3C5F36CCA2 /* Pods-ETSMobileTests.release.xcconfig */,
+				F63652CC46306588653300E0 /* Pods-ETSMobileWatch Extension.debug.xcconfig */,
+				3829D97E13DE61612BA9661B /* Pods-ETSMobileWatch Extension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -965,17 +1179,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26DD92E217EA610D00469FA8 /* Build configuration list for PBXNativeTarget "ETSMobile" */;
 			buildPhases = (
-				B1E75B9F7C36037FFE130BAE /* [CP] Check Pods Manifest.lock */,
+				289AD6F2AE9DBD57A5F99EDE /* [CP] Check Pods Manifest.lock */,
 				26DD92A017EA610D00469FA8 /* Sources */,
 				26DD92A117EA610D00469FA8 /* Frameworks */,
 				26DD92A217EA610D00469FA8 /* Resources */,
 				262C23331AF7F23600D28B85 /* Run Script */,
-				7A226BB815B79E43DEA8A81A /* [CP] Embed Pods Frameworks */,
-				F8F7A20B7FF7CE0F808B280A /* [CP] Copy Pods Resources */,
+				81F1C9F31E7725CF006233E2 /* Embed Watch Content */,
+				88B674E4D96F549D9267EDA1 /* [CP] Embed Pods Frameworks */,
+				1EB0A70E540027FFB95EFB24 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				81F1C9F21E7725CF006233E2 /* PBXTargetDependency */,
 			);
 			name = ETSMobile;
 			productName = ETSMobile;
@@ -986,12 +1202,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 26DD92E517EA610D00469FA8 /* Build configuration list for PBXNativeTarget "ETSMobileTests" */;
 			buildPhases = (
-				33FB49A0DF2994CE39568A43 /* [CP] Check Pods Manifest.lock */,
+				3DDC90687DA242864623D7EA /* [CP] Check Pods Manifest.lock */,
 				26DD92CC17EA610D00469FA8 /* Sources */,
 				26DD92CD17EA610D00469FA8 /* Frameworks */,
 				26DD92CE17EA610D00469FA8 /* Resources */,
-				E9ABFAD3ED0564578604DF50 /* [CP] Embed Pods Frameworks */,
-				890C0EE242D777AE50219E32 /* [CP] Copy Pods Resources */,
+				F19AD42E7C55F45B61C04A23 /* [CP] Embed Pods Frameworks */,
+				8857A648D4AB8B5B4049F02C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1003,6 +1219,44 @@
 			productReference = 26DD92D017EA610D00469FA8 /* ETSMobileTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		81F1C9D21E7725CF006233E2 /* ETSMobileWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81F1C9FB1E7725CF006233E2 /* Build configuration list for PBXNativeTarget "ETSMobileWatch" */;
+			buildPhases = (
+				81F1C9D11E7725CF006233E2 /* Resources */,
+				81F1C9FA1E7725CF006233E2 /* Embed App Extensions */,
+				CB22AB68C807B4EE8ADFBC5A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				81F1C9E21E7725CF006233E2 /* PBXTargetDependency */,
+			);
+			name = ETSMobileWatch;
+			productName = ETSMobileWatch;
+			productReference = 81F1C9D31E7725CF006233E2 /* ETSMobileWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		81F1C9DE1E7725CF006233E2 /* ETSMobileWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81F1C9F91E7725CF006233E2 /* Build configuration list for PBXNativeTarget "ETSMobileWatch Extension" */;
+			buildPhases = (
+				085966DDF1A1E12C65FD7E8B /* [CP] Check Pods Manifest.lock */,
+				81F1C9DB1E7725CF006233E2 /* Sources */,
+				81F1C9DC1E7725CF006233E2 /* Frameworks */,
+				81F1C9DD1E7725CF006233E2 /* Resources */,
+				86D39B7D49D3D89D48CA1F3A /* [CP] Embed Pods Frameworks */,
+				ACC409C774B691F60376BE47 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ETSMobileWatch Extension";
+			productName = "ETSMobileWatch Extension";
+			productReference = 81F1C9DF1E7725CF006233E2 /* ETSMobileWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1010,13 +1264,18 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ETS;
-				LastUpgradeCheck = 0710;
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = ApplETS;
 				TargetAttributes = {
 					26DD92A317EA610D00469FA8 = {
-						DevelopmentTeam = 5K68926M9Q;
+						DevelopmentTeam = N742HF354K;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -1031,6 +1290,27 @@
 					26DD92CF17EA610D00469FA8 = {
 						TestTargetID = 26DD92A317EA610D00469FA8;
 					};
+					81F1C9D21E7725CF006233E2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = N742HF354K;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
+					};
+					81F1C9DE1E7725CF006233E2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = N742HF354K;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = 26DD929F17EA610D00469FA8 /* Build configuration list for PBXProject "ETSMobile" */;
@@ -1039,6 +1319,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				fr,
+				Base,
 			);
 			mainGroup = 26DD929B17EA610D00469FA8;
 			productRefGroup = 26DD92A517EA610D00469FA8 /* Products */;
@@ -1047,6 +1328,8 @@
 			targets = (
 				26DD92A317EA610D00469FA8 /* ETSMobile */,
 				26DD92CF17EA610D00469FA8 /* ETSMobileTests */,
+				81F1C9D21E7725CF006233E2 /* ETSMobileWatch */,
+				81F1C9DE1E7725CF006233E2 /* ETSMobileWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -1083,24 +1366,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		81F1C9D11E7725CF006233E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8163A4771E775A280065749C /* Images.xcassets in Resources */,
+				81B0D80B1EB7CE5000178172 /* Watch.xcassets in Resources */,
+				81F1C9D71E7725CF006233E2 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81F1C9DD1E7725CF006233E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81F1C9EF1E7725CF006233E2 /* Assets.xcassets in Resources */,
+				8163A4761E775A260065749C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		262C23331AF7F23600D28B85 /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" ${FABRIC_API_KEY} ${FABRIC_BUILD_SECRET}";
-		};
-		33FB49A0DF2994CE39568A43 /* [CP] Check Pods Manifest.lock */ = {
+		085966DDF1A1E12C65FD7E8B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1115,67 +1403,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		7A226BB815B79E43DEA8A81A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobile/Pods-ETSMobile-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		890C0EE242D777AE50219E32 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobileTests/Pods-ETSMobileTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B1E75B9F7C36037FFE130BAE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		E9ABFAD3ED0564578604DF50 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobileTests/Pods-ETSMobileTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F8F7A20B7FF7CE0F808B280A /* [CP] Copy Pods Resources */ = {
+		1EB0A70E540027FFB95EFB24 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1190,6 +1418,125 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobile/Pods-ETSMobile-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		262C23331AF7F23600D28B85 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" ${FABRIC_API_KEY} ${FABRIC_BUILD_SECRET}";
+		};
+		289AD6F2AE9DBD57A5F99EDE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3DDC90687DA242864623D7EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		86D39B7D49D3D89D48CA1F3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobileWatch Extension/Pods-ETSMobileWatch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8857A648D4AB8B5B4049F02C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobileTests/Pods-ETSMobileTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88B674E4D96F549D9267EDA1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobile/Pods-ETSMobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACC409C774B691F60376BE47 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobileWatch Extension/Pods-ETSMobileWatch Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F19AD42E7C55F45B61C04A23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ETSMobileTests/Pods-ETSMobileTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1202,6 +1549,7 @@
 				1D8B140E19A7B1E80033CBA7 /* GTMNSString+HTML.m in Sources */,
 				26DEB88A18EC97EC00161421 /* MSCurrentTimeIndicator.m in Sources */,
 				261409E519A686FB00E6CD29 /* ETSNewsEmptyCell.m in Sources */,
+				81522ABD1EB1295300DD2061 /* CourseCalendarResponder.swift in Sources */,
 				2661098218FD95EC00D817DA /* ETSRadioPlayer.m in Sources */,
 				264E86CD18874E99005F1820 /* ETSNewsSourceViewController.m in Sources */,
 				26887B7218F090C500009EBA /* ETSRadioCell.m in Sources */,
@@ -1232,13 +1580,16 @@
 				26DD92B617EA610D00469FA8 /* main.m in Sources */,
 				26DD92BA17EA610D00469FA8 /* ETSAppDelegate.m in Sources */,
 				26F46A9C183ED0E200232B5A /* ETSRadioViewController.m in Sources */,
+				81522AC61EB24A7600DD2061 /* NotesResponder.swift in Sources */,
 				26DEB74C18E9F2C000161421 /* ETSCalendar.m in Sources */,
 				26DEB88C18EC97EC00161421 /* MSDayColumnHeaderBackground.m in Sources */,
 				26BB373018F5E77E002CE5DD /* ETSCoursesViewController_iPad.m in Sources */,
 				264E86D0188796A7005F1820 /* NSURL+Document.m in Sources */,
 				263A4C4C188B14A800E38CAC /* NSString+HTML.m in Sources */,
+				81B4484C1EB3F676003E1BE9 /* ETSDictionaryConvertible.h in Sources */,
 				26634D8D1881F2FF00644FFB /* ETSLoginView.m in Sources */,
 				263770941831AFB200D18F94 /* ETSEvaluation.m in Sources */,
+				81522AC31EB2493400DD2061 /* RequestTypes.swift in Sources */,
 				26A65542182ABE6E00DEE9B7 /* NSURLRequest+API.m in Sources */,
 				266F0B6218F4ED6B000F53C1 /* ETSSecurityProcedureViewController.m in Sources */,
 				26634D951881F6C100644FFB /* ETSCoreDataHelper.m in Sources */,
@@ -1246,6 +1597,7 @@
 				2693168818359EE200DE95A0 /* ETSDirectoryViewController.m in Sources */,
 				263FBD9918E4A0D0002E033E /* ETSEvaluationCell.m in Sources */,
 				268E8DEC18FB03F900D501E9 /* ETSMoodleCoursesViewController.m in Sources */,
+				819551B61E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */,
 				26AF7CF918FB641700BD3982 /* ETSMoodleCourseDetailViewController.m in Sources */,
 				9CC88724189ECF43002A3D04 /* ETSSecurityViewController.m in Sources */,
 				9C5799D118EC7F2D00AD8838 /* ETSSecurityDetailViewController.m in Sources */,
@@ -1253,6 +1605,7 @@
 				D15F4AE4183992D00034605B /* ETSProfileViewController.m in Sources */,
 				1D33BA27188F065600A5F1C8 /* ETSTextCell.m in Sources */,
 				26EF269B18E70F12001D3454 /* ETSProgram.m in Sources */,
+				81522AB91EB1216200DD2061 /* WatchResponder.swift in Sources */,
 				26AE186217F327AC00DB1EB4 /* UIColor+Styles.m in Sources */,
 				1D25DD8919A3E63B00C71387 /* ETSNews.m in Sources */,
 				FB20EF041BD9C3F1004961E3 /* NSDate+Timezone.m in Sources */,
@@ -1277,6 +1630,7 @@
 				26DEB88F18EC97EC00161421 /* MSTimeRowHeader.m in Sources */,
 				26DEB88E18EC97EC00161421 /* MSGridline.m in Sources */,
 				2698C6F518274F4B00F6281F /* KeychainItemWrapper.m in Sources */,
+				81522ABB1EB128F400DD2061 /* WatchResponderFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1288,6 +1642,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		81F1C9DB1E7725CF006233E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81B448491EB3E3F5003E1BE9 /* ETSEvaluation.m in Sources */,
+				8163A47D1E77A9B10065749C /* CourseCalendarSession.swift in Sources */,
+				8163A47B1E77A7DF0065749C /* CourseTableRowController.swift in Sources */,
+				81B4484D1EB3F67A003E1BE9 /* ETSDictionaryConvertible.h in Sources */,
+				8163A4791E775E0F0065749C /* CoursesController.swift in Sources */,
+				81522ABF1EB19E1500DD2061 /* NotesController.swift in Sources */,
+				819551B71E80B1EF0091329E /* UIColor+UIColor_ETSMobile.m in Sources */,
+				8163A4751E7758370065749C /* Colors.swift in Sources */,
+				81F1C9ED1E7725CF006233E2 /* ComplicationController.swift in Sources */,
+				81B0D80D1EB8334300178172 /* EvaluationsTableRowController.swift in Sources */,
+				81522AC11EB23B5C00DD2061 /* NotesTableRowController.swift in Sources */,
+				81B0D8091EB657EF00178172 /* NotesDetailsController.swift in Sources */,
+				81C66E651E9EBF2400CA9CB1 /* AppRequest.swift in Sources */,
+				81F1C9E91E7725CF006233E2 /* ExtensionDelegate.swift in Sources */,
+				81F1C9E71E7725CF006233E2 /* MenuController.swift in Sources */,
+				81B4484A1EB3E4F2003E1BE9 /* ETSCourse.m in Sources */,
+				81522AC41EB2493400DD2061 /* RequestTypes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1295,6 +1673,16 @@
 			isa = PBXTargetDependency;
 			target = 26DD92A317EA610D00469FA8 /* ETSMobile */;
 			targetProxy = 26DD92D617EA610D00469FA8 /* PBXContainerItemProxy */;
+		};
+		81F1C9E21E7725CF006233E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81F1C9DE1E7725CF006233E2 /* ETSMobileWatch Extension */;
+			targetProxy = 81F1C9E11E7725CF006233E2 /* PBXContainerItemProxy */;
+		};
+		81F1C9F21E7725CF006233E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81F1C9D21E7725CF006233E2 /* ETSMobileWatch */;
+			targetProxy = 81F1C9F11E7725CF006233E2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1316,6 +1704,14 @@
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
+		81F1C9D51E7725CF006233E2 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				81F1C9D61E7725CF006233E2 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1333,15 +1729,20 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1354,7 +1755,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -1401,21 +1802,26 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = (
 					"$(inherited)",
 					"-isystem",
@@ -1443,6 +1849,7 @@
 				);
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1461,8 +1868,10 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_RECEIVER_WEAK = NO;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = ETSMobile/ETSMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = N742HF354K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1473,8 +1882,15 @@
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Headers/Public/SupportKit\"",
+				);
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
@@ -1507,8 +1923,10 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_RECEIVER_WEAK = NO;
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = ETSMobile/ETSMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = N742HF354K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1519,8 +1937,15 @@
 				GCC_PREFIX_HEADER = "ETSMobile/ETSMobile-Prefix.pch";
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_UNUSED_LABEL = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+					"\"${PODS_ROOT}/Headers/Public/SupportKit\"",
+				);
 				INFOPLIST_FILE = "ETSMobile/ETSMobile-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
@@ -1541,7 +1966,7 @@
 		};
 		26DD92E617EA610D00469FA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1C0A25DE46B374AEF3D9260 /* Pods-ETSMobileTests.debug.xcconfig */;
+			baseConfigurationReference = A67AD528936CA73107054905 /* Pods-ETSMobileTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ETSMobile.app/ETSMobile";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1565,7 +1990,7 @@
 		};
 		26DD92E717EA610D00469FA8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF3FD572B9499D93F6042761 /* Pods-ETSMobileTests.release.xcconfig */;
+			baseConfigurationReference = 6582B10721AAAB3C5F36CCA2 /* Pods-ETSMobileTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ETSMobile.app/ETSMobile";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1580,6 +2005,176 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		81F1C9F51E7725CF006233E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = N742HF354K;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IBSC_MODULE = ETSMobileWatch_Extension;
+				INFOPLIST_FILE = ETSMobileWatch/Info.plist;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.etsmtl.applets.ETSMobile.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		81F1C9F61E7725CF006233E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = N742HF354K;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IBSC_MODULE = ETSMobileWatch_Extension;
+				INFOPLIST_FILE = ETSMobileWatch/Info.plist;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.etsmtl.applets.ETSMobile.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		81F1C9F71E7725CF006233E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F63652CC46306588653300E0 /* Pods-ETSMobileWatch Extension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = N742HF354K;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"TARGET_WATCH_EXTENSION=1",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "ETSMobileWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.etsmtl.applets.ETSMobile.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "ETSMobile/ETSMobileWatch Extension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		81F1C9F81E7725CF006233E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3829D97E13DE61612BA9661B /* Pods-ETSMobileWatch Extension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = N742HF354K;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"TARGET_WATCH_EXTENSION=1",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "ETSMobileWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ca.etsmtl.applets.ETSMobile.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ETSMobile/ETSMobileWatch Extension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
 			};
 			name = Release;
 		};
@@ -1609,6 +2204,24 @@
 			buildConfigurations = (
 				26DD92E617EA610D00469FA8 /* Debug */,
 				26DD92E717EA610D00469FA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81F1C9F91E7725CF006233E2 /* Build configuration list for PBXNativeTarget "ETSMobileWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81F1C9F71E7725CF006233E2 /* Debug */,
+				81F1C9F81E7725CF006233E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81F1C9FB1E7725CF006233E2 /* Build configuration list for PBXNativeTarget "ETSMobileWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81F1C9F51E7725CF006233E2 /* Debug */,
+				81F1C9F61E7725CF006233E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
